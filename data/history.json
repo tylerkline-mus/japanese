@@ -1,1 +1,40 @@
-[]
+[
+ {
+  "date": "2026-10-03",
+  "level": 10,
+  "queue": 948,
+  "lessons": 164,
+  "srs": {
+   "apprentice": 56,
+   "guru": 97,
+   "master": 139,
+   "enlightened": 701,
+   "burned": 450
+  },
+  "correct": 21675,
+  "incorrect": 870,
+  "meaning": [
+   11934,
+   492
+  ],
+  "reading": [
+   9741,
+   378
+  ],
+  "byType": {
+   "radical": [
+    3834,
+    85
+   ],
+   "kanji": [
+    5520,
+    262
+   ],
+   "vocabulary": [
+    14514,
+    523
+   ]
+  },
+  "reviewedToday": null
+ }
+]
