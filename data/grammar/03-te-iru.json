@@ -1,0 +1,214 @@
+{
+  "lesson": "03-te-iru",
+  "drills": [
+    {
+      "id": "ti01",
+      "type": "choice",
+      "prompt": "{今|いま}、{雨|あめ}が＿＿。",
+      "en": "It's raining now.",
+      "options": [
+        {
+          "text": "{降|ふ}っています",
+          "verdict": "right",
+          "why": "An action in progress right now → ている."
+        },
+        {
+          "text": "{降|ふ}ります",
+          "verdict": "different",
+          "why": "\"It will rain\" — a prediction, not what's happening now."
+        }
+      ]
+    },
+    {
+      "id": "ti02",
+      "type": "choice",
+      "prompt": "{田中|たなか}さんは{結婚|けっこん}＿＿か。",
+      "en": "Is Tanaka-san married?",
+      "options": [
+        {
+          "text": "していますか",
+          "verdict": "right",
+          "why": "結婚する is a one-time change. ている = the state after it: married."
+        },
+        {
+          "text": "しますか",
+          "verdict": "different",
+          "why": "\"Is Tanaka-san going to get married?\" — asks about the event, not the state."
+        }
+      ]
+    },
+    {
+      "id": "ti03",
+      "type": "choice",
+      "prompt": "その{人|ひと}を＿＿か。",
+      "en": "Do you know that person?",
+      "options": [
+        {
+          "text": "{知|し}っていますか",
+          "verdict": "right",
+          "why": "知る is \"come to know.\" To mean \"know\" (the state), it needs ている."
+        },
+        {
+          "text": "{知|し}りますか",
+          "verdict": "wrong",
+          "why": "Means something like \"will you come to know?\" Nobody asks this."
+        }
+      ]
+    },
+    {
+      "id": "ti04",
+      "type": "choice",
+      "prompt": "{電気|でんき}が＿＿。",
+      "en": "The light is on.",
+      "options": [
+        {
+          "text": "ついています",
+          "verdict": "right",
+          "why": "つく (switch on) is an instant change; ている = it came on and is still on."
+        },
+        {
+          "text": "つきます",
+          "verdict": "different",
+          "why": "\"The light will come on\" — the event, not the state."
+        }
+      ]
+    },
+    {
+      "id": "ti05",
+      "type": "choice",
+      "prompt": "もう{晩|ばん}ごはんを＿＿か。",
+      "en": "Have you eaten dinner yet?",
+      "options": [
+        {
+          "text": "{食|た}べましたか",
+          "verdict": "right",
+          "why": "Asking whether something is finished → past tense. もう〜ましたか is the standard \"already?\" question."
+        },
+        {
+          "text": "{食|た}べていますか",
+          "verdict": "different",
+          "why": "\"Are you eating dinner right now?\" — ている with an action verb means in progress, not completed."
+        }
+      ],
+      "scene": "Ranko's mother asks when you arrive."
+    },
+    {
+      "id": "ti06",
+      "type": "choice",
+      "prompt": "{最近|さいきん}、{毎日|まいにち}ワニカニを＿＿。",
+      "en": "These days I do WaniKani every day.",
+      "options": [
+        {
+          "text": "やっています",
+          "verdict": "right",
+          "why": "A current habit — \"these days\" — is a classic ている use."
+        },
+        {
+          "text": "やります",
+          "verdict": "different",
+          "why": "Fine for a general habit or a plan, but it loses the \"lately, ongoing\" feel that 最近 sets up."
+        }
+      ]
+    },
+    {
+      "id": "ti07",
+      "type": "choice",
+      "prompt": "スザンナは{今|いま}{東京|とうきょう}に＿＿。",
+      "en": "Susanna is in Tokyo now (she's come).",
+      "options": [
+        {
+          "text": "{来|き}ています",
+          "verdict": "right",
+          "why": "来る is arriving — instant. ている = she arrived and is still here."
+        },
+        {
+          "text": "{来|き}ます",
+          "verdict": "different",
+          "why": "\"Susanna will come to Tokyo\" — clashes with 今."
+        }
+      ]
+    },
+    {
+      "id": "ti08",
+      "type": "choice",
+      "prompt": "「その{店|みせ}、{知|し}ってる？」「ううん、＿＿。」",
+      "en": "\"Do you know that shop?\" \"No, I don't.\"",
+      "options": [
+        {
+          "text": "{知|し}らない",
+          "verdict": "right",
+          "why": "The negative of 知っている is 知らない. Casual and natural."
+        },
+        {
+          "text": "{知|し}ってない",
+          "verdict": "wrong",
+          "why": "Looks logical, but Japanese doesn't say it. \"Don't know\" is always 知らない / 知りません."
+        }
+      ]
+    },
+    {
+      "id": "ti09",
+      "type": "choice",
+      "prompt": "{彼|かれ}は{今|いま}＿＿。{静|しず}かにしてください。",
+      "en": "He's sleeping now. Please be quiet.",
+      "options": [
+        {
+          "text": "{寝|ね}ています",
+          "verdict": "right",
+          "why": "寝る here is an ongoing action — he's asleep right now."
+        },
+        {
+          "text": "{寝|ね}ます",
+          "verdict": "different",
+          "why": "\"He'll go to sleep / he goes to sleep\" — not what's happening now."
+        }
+      ]
+    },
+    {
+      "id": "ti10",
+      "type": "choice",
+      "prompt": "{窓|まど}が＿＿。{寒|さむ}いですね。",
+      "en": "The window is open. It's cold, isn't it?",
+      "options": [
+        {
+          "text": "{開|あ}いています",
+          "verdict": "right",
+          "why": "開く happens in an instant; ている = it opened and stays open."
+        },
+        {
+          "text": "{開|あ}きます",
+          "verdict": "different",
+          "why": "\"The window will open\" — not the current state that's making it cold."
+        }
+      ]
+    },
+    {
+      "id": "ti11",
+      "type": "build",
+      "scene": "Text a friend asking what they're doing right now.",
+      "en": "What are you doing right now?",
+      "tiles": [
+        "していますか",
+        "{何|なに}",
+        "を",
+        "{今|いま}",
+        "しますか"
+      ],
+      "answers": [
+        [
+          "{今|いま}",
+          "{何|なに}",
+          "を",
+          "していますか"
+        ],
+        [
+          "{何|なに}",
+          "を",
+          "{今|いま}",
+          "していますか"
+        ]
+      ],
+      "why": "Right now → ている. しますか would ask about plans."
+    }
+  ]
+}

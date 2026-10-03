@@ -382,3 +382,21 @@ th { color: var(--ink-3); font-weight: 700; }
 @media (min-width: 820px) { #toast { bottom: 24px; } }
 
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+/* ---------- grammar reviews ---------- */
+.grammar-card.due { border-left: 4px solid var(--series-1); }
+.chip { display: inline-block; font-size: 0.95rem; font-weight: 700; padding: 2px 10px; margin: 2px 2px 2px 0; border-radius: 999px; background: var(--surface-2); }
+.sync { font-size: 0.8rem; color: var(--ink-3); }
+.sync.ok::before { content: "● "; color: var(--good); }
+.sync.bad { color: var(--bad); }
+.sync.bad::before { content: "● "; }
+.pill.stage { background: var(--surface-2); color: var(--ink-2); border-color: var(--line); font-weight: 500; }
+.stack { display: grid; gap: 10px; }
+.stack input { width: 100%; font: inherit; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface-2); color: var(--ink); min-height: 44px; }
+.rv-results { list-style: none; padding: 0; margin: 12px 0; display: grid; gap: 8px; }
+.rv-results li { padding: 10px 14px; border-radius: 12px; background: var(--surface-2); border-left: 4px solid var(--line); }
+.rv-results li.rv-up { border-left-color: var(--good); }
+.rv-results li.rv-down { border-left-color: var(--bad); }
+.rv-results li.rv-same { border-left-color: var(--warn); }
+.rv-results p { margin: 2px 0 0; }
+.card > * + h2 { margin-top: 1.75rem; }

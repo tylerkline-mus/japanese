@@ -1,9 +1,11 @@
 // app.js — the hub. Static, no server: WaniKani + your Sheet + lesson files, combined in the browser.
 import * as core from "./core.js";
 import { esc, renderJa, stripMarkup, kanjiIn, parseCSV, speak, copyText, toast, store, fmt, daysUntil, dayOfYear } from "./util.js";
+import * as srs from "./srs.js";
 import { lineChart, barChart, stackBar, heatmap, meter, shortDate, setChartWidth } from "./charts.js";
 
 const DEMO = new URLSearchParams(location.search).has("demo");
+if (DEMO) srs.useDemo();
 const CACHE_MIN = 10;
 const S = {
   config: null,
@@ -18,6 +20,8 @@ const S = {
   notesError: null,
   lessonsIndex: [],
   lessonCache: new Map(),
+  bankCache: new Map(),
+  session: null,
   curriculum: null,
   phrases: [],
   selftalk: [],
@@ -26,6 +30,8 @@ const S = {
 };
 
 const $app = () => document.getElementById("view");
+const todayKey = () => core.localDateKey(new Date(), S.config.timeZone);
+const isDone = (id) => srs.isEnrolled(id);
 const token = () => (DEMO ? "demo" : store.get("jh.token", ""));
 
 // ---------------- boot ----------------
@@ -68,10 +74,19 @@ async function boot() {
     buildModel();
   }
   render();
-  await Promise.all([loadHistory(), loadNotes()]);
+  await Promise.all([loadHistory(), loadNotes(), loadReviews()]);
   if (S.raw) buildModel();
   render();
   await refreshWK(false);
+}
+
+async function loadReviews() {
+  await srs.load(S.config.syncUrl);
+  // Lessons marked done before reviews existed join the review queue.
+  const old = store.get("jh.course", {});
+  for (const [id, rec] of Object.entries(old)) {
+    if (rec?.done && !srs.state.rows.has(id) && S.lessonsIndex.some((l) => l.id === id)) await srs.enroll(id, todayKey(), S.config.syncUrl);
+  }
 }
 
 async function loadHistory() {
@@ -302,7 +317,7 @@ function viewToday() {
     <p class="countdown"><span lang="ja">${esc(S.config.tripLabel === "Japan" ? "日本" : S.config.tripLabel)}まで</span> <b>${fmt(days)}</b> <span lang="ja">日</span></p>
   </header>`;
 
-  if (!token()) return top + needToken() + selftalkCard() + lessonCard();
+  if (!token()) return top + needToken() + grammarCard() + lessonCard() + selftalkCard();
   if (!S.model) return top + errorBanner() + `<section class="card"><p class="muted">Loading your WaniKani…</p></section>`;
   const m = S.model;
   const t = m.target;
@@ -354,7 +369,7 @@ function viewToday() {
       <div class="leech-row">${m.leeches.slice(0, 4).map(leechChip).join("")}</div></section>`
     : "";
 
-  return top + errorBanner() + target + lessonCard() + selftalkCard() + queueCard + leech;
+  return top + errorBanner() + target + grammarCard() + lessonCard() + selftalkCard() + queueCard + leech;
 }
 
 function ring(p) {
@@ -380,12 +395,53 @@ function leechChip(l) {
 }
 
 function currentLessonEntry() {
-  const progress = store.get("jh.course", {});
   const start = new Date(S.config.courseStart + "T00:00:00");
   const week = Math.max(1, Math.floor((Date.now() - start) / (7 * 86400000)) + 1);
-  const firstOpen = S.lessonsIndex.find((l) => !progress[l.id]?.done);
+  const firstOpen = S.lessonsIndex.find((l) => !isDone(l.id));
   const thisWeek = S.lessonsIndex.find((l) => l.week === week);
   return { entry: firstOpen || thisWeek || S.lessonsIndex[S.lessonsIndex.length - 1], week, allDone: !firstOpen };
+}
+
+function syncNote() {
+  const st = srs.state.sync;
+  if (st === "ok") return `<span class="sync ok">Synced with your Sheet</span>`;
+  if (st === "syncing") return `<span class="sync">Syncing…</span>`;
+  if (st === "error") return `<span class="sync bad" title="${esc(srs.state.syncError || "")}">Sheet sync failed — saved on this device</span>`;
+  return `<a class="sync" href="#settings">This device only · set up Sheet sync</a>`;
+}
+
+function grammarCard() {
+  const enrolled = [...srs.state.rows.values()].filter((r) => r.stage >= 1);
+  const today = todayKey();
+  if (!enrolled.length)
+    return `<section class="card grammar-card"><p class="eyebrow">Grammar reviews</p>
+      <p>Reviews start once you mark a lesson done. Each grammar point comes back after 1, 3, 7, 14, 30 and 90 days, with new sentences every time.</p>
+      <p class="small">${syncNote()}</p></section>`;
+  const due = srs.dueToday(today);
+  const waiting = srs.dueList(today).length - due.length;
+  if (!due.length) {
+    const nd = srs.nextDue(today);
+    return `<section class="card grammar-card"><p class="eyebrow">Grammar reviews</p>
+      <p><b>Nothing due.</b> ${nd ? `Next one ${friendlyDate(nd)}.` : "Everything's retired — nice."}</p>
+      <p class="small">${syncNote()}</p></section>`;
+  }
+  return `<section class="card grammar-card due"><p class="eyebrow">Grammar reviews</p>
+    <div class="split"><p class="big-num">${due.length}</p><p class="muted small">point${due.length > 1 ? "s" : ""} · about ${due.length * srs.DRILLS_PER_POINT} sentences</p></div>
+    <p class="small">${due.map((r) => `<span lang="ja" class="chip">${esc(lessonTitle(r.id))}</span>`).join(" ")}</p>
+    ${waiting > 0 ? `<p class="muted small">${waiting} more will wait for another day. No pile-up.</p>` : ""}
+    <a class="btn" href="#review">Start review</a>
+    <p class="small">${syncNote()}</p></section>`;
+}
+
+function lessonTitle(id) {
+  return S.lessonsIndex.find((l) => l.id === id)?.title || id;
+}
+
+function friendlyDate(key) {
+  const today = todayKey();
+  if (key === srs.addDays(today, 1)) return "tomorrow";
+  const d = new Date(key + "T12:00:00");
+  return d.toLocaleString("en-US", { weekday: "short", month: "short", day: "numeric" });
 }
 
 function lessonCard() {
@@ -425,7 +481,7 @@ function viewStats() {
   </section>`;
 
   const groups = core.SRS_GROUPS.map((g) => ({ key: g.key, label: g.label, value: m.srs[g.key] }));
-  const srs = `<section class="card"><h2>Where your items are</h2>${stackBar(groups)}</section>`;
+  const srsCard = `<section class="card"><h2>Where your items are</h2>${stackBar(groups)}</section>`;
 
   const burnPts = m.hist.map((h) => ({ label: shortDate(h.date), value: h.queue }));
   const burn = `<section class="card"><h2>Queue burn-down</h2>
@@ -501,7 +557,25 @@ function viewStats() {
     ${[...m.hist].reverse().map((h) => `<tr><td>${h.date}</td><td>${h.level}</td><td>${fmt(h.queue)}</td><td>${fmt(h.reviewedToday)}</td></tr>`).join("")}
     </tbody></table></div></details>`;
 
-  return errorBanner() + tiles + srs + burn + heat + forecastCard + accCard + paceCard + coverage + leeches + table;
+  return errorBanner() + tiles + srsCard + burn + heat + forecastCard + accCard + grammarStats() + paceCard + coverage + leeches + table;
+}
+
+function grammarStats() {
+  const rows = [...srs.state.rows.values()].filter((r) => r.stage >= 1).sort((a, b) => a.id.localeCompare(b.id));
+  if (!rows.length) return "";
+  return `<section class="card"><h2>Grammar</h2>
+    <div class="acc-grid">${rows
+      .map((r) => {
+        const p = core.pct(r.right, r.wrong);
+        return `<div class="acc">
+          <div class="split"><span lang="ja"><b>${esc(lessonTitle(r.id))}</b></span><span class="small muted">${esc(srs.stageLabel(r.stage))}</span></div>
+          ${meter(Math.min(r.stage, 6), 6)}
+          <p class="small muted">${p == null ? "No reviews yet" : `${p}% right over ${fmt(r.right + r.wrong)} sentences`}${r.due ? ` · next ${friendlyDate(r.due)}` : ""}</p>
+        </div>`;
+      })
+      .join("")}</div>
+    <p class="muted small">The bar is how far along the 1 → 90 day ladder each point is.</p>
+  </section>`;
 }
 
 function tile(label, value, sub) {
@@ -530,7 +604,6 @@ function streakText(hist) {
 
 function viewCourse(id) {
   if (id) return viewLesson(id);
-  const progress = store.get("jh.course", {});
   const lessonById = new Map(S.lessonsIndex.map((l) => [l.id, l]));
   const { entry } = currentLessonEntry();
   const sections = S.curriculum.sections
@@ -539,11 +612,13 @@ function viewCourse(id) {
       ${sec.chapters
         .map((c) => {
           const l = c.lesson && lessonById.get(c.lesson);
-          const done = l && progress[l.id]?.done;
+          const done = l && isDone(l.id);
+          const row = l && srs.state.rows.get(l.id);
           return `<li class="${l ? "has-lesson" : ""} ${done ? "done" : ""}">
             <span class="ch-title">${esc(c.title)}</span>
             <span class="ch-links">
               ${l ? `<a class="pill ${l.id === entry.id ? "pill-em" : ""}" href="#course/${esc(l.id)}">${done ? "✓ Lesson" : "Lesson"}</a>` : ""}
+              ${done ? `<span class="pill stage">${esc(srs.stageLabel(row.stage).replace(" of 6", ""))}</span>` : ""}
               <a class="pill ghost" href="${esc(c.url)}" target="_blank" rel="noopener">Tae Kim</a>
             </span>
           </li>`;
@@ -584,7 +659,8 @@ function viewLesson(id) {
   }
   const exercises = l.exercises.filter(exerciseOk);
   const skipped = l.exercises.length - exercises.length;
-  const done = store.get("jh.course", {})[l.id]?.done;
+  const done = isDone(l.id);
+  const row = srs.state.rows.get(l.id);
   return `<a class="back" href="#course">← Course</a>
   <article class="lesson">
     <header class="card">
@@ -622,8 +698,12 @@ function viewLesson(id) {
     </section>
 
     <section class="card done-card">
-      ${done ? `<p><b>Marked done.</b> Come back any time.</p>` : `<p>Finished reading and practicing?</p>`}
-      <button class="btn ${done ? "ghost" : ""}" data-action="toggle-done" data-lesson="${esc(l.id)}">${done ? "Mark not done" : "Mark lesson done"}</button>
+      ${
+        done
+          ? `<p><b>In your grammar reviews.</b> ${esc(srs.stageLabel(row.stage))}${row.due ? ` · next ${friendlyDate(row.due)}` : ""}.</p>`
+          : `<p>Finished reading and practicing? Marking it done adds this point to your grammar reviews. The first one comes tomorrow.</p>`
+      }
+      <button class="btn ${done ? "ghost" : ""}" data-action="toggle-done" data-lesson="${esc(l.id)}">${done ? "Take out of reviews" : "Mark lesson done"}</button>
     </section>
   </article>`;
 }
@@ -799,6 +879,116 @@ function drawWrite(host, ex, head, lesson, record, next) {
   };
 }
 
+// ---------- grammar review session ----------
+
+async function loadBank(id) {
+  if (S.bankCache.has(id)) return S.bankCache.get(id);
+  let drills = [];
+  try {
+    drills = (await getJSON(`data/grammar/${id}.json`)).drills || [];
+  } catch {}
+  drills = drills.filter(exerciseOk);
+  S.bankCache.set(id, drills);
+  return drills;
+}
+
+function startSession() {
+  const today = todayKey();
+  const due = srs.dueToday(today);
+  const points = [];
+  const queue = [];
+  for (const row of due) {
+    const drills = S.bankCache.get(row.id) || [];
+    if (!drills.length) continue;
+    const picked = srs.pickDrills(row, drills);
+    points.push({ id: row.id, drillIds: picked.map((d) => d.id), right: 0, total: 0, result: null });
+    picked.forEach((d) => queue.push({ pointId: row.id, drill: d }));
+  }
+  // Interleave: shuffle, then nudge apart back-to-back sentences from the same point.
+  queue.sort(() => Math.random() - 0.5);
+  for (let i = 1; i < queue.length; i++) {
+    if (queue[i].pointId === queue[i - 1].pointId) {
+      const j = queue.findIndex((q, k) => k > i && q.pointId !== queue[i].pointId);
+      if (j > 0) [queue[i], queue[j]] = [queue[j], queue[i]];
+    }
+  }
+  S.session = { date: today, points, queue, i: 0 };
+}
+
+function viewReview() {
+  const today = todayKey();
+  const due = srs.dueToday(today);
+  const s = S.session;
+  if (!s || s.date !== today) {
+    if (!due.length) {
+      return `<a class="back" href="#today">← Today</a><section class="card"><h1>Grammar review</h1>
+        <p>Nothing due right now.${srs.nextDue(today) ? ` Next one ${friendlyDate(srs.nextDue(today))}.` : ""}</p></section>`;
+    }
+    const missing = due.filter((r) => !S.bankCache.has(r.id));
+    if (missing.length) {
+      Promise.all(missing.map((r) => loadBank(r.id))).then(() => {
+        startSession();
+        render();
+      });
+      return `<section class="card"><p class="muted">Getting your sentences…</p></section>`;
+    }
+    startSession();
+  }
+  return `<a class="back" href="#today">← Today</a>
+    <section class="card review"><p class="eyebrow">Grammar review · mixed</p>
+      <div id="rv-host"></div>
+    </section>`;
+}
+
+function mountReview() {
+  const host = document.getElementById("rv-host");
+  const s = S.session;
+  if (!host || !s) return;
+  const draw = () => {
+    if (s.i >= s.queue.length) {
+      host.innerHTML = `<h2>Done.</h2>
+        <ul class="rv-results">${s.points
+          .map((p) => {
+            const r = p.result;
+            const move = !r ? "" : r.after > r.before ? "up" : r.after < r.before ? "down" : "same";
+            const msg = !r
+              ? "Saving…"
+              : r.after >= 7
+              ? "Retired — you've got this one."
+              : `${move === "up" ? "Moved up" : move === "down" ? "Moved back" : "Same step"} · ${srs.stageLabel(r.after)} · next ${friendlyDate(r.due)}`;
+            return `<li class="rv-${move}"><span lang="ja" class="why-opt">${esc(lessonTitle(p.id))}</span> <b>${p.right}/${p.total}</b><p class="small">${esc(msg)}</p></li>`;
+          })
+          .join("")}</ul>
+        <p class="small muted">All right → step up. One miss → same step. More → step back. "Works, but means something else" counts as a miss — the point is choosing what you meant.</p>
+        <a class="btn" href="#today">Back to Today</a>`;
+      return;
+    }
+    const item = s.queue[s.i];
+    const point = s.points.find((p) => p.id === item.pointId);
+    const entry = S.lessonsIndex.find((l) => l.id === item.pointId) || { title: item.pointId, titleEn: "" };
+    const head = `<div class="split"><p class="ex-count">${s.i + 1} of ${s.queue.length}</p><a class="small" href="#course/${esc(entry.id)}">Lesson ↗</a></div>
+      ${item.drill.scene ? `<p class="scene">${esc(item.drill.scene)}</p>` : ""}`;
+    const record = (v) => {
+      point.total++;
+      if (v === "right") point.right++;
+      if (point.total === point.drillIds.length) {
+        srs.grade(point.id, point.right, point.total, point.drillIds, s.date, S.config.syncUrl).then((r) => {
+          point.result = r;
+          if (s.i >= s.queue.length) draw();
+        });
+      }
+    };
+    const next = () => {
+      s.i++;
+      draw();
+      host.scrollIntoView({ block: "start", behavior: "smooth" });
+    };
+    if (item.drill.type === "build") drawBuild(host, item.drill, head, entry, record, next);
+    else drawChoice(host, item.drill, head, entry, record, next);
+  };
+  draw();
+}
+
 // ---------- phrases ----------
 
 function viewPhrases() {
@@ -871,12 +1061,19 @@ function viewSettings() {
       <button class="btn" type="submit">Save</button>
     </form>
     ${has ? `<button class="btn ghost" data-action="forget-token">Remove token from this device</button>` : ""}
+    <h2>Grammar review sync</h2>
+    <p class="small">Saves your grammar review progress to your Google Sheet, so every device shares one queue. Paste the web app URL and key from the Apps Script setup.</p>
+    <form id="sync-form" class="stack">
+      <input id="sync-url" type="url" autocomplete="off" placeholder="https://script.google.com/macros/s/…/exec" value="${esc(srs.syncConfig(S.config.syncUrl).url)}" aria-label="Apps Script web app URL">
+      <input id="sync-key" type="password" autocomplete="off" placeholder="${srs.syncConfig().key ? "Key saved — paste to replace" : "Your key"}" aria-label="Sync key">
+      <div class="row"><button class="btn" type="submit">Save and test</button><span class="small">${syncNote()}</span></div>
+    </form>
     <h2>Data</h2>
     <div class="row">
       <button class="btn ghost" data-action="refresh">${ICON.refresh} Refresh now</button>
       <button class="btn ghost" data-action="clear-cache">Clear saved data</button>
     </div>
-    <p class="small muted">WaniKani refreshes automatically when you open the hub (every ${CACHE_MIN} minutes at most). Lesson progress is saved per device.</p>
+    <p class="small muted">WaniKani refreshes automatically when you open the hub (every ${CACHE_MIN} minutes at most). Grammar reviews sync through your Sheet once it's set up; until then they're saved on this device.</p>
     <h2>Links</h2>
     <p class="small"><a href="${esc(S.config.sheetCsv.replace(/\/pub\?output=csv$/, "/pubhtml"))}" target="_blank" rel="noopener">Published notes Sheet</a> · <a href="https://github.com/tylerkline-mus/japanese" target="_blank" rel="noopener">Repo</a> · <a href="?demo">Demo mode</a></p>
   </section>`;
@@ -884,16 +1081,17 @@ function viewSettings() {
 
 // ---------------- router ----------------
 
-const ROUTES = { today: viewToday, stats: viewStats, course: viewCourse, phrases: viewPhrases, notes: viewNotes, settings: viewSettings };
+const ROUTES = { today: viewToday, stats: viewStats, course: viewCourse, phrases: viewPhrases, notes: viewNotes, settings: viewSettings, review: viewReview };
 
 function render() {
   const [name, arg] = (location.hash.replace(/^#/, "") || "today").split("/");
   const fn = ROUTES[name] || viewToday;
   setChartWidth(Math.min(760, window.innerWidth) - 32 - 42);
   $app().innerHTML = fn(arg);
-  document.querySelectorAll("nav a[data-nav]").forEach((a) => a.classList.toggle("active", a.dataset.nav === (ROUTES[name] ? name : "today")));
+  document.querySelectorAll("nav a[data-nav]").forEach((a) => a.classList.toggle("active", a.dataset.nav === (name === "review" ? "today" : ROUTES[name] ? name : "today")));
   setStatus();
   if (name === "course" && arg && S.lessonCache.has(arg)) mountExercises(S.lessonCache.get(arg));
+  if (name === "review") mountReview();
   if (name === "notes") {
     const input = $app().querySelector(".search");
     input?.addEventListener("input", (e) => {
@@ -906,6 +1104,22 @@ function render() {
     });
   }
   if (name === "settings") {
+    document.getElementById("sync-form")?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const url = document.getElementById("sync-url").value.trim();
+      const key = document.getElementById("sync-key").value.trim() || srs.syncConfig().key;
+      if (!url || !key) return toast("Add both the URL and the key.");
+      toast("Testing…");
+      try {
+        await srs.testSync(url, key);
+        srs.saveSyncConfig(url, key);
+        await srs.load(S.config.syncUrl);
+        toast("Connected. Reviews now sync through your Sheet.");
+      } catch (err) {
+        toast("Couldn't connect: " + (err.message || "check the URL and key"));
+      }
+      render();
+    });
     document.getElementById("token-form")?.addEventListener("submit", async (e) => {
       e.preventDefault();
       const v = document.getElementById("token-in").value.trim();
@@ -953,9 +1167,17 @@ function wireGlobal() {
     }
     const act = t.dataset.action;
     if (act === "toggle-done") {
-      const rec = store.get("jh.course", {});
       const id = t.dataset.lesson;
-      rec[id] = { ...(rec[id] || {}), done: !rec[id]?.done };
+      const rec = store.get("jh.course", {});
+      if (isDone(id)) {
+        await srs.unenroll(id, S.config.syncUrl);
+        rec[id] = { ...(rec[id] || {}), done: false };
+        toast("Taken out of reviews.");
+      } else {
+        await srs.enroll(id, todayKey(), S.config.syncUrl);
+        rec[id] = { ...(rec[id] || {}), done: true };
+        toast("Added to grammar reviews. First one tomorrow.");
+      }
       store.set("jh.course", rec);
       render();
     } else if (act === "refresh") {

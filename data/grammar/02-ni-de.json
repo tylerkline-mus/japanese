@@ -1,0 +1,228 @@
+{
+  "lesson": "02-ni-de",
+  "drills": [
+    {
+      "id": "nd01",
+      "type": "choice",
+      "prompt": "{毎朝|まいあさ}、{公園|こうえん}＿{走|はし}ります。",
+      "en": "I run in the park every morning.",
+      "options": [
+        {
+          "text": "で",
+          "verdict": "right",
+          "why": "Running is an action that happens in the park → で."
+        },
+        {
+          "text": "に",
+          "verdict": "wrong",
+          "why": "に treats the park as a point you exist at or go to. Running is an activity, so it needs で."
+        }
+      ]
+    },
+    {
+      "id": "nd02",
+      "type": "choice",
+      "prompt": "{京都|きょうと}＿{行|い}きたいです。",
+      "en": "I want to go to Kyoto.",
+      "options": [
+        {
+          "text": "に",
+          "verdict": "right",
+          "why": "Kyoto is the destination of 行く → に."
+        },
+        {
+          "text": "で",
+          "verdict": "wrong",
+          "why": "で would make Kyoto the stage for an action — \"I want to go (somewhere), in Kyoto.\""
+        }
+      ]
+    },
+    {
+      "id": "nd03",
+      "type": "choice",
+      "prompt": "{机|つくえ}の{上|うえ}＿{本|ほん}があります。",
+      "en": "There's a book on the desk.",
+      "options": [
+        {
+          "text": "に",
+          "verdict": "right",
+          "why": "ある is existence. Where something exists → に."
+        },
+        {
+          "text": "で",
+          "verdict": "wrong",
+          "why": "Nothing is happening; the book just exists there. で needs an action."
+        }
+      ]
+    },
+    {
+      "id": "nd04",
+      "type": "choice",
+      "prompt": "レストラン＿{友達|ともだち}と{会|あ}います。",
+      "en": "I'm meeting a friend at a restaurant.",
+      "options": [
+        {
+          "text": "で",
+          "verdict": "right",
+          "why": "Meeting is an event that takes place at the restaurant → で."
+        },
+        {
+          "text": "に",
+          "verdict": "wrong",
+          "why": "会う uses に for the person you meet (友達に会う), not the place. レストランに会う would mean meeting the restaurant."
+        }
+      ]
+    },
+    {
+      "id": "nd05",
+      "type": "choice",
+      "prompt": "{日本語|にほんご}＿{話|はな}してください。",
+      "en": "Please speak in Japanese.",
+      "options": [
+        {
+          "text": "で",
+          "verdict": "right",
+          "why": "The language is the means you speak with → で."
+        },
+        {
+          "text": "を",
+          "verdict": "different",
+          "why": "日本語を話す means \"speak Japanese\" (as a skill). Grammatical, but ください with を sounds like \"please speak the Japanese language\" rather than \"say it in Japanese.\""
+        },
+        {
+          "text": "に",
+          "verdict": "wrong",
+          "why": "に has no \"by means of\" meaning."
+        }
+      ]
+    },
+    {
+      "id": "nd06",
+      "type": "choice",
+      "prompt": "バス＿{乗|の}ります。",
+      "en": "I get on the bus.",
+      "options": [
+        {
+          "text": "に",
+          "verdict": "right",
+          "why": "乗る is getting onto/into something — the bus is where you end up → に."
+        },
+        {
+          "text": "で",
+          "verdict": "different",
+          "why": "バスで means \"by bus,\" which needs a destination: バスで行きます. With 乗る alone it doesn't fit."
+        }
+      ]
+    },
+    {
+      "id": "nd07",
+      "type": "choice",
+      "prompt": "{七時|しちじ}＿{起|お}きます。",
+      "en": "I get up at 7.",
+      "options": [
+        {
+          "text": "に",
+          "verdict": "right",
+          "why": "A specific point in time → に."
+        },
+        {
+          "text": "で",
+          "verdict": "wrong",
+          "why": "で doesn't mark clock times."
+        }
+      ]
+    },
+    {
+      "id": "nd08",
+      "type": "choice",
+      "prompt": "どうぞ、{部屋|へや}＿{入|はい}ってください。",
+      "en": "Please, come into the room.",
+      "options": [
+        {
+          "text": "に",
+          "verdict": "right",
+          "why": "入る is entering — the room is where you end up → に."
+        },
+        {
+          "text": "で",
+          "verdict": "wrong",
+          "why": "で would mean doing the entering while already inside the room."
+        }
+      ]
+    },
+    {
+      "id": "nd09",
+      "type": "choice",
+      "prompt": "{駅|えき}の{前|まえ}＿{待|ま}っています。",
+      "en": "I'm waiting in front of the station.",
+      "options": [
+        {
+          "text": "で",
+          "verdict": "right",
+          "why": "Waiting is what you're doing there → で."
+        },
+        {
+          "text": "に",
+          "verdict": "wrong",
+          "why": "に treats it as a point of existence or arrival. Waiting is an activity."
+        }
+      ]
+    },
+    {
+      "id": "nd10",
+      "type": "choice",
+      "prompt": "{前|まえ}は{大阪|おおさか}＿{住|す}んでいました。",
+      "en": "I used to live in Osaka.",
+      "options": [
+        {
+          "text": "に",
+          "verdict": "right",
+          "why": "住む is about where you exist/reside → に."
+        },
+        {
+          "text": "で",
+          "verdict": "wrong",
+          "why": "Tempting because \"living\" feels like an activity, but 住む is a verb of existence and takes に."
+        }
+      ]
+    },
+    {
+      "id": "nd11",
+      "type": "choice",
+      "prompt": "お{箸|はし}＿{食|た}べます。",
+      "en": "I eat with chopsticks.",
+      "options": [
+        {
+          "text": "で",
+          "verdict": "right",
+          "why": "The tool you use → で."
+        },
+        {
+          "text": "に",
+          "verdict": "wrong",
+          "why": "に can't mark a tool or means."
+        }
+      ]
+    },
+    {
+      "id": "nd12",
+      "type": "build",
+      "scene": "Say you'll record at the harbor.",
+      "en": "I'll record at the harbor.",
+      "tiles": [
+        "{録音|ろくおん}します",
+        "{港|みなと}",
+        "に",
+        "で"
+      ],
+      "answers": [
+        [
+          "{港|みなと}",
+          "で",
+          "{録音|ろくおん}します"
+        ]
+      ],
+      "why": "Recording is an action at the harbor → で."
+    }
+  ]
+}

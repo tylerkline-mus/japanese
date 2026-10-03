@@ -43,8 +43,45 @@ for (const entry of index.lessons) {
   });
 }
 
+// Review sentence banks (data/grammar/<lesson id>.json)
+import { readdir } from "node:fs/promises";
+const gdir = new URL("../data/grammar/", import.meta.url);
+let bankCount = 0;
+for (const f of (await readdir(gdir).catch(() => [])).filter((f) => f.endsWith(".json"))) {
+  const where = "grammar/" + f;
+  let b;
+  try {
+    b = JSON.parse(await readFile(new URL(f, gdir), "utf8"));
+  } catch (e) {
+    problems.push(`${where}: can't read or parse (${e.message})`);
+    continue;
+  }
+  bankCount++;
+  if (!ids.has(b.lesson)) problems.push(`${where}: lesson "${b.lesson}" isn't in the lesson index`);
+  if (f !== `${b.lesson}.json`) problems.push(`${where}: file should be named ${b.lesson}.json`);
+  const seen = new Set();
+  (b.drills || []).forEach((ex, i) => {
+    const at = `${where}: drill ${i + 1} (${ex.id || "no id"})`;
+    if (!ex.id) problems.push(`${at}: needs an id`);
+    else if (seen.has(ex.id)) problems.push(`${at}: duplicate id`);
+    seen.add(ex.id);
+    if (ex.type === "choice") {
+      if (!ex.prompt || !ex.en) problems.push(`${at}: needs prompt and en`);
+      if (!(ex.options || []).some((o) => o.verdict === "right")) problems.push(`${at}: no option marked right`);
+      (ex.options || []).forEach((o, j) => {
+        if (!o.why || !o.why.trim()) problems.push(`${at}: option ${j + 1} ("${o.text}") has no explanation`);
+        if (!["right", "wrong", "different"].includes(o.verdict)) problems.push(`${at}: option ${j + 1} has an unknown verdict`);
+      });
+    } else if (ex.type === "build") {
+      if (!ex.tiles?.length || !ex.answers?.length || !ex.why) problems.push(`${at}: needs tiles, answers and why`);
+      for (const a of ex.answers || []) for (const t of a) if (!ex.tiles.includes(t)) problems.push(`${at}: answer uses a tile not in tiles: ${t}`);
+    } else problems.push(`${at}: reviews support choice and build drills`);
+  });
+  if ((b.drills || []).length < 6) problems.push(`${where}: needs at least 6 drills so reviews can vary`);
+}
+
 if (problems.length) {
   console.error(problems.map((p) => "✕ " + p).join("\n"));
   process.exit(1);
 }
-console.log(`✓ ${index.lessons.length} lessons, every answer explained.`);
+console.log(`✓ ${index.lessons.length} lessons and ${bankCount} review banks, every answer explained.`);

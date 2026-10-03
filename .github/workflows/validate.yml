@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "data/lessons/**"
+      - "data/grammar/**"
       - "scripts/validate-lessons.mjs"
   pull_request:
   workflow_dispatch:

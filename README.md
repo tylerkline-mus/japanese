@@ -19,6 +19,12 @@ A personal Japanese study hub. Static site on GitHub Pages — no server, nothin
 
 Japanese markup: `{漢字|かんじ}` gives a word its reading. Kanji you've reached Guru on in WaniKani show plain; anything else gets furigana. Tap any kanji for its meaning and your WaniKani stage.
 
+## Grammar reviews (SRS)
+
+Marking a lesson done adds that grammar point to your reviews. Each review shows 3 different sentences from `data/grammar/<lesson id>.json`, mixed with other due points. All right → step up; one miss → same step; more → step back. Steps are 1, 3, 7, 14, 30, 90 days, then retired. At most 4 points (~12 sentences) a day, so nothing piles up.
+
+Progress syncs through your Google Sheet via the Apps Script in `apps-script/Code.gs` (it writes to an `srs` tab). Without it, progress stays on the device.
+
 ## Setup
 
 1. **Settings → Pages**: Source "Deploy from a branch", branch `main`, folder `/ (root)`.

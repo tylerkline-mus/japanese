@@ -1,0 +1,238 @@
+{
+  "lesson": "01-wa-ga",
+  "drills": [
+    {
+      "id": "wg01",
+      "type": "choice",
+      "prompt": "{誰|だれ}＿{電話|でんわ}しましたか。",
+      "en": "Who called?",
+      "options": [
+        {
+          "text": "が",
+          "verdict": "right",
+          "why": "誰 is a question word, so it takes が. You're asking who fills the \"called\" slot."
+        },
+        {
+          "text": "は",
+          "verdict": "wrong",
+          "why": "Question words never take は — you can't make an unknown thing the topic."
+        }
+      ]
+    },
+    {
+      "id": "wg02",
+      "type": "choice",
+      "prompt": "{何|なに}＿{一番|いちばん}{好|す}きですか。",
+      "en": "What do you like most?",
+      "options": [
+        {
+          "text": "が",
+          "verdict": "right",
+          "why": "Two reasons: 何 is a question word, and 好き marks the liked thing with が."
+        },
+        {
+          "text": "は",
+          "verdict": "wrong",
+          "why": "Question words never take は — you can't make an unknown thing the topic."
+        },
+        {
+          "text": "を",
+          "verdict": "wrong",
+          "why": "好き is an adjective, not an action verb, so the liked thing can't take を."
+        }
+      ]
+    },
+    {
+      "id": "wg03",
+      "type": "choice",
+      "prompt": "これ＿{私|わたし}のです。",
+      "en": "This one is mine.",
+      "options": [
+        {
+          "text": "が",
+          "verdict": "right",
+          "why": "You're answering \"which one?\" — picking this one out of several. Picking out → が."
+        },
+        {
+          "text": "は",
+          "verdict": "different",
+          "why": "Fine as a plain statement (\"This is mine\"), but it doesn't answer \"which one\" — it just describes this thing."
+        }
+      ],
+      "scene": "Someone holds up three umbrellas and asks which is yours."
+    },
+    {
+      "id": "wg04",
+      "type": "choice",
+      "prompt": "あ、{雪|ゆき}＿{降|ふ}っている！",
+      "en": "Oh, it's snowing!",
+      "options": [
+        {
+          "text": "が",
+          "verdict": "right",
+          "why": "A fresh observation — the snow just entered the scene. New information → が."
+        },
+        {
+          "text": "は",
+          "verdict": "different",
+          "why": "Adds contrast: \"Snow, at least, is falling (but…)\". Not what you'd blurt out at the window."
+        }
+      ],
+      "scene": "You glance out the window in Itoshima."
+    },
+    {
+      "id": "wg05",
+      "type": "choice",
+      "prompt": "{東京|とうきょう}＿{大|おお}きいですね。",
+      "en": "Tokyo is big, isn't it.",
+      "options": [
+        {
+          "text": "は",
+          "verdict": "right",
+          "why": "Tokyo is the topic and \"big\" is your comment on it. A plain description → は."
+        },
+        {
+          "text": "が",
+          "verdict": "different",
+          "why": "Means \"Tokyo is the one that's big\" — as if answering \"which city is big?\""
+        }
+      ]
+    },
+    {
+      "id": "wg06",
+      "type": "choice",
+      "prompt": "{田中|たなか}さん＿{今日|きょう}{休|やす}みです。",
+      "en": "Tanaka-san is off today.",
+      "options": [
+        {
+          "text": "は",
+          "verdict": "right",
+          "why": "Tanaka-san is already the topic — someone just asked about him. You're commenting on him → は."
+        },
+        {
+          "text": "が",
+          "verdict": "different",
+          "why": "Sounds like picking him out: \"It's Tanaka-san who's off today\" — an answer to \"who's off?\""
+        }
+      ],
+      "scene": "Someone asks: 田中さんはどこですか。"
+    },
+    {
+      "id": "wg07",
+      "type": "choice",
+      "prompt": "{私|わたし}＿{作|つく}った{曲|きょく}です。",
+      "en": "It's a piece I wrote.",
+      "options": [
+        {
+          "text": "が",
+          "verdict": "right",
+          "why": "\"私が作った\" describes 曲 — it's a little clause inside the sentence. Inside a describing clause, the subject takes が (の also works), never は."
+        },
+        {
+          "text": "は",
+          "verdict": "wrong",
+          "why": "は sets the topic for the whole sentence, so it can't sit inside a clause that describes a noun. Here it would sound like \"As for me, (it's) a made piece\" — broken."
+        }
+      ]
+    },
+    {
+      "id": "wg08",
+      "type": "choice",
+      "prompt": "{今日|きょう}は{天気|てんき}＿いいですね。",
+      "en": "The weather's nice today.",
+      "options": [
+        {
+          "text": "が",
+          "verdict": "right",
+          "why": "Today is already the topic (今日は). Within that, the weather is the thing that's nice → が. Topic は + subject が is a very common pattern."
+        },
+        {
+          "text": "は",
+          "verdict": "different",
+          "why": "Possible, but it adds contrast: \"Today, the weather at least is nice (but…)\"."
+        }
+      ]
+    },
+    {
+      "id": "wg09",
+      "type": "choice",
+      "prompt": "スザンナ＿{明日|あした}{来|き}ます。",
+      "en": "Susanna is coming tomorrow.",
+      "options": [
+        {
+          "text": "は",
+          "verdict": "right",
+          "why": "You're telling someone something about Susanna. She's the topic → は."
+        },
+        {
+          "text": "が",
+          "verdict": "different",
+          "why": "\"Susanna is the one coming tomorrow\" — the answer to \"who's coming?\""
+        }
+      ]
+    },
+    {
+      "id": "wg10",
+      "type": "choice",
+      "prompt": "{誰|だれ}＿チェロを{弾|ひ}いていますか。",
+      "en": "Who's playing the cello?",
+      "options": [
+        {
+          "text": "が",
+          "verdict": "right",
+          "why": "Question words take が, never は — you can't make an unknown thing the topic."
+        },
+        {
+          "text": "は",
+          "verdict": "wrong",
+          "why": "Question words never take は — you can't make an unknown thing the topic."
+        },
+        {
+          "text": "を",
+          "verdict": "wrong",
+          "why": "チェロ already has を. 誰 is the person doing the playing, not the thing being played."
+        }
+      ]
+    },
+    {
+      "id": "wg11",
+      "type": "build",
+      "scene": "Ask who's coming.",
+      "en": "Who's coming?",
+      "tiles": [
+        "{来|き}ますか",
+        "{誰|だれ}",
+        "は",
+        "が"
+      ],
+      "answers": [
+        [
+          "{誰|だれ}",
+          "が",
+          "{来|き}ますか"
+        ]
+      ],
+      "why": "Question word → が. The は tile is a decoy."
+    },
+    {
+      "id": "wg12",
+      "type": "build",
+      "scene": "Tell someone this is the station (you're pointing it out on a map).",
+      "en": "This is the station.",
+      "tiles": [
+        "{駅|えき}です",
+        "ここ",
+        "が",
+        "は"
+      ],
+      "answers": [
+        [
+          "ここ",
+          "が",
+          "{駅|えき}です"
+        ]
+      ],
+      "why": "Pointing out \"this one\" among other places → が."
+    }
+  ]
+}
