@@ -1,0 +1,108 @@
+{
+  "id": "02-ni-de",
+  "week": 2,
+  "title": "に vs で",
+  "titleEn": "Where something is vs. where something happens",
+  "taeKim": {
+    "title": "Particles used with verbs (を, に, へ, で)",
+    "url": "https://guidetojapanese.org/learn/grammar/verbparticles"
+  },
+  "summary": "に is a point: where something exists or where it ends up. で is a stage: where an action takes place (or the tool you use).",
+  "explanation": [
+    "Both can translate as \"at\" or \"in,\" which is exactly why they're confusing. Ask what the verb is doing.",
+    "**に is a point.** Use it where something **exists** (いる, ある, {住|す}む) or where something **arrives** ({行|い}く, {来|く}る, {着|つ}く, {入|はい}る). It also marks points in time: 3{時|じ}に.",
+    "**で is a stage.** Use it where an **action happens**: {働|はたら}く, {食|た}べる, {練習|れんしゅう}する, {録音|ろくおん}する. Something is being done, and で says where.",
+    "で also marks the **means**: {電車|でんしゃ}で (by train), {日本語|にほんご}で (in Japanese), {箸|はし}で (with chopsticks).",
+    "Quick test: can you picture someone *doing* something there? → で. Is something just *being* there, or *getting* there? → に."
+  ],
+  "examples": [
+    { "ja": "{東京|とうきょう}に{住|す}んでいます。", "en": "I live in Tokyo.", "note": "Living = existing somewhere → に." },
+    { "ja": "{東京|とうきょう}で{働|はたら}いています。", "en": "I work in Tokyo.", "note": "Working is an activity → で." },
+    { "ja": "{三時|さんじ}に{駅|えき}に{着|つ}きます。", "en": "I'll arrive at the station at 3.", "note": "A point in time and a destination — both に." },
+    { "ja": "{電車|でんしゃ}で{松山|まつやま}に{行|い}きます。", "en": "I'm going to Matsuyama by train.", "note": "で for the means, に for where you end up." },
+    { "ja": "{港|みなと}で{録音|ろくおん}しました。", "en": "I recorded at the harbor.", "note": "Recording is the action happening there → で." }
+  ],
+  "contrasts": [
+    {
+      "a": { "ja": "{部屋|へや}にいます。", "en": "I'm in my room." },
+      "b": { "ja": "{部屋|へや}で{練習|れんしゅう}します。", "en": "I practice in my room." },
+      "why": "いる is just being there → に. 練習する is something you do there → で."
+    },
+    {
+      "a": { "ja": "{駅|えき}に{行|い}きます。", "en": "I'm going to the station." },
+      "b": { "ja": "{駅|えき}で{待|ま}ちます。", "en": "I'll wait at the station." },
+      "why": "The station is a destination in the first (に) and the stage for waiting in the second (で)."
+    },
+    {
+      "a": { "ja": "{公園|こうえん}に{猫|ねこ}がいます。", "en": "There's a cat in the park." },
+      "b": { "ja": "{公園|こうえん}で{猫|ねこ}が{寝|ね}ています。", "en": "A cat is sleeping in the park." },
+      "why": "Existence → に. Once the cat is doing something (sleeping), the park becomes the stage → で."
+    }
+  ],
+  "exercises": [
+    {
+      "type": "choice",
+      "prompt": "{図書館|としょかん}＿{勉強|べんきょう}します。",
+      "en": "I study at the library.",
+      "options": [
+        { "text": "で", "verdict": "right", "why": "Studying is an action, and the library is where it happens. Action → で." },
+        { "text": "に", "verdict": "wrong", "why": "に treats the library as a point you exist at or travel to. 勉強する is an activity, so it needs a stage (で), not a point." },
+        { "text": "を", "verdict": "wrong", "why": "を would make the library the thing being studied — \"I study the library.\"" }
+      ]
+    },
+    {
+      "type": "choice",
+      "scene": "You call Studio Kura from the platform.",
+      "prompt": "{今|いま}、{一貴山|いきさん}{駅|えき}＿{着|つ}きました。",
+      "en": "I've just arrived at Ikisan Station.",
+      "options": [
+        { "text": "に", "verdict": "right", "why": "着く is arriving — the station is the point you reached. Destination → に." },
+        { "text": "で", "verdict": "wrong", "why": "で would make the station the stage for an action, as if \"arriving\" were something you did while you were there. Arriving is about reaching a point, so に." },
+        { "text": "を", "verdict": "wrong", "why": "を with movement verbs marks a place you move through or leave (駅を出る), not where you arrive." }
+      ]
+    },
+    {
+      "type": "choice",
+      "prompt": "{猫|ねこ}が{部屋|へや}＿います。",
+      "en": "The cat is in the room.",
+      "options": [
+        { "text": "に", "verdict": "right", "why": "いる is pure existence. Where something exists → に." },
+        { "text": "で", "verdict": "wrong", "why": "で needs an action happening. The cat isn't doing anything here; it's just there." }
+      ]
+    },
+    {
+      "type": "choice",
+      "prompt": "{電車|でんしゃ}＿{松山|まつやま}に{行|い}きます。",
+      "en": "I'll go to Matsuyama by train.",
+      "options": [
+        { "text": "で", "verdict": "right", "why": "The train is the means of getting there. Means → で." },
+        { "text": "に", "verdict": "different", "why": "電車に乗る means \"get on the train,\" so 電車に alone points at the train as a place you enter. With 行く it sounds like the train is a destination — not what you mean." }
+      ]
+    },
+    {
+      "type": "choice",
+      "scene": "Telling the Nagahama innkeeper about your day.",
+      "prompt": "{今日|きょう}は{橋|はし}の{近|ちか}く＿{録音|ろくおん}しました。",
+      "en": "Today I recorded near the bridge.",
+      "options": [
+        { "text": "で", "verdict": "right", "why": "Recording is the action, and \"near the bridge\" is where it happened." },
+        { "text": "に", "verdict": "wrong", "why": "に would make \"near the bridge\" a point where something exists or arrives. You did something there, so で." }
+      ]
+    },
+    {
+      "type": "build",
+      "scene": "Tell someone you'll wait at the station.",
+      "en": "I'll wait at the station.",
+      "tiles": ["{待|ま}ちます", "で", "{駅|えき}", "に"],
+      "answers": [["{駅|えき}", "で", "{待|ま}ちます"]],
+      "why": "Waiting is something you do at the station, so で. The に tile is a decoy."
+    },
+    {
+      "type": "write",
+      "scene": "The Nagahama innkeeper asks where you'll record tomorrow. Say you'll record at the red bridge.",
+      "model": "{明日|あした}は{赤|あか}い{橋|はし}で{録音|ろくおん}します。",
+      "en": "Tomorrow I'll record at the red bridge.",
+      "why": "明日は sets tomorrow as the topic; で marks where the recording happens."
+    }
+  ]
+}

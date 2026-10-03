@@ -1,0 +1,103 @@
+{
+  "id": "01-wa-ga",
+  "week": 1,
+  "title": "は vs が",
+  "titleEn": "Topic vs. subject",
+  "taeKim": {
+    "title": "Introduction to particles (は, も, が)",
+    "url": "https://guidetojapanese.org/learn/grammar/particlesintro"
+  },
+  "summary": "は sets the stage (\"as for X…\"). が points at the one doing or being the thing — often the new information.",
+  "explanation": [
+    "Think of は as a spotlight on the **stage**. It says what we're talking about, and the rest of the sentence comments on it. The topic is usually something already in the conversation: you, the weather, the thing you're both looking at.",
+    "が points at **who or what** fills the slot. It answers the question \"who?\" or \"which one?\" — so it tends to carry the new information.",
+    "Three rules of thumb that cover most real situations:",
+    "**1. Question words take が, never は.** {誰|だれ}が, {何|なに}が, どれが. You can't make an unknown thing the topic — you don't know what it is yet. Answers to those questions take が too.",
+    "**2. New observations take が.** You look outside and it's raining: {雨|あめ}が{降|ふ}っています. You're reporting something that just entered the scene.",
+    "**3. は can mean \"at least this one\" (contrast).** {雨|あめ}は{降|ふ}っていますが… — \"It IS raining, but…\" The は quietly sets the rain against something else.",
+    "Bonus: {好|す}き, {嫌|きら}い, {上手|じょうず}, わかる and できる mark the thing liked/understood with が: {猫|ねこ}が{好|す}きです."
+  ],
+  "examples": [
+    { "ja": "{私|わたし}はタイラーです。", "en": "I'm Tyler.", "note": "You are the topic; your name is the comment." },
+    { "ja": "{誰|だれ}が{来|き}ましたか。", "en": "Who came?", "note": "Question word → が." },
+    { "ja": "{田中|たなか}さんが{来|き}ました。", "en": "Tanaka-san came. (It was Tanaka-san.)", "note": "Answering \"who?\" → が." },
+    { "ja": "あ、{雨|あめ}が{降|ふ}っています。", "en": "Oh, it's raining.", "note": "A fresh observation → が." },
+    { "ja": "{私|わたし}はラーメンが{好|す}きです。", "en": "I like ramen.", "note": "は for you (the topic), が for the thing liked." }
+  ],
+  "contrasts": [
+    {
+      "a": { "ja": "タイラーはチェロを{弾|ひ}きます。", "en": "Tyler plays cello." },
+      "b": { "ja": "タイラーがチェロを{弾|ひ}きます。", "en": "Tyler is the one who plays cello." },
+      "why": "With は you're telling us something about Tyler. With が you're answering \"who plays cello?\" — the spotlight is on Tyler being the one."
+    },
+    {
+      "a": { "ja": "ここは{駅|えき}です。", "en": "This place is a station." },
+      "b": { "ja": "ここが{駅|えき}です。", "en": "THIS is the station (the one you're looking for)." },
+      "why": "は describes \"here.\" が picks \"here\" out of other possible places — like pointing at a map and saying \"this one.\""
+    },
+    {
+      "a": { "ja": "{雨|あめ}が{降|ふ}っています。", "en": "It's raining." },
+      "b": { "ja": "{雨|あめ}は{降|ふ}っていますが、{寒|さむ}くないです。", "en": "It is raining, but it isn't cold." },
+      "why": "が just reports the rain. は sets the rain up against something else — you can feel the \"but\" coming."
+    }
+  ],
+  "exercises": [
+    {
+      "type": "choice",
+      "prompt": "{誰|だれ}＿チェロを{弾|ひ}きますか。",
+      "en": "Who plays the cello?",
+      "options": [
+        { "text": "が", "verdict": "right", "why": "誰 is a question word, and question words always take が. You're asking who fills the \"plays cello\" slot." },
+        { "text": "は", "verdict": "wrong", "why": "は would make 誰 the topic — \"as for who…\" — but you can't set an unknown person on the stage. Question words never take は." },
+        { "text": "を", "verdict": "wrong", "why": "を marks the thing being acted on. The cello is already marked with を; 誰 is the one doing the playing." }
+      ]
+    },
+    {
+      "type": "choice",
+      "scene": "You're introducing yourself to the Studio Kura staff.",
+      "prompt": "{私|わたし}＿タイラーです。よろしくお{願|ねが}いします。",
+      "en": "I'm Tyler. Nice to meet you.",
+      "options": [
+        { "text": "は", "verdict": "right", "why": "You're the topic, and your name is the new information about you. This is the standard self-introduction." },
+        { "text": "が", "verdict": "different", "why": "Grammatical, but it means \"I'm the one who's Tyler\" — what you'd say if someone asked \"Which of you is Tyler?\"" },
+        { "text": "を", "verdict": "wrong", "why": "を marks an object of an action, and です isn't an action. There's nothing for を to attach to." }
+      ]
+    },
+    {
+      "type": "choice",
+      "prompt": "{私|わたし}はラーメン＿{好|す}きです。",
+      "en": "I like ramen.",
+      "options": [
+        { "text": "が", "verdict": "right", "why": "好き is an adjective, not a verb. The thing you like is marked with が: ラーメンが好き." },
+        { "text": "は", "verdict": "different", "why": "Possible, but it adds contrast: \"Ramen, I like (other things, not so much).\" Natural in the right moment, not as a plain statement." },
+        { "text": "を", "verdict": "wrong", "why": "を needs an action verb. 好き describes a state, so the liked thing takes が." }
+      ]
+    },
+    {
+      "type": "choice",
+      "scene": "You're looking at a map with a station attendant and point at a spot.",
+      "prompt": "すみません、ここ＿{一貴山|いきさん}{駅|えき}ですか。",
+      "en": "Excuse me, is this Ikisan Station?",
+      "options": [
+        { "text": "は", "verdict": "right", "why": "\"Here\" is the topic and you're asking what it is. Plain and natural." },
+        { "text": "が", "verdict": "different", "why": "This asks \"Is HERE the Ikisan Station?\" — picking this spot out from others. Works if you're comparing spots on the map, but it's not the default." }
+      ]
+    },
+    {
+      "type": "build",
+      "scene": "Tell Ranko's family that you like cats.",
+      "en": "I like cats.",
+      "tiles": ["{猫|ねこ}", "{私|わたし}", "が", "は", "{好|す}き", "です"],
+      "answers": [["{私|わたし}", "は", "{猫|ねこ}", "が", "{好|す}き", "です"]],
+      "why": "Topic first (私は), then the thing liked with が, then 好きです."
+    },
+    {
+      "type": "write",
+      "scene": "Susanna asks who's making dinner tonight. Say that you'll make it.",
+      "model": "{僕|ぼく}が{作|つく}るよ。",
+      "modelPolite": "{私|わたし}が{作|つく}ります。",
+      "en": "I'll make it.",
+      "why": "She asked \"who?\", so the answer takes が. 僕が作るよ is relaxed and natural between partners."
+    }
+  ]
+}

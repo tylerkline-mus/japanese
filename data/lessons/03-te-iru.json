@@ -1,0 +1,103 @@
+{
+  "id": "03-te-iru",
+  "week": 3,
+  "title": "〜ている",
+  "titleEn": "Ongoing actions and lasting states",
+  "taeKim": {
+    "title": "Using the te-form for ongoing actions (〜ている)",
+    "url": "https://guidetojapanese.org/learn/grammar/teform"
+  },
+  "summary": "て-form + いる means either \"is doing\" or \"is in the state of having done.\" Which one depends on the verb.",
+  "explanation": [
+    "〜ている is built from the て-form plus いる (to exist). Literally: \"exists in the doing.\" It has two main jobs.",
+    "**1. Action in progress.** For verbs that take time — {食|た}べる, {練習|れんしゅう}する, {降|ふ}る, {待|ま}つ — 〜ている means \"is doing right now.\" {今|いま}チェロを{練習|れんしゅう}しています = I'm practicing cello right now.",
+    "**2. A state that resulted from a change.** For verbs that happen in an instant — {結婚|けっこん}する, {着|つ}く, {来|く}る, {開|あ}く, {知|し}る — 〜ている means the change happened and you're still in that state. {結婚|けっこん}しています = is married, not \"is getting married.\" {来|き}ています = has come (and is here).",
+    "It also covers **habits**: {毎日|まいにち}ワニカニをやっています = I do WaniKani every day (these days).",
+    "Two things to remember: in casual speech the い drops ({食|た}べてる, {知|し}ってる), and the negative of {知|し}っている is {知|し}らない / {知|し}りません — never {知|し}っていない."
+  ],
+  "examples": [
+    { "ja": "{今|いま}、チェロを{練習|れんしゅう}しています。", "en": "I'm practicing cello right now.", "note": "Action in progress." },
+    { "ja": "{雨|あめ}が{降|ふ}っています。", "en": "It's raining.", "note": "Action in progress." },
+    { "ja": "{窓|まど}が{開|あ}いています。", "en": "The window is open.", "note": "開く (to open) happened; the window stays open." },
+    { "ja": "その{店|みせ}、{知|し}ってる？", "en": "Do you know that shop?", "note": "Casual: い dropped. 知る needs ている to mean \"know.\"" },
+    { "ja": "{毎朝|まいあさ}コーヒーを{飲|の}んでいます。", "en": "I drink coffee every morning.", "note": "A habit." }
+  ],
+  "contrasts": [
+    {
+      "a": { "ja": "{来月|らいげつ}{結婚|けっこん}します。", "en": "I'm getting married next month." },
+      "b": { "ja": "{結婚|けっこん}しています。", "en": "I'm married." },
+      "why": "結婚する is a one-time change. ます is the event itself; ている is the state you're in afterward."
+    },
+    {
+      "a": { "ja": "スザンナが{来|き}ます。", "en": "Susanna will come." },
+      "b": { "ja": "スザンナが{来|き}ています。", "en": "Susanna has come (she's here)." },
+      "why": "来る is arriving — instant. With ている she has arrived and is still here."
+    },
+    {
+      "a": { "ja": "{何|なに}をしますか。", "en": "What will you do? / What do you do?" },
+      "b": { "ja": "{何|なに}をしていますか。", "en": "What are you doing (right now)?" },
+      "why": "Plain ます points to the future or to general habits. ている zooms in on what's happening now."
+    }
+  ],
+  "exercises": [
+    {
+      "type": "choice",
+      "scene": "Ranko asks about Susanna in late February.",
+      "prompt": "スザンナはもう{東京|とうきょう}に＿＿。",
+      "en": "Susanna is already in Tokyo. (She's come.)",
+      "options": [
+        { "text": "{来|き}ています", "verdict": "right", "why": "来る is an instant change (arriving). ている = she arrived and is still there. もう (already) fits perfectly." },
+        { "text": "{来|き}ます", "verdict": "different", "why": "This means she will come. Paired with もう (already), it clashes." },
+        { "text": "{来|き}ていました", "verdict": "different", "why": "Past state — \"she had come / was here.\" Implies she's no longer there, or that you're talking about an earlier time." }
+      ]
+    },
+    {
+      "type": "choice",
+      "scene": "Texting a friend.",
+      "prompt": "{今|いま}、{何|なに}を＿＿か。",
+      "en": "What are you doing right now?",
+      "options": [
+        { "text": "していますか", "verdict": "right", "why": "今 + ている asks about the action happening right now." },
+        { "text": "しますか", "verdict": "different", "why": "Grammatical, but it reads as \"What will you do now?\" — asking about plans, not what they're in the middle of." }
+      ]
+    },
+    {
+      "type": "choice",
+      "scene": "Someone uses a word you've never heard.",
+      "prompt": "すみません、その{言葉|ことば}は＿＿。",
+      "en": "Sorry, I don't know that word.",
+      "options": [
+        { "text": "{知|し}りません", "verdict": "right", "why": "The negative of 知っている is 知らない / 知りません. It's an exception worth memorizing." },
+        { "text": "{知|し}っていません", "verdict": "wrong", "why": "Looks logical, but it isn't used. Japanese says 知りません for \"don't know.\"" },
+        { "text": "{知|し}っています", "verdict": "wrong", "why": "This means \"I know it\" — the opposite of what you want." }
+      ]
+    },
+    {
+      "type": "choice",
+      "prompt": "{窓|まど}が＿＿。{寒|さむ}いですね。",
+      "en": "The window is open. It's cold, isn't it.",
+      "options": [
+        { "text": "{開|あ}いています", "verdict": "right", "why": "開く is an instant change. ている = it opened and is still open." },
+        { "text": "{開|あ}きます", "verdict": "different", "why": "\"The window will open\" (or \"opens\") — describes the event, not the current state that's making it cold." }
+      ]
+    },
+    {
+      "type": "build",
+      "scene": "Look outside and say it's raining right now.",
+      "en": "It's raining now.",
+      "tiles": ["{降|ふ}って", "{雨|あめ}", "います", "が", "{今|いま}"],
+      "answers": [
+        ["{今|いま}", "{雨|あめ}", "が", "{降|ふ}って", "います"],
+        ["{雨|あめ}", "が", "{今|いま}", "{降|ふ}って", "います"]
+      ],
+      "why": "Fresh observation → 雨が. 降っています for something happening now. 今 can sit at the front or right before the verb."
+    },
+    {
+      "type": "write",
+      "scene": "Self-talk: say what you're doing right now, in one sentence.",
+      "model": "{今|いま}、コーヒーを{飲|の}んでいます。",
+      "en": "I'm drinking coffee right now.",
+      "why": "Any verb works: 今、〇〇をしています. Narrating like this, even in your head, is how thinking in Japanese starts."
+    }
+  ]
+}

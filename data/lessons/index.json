@@ -1,0 +1,7 @@
+{
+  "lessons": [
+    { "id": "01-wa-ga", "file": "01-wa-ga.json", "week": 1, "title": "は vs が", "titleEn": "Topic vs. subject" },
+    { "id": "02-ni-de", "file": "02-ni-de.json", "week": 2, "title": "に vs で", "titleEn": "Where something is vs. where something happens" },
+    { "id": "03-te-iru", "file": "03-te-iru.json", "week": 3, "title": "〜ている", "titleEn": "Ongoing actions and lasting states" }
+  ]
+}

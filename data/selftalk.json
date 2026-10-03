@@ -1,0 +1,60 @@
+{
+  "prompts": [
+    {
+      "en": "What are you doing right now?",
+      "ja": "{今|いま}、〇〇をしています。"
+    },
+    {
+      "en": "What did you eat today?",
+      "ja": "{今日|きょう}は〇〇を{食|た}べました。"
+    },
+    {
+      "en": "What's the weather like?",
+      "ja": "{今日|きょう}は{寒|さむ}いです／{暑|あつ}いです／{雨|あめ}が{降|ふ}っています。"
+    },
+    {
+      "en": "Where are you?",
+      "ja": "{今|いま}、〇〇にいます。"
+    },
+    {
+      "en": "What will you do after this?",
+      "ja": "このあと、〇〇をします。"
+    },
+    {
+      "en": "What do you like?",
+      "ja": "{私|わたし}は〇〇が{好|す}きです。"
+    },
+    {
+      "en": "What are you listening to?",
+      "ja": "{今|いま}、〇〇を{聞|き}いています。"
+    },
+    {
+      "en": "What's the cat doing?",
+      "ja": "{猫|ねこ}は{今|いま}、〇〇ています。"
+    },
+    {
+      "en": "What did you do this morning?",
+      "ja": "{今朝|けさ}、〇〇をしました。"
+    },
+    {
+      "en": "What are you working on?",
+      "ja": "{今|いま}、〇〇を{作|つく}っています。"
+    },
+    {
+      "en": "How do you feel?",
+      "ja": "{今日|きょう}はちょっと{疲|つか}れています／{元気|げんき}です。"
+    },
+    {
+      "en": "What do you see out the window?",
+      "ja": "{窓|まど}から〇〇が{見|み}えます。"
+    },
+    {
+      "en": "What will you eat tonight?",
+      "ja": "{今晩|こんばん}は〇〇を{食|た}べたいです。"
+    },
+    {
+      "en": "Where will you go tomorrow?",
+      "ja": "{明日|あした}は〇〇に{行|い}きます。"
+    }
+  ]
+}

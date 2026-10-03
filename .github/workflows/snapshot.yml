@@ -1,0 +1,35 @@
+name: Daily snapshot
+
+on:
+  schedule:
+    # Late evening in New York: 23:47 EDT / 22:47 EST (GitHub cron runs on UTC and can start a few minutes late)
+    - cron: "47 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: snapshot
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Record today's WaniKani numbers
+        env:
+          WANIKANI_TOKEN: ${{ secrets.WANIKANI_TOKEN }}
+        run: node scripts/snapshot.mjs
+      - name: Commit
+        run: |
+          git config user.name "japanese-hub bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/history.json
+          git diff --cached --quiet && echo "No change" && exit 0
+          git commit -m "Snapshot $(date -u +%F)"
+          git push

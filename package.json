@@ -1,0 +1,9 @@
+{
+  "name": "japanese-hub",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "snapshot": "node scripts/snapshot.mjs",
+    "validate": "node scripts/validate-lessons.mjs"
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "source": "Tae Kim's Guide to Japanese Grammar",
+  "home": "https://guidetojapanese.org/learn/grammar/",
+  "sections": [
+    {
+      "name": "Basic grammar",
+      "chapters": [
+        {
+          "slug": "stateofbeing",
+          "title": "Expressing state-of-being (だ)",
+          "url": "https://guidetojapanese.org/learn/grammar/stateofbeing"
+        },
+        {
+          "slug": "particlesintro",
+          "title": "Introduction to particles (は, も, が)",
+          "url": "https://guidetojapanese.org/learn/grammar/particlesintro",
+          "lesson": "01-wa-ga"
+        },
+        {
+          "slug": "adjectives",
+          "title": "Adjectives",
+          "url": "https://guidetojapanese.org/learn/grammar/adjectives"
+        },
+        {
+          "slug": "verbs",
+          "title": "Verb basics",
+          "url": "https://guidetojapanese.org/learn/grammar/verbs"
+        },
+        {
+          "slug": "negativeverbs",
+          "title": "Negative verbs",
+          "url": "https://guidetojapanese.org/learn/grammar/negativeverbs"
+        },
+        {
+          "slug": "past_tense",
+          "title": "Past tense",
+          "url": "https://guidetojapanese.org/learn/grammar/past_tense"
+        },
+        {
+          "slug": "verbparticles",
+          "title": "Particles used with verbs (を, に, へ, で)",
+          "url": "https://guidetojapanese.org/learn/grammar/verbparticles",
+          "lesson": "02-ni-de"
+        },
+        {
+          "slug": "in-transitive",
+          "title": "Transitive and intransitive verbs",
+          "url": "https://guidetojapanese.org/learn/grammar/in-transitive"
+        },
+        {
+          "slug": "clause",
+          "title": "Relative clauses and sentence order",
+          "url": "https://guidetojapanese.org/learn/grammar/clause"
+        },
+        {
+          "slug": "nounparticles",
+          "title": "Noun-related particles (と, や, の)",
+          "url": "https://guidetojapanese.org/learn/grammar/nounparticles"
+        },
+        {
+          "slug": "adverbs",
+          "title": "Adverbs and gender-specific speech",
+          "url": "https://guidetojapanese.org/learn/grammar/adverbs"
+        },
+        {
+          "slug": "sentence_ending",
+          "title": "Sentence-ending particles (よ, ね)",
+          "url": "https://guidetojapanese.org/learn/grammar/sentence_ending"
+        }
+      ]
+    },
+    {
+      "name": "Essential grammar",
+      "chapters": [
+        {
+          "slug": "polite",
+          "title": "Polite form and verb stems",
+          "url": "https://guidetojapanese.org/learn/grammar/polite"
+        },
+        {
+          "slug": "people",
+          "title": "Addressing people",
+          "url": "https://guidetojapanese.org/learn/grammar/people"
+        },
+        {
+          "slug": "question",
+          "title": "The question marker",
+          "url": "https://guidetojapanese.org/learn/grammar/question"
+        },
+        {
+          "slug": "compound",
+          "title": "Compound sentences",
+          "url": "https://guidetojapanese.org/learn/grammar/compound"
+        },
+        {
+          "slug": "teform",
+          "title": "Other uses of the te-form (〜ている etc.)",
+          "url": "https://guidetojapanese.org/learn/grammar/teform",
+          "lesson": "03-te-iru"
+        },
+        {
+          "slug": "potential",
+          "title": "Potential form",
+          "url": "https://guidetojapanese.org/learn/grammar/potential"
+        },
+        {
+          "slug": "surunaru",
+          "title": "Using する and なる with に",
+          "url": "https://guidetojapanese.org/learn/grammar/surunaru"
+        },
+        {
+          "slug": "conditionals",
+          "title": "Conditionals",
+          "url": "https://guidetojapanese.org/learn/grammar/conditionals"
+        },
+        {
+          "slug": "must",
+          "title": "Expressing must / have to",
+          "url": "https://guidetojapanese.org/learn/grammar/must"
+        },
+        {
+          "slug": "desire",
+          "title": "Desire and suggestions",
+          "url": "https://guidetojapanese.org/learn/grammar/desire"
+        },
+        {
+          "slug": "actionclause",
+          "title": "Acting on relative clauses (と, って)",
+          "url": "https://guidetojapanese.org/learn/grammar/actionclause"
+        },
+        {
+          "slug": "define",
+          "title": "Defining and describing (という)",
+          "url": "https://guidetojapanese.org/learn/grammar/define"
+        },
+        {
+          "slug": "try",
+          "title": "Trying or attempting something",
+          "url": "https://guidetojapanese.org/learn/grammar/try"
+        },
+        {
+          "slug": "favors",
+          "title": "Giving and receiving",
+          "url": "https://guidetojapanese.org/learn/grammar/favors"
+        },
+        {
+          "slug": "requests",
+          "title": "Making requests",
+          "url": "https://guidetojapanese.org/learn/grammar/requests"
+        },
+        {
+          "slug": "numbers",
+          "title": "Numbers and counting",
+          "url": "https://guidetojapanese.org/learn/grammar/numbers"
+        },
+        {
+          "slug": "casual",
+          "title": "Casual patterns and slang",
+          "url": "https://guidetojapanese.org/learn/grammar/casual"
+        }
+      ]
+    },
+    {
+      "name": "Special expressions",
+      "chapters": [
+        {
+          "slug": "causepass",
+          "title": "Causative and passive verbs",
+          "url": "https://guidetojapanese.org/learn/grammar/causepass"
+        },
+        {
+          "slug": "honorific",
+          "title": "Honorific and humble forms",
+          "url": "https://guidetojapanese.org/learn/grammar/honorific"
+        },
+        {
+          "slug": "unintended",
+          "title": "Unintended actions (〜てしまう)",
+          "url": "https://guidetojapanese.org/learn/grammar/unintended"
+        },
+        {
+          "slug": "genericnouns",
+          "title": "Generic nouns (こと, ところ, もの)",
+          "url": "https://guidetojapanese.org/learn/grammar/genericnouns"
+        },
+        {
+          "slug": "certainty",
+          "title": "Degrees of certainty",
+          "url": "https://guidetojapanese.org/learn/grammar/certainty"
+        },
+        {
+          "slug": "amount",
+          "title": "Expressing amounts (だけ, しか)",
+          "url": "https://guidetojapanese.org/learn/grammar/amount"
+        },
+        {
+          "slug": "similarity",
+          "title": "Similarity and hearsay (よう, みたい, そう)",
+          "url": "https://guidetojapanese.org/learn/grammar/similarity"
+        },
+        {
+          "slug": "comparison",
+          "title": "Comparisons (方, より)",
+          "url": "https://guidetojapanese.org/learn/grammar/comparison"
+        },
+        {
+          "slug": "easyhard",
+          "title": "Easy and difficult (やすい, にくい)",
+          "url": "https://guidetojapanese.org/learn/grammar/easyhard"
+        },
+        {
+          "slug": "negativeverbs2",
+          "title": "More negative verbs",
+          "url": "https://guidetojapanese.org/learn/grammar/negativeverbs2"
+        },
+        {
+          "slug": "reasoning",
+          "title": "Hypothesizing and concluding",
+          "url": "https://guidetojapanese.org/learn/grammar/reasoning"
+        },
+        {
+          "slug": "timeaction",
+          "title": "Time-specific actions",
+          "url": "https://guidetojapanese.org/learn/grammar/timeaction"
+        },
+        {
+          "slug": "nochange",
+          "title": "Leaving something as is",
+          "url": "https://guidetojapanese.org/learn/grammar/nochange"
+        }
+      ]
+    }
+  ]
+}

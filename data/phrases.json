@@ -1,0 +1,144 @@
+{
+  "phrases": [
+    {
+      "category": "Arriving at Studio Kura",
+      "scene": "Calling for pickup at Ikisan",
+      "ja": "もしもし、タイラー・クラインです。",
+      "en": "Hello, this is Tyler Kline.",
+      "note": "もしもし is only for the phone."
+    },
+    {
+      "category": "Arriving at Studio Kura",
+      "scene": "Calling for pickup at Ikisan",
+      "ja": "{今|いま}、{一貴山|いきさん}{駅|えき}に{着|つ}きました。",
+      "en": "I've just arrived at Ikisan Station.",
+      "note": "着く takes に (Lesson 2)."
+    },
+    {
+      "category": "Arriving at Studio Kura",
+      "scene": "Calling for pickup at Ikisan",
+      "ja": "{迎|むか}えに{来|き}ていただけますか。",
+      "en": "Could you come pick me up?",
+      "note": "Very polite request; perfect for staff you haven't met."
+    },
+    {
+      "category": "Inns and minshuku",
+      "scene": "Checking in",
+      "ja": "{予約|よやく}したクラインです。",
+      "en": "I'm Kline; I have a reservation.",
+      "note": "Literally: \"I'm the Kline who reserved.\""
+    },
+    {
+      "category": "Inns and minshuku",
+      "scene": "Before check-in",
+      "ja": "{荷物|にもつ}を{預|あず}かってもらえますか。",
+      "en": "Could you hold my luggage?",
+      "note": "Useful when you arrive early."
+    },
+    {
+      "category": "Inns and minshuku",
+      "scene": "Asking about meals",
+      "ja": "{朝|あさ}ごはんは{何時|なんじ}からですか。",
+      "en": "What time does breakfast start?",
+      "note": ""
+    },
+    {
+      "category": "Inns and minshuku",
+      "scene": "Booking by phone (Oboke)",
+      "ja": "{二月|にがつ}に{二泊|にはく}{泊|と}まりたいんですが、{空|あ}いていますか。",
+      "en": "I'd like to stay two nights in February. Do you have space?",
+      "note": "〜たいんですが softens the request. 空いている = \"is free/open\" (Lesson 3)."
+    },
+    {
+      "category": "Food and drink",
+      "scene": "Ordering",
+      "ja": "おすすめは{何|なん}ですか。",
+      "en": "What do you recommend?",
+      "note": ""
+    },
+    {
+      "category": "Food and drink",
+      "scene": "Ordering",
+      "ja": "これをください。",
+      "en": "This one, please.",
+      "note": ""
+    },
+    {
+      "category": "Food and drink",
+      "scene": "Paying",
+      "ja": "お{会計|かいけい}お{願|ねが}いします。",
+      "en": "Check, please.",
+      "note": ""
+    },
+    {
+      "category": "Rehearsal",
+      "scene": "Starting a section",
+      "ja": "32{小節目|しょうせつめ}からお{願|ねが}いします。",
+      "en": "From bar 32, please.",
+      "note": "小節 = measure/bar."
+    },
+    {
+      "category": "Rehearsal",
+      "scene": "Tempo",
+      "ja": "もう{少|すこ}しゆっくりでお{願|ねが}いします。",
+      "en": "A little slower, please.",
+      "note": ""
+    },
+    {
+      "category": "Rehearsal",
+      "scene": "Again",
+      "ja": "もう{一回|いっかい}お{願|ねが}いします。",
+      "en": "One more time, please.",
+      "note": ""
+    },
+    {
+      "category": "Rehearsal",
+      "scene": "Dynamics",
+      "ja": "ここはもっと{静|しず}かにお{願|ねが}いします。",
+      "en": "Quieter here, please.",
+      "note": ""
+    },
+    {
+      "category": "Field recording",
+      "scene": "Asking permission",
+      "ja": "ここで{録音|ろくおん}してもいいですか。",
+      "en": "Is it OK to record here?",
+      "note": "〜てもいいですか = \"is it OK if I…?\""
+    },
+    {
+      "category": "Field recording",
+      "scene": "Explaining",
+      "ja": "{音楽|おんがく}のために{音|おと}を{集|あつ}めています。",
+      "en": "I'm collecting sounds for my music.",
+      "note": ""
+    },
+    {
+      "category": "At Ranko's",
+      "scene": "Arriving",
+      "ja": "お{招|まね}きいただきありがとうございます。",
+      "en": "Thank you for having us.",
+      "note": ""
+    },
+    {
+      "category": "At Ranko's",
+      "scene": "After the meal",
+      "ja": "ごちそうさまでした。とてもおいしかったです。",
+      "en": "Thank you for the meal. It was delicious.",
+      "note": ""
+    },
+    {
+      "category": "Getting around",
+      "scene": "Asking the way",
+      "ja": "{駅|えき}はどこですか。",
+      "en": "Where is the station?",
+      "note": ""
+    },
+    {
+      "category": "Getting around",
+      "scene": "Not understanding",
+      "ja": "すみません、もう{少|すこ}しゆっくり{話|はな}してもらえますか。",
+      "en": "Sorry, could you speak a little more slowly?",
+      "note": ""
+    }
+  ]
+}
