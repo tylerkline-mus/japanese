@@ -21,6 +21,9 @@ const S = {
   lessonsIndex: [],
   lessonCache: new Map(),
   bankCache: new Map(),
+  imm: { picks: { weeks: [] }, archive: [] },
+  immQuery: "",
+  immFilter: "all",
   session: null,
   curriculum: null,
   phrases: [],
@@ -74,7 +77,7 @@ async function boot() {
     buildModel();
   }
   render();
-  await Promise.all([loadHistory(), loadNotes(), loadReviews()]);
+  await Promise.all([loadHistory(), loadNotes(), loadReviews(), loadImmersion()]);
   if (S.raw) buildModel();
   render();
   await refreshWK(false);
@@ -87,6 +90,48 @@ async function loadReviews() {
   for (const [id, rec] of Object.entries(old)) {
     if (rec?.done && !srs.state.rows.has(id) && S.lessonsIndex.some((l) => l.id === id)) await srs.enroll(id, todayKey(), S.config.syncUrl);
   }
+}
+
+// Raw GitHub copies update minutes after the nightly job; the Pages copy can lag.
+const rawUrl = (path) => S.config.historyUrl.replace("data/history.json", path);
+
+async function loadImmersion() {
+  if (DEMO) {
+    S.imm = demoImmersion();
+    return;
+  }
+  for (const [key, path, fallback] of [
+    ["picks", "data/immersion/picks.json", { weeks: [] }],
+    ["archive", "data/immersion/archive.json", []],
+  ]) {
+    let val = null;
+    for (const url of [rawUrl(path) + "?t=" + Date.now(), path]) {
+      try {
+        val = await getJSON(url);
+        break;
+      } catch {}
+    }
+    S.imm[key] = val || fallback;
+  }
+}
+
+function demoImmersion() {
+  const ex = (i, t, src, lvl, min) => ({ id: "demo" + i, title: t, url: "https://example.com/" + i, sourceName: src, level: lvl, minutes: min, type: "listen", date: new Date(Date.now() - i * 86400000).toISOString(), summary: "Demo episode", tags: ["learner"] });
+  return {
+    picks: {
+      weeks: [
+        {
+          week: "2026-10-05",
+          note: "Trains and travel, to go with this week's に vs で.",
+          picks: [
+            { id: "p1", title: "#120 電車の旅", url: "https://example.com/p1", type: "listen", source: "Nihongo con Teppei", minutes: 8, level: 1, why: "Short and slow, all about taking trains — lots of に and で in the wild.", prep: [{ ja: "{電車|でんしゃ}", en: "train" }, { ja: "{乗|の}り{換|か}え", en: "transfer" }, { ja: "{駅員|えきいん}", en: "station staff" }], tags: ["travel"] },
+            { id: "p2", title: "作曲家に聞く", url: "https://example.com/p2", type: "listen", source: "NHK-FM 現代の音楽", minutes: 50, level: 4, why: "A composer talking about their work. Listen for familiar words, not every word.", prep: [{ ja: "{作曲|さっきょく}", en: "composition" }, { ja: "{初演|しょえん}", en: "premiere" }], tags: ["music"] },
+          ],
+        },
+      ],
+    },
+    archive: [ex(1, "#121 旅館のはなし", "Nihongo con Teppei (beginner)", 1, 6), ex(2, "ワールドリポート：パリ", "ワールドリポート（NHKラジオ マイあさ！）", 4, 5), ex(3, "雨の日の過ごし方", "YUYUの日本語Podcast", 2, 14)],
+  };
 }
 
 async function loadHistory() {
@@ -478,6 +523,7 @@ function viewStats() {
     ${tile("Queue", fmt(m.queue), `${fmt(m.lessons)} lessons waiting`)}
     ${tile("This week", m.week ? `${m.week.pct}%` : "—", m.week ? `${fmt(m.week.correct + m.week.incorrect)} answers since ${shortDate(m.week.since)}` : "Needs a few daily snapshots")}
     ${tile("All-time", allAcc == null ? "—" : `${allAcc}%`, "accuracy")}
+    ${tile("Immersion", `${fmt(immMinutes(weekStartKey()))} min`, "this week · see Immerse")}
   </section>`;
 
   const groups = core.SRS_GROUPS.map((g) => ({ key: g.key, label: g.label, value: m.srs[g.key] }));
@@ -989,6 +1035,123 @@ function mountReview() {
   draw();
 }
 
+// ---------- immersion ----------
+
+const LEVEL = { 1: "Learner · slow", 2: "Learner · natural", 3: "Native · easy", 4: "Native" };
+const TYPE = { listen: "Listen", watch: "Watch", read: "Read" };
+
+function weekStartKey() {
+  const today = todayKey();
+  const d = new Date(today + "T12:00:00Z");
+  const dow = (d.getUTCDay() + 6) % 7; // Monday = 0
+  return srs.addDays(today, -dow);
+}
+
+function immMinutes(sinceKey) {
+  return srs
+    .immLog()
+    .filter((r) => !sinceKey || core.localDateKey(new Date(r.updated), S.config.timeZone) >= sinceKey)
+    .reduce((n, r) => n + (Number(r.right) || 0), 0);
+}
+
+function doneBtn(id, minutes, quiet = false) {
+  const done = srs.immDone(id);
+  return `<button class="btn ${done || quiet ? "ghost" : ""} small-btn" data-action="imm-toggle" data-id="${esc(id)}" data-min="${esc(String(minutes || 0))}">${done ? "✓ Done" : "Mark done"}</button>`;
+}
+
+function audioBtn(item) {
+  return item.audio ? `<button class="btn ghost small-btn" data-action="imm-play" data-src="${esc(item.audio)}">▶ Play here</button>` : "";
+}
+
+function pickCard(p) {
+  const done = srs.immDone(p.id);
+  const arch = p.fromArchive ? S.imm.archive.find((a) => a.id === p.fromArchive) : null;
+  const item = { ...arch, ...p, audio: p.audio || arch?.audio };
+  return `<article class="pick ${done ? "is-done" : ""}">
+    <p class="pick-meta"><span class="pill stage">${esc(TYPE[p.type] || "Listen")}</span> ${esc(p.source || "")}${p.minutes ? ` · ${fmt(p.minutes)} min` : ""}${p.level ? ` · ${esc(LEVEL[p.level] || "")}` : ""}</p>
+    <h3><a href="${esc(p.url)}" target="_blank" rel="noopener" lang="ja">${esc(p.title)} ↗</a></h3>
+    ${p.why ? `<p class="small">${rich(p.why)}</p>` : ""}
+    ${
+      p.prep?.length
+        ? `<div class="prep"><p class="eyebrow">Words to know first</p>
+            <div class="prep-words">${p.prep.map((w) => `<span class="prep-w">${ja(w.ja)}</span>`).join("")}</div>
+            <button class="reveal" aria-expanded="false">Show meanings</button>
+            <div class="hidden-en"><ul class="prep-list">${p.prep
+              .map((w) => `<li>${ja(w.ja)} ${sayBtn(w.ja)} <span class="en">${esc(w.en)}</span></li>`)
+              .join("")}</ul></div></div>`
+        : ""
+    }
+    <div class="row">${doneBtn(p.id, p.minutes)}${audioBtn(item)}</div>
+    <div class="player"></div>
+  </article>`;
+}
+
+function archiveRow(a) {
+  const done = srs.immDone(a.id);
+  return `<li class="arch ${done ? "is-done" : ""}">
+    <div class="arch-main">
+      <a href="${esc(a.url)}" target="_blank" rel="noopener" lang="ja">${esc(a.title)}</a>
+      <p class="small muted">${esc(a.sourceName || a.source || "")}${a.minutes ? ` · ${fmt(a.minutes)} min` : ""} · ${esc(LEVEL[a.level] || "")}${a.date ? ` · ${esc(shortDate(a.date.slice(0, 10)))}` : ""}</p>
+      ${a.summary ? `<p class="small arch-sum" lang="ja">${esc(a.summary)}</p>` : ""}
+      <div class="player"></div>
+    </div>
+    <div class="arch-act">${audioBtn(a)}${doneBtn(a.id, a.minutes, true)}</div>
+  </li>`;
+}
+
+function viewImmerse() {
+  const weeks = S.imm.picks.weeks || [];
+  const current = weeks[0];
+  const week = immMinutes(weekStartKey());
+  const total = immMinutes(null);
+  const doneCount = srs.immLog().length;
+  const head = `<section class="card intro"><h1>Immerse</h1>
+    <p>Five picks a week, chosen for your level and interests, with the words to know before you start. New podcast episodes arrive every night.</p>
+    <div class="tiles imm-tiles">
+      ${tile("This week", `${fmt(week)} min`, "listened or watched")}
+      ${tile("All time", `${fmt(total)} min`, `${fmt(doneCount)} item${doneCount === 1 ? "" : "s"} done`)}
+    </div>
+  </section>`;
+
+  const picks = current
+    ? `<section class="card"><p class="eyebrow">This week · ${esc(friendlyDate(current.week))}</p>
+        ${current.note ? `<p>${rich(current.note)}</p>` : ""}
+        ${current.picks.map(pickCard).join("")}</section>`
+    : `<section class="card"><h2>This week's picks</h2><p>The first five arrive Sunday evening. Until then, the new episodes below are a good place to start — the beginner Teppei episodes especially.</p></section>`;
+
+  const fresh = S.imm.archive.filter((a) => !srs.immDone(a.id)).slice(0, 6);
+  const freshCard = fresh.length
+    ? `<section class="card"><h2>New episodes</h2><ul class="arch-list">${fresh.map(archiveRow).join("")}</ul></section>`
+    : `<section class="card"><h2>New episodes</h2><p class="muted">The nightly job starts filling this in tonight.</p></section>`;
+
+  const q = S.immQuery.trim().toLowerCase();
+  const f = S.immFilter;
+  const all = S.imm.archive.concat(
+    weeks.slice(1).flatMap((w) => w.picks.map((p) => ({ ...p, sourceName: p.source, date: w.week + "T12:00:00Z" })))
+  );
+  const hits = all.filter((a) => {
+    const blob = [a.title, a.sourceName, a.source, a.summary, (a.tags || []).join(" ")].join(" ").toLowerCase();
+    const lvlOk = f === "learner" ? a.level <= 2 : f === "native" ? a.level >= 3 : f === "done" ? srs.immDone(a.id) : f === "todo" ? !srs.immDone(a.id) : true;
+    return (!q || blob.includes(q)) && lvlOk;
+  });
+  const shown = hits.slice(0, S.immShow || 30);
+  const filters = [
+    ["all", "All"],
+    ["learner", "Learner"],
+    ["native", "Native"],
+    ["todo", "Not done"],
+    ["done", "Done"],
+  ];
+  const arch = `<section class="card"><h2>Archive</h2>
+    <input class="search" id="imm-search" type="search" placeholder="Search titles, shows, topics…" value="${esc(S.immQuery)}" aria-label="Search the archive">
+    <div class="tag-row">${filters.map(([k, l]) => `<button class="tag ${f === k ? "on" : ""}" data-immf="${k}">${l}</button>`).join("")}</div>
+    ${shown.length ? `<ul class="arch-list">${shown.map(archiveRow).join("")}</ul>` : `<p class="muted">Nothing here yet.</p>`}
+    ${hits.length > shown.length ? `<button class="btn ghost" data-action="imm-more">Show more (${fmt(hits.length - shown.length)})</button>` : ""}
+  </section>`;
+
+  return head + picks + freshCard + arch;
+}
+
 // ---------- phrases ----------
 
 function viewPhrases() {
@@ -1095,7 +1258,7 @@ function audioSection() {
 
 // ---------------- router ----------------
 
-const ROUTES = { today: viewToday, stats: viewStats, course: viewCourse, phrases: viewPhrases, notes: viewNotes, settings: viewSettings, review: viewReview };
+const ROUTES = { today: viewToday, stats: viewStats, course: viewCourse, phrases: viewPhrases, notes: viewNotes, settings: viewSettings, review: viewReview, immerse: viewImmerse };
 
 function render() {
   const [name, arg] = (location.hash.replace(/^#/, "") || "today").split("/");
@@ -1106,6 +1269,17 @@ function render() {
   setStatus();
   if (name === "course" && arg && S.lessonCache.has(arg)) mountExercises(S.lessonCache.get(arg));
   if (name === "review") mountReview();
+  if (name === "immerse") {
+    const input = document.getElementById("imm-search");
+    input?.addEventListener("input", (e) => {
+      S.immQuery = e.target.value;
+      const pos = e.target.selectionStart;
+      render();
+      const again = document.getElementById("imm-search");
+      again.focus();
+      again.setSelectionRange(pos, pos);
+    });
+  }
   if (name === "notes") {
     const input = $app().querySelector(".search");
     input?.addEventListener("input", (e) => {
@@ -1186,11 +1360,37 @@ function wireGlobal() {
       toast(ok ? "Copied — paste it to Claude." : "Couldn't copy on this browser.");
       return;
     }
+    if (t.matches("[data-immf]")) {
+      S.immFilter = t.dataset.immf;
+      S.immShow = 30;
+      return render();
+    }
     if (t.matches("[data-tag]")) {
       S.noteTag = t.dataset.tag;
       return render();
     }
     const act = t.dataset.action;
+    if (act === "imm-toggle") {
+      const done = srs.immDone(t.dataset.id);
+      await srs.setImm(t.dataset.id, Number(t.dataset.min) || 0, !done, S.config.syncUrl);
+      toast(done ? "Marked not done." : `Logged${Number(t.dataset.min) ? ` ${t.dataset.min} min` : ""}. お疲れさま！`);
+      const y = window.scrollY;
+      render();
+      window.scrollTo(0, y);
+      return;
+    }
+    if (act === "imm-play") {
+      const box = t.closest(".pick, .arch")?.querySelector(".player");
+      if (box && !box.querySelector("audio")) {
+        box.innerHTML = `<audio controls autoplay preload="none" src="${esc(t.dataset.src)}"></audio>`;
+        t.remove();
+      }
+      return;
+    }
+    if (act === "imm-more") {
+      S.immShow = (S.immShow || 30) + 30;
+      return render();
+    }
     if (act === "toggle-done") {
       const id = t.dataset.lesson;
       const rec = store.get("jh.course", {});

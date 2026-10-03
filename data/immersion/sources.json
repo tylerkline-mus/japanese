@@ -1,0 +1,13 @@
+{
+  "note": "Podcast sources read nightly by scripts/feeds.mjs. Give an Apple Podcasts id, a search term + match pattern, or a feedUrl. level: 1 = learner-slow, 2 = learner-natural, 3 = native, 4 = native-dense.",
+  "sources": [
+    { "key": "teppei-beginner", "name": "Nihongo con Teppei (beginner)", "term": "Japanese podcast for beginners Nihongo con Teppei", "match": "beginner|初心者", "level": 1, "tags": ["learner", "monologue"] },
+    { "key": "teppei", "name": "Nihongo con Teppei", "term": "Nihongo con Teppei", "match": "^Nihongo con Teppei$|Nihongo con Teppei \\(", "exclude": "beginner|sleep|bizarre|archive|Z", "level": 2, "tags": ["learner", "monologue"] },
+    { "key": "yuyu", "name": "YUYUの日本語Podcast", "id": 1480155677, "term": "YUYUの日本語", "match": "YUYU", "level": 2, "tags": ["learner", "culture"] },
+    { "key": "noriko-stories", "name": "Nihongo Short Story by Noriko", "id": 1609630388, "term": "Nihongo Short Story Noriko", "match": "Noriko", "level": 1, "tags": ["learner", "stories"] },
+    { "key": "teppei-noriko", "name": "Japanese with Teppei and Noriko", "term": "Japanese with Teppei and Noriko", "match": "Teppei and Noriko|Teppei & Noriko", "level": 2, "tags": ["learner", "conversation"] },
+    { "key": "imari", "name": "Japanese Real Conversation (Imari Radio)", "term": "Japanese Real Conversation Imari Radio", "match": "Imari", "level": 3, "tags": ["conversation", "natural"] },
+    { "key": "nhk-world-report", "name": "ワールドリポート（NHKラジオ マイあさ！）", "id": 1651184610, "feedUrl": "https://www.nhk.or.jp/s-media/F519/podcast/list/v1/all.xml", "level": 4, "tags": ["native", "news", "NHK"] },
+    { "key": "nhk-radio-news", "name": "NHKラジオニュース", "term": "NHKラジオニュース", "match": "NHKラジオニュース|ラジオニュース", "country": "jp", "level": 4, "tags": ["native", "news", "NHK"] }
+  ]
+}

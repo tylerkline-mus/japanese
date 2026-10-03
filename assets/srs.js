@@ -203,3 +203,21 @@ export async function grade(id, right, total, drillIds, todayKey, defaultUrl) {
   await save([row], defaultUrl);
   return { before: prev.stage, after: stage, due };
 }
+
+// ---------- immersion log (rides along in the same Sheet tab) ----------
+// Rows look like {id: "imm:<item id>", stage: 0, right: <minutes>, seen: "done"} so they never
+// count as grammar reviews.
+
+export function immDone(id) {
+  const r = state.rows.get("imm:" + id);
+  return !!(r && r.seen === "done");
+}
+
+export async function setImm(id, minutes, done, defaultUrl) {
+  const row = { id: "imm:" + id, stage: 0, due: "", right: done ? Math.max(0, Math.round(minutes || 0)) : 0, wrong: 0, seen: done ? "done" : "", updated: nowIso() };
+  await save([row], defaultUrl);
+}
+
+export function immLog() {
+  return [...state.rows.values()].filter((r) => r.id.startsWith("imm:") && r.seen === "done");
+}

@@ -26,12 +26,16 @@ jobs:
           WANIKANI_TOKEN: ${{ secrets.WANIKANI_TOKEN }}
           SYNC_KEY: ${{ secrets.SYNC_KEY }}
         run: node scripts/snapshot.mjs
+      - name: Pull new podcast episodes
+        continue-on-error: true
+        run: node scripts/feeds.mjs
       - name: Commit
         run: |
           git config user.name "japanese-hub bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/history.json data/wk-state.json
           [ -f data/grammar-progress.json ] && git add data/grammar-progress.json
+          git add data/immersion
           git diff --cached --quiet && echo "No change" && exit 0
           git commit -m "Snapshot $(date -u +%F)"
           git push
