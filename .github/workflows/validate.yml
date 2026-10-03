@@ -5,6 +5,7 @@ on:
     paths:
       - "data/lessons/**"
       - "data/grammar/**"
+      - "data/immersion/picks.json"
       - "scripts/validate-lessons.mjs"
   pull_request:
   workflow_dispatch:

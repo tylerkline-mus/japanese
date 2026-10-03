@@ -28,7 +28,34 @@ export const store = {
 
 // Japanese markup: {漢字|かんじ} gives a reading. Kanji you know (WaniKani Guru+)
 // show plain; anything with an unknown kanji gets furigana. Every kanji is tappable.
-export function renderJa(text, known) {
+// Find WaniKani vocabulary inside plain text by greedy longest match.
+// words: Map(word → {s: stage, ...}). Only words containing kanji are matched.
+export function findWords(plain, words, maxLen = 8) {
+  const hits = [];
+  if (!words || !words.size) return hits;
+  const chars = [...plain];
+  let i = 0;
+  while (i < chars.length) {
+    let found = null;
+    for (let n = Math.min(maxLen, chars.length - i); n >= 1; n--) {
+      const w = chars.slice(i, i + n).join("");
+      if (words.has(w) && [...w].some(isKanji)) {
+        found = { start: i, end: i + n, word: w, info: words.get(w) };
+        break;
+      }
+    }
+    if (found) {
+      hits.push(found);
+      i = found.end;
+    } else i++;
+  }
+  return hits;
+}
+
+// Japanese markup: {漢字|かんじ} gives a reading. Furigana shows only when you need it:
+// hidden if every kanji in the segment is one you know (WaniKani Guru+), or if the segment
+// sits inside a word you know from WaniKani. Every kanji is tappable.
+export function renderJa(text, known, words) {
   const src = String(text ?? "");
   const parts = [];
   const re = /\{([^|{}]+)\|([^{}]+)\}/g;
@@ -41,18 +68,29 @@ export function renderJa(text, known) {
   }
   if (last < src.length) parts.push({ base: src.slice(last) });
 
+  // Character offsets of each part in the plain text, and which offsets are inside known words.
+  const plain = parts.map((p) => p.base).join("");
+  const wordAt = new Array([...plain].length).fill(null);
+  for (const h of findWords(plain, words)) for (let k = h.start; k < h.end; k++) wordAt[k] = h;
+  const knownWord = (h) => h && h.info && h.info.s >= 5;
+
+  let off = 0;
   return parts
     .map((p) => {
       const chars = [...p.base];
+      const startOff = off;
+      off += chars.length;
       const inner = chars
-        .map((ch) =>
-          isKanji(ch)
-            ? `<span class="kj ${known && known.has(ch) ? "kj-known" : "kj-new"}" data-kanji="${esc(ch)}">${esc(ch)}</span>`
-            : esc(ch)
-        )
+        .map((ch, k) => {
+          if (!isKanji(ch)) return esc(ch);
+          const h = wordAt[startOff + k];
+          const cls = known && known.has(ch) ? "kj-known" : knownWord(h) ? "kj-known" : "kj-new";
+          return `<span class="kj ${cls}" data-kanji="${esc(ch)}"${h ? ` data-word="${esc(h.word)}"` : ""}>${esc(ch)}</span>`;
+        })
         .join("");
       if (!p.reading) return inner;
-      const needs = chars.some((ch) => isKanji(ch) && !(known && known.has(ch)));
+      const coveredByWord = chars.every((_, k) => knownWord(wordAt[startOff + k]));
+      const needs = !coveredByWord && chars.some((ch) => isKanji(ch) && !(known && known.has(ch)));
       return needs ? `<ruby>${inner}<rt>${esc(p.reading)}</rt></ruby>` : inner;
     })
     .join("");

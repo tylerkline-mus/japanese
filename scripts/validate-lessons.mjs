@@ -80,8 +80,38 @@ for (const f of (await readdir(gdir).catch(() => [])).filter((f) => f.endsWith("
   if ((b.drills || []).length < 6) problems.push(`${where}: needs at least 6 drills so reviews can vary`);
 }
 
+// Immersion picks (data/immersion/picks.json) — only the newest week is checked, so older
+// weeks written under earlier rules never block a publish.
+let pickWeeks = 0;
+try {
+  const picks = JSON.parse(await readFile(new URL("../data/immersion/picks.json", import.meta.url), "utf8"));
+  pickWeeks = (picks.weeks || []).length;
+  const w = (picks.weeks || [])[0];
+  if (w) {
+    const at = `immersion/picks.json week ${w.week}`;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(w.week || "")) problems.push(`${at}: week must be YYYY-MM-DD`);
+    if ((w.picks || []).length !== 5) problems.push(`${at}: needs exactly 5 picks (has ${(w.picks || []).length})`);
+    const ids = new Set();
+    (w.picks || []).forEach((p, i) => {
+      const pa = `${at}, pick ${i + 1}`;
+      for (const k of ["id", "title", "url", "why", "listenFor"]) if (!p[k] || !String(p[k]).trim()) problems.push(`${pa}: missing ${k}`);
+      if (p.url && !/^https?:\/\//.test(p.url)) problems.push(`${pa}: url must start with http`);
+      if (ids.has(p.id)) problems.push(`${pa}: duplicate id ${p.id}`);
+      ids.add(p.id);
+      if (!["listen", "watch", "read"].includes(p.type)) problems.push(`${pa}: type must be listen, watch or read`);
+      if (![1, 2, 3, 4].includes(p.level)) problems.push(`${pa}: level must be 1–4`);
+      if (!Array.isArray(p.prep) || p.prep.length < 5 || p.prep.length > 8) problems.push(`${pa}: prep needs 5–8 words`);
+      (p.prep || []).forEach((x, j) => { if (!x.ja || !x.en) problems.push(`${pa}: prep word ${j + 1} needs ja and en`); });
+    });
+    const tied = (w.picks || []).filter((p) => p.connection && String(p.connection).trim()).length;
+    if (tied < 2) problems.push(`${at}: at least 2 picks need a "connection" to the week's lesson or the trip (has ${tied})`);
+  }
+} catch (e) {
+  if (e.code !== "ENOENT") problems.push(`immersion/picks.json: can't read or parse (${e.message})`);
+}
+
 if (problems.length) {
   console.error(problems.map((p) => "✕ " + p).join("\n"));
   process.exit(1);
 }
-console.log(`✓ ${index.lessons.length} lessons and ${bankCount} review banks, every answer explained.`);
+console.log(`✓ ${index.lessons.length} lessons and ${bankCount} review banks, every answer explained.${pickWeeks ? ` Picks: ${pickWeeks} week(s), newest OK.` : ""}`);

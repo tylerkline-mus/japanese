@@ -265,6 +265,26 @@ export function knownKanji(assignments, kanjiSubjects, minStage = 5) {
   return known;
 }
 
+// Vocabulary you've unlocked, with your SRS stage — for word-level "do I know this?" checks.
+// Kept compact: w = word, r = primary reading, m = primary meaning, s = SRS stage, l = level.
+export function vocabList(assignments, vocabSubjects) {
+  const stage = new Map(assignments.map((a) => [a.data.subject_id, a.data.srs_stage]));
+  const out = [];
+  for (const v of vocabSubjects) {
+    const st = stage.get(v.id);
+    if (st == null || st < 1) continue;
+    const d = v.data;
+    out.push({
+      w: d.characters,
+      r: (d.readings || []).find((x) => x.primary)?.reading || (v.object === "kana_vocabulary" ? d.characters : ""),
+      m: (d.meanings || []).find((x) => x.primary)?.meaning || "",
+      s: st,
+      l: d.level,
+    });
+  }
+  return out.sort((a, b) => a.l - b.l || a.w.localeCompare(b.w));
+}
+
 // Compact snapshot row — what the daily Action writes to data/history.json.
 export function snapshotRow(raw, timeZone, now = new Date()) {
   const q = queueNow(raw.summary, now);

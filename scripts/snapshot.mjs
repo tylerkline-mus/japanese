@@ -1,7 +1,7 @@
 // Daily snapshot: records today's WaniKani numbers into data/history.json.
 // Runs in GitHub Actions with the WANIKANI_TOKEN repository secret.
 import { readFile, writeFile } from "node:fs/promises";
-import { wkGet, wkGetAll, snapshotRow, previousDayRow, findLeeches, knownKanji } from "../assets/core.js";
+import { wkGet, wkGetAll, snapshotRow, previousDayRow, findLeeches, knownKanji, vocabList } from "../assets/core.js";
 
 const token = process.env.WANIKANI_TOKEN;
 if (!token) {
@@ -56,6 +56,17 @@ const state = {
     .filter(Boolean),
 };
 await writeFile(new URL("../data/wk-state.json", import.meta.url), JSON.stringify(state, null, 1) + "\n");
+
+// Every vocabulary word you've started, with your stage. Read by the hub (word-level
+// "from WaniKani" marks) and by the weekly writer (sentences built from words you know).
+const levelList = Array.from({ length: lvl }, (_, i) => i + 1).join(",");
+const vocabSubjects = await wkGetAll(`/subjects?types=vocabulary,kana_vocabulary&levels=${levelList}`, token);
+const vocab = vocabList(assignments, vocabSubjects);
+await writeFile(
+  new URL("../data/wk-vocab.json", import.meta.url),
+  JSON.stringify({ updated: new Date().toISOString(), level: lvl, count: vocab.length, guruCount: vocab.filter((v) => v.s >= 5).length, words: vocab }) + "\n"
+);
+console.log(`Vocabulary: ${vocab.length} words started, ${vocab.filter((v) => v.s >= 5).length} at Guru or higher`);
 
 console.log(`Snapshot ${row.date}: level ${row.level}, queue ${row.queue}, reviewed today ${row.reviewedToday}`);
 

@@ -428,3 +428,23 @@ th { color: var(--ink-3); font-weight: 700; }
 .arch-sum { color: var(--ink-2); overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
 .arch-act { display: flex; flex-direction: column; gap: 6px; flex: none; }
 @media (max-width: 480px) { .arch { flex-direction: column; } .arch-act { flex-direction: row; } }
+
+/* ---------- word-level knowledge ---------- */
+.prep-w { padding: 0 2px; border-radius: 4px; }
+.prep-w.pw-wk { box-shadow: inset 0 -2px 0 var(--good); }
+.prep-w.pw-learning { box-shadow: inset 0 -2px 0 var(--warn); }
+.prep-w.pw-new { box-shadow: inset 0 -2px 0 var(--accent); }
+.wtag { font-size: 0.72rem; font-weight: 700; padding: 1px 8px; border-radius: 999px; white-space: nowrap; }
+.wt-wk { background: var(--good-soft); color: var(--good); }
+.wt-learning { background: var(--warn-soft); color: var(--warn); }
+.wt-new { background: var(--accent-soft); color: var(--accent); }
+.listen-for { border-left: 3px solid var(--series-1); padding: 4px 0 4px 12px; margin: 8px 0; }
+.listen-for .eyebrow { margin-bottom: 2px; }
+.listen-for p:last-child { margin: 0; }
+.connect { color: var(--ink-2); margin: 4px 0 0; }
+.kpop-word { border-bottom: 1px solid var(--line); padding-bottom: 8px; margin-bottom: 8px; }
+.kpop-w { font-family: var(--display); font-size: 1.6rem; line-height: 1.2; }
+.prep-key { margin: 2px 0 0; display: flex; align-items: center; gap: 4px 6px; flex-wrap: wrap; }
+.key { display: inline-block; width: 14px; height: 3px; border-radius: 2px; margin-left: 6px; }
+.key:first-child { margin-left: 0; }
+.k-wk { background: var(--good); } .k-learning { background: var(--warn); } .k-new { background: var(--accent); }

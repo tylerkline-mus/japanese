@@ -1,6 +1,6 @@
 // app.js — the hub. Static, no server: WaniKani + your Sheet + lesson files, combined in the browser.
 import * as core from "./core.js";
-import { esc, renderJa, stripMarkup, kanjiIn, parseCSV, speak, voiceNames, copyText, toast, store, fmt, daysUntil, dayOfYear } from "./util.js";
+import { esc, renderJa, findWords, stripMarkup, kanjiIn, parseCSV, speak, voiceNames, copyText, toast, store, fmt, daysUntil, dayOfYear } from "./util.js";
 import * as srs from "./srs.js";
 import { lineChart, barChart, stackBar, heatmap, meter, shortDate, setChartWidth } from "./charts.js";
 
@@ -22,6 +22,8 @@ const S = {
   lessonCache: new Map(),
   bankCache: new Map(),
   imm: { picks: { weeks: [] }, archive: [] },
+  words: new Map(), // WaniKani vocabulary: word → {r, m, s, l}
+  vocabMeta: null,
   immQuery: "",
   immFilter: "all",
   session: null,
@@ -77,7 +79,7 @@ async function boot() {
     buildModel();
   }
   render();
-  await Promise.all([loadHistory(), loadNotes(), loadReviews(), loadImmersion()]);
+  await Promise.all([loadHistory(), loadNotes(), loadReviews(), loadImmersion(), loadVocab()]);
   if (S.raw) buildModel();
   render();
   await refreshWK(false);
@@ -94,6 +96,48 @@ async function loadReviews() {
 
 // Raw GitHub copies update minutes after the nightly job; the Pages copy can lag.
 const rawUrl = (path) => S.config.historyUrl.replace("data/history.json", path);
+
+async function loadVocab() {
+  let data = null;
+  if (DEMO) {
+    data = {
+      words: [
+        { w: "電車", r: "でんしゃ", m: "Train", s: 7, l: 3 },
+        { w: "駅員", r: "えきいん", m: "Station Staff", s: 3, l: 9 },
+        { w: "雨", r: "あめ", m: "Rain", s: 8, l: 2 },
+        { w: "図書館", r: "としょかん", m: "Library", s: 5, l: 9 },
+        { w: "作曲", r: "さっきょく", m: "Composition", s: 6, l: 10 },
+      ],
+    };
+  } else {
+    for (const url of [rawUrl("data/wk-vocab.json") + "?t=" + Date.now(), "data/wk-vocab.json"]) {
+      try {
+        data = await getJSON(url);
+        break;
+      } catch {}
+    }
+  }
+  if (!data) return;
+  S.vocabMeta = { updated: data.updated, count: data.words.length, guru: data.words.filter((v) => v.s >= 5).length };
+  S.words = new Map(data.words.map((v) => [v.w, v]));
+}
+
+// "From WaniKani" status for a word (markup allowed).
+function wordStatus(text) {
+  const w = stripMarkup(text).replace(/[〜~]/g, "");
+  const v = S.words.get(w);
+  if (!v) return { known: false, cls: "new", label: "New" };
+  if (v.s >= 5) return { known: true, cls: "wk", label: `WaniKani · ${stageName(v.s)}`, v };
+  return { known: false, cls: "learning", label: `Learning · ${stageName(v.s)}`, v };
+}
+
+// How much of a set of sentences you already know, word by word.
+function wordCoverage(texts) {
+  const seen = new Map();
+  for (const t of texts) for (const h of findWords(stripMarkup(t), S.words)) seen.set(h.word, h.info);
+  const all = [...seen.values()];
+  return { total: all.length, known: all.filter((v) => v.s >= 5).length };
+}
 
 async function loadImmersion() {
   if (DEMO) {
@@ -124,8 +168,8 @@ function demoImmersion() {
           week: "2026-10-05",
           note: "Trains and travel, to go with this week's に vs で.",
           picks: [
-            { id: "p1", title: "#120 電車の旅", url: "https://example.com/p1", type: "listen", source: "Nihongo con Teppei", minutes: 8, level: 1, why: "Short and slow, all about taking trains — lots of に and で in the wild.", prep: [{ ja: "{電車|でんしゃ}", en: "train" }, { ja: "{乗|の}り{換|か}え", en: "transfer" }, { ja: "{駅員|えきいん}", en: "station staff" }], tags: ["travel"] },
-            { id: "p2", title: "作曲家に聞く", url: "https://example.com/p2", type: "listen", source: "NHK-FM 現代の音楽", minutes: 50, level: 4, why: "A composer talking about their work. Listen for familiar words, not every word.", prep: [{ ja: "{作曲|さっきょく}", en: "composition" }, { ja: "{初演|しょえん}", en: "premiere" }], tags: ["music"] },
+            { id: "p1", title: "#120 電車の旅", url: "https://example.com/p1", type: "listen", source: "Nihongo con Teppei", minutes: 8, level: 1, why: "Short and slow, all about taking trains.", connection: "**Ties to this week:** に vs で — trains are full of both.", listenFor: "Every time you hear **で** after a place, ask: what's happening there? Every **に** after a place: is someone arriving, or just being there?", prep: [{ ja: "{電車|でんしゃ}", en: "train" }, { ja: "{乗|の}り{換|か}え", en: "transfer" }, { ja: "{駅員|えきいん}", en: "station staff" }], tags: ["travel"] },
+            { id: "p2", title: "作曲家に聞く", url: "https://example.com/p2", type: "listen", source: "NHK-FM 現代の音楽", minutes: 50, level: 4, why: "A composer talking about their work. Listen for familiar words, not every word.", listenFor: "Catch **〜ています** — what is the composer doing these days?", prep: [{ ja: "{作曲|さっきょく}", en: "composition" }, { ja: "{初演|しょえん}", en: "premiere" }], tags: ["music"] },
           ],
         },
       ],
@@ -298,10 +342,10 @@ const stageName = (s) =>
   s == null ? "Not unlocked yet" : s === 0 ? "In lessons" : s <= 4 ? `Apprentice ${s}` : s <= 6 ? `Guru ${s - 4}` : s === 7 ? "Master" : s === 8 ? "Enlightened" : "Burned";
 
 function ja(text, cls = "") {
-  return `<span class="ja ${cls}" lang="ja">${renderJa(text, S.known)}</span>`;
+  return `<span class="ja ${cls}" lang="ja">${renderJa(text, S.known, S.words)}</span>`;
 }
 function rich(text) {
-  return renderJa(text, S.known).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
+  return renderJa(text, S.known, S.words).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
 }
 
 function sayBtn(text) {
@@ -524,6 +568,7 @@ function viewStats() {
     ${tile("This week", m.week ? `${m.week.pct}%` : "—", m.week ? `${fmt(m.week.correct + m.week.incorrect)} answers since ${shortDate(m.week.since)}` : "Needs a few daily snapshots")}
     ${tile("All-time", allAcc == null ? "—" : `${allAcc}%`, "accuracy")}
     ${tile("Immersion", `${fmt(immMinutes(weekStartKey()))} min`, "this week · see Immerse")}
+    ${S.vocabMeta ? tile("Words", fmt(S.vocabMeta.guru), `at Guru or higher · ${fmt(S.vocabMeta.count)} started`) : ""}
   </section>`;
 
   const groups = core.SRS_GROUPS.map((g) => ({ key: g.key, label: g.label, value: m.srs[g.key] }));
@@ -687,6 +732,19 @@ async function loadLesson(id) {
   return lesson;
 }
 
+function lessonCoverage(l) {
+  if (!S.words.size) return "";
+  const texts = [
+    ...l.examples.map((e) => e.ja),
+    ...l.contrasts.flatMap((c) => [c.a.ja, c.b.ja]),
+    ...l.exercises.map((x) => x.prompt || x.model || (x.tiles || []).join("")),
+  ];
+  const c = wordCoverage(texts);
+  if (!c.total) return "";
+  const learning = c.total - c.known;
+  return `<p class="small muted">Vocabulary: <b>${c.known}</b> word${c.known === 1 ? "" : "s"} you know from WaniKani${learning ? `, ${learning} you're still learning` : ""}. Furigana only appears where you need it.</p>`;
+}
+
 // An exercise can only be shown if every option explains itself.
 function exerciseOk(ex) {
   if (ex.type === "choice") return ex.options?.length >= 2 && ex.options.every((o) => o.why && o.why.trim()) && ex.options.some((o) => o.verdict === "right");
@@ -715,6 +773,7 @@ function viewLesson(id) {
       <p class="muted">${esc(l.titleEn)}</p>
       <p class="summary">${rich(l.summary)}</p>
       <p class="small"><a href="${esc(l.taeKim.url)}" target="_blank" rel="noopener">Tae Kim: ${esc(l.taeKim.title)} ↗</a></p>
+      ${lessonCoverage(l)}
     </header>
 
     <section class="card"><h2>How it works</h2>${l.explanation.map((p) => `<p>${rich(p)}</p>`).join("")}</section>
@@ -806,10 +865,10 @@ function askBlock(lesson, ex, extra) {
 const VERDICT = { right: "Right", wrong: "Not this one", different: "Works, but means something else" };
 
 function drawChoice(host, ex, head, lesson, record, next) {
-  const blank = (s) => renderJa(s, S.known).replace(/＿＿|＿/, '<span class="blank">＿</span>');
+  const blank = (s) => renderJa(s, S.known, S.words).replace(/＿＿|＿/, '<span class="blank">＿</span>');
   host.innerHTML = `${head}
     <div class="ex-prompt"><span class="ja big" lang="ja">${blank(ex.prompt)}</span> ${sayBtn(ex.prompt.replace(/＿+/g, ""))}</div>
-    <div class="opts">${ex.options.map((o, i) => `<button class="opt" data-i="${i}" lang="ja">${renderJa(o.text, S.known)}</button>`).join("")}</div>
+    <div class="opts">${ex.options.map((o, i) => `<button class="opt" data-i="${i}" lang="ja">${renderJa(o.text, S.known, S.words)}</button>`).join("")}</div>
     <div class="ex-feedback"></div>`;
   host.querySelectorAll(".opt").forEach((b) =>
     b.addEventListener("click", () => {
@@ -828,7 +887,7 @@ function drawChoice(host, ex, head, lesson, record, next) {
         <p class="verdict v-${pick.verdict}">${VERDICT[pick.verdict]}</p>
         <p class="en">${esc(ex.en || "")}</p>
         <ul class="whys">${order
-          .map((o) => `<li class="v-${o.verdict}"><span class="why-opt" lang="ja">${renderJa(o.text, S.known)}</span><span class="why-tag">${VERDICT[o.verdict]}</span><p>${rich(o.why)}</p></li>`)
+          .map((o) => `<li class="v-${o.verdict}"><span class="why-opt" lang="ja">${renderJa(o.text, S.known, S.words)}</span><span class="why-tag">${VERDICT[o.verdict]}</span><p>${rich(o.why)}</p></li>`)
           .join("")}</ul>
         <div class="row">${askBlock(lesson, ex, `I picked: ${stripMarkup(pick.text)}`)}<button class="btn" data-action="next">Next</button></div>`;
       host.querySelector("[data-action=next]").onclick = () => {
@@ -857,10 +916,10 @@ function drawBuild(host, ex, head, lesson, record, next) {
     host.innerHTML = `${head}
       <p class="small muted">Tap the pieces in order. Not every piece is needed.</p>
       <div class="build-answer" aria-live="polite">${
-        picked.length ? picked.map((t, k) => `<button class="tile-btn on" data-k="${k}" lang="ja">${renderJa(ex.tiles[t], S.known)}</button>`).join("") : `<span class="muted small">Your sentence…</span>`
+        picked.length ? picked.map((t, k) => `<button class="tile-btn on" data-k="${k}" lang="ja">${renderJa(ex.tiles[t], S.known, S.words)}</button>`).join("") : `<span class="muted small">Your sentence…</span>`
       }</div>
       <div class="build-bank">${tiles
-        .map((t) => `<button class="tile-btn" data-t="${t.i}" ${picked.includes(t.i) ? "disabled" : ""} lang="ja">${renderJa(t.v, S.known)}</button>`)
+        .map((t) => `<button class="tile-btn" data-t="${t.i}" ${picked.includes(t.i) ? "disabled" : ""} lang="ja">${renderJa(t.v, S.known, S.words)}</button>`)
         .join("")}</div>
       <button class="reveal" aria-expanded="false">Show English</button><div class="hidden-en"><p class="en">${esc(ex.en)}</p></div>
       <div class="row"><button class="btn" data-action="check" ${picked.length ? "" : "disabled"}>Check</button></div>
@@ -1071,19 +1130,26 @@ function pickCard(p) {
     <p class="pick-meta"><span class="pill stage">${esc(TYPE[p.type] || "Listen")}</span> ${esc(p.source || "")}${p.minutes ? ` · ${fmt(p.minutes)} min` : ""}${p.level ? ` · ${esc(LEVEL[p.level] || "")}` : ""}</p>
     <h3><a href="${esc(p.url)}" target="_blank" rel="noopener" lang="ja">${esc(p.title)} ↗</a></h3>
     ${p.why ? `<p class="small">${rich(p.why)}</p>` : ""}
-    ${
-      p.prep?.length
-        ? `<div class="prep"><p class="eyebrow">Words to know first</p>
-            <div class="prep-words">${p.prep.map((w) => `<span class="prep-w">${ja(w.ja)}</span>`).join("")}</div>
-            <button class="reveal" aria-expanded="false">Show meanings</button>
-            <div class="hidden-en"><ul class="prep-list">${p.prep
-              .map((w) => `<li>${ja(w.ja)} ${sayBtn(w.ja)} <span class="en">${esc(w.en)}</span></li>`)
-              .join("")}</ul></div></div>`
-        : ""
-    }
+    ${p.connection ? `<p class="connect small">${rich(p.connection)}</p>` : ""}
+    ${p.listenFor ? `<div class="listen-for"><p class="eyebrow">Listen for</p><p>${rich(p.listenFor)}</p></div>` : ""}
+    ${p.prep?.length ? prepBlock(p.prep) : ""}
     <div class="row">${doneBtn(p.id, p.minutes)}${audioBtn(item)}</div>
     <div class="player"></div>
   </article>`;
+}
+
+function prepBlock(prep) {
+  const st = prep.map((w) => ({ w, st: wordStatus(w.ja) }));
+  const knownN = st.filter((x) => x.st.known).length;
+  return `<div class="prep"><div class="split"><p class="eyebrow">Words to know first</p>${
+    S.words.size ? `<p class="small muted">${knownN} of ${prep.length} from WaniKani</p>` : ""
+  }</div>
+    <div class="prep-words">${st.map(({ w, st }) => `<span class="prep-w pw-${st.cls}" title="${esc(st.label)}">${ja(w.ja)}</span>`).join("")}</div>
+    <p class="small muted prep-key"><span class="key k-wk"></span>know it <span class="key k-learning"></span>learning <span class="key k-new"></span>new</p>
+    <button class="reveal" aria-expanded="false">Show meanings</button>
+    <div class="hidden-en"><ul class="prep-list">${st
+      .map(({ w, st }) => `<li>${ja(w.ja)} ${sayBtn(w.ja)} <span class="en">${esc(w.en)}</span> <span class="wtag wt-${st.cls}">${esc(st.cls === "new" ? "New" : st.label)}</span></li>`)
+      .join("")}</ul></div></div>`;
 }
 
 function archiveRow(a) {
@@ -1459,6 +1525,7 @@ function wireGlobal() {
 // Kanji popover: meaning, readings, and your WaniKani stage.
 function showKanji(el) {
   const ch = el.dataset.kanji;
+  const word = el.dataset.word && S.words.get(el.dataset.word);
   const info = S.kanjiInfo.get(ch);
   const pop = document.getElementById("kpop") || Object.assign(document.createElement("div"), { id: "kpop", className: "kpop" });
   document.body.appendChild(pop);
@@ -1466,13 +1533,17 @@ function showKanji(el) {
   const meanings = info ? info.meanings.map((m) => m.meaning).join(", ") : "";
   const on = info ? info.readings.filter((r) => r.type === "onyomi").map((r) => r.reading).join("、") : "";
   const kun = info ? info.readings.filter((r) => r.type === "kunyomi").map((r) => r.reading).join("、") : "";
-  pop.innerHTML = info
+  const wordHtml = word
+    ? `<div class="kpop-word"><p class="kpop-w" lang="ja">${esc(el.dataset.word)}</p><p class="small"><span lang="ja">${esc(word.r)}</span> · <b>${esc(word.m)}</b></p>
+       <p class="small muted">Vocab · level ${word.l} · ${stageName(word.s)}</p></div>`
+    : "";
+  pop.innerHTML = wordHtml + (info
     ? `<p class="kpop-ch" lang="ja">${esc(ch)}</p><p><b>${esc(meanings)}</b></p>
        ${on ? `<p class="small" lang="ja">音 ${esc(on)}</p>` : ""}${kun ? `<p class="small" lang="ja">訓 ${esc(kun)}</p>` : ""}
        <p class="small muted">Level ${info.level} · ${stageName(stage)}</p>
        <a class="small" href="${esc(info.document_url)}" target="_blank" rel="noopener">Open on WaniKani ↗</a>`
     : `<p class="kpop-ch" lang="ja">${esc(ch)}</p><p class="small muted">${S.raw ? "Not in your WaniKani levels yet." : "Connect WaniKani to see details."}</p>
-       <a class="small" href="https://www.wanikani.com/kanji/${encodeURIComponent(ch)}" target="_blank" rel="noopener">Look it up ↗</a>`;
+       <a class="small" href="https://www.wanikani.com/kanji/${encodeURIComponent(ch)}" target="_blank" rel="noopener">Look it up ↗</a>`);
   const r = el.getBoundingClientRect();
   pop.classList.add("show");
   const w = pop.offsetWidth;
