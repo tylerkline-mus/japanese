@@ -1185,9 +1185,17 @@ function viewImmerse() {
         ${current.picks.map(pickCard).join("")}</section>`
     : `<section class="card"><h2>This week's picks</h2><p>The first five arrive Sunday evening. Until then, the new episodes below are a good place to start — the beginner Teppei episodes especially.</p></section>`;
 
-  const fresh = S.imm.archive.filter((a) => !srs.immDone(a.id)).slice(0, 6);
+  // Newest unfinished episode from each show, learner shows first — so one busy feed
+  // (NHK news posts hourly) can't crowd out the rest.
+  const perShow = new Map();
+  for (const a of S.imm.archive) {
+    if (srs.immDone(a.id)) continue;
+    const k = a.source || a.sourceName;
+    if (!perShow.has(k)) perShow.set(k, a);
+  }
+  const fresh = [...perShow.values()].sort((a, b) => (a.level || 9) - (b.level || 9) || (b.date || "").localeCompare(a.date || "")).slice(0, 7);
   const freshCard = fresh.length
-    ? `<section class="card"><h2>New episodes</h2><ul class="arch-list">${fresh.map(archiveRow).join("")}</ul></section>`
+    ? `<section class="card"><h2>New episodes</h2><p class="small muted">The latest from each show, easiest first.</p><ul class="arch-list">${fresh.map(archiveRow).join("")}</ul></section>`
     : `<section class="card"><h2>New episodes</h2><p class="muted">The nightly job starts filling this in tonight.</p></section>`;
 
   const q = S.immQuery.trim().toLowerCase();

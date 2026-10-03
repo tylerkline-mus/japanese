@@ -107,7 +107,7 @@ async function main() {
       const items = parseFeed(await res.text())
         .filter((i) => i.title && i.url)
         .sort((a, b) => (b.date || "").localeCompare(a.date || ""))
-        .slice(0, PER_SOURCE);
+        .slice(0, src.perNight || PER_SOURCE);
       let n = 0;
       for (const it of items) {
         const id = createHash("sha1").update(it.url + "|" + it.title).digest("hex").slice(0, 12);
