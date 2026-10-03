@@ -58,3 +58,28 @@ const state = {
 await writeFile(new URL("../data/wk-state.json", import.meta.url), JSON.stringify(state, null, 1) + "\n");
 
 console.log(`Snapshot ${row.date}: level ${row.level}, queue ${row.queue}, reviewed today ${row.reviewedToday}`);
+
+// Grammar review progress from the Sheet (via the Apps Script), for the weekly lesson writer.
+// Needs the SYNC_KEY secret; skipped quietly if it isn't set.
+const syncKey = process.env.SYNC_KEY;
+if (config.syncUrl && syncKey) {
+  try {
+    const res = await fetch(`${config.syncUrl}?action=get&key=${encodeURIComponent(syncKey)}`, { redirect: "follow" });
+    const body = await res.json();
+    if (!body.ok) throw new Error(body.error || "refused");
+    const items = body.items.map((r) => ({
+      id: r.id,
+      stage: Number(r.stage) || 0,
+      due: r.due,
+      right: Number(r.right) || 0,
+      wrong: Number(r.wrong) || 0,
+    }));
+    await writeFile(new URL("../data/grammar-progress.json", import.meta.url), JSON.stringify({ updated: new Date().toISOString(), items }, null, 1) + "\n");
+    console.log(`Grammar progress: ${items.length} points`);
+  } catch (e) {
+    console.log(`Grammar progress not updated: ${e.message}`);
+  }
+} else {
+  console.log("Grammar progress skipped (no SYNC_KEY secret).");
+}
+

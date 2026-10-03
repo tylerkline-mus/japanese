@@ -14,10 +14,11 @@ The run instructions may add more personal context — use it, but never write i
 - `data/wk-state.json` — his Guru+ kanji (`knownKanji`) and current leeches. If missing, assume
   WaniKani levels 1–10 kanji.
 - `data/history.json` — daily WaniKani stats (queue, accuracy). Context only.
-- Grammar review progress (if the run instructions include a sync key): fetch
-  `<syncUrl from data/config.json>?action=get&key=<key>` with WebFetch. It returns
-  `{ok, items:[{id, stage, due, right, wrong}]}`. `stage >= 1` means he marked that lesson done.
-  If it can't be reached, say so in your summary and use the fallback rule below.
+- `data/grammar-progress.json` — grammar review progress, refreshed nightly from the Sheet:
+  `{items:[{id, stage, due, right, wrong}]}`. `stage >= 1` means he marked that lesson done.
+  If the file is missing or more than 3 days old, and the run instructions include a sync key,
+  try `<syncUrl from data/config.json>?action=get&key=<key>` with WebFetch. If neither works,
+  say so in your summary and use the fallback rule below.
 
 ## 2. Decide what to write
 
