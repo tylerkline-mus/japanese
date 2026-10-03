@@ -1,1 +1,1405 @@
-[]
+[
+ {
+  "id": "ec26c93e92a6",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "マイあさ! 午前6時のNHKニュース 2026年10月4日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/793c3588f97e0047cad678193b6d2a31_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/793c3588f97e0047cad678193b6d2a31_64k.mp3",
+  "date": "2026-10-03T21:14:00.000Z",
+  "minutes": 13,
+  "summary": "",
+  "added": "2026-10-03T21:55:21.620Z"
+ },
+ {
+  "id": "3bb9bad15e51",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "マイあさ! 午前5時のNHKニュース 2026年10月4日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/da6720ea37002f1dd7ef3f74254e9d7d_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/da6720ea37002f1dd7ef3f74254e9d7d_64k.mp3",
+  "date": "2026-10-03T20:16:00.000Z",
+  "minutes": 14,
+  "summary": "",
+  "added": "2026-10-03T21:55:21.620Z"
+ },
+ {
+  "id": "62c6200d5be8",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月04日午前04時00分 2026年10月4日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/0d196d8a2004619e6ce5ce063c13356c_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/0d196d8a2004619e6ce5ce063c13356c_64k.mp3",
+  "date": "2026-10-03T19:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-03T21:55:21.620Z"
+ },
+ {
+  "id": "5a21bd4614d9",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月04日午前03時00分 2026年10月4日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/e89f93764bcb261a9f22f455105b6e6d_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/e89f93764bcb261a9f22f455105b6e6d_64k.mp3",
+  "date": "2026-10-03T18:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-03T21:55:21.620Z"
+ },
+ {
+  "id": "a5898d309ac3",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月04日午前02時00分 2026年10月4日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/37b8f1ea3d77dddcc0c0809abcf5b309_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/37b8f1ea3d77dddcc0c0809abcf5b309_64k.mp3",
+  "date": "2026-10-03T17:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-03T21:55:21.620Z"
+ },
+ {
+  "id": "e0f0ef3dcb74",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月04日午前01時00分 2026年10月4日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/5e21870f180eebdedfdfc62a251e2195_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/5e21870f180eebdedfdfc62a251e2195_64k.mp3",
+  "date": "2026-10-03T16:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-03T21:55:21.620Z"
+ },
+ {
+  "id": "8cbf9c78bef0",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月04日午前00時00分 2026年10月4日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/48b88d72c525f0fdab67006bb1f6ef50_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/48b88d72c525f0fdab67006bb1f6ef50_64k.mp3",
+  "date": "2026-10-03T15:10:00.000Z",
+  "minutes": 10,
+  "summary": "",
+  "added": "2026-10-03T21:55:21.620Z"
+ },
+ {
+  "id": "cb7a203eb17c",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月03日午後11時00分 2026年10月3日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/0d31c756c7d6fad8b9991b8be8e66185_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/0d31c756c7d6fad8b9991b8be8e66185_64k.mp3",
+  "date": "2026-10-03T14:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-03T21:55:21.620Z"
+ },
+ {
+  "id": "1063497eca92",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月03日午後10時00分 2026年10月3日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/6e77e82fd3ff516cda742597f01f14fc_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/6e77e82fd3ff516cda742597f01f14fc_64k.mp3",
+  "date": "2026-10-03T13:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-03T21:55:21.620Z"
+ },
+ {
+  "id": "80e23efb94d5",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月03日午後09時00分 2026年10月3日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/4374bd78b6da93ea1955e4982d6f6032_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/4374bd78b6da93ea1955e4982d6f6032_64k.mp3",
+  "date": "2026-10-03T12:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-03T21:55:21.620Z"
+ },
+ {
+  "id": "a2af570f9fe3",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月03日午後08時00分 2026年10月3日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/5c7d350271516193ed3427e63a27a1fd_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/5c7d350271516193ed3427e63a27a1fd_64k.mp3",
+  "date": "2026-10-03T11:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-03T21:55:21.620Z"
+ },
+ {
+  "id": "d9c1433dd115",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース NHKきょうのニュース 2026年10月3日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/c248ca3b4443709e7923b1ce1826681f_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/c248ca3b4443709e7923b1ce1826681f_64k.mp3",
+  "date": "2026-10-03T10:20:00.000Z",
+  "minutes": 20,
+  "summary": "",
+  "added": "2026-10-03T21:55:21.620Z"
+ },
+ {
+  "id": "6e6c5f3a2cce",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20261002 「アフガニスタンで深刻化している人道危機」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/2609f16ab436dd23bdb06b9cefe4cce0_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/2609f16ab436dd23bdb06b9cefe4cce0_64k.mp3",
+  "date": "2026-10-02T03:00:00.000Z",
+  "minutes": 5,
+  "summary": "リポート：柳原 章人（イスラマバード支局） キャスター：眞下 貴／上野 速人",
+  "added": "2026-10-03T21:55:21.407Z"
+ },
+ {
+  "id": "e7fd6766aaad",
+  "source": "teppei-beginner",
+  "sourceName": "Nihongo con Teppei (beginner)",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "monologue"
+  ],
+  "title": "#1592「発音とかアクセントとかについて！」",
+  "url": "http://nihongoconteppei.com/2026/10/02/1592%e3%80%8c%e7%99%ba%e9%9f%b3%e3%81%a8%e3%81%8b%e3%82%a2%e3%82%af%e3%82%bb%e3%83%b3%e3%83%88%e3%81%a8%e3%81%8b%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%81%e3%80%8d/",
+  "audio": "http://media.blubrry.com/nihongo_con_teppei/nihongoconteppei.com/wp-content/uploads/2026/10/Beginners-con-Teppei1592.mp3",
+  "date": "2026-10-01T22:54:39.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:18.841Z"
+ },
+ {
+  "id": "7ba3fa78fb10",
+  "source": "teppei-noriko",
+  "sourceName": "Japanese with Teppei and Noriko",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "conversation"
+  ],
+  "title": "#644「１、２、３、パン！とか不動産とかについて！」",
+  "url": "https://teppeinorikojapanese.com/2026/10/01/644%e3%80%8c%ef%bc%91%e3%80%81%ef%bc%92%e3%80%81%ef%bc%93%e3%80%81%e3%83%91%e3%83%b3%ef%bc%81%e3%81%a8%e3%81%8b%e4%b8%8d%e5%8b%95%e7%94%a3%e3%81%a8%e3%81%8b%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/",
+  "audio": "https://teppeinorikojapanese.com/wp-content/uploads/2026/10/Teppeinoriko644.mp3",
+  "date": "2026-10-01T10:18:23.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:20.765Z"
+ },
+ {
+  "id": "314349e8c52f",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20261001 「文化交流で良好関係維持へ 日韓交流おまつり」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/164e61c804f364f0bf5ddf2181352c06_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/164e61c804f364f0bf5ddf2181352c06_64k.mp3",
+  "date": "2026-10-01T03:00:00.000Z",
+  "minutes": 5,
+  "summary": "リポート：松葉 翼（国際部） キャスター：上野 速人",
+  "added": "2026-10-03T21:55:21.407Z"
+ },
+ {
+  "id": "7910f0592f9a",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20260930 「香港の言論の自由はいま 天安門事件追悼メンバーに懲役刑」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/1115978c920920e5797dc63820a6c202_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/1115978c920920e5797dc63820a6c202_64k.mp3",
+  "date": "2026-09-30T03:00:00.000Z",
+  "minutes": 4,
+  "summary": "リポート：長野 祥光（香港支局長） キャスター：上野 速人",
+  "added": "2026-10-03T21:55:21.407Z"
+ },
+ {
+  "id": "6032eac38311",
+  "source": "teppei-beginner",
+  "sourceName": "Nihongo con Teppei (beginner)",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "monologue"
+  ],
+  "title": "#1591「漢字について！」",
+  "url": "http://nihongoconteppei.com/2026/09/30/1591%e3%80%8c%e6%bc%a2%e5%ad%97%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%81%e3%80%8d/",
+  "audio": "http://media.blubrry.com/nihongo_con_teppei/nihongoconteppei.com/wp-content/uploads/2026/09/Beginners-con-Teppei1591.mp3",
+  "date": "2026-09-29T22:55:20.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:18.841Z"
+ },
+ {
+  "id": "d043892a6a2e",
+  "source": "yuyu",
+  "sourceName": "YUYUの日本語Podcast",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "culture"
+  ],
+  "title": "Vol.494 YUYUを動物と乗り物に例えるなら？ (Japanese Radio for Listening practice)",
+  "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-494-YUYU-Japanese-Radio-for-Listening-practice-e3pi8mk",
+  "audio": "https://anchor.fm/s/cda85d4/podcast/play/126476436/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-8-29%2F9b645bb9-e86b-7193-fb74-a34fda1d47c6.mp3",
+  "date": "2026-09-29T05:57:40.000Z",
+  "minutes": 42,
+  "summary": "💰Patreonのサポート(人´∀`)ｱﾘｶﾞﾄｰ♪ ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠…",
+  "added": "2026-10-03T21:55:19.570Z"
+ },
+ {
+  "id": "8c9a655801f1",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20260929 「米中間選挙 アメリカ経済の光と影 ミリオネア急増の裏で」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/6a08fafd3dfb5f4afeef93aa38011606_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/6a08fafd3dfb5f4afeef93aa38011606_64k.mp3",
+  "date": "2026-09-29T03:00:00.000Z",
+  "minutes": 5,
+  "summary": "リポート：峯田 知幸（ワシントン支局） キャスター：上野 速人",
+  "added": "2026-10-03T21:55:21.407Z"
+ },
+ {
+  "id": "d97bc91e0a10",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20260928 「韓国で悪化する対中感情」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/ca69d5b6f45abcfcdaf97e9d3f3effc4_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/ca69d5b6f45abcfcdaf97e9d3f3effc4_64k.mp3",
+  "date": "2026-09-28T03:00:00.000Z",
+  "minutes": 4,
+  "summary": "リポート：小田 真（ソウル支局） キャスター：上野 速人／眞下 貴",
+  "added": "2026-10-03T21:55:21.407Z"
+ },
+ {
+  "id": "bee6fc81098a",
+  "source": "teppei-beginner",
+  "sourceName": "Nihongo con Teppei (beginner)",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "monologue"
+  ],
+  "title": "#1590「日本旅行について！」",
+  "url": "http://nihongoconteppei.com/2026/09/28/1590%e3%80%8c%e6%97%a5%e6%9c%ac%e6%97%85%e8%a1%8c%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%81%e3%80%8d/",
+  "audio": "http://media.blubrry.com/nihongo_con_teppei/nihongoconteppei.com/wp-content/uploads/2026/09/Beginners-con-Teppei1590.mp3",
+  "date": "2026-09-27T23:08:30.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:18.841Z"
+ },
+ {
+  "id": "f284d62114a3",
+  "source": "yuyu",
+  "sourceName": "YUYUの日本語Podcast",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "culture"
+  ],
+  "title": "Vol.492 【YUYU×NordVPN】今年のアニメで刺さったものと、これから見たいアニメ！ (Japanese Radio for Listening practice)",
+  "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-492-YUYUNordVPN-Japanese-Radio-for-Listening-practice-e3p3p0c",
+  "audio": "https://anchor.fm/s/cda85d4/podcast/play/126001612/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-8-19%2F5d3a50f3-51aa-fbd6-4382-ce10e0c0a9ec.mp3",
+  "date": "2026-09-26T11:00:00.000Z",
+  "minutes": 39,
+  "summary": "【PR】NordVPN 概要欄の番組専用リンクから2年プランをお申し込みいただくと、サブスクリプション費用が大幅割引！ さらに今なら4か月分が延長されます。 30日間の全額返金保証もあるので、気軽にお試しいただけます。 ▼詳細はこちらhttps://nordvpn.com/yuyunihongo ▼クーポンコード…",
+  "added": "2026-10-03T21:55:19.570Z"
+ },
+ {
+  "id": "d3c6d8de9a25",
+  "source": "teppei-beginner",
+  "sourceName": "Nihongo con Teppei (beginner)",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "monologue"
+  ],
+  "title": "#1589「日本に来て使う日本語について！」",
+  "url": "http://nihongoconteppei.com/2026/09/26/1589%e3%80%8c%e6%97%a5%e6%9c%ac%e3%81%ab%e6%9d%a5%e3%81%a6%e4%bd%bf%e3%81%86%e6%97%a5%e6%9c%ac%e8%aa%9e%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%81%e3%80%8d/",
+  "audio": "http://media.blubrry.com/nihongo_con_teppei/nihongoconteppei.com/wp-content/uploads/2026/09/Beginners-con-Teppei1589.mp3",
+  "date": "2026-09-26T07:51:12.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:18.841Z"
+ },
+ {
+  "id": "32dcde781fbf",
+  "source": "teppei-beginner",
+  "sourceName": "Nihongo con Teppei (beginner)",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "monologue"
+  ],
+  "title": "#1588「ホテルで使う日本語について！」",
+  "url": "http://nihongoconteppei.com/2026/09/25/1588%e3%80%8c%e3%83%9b%e3%83%86%e3%83%ab%e3%81%a7%e4%bd%bf%e3%81%86%e6%97%a5%e6%9c%ac%e8%aa%9e%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%81%e3%80%8d/",
+  "audio": "http://media.blubrry.com/nihongo_con_teppei/nihongoconteppei.com/wp-content/uploads/2026/09/Beginners-con-Teppei1588.mp3",
+  "date": "2026-09-24T23:26:52.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:18.841Z"
+ },
+ {
+  "id": "16a73d51d298",
+  "source": "teppei-noriko",
+  "sourceName": "Japanese with Teppei and Noriko",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "conversation"
+  ],
+  "title": "#643「新しいレコーディングのシステムとか、チャーハンとか！」",
+  "url": "https://teppeinorikojapanese.com/2026/09/24/643%e3%80%8c%e6%96%b0%e3%81%97%e3%81%84%e3%83%ac%e3%82%b3%e3%83%bc%e3%83%87%e3%82%a3%e3%83%b3%e3%82%b0%e3%81%ae%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e3%81%a8%e3%81%8b%e3%80%81%e3%83%81%e3%83%a3/",
+  "audio": "https://teppeinorikojapanese.com/wp-content/uploads/2026/09/Teppeinoriko643.mp3",
+  "date": "2026-09-24T09:42:32.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:20.765Z"
+ },
+ {
+  "id": "6a6b999b2bee",
+  "source": "teppei-beginner",
+  "sourceName": "Nihongo con Teppei (beginner)",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "monologue"
+  ],
+  "title": "#1587「レストランでの日本語について！」",
+  "url": "http://nihongoconteppei.com/2026/09/23/1587%e3%80%8c%e3%83%ac%e3%82%b9%e3%83%88%e3%83%a9%e3%83%b3%e3%81%a7%e3%81%ae%e6%97%a5%e6%9c%ac%e8%aa%9e%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%81%e3%80%8d/",
+  "audio": "http://media.blubrry.com/nihongo_con_teppei/nihongoconteppei.com/wp-content/uploads/2026/09/Beginners-con-Teppei1587.mp3",
+  "date": "2026-09-23T07:00:24.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:18.841Z"
+ },
+ {
+  "id": "616f20356ebd",
+  "source": "yuyu",
+  "sourceName": "YUYUの日本語Podcast",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "culture"
+  ],
+  "title": "Vol.491 【YUYU×Saily】 日本に帰ったら、やりたいこと！(Japanese Radio for Listening practice)",
+  "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-491-YUYUSaily-Japanese-Radio-for-Listening-practice-e3p3otu",
+  "audio": "https://anchor.fm/s/cda85d4/podcast/play/126001534/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-8-19%2Fb08ca0e1-b65d-6224-5da8-20da5d10ffe7.mp3",
+  "date": "2026-09-22T11:00:00.000Z",
+  "minutes": 30,
+  "summary": "【PR】Saily アプリストアで「Saily」をダウンロードし、購入時にクーポンコード【yuyunihongo】を入力すると、SailyのeSIMデータプランが15％割引になります！ さらに、下記の番組専用リンクからアクセスすれば、クーポンコードの入力なしで自動的に割引が適用されます。 ▼詳細はこちらhttps…",
+  "added": "2026-10-03T21:55:19.570Z"
+ },
+ {
+  "id": "290b5f39feb6",
+  "source": "teppei-beginner",
+  "sourceName": "Nihongo con Teppei (beginner)",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "monologue"
+  ],
+  "title": "#1586「スーパーで使う日本語について！」",
+  "url": "http://nihongoconteppei.com/2026/09/21/1586%e3%80%8c%e3%82%b9%e3%83%bc%e3%83%91%e3%83%bc%e3%81%a7%e4%bd%bf%e3%81%86%e6%97%a5%e6%9c%ac%e8%aa%9e%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%81%e3%80%8d/",
+  "audio": "http://media.blubrry.com/nihongo_con_teppei/nihongoconteppei.com/wp-content/uploads/2026/09/Beginners-con-Teppei1586.mp3",
+  "date": "2026-09-21T09:59:41.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:18.841Z"
+ },
+ {
+  "id": "41aa381fce68",
+  "source": "yuyu",
+  "sourceName": "YUYUの日本語Podcast",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "culture"
+  ],
+  "title": "Vol.490 【深い話】「生きている」と実感するときについて考えてみた！ (Japanese Radio for Listening practice)",
+  "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-490--Japanese-Radio-for-Listening-practice-e3p3rsf",
+  "audio": "https://anchor.fm/s/cda85d4/podcast/play/126004559/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-8-19%2Ff16ac62d-1e40-6f90-286d-d26c0aeea96c.mp3",
+  "date": "2026-09-19T20:53:05.000Z",
+  "minutes": 44,
+  "summary": "💰Patreonのサポート(人´∀`)ｱﾘｶﾞﾄｰ♪ ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠…",
+  "added": "2026-10-03T21:55:19.570Z"
+ },
+ {
+  "id": "a65296d5d5de",
+  "source": "teppei-beginner",
+  "sourceName": "Nihongo con Teppei (beginner)",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "monologue"
+  ],
+  "title": "#1585「サボることについて！②」",
+  "url": "http://nihongoconteppei.com/2026/09/19/1585%e3%80%8c%e3%82%b5%e3%83%9c%e3%82%8b%e3%81%93%e3%81%a8%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%81%e2%91%a1%e3%80%8d/",
+  "audio": "http://media.blubrry.com/nihongo_con_teppei/nihongoconteppei.com/wp-content/uploads/2026/09/Beginners-con-Teppei1585.mp3",
+  "date": "2026-09-19T13:02:09.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:18.841Z"
+ },
+ {
+  "id": "d74c3e190956",
+  "source": "teppei-beginner",
+  "sourceName": "Nihongo con Teppei (beginner)",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "monologue"
+  ],
+  "title": "#1584「サボることについて！」",
+  "url": "http://nihongoconteppei.com/2026/09/17/1584%e3%80%8c%e3%82%b5%e3%83%9c%e3%82%8b%e3%81%93%e3%81%a8%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%81%e3%80%8d/",
+  "audio": "http://media.blubrry.com/nihongo_con_teppei/nihongoconteppei.com/wp-content/uploads/2026/09/Beginners-con-Teppei1584.mp3",
+  "date": "2026-09-17T10:26:03.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:18.842Z"
+ },
+ {
+  "id": "e34185064d00",
+  "source": "teppei-noriko",
+  "sourceName": "Japanese with Teppei and Noriko",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "conversation"
+  ],
+  "title": "#642「クレヨンしんちゃんとかおぼっちゃまくんとか」",
+  "url": "https://teppeinorikojapanese.com/2026/09/17/642%e3%80%8c%e3%82%af%e3%83%ac%e3%83%a8%e3%83%b3%e3%81%97%e3%82%93%e3%81%a1%e3%82%83%e3%82%93%e3%81%a8%e3%81%8b%e3%81%8a%e3%81%bc%e3%81%a3%e3%81%a1%e3%82%83%e3%81%be%e3%81%8f%e3%82%93%e3%81%a8/",
+  "audio": "https://teppeinorikojapanese.com/wp-content/uploads/2026/09/Teppeinoriko642.mp3",
+  "date": "2026-09-17T09:08:15.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:20.765Z"
+ },
+ {
+  "id": "427f0861dee1",
+  "source": "yuyu",
+  "sourceName": "YUYUの日本語Podcast",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "culture"
+  ],
+  "title": "Vol.489 秋の味覚バージョン②【東海・甲信・北陸地方】 (Japanese Radio for Listening practice)",
+  "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-489--Japanese-Radio-for-Listening-practice-e3ouudi",
+  "audio": "https://anchor.fm/s/cda85d4/podcast/play/125843314/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-8-16%2Ffb4dbbe1-daf8-19a7-73e0-af89349c56e9.mp3",
+  "date": "2026-09-16T20:27:57.000Z",
+  "minutes": 51,
+  "summary": "東海地方の秋の味覚 ・桜えび（静岡）⇒【写真】 ・祖父江ぎんなん（愛知）⇒【写真】 信州・山梨の秋の味覚 ・ワカサギ（長野・諏訪湖）⇒【写真】 ・松茸（長野）⇒【写真】 ・甲州ぶどう（山梨）⇒【写真】 北陸地方の秋の味覚 ・ベニズワイガニ（富山）⇒【写真】 ・加賀れんこん（石川）⇒【写真】 💰Patreonのサ…",
+  "added": "2026-10-03T21:55:19.570Z"
+ },
+ {
+  "id": "bdd8475c6e4c",
+  "source": "teppei-beginner",
+  "sourceName": "Nihongo con Teppei (beginner)",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "monologue"
+  ],
+  "title": "#1583「お腹いっぱいだ〜！」",
+  "url": "http://nihongoconteppei.com/2026/09/16/1583%e3%80%8c%e3%81%8a%e8%85%b9%e3%81%84%e3%81%a3%e3%81%b1%e3%81%84%e3%81%a0%e3%80%9c%ef%bc%81%e3%80%8d/",
+  "audio": "http://media.blubrry.com/nihongo_con_teppei/nihongoconteppei.com/wp-content/uploads/2026/09/Beginners-con-Teppei1583.mp3",
+  "date": "2026-09-15T22:45:16.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:18.842Z"
+ },
+ {
+  "id": "6eb440f847f1",
+  "source": "yuyu",
+  "sourceName": "YUYUの日本語Podcast",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "culture"
+  ],
+  "title": "Vol.488 最近の小さな失敗 (Japanese Radio for Listening practice)",
+  "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-488--Japanese-Radio-for-Listening-practice-e3orukc",
+  "audio": "https://anchor.fm/s/cda85d4/podcast/play/125745228/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-8-15%2Feb2ed99b-a815-ed38-911c-db0f51663ee1.mp3",
+  "date": "2026-09-15T00:37:10.000Z",
+  "minutes": 35,
+  "summary": "💰Patreonのサポート(人´∀`)ｱﾘｶﾞﾄｰ♪ ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠…",
+  "added": "2026-10-03T21:55:19.570Z"
+ },
+ {
+  "id": "691631ced693",
+  "source": "teppei-beginner",
+  "sourceName": "Nihongo con Teppei (beginner)",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "monologue"
+  ],
+  "title": "#1582「週末の散歩について！」",
+  "url": "http://nihongoconteppei.com/2026/09/14/1582%e3%80%8c%e9%80%b1%e6%9c%ab%e3%81%ae%e6%95%a3%e6%ad%a9%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%81%e3%80%8d/",
+  "audio": "http://media.blubrry.com/nihongo_con_teppei/nihongoconteppei.com/wp-content/uploads/2026/09/Beginners-con-Teppei1582.mp3",
+  "date": "2026-09-13T22:36:36.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:18.842Z"
+ },
+ {
+  "id": "002235e9b619",
+  "source": "teppei-beginner",
+  "sourceName": "Nihongo con Teppei (beginner)",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "monologue"
+  ],
+  "title": "#1581「きみちゃんが新しい生徒を探しています！！」",
+  "url": "http://nihongoconteppei.com/2026/09/12/1581%e3%80%8c%e3%81%8d%e3%81%bf%e3%81%a1%e3%82%83%e3%82%93%e3%81%8c%e6%96%b0%e3%81%97%e3%81%84%e7%94%9f%e5%be%92%e3%82%92%e6%8e%a2%e3%81%97%e3%81%a6%e3%81%84%e3%81%be%e3%81%99%ef%bc%81%ef%bc%81/",
+  "audio": "http://media.blubrry.com/nihongo_con_teppei/nihongoconteppei.com/wp-content/uploads/2026/09/Beginners-con-Teppei1581.mp3",
+  "date": "2026-09-12T00:19:27.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:18.842Z"
+ },
+ {
+  "id": "e116a6532a5c",
+  "source": "teppei-noriko",
+  "sourceName": "Japanese with Teppei and Noriko",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "conversation"
+  ],
+  "title": "#641「のりこさん復活！？」",
+  "url": "https://teppeinorikojapanese.com/2026/09/10/641%e3%80%8c%e3%81%ae%e3%82%8a%e3%81%93%e3%81%95%e3%82%93%e5%be%a9%e6%b4%bb%ef%bc%81%ef%bc%9f%e3%80%8d/",
+  "audio": "https://teppeinorikojapanese.com/wp-content/uploads/2026/09/Teppeinoriko641.mp3",
+  "date": "2026-09-10T10:00:26.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:20.765Z"
+ },
+ {
+  "id": "dffe72302a0c",
+  "source": "yuyu",
+  "sourceName": "YUYUの日本語Podcast",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "culture"
+  ],
+  "title": "Vol.487 秋の味覚バージョン① 【北海道・東北・関東地方】 ((Japanese Radio for Listening practice)",
+  "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-487---Japanese-Radio-for-Listening-practice-e3oia6q",
+  "audio": "https://anchor.fm/s/cda85d4/podcast/play/125429402/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-8-8%2Fbe9d5c37-8658-7017-e4a6-c88aba4e1073.mp3",
+  "date": "2026-09-08T23:07:48.000Z",
+  "minutes": 43,
+  "summary": "北海道の秋の味覚 ・秋鮭⇒【写真】 東北-三陸の秋の味覚 ・秋刀魚⇒【写真】 関東の秋の味覚 ・秋サバ⇒【写真】 ・里芋⇒【写真】 💰Patreonのサポート(人´∀`)ｱﾘｶﾞﾄｰ♪ ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠…",
+  "added": "2026-10-03T21:55:19.570Z"
+ },
+ {
+  "id": "7122e3197f73",
+  "source": "yuyu",
+  "sourceName": "YUYUの日本語Podcast",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "culture"
+  ],
+  "title": "Vol.485 キレたときに、心の中でつぶやきたい一言！ (Japanese Radio for Listening practice)",
+  "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-485--Japanese-Radio-for-Listening-practice-e3octu0",
+  "audio": "https://anchor.fm/s/cda85d4/podcast/play/125252992/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-8-5%2F5c387544-a874-3344-b7b1-cca394dce423.mp3",
+  "date": "2026-09-05T19:24:37.000Z",
+  "minutes": 31,
+  "summary": "💰Patreonのサポート(人´∀`)ｱﾘｶﾞﾄｰ♪ ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠…",
+  "added": "2026-10-03T21:55:19.570Z"
+ },
+ {
+  "id": "785a7722fceb",
+  "source": "yuyu",
+  "sourceName": "YUYUの日本語Podcast",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "culture"
+  ],
+  "title": "Vol.484 謎のマンガ？『YUYUのグルメ放浪記』について！ (Japanese Radio for Listening practice)",
+  "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-484-YUYU-Japanese-Radio-for-Listening-practice-e3o75ug",
+  "audio": "https://anchor.fm/s/cda85d4/podcast/play/125064592/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-8-1%2Ff7d24db9-3c77-7702-3e95-6346af76713c.mp3",
+  "date": "2026-09-01T23:44:00.000Z",
+  "minutes": 38,
+  "summary": "最新エピソード 『なぜ「面白かった話」は相手に伝わらないのか？』 ⇒https://youtu.be/iVYn7L6gxUA 💰Patreonのサポート(人´∀`)ｱﾘｶﾞﾄｰ♪ ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠…",
+  "added": "2026-10-03T21:55:19.570Z"
+ },
+ {
+  "id": "aec2486b681c",
+  "source": "yuyu",
+  "sourceName": "YUYUの日本語Podcast",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "culture"
+  ],
+  "title": "Vol.484 鍵について (Japanese Radio for Listening practice)",
+  "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-484--Japanese-Radio-for-Listening-practice-e3o2okg",
+  "audio": "https://anchor.fm/s/cda85d4/podcast/play/124919888/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-7-30%2F3c21e7cd-97b3-2b3d-87ce-cecf77a95da3.mp3",
+  "date": "2026-08-30T03:19:18.000Z",
+  "minutes": 40,
+  "summary": "💰Patreonのサポート(人´∀`)ｱﾘｶﾞﾄｰ♪ ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠…",
+  "added": "2026-10-03T21:55:19.570Z"
+ },
+ {
+  "id": "3851caaabfe6",
+  "source": "teppei-noriko",
+  "sourceName": "Japanese with Teppei and Noriko",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "conversation"
+  ],
+  "title": "#640「Mac Bookが壊れたので…」",
+  "url": "https://teppeinorikojapanese.com/2026/08/27/640%e3%80%8cmac-book%e3%81%8c%e5%a3%8a%e3%82%8c%e3%81%9f%e3%81%ae%e3%81%a7-%e3%80%8d/",
+  "audio": "https://teppeinorikojapanese.com/wp-content/uploads/2026/08/Teppeinoriko640.mp3",
+  "date": "2026-08-27T10:32:11.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:20.765Z"
+ },
+ {
+  "id": "91dc87dce27d",
+  "source": "yuyu",
+  "sourceName": "YUYUの日本語Podcast",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "culture"
+  ],
+  "title": "Vol.483 【陸・海・空】東京から5,000円($30USD)でどこまで行ける？ (Japanese Radio for Listening practice)",
+  "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-483-5-00030USD-Japanese-Radio-for-Listening-practice-e3nur2g",
+  "audio": "https://anchor.fm/s/cda85d4/podcast/play/124791312/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-7-27%2Fe9404480-84f1-658d-5aa4-889232dcb6e5.mp3",
+  "date": "2026-08-27T02:11:49.000Z",
+  "minutes": 39,
+  "summary": "【東京から5,000円でどこまで行ける？🚃🚌✈️⛴️】 ※料金は2026年秋（9〜10月）を中心に調査した片道料金の目安です。バス・飛行機は日程や予約時期によって大きく変動します。 🚃 電車｜浜松 💴 約4,620円 ⏰ 約4時間半 📍 浜松駅 Map / 浜名湖 Map / うなぎパイ Google画…",
+  "added": "2026-10-03T21:55:19.570Z"
+ },
+ {
+  "id": "af6f74ef62b5",
+  "source": "yuyu",
+  "sourceName": "YUYUの日本語Podcast",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "culture"
+  ],
+  "title": "Vol.482 【静かVer】手放しちゃいけない苦しみの話 (Japanese Radio for Listening practice)",
+  "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-482-Ver-Japanese-Radio-for-Listening-practice-e3np1df",
+  "audio": "https://anchor.fm/s/cda85d4/podcast/play/124601199/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-7-23%2Fc8b73405-14ff-50a8-8e6a-ac4977387a88.mp3",
+  "date": "2026-08-23T03:55:18.000Z",
+  "minutes": 45,
+  "summary": "💰Patreonのサポート(人´∀`)ｱﾘｶﾞﾄｰ♪ ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠…",
+  "added": "2026-10-03T21:55:19.570Z"
+ },
+ {
+  "id": "c1cb6dc3be87",
+  "source": "teppei-noriko",
+  "sourceName": "Japanese with Teppei and Noriko",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "conversation"
+  ],
+  "title": "#639「東京に戻ってきました！」",
+  "url": "https://teppeinorikojapanese.com/2026/08/20/639%e3%80%8c%e6%9d%b1%e4%ba%ac%e3%81%ab%e6%88%bb%e3%81%a3%e3%81%a6%e3%81%8d%e3%81%be%e3%81%97%e3%81%9f%ef%bc%81%e3%80%8d/",
+  "audio": "https://teppeinorikojapanese.com/wp-content/uploads/2026/08/Teppeinoriko639.mp3",
+  "date": "2026-08-20T10:46:11.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:20.765Z"
+ },
+ {
+  "id": "27348f512f94",
+  "source": "teppei-noriko",
+  "sourceName": "Japanese with Teppei and Noriko",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "conversation"
+  ],
+  "title": "#638「カモメのフンとか厄年とか！」",
+  "url": "https://teppeinorikojapanese.com/2026/08/13/638%e3%80%8c%e3%82%ab%e3%83%a2%e3%83%a1%e3%81%ae%e3%83%95%e3%83%b3%e3%81%a8%e3%81%8b%e5%8e%84%e5%b9%b4%e3%81%a8%e3%81%8b%e3%80%8d/",
+  "audio": "https://teppeinorikojapanese.com/wp-content/uploads/2026/08/Teppeinoriko638.mp3",
+  "date": "2026-08-13T13:19:44.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:20.765Z"
+ },
+ {
+  "id": "6196f1d1aefc",
+  "source": "teppei-noriko",
+  "sourceName": "Japanese with Teppei and Noriko",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "conversation"
+  ],
+  "title": "#637「映画の話とか！」",
+  "url": "https://teppeinorikojapanese.com/2026/08/06/637%e3%80%8c%e6%98%a0%e7%94%bb%e3%81%ae%e8%a9%b1%e3%81%a8%e3%81%8b%ef%bc%81%e3%80%8d/",
+  "audio": "https://teppeinorikojapanese.com/wp-content/uploads/2026/08/Teppeinoriko637.mp3",
+  "date": "2026-08-06T10:05:22.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:20.765Z"
+ },
+ {
+  "id": "0a8963ea7c20",
+  "source": "teppei-noriko",
+  "sourceName": "Japanese with Teppei and Noriko",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "conversation"
+  ],
+  "title": "#636「のんびり大分の生活について！」",
+  "url": "https://teppeinorikojapanese.com/2026/07/30/636%e3%80%8c%e3%81%ae%e3%82%93%e3%81%b3%e3%82%8a%e5%a4%a7%e5%88%86%e3%81%ae%e7%94%9f%e6%b4%bb%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%81%e3%80%8d/",
+  "audio": "https://teppeinorikojapanese.com/wp-content/uploads/2026/07/Teppeinoriko636.mp3",
+  "date": "2026-07-30T08:15:50.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:20.765Z"
+ },
+ {
+  "id": "44128a3927e9",
+  "source": "teppei-noriko",
+  "sourceName": "Japanese with Teppei and Noriko",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "conversation"
+  ],
+  "title": "#635「夏の暑さと体調の悪さについて！②」",
+  "url": "https://teppeinorikojapanese.com/2026/07/23/635%e3%80%8c%e5%a4%8f%e3%81%ae%e6%9a%91%e3%81%95%e3%81%a8%e4%bd%93%e8%aa%bf%e3%81%ae%e6%82%aa%e3%81%95%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%81%e2%91%a1%e3%80%8d/",
+  "audio": "https://teppeinorikojapanese.com/wp-content/uploads/2026/07/Teppeinoriko635.mp3",
+  "date": "2026-07-23T10:36:30.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:20.765Z"
+ },
+ {
+  "id": "0bf921aa8bd4",
+  "source": "teppei-noriko",
+  "sourceName": "Japanese with Teppei and Noriko",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "conversation"
+  ],
+  "title": "#634「夏の暑さと体調の悪さについて！①」",
+  "url": "https://teppeinorikojapanese.com/2026/07/23/634%e3%80%8c%e5%a4%8f%e3%81%ae%e6%9a%91%e3%81%95%e3%81%a8%e4%bd%93%e8%aa%bf%e3%81%ae%e6%82%aa%e3%81%95%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%81%e2%91%a0%e3%80%8d/",
+  "audio": "https://teppeinorikojapanese.com/wp-content/uploads/2026/07/Teppeinoriko634.mp3",
+  "date": "2026-07-23T10:35:59.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:20.765Z"
+ },
+ {
+  "id": "2c17843d79ba",
+  "source": "teppei-noriko",
+  "sourceName": "Japanese with Teppei and Noriko",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "conversation"
+  ],
+  "title": "#633「グランピングとかUFOキャッチャーとか②」",
+  "url": "https://teppeinorikojapanese.com/2026/07/09/633%e3%80%8c%e3%82%b0%e3%83%a9%e3%83%b3%e3%83%94%e3%83%b3%e3%82%b0%e3%81%a8%e3%81%8bufo%e3%82%ad%e3%83%a3%e3%83%83%e3%83%81%e3%83%a3%e3%83%bc%e3%81%a8%e3%81%8b%e2%91%a1%e3%80%8d/",
+  "audio": "https://teppeinorikojapanese.com/wp-content/uploads/2026/07/Teppeinoriko633.mp3",
+  "date": "2026-07-09T09:05:18.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-03T21:55:20.765Z"
+ },
+ {
+  "id": "c02eed669d8b",
+  "source": "imari",
+  "sourceName": "Japanese Real Conversation (Imari Radio)",
+  "type": "listen",
+  "level": 3,
+  "tags": [
+   "conversation",
+   "natural"
+  ],
+  "title": "#125 What Does a Traditional Japanese Home Look Like? | House Tour in Easy Japanese",
+  "url": "https://podcasters.spotify.com/pod/show/imari1/episodes/125-What-Does-a-Traditional-Japanese-Home-Look-Like---House-Tour-in-Easy-Japanese-e3fe4nf",
+  "audio": "https://anchor.fm/s/9c6a1d40/podcast/play/115855535/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-1-22%2F418571132-44100-2-2015f0fb063df.m4a",
+  "date": "2026-02-22T22:00:00.000Z",
+  "minutes": 7,
+  "summary": "The full transcript of this episode is available for FREE! Feel free to use it for your Japanese studies! ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠#125 All sc…",
+  "added": "2026-10-03T21:55:20.997Z"
+ },
+ {
+  "id": "13fc2027c490",
+  "source": "imari",
+  "sourceName": "Japanese Real Conversation (Imari Radio)",
+  "type": "listen",
+  "level": 3,
+  "tags": [
+   "conversation",
+   "natural"
+  ],
+  "title": "#124 Tokyo vs Rural Japan – A Winter Walk in My Village",
+  "url": "https://podcasters.spotify.com/pod/show/imari1/episodes/124-Tokyo-vs-Rural-Japan--A-Winter-Walk-in-My-Village-e3fbeii",
+  "audio": "https://anchor.fm/s/9c6a1d40/podcast/play/115767314/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-1-20%2F418453953-44100-2-c29869a16998.m4a",
+  "date": "2026-02-20T22:00:00.000Z",
+  "minutes": 12,
+  "summary": "The full transcript of this episode is available for FREE! Feel free to use it for your Japanese studies! ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠#124 All scr…",
+  "added": "2026-10-03T21:55:20.997Z"
+ },
+ {
+  "id": "783edbfc9ad7",
+  "source": "imari",
+  "sourceName": "Japanese Real Conversation (Imari Radio)",
+  "type": "listen",
+  "level": 3,
+  "tags": [
+   "conversation",
+   "natural"
+  ],
+  "title": "#123 Is Japan Still a Cash Country? Why Some Stores Are Going Back to Cash",
+  "url": "https://podcasters.spotify.com/pod/show/imari1/episodes/123-Is-Japan-Still-a-Cash-Country--Why-Some-Stores-Are-Going-Back-to-Cash-e3f87cb",
+  "audio": "https://anchor.fm/s/9c6a1d40/podcast/play/115661643/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-1-18%2F418311726-44100-2-a8728c588c074.m4a",
+  "date": "2026-02-18T22:00:00.000Z",
+  "minutes": 10,
+  "summary": "The full transcript of this episode is available for FREE! Feel free to use it for your Japanese studies! ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠#123 All scri…",
+  "added": "2026-10-03T21:55:20.997Z"
+ },
+ {
+  "id": "ca51a453b145",
+  "source": "imari",
+  "sourceName": "Japanese Real Conversation (Imari Radio)",
+  "type": "listen",
+  "level": 3,
+  "tags": [
+   "conversation",
+   "natural"
+  ],
+  "title": "#122 Is Healthcare in Japan Really Cheap? My Hospital Story",
+  "url": "https://podcasters.spotify.com/pod/show/imari1/episodes/122-Is-Healthcare-in-Japan-Really-Cheap--My-Hospital-Story-e3equ8q",
+  "audio": "https://anchor.fm/s/9c6a1d40/podcast/play/115226330/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-1-9%2F417730076-44100-2-5f5513254a747.m4a",
+  "date": "2026-02-13T22:00:00.000Z",
+  "minutes": 12,
+  "summary": "The full transcript of this episode is available for FREE! Feel free to use it for your Japanese studies! ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠#122 All scrip…",
+  "added": "2026-10-03T21:55:20.997Z"
+ },
+ {
+  "id": "5205b7a09a3a",
+  "source": "imari",
+  "sourceName": "Japanese Real Conversation (Imari Radio)",
+  "type": "listen",
+  "level": 3,
+  "tags": [
+   "conversation",
+   "natural"
+  ],
+  "title": "#121 4 Hidden Meanings of Katakana in Japanese — Not Just Foreign Words",
+  "url": "https://podcasters.spotify.com/pod/show/imari1/episodes/121-4-Hidden-Meanings-of-Katakana-in-Japanese--Not-Just-Foreign-Words-e3equ5h",
+  "audio": "https://anchor.fm/s/9c6a1d40/podcast/play/115226225/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-1-9%2F417729958-44100-2-eff22a7dc4b1a.m4a",
+  "date": "2026-02-11T22:00:00.000Z",
+  "minutes": 12,
+  "summary": "The full transcript of this episode is available for FREE! Feel free to use it for your Japanese studies! ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠#121 All scrip…",
+  "added": "2026-10-03T21:55:20.997Z"
+ },
+ {
+  "id": "e9c98642f2a3",
+  "source": "imari",
+  "sourceName": "Japanese Real Conversation (Imari Radio)",
+  "type": "listen",
+  "level": 3,
+  "tags": [
+   "conversation",
+   "natural"
+  ],
+  "title": "#120 Living in a German Shared House: Fights＆Culture Shock",
+  "url": "https://podcasters.spotify.com/pod/show/imari1/episodes/120-Living-in-a-German-Shared-House-FightsCulture-Shock-e3eq0u5",
+  "audio": "https://anchor.fm/s/9c6a1d40/podcast/play/115196293/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-1-8%2F417690354-44100-2-fc7dc99565742.m4a",
+  "date": "2026-02-08T22:00:00.000Z",
+  "minutes": 12,
+  "summary": "The full transcript of this episode is available for FREE! Feel free to use it for your Japanese studies! ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠#120 All script…",
+  "added": "2026-10-03T21:55:20.997Z"
+ },
+ {
+  "id": "64acf52b3d4a",
+  "source": "imari",
+  "sourceName": "Japanese Real Conversation (Imari Radio)",
+  "type": "listen",
+  "level": 3,
+  "tags": [
+   "conversation",
+   "natural"
+  ],
+  "title": "#119 Small Happy Moments in Daily Life",
+  "url": "https://podcasters.spotify.com/pod/show/imari1/episodes/119-Small-Happy-Moments-in-Daily-Life-e3ejv96",
+  "audio": "https://anchor.fm/s/9c6a1d40/podcast/play/114997990/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-1-4%2F417425855-44100-2-c18049f443c99.m4a",
+  "date": "2026-02-06T22:00:00.000Z",
+  "minutes": 9,
+  "summary": "The full transcript of this episode is available for FREE! Feel free to use it for your Japanese studies! ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠#119 All scripts…",
+  "added": "2026-10-03T21:55:20.997Z"
+ },
+ {
+  "id": "7e3aa3a7102f",
+  "source": "imari",
+  "sourceName": "Japanese Real Conversation (Imari Radio)",
+  "type": "listen",
+  "level": 3,
+  "tags": [
+   "conversation",
+   "natural"
+  ],
+  "title": "#118 What to Say When You Don’t Understand Japanese",
+  "url": "https://podcasters.spotify.com/pod/show/imari1/episodes/118-What-to-Say-When-You-Dont-Understand-Japanese-e3ejv8a",
+  "audio": "https://anchor.fm/s/9c6a1d40/podcast/play/114997962/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-1-4%2F417425810-44100-2-5203cd69815.m4a",
+  "date": "2026-02-04T22:00:00.000Z",
+  "minutes": 11,
+  "summary": "The full transcript of this episode is available for FREE! Feel free to use it for your Japanese studies! ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠#118 All scripts…",
+  "added": "2026-10-03T21:55:20.997Z"
+ },
+ {
+  "id": "12f3880348fc",
+  "source": "imari",
+  "sourceName": "Japanese Real Conversation (Imari Radio)",
+  "type": "listen",
+  "level": 3,
+  "tags": [
+   "conversation",
+   "natural"
+  ],
+  "title": "#117 Do You Bring Your Partner When You Meet Friends in Japan?",
+  "url": "https://podcasters.spotify.com/pod/show/imari1/episodes/117-Do-You-Bring-Your-Partner-When-You-Meet-Friends-in-Japan-e3ego7t",
+  "audio": "https://anchor.fm/s/9c6a1d40/podcast/play/114892477/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-1-2%2F417284733-44100-2-adb28786ee4b2.m4a",
+  "date": "2026-02-03T22:00:00.000Z",
+  "minutes": 11,
+  "summary": "The full transcript of this episode is available for FREE! Feel free to use it for your Japanese studies! ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠#117 All scripts…",
+  "added": "2026-10-03T21:55:20.997Z"
+ },
+ {
+  "id": "d681a7832326",
+  "source": "imari",
+  "sourceName": "Japanese Real Conversation (Imari Radio)",
+  "type": "listen",
+  "level": 3,
+  "tags": [
+   "conversation",
+   "natural"
+  ],
+  "title": "#116 Cultural Gaps in Japanese Communication: Real Stories",
+  "url": "https://podcasters.spotify.com/pod/show/imari1/episodes/116-Cultural-Gaps-in-Japanese-Communication-Real-Stories-e3efono",
+  "audio": "https://anchor.fm/s/9c6a1d40/podcast/play/114860216/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-1-1%2F417241501-44100-2-164aa8be08653.m4a",
+  "date": "2026-02-01T22:00:00.000Z",
+  "minutes": 14,
+  "summary": "The full transcript of this episode is available for FREE! Feel free to use it for your Japanese studies! ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠#116 All scripts(…",
+  "added": "2026-10-03T21:55:20.997Z"
+ },
+ {
+  "id": "9d168f3d472d",
+  "source": "imari",
+  "sourceName": "Japanese Real Conversation (Imari Radio)",
+  "type": "listen",
+  "level": 3,
+  "tags": [
+   "conversation",
+   "natural"
+  ],
+  "title": "#115 How to Say \"I Don’t Mind\" in Japanese",
+  "url": "https://podcasters.spotify.com/pod/show/imari1/episodes/115-How-to-Say-I-Dont-Mind-in-Japanese-e3ebc7q",
+  "audio": "https://anchor.fm/s/9c6a1d40/podcast/play/114716346/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-0-29%2F417050248-44100-2-440c2ac0a9941.m4a",
+  "date": "2026-01-30T22:00:00.000Z",
+  "minutes": 8,
+  "summary": "The full transcript of this episode is available for FREE! Feel free to use it for your Japanese studies! ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠#115 All script…",
+  "added": "2026-10-03T21:55:20.997Z"
+ },
+ {
+  "id": "2fedf6099f67",
+  "source": "imari",
+  "sourceName": "Japanese Real Conversation (Imari Radio)",
+  "type": "listen",
+  "level": 3,
+  "tags": [
+   "conversation",
+   "natural"
+  ],
+  "title": "#114 My Part-Time Jobs in Japan (and One Terrible Job in Germany)",
+  "url": "https://podcasters.spotify.com/pod/show/imari1/episodes/114-My-Part-Time-Jobs-in-Japan-and-One-Terrible-Job-in-Germany-e3e7vd3",
+  "audio": "https://anchor.fm/s/9c6a1d40/podcast/play/114604899/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-0-27%2F416901248-44100-2-96b9791db7324.m4a",
+  "date": "2026-01-28T22:00:00.000Z",
+  "minutes": 12,
+  "summary": "The full transcript of this episode is available for FREE! Feel free to use it for your Japanese studies! ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠#114 All scripts(J…",
+  "added": "2026-10-03T21:55:20.997Z"
+ },
+ {
+  "id": "f24563e8368a",
+  "source": "noriko-stories",
+  "sourceName": "Nihongo Short Story by Noriko",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "stories"
+  ],
+  "title": "ベルギーで桜を見ました（I saw cherry blossoms in Belgium）",
+  "url": "https://podcasters.spotify.com/pod/show/nihongo-shortstory/episodes/I-saw-cherry-blossoms-in-Belgium-e31drte",
+  "audio": "https://anchor.fm/s/81109d44/podcast/play/101166446/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-3-11%2F70c0228a-d5f7-73df-d997-bad14a30c340.mp3",
+  "date": "2025-04-11T17:16:49.000Z",
+  "minutes": 4,
+  "summary": "Look at the Transcript below!! Everyday Story Podcast for Japanese Learner!!! Learn Japanese with stories! Let&#39;s go! **I teach Japanese online. If you ar…",
+  "added": "2026-10-03T21:55:19.689Z"
+ },
+ {
+  "id": "b19e945ebd23",
+  "source": "noriko-stories",
+  "sourceName": "Nihongo Short Story by Noriko",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "stories"
+  ],
+  "title": "マルクスがはじめて日本に行きました 4/4 (Markus's First Trip to Japan 4/4)",
+  "url": "https://podcasters.spotify.com/pod/show/nihongo-shortstory/episodes/44-Markuss-First-Trip-to-Japan-44-e318n7f",
+  "audio": "https://anchor.fm/s/81109d44/podcast/play/100997807/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-3-8%2F6fe7978a-71e0-02e6-dbe3-b6b2c4d41ffa.mp3",
+  "date": "2025-04-08T08:07:34.000Z",
+  "minutes": 3,
+  "summary": "マルクスの一週間の日本旅行 4 (Markus's First Trip to Japan 4) Look at the Transcript below!! Everyday Story Podcast for Japanese Learner!!! Learn Japanese with stories! L…",
+  "added": "2026-10-03T21:55:19.689Z"
+ },
+ {
+  "id": "30f4d6402a73",
+  "source": "noriko-stories",
+  "sourceName": "Nihongo Short Story by Noriko",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "stories"
+  ],
+  "title": "マルクスがはじめて日本に行きました 3/4 (Markus's First Trip to Japan 3/4)",
+  "url": "https://podcasters.spotify.com/pod/show/nihongo-shortstory/episodes/34-Markuss-First-Trip-to-Japan-34-e30i41q",
+  "audio": "https://anchor.fm/s/81109d44/podcast/play/100257274/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-2-23%2F55858253-daa5-cf75-6cfc-2d1f2739a5d6.mp3",
+  "date": "2025-03-23T16:40:19.000Z",
+  "minutes": 3,
+  "summary": "Look at the Transcript below!! Everyday Story Podcast for Japanese Learner!!! Learn Japanese with stories! Let's go! **I teach Japanese online. If you are in…",
+  "added": "2026-10-03T21:55:19.689Z"
+ },
+ {
+  "id": "a41aebf10738",
+  "source": "noriko-stories",
+  "sourceName": "Nihongo Short Story by Noriko",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "stories"
+  ],
+  "title": "マルクスがはじめて日本に行きました 2/4 (Markus's First Trip to Japan 2/4)",
+  "url": "https://podcasters.spotify.com/pod/show/nihongo-shortstory/episodes/24-Markuss-First-Trip-to-Japan-24-e302b7u",
+  "audio": "https://anchor.fm/s/81109d44/podcast/play/99740350/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-2-12%2F396429495-44100-2-fe59c0480650a.m4a",
+  "date": "2025-03-12T11:07:10.000Z",
+  "minutes": 5,
+  "summary": "Look at the Transcript below!! Everyday Story Podcast for Japanese Learner!!! Learn Japanese with stories! Let's go! **I teach Japanese online. If you are in…",
+  "added": "2026-10-03T21:55:19.689Z"
+ },
+ {
+  "id": "16b4504d297d",
+  "source": "noriko-stories",
+  "sourceName": "Nihongo Short Story by Noriko",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "stories"
+  ],
+  "title": "マルクスがはじめて日本に行きました 1 /4(Markus's First Trip to Japan 1/4)",
+  "url": "https://podcasters.spotify.com/pod/show/nihongo-shortstory/episodes/1-4Markuss-First-Trip-to-Japan-14-e2tjbou",
+  "audio": "https://anchor.fm/s/81109d44/podcast/play/97152222/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-0-16%2F393199216-44100-2-58743c29b181b.m4a",
+  "date": "2025-01-16T18:18:45.000Z",
+  "minutes": 4,
+  "summary": "Look at the Transcript below!! Everyday Story Podcast for Japanese Learner!!! Learn Japanese with stories! Let's go! **I teach Japanese online. If you are in…",
+  "added": "2026-10-03T21:55:19.689Z"
+ },
+ {
+  "id": "31fec179aea5",
+  "source": "noriko-stories",
+  "sourceName": "Nihongo Short Story by Noriko",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "stories"
+  ],
+  "title": "ブリュッセルの好きなところと嫌いなところ（２）",
+  "url": "https://podcasters.spotify.com/pod/show/nihongo-shortstory/episodes/ep-e2slmjd",
+  "audio": "https://anchor.fm/s/81109d44/podcast/play/96180269/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-11-23%2F391996425-44100-2-25b3b903782e6.m4a",
+  "date": "2024-12-23T08:14:50.000Z",
+  "minutes": 2,
+  "summary": "Look at the Transcript below!! Everyday Story Podcast for Japanese Learner!!! Learn Japanese with stories! Let's go! 私はオンラインで日本語を教えています。私のレッスンに興味がある方は下のリンクから…",
+  "added": "2026-10-03T21:55:19.689Z"
+ },
+ {
+  "id": "31b947788300",
+  "source": "noriko-stories",
+  "sourceName": "Nihongo Short Story by Noriko",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "stories"
+  ],
+  "title": "ブリュッセルの好きなところと嫌いなところ（１）",
+  "url": "https://podcasters.spotify.com/pod/show/nihongo-shortstory/episodes/ep-e2sfrvm",
+  "audio": "https://anchor.fm/s/81109d44/podcast/play/95989174/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-11-18%2F2c0e8c8b-e739-f164-502d-d19fe6f89edf.mp3",
+  "date": "2024-12-18T12:53:55.000Z",
+  "minutes": 3,
+  "summary": "Look at the Transcript below!! Everyday Story Podcast for Japanese Learner!!! Learn Japanese with stories! Let's go! **I teach Japanese online. If you are in…",
+  "added": "2026-10-03T21:55:19.690Z"
+ },
+ {
+  "id": "7db7a6238cbc",
+  "source": "noriko-stories",
+  "sourceName": "Nihongo Short Story by Noriko",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "stories"
+  ],
+  "title": "ブリュッセルに引っ越しました（I moved to Brussels）",
+  "url": "https://podcasters.spotify.com/pod/show/nihongo-shortstory/episodes/I-moved-to-Brussels-e2scvqu",
+  "audio": "https://anchor.fm/s/81109d44/podcast/play/95894814/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-11-16%2F02de1d3f-4470-8993-fdfb-728266ee7357.mp3",
+  "date": "2024-12-16T14:18:58.000Z",
+  "minutes": 2,
+  "summary": "Look at the Transcript and keywords below!! Everyday Story Podcast for Japanese Learner!!! Learn Japanese with stories! Let's go! **I teach Japanese online. …",
+  "added": "2026-10-03T21:55:19.690Z"
+ },
+ {
+  "id": "c8f5955e95c5",
+  "source": "noriko-stories",
+  "sourceName": "Nihongo Short Story by Noriko",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "stories"
+  ],
+  "title": "近所のスーパーに寿司コーナーができました ( A Sushi section come up at supermarket near my house )",
+  "url": "https://podcasters.spotify.com/pod/show/nihongo-shortstory/episodes/A-Sushi-section-come-up-at-supermarket-near-my-house-e28k5di",
+  "audio": "https://anchor.fm/s/81109d44/podcast/play/75158386/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2023-7-28%2F344736967-44100-2-c002c450f4d0c.m4a",
+  "date": "2023-08-28T10:14:02.000Z",
+  "minutes": 3,
+  "summary": "Look at the Transcript below!! Everyday Story Podcast for Japanese Learner!!! Learn Japanese with stories! Let's go! **My Youtube Channel 🎓🖥📖** https://ww…",
+  "added": "2026-10-03T21:55:19.690Z"
+ },
+ {
+  "id": "02513aca56c2",
+  "source": "noriko-stories",
+  "sourceName": "Nihongo Short Story by Noriko",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "stories"
+  ],
+  "title": "サイクリングを始めます(I will start cycling)",
+  "url": "https://podcasters.spotify.com/pod/show/nihongo-shortstory/episodes/I-will-start-cycling-e23dpag",
+  "audio": "https://anchor.fm/s/81109d44/podcast/play/69706512/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2023-4-3%2F327401012-44100-2-43af17c9487b.m4a",
+  "date": "2023-05-03T07:30:10.000Z",
+  "minutes": 7,
+  "summary": "Look at the Transcript below!! Everyday Story Podcast for Japanese Learner!!! Learn Japanese with stories! Let's go! **My Youtube Channel 🎓🖥📖** https://ww…",
+  "added": "2026-10-03T21:55:19.690Z"
+ },
+ {
+  "id": "8f30d4dc3cfe",
+  "source": "noriko-stories",
+  "sourceName": "Nihongo Short Story by Noriko",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "stories"
+  ],
+  "title": "イタリアに行きました（I went to Italy）",
+  "url": "https://podcasters.spotify.com/pod/show/nihongo-shortstory/episodes/I-went-to-Italy-e20av62",
+  "audio": "https://anchor.fm/s/81109d44/podcast/play/66468482/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2023-2-13%2F317736453-44100-2-666413f90a4bb.m4a",
+  "date": "2023-03-13T10:57:11.000Z",
+  "minutes": 4,
+  "summary": "#italki #learningjapanese #nihongo #japanesefood #jlptn1 #jlptn2 #jlptn3 #linguagiapponese #japanischlernen #日本語勉強 #日本語勉強中 #podcast Look at the Transcript be…",
+  "added": "2026-10-03T21:55:19.690Z"
+ },
+ {
+  "id": "517db0445061",
+  "source": "noriko-stories",
+  "sourceName": "Nihongo Short Story by Noriko",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "stories"
+  ],
+  "title": "もうすぐクリスマスです",
+  "url": "https://podcasters.spotify.com/pod/show/nihongo-shortstory/episodes/ep-e1se991",
+  "audio": "https://anchor.fm/s/81109d44/podcast/play/62382817/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2022-11-18%2F0fb7f763-8e92-1484-dd97-5f76956ed523.m4a",
+  "date": "2022-12-18T19:55:47.000Z",
+  "minutes": 10,
+  "summary": "Look at the Transcript below!! Everyday Story Podcast for Japanese Learner!!! Learn Japanese with stories! Let's go! **My Youtube Channel 🎓🖥📖** https://ww…",
+  "added": "2026-10-03T21:55:19.690Z"
+ }
+]
