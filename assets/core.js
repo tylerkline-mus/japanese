@@ -96,16 +96,29 @@ export function startOfLocalDay(now, timeZone) {
   return new Date(Date.parse(key + "T00:00:00Z") - offset * 60000);
 }
 
-export function queueNow(summary, now = new Date()) {
-  let reviews = 0;
-  let lessons = 0;
+// Reviews and lessons available right now. Counts unique subjects, so a summary whose
+// hourly buckets overlap (or a stale cached summary) can never double-count.
+// When assignments are passed, they're used as a cross-check: the true queue is every
+// started, non-burned item whose available_at has passed.
+export function queueNow(summary, now = new Date(), assignments = null) {
+  const t = now.getTime();
+  const rev = new Set();
+  const les = new Set();
   for (const b of summary.data.reviews || []) {
-    if (Date.parse(b.available_at) <= now.getTime()) reviews += b.subject_ids.length;
+    if (Date.parse(b.available_at) <= t) for (const id of b.subject_ids) rev.add(id);
   }
   for (const b of summary.data.lessons || []) {
-    if (Date.parse(b.available_at) <= now.getTime()) lessons += b.subject_ids.length;
+    if (Date.parse(b.available_at) <= t) for (const id of b.subject_ids) les.add(id);
   }
-  return { reviews, lessons };
+  let reviews = rev.size;
+  if (Array.isArray(assignments) && assignments.length) {
+    const fromAssignments = assignments.filter(
+      (a) => a.data.srs_stage >= 1 && a.data.srs_stage <= 8 && a.data.available_at && Date.parse(a.data.available_at) <= t
+    ).length;
+    // Assignments are the source of truth; the summary can lag by up to an hour.
+    reviews = fromAssignments;
+  }
+  return { reviews, lessons: les.size };
 }
 
 // The dig-out plan, in one function. Keep it gentle.
@@ -287,7 +300,7 @@ export function vocabList(assignments, vocabSubjects) {
 
 // Compact snapshot row — what the daily Action writes to data/history.json.
 export function snapshotRow(raw, timeZone, now = new Date()) {
-  const q = queueNow(raw.summary, now);
+  const q = queueNow(raw.summary, now, raw.assignments);
   const srs = srsBreakdown(raw.assignments);
   const acc = accuracyTotals(raw.stats);
   return {

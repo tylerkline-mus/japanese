@@ -281,7 +281,7 @@ function buildModel() {
   const raw = S.raw;
   const tz = S.config.timeZone;
   const now = new Date();
-  const q = core.queueNow(raw.summary, now);
+  const q = core.queueNow(raw.summary, now, raw.assignments);
   const target = core.dailyTarget(q.reviews);
   const live = core.snapshotRow(raw, tz, now);
   // Baseline: last night's snapshot if there is one; otherwise the first time
