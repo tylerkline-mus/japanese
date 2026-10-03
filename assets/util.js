@@ -126,11 +126,14 @@ if (typeof window !== "undefined" && "speechSynthesis" in window) {
 }
 
 export function voiceNames() {
-  return jaVoices().map((v) => `${v.name}${v.localService ? "" : " (online)"}`);
+  return jaVoices().map((v) => `${v.name}${v.localService ? "" : " (online)"}${v.voiceURI && v.voiceURI !== v.name ? ` [${v.voiceURI}]` : ""}`);
 }
 
-export function speak(text, rate = 0.9) {
-  if (!("speechSynthesis" in window)) return false;
+export function speak(text, rate = 0.9, report = null) {
+  if (!("speechSynthesis" in window)) {
+    report && report("This browser has no speech support.");
+    return false;
+  }
   const voices = jaVoices();
   const say = (attempt) => {
     const u = new SpeechSynthesisUtterance(stripMarkup(text));
@@ -142,18 +145,25 @@ export function speak(text, rate = 0.9) {
     let started = false;
     u.onstart = () => {
       started = true;
+      report && report(`Speaking with ${v ? v.name : "the default voice"}…`);
       if (v) {
         voiceIndex = (voiceIndex + attempt) % voices.length; // remember the voice that worked
         store.set("jh.voice", v.name);
       }
     };
-    u.onend = u.onerror = () => {
+    u.onend = () => {
       if (current === u) current = null;
+      report && report(started ? "Finished speaking (did you hear it?)" : "Ended without ever starting.");
+    };
+    u.onerror = (e) => {
+      if (current === u) current = null;
+      report && report(`Speech error: ${e.error || "unknown"} (voice: ${v ? v.name : "default"})`);
     };
     current = u;
     speechSynthesis.speak(u);
     // Some browsers report "speaking" but never start. Retry once per other voice.
     setTimeout(() => {
+      if (!started && current === u) report && report(`The browser accepted the request but never started (voice: ${v ? v.name : "default"}).`);
       if (!started && current === u && attempt + 1 < Math.max(1, voices.length)) {
         speechSynthesis.cancel();
         setTimeout(() => say(attempt + 1), 80);

@@ -1084,7 +1084,8 @@ function viewSettings() {
 function audioSection() {
   const names = "speechSynthesis" in window ? voiceNames() : [];
   return `<p class="small">Sentences are read by your device's own Japanese voice.</p>
-    <div class="row"><button class="btn ghost" data-say="こんにちは。日本語の勉強をしています。">${ICON.sound} Test voice</button></div>
+    <div class="row"><button class="btn ghost" data-say-test="こんにちは。日本語の勉強をしています。">${ICON.sound} Test voice</button></div>
+    <p class="small" id="voice-log" aria-live="polite"></p>
     <p class="small muted">${
       names.length
         ? `Japanese voices on this device: ${esc(names.join(", "))}. The hub uses the first one that works and remembers it.`
@@ -1163,6 +1164,17 @@ function wireGlobal() {
       t.setAttribute("aria-expanded", String(!open));
       t.nextElementSibling?.classList.toggle("open", !open);
       t.textContent = open ? t.dataset.label : "Hide";
+      return;
+    }
+    if (t.matches("[data-say-test]")) {
+      const log = document.getElementById("voice-log");
+      const lines = [];
+      const report = (m) => {
+        lines.push(m);
+        if (log) log.textContent = lines.join(" → ");
+      };
+      report("Sending to the speech engine…");
+      speak(t.dataset.sayTest, 0.9, report);
       return;
     }
     if (t.matches("[data-say]")) {
