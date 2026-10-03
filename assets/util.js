@@ -103,29 +103,70 @@ export function parseCSV(text) {
     .map((r) => Object.fromEntries(head.map((h, i) => [h, (r[i] || "").trim()])));
 }
 
-// Speech: uses the device's built-in Japanese voice (free, offline on most phones).
-let jaVoice = null;
-function pickVoice() {
-  if (!("speechSynthesis" in window)) return null;
-  const voices = speechSynthesis.getVoices();
-  jaVoice =
-    voices.find((v) => v.lang === "ja-JP" && /Kyoko|Otoya|O-ren|Google/.test(v.name)) ||
-    voices.find((v) => v.lang && v.lang.startsWith("ja")) ||
-    null;
-  return jaVoice;
+// Speech: uses the device's built-in Japanese voice (free, works offline).
+// Chrome quirks handled here: speak() right after cancel() can be swallowed, utterances
+// can be garbage-collected mid-sentence, and the online "Google" voice can fail silently.
+// So: prefer an on-device voice, pause briefly after cancel, keep a reference, and if
+// nothing starts within a moment, retry with the next Japanese voice.
+let voiceIndex = 0;
+let current = null; // keeps the utterance alive until it finishes
+
+function jaVoices() {
+  if (!("speechSynthesis" in window)) return [];
+  const all = speechSynthesis.getVoices().filter((v) => v.lang && v.lang.replace("_", "-").toLowerCase().startsWith("ja"));
+  const preferred = store.get("jh.voice", "");
+  return all.sort((a, b) => {
+    const score = (v) => (v.name === preferred ? -10 : 0) + (v.localService ? 0 : 5) + (/Kyoko|Otoya|O-ren|Haruka|Ayumi|Ichiro|Nanami/.test(v.name) ? -1 : 0);
+    return score(a) - score(b);
+  });
 }
 if (typeof window !== "undefined" && "speechSynthesis" in window) {
-  pickVoice();
-  speechSynthesis.onvoiceschanged = pickVoice;
+  speechSynthesis.getVoices();
+  speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices();
 }
+
+export function voiceNames() {
+  return jaVoices().map((v) => `${v.name}${v.localService ? "" : " (online)"}`);
+}
+
 export function speak(text, rate = 0.9) {
   if (!("speechSynthesis" in window)) return false;
-  speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(stripMarkup(text));
-  u.lang = "ja-JP";
-  u.rate = rate;
-  if (jaVoice || pickVoice()) u.voice = jaVoice;
-  speechSynthesis.speak(u);
+  const voices = jaVoices();
+  const say = (attempt) => {
+    const u = new SpeechSynthesisUtterance(stripMarkup(text));
+    u.lang = "ja-JP";
+    u.rate = rate;
+    u.volume = 1;
+    const v = voices.length ? voices[(voiceIndex + attempt) % voices.length] : null;
+    if (v) u.voice = v;
+    let started = false;
+    u.onstart = () => {
+      started = true;
+      if (v) {
+        voiceIndex = (voiceIndex + attempt) % voices.length; // remember the voice that worked
+        store.set("jh.voice", v.name);
+      }
+    };
+    u.onend = u.onerror = () => {
+      if (current === u) current = null;
+    };
+    current = u;
+    speechSynthesis.speak(u);
+    // Some browsers report "speaking" but never start. Retry once per other voice.
+    setTimeout(() => {
+      if (!started && current === u && attempt + 1 < Math.max(1, voices.length)) {
+        speechSynthesis.cancel();
+        setTimeout(() => say(attempt + 1), 80);
+      }
+    }, 1200);
+  };
+  if (speechSynthesis.speaking || speechSynthesis.pending) {
+    speechSynthesis.cancel();
+    setTimeout(() => say(0), 80);
+  } else {
+    if (speechSynthesis.paused) speechSynthesis.resume();
+    say(0);
+  }
   return true;
 }
 

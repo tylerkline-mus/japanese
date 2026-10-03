@@ -1,6 +1,6 @@
 // app.js — the hub. Static, no server: WaniKani + your Sheet + lesson files, combined in the browser.
 import * as core from "./core.js";
-import { esc, renderJa, stripMarkup, kanjiIn, parseCSV, speak, copyText, toast, store, fmt, daysUntil, dayOfYear } from "./util.js";
+import { esc, renderJa, stripMarkup, kanjiIn, parseCSV, speak, voiceNames, copyText, toast, store, fmt, daysUntil, dayOfYear } from "./util.js";
 import * as srs from "./srs.js";
 import { lineChart, barChart, stackBar, heatmap, meter, shortDate, setChartWidth } from "./charts.js";
 
@@ -1068,6 +1068,8 @@ function viewSettings() {
       <input id="sync-key" type="password" autocomplete="off" placeholder="${srs.syncConfig().key ? "Key saved — paste to replace" : "Your key"}" aria-label="Sync key">
       <div class="row"><button class="btn" type="submit">Save and test</button><span class="small">${syncNote()}</span></div>
     </form>
+    <h2>Audio</h2>
+    ${audioSection()}
     <h2>Data</h2>
     <div class="row">
       <button class="btn ghost" data-action="refresh">${ICON.refresh} Refresh now</button>
@@ -1077,6 +1079,17 @@ function viewSettings() {
     <h2>Links</h2>
     <p class="small"><a href="${esc(S.config.sheetCsv.replace(/\/pub\?output=csv$/, "/pubhtml"))}" target="_blank" rel="noopener">Published notes Sheet</a> · <a href="https://github.com/tylerkline-mus/japanese" target="_blank" rel="noopener">Repo</a> · <a href="?demo">Demo mode</a></p>
   </section>`;
+}
+
+function audioSection() {
+  const names = "speechSynthesis" in window ? voiceNames() : [];
+  return `<p class="small">Sentences are read by your device's own Japanese voice.</p>
+    <div class="row"><button class="btn ghost" data-say="こんにちは。日本語の勉強をしています。">${ICON.sound} Test voice</button></div>
+    <p class="small muted">${
+      names.length
+        ? `Japanese voices on this device: ${esc(names.join(", "))}. The hub uses the first one that works and remembers it.`
+        : `No Japanese voice found yet (they sometimes load a second late — reopen Settings). On a Mac: System Settings → Accessibility → Spoken Content → System voice → Manage Voices → Japanese → download Kyoko. On iPhone: Settings → Accessibility → Spoken Content → Voices → Japanese. Then reload the hub.`
+    }</p>`;
 }
 
 // ---------------- router ----------------
