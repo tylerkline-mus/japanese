@@ -1,7 +1,7 @@
 // Daily snapshot: records today's WaniKani numbers into data/history.json.
 // Runs in GitHub Actions with the WANIKANI_TOKEN repository secret.
 import { readFile, writeFile } from "node:fs/promises";
-import { wkGet, wkGetAll, snapshotRow } from "../assets/core.js";
+import { wkGet, wkGetAll, snapshotRow, previousDayRow } from "../assets/core.js";
 
 const token = process.env.WANIKANI_TOKEN;
 if (!token) {
@@ -25,6 +25,8 @@ let history = [];
 try {
   history = JSON.parse(await readFile(historyPath, "utf8"));
 } catch {}
+const prev = previousDayRow(history, row.date, config.timeZone);
+row.reviewedToday = prev ? Math.max(0, row.meaning[0] - prev.meaning[0]) : null;
 history = history.filter((h) => h.date !== row.date).concat([row]).sort((a, b) => a.date.localeCompare(b.date));
 await writeFile(historyPath, JSON.stringify(history, null, 1) + "\n");
 console.log(`Snapshot ${row.date}: level ${row.level}, queue ${row.queue}, reviewed today ${row.reviewedToday}`);

@@ -161,10 +161,21 @@ export function pct(c, i) {
   return t ? Math.round((c / t) * 1000) / 10 : null;
 }
 
-// Items whose stats changed since local midnight ≈ items reviewed today.
-export function reviewedToday(stats, since) {
-  const t = since.getTime();
-  return stats.filter((s) => Date.parse(s.data_updated_at) >= t).length;
+// Reviews completed = growth in total correct *meaning* answers. Every finished
+// review ends with exactly one correct meaning answer (wrong tries are retried in
+// the session), so this counts reviews, not items whose records happened to change.
+export function meaningCorrectTotal(stats) {
+  let n = 0;
+  for (const s of stats) n += s.data.meaning_correct || 0;
+  return n;
+}
+
+// Pick the baseline row for "today": the most recent snapshot from yesterday.
+export function previousDayRow(history, todayKey, timeZone) {
+  const y = new Date(Date.parse(todayKey + "T12:00:00Z") - 86400000);
+  const yKey = localDateKey(y, "UTC");
+  const prev = [...history].filter((h) => h.date < todayKey).sort((a, b) => a.date.localeCompare(b.date)).pop();
+  return prev && prev.date === yKey && Array.isArray(prev.meaning) ? prev : null;
 }
 
 // Leech score: wrong answers weighed against how shaky the item currently is.
@@ -270,7 +281,7 @@ export function snapshotRow(raw, timeZone, now = new Date()) {
     meaning: [acc.meaning.correct, acc.meaning.incorrect],
     reading: [acc.reading.correct, acc.reading.incorrect],
     byType: Object.fromEntries(Object.entries(acc.byType).map(([k, v]) => [k, [v.correct, v.incorrect]])),
-    reviewedToday: reviewedToday(raw.stats, startOfLocalDay(now, timeZone)),
+    reviewedToday: null, // filled in by the caller, which knows yesterday's total
   };
 }
 

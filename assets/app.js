@@ -179,8 +179,24 @@ function buildModel() {
   const now = new Date();
   const q = core.queueNow(raw.summary, now);
   const target = core.dailyTarget(q.reviews);
-  const done = core.reviewedToday(raw.stats, core.startOfLocalDay(now, tz));
   const live = core.snapshotRow(raw, tz, now);
+  // Baseline: last night's snapshot if there is one; otherwise the first time
+  // this device saw your numbers today (so reviews before that aren't counted).
+  const liveMC = live.meaning[0];
+  const prev = core.previousDayRow(S.history, live.date, tz);
+  let dayBase = prev ? prev.meaning[0] : null;
+  let baseSource = prev ? "snapshot" : "device";
+  if (dayBase == null && !raw.demo) {
+    const saved = store.get("jh.base", null);
+    if (saved && saved.date === live.date && saved.mc <= liveMC) dayBase = saved.mc;
+    else {
+      dayBase = liveMC;
+      store.set("jh.base", { date: live.date, mc: liveMC });
+    }
+  }
+  if (dayBase == null) dayBase = liveMC - 73; // demo only
+  const done = Math.max(0, liveMC - dayBase);
+  live.reviewedToday = done;
 
   S.known = core.knownKanji(raw.assignments, raw.kanjiSubjects);
   S.stageBySubject = new Map(raw.assignments.map((a) => [a.data.subject_id, a.data.srs_stage]));
@@ -204,6 +220,7 @@ function buildModel() {
     lessons: q.lessons,
     target,
     done,
+    baseSource,
     srs: core.srsBreakdown(raw.assignments),
     acc: core.accuracyTotals(raw.stats),
     week,
@@ -312,6 +329,7 @@ function viewToday() {
       </div>
     </div>
     <p class="small"><b>${fmt(doneN)}</b> reviewed so far today${t.target ? ` · ${fmt(Math.max(0, t.target - m.done))} to go` : ""}.</p>
+    ${m.baseSource === "device" ? `<p class="muted small">Counting from when this device first opened the hub today. From tomorrow it counts from last night's snapshot.</p>` : ""}
     <p>${metTarget ? "<b>Done for today.</b> Anything more is a bonus — and it's fine to stop." : esc(msg)}</p>
     <p class="muted small">Hard day? 20 still counts.</p>
     <div class="row">
