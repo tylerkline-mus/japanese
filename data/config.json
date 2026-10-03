@@ -4,5 +4,6 @@
   "tripDate": "2026-12-29",
   "tripLabel": "Japan",
   "timeZone": "America/New_York",
-  "courseStart": "2026-10-05"
+  "courseStart": "2026-10-05",
+  "syncUrl": "https://script.google.com/macros/s/AKfycbz1SCYHAfdVoBq0-rZYpjaB8W8t_GLTsX4_8I40LB6eah-dtYmazS3bmPW59kWVRUUcvA/exec"
 }
