@@ -300,17 +300,18 @@ function viewToday() {
   const metTarget = t.target && m.done >= t.target;
 
   const target = `<section class="card hero">
-    <p class="eyebrow">Today</p>
+    <p class="eyebrow">Today's goal</p>
     <div class="hero-row">
       <div>
         <p class="hero-num">${t.target ? fmt(t.target) : "0"}</p>
-        <p class="hero-label">${t.target ? "reviews" : "reviews due"}</p>
+        <p class="hero-label">${t.target ? "reviews to do" : "reviews due"}</p>
       </div>
-      <div class="ring-wrap" aria-label="${pctDone}% done">
+      <div class="ring-wrap" aria-label="${fmt(doneN)} reviewed so far, ${pctDone}% of the goal">
         ${ring(pctDone)}
         <span class="ring-label"><b>${fmt(doneN)}</b><br><small>done</small></span>
       </div>
     </div>
+    <p class="small"><b>${fmt(doneN)}</b> reviewed so far today${t.target ? ` · ${fmt(Math.max(0, t.target - m.done))} to go` : ""}.</p>
     <p>${metTarget ? "<b>Done for today.</b> Anything more is a bonus — and it's fine to stop." : esc(msg)}</p>
     <p class="muted small">Hard day? 20 still counts.</p>
     <div class="row">
