@@ -294,12 +294,17 @@ function buildModel() {
   let dayBase = prev ? prev.meaning[0] : null;
   let baseSource = prev ? "snapshot" : "device";
   if (dayBase == null && !raw.demo) {
+    // No snapshot from last night. Use the earliest number we have for today: an
+    // earlier snapshot from today (shared by every device) or this device's first look.
     const saved = store.get("jh.base", null);
-    if (saved && saved.date === live.date && saved.mc <= liveMC) dayBase = saved.mc;
-    else {
-      dayBase = liveMC;
+    let deviceBase = saved && saved.date === live.date && saved.mc <= liveMC ? saved.mc : null;
+    if (deviceBase == null) {
+      deviceBase = liveMC;
       store.set("jh.base", { date: live.date, mc: liveMC });
     }
+    const todayRow = S.history.find((h) => h.date === live.date && Array.isArray(h.meaning) && h.meaning[0] <= liveMC);
+    dayBase = todayRow ? Math.min(todayRow.meaning[0], deviceBase) : deviceBase;
+    if (todayRow && todayRow.meaning[0] <= deviceBase) baseSource = "earlier-snapshot";
   }
   if (dayBase == null) dayBase = liveMC - 73; // demo only
   const done = Math.max(0, liveMC - dayBase);
@@ -436,7 +441,13 @@ function viewToday() {
       </div>
     </div>
     <p class="small"><b>${fmt(doneN)}</b> reviewed so far today${t.target ? ` · ${fmt(Math.max(0, t.target - m.done))} to go` : ""}.</p>
-    ${m.baseSource === "device" ? `<p class="muted small">Counting from when this device first opened the hub today. From tomorrow it counts from last night's snapshot.</p>` : ""}
+    ${
+      m.baseSource === "device"
+        ? `<p class="muted small">Counting from when this device first opened the hub today. From tomorrow it counts from last night's snapshot.</p>`
+        : m.baseSource === "earlier-snapshot"
+        ? `<p class="muted small">Counting from today's earlier snapshot. From tomorrow it counts from last night's.</p>`
+        : ""
+    }
     <p>${metTarget ? "<b>Done for today.</b> Anything more is a bonus — and it's fine to stop." : esc(msg)}</p>
     <p class="muted small">Hard day? 20 still counts.</p>
     <div class="row">
