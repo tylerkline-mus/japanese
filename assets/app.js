@@ -76,6 +76,7 @@ async function boot() {
     }
   });
   wireGlobal();
+  wireResume();
 
   // Show cached WaniKani data instantly, then refresh in the background.
   const cached = DEMO ? null : store.get("jh.wk", null);
@@ -89,6 +90,37 @@ async function boot() {
   if (S.raw) buildModel();
   render();
   await refreshWK(false);
+}
+
+// A home-screen web app is resumed, not reloaded, when you open it again — so it can still be
+// showing yesterday. Coming back on a new day (or after a long break) reloads the whole page,
+// which also picks up any new code and lessons. A short break just refreshes WaniKani.
+function wireResume() {
+  let hiddenAt = null;
+  let dayAtHide = null;
+  const comeBack = () => {
+    const away = hiddenAt ? Date.now() - hiddenAt : 0;
+    const newDay = dayAtHide && S.config && todayKey() !== dayAtHide;
+    hiddenAt = null;
+    if (newDay || away > 60 * 60000) return location.reload();
+    if (away > 2 * 60000) {
+      refreshWK(false);
+      render();
+    }
+  };
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") {
+      hiddenAt = Date.now();
+      dayAtHide = S.config ? todayKey() : null;
+    } else comeBack();
+  });
+  // Restored from the back/forward cache (Safari does this too).
+  window.addEventListener("pageshow", (e) => {
+    if (e.persisted) {
+      hiddenAt = hiddenAt || Date.now() - 2 * 3600000;
+      comeBack();
+    }
+  });
 }
 
 async function loadScenes() {
