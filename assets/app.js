@@ -38,7 +38,7 @@ const S = {
 };
 
 const $app = () => document.getElementById("view");
-const todayKey = () => core.localDateKey(new Date(), S.config.timeZone);
+const todayKey = () => core.studyDayKey(new Date(), S.config.timeZone);
 const isDone = (id) => srs.isEnrolled(id);
 const token = () => (DEMO ? "demo" : store.get("jh.token", ""));
 
@@ -336,7 +336,7 @@ function buildModel() {
   const lastSeen = raw.demo ? null : store.get("jh.last", null);
   if (!raw.demo) store.set("jh.last", { date: live.date, mc: liveMC, at: now.toISOString() });
   const yKey = srs.addDays(live.date, -1);
-  const lastNight = lastSeen && lastSeen.date === yKey && lastSeen.mc <= liveMC && lastSeen.at && core.isEvening(lastSeen.at, tz) ? lastSeen.mc : null;
+  const lastNight = lastSeen && lastSeen.date === yKey && lastSeen.mc <= liveMC && lastSeen.at && core.isLate(lastSeen.at, tz) ? lastSeen.mc : null;
   const prev = core.previousDayRow(S.history, live.date, tz);
   const nightBase = [prev ? prev.meaning[0] : null, lastNight].filter((v) => v != null && v <= liveMC);
   let dayBase = nightBase.length ? Math.max(...nightBase) : null;
@@ -368,7 +368,7 @@ function buildModel() {
 
   // History merged with today's live numbers.
   const hist = S.history.filter((h) => h.date !== live.date).concat([live]).sort((a, b) => a.date.localeCompare(b.date));
-  const weekAgoKey = core.localDateKey(new Date(now.getTime() - 7 * 86400000), tz);
+  const weekAgoKey = core.studyDayKey(new Date(now.getTime() - 7 * 86400000), tz);
   const base = [...hist].reverse().find((h) => h.date <= weekAgoKey) || (hist.length > 1 ? hist[0] : null);
   const between = base && base.date !== live.date ? core.accuracyBetween(base, live) : null;
   const week = between ? { ...between, since: base.date } : null;
@@ -491,7 +491,7 @@ function viewToday() {
     <p class="small"><b>${fmt(doneN)}</b> reviewed so far today${t.target ? ` · ${fmt(Math.max(0, t.target - m.done))} to go` : ""}.</p>
     ${
       m.baseSource === "device"
-        ? `<p class="muted small">Counting from when this device first opened the hub today (last night's snapshot didn't run late enough).</p>`
+        ? `<p class="muted small">Counting from when this device first opened the hub today (no late-night snapshot from yesterday).</p>`
         : m.baseSource === "earlier-snapshot"
         ? `<p class="muted small">Counting from today's earlier snapshot. From tomorrow it counts from last night's.</p>`
         : ""
@@ -1172,7 +1172,7 @@ function weekStartKey() {
 function immMinutes(sinceKey) {
   return srs
     .immLog()
-    .filter((r) => !sinceKey || core.localDateKey(new Date(r.updated), S.config.timeZone) >= sinceKey)
+    .filter((r) => !sinceKey || core.studyDayKey(new Date(r.updated), S.config.timeZone) >= sinceKey)
     .reduce((n, r) => n + (Number(r.right) || 0), 0);
 }
 

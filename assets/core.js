@@ -78,6 +78,14 @@ export function localDateKey(date, timeZone) {
   return `${get("year")}-${get("month")}-${get("day")}`;
 }
 
+// Your study day starts at 4am, not midnight, so a late-night session counts toward the day
+// you were living. Everything "per day" (goal, streak, heatmap, review due dates, snapshot rows)
+// uses this.
+export const DAY_START_HOUR = 4;
+export function studyDayKey(date, timeZone) {
+  return localDateKey(new Date(date.getTime() - DAY_START_HOUR * 3600000), timeZone);
+}
+
 export function tzOffsetMinutes(date, timeZone) {
   // e.g. "GMT-04:00" → -240
   const name = new Intl.DateTimeFormat("en-US", { timeZone, timeZoneName: "longOffset" })
@@ -195,21 +203,21 @@ export function meaningCorrectTotal(stats) {
 }
 
 // Pick the baseline row for "today": the most recent snapshot from yesterday.
-// Yesterday's row, but only if it was captured late enough in the evening to stand in for
-// "the count at midnight". A row from mid-afternoon would quietly count the whole evening's
-// reviews as today's, so it's ignored. Rows from before `at` was recorded are ignored too.
+// Yesterday's row, but only if it was captured late enough to stand in for "the count when the
+// day rolled over" (between 8pm and the 4am day start). A row from mid-afternoon would quietly
+// count the whole evening's reviews as today's, so it's ignored. Rows without `at` are ignored too.
 export const EVENING_HOUR = 20;
 export function previousDayRow(history, todayKey, timeZone) {
   const y = new Date(Date.parse(todayKey + "T12:00:00Z") - 86400000);
   const yKey = localDateKey(y, "UTC");
   const prev = [...history].filter((h) => h.date < todayKey).sort((a, b) => a.date.localeCompare(b.date)).pop();
   if (!prev || prev.date !== yKey || !Array.isArray(prev.meaning) || !prev.at) return null;
-  return isEvening(prev.at, timeZone) ? prev : null;
+  return isLate(prev.at, timeZone) ? prev : null;
 }
 
-export function isEvening(iso, timeZone) {
+export function isLate(iso, timeZone) {
   const hour = Number(new Intl.DateTimeFormat("en-US", { timeZone, hour: "numeric", hourCycle: "h23" }).format(new Date(iso)));
-  return hour >= EVENING_HOUR;
+  return hour >= EVENING_HOUR || hour < DAY_START_HOUR;
 }
 
 // Leech score: wrong answers weighed against how shaky the item currently is.
@@ -266,10 +274,10 @@ export function levelPace(levels, now = new Date()) {
 
 export function forecast(assignments, timeZone, days = 7, now = new Date()) {
   const out = [];
-  const todayKey = localDateKey(now, timeZone);
+  const todayKey = studyDayKey(now, timeZone);
   const keys = [];
   for (let i = 0; i < days; i++) {
-    const k = localDateKey(new Date(now.getTime() + i * 86400000), timeZone);
+    const k = studyDayKey(new Date(now.getTime() + i * 86400000), timeZone);
     if (!keys.includes(k)) keys.push(k);
   }
   const counts = Object.fromEntries(keys.map((k) => [k, 0]));
@@ -282,7 +290,7 @@ export function forecast(assignments, timeZone, days = 7, now = new Date()) {
       overdue += 1;
       continue;
     }
-    const k = localDateKey(new Date(t), timeZone);
+    const k = studyDayKey(new Date(t), timeZone);
     if (k in counts) counts[k] += 1;
   }
   for (const k of keys) out.push({ date: k, count: counts[k], isToday: k === todayKey });
@@ -325,7 +333,7 @@ export function snapshotRow(raw, timeZone, now = new Date()) {
   const srs = srsBreakdown(raw.assignments);
   const acc = accuracyTotals(raw.stats);
   return {
-    date: localDateKey(now, timeZone),
+    date: studyDayKey(now, timeZone),
     at: now.toISOString(),
     level: raw.user.data.level,
     queue: q.reviews,

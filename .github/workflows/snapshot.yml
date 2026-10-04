@@ -2,7 +2,7 @@ name: Daily snapshot
 
 on:
   schedule:
-    # Every hour at :47; the gate step only lets the run through during the 9–11pm hours
+    # Every hour at :47; the gate step only lets the run through from 10pm to 3am
     # of your current time zone (see "travel" in data/config.json).
     - cron: "47 * * * *"
   workflow_dispatch:

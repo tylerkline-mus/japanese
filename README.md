@@ -16,7 +16,7 @@ A personal Japanese study hub. Static site on GitHub Pages — no server, nothin
 | Google Sheet (published CSV) | your notes | read live; columns `Japanese, Reading, English, Notes, Tags` |
 | `data/lessons/*.json` | the course | one file per lesson, listed in `data/lessons/index.json` |
 | `data/scenes/*.json` | scenes | one file per scene, listed in `data/scenes/index.json` |
-| `data/history.json` | stats over time | written every evening by the **Daily snapshot** Action |
+| `data/history.json` | stats over time | written nightly (10pm–3am) by the **Daily snapshot** Action; your study day starts at 4am, so late-night reviews count toward the day you were living |
 
 Japanese markup: `{漢字|かんじ}` gives a word its reading. Kanji you've reached Guru on in WaniKani show plain; anything else gets furigana. Tap any kanji for its meaning and your WaniKani stage.
 
