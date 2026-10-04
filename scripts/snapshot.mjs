@@ -28,6 +28,7 @@ try {
 } catch {}
 const prev = previousDayRow(history, row.date, config.timeZone);
 row.reviewedToday = prev ? Math.max(0, row.meaning[0] - prev.meaning[0]) : null;
+row.burnedToday = prev && prev.srs ? Math.max(0, row.srs.burned - prev.srs.burned) : null;
 history = history.filter((h) => h.date !== row.date).concat([row]).sort((a, b) => a.date.localeCompare(b.date));
 await writeFile(historyPath, JSON.stringify(history, null, 1) + "\n");
 // What you know right now — read by the weekly lesson writer, which can't reach WaniKani itself.
@@ -69,7 +70,7 @@ await writeFile(
 );
 console.log(`Vocabulary: ${vocab.length} words started, ${vocab.filter((v) => v.s >= 5).length} at Guru or higher`);
 
-console.log(`Snapshot ${row.date}: level ${row.level}, queue ${row.queue}, reviewed today ${row.reviewedToday}`);
+console.log(`Snapshot ${row.date}: level ${row.level}, queue ${row.queue}, reviewed today ${row.reviewedToday}, burned today ${row.burnedToday}`);
 
 // Grammar review progress from the Sheet (via the Apps Script), for the weekly lesson writer.
 // Needs the SYNC_KEY secret; skipped quietly if it isn't set.

@@ -345,6 +345,7 @@ export function snapshotRow(raw, timeZone, now = new Date()) {
     reading: [acc.reading.correct, acc.reading.incorrect],
     byType: Object.fromEntries(Object.entries(acc.byType).map(([k, v]) => [k, [v.correct, v.incorrect]])),
     reviewedToday: null, // filled in by the caller, which knows yesterday's total
+    burnedToday: null,
   };
 }
 

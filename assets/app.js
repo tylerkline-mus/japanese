@@ -331,32 +331,45 @@ function buildModel() {
   // Baseline: last night's snapshot if there is one; otherwise the first time
   // this device saw your numbers today (so reviews before that aren't counted).
   const liveMC = live.meaning[0];
-  // Last number this device saw, kept per day. If it saw one late last night, that's as good
+  const liveBurn = live.srs.burned;
+  // Last numbers this device saw, kept per day. If it saw them late last night, that's as good
   // as a snapshot for where today started.
   const lastSeen = raw.demo ? null : store.get("jh.last", null);
-  if (!raw.demo) store.set("jh.last", { date: live.date, mc: liveMC, at: now.toISOString() });
+  if (!raw.demo) store.set("jh.last", { date: live.date, mc: liveMC, burned: liveBurn, at: now.toISOString() });
   const yKey = srs.addDays(live.date, -1);
-  const lastNight = lastSeen && lastSeen.date === yKey && lastSeen.mc <= liveMC && lastSeen.at && core.isLate(lastSeen.at, tz) ? lastSeen.mc : null;
   const prev = core.previousDayRow(S.history, live.date, tz);
-  const nightBase = [prev ? prev.meaning[0] : null, lastNight].filter((v) => v != null && v <= liveMC);
-  let dayBase = nightBase.length ? Math.max(...nightBase) : null;
-  let baseSource = dayBase != null ? "snapshot" : "device";
-  if (dayBase == null && !raw.demo) {
-    // No snapshot from last night. Use the earliest number we have for today: an
-    // earlier snapshot from today (shared by every device) or this device's first look.
+  // Candidates for "where today started", each {mc, burned}. Late last night wins (largest);
+  // otherwise the earliest reading from today.
+  const night = [
+    prev ? { mc: prev.meaning[0], burned: prev.srs?.burned } : null,
+    lastSeen && lastSeen.date === yKey && lastSeen.at && core.isLate(lastSeen.at, tz) ? { mc: lastSeen.mc, burned: lastSeen.burned } : null,
+  ].filter((b) => b && b.mc <= liveMC);
+  let base = night.length ? night.reduce((a, b) => (b.mc > a.mc ? b : a)) : null;
+  let baseSource = base ? "snapshot" : "device";
+  if (!base && !raw.demo) {
+    // No reading from last night. Use the earliest one we have for today: an earlier
+    // snapshot from today (shared by every device) or this device's first look.
     const saved = store.get("jh.base", null);
-    let deviceBase = saved && saved.date === live.date && saved.mc <= liveMC ? saved.mc : null;
-    if (deviceBase == null) {
-      deviceBase = liveMC;
-      store.set("jh.base", { date: live.date, mc: liveMC });
+    let device = saved && saved.date === live.date && saved.mc <= liveMC ? { mc: saved.mc, burned: saved.burned } : null;
+    if (!device) {
+      device = { mc: liveMC, burned: liveBurn };
+      store.set("jh.base", { date: live.date, mc: liveMC, burned: liveBurn });
+    } else if (device.burned == null) {
+      device.burned = liveBurn; // saved before burns were tracked: count burns from now
+      store.set("jh.base", { date: live.date, mc: device.mc, burned: liveBurn });
     }
     const todayRow = S.history.find((h) => h.date === live.date && Array.isArray(h.meaning) && h.meaning[0] <= liveMC);
-    dayBase = todayRow ? Math.min(todayRow.meaning[0], deviceBase) : deviceBase;
-    if (todayRow && todayRow.meaning[0] <= deviceBase) baseSource = "earlier-snapshot";
+    base = device;
+    if (todayRow && todayRow.meaning[0] <= device.mc) {
+      base = { mc: todayRow.meaning[0], burned: todayRow.srs?.burned };
+      baseSource = "earlier-snapshot";
+    }
   }
-  if (dayBase == null) dayBase = liveMC - 73; // demo only
-  const done = Math.max(0, liveMC - dayBase);
+  if (!base) base = { mc: liveMC - 73, burned: liveBurn - 9 }; // demo only
+  const done = Math.max(0, liveMC - base.mc);
+  const burnedToday = base.burned == null ? null : Math.max(0, liveBurn - base.burned);
   live.reviewedToday = done;
+  live.burnedToday = burnedToday;
 
   S.known = core.knownKanji(raw.assignments, raw.kanjiSubjects);
   S.stageBySubject = new Map(raw.assignments.map((a) => [a.data.subject_id, a.data.srs_stage]));
@@ -369,9 +382,9 @@ function buildModel() {
   // History merged with today's live numbers.
   const hist = S.history.filter((h) => h.date !== live.date).concat([live]).sort((a, b) => a.date.localeCompare(b.date));
   const weekAgoKey = core.studyDayKey(new Date(now.getTime() - 7 * 86400000), tz);
-  const base = [...hist].reverse().find((h) => h.date <= weekAgoKey) || (hist.length > 1 ? hist[0] : null);
-  const between = base && base.date !== live.date ? core.accuracyBetween(base, live) : null;
-  const week = between ? { ...between, since: base.date } : null;
+  const weekBase = [...hist].reverse().find((h) => h.date <= weekAgoKey) || (hist.length > 1 ? hist[0] : null);
+  const between = weekBase && weekBase.date !== live.date ? core.accuracyBetween(weekBase, live) : null;
+  const week = between ? { ...between, since: weekBase.date } : null;
 
   S.model = {
     username: raw.user.data.username,
@@ -380,6 +393,7 @@ function buildModel() {
     lessons: q.lessons,
     target,
     done,
+    burnedToday,
     baseSource,
     srs: core.srsBreakdown(raw.assignments),
     acc: core.accuracyTotals(raw.stats),
@@ -489,6 +503,7 @@ function viewToday() {
       </div>
     </div>
     <p class="small"><b>${fmt(doneN)}</b> reviewed so far today${t.target ? ` · ${fmt(Math.max(0, t.target - m.done))} to go` : ""}.</p>
+    ${m.burnedToday != null ? `<p class="burn-today"><span class="flame" aria-hidden="true">🔥</span> <b>${fmt(m.burnedToday)}</b> burned today <span class="muted small">· ${fmt(m.srs.burned)} gone for good</span></p>` : ""}
     ${
       m.baseSource === "device"
         ? `<p class="muted small">Counting from when this device first opened the hub today (no late-night snapshot from yesterday).</p>`
@@ -637,6 +652,8 @@ function viewStats() {
   const groups = core.SRS_GROUPS.map((g) => ({ key: g.key, label: g.label, value: m.srs[g.key] }));
   const srsCard = `<section class="card"><h2>Where your items are</h2>${stackBar(groups)}</section>`;
 
+  const burnsCard = burnsChart(m);
+
   const burnPts = m.hist.map((h) => ({ label: shortDate(h.date), value: h.queue }));
   const burn = `<section class="card"><h2>Queue burn-down</h2>
     ${burnPts.length > 1 ? lineChart(burnPts, { unit: " reviews" }) : `<p class="muted">Starts tonight. A snapshot runs every evening, so this fills in day by day.</p>`}
@@ -711,7 +728,26 @@ function viewStats() {
     ${[...m.hist].reverse().map((h) => `<tr><td>${h.date}</td><td>${h.level}</td><td>${fmt(h.queue)}</td><td>${fmt(h.reviewedToday)}</td></tr>`).join("")}
     </tbody></table></div></details>`;
 
-  return errorBanner() + tiles + srsCard + burn + heat + forecastCard + accCard + grammarStats() + paceCard + coverage + leeches + table;
+  return errorBanner() + tiles + srsCard + burnsCard + burn + heat + forecastCard + accCard + grammarStats() + paceCard + coverage + leeches + table;
+}
+
+// Items burned per day: from each row's burnedToday, or the change from the previous day's row.
+function burnsChart(m) {
+  const pts = [];
+  m.hist.forEach((h, i) => {
+    let v = h.burnedToday;
+    const p = m.hist[i - 1];
+    if (v == null && p && p.srs && h.srs && srs.addDays(p.date, 1) === h.date) v = Math.max(0, h.srs.burned - p.srs.burned);
+    if (v != null) pts.push({ label: shortDate(h.date), value: v, tip: `${h.date}: ${fmt(v)} burned`, emphasis: h === m.live });
+  });
+  const total = pts.reduce((n, p) => n + p.value, 0);
+  return `<section class="card"><div class="split"><h2>Burned</h2><span class="big-num">${fmt(m.srs.burned)}</span></div>
+    ${
+      pts.length > 1
+        ? barChart(pts.slice(-21), { height: 160 }) + `<p class="muted small">${fmt(total)} burned over ${pts.length} days. Each one is gone from your reviews for good.</p>`
+        : `<p class="muted small">${m.burnedToday != null ? `<b>${fmt(m.burnedToday)}</b> today so far. ` : ""}The daily chart fills in from tonight's snapshot.</p>`
+    }
+  </section>`;
 }
 
 function grammarStats() {

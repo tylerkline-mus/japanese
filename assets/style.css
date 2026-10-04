@@ -484,3 +484,6 @@ pre.prompt { white-space: pre-wrap; font-size: 0.8rem; background: var(--surface
 .chip.need { font-size: 0.78rem; font-weight: 500; padding: 2px 9px; }
 .chip.need.done { font-weight: 700; }
 .sp-body .reveal { display: block; margin-top: 10px; }
+
+.burn-today { margin: 6px 0 4px; font-size: 1rem; }
+.burn-today .flame { font-size: 1.05rem; }
