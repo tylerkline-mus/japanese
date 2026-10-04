@@ -10,13 +10,13 @@
   "summary": "て-form + いる means either \"is doing\" or \"is in the state of having done.\" Which one depends on the verb.",
   "explanation": [
     "〜ている is built from the て-form plus いる (to exist). Literally: \"exists in the doing.\" It has two main jobs.",
-    "**1. Action in progress.** For verbs that take time — {食|た}べる, {練習|れんしゅう}する, {降|ふ}る, {待|ま}つ — 〜ている means \"is doing right now.\" {今|いま}チェロを{練習|れんしゅう}しています = I'm practicing cello right now.",
+    "**1. Action in progress.** For verbs that take time — {食|た}べる, {練習|れんしゅう}する, {降|ふ}る, {待|ま}つ — 〜ている means \"is doing right now.\" {今|いま}{曲|きょく}を{書|か}いています = I'm writing a piece right now.",
     "**2. A state that resulted from a change.** For verbs that happen in an instant — {結婚|けっこん}する, {着|つ}く, {来|く}る, {開|あ}く, {知|し}る — 〜ている means the change happened and you're still in that state. {結婚|けっこん}しています = is married, not \"is getting married.\" {来|き}ています = has come (and is here).",
     "It also covers **habits**: {毎日|まいにち}ワニカニをやっています = I do WaniKani every day (these days).",
     "Two things to remember: in casual speech the い drops ({食|た}べてる, {知|し}ってる), and the negative of {知|し}っている is {知|し}らない / {知|し}りません — never {知|し}っていない."
   ],
   "examples": [
-    { "ja": "{今|いま}、チェロを{練習|れんしゅう}しています。", "en": "I'm practicing cello right now.", "note": "Action in progress." },
+    { "ja": "{今|いま}、{新|あたら}しい{曲|きょく}を{書|か}いています。", "en": "I'm writing a new piece right now.", "note": "Action in progress." },
     { "ja": "{雨|あめ}が{降|ふ}っています。", "en": "It's raining.", "note": "Action in progress." },
     { "ja": "{窓|まど}が{開|あ}いています。", "en": "The window is open.", "note": "開く (to open) happened; the window stays open." },
     { "ja": "その{店|みせ}、{知|し}ってる？", "en": "Do you know that shop?", "note": "Casual: い dropped. 知る needs ている to mean \"know.\"" },

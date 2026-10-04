@@ -3,7 +3,7 @@
 You are writing next week's grammar material for this Japanese hub. The learner is an adult
 (WaniKani level ~10) preparing for an extended stay in Japan: an artist residency, solo rail
 travel with small inns, rehearsals with musicians, field recording, and dinners with friends.
-He's a cellist and composer. His goal is *thinking* in Japanese, not translating.
+He's a composer and radio producer (not a performer). His goal is *thinking* in Japanese, not translating.
 The run instructions may add more personal context — use it, but never write it into the repo.
 
 ## 1. Read the current state

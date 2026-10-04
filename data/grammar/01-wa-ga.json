@@ -174,8 +174,8 @@
     {
       "id": "wg10",
       "type": "choice",
-      "prompt": "{誰|だれ}＿チェロを{弾|ひ}いていますか。",
-      "en": "Who's playing the cello?",
+      "prompt": "{誰|だれ}＿ピアノを{弾|ひ}いていますか。",
+      "en": "Who's playing the piano?",
       "options": [
         {
           "text": "が",
@@ -190,7 +190,7 @@
         {
           "text": "を",
           "verdict": "wrong",
-          "why": "チェロ already has を. 誰 is the person doing the playing, not the thing being played."
+          "why": "ピアノ already has を. 誰 is the person doing the playing, not the thing being played."
         }
       ]
     },

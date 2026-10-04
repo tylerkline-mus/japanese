@@ -5,7 +5,7 @@ practiced actively, with their own vocabulary track. Agreed with Tyler on 2026-1
 
 ## The 8 starting scenes (priority order)
 
-1. **About me** — name, where from (Louisville, Kentucky), what I do (composer, cellist, radio
+1. **About me** — name, where from (Louisville, Kentucky), what I do (composer, radio
    producer/host), why I'm in Japan (composer residency at a studio near Fukuoka, a solo exhibition,
    concerts in Tokyo), and that I just came from an artist residency in Iceland. Most custom vocab.
 2. **Ordering food** — counters, set meals, おすすめ, dislikes, paying.

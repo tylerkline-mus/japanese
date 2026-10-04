@@ -26,9 +26,9 @@
   ],
   "contrasts": [
     {
-      "a": { "ja": "タイラーはチェロを{弾|ひ}きます。", "en": "Tyler plays cello." },
-      "b": { "ja": "タイラーがチェロを{弾|ひ}きます。", "en": "Tyler is the one who plays cello." },
-      "why": "With は you're telling us something about Tyler. With が you're answering \"who plays cello?\" — the spotlight is on Tyler being the one."
+      "a": { "ja": "タイラーは{曲|きょく}を{書|か}きます。", "en": "Tyler writes music." },
+      "b": { "ja": "タイラーが{曲|きょく}を{書|か}きます。", "en": "Tyler is the one who writes the music." },
+      "why": "With は you're telling us something about Tyler. With が you're answering \"who writes the music?\" — the spotlight is on Tyler being the one."
     },
     {
       "a": { "ja": "ここは{駅|えき}です。", "en": "This place is a station." },
@@ -44,12 +44,12 @@
   "exercises": [
     {
       "type": "choice",
-      "prompt": "{誰|だれ}＿チェロを{弾|ひ}きますか。",
-      "en": "Who plays the cello?",
+      "prompt": "{誰|だれ}＿ピアノを{弾|ひ}きますか。",
+      "en": "Who plays the piano?",
       "options": [
-        { "text": "が", "verdict": "right", "why": "誰 is a question word, and question words always take が. You're asking who fills the \"plays cello\" slot." },
+        { "text": "が", "verdict": "right", "why": "誰 is a question word, and question words always take が. You're asking who fills the \"plays piano\" slot." },
         { "text": "は", "verdict": "wrong", "why": "は would make 誰 the topic — \"as for who…\" — but you can't set an unknown person on the stage. Question words never take は." },
-        { "text": "を", "verdict": "wrong", "why": "を marks the thing being acted on. The cello is already marked with を; 誰 is the one doing the playing." }
+        { "text": "を", "verdict": "wrong", "why": "を marks the thing being acted on. The piano is already marked with を; 誰 is the one doing the playing." }
       ]
     },
     {

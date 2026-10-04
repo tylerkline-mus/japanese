@@ -8,7 +8,7 @@ doable, never like another queue.
 
 - Mostly **listening**: podcasts and interviews. Some YouTube is welcome.
 - **Interviews and talk**, ideally about music, sound, art, travel, or daily life in Japan.
-  He's a composer and cellist who does field recording and produces radio — content he'd enjoy
+  He's a composer who does field recording and produces radio — content he'd enjoy
   in English is the most sustainable kind.
 - **NHK-FM 「現代の音楽」** (contemporary music, composer guests) is a priority when a recent
   episode or program page can be found via search. Note that NHK streams may be region-limited.
