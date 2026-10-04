@@ -1,0 +1,86 @@
+{
+  "id": "dinner-guest",
+  "title": "お{宅|たく}での{夕食|ゆうしょく}",
+  "titleEn": "Dinner as a guest",
+  "situation": "Dinner at a friend's family home: arriving, the meal, thanking them.",
+  "when": "2026-12-15",
+  "register": [
+    "Polite です/ます is right even with friends' families; they'll relax it for you if they want to."
+  ],
+  "tiers": {
+    "survival": {
+      "requires": [],
+      "dialogue": [
+        {
+          "who": "me",
+          "ja": "お{招|まね}きいただきありがとうございます。",
+          "en": "Thank you for having us."
+        },
+        {
+          "who": "them",
+          "ja": "どうぞ、{上|あ}がってください。",
+          "en": "Please, come in."
+        },
+        {
+          "who": "me",
+          "ja": "お{邪魔|じゃま}します。",
+          "en": "Thank you. (Sorry to intrude.)",
+          "note": "What you say stepping into someone's home."
+        },
+        {
+          "who": "me",
+          "ja": "いただきます。",
+          "en": "Let's eat. (Thank you for the food.)"
+        },
+        {
+          "who": "them",
+          "ja": "お{口|くち}に{合|あ}いますか。",
+          "en": "Is it to your taste?"
+        },
+        {
+          "who": "me",
+          "ja": "はい、とてもおいしいです！",
+          "en": "Yes, it's delicious!"
+        },
+        {
+          "who": "me",
+          "ja": "ごちそうさまでした。とてもおいしかったです。",
+          "en": "Thank you for the meal. It was delicious."
+        }
+      ],
+      "phrases": [
+        {
+          "ja": "{少|すこ}しですが、どうぞ。",
+          "en": "It's just a little something, but please.",
+          "note": "Handing over a gift."
+        },
+        {
+          "ja": "{作|つく}り{方|かた}を{教|おし}えてください。",
+          "en": "Please teach me how to make it."
+        }
+      ]
+    }
+  },
+  "vocab": [
+    {
+      "id": "maneku",
+      "ja": "{招|まね}く",
+      "en": "to invite"
+    },
+    {
+      "id": "ojama",
+      "ja": "お{邪魔|じゃま}します",
+      "en": "sorry to intrude (entering a home)"
+    },
+    {
+      "id": "au",
+      "ja": "{口|くち}に{合|あ}う",
+      "en": "to suit your taste"
+    },
+    {
+      "id": "tsukurikata",
+      "ja": "{作|つく}り{方|かた}",
+      "en": "how to make it"
+    }
+  ]
+}

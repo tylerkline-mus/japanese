@@ -1,0 +1,83 @@
+{
+  "id": "pickup-call",
+  "title": "{迎|むか}えの{電話|でんわ}",
+  "titleEn": "Pickup call",
+  "situation": "Calling the studio from a rural station to be picked up.",
+  "when": "2026-12-15",
+  "register": [
+    "Phone calls start with もしもし. Say your full name; the staff haven't met you yet."
+  ],
+  "tiers": {
+    "survival": {
+      "requires": [],
+      "dialogue": [
+        {
+          "who": "me",
+          "ja": "もしもし、タイラー・クラインです。",
+          "en": "Hello, this is Tyler Kline.",
+          "note": "もしもし is only for the phone."
+        },
+        {
+          "who": "them",
+          "ja": "はい、お{疲|つか}れさまです。",
+          "en": "Yes, hello! Thanks for making the trip."
+        },
+        {
+          "who": "me",
+          "ja": "{今|いま}、{一貴山|いきさん}{駅|えき}に{着|つ}きました。",
+          "en": "I've just arrived at Ikisan Station.",
+          "note": "着く takes に (Lesson 2)."
+        },
+        {
+          "who": "me",
+          "ja": "{迎|むか}えに{来|き}ていただけますか。",
+          "en": "Could you come pick me up?",
+          "note": "Very polite request; right for staff you haven't met."
+        },
+        {
+          "who": "them",
+          "ja": "はい、{十五分|じゅうごふん}ぐらいで{行|い}きます。",
+          "en": "Sure, we'll be there in about fifteen minutes."
+        },
+        {
+          "who": "me",
+          "ja": "ありがとうございます。{駅|えき}の{前|まえ}で{待|ま}っています。",
+          "en": "Thank you. I'll be waiting in front of the station.",
+          "note": "待つ is an action, so the place takes で (Lesson 2)."
+        }
+      ],
+      "phrases": [
+        {
+          "ja": "すみません、もう{一度|いちど}お{願|ねが}いします。",
+          "en": "Sorry, once more please."
+        },
+        {
+          "ja": "{何分|なんぷん}ぐらいですか。",
+          "en": "About how many minutes?"
+        }
+      ]
+    }
+  },
+  "vocab": [
+    {
+      "id": "mukae",
+      "ja": "{迎|むか}え",
+      "en": "pickup, meeting someone"
+    },
+    {
+      "id": "tsuku",
+      "ja": "{着|つ}く",
+      "en": "to arrive"
+    },
+    {
+      "id": "matsu",
+      "ja": "{待|ま}つ",
+      "en": "to wait"
+    },
+    {
+      "id": "gurai",
+      "ja": "〜ぐらい",
+      "en": "about, around"
+    }
+  ]
+}

@@ -1,7 +1,8 @@
 /**
  * Japanese Hub — grammar review sync.
  * Paste this into your notes Sheet: Extensions → Apps Script.
- * It stores review progress in a tab called "srs" (created automatically).
+ * It stores review progress in a tab called "srs" (created automatically), and reads a
+ * "Scene requests" tab (also created automatically) for the Sunday lesson task.
  *
  * Set KEY to any long random phrase, then type the same phrase into the hub's
  * Settings. Anyone without the key gets nothing.
@@ -40,6 +41,8 @@ function handle_(p) {
     }
     return out_({ ok: true });
   }
+  if (p.action === "requests") return out_({ ok: true, requests: readRequests_() });
+  if (p.action === "resolve") return out_(resolveRequest_(Number(p.row), String(p.status || "")));
   return out_({ ok: false, error: "Unknown action" });
 }
 
@@ -83,6 +86,44 @@ function write_(sh, items) {
       sh.getRange(sh.getLastRow(), 1, 1, COLS.length).setNumberFormat("@").setValues([row]);
     }
   });
+}
+
+// ---------- scene requests ----------
+// Columns: Request · Notes · Status. Add a row; the Sunday task turns it into a scene (or a new
+// tier of one) and fills in Status. Rows with a Status are left alone.
+const REQ_TAB = "Scene requests";
+const REQ_COLS = ["Request", "Notes", "Status"];
+
+function reqSheet_() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  let sh = ss.getSheetByName(REQ_TAB);
+  if (!sh) {
+    sh = ss.insertSheet(REQ_TAB);
+    sh.getRange(1, 1, 1, REQ_COLS.length).setValues([REQ_COLS]).setFontWeight("bold");
+    sh.setFrozenRows(1);
+    sh.setColumnWidth(1, 320);
+    sh.setColumnWidth(2, 320);
+    sh.setColumnWidth(3, 260);
+  }
+  return sh;
+}
+
+function readRequests_() {
+  const sh = reqSheet_();
+  const last = sh.getLastRow();
+  if (last < 2) return [];
+  return sh
+    .getRange(2, 1, last - 1, REQ_COLS.length)
+    .getDisplayValues()
+    .map((r, i) => ({ row: i + 2, request: r[0], notes: r[1], status: r[2] }))
+    .filter((r) => r.request && !r.status);
+}
+
+function resolveRequest_(row, status) {
+  const sh = reqSheet_();
+  if (!row || row < 2 || row > sh.getLastRow() || !status) return { ok: false, error: "Need a row number and a status" };
+  sh.getRange(row, 3).setValue(status);
+  return { ok: true };
 }
 
 function out_(obj) {

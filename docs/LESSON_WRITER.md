@@ -66,14 +66,46 @@ Rules (non-negotiable):
 - Japanese-first: the hub hides English behind a tap, so prompts should be answerable from the
   Japanese plus the scene.
 
-## 4. Check and publish
+## 4. Scenes (every run)
+
+Scenes live in `data/scenes/<id>.json`, listed in `data/scenes/index.json`. Copy the shape of
+`data/scenes/about-me.json`. Each scene has tiers that open as lessons are marked done:
+`survival` (works now, `requires: []`), `natural`, `conversation`, `onstage` (a short spoken piece).
+A tier's `requires` lists lesson ids that exist; `requiresChapters` lists Tae Kim chapter slugs
+from `data/curriculum.json` that don't have a lesson yet. The hub opens a tier when all of both are done.
+
+Do these in order, and keep the total small (a scene a week is plenty):
+
+1. **Requests.** If the run instructions include a sync key, fetch
+   `<syncUrl>?action=requests&key=<key>` with WebFetch. Each open request is `{row, request, notes}`.
+   Turn each one into a new scene or a new tier of an existing scene. Then mark it handled with
+   `<syncUrl>?action=resolve&key=<key>&row=<row>&status=<URL-encoded short note, e.g. "Added 2026-10-11: new scene, Sake bar">`.
+   If the fetch fails, say so in the summary and carry on.
+2. **Grow with the grammar.** If you wrote a new lesson this run, pick one or two scenes where that
+   grammar would make a line more natural. Add lines to the tier that should hold them, or add a
+   `natural`/`conversation` tier that `requires` the new lesson. When a chapter in a tier's
+   `requiresChapters` gets its lesson, move it to `requires` as the lesson id.
+3. **Fill thin scenes.** If neither of the above gave you anything to do, add a `natural` tier to
+   the scene with the nearest `when` date that only has `survival`.
+
+Scene rules:
+- Every line has `ja` and `en`; dialogue lines have `who`: `"me"` or `"them"`. "Them" lines can use
+  grammar beyond his level (he only needs to understand them); "me" lines should fit the tier's grammar.
+- Polite です/ます for his lines. Same `{漢字|かな}` markup as lessons.
+- `vocab`: only words the scene needs, `{id, ja, en, note}`, ids lowercase romaji, unique per scene.
+  Leave out words already in `wk-vocab.json`.
+- `when`: the date the hub should start showing the scene. Use dates from the itinerary in the run
+  instructions, but **no names of people** in scene files; the repo is public.
+- Never rewrite a scene's lines just for style. He's memorizing them.
+
+## 5. Check and publish
 
 1. `node scripts/validate-lessons.mjs` must pass. Fix anything it reports.
 2. Re-read every Japanese sentence once more for naturalness and correctness. If unsure about one,
    replace it with a simpler sentence you're sure of.
-3. Commit with a message like `Lesson 4: 〜たい (wanting)` or `Review sentences: +4 は/が` and push to `main`.
-4. End with a 2–3 line summary: what you added, why (caught up or not, what was shaky), and anything
-   you couldn't read.
+3. Commit with a message like `Lesson 4: 〜たい (wanting)`, `Review sentences: +4 は/が` or `Scenes: natural tier for Ordering food` and push to `main`.
+4. End with a 2–3 line summary: what you added (lesson, reviews, scenes), why (caught up or not, what
+   was shaky, which requests), and anything you couldn't read.
 
 ## Direction notes from Tyler
 

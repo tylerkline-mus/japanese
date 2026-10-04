@@ -110,8 +110,58 @@ try {
   if (e.code !== "ENOENT") problems.push(`immersion/picks.json: can't read or parse (${e.message})`);
 }
 
+// Scenes (data/scenes/*.json, listed in data/scenes/index.json)
+let sceneCount = 0;
+try {
+  const sdir = new URL("../data/scenes/", import.meta.url);
+  const sindex = JSON.parse(await readFile(new URL("index.json", sdir), "utf8"));
+  const curriculum = JSON.parse(await readFile(new URL("../data/curriculum.json", import.meta.url), "utf8"));
+  const slugs = new Set(curriculum.sections.flatMap((s) => s.chapters.map((c) => c.slug)));
+  const sceneIds = new Set();
+  const TIERS = ["survival", "natural", "conversation", "onstage"];
+  for (const entry of sindex.scenes || []) {
+    const where = "scenes/" + entry.file;
+    let sc;
+    try {
+      sc = JSON.parse(await readFile(new URL(entry.file, sdir), "utf8"));
+    } catch (e) {
+      problems.push(`${where}: can't read or parse (${e.message})`);
+      continue;
+    }
+    sceneCount++;
+    if (sc.id !== entry.id) problems.push(`${where}: id "${sc.id}" doesn't match index "${entry.id}"`);
+    if (sceneIds.has(sc.id)) problems.push(`${where}: duplicate scene id ${sc.id}`);
+    sceneIds.add(sc.id);
+    for (const k of ["title", "titleEn", "situation", "tiers"]) if (!sc[k]) problems.push(`${where}: missing ${k}`);
+    if (sc.when && !/^\d{4}-\d{2}-\d{2}$/.test(sc.when)) problems.push(`${where}: when must be YYYY-MM-DD`);
+    if (!sc.tiers?.survival) problems.push(`${where}: needs a survival tier`);
+    for (const [key, t] of Object.entries(sc.tiers || {})) {
+      const at = `${where}: tier ${key}`;
+      if (!TIERS.includes(key)) problems.push(`${at}: unknown tier (use ${TIERS.join(", ")})`);
+      if (!Array.isArray(t.requires)) problems.push(`${at}: needs a requires list (can be empty)`);
+      for (const id of t.requires || []) if (!ids.has(id)) problems.push(`${at}: requires "${id}", which isn't in the lesson index`);
+      for (const slug of t.requiresChapters || []) if (!slugs.has(slug)) problems.push(`${at}: requiresChapters "${slug}" isn't a chapter in curriculum.json`);
+      if (!(t.dialogue || []).length && !(t.phrases || []).length) problems.push(`${at}: has no lines`);
+      (t.dialogue || []).forEach((l, i) => {
+        if (!l.ja || !l.en) problems.push(`${at}: dialogue line ${i + 1} needs ja and en`);
+        if (!["me", "them"].includes(l.who)) problems.push(`${at}: dialogue line ${i + 1} needs who: "me" or "them"`);
+      });
+      (t.phrases || []).forEach((l, i) => { if (!l.ja || !l.en) problems.push(`${at}: phrase ${i + 1} needs ja and en`); });
+    }
+    const vids = new Set();
+    (sc.vocab || []).forEach((v, i) => {
+      if (!v.id || !v.ja || !v.en) problems.push(`${where}: vocab ${i + 1} needs id, ja and en`);
+      if (v.id && !/^[a-z0-9-]+$/.test(v.id)) problems.push(`${where}: vocab id "${v.id}" should be lowercase letters, numbers and dashes`);
+      if (vids.has(v.id)) problems.push(`${where}: duplicate vocab id ${v.id}`);
+      vids.add(v.id);
+    });
+  }
+} catch (e) {
+  if (e.code !== "ENOENT") problems.push(`scenes: can't read (${e.message})`);
+}
+
 if (problems.length) {
   console.error(problems.map((p) => "✕ " + p).join("\n"));
   process.exit(1);
 }
-console.log(`✓ ${index.lessons.length} lessons and ${bankCount} review banks, every answer explained.${pickWeeks ? ` Picks: ${pickWeeks} week(s), newest OK.` : ""}`);
+console.log(`✓ ${index.lessons.length} lessons and ${bankCount} review banks, every answer explained.${sceneCount ? ` Scenes: ${sceneCount}.` : ""}${pickWeeks ? ` Picks: ${pickWeeks} week(s), newest OK.` : ""}`);

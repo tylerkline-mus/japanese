@@ -161,9 +161,13 @@ export async function unenroll(id, defaultUrl) {
   await save([{ ...prev, stage: 0, due: "", updated: nowIso() }], defaultUrl);
 }
 
+// Grammar points have plain ids ("02-ni-de"). Other kinds ride along with a prefix
+// ("imm:…", "voc:…") and never count as grammar.
+export const isGrammar = (id) => !String(id).includes(":");
+
 export function dueList(todayKey) {
   return [...state.rows.values()]
-    .filter((r) => r.stage >= 1 && r.stage <= 6 && r.due && r.due <= todayKey)
+    .filter((r) => isGrammar(r.id) && r.stage >= 1 && r.stage <= 6 && r.due && r.due <= todayKey)
     .sort((a, b) => a.due.localeCompare(b.due) || a.stage - b.stage);
 }
 
@@ -172,7 +176,7 @@ export function dueToday(todayKey) {
 }
 
 export function nextDue(todayKey) {
-  const upcoming = [...state.rows.values()].filter((r) => r.stage >= 1 && r.stage <= 6 && r.due > todayKey).map((r) => r.due).sort();
+  const upcoming = [...state.rows.values()].filter((r) => isGrammar(r.id) && r.stage >= 1 && r.stage <= 6 && r.due > todayKey).map((r) => r.due).sort();
   return upcoming[0] || null;
 }
 
@@ -220,4 +224,48 @@ export async function setImm(id, minutes, done, defaultUrl) {
 
 export function immLog() {
   return [...state.rows.values()].filter((r) => r.id.startsWith("imm:") && r.seen === "done");
+}
+
+// ---------- scene vocabulary ----------
+// Rows look like {id: "voc:<scene id>:<word id>", stage 1–7, due, right, wrong}. One card per word,
+// graded one at a time: right → step up, wrong → step back. A small daily cap keeps it light.
+
+export const VOC_PER_DAY = 10;
+export const VOC_NEW_PER_DAY = 5;
+export const vocId = (sceneId, wordId) => `voc:${sceneId}:${wordId}`;
+
+export function vocRows() {
+  return [...state.rows.values()].filter((r) => r.id.startsWith("voc:") && r.stage >= 1);
+}
+
+export function vocDue(todayKey) {
+  return vocRows()
+    .filter((r) => r.stage <= 6 && r.due && r.due <= todayKey)
+    .sort((a, b) => a.due.localeCompare(b.due) || a.stage - b.stage);
+}
+
+// New words introduced today (first answered today), so the new-word cap holds across sessions.
+export function vocNewToday(todayKey) {
+  return vocRows().filter((r) => (r.seen || "").startsWith("new:" + todayKey)).length;
+}
+
+export async function gradeVoc(id, ok, todayKey, defaultUrl) {
+  const prev = state.rows.get(id);
+  const isNew = !prev || !prev.stage;
+  let stage;
+  if (isNew) stage = 1;
+  else if (ok) stage = Math.min(7, prev.stage + 1);
+  else stage = Math.max(1, prev.stage - 1);
+  const due = stage >= 7 ? "" : addDays(todayKey, INTERVALS[stage - 1]);
+  const row = {
+    id,
+    stage,
+    due,
+    right: (prev?.right || 0) + (ok ? 1 : 0),
+    wrong: (prev?.wrong || 0) + (ok ? 0 : 1),
+    seen: isNew ? "new:" + todayKey : prev.seen || "",
+    updated: nowIso(),
+  };
+  await save([normalize(row)], defaultUrl);
+  return row;
 }

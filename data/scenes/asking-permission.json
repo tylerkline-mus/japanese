@@ -1,0 +1,81 @@
+{
+  "id": "asking-permission",
+  "title": "{許可|きょか}をもらう",
+  "titleEn": "Asking permission",
+  "situation": "Asking to take photos, video, or make a field recording, and hearing a polite \"no\".",
+  "when": "2026-12-15",
+  "register": [
+    "A real \"no\" is usually indirect: ちょっと…, a pause, a sharp intake of breath. Take it as no and thank them."
+  ],
+  "tiers": {
+    "survival": {
+      "requires": [],
+      "dialogue": [
+        {
+          "who": "me",
+          "ja": "すみません、ここで{録音|ろくおん}してもいいですか。",
+          "en": "Excuse me, is it OK to record here?",
+          "note": "〜てもいいですか = \"is it OK if I…?\""
+        },
+        {
+          "who": "them",
+          "ja": "ええ、どうぞ。",
+          "en": "Sure, go ahead."
+        },
+        {
+          "who": "me",
+          "ja": "{音楽|おんがく}のために{音|おと}を{集|あつ}めています。",
+          "en": "I'm collecting sounds for my music."
+        },
+        {
+          "who": "me",
+          "ja": "{写真|しゃしん}を{撮|と}ってもいいですか。",
+          "en": "May I take a photo?"
+        },
+        {
+          "who": "them",
+          "ja": "うーん、ちょっと…",
+          "en": "Hmm, that's a bit…",
+          "note": "This is a no."
+        },
+        {
+          "who": "me",
+          "ja": "あ、すみません。{大丈夫|だいじょうぶ}です。",
+          "en": "Oh, sorry. That's fine."
+        }
+      ],
+      "phrases": [
+        {
+          "ja": "{動画|どうが}を{撮|と}ってもいいですか。",
+          "en": "May I shoot some video?"
+        },
+        {
+          "ja": "{人|ひと}は{写|うつ}りません。",
+          "en": "No people will be in it."
+        }
+      ]
+    }
+  },
+  "vocab": [
+    {
+      "id": "rokuon",
+      "ja": "{録音|ろくおん}",
+      "en": "recording"
+    },
+    {
+      "id": "toru",
+      "ja": "{撮|と}る",
+      "en": "to take (a photo, video)"
+    },
+    {
+      "id": "douga",
+      "ja": "{動画|どうが}",
+      "en": "video"
+    },
+    {
+      "id": "daijoubu",
+      "ja": "{大丈夫|だいじょうぶ}",
+      "en": "fine, OK"
+    }
+  ]
+}

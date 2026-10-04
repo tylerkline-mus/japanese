@@ -1,0 +1,106 @@
+{
+  "id": "inn-checkin",
+  "title": "チェックイン",
+  "titleEn": "Inn check-in",
+  "situation": "Arriving at a small inn or minshuku: your reservation, meals, the bath, luggage.",
+  "when": "2027-01-12",
+  "register": [
+    "Inn staff use humble, very polite Japanese (お待ちしておりました). Recognize it; you don't need to produce it."
+  ],
+  "tiers": {
+    "survival": {
+      "requires": [],
+      "dialogue": [
+        {
+          "who": "me",
+          "ja": "こんにちは。{予約|よやく}したクラインです。",
+          "en": "Hello. I'm Kline; I have a reservation.",
+          "note": "Literally: \"I'm the Kline who reserved.\""
+        },
+        {
+          "who": "them",
+          "ja": "お{待|ま}ちしておりました。",
+          "en": "We've been expecting you."
+        },
+        {
+          "who": "them",
+          "ja": "{夕食|ゆうしょく}は{六時|ろくじ}からです。",
+          "en": "Dinner is from six."
+        },
+        {
+          "who": "me",
+          "ja": "{朝|あさ}ごはんは{何時|なんじ}からですか。",
+          "en": "What time does breakfast start?"
+        },
+        {
+          "who": "them",
+          "ja": "{七時|しちじ}からです。",
+          "en": "From seven."
+        },
+        {
+          "who": "me",
+          "ja": "お{風呂|ふろ}は{何時|なんじ}までですか。",
+          "en": "Until what time is the bath open?"
+        },
+        {
+          "who": "them",
+          "ja": "{十時|じゅうじ}までです。",
+          "en": "Until ten."
+        }
+      ],
+      "phrases": [
+        {
+          "ja": "{荷物|にもつ}を{預|あず}かってもらえますか。",
+          "en": "Could you hold my luggage?",
+          "note": "Useful when you arrive early."
+        },
+        {
+          "ja": "{二月|にがつ}に{二泊|にはく}{泊|と}まりたいんですが、{空|あ}いていますか。",
+          "en": "I'd like to stay two nights in February. Do you have space?",
+          "note": "〜たいんですが softens the request. 空いている = \"is free\" (Lesson 3)."
+        },
+        {
+          "ja": "チェックアウトは{何時|なんじ}ですか。",
+          "en": "What time is checkout?"
+        }
+      ]
+    }
+  },
+  "vocab": [
+    {
+      "id": "yoyaku",
+      "ja": "{予約|よやく}",
+      "en": "reservation"
+    },
+    {
+      "id": "yuushoku",
+      "ja": "{夕食|ゆうしょく}",
+      "en": "dinner"
+    },
+    {
+      "id": "ofuro",
+      "ja": "お{風呂|ふろ}",
+      "en": "bath"
+    },
+    {
+      "id": "nimotsu",
+      "ja": "{荷物|にもつ}",
+      "en": "luggage"
+    },
+    {
+      "id": "azukaru",
+      "ja": "{預|あず}かる",
+      "en": "to look after (something for someone)"
+    },
+    {
+      "id": "tomaru",
+      "ja": "{泊|と}まる",
+      "en": "to stay overnight"
+    },
+    {
+      "id": "haku",
+      "ja": "〜{泊|はく}",
+      "en": "counter for nights"
+    }
+  ]
+}

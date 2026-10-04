@@ -1,4 +1,4 @@
-# Scenes — plan (to build)
+# Scenes — plan (built 2026-10-04)
 
 Replace the static Phrases tab with **Scenes**: real situations that grow with the learner,
 practiced actively, with their own vocabulary track. Agreed with Tyler on 2026-10-03.
@@ -21,7 +21,8 @@ practiced actively, with their own vocabulary track. Agreed with Tyler on 2026-1
 - `title`, `situation` (one line), `when` (date the hub should start surfacing it — use the
   itinerary in the private task context; keep only dates in the repo, no names), `register` notes.
 - `tiers`: `survival` (works now), `natural` (unlocks when listed grammar lessons are done),
-  `conversation` (small talk beyond the transaction). Each tier: `requires` (lesson ids),
+  `conversation` (small talk beyond the transaction), optional `onstage` (a short spoken piece).
+  Each tier: `requires` (lesson ids), optional `requiresChapters` (Tae Kim slugs without a lesson yet),
   `dialogue` (lines with `who`: "me" | "them", `ja` with {漢字|かな} markup, `en`), `phrases`.
 - `vocab`: scene words `{id, ja, en, note}`. Words already in data/wk-vocab.json show as
   "from WaniKani" instead of being reviewed twice.

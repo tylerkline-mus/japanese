@@ -5,7 +5,7 @@ A personal Japanese study hub. Static site on GitHub Pages — no server, nothin
 - **Today** — today's review number (a gentle dig-out plan), lesson of the week, a self-talk prompt, tricky items.
 - **Stats** — queue burn-down, SRS breakdown, days you showed up, forecast, accuracy, level pace, kanji coverage, trip readiness, leeches.
 - **Course** — Tae Kim's order, with lessons written here: plain explanations, contrast pairs, and practice where every answer explains itself.
-- **Phrases** — real trip moments, Japanese first.
+- **Scenes** — real trip situations that open up as your grammar grows, with practice out loud, a small scene-word review, and a searchable phrasebook.
 - **Notes** — everything from the published Google Sheet, searchable.
 
 ## How the pieces connect
@@ -15,6 +15,7 @@ A personal Japanese study hub. Static site on GitHub Pages — no server, nothin
 | WaniKani API | what you know | read live in your browser with your token (stored on your device only) |
 | Google Sheet (published CSV) | your notes | read live; columns `Japanese, Reading, English, Notes, Tags` |
 | `data/lessons/*.json` | the course | one file per lesson, listed in `data/lessons/index.json` |
+| `data/scenes/*.json` | scenes | one file per scene, listed in `data/scenes/index.json` |
 | `data/history.json` | stats over time | written every evening by the **Daily snapshot** Action |
 
 Japanese markup: `{漢字|かんじ}` gives a word its reading. Kanji you've reached Guru on in WaniKani show plain; anything else gets furigana. Tap any kanji for its meaning and your WaniKani stage.
@@ -23,7 +24,7 @@ Japanese markup: `{漢字|かんじ}` gives a word its reading. Kanji you've rea
 
 Marking a lesson done adds that grammar point to your reviews. Each review shows 3 different sentences from `data/grammar/<lesson id>.json`, mixed with other due points. All right → step up; one miss → same step; more → step back. Steps are 1, 3, 7, 14, 30, 90 days, then retired. At most 4 points (~12 sentences) a day, so nothing piles up.
 
-Progress syncs through your Google Sheet via the Apps Script in `apps-script/Code.gs` (it writes to an `srs` tab). Without it, progress stays on the device.
+Progress syncs through your Google Sheet via the Apps Script in `apps-script/Code.gs` (it writes to an `srs` tab, which also holds scene-word progress as `voc:` rows). The same script reads a **Scene requests** tab (Request · Notes · Status) for the Sunday task. Without it, progress stays on the device.
 
 ## Setup
 

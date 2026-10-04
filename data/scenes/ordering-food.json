@@ -1,0 +1,89 @@
+{
+  "id": "ordering-food",
+  "title": "{注文|ちゅうもん}",
+  "titleEn": "Ordering food",
+  "situation": "At a counter or a small restaurant: getting seated, asking what's good, paying.",
+  "when": "2026-12-01",
+  "register": [
+    "Staff speak very politely to you (お待ちください, 〜ですか). You answer with plain polite です/ます; you don't need to match their level."
+  ],
+  "tiers": {
+    "survival": {
+      "requires": [],
+      "dialogue": [
+        {
+          "who": "them",
+          "ja": "いらっしゃいませ。{何名様|なんめいさま}ですか。",
+          "en": "Welcome. How many people?"
+        },
+        {
+          "who": "me",
+          "ja": "{一人|ひとり}です。",
+          "en": "Just one.",
+          "note": "Or hold up fingers. Everyone does."
+        },
+        {
+          "who": "them",
+          "ja": "こちらへどうぞ。",
+          "en": "This way, please."
+        },
+        {
+          "who": "me",
+          "ja": "すみません、おすすめは{何|なん}ですか。",
+          "en": "Excuse me, what do you recommend?"
+        },
+        {
+          "who": "them",
+          "ja": "{今日|きょう}は{焼|や}き{魚|ざかな}の{定食|ていしょく}がおすすめです。",
+          "en": "Today the grilled fish set meal is good."
+        },
+        {
+          "who": "me",
+          "ja": "じゃあ、それをお{願|ねが}いします。",
+          "en": "Then I'll have that."
+        },
+        {
+          "who": "me",
+          "ja": "ごちそうさまでした。お{会計|かいけい}お{願|ねが}いします。",
+          "en": "Thank you for the meal. Check, please."
+        }
+      ],
+      "phrases": [
+        {
+          "ja": "これをください。",
+          "en": "This one, please."
+        },
+        {
+          "ja": "お{会計|かいけい}お{願|ねが}いします。",
+          "en": "Check, please."
+        },
+        {
+          "ja": "{全部|ぜんぶ}おいしかったです。",
+          "en": "Everything was delicious."
+        }
+      ]
+    }
+  },
+  "vocab": [
+    {
+      "id": "teishoku",
+      "ja": "{定食|ていしょく}",
+      "en": "set meal"
+    },
+    {
+      "id": "osusume",
+      "ja": "おすすめ",
+      "en": "recommendation"
+    },
+    {
+      "id": "kaikei",
+      "ja": "{会計|かいけい}",
+      "en": "the bill"
+    },
+    {
+      "id": "nanmeisama",
+      "ja": "{何名様|なんめいさま}",
+      "en": "how many people (polite)"
+    }
+  ]
+}

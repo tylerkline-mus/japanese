@@ -28,7 +28,10 @@ const S = {
   immFilter: "all",
   session: null,
   curriculum: null,
-  phrases: [],
+  scenes: [],
+  sceneQuery: "",
+  practice: null, // {sceneId, mode, i}
+  vocSession: null,
   selftalk: [],
   error: null,
   loading: false,
@@ -48,11 +51,11 @@ async function getJSON(url) {
 }
 
 async function boot() {
-  const [config, idx, curriculum, phrases, selftalk] = await Promise.all([
+  const [config, idx, curriculum, scenes, selftalk] = await Promise.all([
     getJSON("data/config.json"),
     getJSON("data/lessons/index.json"),
     getJSON("data/curriculum.json"),
-    getJSON("data/phrases.json"),
+    loadScenes(),
     getJSON("data/selftalk.json"),
   ]);
   // Follow the travel schedule: "today" resets at local midnight wherever you are.
@@ -61,7 +64,7 @@ async function boot() {
   S.config = config;
   S.lessonsIndex = idx.lessons;
   S.curriculum = curriculum;
-  S.phrases = phrases.phrases;
+  S.scenes = scenes;
   S.selftalk = selftalk.prompts;
 
   window.addEventListener("hashchange", render);
@@ -86,6 +89,12 @@ async function boot() {
   if (S.raw) buildModel();
   render();
   await refreshWK(false);
+}
+
+async function loadScenes() {
+  const idx = await getJSON("data/scenes/index.json");
+  const all = await Promise.all(idx.scenes.map((e) => getJSON(`data/scenes/${e.file}`).catch(() => null)));
+  return all.filter(Boolean);
 }
 
 async function loadReviews() {
@@ -414,7 +423,7 @@ function viewToday() {
     <p class="countdown"><span lang="ja">${esc(S.config.tripLabel === "Japan" ? "日本" : S.config.tripLabel)}まで</span> <b>${fmt(days)}</b> <span lang="ja">日</span></p>
   </header>`;
 
-  if (!token()) return top + needToken() + grammarCard() + lessonCard() + selftalkCard();
+  if (!token()) return top + needToken() + grammarCard() + sceneTodayCard() + lessonCard() + selftalkCard();
   if (!S.model) return top + errorBanner() + `<section class="card"><p class="muted">Loading your WaniKani…</p></section>`;
   const m = S.model;
   const t = m.target;
@@ -472,7 +481,7 @@ function viewToday() {
       <div class="leech-row">${m.leeches.slice(0, 4).map(leechChip).join("")}</div></section>`
     : "";
 
-  return top + errorBanner() + target + grammarCard() + lessonCard() + selftalkCard() + queueCard + leech;
+  return top + errorBanner() + target + grammarCard() + sceneTodayCard() + lessonCard() + selftalkCard() + queueCard + leech;
 }
 
 function ring(p) {
@@ -514,7 +523,7 @@ function syncNote() {
 }
 
 function grammarCard() {
-  const enrolled = [...srs.state.rows.values()].filter((r) => r.stage >= 1);
+  const enrolled = [...srs.state.rows.values()].filter((r) => srs.isGrammar(r.id) && r.stage >= 1);
   const today = todayKey();
   if (!enrolled.length)
     return `<section class="card grammar-card"><p class="eyebrow">Grammar reviews</p>
@@ -583,6 +592,7 @@ function viewStats() {
     ${tile("All-time", allAcc == null ? "—" : `${allAcc}%`, "accuracy")}
     ${tile("Immersion", `${fmt(immMinutes(weekStartKey()))} min`, "this week · see Immerse")}
     ${S.vocabMeta ? tile("Words", fmt(S.vocabMeta.guru), `at Guru or higher · ${fmt(S.vocabMeta.count)} started`) : ""}
+    ${sceneWordsTile()}
   </section>`;
 
   const groups = core.SRS_GROUPS.map((g) => ({ key: g.key, label: g.label, value: m.srs[g.key] }));
@@ -642,14 +652,14 @@ function viewStats() {
   </section>`;
 
   const knownN = S.known.size;
-  const tripKanji = [...new Set(S.phrases.flatMap((p) => kanjiIn(p.ja)))];
+  const tripKanji = [...new Set(S.scenes.flatMap(sceneTexts).flatMap((t) => kanjiIn(t)))];
   const tripKnown = tripKanji.filter((k) => S.known.has(k)).length;
   const tripPct = tripKanji.length ? Math.round((tripKnown / tripKanji.length) * 100) : 0;
   const coverage = `<section class="card two">
     <div><h2>Kanji you can read</h2><p class="big-num">${fmt(knownN)}</p>${meter(knownN, core.JOYO_COUNT)}
       <p class="muted small">Guru or higher on WaniKani · ${Math.round((knownN / core.JOYO_COUNT) * 100)}% of the 2,136 jōyō kanji</p></div>
     <div><h2>Trip readiness</h2><p class="big-num">${tripPct}%</p>${meter(tripPct)}
-      <p class="muted small">${tripKnown} of ${tripKanji.length} kanji in your trip phrases. <a href="#phrases">See phrases →</a></p></div>
+      <p class="muted small">${tripKnown} of ${tripKanji.length} kanji in your scenes. <a href="#scenes">See scenes →</a></p></div>
   </section>`;
 
   const leeches = `<section class="card"><h2>Leeches</h2>
@@ -666,7 +676,7 @@ function viewStats() {
 }
 
 function grammarStats() {
-  const rows = [...srs.state.rows.values()].filter((r) => r.stage >= 1).sort((a, b) => a.id.localeCompare(b.id));
+  const rows = [...srs.state.rows.values()].filter((r) => srs.isGrammar(r.id) && r.stage >= 1).sort((a, b) => a.id.localeCompare(b.id));
   if (!rows.length) return "";
   return `<section class="card"><h2>Grammar</h2>
     <div class="acc-grid">${rows
@@ -1240,21 +1250,381 @@ function viewImmerse() {
   return head + picks + freshCard + arch;
 }
 
-// ---------- phrases ----------
+// ---------- scenes ----------
+// Real situations that grow with you. Each scene has tiers that open as grammar lessons are
+// marked done, its own small vocabulary track, and three ways to practice out loud.
 
-function viewPhrases() {
-  const cats = [...new Set(S.phrases.map((p) => p.category))];
-  return `<section class="card intro"><h1>Trip phrases</h1>
-    <p>Real moments from the trip. Read the Japanese first; kanji you know from WaniKani show without furigana.</p></section>
-  ${cats
-    .map(
-      (c) => `<section class="card"><h2>${esc(c)}</h2>
-      ${S.phrases
-        .filter((p) => p.category === c)
-        .map((p) => `<p class="scene">${esc(p.scene)}</p>${jaCard(p)}`)
-        .join("")}</section>`
-    )
-    .join("")}`;
+const TIERS = ["survival", "natural", "conversation", "onstage"];
+const TIER_INFO = {
+  survival: { label: "Survival", sub: "Works right now. Memorize it whole." },
+  natural: { label: "Natural", sub: "Sounds like you, once the grammar is in." },
+  conversation: { label: "Conversation", sub: "The small talk after the transaction." },
+  onstage: { label: "Onstage", sub: "A short spoken piece to learn by heart." },
+};
+
+const sceneById = (id) => S.scenes.find((x) => x.id === id);
+const sceneTiers = (sc) => TIERS.filter((t) => sc.tiers?.[t]).map((t) => ({ key: t, ...sc.tiers[t] }));
+const sceneActive = (sc) => !sc.when || sc.when <= todayKey();
+
+function chapterBySlug(slug) {
+  for (const sec of S.curriculum.sections) for (const c of sec.chapters) if (c.slug === slug) return c;
+  return null;
+}
+
+// What a tier is waiting on: lesson ids it requires, plus Tae Kim chapters that don't have a lesson yet.
+function tierNeeds(tier) {
+  const needs = (tier.requires || []).map((id) => ({ label: lessonTitle(id), done: isDone(id) }));
+  for (const slug of tier.requiresChapters || []) {
+    const c = chapterBySlug(slug);
+    const label = c ? c.title.replace(/\s*\(.*\)$/, "") : slug;
+    needs.push({ label, done: !!(c && c.lesson && isDone(c.lesson)), future: !(c && c.lesson) });
+  }
+  return needs;
+}
+const tierOpen = (tier) => tierNeeds(tier).every((n) => n.done);
+
+function sceneTexts(sc) {
+  return sceneTiers(sc).flatMap((t) => [...(t.dialogue || []), ...(t.phrases || [])].map((l) => l.ja)).concat((sc.vocab || []).map((v) => v.ja));
+}
+
+// ----- scene vocabulary -----
+
+function vocInfo(id) {
+  const [, sceneId, wordId] = id.split(":");
+  const sc = sceneById(sceneId);
+  const word = sc?.vocab?.find((v) => v.id === wordId);
+  return word ? { id, sc, word } : null;
+}
+
+// Words worth reviewing here: not already in WaniKani (no reviewing the same word twice).
+const vocFromWK = (word) => !!wordStatus(word.ja).v;
+
+function vocQueue() {
+  const today = todayKey();
+  const due = srs.vocDue(today).map((r) => vocInfo(r.id)).filter(Boolean).slice(0, srs.VOC_PER_DAY);
+  const room = Math.min(srs.VOC_NEW_PER_DAY - srs.vocNewToday(today), srs.VOC_PER_DAY - due.length);
+  const fresh = [];
+  if (room > 0) {
+    const active = S.scenes.filter(sceneActive).sort((a, b) => (a.when || "").localeCompare(b.when || ""));
+    for (const sc of active)
+      for (const word of sc.vocab || []) {
+        const id = srs.vocId(sc.id, word.id);
+        if (fresh.length >= room) break;
+        if (!srs.state.rows.get(id)?.stage && !vocFromWK(word)) fresh.push({ id, sc, word, isNew: true });
+      }
+  }
+  return [...due, ...fresh];
+}
+
+function sceneWordsTile() {
+  const rows = srs.vocRows();
+  if (!rows.length) return "";
+  const solid = rows.filter((r) => r.stage >= 5).length;
+  return tile("Scene words", fmt(rows.length), `${fmt(srs.vocDue(todayKey()).length)} due · ${fmt(solid)} solid`);
+}
+
+function sceneTodayCard() {
+  if (!S.scenes.length) return "";
+  const today = todayKey();
+  const q = vocQueue();
+  const recent = S.scenes.filter((sc) => sc.when && sc.when <= today && sc.when >= srs.addDays(today, -14));
+  const soon = S.scenes.filter((sc) => sc.when && sc.when > today && sc.when <= srs.addDays(today, 14));
+  if (!q.length && !recent.length && !soon.length) return "";
+  const nNew = q.filter((x) => x.isNew).length;
+  return `<section class="card scene-today"><p class="eyebrow" lang="ja">場面 · Scenes</p>
+    ${
+      q.length
+        ? `<div class="split"><p class="big-num">${q.length}</p><p class="muted small">scene word${q.length > 1 ? "s" : ""}${nNew ? ` · ${nNew} new` : ""}</p></div>
+           <a class="btn" href="#scenes/words">Review words</a>`
+        : ""
+    }
+    ${recent.map((sc) => `<p class="small">New: <a href="#scenes/${esc(sc.id)}"><span lang="ja">${esc(stripMarkup(sc.title))}</span> · ${esc(sc.titleEn)}</a></p>`).join("")}
+    ${soon.map((sc) => `<p class="small muted">Coming up ${esc(friendlyDate(sc.when))}: <a href="#scenes/${esc(sc.id)}">${esc(sc.titleEn)}</a></p>`).join("")}
+  </section>`;
+}
+
+// ----- list + phrasebook search -----
+
+function viewScenes(arg) {
+  if (arg === "words") return viewSceneWords();
+  if (arg) return viewScene(arg);
+  const q = S.sceneQuery.trim().toLowerCase();
+  const head = `<section class="card intro"><h1>Scenes</h1>
+    <p>Real situations from the trip. Each one opens up as your grammar grows: survival first, then more natural lines, then real conversation.</p>
+    <input id="scene-search" class="search" type="search" placeholder="Search every line: Japanese or English…" value="${esc(S.sceneQuery)}" aria-label="Search scenes">
+  </section>`;
+  if (q) {
+    const hits = [];
+    for (const sc of S.scenes)
+      for (const t of sceneTiers(sc))
+        for (const l of [...(t.dialogue || []), ...(t.phrases || [])]) {
+          const blob = [stripMarkup(l.ja), l.ja, l.en, l.note || ""].join(" ").toLowerCase();
+          if (blob.includes(q)) hits.push({ sc, l });
+        }
+    return (
+      head +
+      `<section class="card">${
+        hits.length
+          ? hits.map((h) => `<p class="scene"><a href="#scenes/${esc(h.sc.id)}">${esc(h.sc.titleEn)}</a>${h.l.who === "them" ? " · they say" : ""}</p>${jaCard(h.l)}`).join("")
+          : `<p class="muted">Nothing matches.</p>`
+      }</section>`
+    );
+  }
+  const today = todayKey();
+  const sorted = [...S.scenes].sort((a, b) => {
+    const aa = sceneActive(a), bb = sceneActive(b);
+    if (aa !== bb) return aa ? -1 : 1;
+    return aa ? 0 : (a.when || "").localeCompare(b.when || "");
+  });
+  const q2 = vocQueue();
+  const words = q2.length
+    ? `<section class="card"><div class="split"><h2>Scene words</h2><span class="big-num">${q2.length}</span></div>
+        <p class="small muted">Words from your current scenes that aren't in WaniKani. At most ${srs.VOC_PER_DAY} a day.</p>
+        <a class="btn" href="#scenes/words">Review words</a></section>`
+    : "";
+  const cards = sorted
+    .map((sc) => {
+      const tiers = sceneTiers(sc);
+      const open = tiers.filter(tierOpen).length;
+      const live = sceneActive(sc);
+      return `<a class="card scene-card ${live ? "" : "later"}" href="#scenes/${esc(sc.id)}">
+        <div class="split"><h2 lang="ja">${esc(stripMarkup(sc.title))}</h2><span class="small muted">${live ? "" : esc(friendlyDate(sc.when))}</span></div>
+        <p class="scene-en">${esc(sc.titleEn)}</p>
+        <p class="small muted">${esc(sc.situation)}</p>
+        <p class="tier-dots" aria-label="${open} of ${tiers.length} tiers open">${tiers
+          .map((t) => `<span class="tier-dot ${tierOpen(t) ? "on" : ""}">${esc(TIER_INFO[t.key].label)}</span>`)
+          .join("")}</p>
+      </a>`;
+    })
+    .join("");
+  return head + words + cards + `<p class="muted small center">Want a new scene? Add a row to the "Scene requests" tab in your Sheet. The Sunday task writes it.</p>`;
+}
+
+// ----- one scene -----
+
+function dlineCard(l) {
+  return `<div class="dline ${l.who === "them" ? "them" : "me"}"><span class="who">${l.who === "them" ? "They say" : "You say"}</span>${jaCard(l)}</div>`;
+}
+
+function tierBody(t) {
+  return `${(t.dialogue || []).map(dlineCard).join("")}
+    ${t.phrases?.length ? `<h3>Also useful</h3>${t.phrases.map((p) => jaCard(p)).join("")}` : ""}`;
+}
+
+function viewScene(id) {
+  const sc = sceneById(id);
+  if (!sc) return `<a class="back" href="#scenes">← Scenes</a><div class="banner">No scene called ${esc(id)}.</div>`;
+  const tiers = sceneTiers(sc);
+  const tierCards = tiers
+    .map((t) => {
+      const info = TIER_INFO[t.key];
+      const needs = tierNeeds(t);
+      if (tierOpen(t))
+        return `<section class="card tier"><div class="split"><h2>${esc(info.label)}</h2><span class="pill stage">Open</span></div>
+          <p class="small muted">${esc(t.note || info.sub)}</p>${tierBody(t)}</section>`;
+      return `<section class="card tier locked"><div class="split"><h2>${esc(info.label)}</h2><span class="pill ghost">Locked</span></div>
+        <p class="small muted">${esc(t.note || info.sub)}</p>
+        <p class="small">Opens after: ${needs
+          .map((n) => `<span class="chip need ${n.done ? "done" : ""}">${n.done ? "✓ " : ""}<span lang="ja">${esc(n.label)}</span>${n.future ? " (lesson coming)" : ""}</span>`)
+          .join(" ")}</p>
+        <details class="peek"><summary>Peek anyway</summary>${tierBody(t)}</details></section>`;
+    })
+    .join("");
+  const vocab = (sc.vocab || []).length
+    ? `<section class="card"><h2>Words for this scene</h2>
+        <ul class="voc-list">${sc.vocab
+          .map((w) => {
+            const st = wordStatus(w.ja);
+            const row = srs.state.rows.get(srs.vocId(sc.id, w.id));
+            const tag = st.v ? `<span class="chip wk">${esc(st.label)}</span>` : row?.stage ? `<span class="chip">${esc(srs.stageLabel(row.stage))}</span>` : `<span class="chip new">New</span>`;
+            return `<li><span lang="ja" class="ja">${renderJa(w.ja, S.known, S.words)}</span> <span class="small">${esc(w.en)}</span> ${tag}</li>`;
+          })
+          .join("")}</ul>
+        <p class="small muted">Words you've started in WaniKani aren't reviewed again here.${sceneActive(sc) ? "" : ` These join your scene words ${esc(friendlyDate(sc.when))}.`}</p></section>`
+    : "";
+  return `<a class="back" href="#scenes">← Scenes</a>
+    <header class="card">
+      <p class="eyebrow">Scene${sceneActive(sc) ? "" : ` · from ${esc(friendlyDate(sc.when))}`}</p>
+      <h1 lang="ja" class="lesson-title">${ja(sc.title)}</h1>
+      <p class="muted">${esc(sc.titleEn)}</p>
+      <p class="summary">${esc(sc.situation)}</p>
+      ${(sc.register || []).length ? `<ul class="register">${sc.register.map((r) => `<li class="small">${rich(r)}</li>`).join("")}</ul>` : ""}
+    </header>
+    <section class="card"><h2>Practice out loud</h2><div id="sp-host" data-scene="${esc(sc.id)}"></div></section>
+    ${tierCards}${vocab}`;
+}
+
+// Lines you can practice: from open tiers only.
+function practiceItems(sc) {
+  const recall = [];
+  const listen = [];
+  for (const t of sceneTiers(sc).filter(tierOpen)) {
+    const d = t.dialogue || [];
+    d.forEach((l, i) => {
+      if (l.who !== "them") recall.push({ tier: t.key, cue: d[i - 1]?.who === "them" ? d[i - 1] : null, line: l });
+      else if (d[i + 1] && d[i + 1].who !== "them") listen.push({ tier: t.key, line: l, reply: d[i + 1] });
+    });
+    (t.phrases || []).forEach((p) => recall.push({ tier: t.key, cue: null, line: p }));
+  }
+  return { recall, listen };
+}
+
+function claudePrompt(sc) {
+  const done = S.lessonsIndex.filter((l) => isDone(l.id)).map((l) => `${l.title} (${l.titleEn})`);
+  const mine = practiceItems(sc).recall.map((x) => stripMarkup(x.line.ja)).slice(0, 10);
+  return [
+    `Let's role-play a short conversation in Japanese, in voice mode.`,
+    `Scene: ${sc.titleEn} — ${sc.situation}`,
+    `You play the other person. I'm an elementary learner${S.model ? ` (WaniKani level ${S.model.level})` : ""}: good vocabulary, weak grammar, slow listening.`,
+    done.length ? `Grammar I've studied: ${done.join("; ")}.` : "",
+    `Speak simple, natural polite Japanese (です/ます), in short sentences, a little slower than normal. Stay in Japanese. If I get stuck, give me a hint in simple Japanese before switching to English.`,
+    `After about 8 exchanges, stop and give me gentle corrections: up to 3 things I said that could be more natural, and why.`,
+    mine.length ? `Lines I've been practicing for this scene: ${mine.join(" / ")}` : "",
+    `Start the conversation.`,
+  ]
+    .filter(Boolean)
+    .join("\n");
+}
+
+function mountScenes(arg) {
+  if (!arg) {
+    const input = document.getElementById("scene-search");
+    input?.addEventListener("input", (e) => {
+      S.sceneQuery = e.target.value;
+      const pos = e.target.selectionStart;
+      render();
+      const again = document.getElementById("scene-search");
+      again.focus();
+      again.setSelectionRange(pos, pos);
+    });
+    return;
+  }
+  if (arg === "words") return mountSceneWords();
+  const host = document.getElementById("sp-host");
+  const sc = sceneById(arg);
+  if (!host || !sc) return;
+  const items = practiceItems(sc);
+  if (!S.practice || S.practice.sceneId !== sc.id) S.practice = { sceneId: sc.id, mode: "recall", i: 0 };
+  const P = S.practice;
+  const tabs = () => `<div class="seg" role="tablist">
+      ${[
+        ["recall", "Say it"],
+        ["listen", "Listen"],
+        ["claude", "With Claude"],
+      ]
+        .map(([k, label]) => `<button role="tab" class="seg-btn ${P.mode === k ? "on" : ""}" aria-selected="${P.mode === k}" data-mode="${k}">${label}</button>`)
+        .join("")}
+    </div>`;
+  const draw = () => {
+    let body = "";
+    if (P.mode === "claude") {
+      const text = claudePrompt(sc);
+      body = `<p class="small">Copies a role-play prompt for this scene. Paste it into Claude, then switch to voice mode and talk it through.</p>
+        <button class="btn" data-ask="${esc(text)}">${ICON.ask} Copy the role-play prompt</button>
+        <details class="peek"><summary>See the prompt</summary><pre class="prompt">${esc(text)}</pre></details>`;
+    } else {
+      const list = P.mode === "recall" ? items.recall : items.listen;
+      if (!list.length) body = `<p class="muted small">${P.mode === "listen" ? "No back-and-forth lines open yet." : "Nothing open yet."}</p>`;
+      else {
+        const it = list[P.i % list.length];
+        const count = `<p class="ex-count">${(P.i % list.length) + 1} of ${list.length} · ${esc(TIER_INFO[it.tier].label)}</p>`;
+        if (P.mode === "recall") {
+          body = `${count}
+            ${it.cue ? `<p class="small muted">They say</p><div class="jline">${ja(it.cue.ja, "big")} ${sayBtn(it.cue.ja)}</div>` : ""}
+            <p class="small muted">You want to say</p><p class="recall-en">${esc(it.line.en)}</p>
+            <p class="small muted">Say it out loud first. Then check.</p>
+            <button class="reveal" aria-expanded="false">Show the Japanese</button>
+            <div class="hidden-en"><div class="jline">${ja(it.line.ja, "big")} ${sayBtn(it.line.ja)}</div>${it.line.note ? `<p class="note">${rich(it.line.note)}</p>` : ""}</div>
+            <div class="row"><button class="btn" data-sp="next">Next</button></div>`;
+        } else {
+          body = `${count}
+            <p class="small">Listen, then answer out loud before you look.</p>
+            <div class="row"><button class="btn ghost" data-say="${esc(stripMarkup(it.line.ja))}">${ICON.sound} Play again</button></div>
+            <button class="reveal" aria-expanded="false">Show what they said</button>
+            <div class="hidden-en"><div class="jline">${ja(it.line.ja, "big")}</div><p class="en">${esc(it.line.en)}</p></div>
+            <button class="reveal" aria-expanded="false">Show a reply</button>
+            <div class="hidden-en"><div class="jline">${ja(it.reply.ja, "big")} ${sayBtn(it.reply.ja)}</div><p class="en">${esc(it.reply.en)}</p></div>
+            <div class="row"><button class="btn" data-sp="next">Next</button></div>`;
+        }
+      }
+    }
+    host.innerHTML = tabs() + `<div class="sp-body">${body}</div>`;
+    host.querySelectorAll("[data-mode]").forEach((b) =>
+      b.addEventListener("click", () => {
+        P.mode = b.dataset.mode;
+        P.i = 0;
+        draw();
+        if (P.mode === "listen") playCurrent();
+      })
+    );
+    host.querySelector("[data-sp=next]")?.addEventListener("click", () => {
+      P.i++;
+      draw();
+      if (P.mode === "listen") playCurrent();
+    });
+  };
+  const playCurrent = () => {
+    const it = items.listen[P.i % Math.max(1, items.listen.length)];
+    if (it && !speak(it.line.ja)) toast("No Japanese voice on this device.");
+  };
+  draw();
+}
+
+// ----- scene word reviews -----
+
+function viewSceneWords() {
+  const today = todayKey();
+  if (!S.vocSession || S.vocSession.date !== today || S.vocSession.done) {
+    const items = vocQueue();
+    if (!items.length)
+      return `<a class="back" href="#scenes">← Scenes</a><section class="card"><h1>Scene words</h1><p>Nothing due right now. New words join as scenes come up.</p></section>`;
+    S.vocSession = { date: today, items, i: 0, right: 0, done: false };
+  }
+  return `<a class="back" href="#scenes">← Scenes</a>
+    <section class="card review"><p class="eyebrow">Scene words</p><div id="voc-host"></div></section>`;
+}
+
+function mountSceneWords() {
+  const host = document.getElementById("voc-host");
+  const s = S.vocSession;
+  if (!host || !s) return;
+  const draw = () => {
+    if (s.i >= s.items.length) {
+      s.done = true;
+      host.innerHTML = `<h2>Done.</h2><p><b>${s.right} / ${s.items.length}</b></p>
+        <p class="small muted">Right → steps up (1, 3, 7, 14, 30, 90 days). Missed → steps back.</p>
+        <a class="btn" href="#today">Back to Today</a>`;
+      return;
+    }
+    const it = s.items[s.i];
+    const row = srs.state.rows.get(it.id);
+    const produce = !it.isNew && row && row.stage >= 3; // later steps: English → say it
+    const where = `<p class="ex-count">${s.i + 1} of ${s.items.length} · <a href="#scenes/${esc(it.sc.id)}">${esc(it.sc.titleEn)}</a></p>`;
+    const word = `<div class="jline">${ja(it.word.ja, "big")} ${sayBtn(it.word.ja)}</div>`;
+    const meaning = `<p class="en">${esc(it.word.en)}</p>${it.word.note ? `<p class="note">${rich(it.word.note)}</p>` : ""}`;
+    if (it.isNew) {
+      host.innerHTML = `${where}<p><span class="pill">New word</span></p>${word}${meaning}
+        <div class="row"><button class="btn" data-g="1">Got it</button></div>`;
+    } else if (produce) {
+      host.innerHTML = `${where}<p class="small muted">Say it in Japanese</p><p class="recall-en">${esc(it.word.en)}</p>
+        <button class="reveal" aria-expanded="false">Show the Japanese</button><div class="hidden-en">${word}${it.word.note ? `<p class="note">${rich(it.word.note)}</p>` : ""}</div>
+        <div class="row grade"><button class="btn ghost" data-g="1">Got it</button><button class="btn ghost" data-g="0">Missed</button></div>`;
+    } else {
+      host.innerHTML = `${where}${word}<p class="small muted">What does it mean?</p>
+        <button class="reveal" aria-expanded="false">Show meaning</button><div class="hidden-en">${meaning}</div>
+        <div class="row grade"><button class="btn ghost" data-g="1">Got it</button><button class="btn ghost" data-g="0">Missed</button></div>`;
+    }
+    host.querySelectorAll("[data-g]").forEach((b) =>
+      b.addEventListener("click", async () => {
+        const ok = b.dataset.g === "1";
+        if (ok) s.right++;
+        s.i++;
+        draw();
+        await srs.gradeVoc(it.id, ok, s.date, S.config.syncUrl);
+      })
+    );
+  };
+  draw();
 }
 
 // ---------- notes ----------
@@ -1346,17 +1716,19 @@ function audioSection() {
 
 // ---------------- router ----------------
 
-const ROUTES = { today: viewToday, stats: viewStats, course: viewCourse, phrases: viewPhrases, notes: viewNotes, settings: viewSettings, review: viewReview, immerse: viewImmerse };
+const ROUTES = { today: viewToday, stats: viewStats, course: viewCourse, scenes: viewScenes, phrases: viewScenes, notes: viewNotes, settings: viewSettings, review: viewReview, immerse: viewImmerse };
 
 function render() {
   const [name, arg] = (location.hash.replace(/^#/, "") || "today").split("/");
   const fn = ROUTES[name] || viewToday;
   setChartWidth(Math.min(760, window.innerWidth) - 32 - 42);
   $app().innerHTML = fn(arg);
-  document.querySelectorAll("nav a[data-nav]").forEach((a) => a.classList.toggle("active", a.dataset.nav === (name === "review" ? "today" : ROUTES[name] ? name : "today")));
+  const navName = name === "review" ? "today" : name === "phrases" ? "scenes" : ROUTES[name] ? name : "today";
+  document.querySelectorAll("nav a[data-nav]").forEach((a) => a.classList.toggle("active", a.dataset.nav === navName));
   setStatus();
   if (name === "course" && arg && S.lessonCache.has(arg)) mountExercises(S.lessonCache.get(arg));
   if (name === "review") mountReview();
+  if (name === "scenes" || name === "phrases") mountScenes(arg);
   if (name === "immerse") {
     const input = document.getElementById("imm-search");
     input?.addEventListener("input", (e) => {

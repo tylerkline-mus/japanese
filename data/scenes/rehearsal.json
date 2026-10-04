@@ -1,0 +1,85 @@
+{
+  "id": "rehearsal",
+  "title": "リハーサル",
+  "titleEn": "Rehearsal",
+  "situation": "Working with musicians: where to start, tempo, dynamics, and saying thanks.",
+  "when": "2027-01-20",
+  "register": [
+    "Requests to musicians: 〜でお願いします or 〜にお願いします. Polite and clear beats clever."
+  ],
+  "tiers": {
+    "survival": {
+      "requires": [],
+      "dialogue": [
+        {
+          "who": "me",
+          "ja": "よろしくお{願|ねが}いします。",
+          "en": "Thanks for doing this. (Let's work well together.)"
+        },
+        {
+          "who": "me",
+          "ja": "32{小節目|しょうせつめ}からお{願|ねが}いします。",
+          "en": "From bar 32, please.",
+          "note": "小節 = measure/bar."
+        },
+        {
+          "who": "them",
+          "ja": "テンポはどうですか。",
+          "en": "How's the tempo?"
+        },
+        {
+          "who": "me",
+          "ja": "もう{少|すこ}しゆっくりでお{願|ねが}いします。",
+          "en": "A little slower, please."
+        },
+        {
+          "who": "me",
+          "ja": "ここはもっと{静|しず}かにお{願|ねが}いします。",
+          "en": "Quieter here, please."
+        },
+        {
+          "who": "me",
+          "ja": "もう{一回|いっかい}お{願|ねが}いします。",
+          "en": "One more time, please."
+        },
+        {
+          "who": "me",
+          "ja": "すごくよかったです！",
+          "en": "That was really great!"
+        }
+      ],
+      "phrases": [
+        {
+          "ja": "{最初|さいしょ}からお{願|ねが}いします。",
+          "en": "From the top, please."
+        },
+        {
+          "ja": "ちょうどいいです。",
+          "en": "That's just right."
+        }
+      ]
+    }
+  },
+  "vocab": [
+    {
+      "id": "shousetsu",
+      "ja": "{小節|しょうせつ}",
+      "en": "bar, measure"
+    },
+    {
+      "id": "saisho",
+      "ja": "{最初|さいしょ}",
+      "en": "the beginning"
+    },
+    {
+      "id": "shizuka",
+      "ja": "{静|しず}か",
+      "en": "quiet"
+    },
+    {
+      "id": "ikkai",
+      "ja": "もう{一回|いっかい}",
+      "en": "one more time"
+    }
+  ]
+}

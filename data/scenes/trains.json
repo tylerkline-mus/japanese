@@ -1,0 +1,88 @@
+{
+  "id": "trains",
+  "title": "{電車|でんしゃ}と{切符|きっぷ}",
+  "titleEn": "Trains and tickets",
+  "situation": "Buying a ticket, checking you're on the right train, and finding the station stamp.",
+  "when": "2027-01-12",
+  "register": [
+    "Station staff are used to short questions. Name the place, then what you need."
+  ],
+  "tiers": {
+    "survival": {
+      "requires": [],
+      "dialogue": [
+        {
+          "who": "me",
+          "ja": "すみません、{熊本|くまもと}までの{切符|きっぷ}を{一枚|いちまい}お{願|ねが}いします。",
+          "en": "Excuse me, one ticket to Kumamoto, please."
+        },
+        {
+          "who": "them",
+          "ja": "{指定席|していせき}ですか、{自由席|じゆうせき}ですか。",
+          "en": "Reserved seat or unreserved?"
+        },
+        {
+          "who": "me",
+          "ja": "{自由席|じゆうせき}でお{願|ねが}いします。",
+          "en": "Unreserved, please."
+        },
+        {
+          "who": "me",
+          "ja": "この{電車|でんしゃ}は{熊本|くまもと}に{行|い}きますか。",
+          "en": "Does this train go to Kumamoto?"
+        },
+        {
+          "who": "them",
+          "ja": "はい、{行|い}きますよ。",
+          "en": "Yes, it does."
+        },
+        {
+          "who": "me",
+          "ja": "{駅|えき}のスタンプはありますか。",
+          "en": "Is there a station stamp?"
+        }
+      ],
+      "phrases": [
+        {
+          "ja": "{乗|の}り{換|か}えはどこですか。",
+          "en": "Where do I transfer?"
+        },
+        {
+          "ja": "{駅|えき}はどこですか。",
+          "en": "Where is the station?"
+        },
+        {
+          "ja": "すみません、もう{少|すこ}しゆっくり{話|はな}してもらえますか。",
+          "en": "Sorry, could you speak a little more slowly?"
+        }
+      ]
+    }
+  },
+  "vocab": [
+    {
+      "id": "kippu",
+      "ja": "{切符|きっぷ}",
+      "en": "ticket"
+    },
+    {
+      "id": "shiteiseki",
+      "ja": "{指定席|していせき}",
+      "en": "reserved seat"
+    },
+    {
+      "id": "jiyuuseki",
+      "ja": "{自由席|じゆうせき}",
+      "en": "unreserved seat"
+    },
+    {
+      "id": "norikae",
+      "ja": "{乗|の}り{換|か}え",
+      "en": "transfer"
+    },
+    {
+      "id": "ichimai",
+      "ja": "{一枚|いちまい}",
+      "en": "one (flat thing, like a ticket)"
+    }
+  ]
+}

@@ -6,6 +6,7 @@ on:
       - "data/lessons/**"
       - "data/grammar/**"
       - "data/immersion/picks.json"
+      - "data/scenes/**"
       - "scripts/validate-lessons.mjs"
   pull_request:
   workflow_dispatch:

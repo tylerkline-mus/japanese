@@ -1,0 +1,36 @@
+{
+  "scenes": [
+    {
+      "id": "about-me",
+      "file": "about-me.json"
+    },
+    {
+      "id": "ordering-food",
+      "file": "ordering-food.json"
+    },
+    {
+      "id": "inn-checkin",
+      "file": "inn-checkin.json"
+    },
+    {
+      "id": "pickup-call",
+      "file": "pickup-call.json"
+    },
+    {
+      "id": "asking-permission",
+      "file": "asking-permission.json"
+    },
+    {
+      "id": "rehearsal",
+      "file": "rehearsal.json"
+    },
+    {
+      "id": "trains",
+      "file": "trains.json"
+    },
+    {
+      "id": "dinner-guest",
+      "file": "dinner-guest.json"
+    }
+  ]
+}
