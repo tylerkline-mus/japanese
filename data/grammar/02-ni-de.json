@@ -223,6 +223,101 @@
         ]
       ],
       "why": "Recording is an action at the harbor → で."
+    },
+    {
+      "id": "nd13",
+      "type": "choice",
+      "prompt": "もしもし、{今|いま}、{南口|みなみぐち}＿います。",
+      "en": "Hello? I'm at the south exit now.",
+      "options": [
+        {
+          "text": "に",
+          "verdict": "right",
+          "why": "いる is pure existence: where you are → に. Nothing's happening there yet, you just are there."
+        },
+        {
+          "text": "で",
+          "verdict": "wrong",
+          "why": "で needs an action. 南口で待っています works (waiting is something you do), but います on its own takes に."
+        }
+      ],
+      "scene": "On the phone with the person picking you up from the station."
+    },
+    {
+      "id": "nd14",
+      "type": "build",
+      "scene": "Say where you bought your travel diary.",
+      "en": "I bought a diary at a bookstore nearby.",
+      "tiles": [
+        "{近|ちか}くの",
+        "{本屋|ほんや}",
+        "{日記|にっき}",
+        "を",
+        "で",
+        "に",
+        "{買|か}いました"
+      ],
+      "answers": [
+        [
+          "{近|ちか}くの",
+          "{本屋|ほんや}",
+          "で",
+          "{日記|にっき}",
+          "を",
+          "{買|か}いました"
+        ],
+        [
+          "{日記|にっき}",
+          "を",
+          "{近|ちか}くの",
+          "{本屋|ほんや}",
+          "で",
+          "{買|か}いました"
+        ]
+      ],
+      "why": "Buying is an action that happens at the bookstore → で. を marks what you bought. The particle blocks can swap places; the verb stays at the end."
+    },
+    {
+      "id": "nd15",
+      "type": "choice",
+      "prompt": "{朝|あさ}ごはんは{一階|いっかい}＿{食|た}べます。",
+      "en": "Breakfast is eaten on the first floor.",
+      "options": [
+        {
+          "text": "で",
+          "verdict": "right",
+          "why": "Eating is an action, and the first floor is where it happens → で."
+        },
+        {
+          "text": "に",
+          "verdict": "wrong",
+          "why": "に would be for being on the first floor (一階にあります) or going there (一階に行きます). Eating needs で."
+        }
+      ],
+      "scene": "The inn staff explain the next morning while you check in."
+    },
+    {
+      "id": "nd16",
+      "type": "choice",
+      "prompt": "{富士山|ふじさん}は{日本|にほん}＿{一番|いちばん}{高|たか}い{山|やま}です。",
+      "en": "Mt. Fuji is the tallest mountain in Japan.",
+      "options": [
+        {
+          "text": "で",
+          "verdict": "right",
+          "why": "With 一番 (\"the most\"), で marks **the range you're comparing within**. Japan is the arena where the contest happens, the same \"stage\" idea as for actions."
+        },
+        {
+          "text": "に",
+          "verdict": "wrong",
+          "why": "に can't mark a comparison range. It would read as if the mountain were placed onto Japan."
+        },
+        {
+          "text": "の",
+          "verdict": "different",
+          "why": "日本の一番高い山 also works, but as a noun phrase (\"Japan's tallest mountain\"). With です after it, で is the everyday way to say it."
+        }
+      ]
     }
   ]
 }

@@ -233,6 +233,101 @@
         ]
       ],
       "why": "Pointing out \"this one\" among other places → が."
+    },
+    {
+      "id": "wg13",
+      "type": "choice",
+      "prompt": "すみません、この{辺|へん}＿{何|なに}が{有名|ゆうめい}ですか。",
+      "en": "Excuse me, what's this area known for?",
+      "options": [
+        {
+          "text": "は",
+          "verdict": "right",
+          "why": "この辺 is the known thing you're asking *about*, so it's the topic. The unknown slot is 何, and that one takes が. **Topic は + question-word が** is the shape."
+        },
+        {
+          "text": "が",
+          "verdict": "wrong",
+          "why": "何 already holds the が slot. Putting が on この辺 too gives two competing subjects (\"this area is the one that, what is the one that is famous?\"). It sounds broken."
+        }
+      ],
+      "scene": "At a tourist info desk by a station, before you set off to look for the station stamp."
+    },
+    {
+      "id": "wg14",
+      "type": "choice",
+      "prompt": "{糸島|いとしま}の{名物|めいぶつ}＿{何|なん}ですか。",
+      "en": "What's Itoshima's local specialty?",
+      "options": [
+        {
+          "text": "は",
+          "verdict": "right",
+          "why": "The question word here is 何, sitting in the comment. The specialty is the known thing you're asking about → は. \"As for Itoshima's specialty, what is it?\""
+        },
+        {
+          "text": "が",
+          "verdict": "wrong",
+          "why": "\"Question → が\" only applies to the question word itself. 名物 isn't unknown, it's the topic. To use が you'd flip the sentence so 何 comes first: {何|なに}が{名物|めいぶつ}ですか."
+        }
+      ]
+    },
+    {
+      "id": "wg15",
+      "type": "choice",
+      "prompt": "{魚|さかな}＿{有名|ゆうめい}ですよ。",
+      "en": "It's the fish that's famous.",
+      "options": [
+        {
+          "text": "が",
+          "verdict": "right",
+          "why": "You're answering 何が有名ですか, so fish fills the slot the question opened. The answer takes the same が the question word had."
+        },
+        {
+          "text": "は",
+          "verdict": "different",
+          "why": "Adds contrast: \"Fish, at least, is famous (other things, not so much).\" A strange way to sell your town."
+        }
+      ],
+      "scene": "You asked この辺は何が有名ですか. The person at the counter answers."
+    },
+    {
+      "id": "wg16",
+      "type": "choice",
+      "prompt": "{今月|こんげつ}＿{雪|ゆき}が{多|おお}いですね。",
+      "en": "There's a lot of snow this month, isn't there.",
+      "options": [
+        {
+          "text": "は",
+          "verdict": "right",
+          "why": "This month is the frame for your comment, and inside it snow is the thing that's plentiful → 雪が. Same shape as 今日は天気がいいですね."
+        },
+        {
+          "text": "が",
+          "verdict": "different",
+          "why": "Picks this month out from the others: \"*This* month is the one with lots of snow.\" That answers \"which month gets the most snow?\""
+        }
+      ],
+      "scene": "Small talk about the weather in a northern town."
+    },
+    {
+      "id": "wg17",
+      "type": "build",
+      "scene": "Ask what time the concert starts. (Everyone knows which concert.)",
+      "en": "What time is the concert?",
+      "tiles": [
+        "コンサート",
+        "は",
+        "が",
+        "{何時|なんじ}ですか"
+      ],
+      "answers": [
+        [
+          "コンサート",
+          "は",
+          "{何時|なんじ}ですか"
+        ]
+      ],
+      "why": "The concert is the known topic. The question word 何時 sits in the comment, so コンサート takes は. The が tile is a decoy: question words take が, not the things you ask about."
     }
   ]
 }

@@ -62,6 +62,89 @@
           "en": "Everything was delicious."
         }
       ]
+    },
+    "natural": {
+      "requires": [
+        "01-wa-ga",
+        "02-ni-de",
+        "03-te-iru"
+      ],
+      "dialogue": [
+        {
+          "who": "them",
+          "ja": "カウンターでもいいですか。",
+          "en": "Is the counter all right?"
+        },
+        {
+          "who": "me",
+          "ja": "はい、カウンターがいいです。",
+          "en": "Yes, the counter's great.",
+          "note": "が picks the counter out as the one you want (Lesson 1). Counter seats are where the talking happens."
+        },
+        {
+          "who": "me",
+          "ja": "すみません、この{店|みせ}は{何|なに}が{有名|ゆうめい}ですか。",
+          "en": "Excuse me, what's this place known for?",
+          "note": "Topic は + question-word が (Lesson 1). Works for a town, a shop or a station."
+        },
+        {
+          "who": "them",
+          "ja": "うちはもつ{鍋|なべ}が{有名|ゆうめい}です。",
+          "en": "We're known for our motsunabe."
+        },
+        {
+          "who": "me",
+          "ja": "じゃあ、それを{一|ひと}つお{願|ねが}いします。それから、{生|なま}ビールも。",
+          "en": "Then one of those, please. And a draft beer."
+        },
+        {
+          "who": "them",
+          "ja": "はい、{少々|しょうしょう}お{待|ま}ちください。",
+          "en": "Certainly, one moment please."
+        },
+        {
+          "who": "me",
+          "ja": "これは{何|なん}ですか。",
+          "en": "What's this?"
+        },
+        {
+          "who": "them",
+          "ja": "{明太子|めんたいこ}です。{福岡|ふくおか}の{名物|めいぶつ}ですよ。",
+          "en": "It's mentaiko, spicy cod roe. A Fukuoka specialty."
+        },
+        {
+          "who": "me",
+          "ja": "すごくおいしいです！{今|いま}、{糸島|いとしま}に{住|す}んでいます。",
+          "en": "It's really good! I'm living in Itoshima right now.",
+          "note": "住んでいます: 〜ている for a lasting state (Lesson 3), with に for where you live (Lesson 2)."
+        },
+        {
+          "who": "them",
+          "ja": "そうですか。{糸島|いとしま}は{魚|さかな}もおいしいですよ。",
+          "en": "Is that right? The fish in Itoshima is great too."
+        },
+        {
+          "who": "me",
+          "ja": "はい、{毎日|まいにち}{魚|さかな}を{食|た}べています。",
+          "en": "I know, I eat fish every day.",
+          "note": "〜ている for a habit (Lesson 3)."
+        }
+      ],
+      "phrases": [
+        {
+          "ja": "{地元|じもと}のお{酒|さけ}はありますか。",
+          "en": "Do you have any local sake?"
+        },
+        {
+          "ja": "{辛|から}いものも{大丈夫|だいじょうぶ}です。",
+          "en": "Spicy food is fine for me too."
+        },
+        {
+          "ja": "{外|そと}で{待|ま}っています。",
+          "en": "I'll wait outside.",
+          "note": "For when there's a line. で because waiting is something you do (Lesson 2)."
+        }
+      ]
     }
   },
   "vocab": [
@@ -84,6 +167,42 @@
       "id": "nanmeisama",
       "ja": "{何名様|なんめいさま}",
       "en": "how many people (polite)"
+    },
+    {
+      "id": "motsunabe",
+      "ja": "もつ{鍋|なべ}",
+      "en": "offal hot pot",
+      "note": "Fukuoka's signature hot pot."
+    },
+    {
+      "id": "mentaiko",
+      "ja": "{明太子|めんたいこ}",
+      "en": "spicy cod roe"
+    },
+    {
+      "id": "meibutsu",
+      "ja": "{名物|めいぶつ}",
+      "en": "local specialty"
+    },
+    {
+      "id": "jimoto",
+      "ja": "{地元|じもと}",
+      "en": "local, hometown"
+    },
+    {
+      "id": "osake",
+      "ja": "お{酒|さけ}",
+      "en": "sake; alcohol in general"
+    },
+    {
+      "id": "karai",
+      "ja": "{辛|から}い",
+      "en": "spicy"
+    },
+    {
+      "id": "daijoubu",
+      "ja": "{大丈夫|だいじょうぶ}",
+      "en": "fine, OK"
     }
   ]
 }

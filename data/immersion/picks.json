@@ -1,1 +1,243 @@
-{"weeks":[]}
+{
+  "weeks": [
+    {
+      "week": "2026-10-05",
+      "note": "Week 1: は vs が. Start with the Teppei episodes. Try each one once with no transcript before you look anything up.",
+      "picks": [
+        {
+          "id": "w2026-10-05-1",
+          "title": "#1587「レストランでの日本語について！」",
+          "url": "http://nihongoconteppei.com/2026/09/23/1587%e3%80%8c%e3%83%ac%e3%82%b9%e3%83%88%e3%83%a9%e3%83%b3%e3%81%a7%e3%81%ae%e6%97%a5%e6%9c%ac%e8%aa%9e%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%81%e3%80%8d/",
+          "type": "listen",
+          "source": "Nihongo con Teppei (beginner)",
+          "level": 1,
+          "why": "Short, slow and all about the situation you'll be in most: walking into a restaurant and ordering. It's the easiest way to start hearing restaurant Japanese without subtitles.",
+          "connection": "Matches the Ordering food scene, which gets its natural tier (この店は何が有名ですか) this week.",
+          "listenFor": "Listen for は and が after food words. は = \"as for the ramen…\" (talking about it). が = \"the ramen is the one…\" (picking it out). Pause after each one you catch and say which it was.",
+          "prep": [
+            {
+              "ja": "{注文|ちゅうもん}",
+              "en": "order"
+            },
+            {
+              "ja": "{店員|てんいん}",
+              "en": "shop staff"
+            },
+            {
+              "ja": "{席|せき}",
+              "en": "seat"
+            },
+            {
+              "ja": "{予約|よやく}",
+              "en": "reservation"
+            },
+            {
+              "ja": "{会計|かいけい}",
+              "en": "the bill"
+            },
+            {
+              "ja": "{人気|にんき}",
+              "en": "popularity"
+            },
+            {
+              "ja": "{有名|ゆうめい}",
+              "en": "famous"
+            }
+          ],
+          "tags": [
+            "food",
+            "restaurants"
+          ],
+          "fromArchive": "6a6b999b2bee"
+        },
+        {
+          "id": "w2026-10-05-2",
+          "title": "#1589「日本に来て使う日本語について！」",
+          "url": "http://nihongoconteppei.com/2026/09/26/1589%e3%80%8c%e6%97%a5%e6%9c%ac%e3%81%ab%e6%9d%a5%e3%81%a6%e4%bd%bf%e3%81%86%e6%97%a5%e6%9c%ac%e8%aa%9e%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%81%e3%80%8d/",
+          "type": "listen",
+          "source": "Nihongo con Teppei (beginner)",
+          "level": 1,
+          "why": "Teppei goes through the Japanese a visitor actually uses after landing. That's the same \"want to say it, then say it\" loop you run on a trip.",
+          "connection": "Trip prep: the phrases someone needs in their first days in Japan, at about the level of the Survival tiers.",
+          "listenFor": "Each time Teppei starts a new topic, listen for the noun + は that introduces it. That's the frame for everything that follows. Count how many topics you hear.",
+          "prep": [
+            {
+              "ja": "{旅行|りょこう}",
+              "en": "travel, trip"
+            },
+            {
+              "ja": "{言葉|ことば}",
+              "en": "word, phrase"
+            },
+            {
+              "ja": "{使|つか}う",
+              "en": "to use"
+            },
+            {
+              "ja": "{駅|えき}",
+              "en": "station"
+            },
+            {
+              "ja": "{分|わ}かる",
+              "en": "to understand"
+            },
+            {
+              "ja": "{言|い}い{方|かた}",
+              "en": "way of saying"
+            }
+          ],
+          "tags": [
+            "travel",
+            "trip"
+          ],
+          "fromArchive": "d3c6d8de9a25"
+        },
+        {
+          "id": "w2026-10-05-3",
+          "title": "#643「新しいレコーディングのシステムとか、チャーハンとか！」",
+          "url": "https://teppeinorikojapanese.com/2026/09/24/643%e3%80%8c%e6%96%b0%e3%81%97%e3%81%84%e3%83%ac%e3%82%b3%e3%83%bc%e3%83%87%e3%82%a3%e3%83%b3%e3%82%b0%e3%81%ae%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e3%81%a8%e3%81%8b%e3%80%81%e3%83%81%e3%83%a3/",
+          "type": "listen",
+          "source": "Japanese with Teppei and Noriko",
+          "level": 2,
+          "why": "Teppei talks through a new recording setup, then the conversation moves to fried rice. It's gear talk and food talk between two people, which is how chats at a bar tend to go.",
+          "connection": "Recording gear is everyday work for you, and that vocabulary will come up in Itoshima.",
+          "listenFor": "In a two-person conversation, が often shows up right after a question: 何が…? → Xが…. Every time one of them asks a question, listen for whether the answer starts with が.",
+          "prep": [
+            {
+              "ja": "{録音|ろくおん}",
+              "en": "recording"
+            },
+            {
+              "ja": "{新|あたら}しい",
+              "en": "new"
+            },
+            {
+              "ja": "{音|おと}",
+              "en": "sound"
+            },
+            {
+              "ja": "{機械|きかい}",
+              "en": "machine, gear"
+            },
+            {
+              "ja": "{自分|じぶん}",
+              "en": "oneself"
+            },
+            {
+              "ja": "{作|つく}り{方|かた}",
+              "en": "how to make"
+            },
+            {
+              "ja": "{料理|りょうり}",
+              "en": "cooking"
+            }
+          ],
+          "tags": [
+            "recording",
+            "food",
+            "conversation"
+          ],
+          "fromArchive": "16a73d51d298"
+        },
+        {
+          "id": "w2026-10-05-4",
+          "title": "#124 Tokyo vs Rural Japan – A Winter Walk in My Village",
+          "url": "https://podcasters.spotify.com/pod/show/imari1/episodes/124-Tokyo-vs-Rural-Japan--A-Winter-Walk-in-My-Village-e3fbeii",
+          "type": "listen",
+          "source": "Japanese Real Conversation (Imari Radio)",
+          "minutes": 12,
+          "level": 3,
+          "why": "Native speed, about 12 minutes, and there's a free transcript. A winter walk through a village in a small rural place, set against Tokyo: that's close to the move you're about to make.",
+          "connection": "This is contrastive は, the other job は does in this week's lesson.",
+          "listenFor": "Compare sentences: when Imari says 東京は… and 村は…, は is setting up a contrast between the two places. Catch three pairs.",
+          "prep": [
+            {
+              "ja": "{田舎|いなか}",
+              "en": "countryside"
+            },
+            {
+              "ja": "{都会|とかい}",
+              "en": "big city"
+            },
+            {
+              "ja": "{村|むら}",
+              "en": "village"
+            },
+            {
+              "ja": "{人口|じんこう}",
+              "en": "population"
+            },
+            {
+              "ja": "{静|しず}か",
+              "en": "quiet"
+            },
+            {
+              "ja": "{冬|ふゆ}",
+              "en": "winter"
+            },
+            {
+              "ja": "{雪|ゆき}",
+              "en": "snow"
+            },
+            {
+              "ja": "{生活|せいかつ}",
+              "en": "daily life"
+            }
+          ],
+          "tags": [
+            "rural",
+            "winter",
+            "native"
+          ],
+          "fromArchive": "13fc2027c490"
+        },
+        {
+          "id": "w2026-10-05-5",
+          "title": "#118 What to Say When You Don’t Understand Japanese",
+          "url": "https://podcasters.spotify.com/pod/show/imari1/episodes/118-What-to-Say-When-You-Dont-Understand-Japanese-e3ejv8a",
+          "type": "listen",
+          "source": "Japanese Real Conversation (Imari Radio)",
+          "minutes": 11,
+          "level": 3,
+          "why": "At native speed, but the topic is the escape hatch you'll need at a bar: what to say when you don't understand. Each phrase you pick up here keeps a conversation going.",
+          "listenFor": "Write down any phrase she gives that you'd actually say. Then listen for the word right before each は or が in it, and ask whether it's a topic or a pick-out.",
+          "prep": [
+            {
+              "ja": "{分|わ}かる",
+              "en": "to understand"
+            },
+            {
+              "ja": "{意味|いみ}",
+              "en": "meaning"
+            },
+            {
+              "ja": "もう{一度|いちど}",
+              "en": "one more time"
+            },
+            {
+              "ja": "ゆっくり",
+              "en": "slowly"
+            },
+            {
+              "ja": "{会話|かいわ}",
+              "en": "conversation"
+            },
+            {
+              "ja": "{失礼|しつれい}",
+              "en": "rude; excuse me"
+            },
+            {
+              "ja": "{言|い}う",
+              "en": "to say"
+            }
+          ],
+          "tags": [
+            "conversation",
+            "survival"
+          ],
+          "fromArchive": "7e3aa3a7102f"
+        }
+      ]
+    }
+  ]
+}
