@@ -1,0 +1,117 @@
+{
+  "id": "about-me",
+  "title": "{自己紹介|じこしょうかい}",
+  "titleEn": "About me",
+  "situation": "Someone asks who you are, where you're from, and why you're in Japan.",
+  "when": "2026-10-05",
+  "register": [
+    "Polite です/ます with everyone. Friends will forgive a too-polite sentence much faster than a too-casual one.",
+    "Say your name as タイラー. In a formal greeting (onstage, the exhibition) use the full タイラー・クライン.",
+    "{妻|つま} is how you refer to your own wife. Someone else's wife is {奥|おく}さん, so that's the word you'll hear when people ask about her.",
+    "Asking a question back keeps a conversation alive. The conversation tier gives you a few to have ready."
+  ],
+  "tiers": {
+    "survival": {
+      "requires": [],
+      "dialogue": [
+        { "who": "them", "ja": "はじめまして。", "en": "Nice to meet you." },
+        { "who": "me", "ja": "はじめまして、タイラーです。よろしくお{願|ねが}いします。", "en": "Nice to meet you, I'm Tyler." },
+        { "who": "them", "ja": "どちらからですか。", "en": "Where are you from?" },
+        { "who": "me", "ja": "アメリカのケンタッキー{州|しゅう}から{来|き}ました。ルイビルです。", "en": "I'm from Kentucky, in the US. Louisville." },
+        { "who": "them", "ja": "お{仕事|しごと}は？", "en": "What do you do?" },
+        { "who": "me", "ja": "{現代音楽|げんだいおんがく}の{作曲家|さっきょくか}です。ラジオの{仕事|しごと}もしています。", "en": "I'm a composer of contemporary classical music. I also work in radio." },
+        { "who": "them", "ja": "{日本語|にほんご}、{上手|じょうず}ですね！", "en": "Your Japanese is good!" },
+        { "who": "me", "ja": "いえいえ、まだまだです。", "en": "Oh no, I've got a long way to go." }
+      ],
+      "phrases": [
+        { "ja": "ケンタッキー{出身|しゅっしん}です。", "en": "I'm from Kentucky.", "note": "出身 = where you're originally from. Shorter than 〜から来ました." },
+        { "ja": "{日本語|にほんご}は{少|すこ}しだけです。", "en": "I only speak a little Japanese." },
+        { "ja": "もう{一度|いちど}、ゆっくりお{願|ねが}いします。", "en": "One more time, slowly, please." },
+        { "ja": "〜は{英語|えいご}で{何|なん}ですか。", "en": "What's 〜 in English?", "note": "Lets the other person teach you a word, which people usually enjoy." }
+      ]
+    },
+    "natural": {
+      "requires": ["01-wa-ga", "02-ni-de", "03-te-iru"],
+      "dialogue": [
+        { "who": "them", "ja": "{日本|にほん}には{旅行|りょこう}ですか。", "en": "Are you in Japan on a trip?" },
+        { "who": "me", "ja": "いいえ、アーティスト・イン・レジデンスで{来|き}ました。{糸島|いとしま}のスタジオで、{一|いっ}か{月|げつ}{曲|きょく}を{作|つく}っています。", "en": "No, I'm here for an artist residency. I'm spending a month composing at a studio in Itoshima.", "note": "で marks the studio as the stage where the work happens (Lesson 2); 〜ている for something ongoing (Lesson 3)." },
+        { "who": "them", "ja": "へえ、すごいですね。", "en": "Wow, that's amazing." },
+        { "who": "me", "ja": "{一月|いちがつ}の{終|お}わりに、{展示|てんじ}もします。{写真|しゃしん}と{楽譜|がくふ}の{展示|てんじ}です。", "en": "At the end of January I'm doing an exhibition too: photographs and music manuscripts." },
+        { "who": "them", "ja": "ラジオのお{仕事|しごと}は？", "en": "And the radio work?" },
+        { "who": "me", "ja": "{現代音楽|げんだいおんがく}の{番組|ばんぐみ}をやっています。{作曲家|さっきょくか}にインタビューするポッドキャストもあります。", "en": "I host a contemporary classical radio show. I also have a podcast where I interview composers." },
+        { "who": "me", "ja": "{日本|にほん}の{前|まえ}は、アイスランドのレジデンスにいました。", "en": "Before Japan I was at a residency in Iceland.", "note": "いる (being somewhere) takes に (Lesson 2)." },
+        { "who": "them", "ja": "アイスランド！{寒|さむ}かったでしょう。", "en": "Iceland! It must have been cold." },
+        { "who": "me", "ja": "はい、とても{寒|さむ}かったです。でも、{静|しず}かでよかったです。", "en": "Yes, very cold. But it was quiet, which was nice." },
+        { "who": "them", "ja": "ご{家族|かぞく}は？", "en": "And your family?" },
+        { "who": "me", "ja": "{妻|つま}がいます。{三月|さんがつ}に{東京|とうきょう}に{来|き}ます。それから、{猫|ねこ}も{一匹|いっぴき}います。{名前|なまえ}は「とうふ」です。", "en": "I have a wife. She's coming to Tokyo in March. And I have a cat, too. His name is Tofu.", "note": "A cat named 豆腐 usually gets a laugh. Enjoy it." }
+      ],
+      "phrases": [
+        { "ja": "{今|いま}、{二月|にがつ}のコンサートの{準備|じゅんび}をしています。", "en": "Right now I'm preparing for some concerts in February." },
+        { "ja": "{東京|とうきょう}には{友|とも}だちがいます。", "en": "I have friends in Tokyo.", "note": "は after に: \"as for Tokyo, there I have friends\" (Lessons 1 and 2)." }
+      ]
+    },
+    "conversation": {
+      "requires": ["01-wa-ga", "02-ni-de", "03-te-iru"],
+      "requiresChapters": ["clause", "sentence_ending", "compound"],
+      "dialogue": [
+        { "who": "them", "ja": "どうして{日本|にほん}に{来|き}たんですか。", "en": "What brought you to Japan?" },
+        { "who": "me", "ja": "{一|ひと}つの{場所|ばしょ}で、ゆっくり{時間|じかん}を{過|す}ごすのが{夢|ゆめ}だったんです。", "en": "It's been a dream of mine to spend slow, unhurried time in one place." },
+        { "who": "me", "ja": "{知|し}らない{場所|ばしょ}で、ただ{見|み}たり{聞|き}いたりしたいんです。{写真|しゃしん}や{録音|ろくおん}もしています。", "en": "I just want to look and listen somewhere unfamiliar. I'm taking photos and making field recordings too." },
+        { "who": "them", "ja": "ケンタッキーって、どんなところですか。", "en": "What's Kentucky like?" },
+        { "who": "me", "ja": "バーボンと{競馬|けいば}で{有名|ゆうめい}です。{食|た}べ{物|もの}もおいしいですよ。", "en": "It's famous for bourbon and horse racing. The food's good, too." },
+        { "who": "me", "ja": "{今|いま}は、バーボンの{蒸留所|じょうりゅうじょ}のための{曲|きょく}を{書|か}いています。パーカッションのソロです。", "en": "Right now I'm writing a piece for Kentucky bourbon distilleries, for solo percussion." },
+        { "who": "them", "ja": "{趣味|しゅみ}は{何|なん}ですか。", "en": "What do you do for fun?" },
+        { "who": "me", "ja": "{食|た}べることが{大好|だいす}きです。あと、フィルムカメラで{写真|しゃしん}を{撮|と}っています。", "en": "I love eating. And I shoot film photography." },
+        { "who": "me", "ja": "{駅|えき}のスタンプも{集|あつ}めているんです。", "en": "I collect station stamps, too." },
+        { "who": "me", "ja": "お{仕事|しごと}は{何|なに}をされているんですか。", "en": "What do you do for work?", "note": "The question that impressed people last time. され〜 is the respectful form of する." }
+      ],
+      "phrases": [
+        { "ja": "この{辺|へん}の{方|かた}ですか。", "en": "Are you from around here?" },
+        { "ja": "おすすめのお{店|みせ}はありますか。", "en": "Is there a place you'd recommend?" },
+        { "ja": "{一人|ひとり}で{旅|たび}をしているんです。", "en": "I'm traveling on my own." },
+        { "ja": "{日本|にほん}の{音楽|おんがく}が{大好|だいす}きで、{毎日|まいにち}{聞|き}いています。", "en": "I love Japanese music. I listen to it every day." },
+        { "ja": "{日本|にほん}に{来|く}ると、{日本語|にほんご}で{考|かんが}えるようになるんです。", "en": "When I come to Japan, I start thinking in Japanese." }
+      ]
+    },
+    "onstage": {
+      "requires": ["01-wa-ga", "02-ni-de", "03-te-iru"],
+      "requiresChapters": ["compound", "teform"],
+      "note": "A short spoken intro for the exhibition or a concert. Memorize it as a whole; the grammar can come later.",
+      "dialogue": [
+        { "who": "me", "ja": "{皆|みな}さん、こんばんは。{作曲家|さっきょくか}のタイラー・クラインです。", "en": "Good evening, everyone. I'm the composer Tyler Kline." },
+        { "who": "me", "ja": "{今日|きょう}は{来|き}てくださって、ありがとうございます。", "en": "Thank you for coming tonight." },
+        { "who": "me", "ja": "{日本語|にほんご}はまだ{下手|へた}ですが、{少|すこ}しだけ{話|はな}させてください。", "en": "My Japanese is still rough, but let me say a few words." },
+        { "who": "me", "ja": "{一|いっ}か{月|げつ}、{糸島|いとしま}で{音|おと}を{聞|き}いて、{写真|しゃしん}を{撮|と}って、{考|かんが}えていました。", "en": "For a month I've been in Itoshima, listening, taking photos, and thinking." },
+        { "who": "me", "ja": "{今日|きょう}は、その{時間|じかん}を{少|すこ}しお{見|み}せしたいと{思|おも}います。", "en": "Tonight I'd like to share a little of that time with you." },
+        { "who": "me", "ja": "どうぞ、ゆっくりご{覧|らん}ください。", "en": "Please take your time and enjoy." }
+      ],
+      "phrases": [
+        { "ja": "{次|つぎ}の{曲|きょく}は、{糸島|いとしま}で{書|か}きました。", "en": "I wrote the next piece in Itoshima." },
+        { "ja": "{楽|たの}しんでください。", "en": "Please enjoy." },
+        { "ja": "ありがとうございました。", "en": "Thank you very much.", "note": "Past tense: thanks for something that just finished." }
+      ]
+    }
+  },
+  "vocab": [
+    { "id": "jikoshoukai", "ja": "{自己紹介|じこしょうかい}", "en": "self-introduction" },
+    { "id": "sakkyokuka", "ja": "{作曲家|さっきょくか}", "en": "composer" },
+    { "id": "gendaiongaku", "ja": "{現代音楽|げんだいおんがく}", "en": "contemporary classical music", "note": "The standard term for new concert music." },
+    { "id": "bangumi", "ja": "{番組|ばんぐみ}", "en": "(radio/TV) program" },
+    { "id": "shusshin", "ja": "{出身|しゅっしん}", "en": "where you're from" },
+    { "id": "shuu", "ja": "{州|しゅう}", "en": "state (US)" },
+    { "id": "tenji", "ja": "{展示|てんじ}", "en": "exhibition, display" },
+    { "id": "gakufu", "ja": "{楽譜|がくふ}", "en": "sheet music, score" },
+    { "id": "rokuon", "ja": "{録音|ろくおん}", "en": "recording" },
+    { "id": "tsuma", "ja": "{妻|つま}", "en": "(my) wife" },
+    { "id": "okusan", "ja": "{奥|おく}さん", "en": "(someone else's) wife" },
+    { "id": "neko", "ja": "{猫|ねこ}", "en": "cat" },
+    { "id": "jouryuujo", "ja": "{蒸留所|じょうりゅうじょ}", "en": "distillery" },
+    { "id": "keiba", "ja": "{競馬|けいば}", "en": "horse racing" },
+    { "id": "shumi", "ja": "{趣味|しゅみ}", "en": "hobby" },
+    { "id": "yume", "ja": "{夢|ゆめ}", "en": "dream" },
+    { "id": "sugosu", "ja": "{過|す}ごす", "en": "to spend (time)" },
+    { "id": "atsumeru", "ja": "{集|あつ}める", "en": "to collect" },
+    { "id": "junbi", "ja": "{準備|じゅんび}", "en": "preparation" },
+    { "id": "tabi", "ja": "{旅|たび}", "en": "journey, travel" }
+  ]
+}
