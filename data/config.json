@@ -5,5 +5,27 @@
   "tripLabel": "Japan",
   "timeZone": "America/New_York",
   "courseStart": "2026-10-05",
-  "syncUrl": "https://script.google.com/macros/s/AKfycbz1SCYHAfdVoBq0-rZYpjaB8W8t_GLTsX4_8I40LB6eah-dtYmazS3bmPW59kWVRUUcvA/exec"
+  "syncUrl": "https://script.google.com/macros/s/AKfycbz1SCYHAfdVoBq0-rZYpjaB8W8t_GLTsX4_8I40LB6eah-dtYmazS3bmPW59kWVRUUcvA/exec",
+  "travel": [
+    {
+      "from": "2026-10-26",
+      "timeZone": "Atlantic/Reykjavik",
+      "place": "Skagaströnd"
+    },
+    {
+      "from": "2026-11-30",
+      "timeZone": "America/New_York",
+      "place": "Home"
+    },
+    {
+      "from": "2026-12-29",
+      "timeZone": "Asia/Tokyo",
+      "place": "Japan"
+    },
+    {
+      "from": "2027-03-13",
+      "timeZone": "America/New_York",
+      "place": "Home"
+    }
+  ]
 }

@@ -55,6 +55,9 @@ async function boot() {
     getJSON("data/phrases.json"),
     getJSON("data/selftalk.json"),
   ]);
+  // Follow the travel schedule: "today" resets at local midnight wherever you are.
+  config.homeTimeZone = config.timeZone;
+  config.timeZone = core.timeZoneFor(config);
   S.config = config;
   S.lessonsIndex = idx.lessons;
   S.curriculum = curriculum;

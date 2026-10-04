@@ -1,7 +1,7 @@
 // Daily snapshot: records today's WaniKani numbers into data/history.json.
 // Runs in GitHub Actions with the WANIKANI_TOKEN repository secret.
 import { readFile, writeFile } from "node:fs/promises";
-import { wkGet, wkGetAll, snapshotRow, previousDayRow, findLeeches, knownKanji, vocabList } from "../assets/core.js";
+import { timeZoneFor, wkGet, wkGetAll, snapshotRow, previousDayRow, findLeeches, knownKanji, vocabList } from "../assets/core.js";
 
 const token = process.env.WANIKANI_TOKEN;
 if (!token) {
@@ -10,6 +10,7 @@ if (!token) {
 }
 
 const config = JSON.parse(await readFile(new URL("../data/config.json", import.meta.url), "utf8"));
+config.timeZone = timeZoneFor(config); // follow the travel schedule
 const historyPath = new URL("../data/history.json", import.meta.url);
 
 const [user, summary, assignments, stats] = await Promise.all([

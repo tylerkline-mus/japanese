@@ -89,6 +89,17 @@ export function tzOffsetMinutes(date, timeZone) {
   return m[1] === "-" ? -mins : mins;
 }
 
+// Which time zone applies on a given date: the base config.timeZone, overridden by the
+// latest config.travel entry whose "from" date (UTC) has started.
+export function timeZoneFor(config, now = new Date()) {
+  const day = now.toISOString().slice(0, 10);
+  let tz = config.timeZone;
+  for (const t of [...(config.travel || [])].sort((a, b) => a.from.localeCompare(b.from))) {
+    if (t.from <= day) tz = t.timeZone;
+  }
+  return tz;
+}
+
 export function startOfLocalDay(now, timeZone) {
   // Midnight of "today" in timeZone, as a Date.
   const key = localDateKey(now, timeZone);

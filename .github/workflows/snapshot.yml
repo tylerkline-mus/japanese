@@ -2,8 +2,9 @@ name: Daily snapshot
 
 on:
   schedule:
-    # Late evening in New York: 23:47 EDT / 22:47 EST (GitHub cron runs on UTC and can start a few minutes late)
-    - cron: "47 3 * * *"
+    # Every hour at :47; the gate step only lets the run through during the 11pm hour
+    # of your current time zone (see "travel" in data/config.json).
+    - cron: "47 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -21,15 +22,21 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Is it 11pm where you are?
+        id: gate
+        run: node scripts/should-snapshot.mjs
       - name: Record today's WaniKani numbers
+        if: steps.gate.outputs.go == 'true'
         env:
           WANIKANI_TOKEN: ${{ secrets.WANIKANI_TOKEN }}
           SYNC_KEY: ${{ secrets.SYNC_KEY }}
         run: node scripts/snapshot.mjs
       - name: Pull new podcast episodes
+        if: steps.gate.outputs.go == 'true'
         continue-on-error: true
         run: node scripts/feeds.mjs
       - name: Commit
+        if: steps.gate.outputs.go == 'true'
         run: |
           git config user.name "japanese-hub bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
