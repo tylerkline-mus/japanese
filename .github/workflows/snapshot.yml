@@ -2,7 +2,7 @@ name: Daily snapshot
 
 on:
   schedule:
-    # Every hour at :47; the gate step only lets the run through during the 11pm hour
+    # Every hour at :47; the gate step only lets the run through during the 9–11pm hours
     # of your current time zone (see "travel" in data/config.json).
     - cron: "47 * * * *"
   workflow_dispatch:
@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Is it 11pm where you are?
+      - name: Is it evening where you are?
         id: gate
         run: node scripts/should-snapshot.mjs
       - name: Record today's WaniKani numbers

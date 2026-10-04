@@ -195,11 +195,21 @@ export function meaningCorrectTotal(stats) {
 }
 
 // Pick the baseline row for "today": the most recent snapshot from yesterday.
+// Yesterday's row, but only if it was captured late enough in the evening to stand in for
+// "the count at midnight". A row from mid-afternoon would quietly count the whole evening's
+// reviews as today's, so it's ignored. Rows from before `at` was recorded are ignored too.
+export const EVENING_HOUR = 20;
 export function previousDayRow(history, todayKey, timeZone) {
   const y = new Date(Date.parse(todayKey + "T12:00:00Z") - 86400000);
   const yKey = localDateKey(y, "UTC");
   const prev = [...history].filter((h) => h.date < todayKey).sort((a, b) => a.date.localeCompare(b.date)).pop();
-  return prev && prev.date === yKey && Array.isArray(prev.meaning) ? prev : null;
+  if (!prev || prev.date !== yKey || !Array.isArray(prev.meaning) || !prev.at) return null;
+  return isEvening(prev.at, timeZone) ? prev : null;
+}
+
+export function isEvening(iso, timeZone) {
+  const hour = Number(new Intl.DateTimeFormat("en-US", { timeZone, hour: "numeric", hourCycle: "h23" }).format(new Date(iso)));
+  return hour >= EVENING_HOUR;
 }
 
 // Leech score: wrong answers weighed against how shaky the item currently is.
@@ -316,6 +326,7 @@ export function snapshotRow(raw, timeZone, now = new Date()) {
   const acc = accuracyTotals(raw.stats);
   return {
     date: localDateKey(now, timeZone),
+    at: now.toISOString(),
     level: raw.user.data.level,
     queue: q.reviews,
     lessons: q.lessons,

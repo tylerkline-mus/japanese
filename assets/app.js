@@ -331,9 +331,16 @@ function buildModel() {
   // Baseline: last night's snapshot if there is one; otherwise the first time
   // this device saw your numbers today (so reviews before that aren't counted).
   const liveMC = live.meaning[0];
+  // Last number this device saw, kept per day. If it saw one late last night, that's as good
+  // as a snapshot for where today started.
+  const lastSeen = raw.demo ? null : store.get("jh.last", null);
+  if (!raw.demo) store.set("jh.last", { date: live.date, mc: liveMC, at: now.toISOString() });
+  const yKey = srs.addDays(live.date, -1);
+  const lastNight = lastSeen && lastSeen.date === yKey && lastSeen.mc <= liveMC && lastSeen.at && core.isEvening(lastSeen.at, tz) ? lastSeen.mc : null;
   const prev = core.previousDayRow(S.history, live.date, tz);
-  let dayBase = prev ? prev.meaning[0] : null;
-  let baseSource = prev ? "snapshot" : "device";
+  const nightBase = [prev ? prev.meaning[0] : null, lastNight].filter((v) => v != null && v <= liveMC);
+  let dayBase = nightBase.length ? Math.max(...nightBase) : null;
+  let baseSource = dayBase != null ? "snapshot" : "device";
   if (dayBase == null && !raw.demo) {
     // No snapshot from last night. Use the earliest number we have for today: an
     // earlier snapshot from today (shared by every device) or this device's first look.
@@ -484,7 +491,7 @@ function viewToday() {
     <p class="small"><b>${fmt(doneN)}</b> reviewed so far today${t.target ? ` · ${fmt(Math.max(0, t.target - m.done))} to go` : ""}.</p>
     ${
       m.baseSource === "device"
-        ? `<p class="muted small">Counting from when this device first opened the hub today. From tomorrow it counts from last night's snapshot.</p>`
+        ? `<p class="muted small">Counting from when this device first opened the hub today (last night's snapshot didn't run late enough).</p>`
         : m.baseSource === "earlier-snapshot"
         ? `<p class="muted small">Counting from today's earlier snapshot. From tomorrow it counts from last night's.</p>`
         : ""
