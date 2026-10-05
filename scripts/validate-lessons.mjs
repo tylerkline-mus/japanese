@@ -238,8 +238,32 @@ try {
   if (e.code !== "ENOENT") problems.push(`glue.json: can't read or parse (${e.message})`);
 }
 
+// Japanese definitions for Deep mode (data/vault/defs.json): only kanji he knows, no giveaways.
+let defCount = 0;
+try {
+  const defs = JSON.parse(await readFile(new URL("../data/vault/defs.json", import.meta.url), "utf8")).defs || {};
+  let known = null;
+  try {
+    known = new Set([...(JSON.parse(await readFile(new URL("../data/wk-state.json", import.meta.url), "utf8")).knownKanji || "")]);
+  } catch {}
+  for (const [w, d] of Object.entries(defs)) {
+    defCount++;
+    const at = `vault/defs.json: ${w}`;
+    if (!d || !String(d).trim()) problems.push(`${at}: empty definition`);
+    const bare = w.replace(/〜/g, "");
+    if (bare && String(d).includes(bare)) problems.push(`${at}: the definition contains the word itself`);
+    if (/[{}|]/.test(d)) problems.push(`${at}: no furigana markup; write unknown kanji in kana`);
+    if (known && known.size) {
+      const odd = [...String(d)].filter((c) => /[一-龯]/.test(c) && !known.has(c));
+      if (odd.length) problems.push(`${at}: kanji he doesn't know yet (${[...new Set(odd)].join("")}); write them in kana`);
+    }
+  }
+} catch (e) {
+  if (e.code !== "ENOENT") problems.push(`vault/defs.json: can't read or parse (${e.message})`);
+}
+
 if (problems.length) {
   console.error(problems.map((p) => "✕ " + p).join("\n"));
   process.exit(1);
 }
-console.log(`✓ ${index.lessons.length} lessons and ${bankCount} review banks, every answer explained.${sceneCount ? ` Scenes: ${sceneCount}.` : ""}${glueCount ? ` Glue: ${glueCount}.` : ""}${vaultReadings ? ` Vault: ${vaultReadings} readings, ${vaultSentences} sentences.` : ""}${pickWeeks ? ` Picks: ${pickWeeks} week(s), newest OK.` : ""}`);
+console.log(`✓ ${index.lessons.length} lessons and ${bankCount} review banks, every answer explained.${sceneCount ? ` Scenes: ${sceneCount}.` : ""}${glueCount ? ` Glue: ${glueCount}.` : ""}${vaultReadings ? ` Vault: ${vaultReadings} readings, ${vaultSentences} sentences, ${defCount} definitions.` : ""}${pickWeeks ? ` Picks: ${pickWeeks} week(s), newest OK.` : ""}`);

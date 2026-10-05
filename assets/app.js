@@ -37,6 +37,7 @@ const S = {
   vaultQuiz: null,
   glue: { glue: [], answered: {} },
   practiceRun: null,
+  sessionDepth: {},
   selftalk: [],
   error: null,
   loading: false,
@@ -75,7 +76,9 @@ async function boot() {
   window.addEventListener("hashchange", render);
   let lastW = window.innerWidth;
   window.addEventListener("resize", () => {
-    if (Math.abs(window.innerWidth - lastW) > 40 && !location.hash.startsWith("#course/")) {
+    // Only pages with charts need redrawing; redrawing a quiz or review would wipe the answer you're on.
+    const page = (location.hash.replace(/^#/, "") || "today").split("/")[0];
+    if (Math.abs(window.innerWidth - lastW) > 40 && (page === "today" || page === "stats")) {
       lastW = window.innerWidth;
       render();
     }
@@ -413,6 +416,24 @@ function buildModel() {
 
 // ---------------- shared bits ----------------
 
+// How much Japanese: 0 浅 English questions · 1 中 Japanese questions · 2 深 all Japanese.
+// Set globally (Settings, or the Vault page), or per screen for one session (quiz, warm-up, practice).
+const DEPTHS = [
+  { ja: "浅", en: "Shallow", sub: "English questions" },
+  { ja: "中", en: "Middle", sub: "Japanese questions, English answers" },
+  { ja: "深", en: "Deep", sub: "All Japanese: definitions, explanations, labels" },
+];
+const globalDepth = () => Math.max(0, Math.min(2, Number(store.get("jh.depth", 0)) || 0));
+const depthFor = (screen) => S.sessionDepth[screen] ?? globalDepth();
+// UI label in English, or Japanese at Deep.
+const L = (en, jaText) => (globalDepth() >= 2 ? jaText : en);
+function depthToggle(screen) {
+  const cur = screen === "all" ? globalDepth() : depthFor(screen);
+  return `<div class="depth" role="group" aria-label="How much Japanese">${DEPTHS.map(
+    (d, k) => `<button class="depth-btn ${k === cur ? "on" : ""}" data-depth="${k}" data-dscreen="${screen}" title="${esc(d.en)}: ${esc(d.sub)}" aria-pressed="${k === cur}" lang="ja">${d.ja}</button>`
+  ).join("")}</div>`;
+}
+
 const stageName = (s) =>
   s == null ? "Not unlocked yet" : s === 0 ? "In lessons" : s <= 4 ? `Apprentice ${s}` : s <= 6 ? `Guru ${s - 4}` : s === 7 ? "Master" : s === 8 ? "Enlightened" : "Burned";
 
@@ -496,19 +517,19 @@ function viewToday() {
   const metTarget = t.target && m.done >= t.target;
 
   const target = `<section class="card hero">
-    <p class="eyebrow">Today's goal</p>
+    <p class="eyebrow">${L("Today's goal", "今日の目標")}</p>
     <div class="hero-row">
       <div>
         <p class="hero-num">${t.target ? fmt(t.target) : "0"}</p>
-        <p class="hero-label">${t.target ? "reviews to do" : "reviews due"}</p>
+        <p class="hero-label">${t.target ? L("reviews to do", "ふくしゅう") : L("reviews due", "ふくしゅう")}</p>
       </div>
       <div class="ring-wrap" aria-label="${fmt(doneN)} reviewed so far, ${pctDone}% of the goal">
         ${ring(pctDone)}
-        <span class="ring-label"><b>${fmt(doneN)}</b><br><small>done</small></span>
+        <span class="ring-label"><b>${fmt(doneN)}</b><br><small>${L("done", "おわり")}</small></span>
       </div>
     </div>
-    <p class="small"><b>${fmt(doneN)}</b> reviewed so far today${t.target ? ` · ${fmt(Math.max(0, t.target - m.done))} to go` : ""}.</p>
-    ${m.burnedToday != null ? `<p class="burn-today"><span class="flame" aria-hidden="true">🔥</span> <b>${fmt(m.burnedToday)}</b> burned today <span class="muted small">· ${fmt(m.srs.burned)} gone for good</span></p>` : ""}
+    <p class="small">${L(`<b>${fmt(doneN)}</b> reviewed so far today${t.target ? ` · ${fmt(Math.max(0, t.target - m.done))} to go` : ""}.`, `今日は <b>${fmt(doneN)}</b> こ${t.target ? ` · あと ${fmt(Math.max(0, t.target - m.done))} こ` : ""}`)}</p>
+    ${m.burnedToday != null ? `<p class="burn-today"><span class="flame" aria-hidden="true">🔥</span> <b>${fmt(m.burnedToday)}</b> ${L("burned today", "今日焼いた")} <span class="muted small">· ${L(`${fmt(m.srs.burned)} gone for good`, `全部で ${fmt(m.srs.burned)}`)}</span></p>` : ""}
     ${
       m.baseSource === "device"
         ? `<p class="muted small">Counting from when this device first opened the hub today (no late-night snapshot from yesterday).</p>`
@@ -519,7 +540,7 @@ function viewToday() {
     <p>${metTarget ? "<b>Done for today.</b> Anything more is a bonus — and it's fine to stop." : esc(msg)}</p>
     <p class="muted small">Hard day? 20 still counts.</p>
     <div class="row">
-      <a class="btn" href="https://www.wanikani.com/subjects/review" target="_blank" rel="noopener">Open reviews</a>
+      <a class="btn" href="https://www.wanikani.com/subjects/review" target="_blank" rel="noopener">${L("Open reviews", "ふくしゅうへ")}</a>
       ${
         t.lessonsOk
           ? `<a class="btn ghost" href="https://www.wanikani.com/subjects/lesson" target="_blank" rel="noopener">Lessons (${fmt(m.lessons)})</a>`
@@ -585,22 +606,22 @@ function grammarCard() {
   const enrolled = [...srs.state.rows.values()].filter((r) => srs.isGrammar(r.id) && r.stage >= 1);
   const today = todayKey();
   if (!enrolled.length)
-    return `<section class="card grammar-card"><p class="eyebrow">Grammar reviews</p>
+    return `<section class="card grammar-card"><p class="eyebrow">${L("Grammar reviews", "文法のふくしゅう")}</p>
       <p>Reviews start once you mark a lesson done. Each grammar point comes back after 1, 3, 7, 14, 30 and 90 days, with new sentences every time.</p>
       <p class="small">${syncNote()}</p></section>`;
   const due = srs.dueToday(today);
   const waiting = srs.dueList(today).length - due.length;
   if (!due.length) {
     const nd = srs.nextDue(today);
-    return `<section class="card grammar-card"><p class="eyebrow">Grammar reviews</p>
+    return `<section class="card grammar-card"><p class="eyebrow">${L("Grammar reviews", "文法のふくしゅう")}</p>
       <p><b>Nothing due.</b> ${nd ? `Next one ${friendlyDate(nd)}.` : "Everything's retired — nice."}</p>
       <p class="small">${syncNote()}</p></section>`;
   }
-  return `<section class="card grammar-card due"><p class="eyebrow">Grammar reviews</p>
+  return `<section class="card grammar-card due"><p class="eyebrow">${L("Grammar reviews", "文法のふくしゅう")}</p>
     <div class="split"><p class="big-num">${due.length}</p><p class="muted small">point${due.length > 1 ? "s" : ""} · about ${due.length * srs.DRILLS_PER_POINT} sentences</p></div>
     <p class="small">${due.map((r) => `<span lang="ja" class="chip">${esc(lessonTitle(r.id))}</span>`).join(" ")}</p>
     ${waiting > 0 ? `<p class="muted small">${waiting} more will wait for another day. No pile-up.</p>` : ""}
-    <a class="btn" href="#review">Start review</a>
+    <a class="btn" href="#review">${L("Start review", "始める")}</a>
     <p class="small">${syncNote()}</p></section>`;
 }
 
@@ -619,11 +640,11 @@ function lessonCard() {
   if (!S.lessonsIndex.length) return "";
   const { entry, allDone } = currentLessonEntry();
   return `<section class="card lesson-card">
-    <p class="eyebrow">${allDone ? "All caught up" : `This week · Lesson ${entry.week}`}</p>
+    <p class="eyebrow">${allDone ? L("All caught up", "全部おわり") : L(`This week · Lesson ${entry.week}`, `今週 · ${entry.week}か`)}</p>
     <h2 lang="ja" class="lesson-title">${esc(entry.title)}</h2>
     <p class="muted">${esc(entry.titleEn)}</p>
     <p class="small">One small step a day: read it, look at the pairs, then try a few.</p>
-    <a class="btn" href="#course/${esc(entry.id)}">${allDone ? "Review" : "Open lesson"}</a>
+    <a class="btn" href="#course/${esc(entry.id)}">${allDone ? L("Review", "ふくしゅう") : L("Open lesson", "レッスンへ")}</a>
   </section>`;
 }
 
@@ -631,7 +652,7 @@ function selftalkCard() {
   if (!S.selftalk.length) return "";
   const p = S.selftalk[dayOfYear() % S.selftalk.length];
   return `<section class="card talk">
-    <p class="eyebrow" lang="ja">ひとりごと · Self-talk</p>
+    <p class="eyebrow" lang="ja">ひとりごと${L(" · Self-talk", "")}</p>
     <p class="talk-q" lang="ja">${p.q ? ja(p.q) : esc(p.en)}</p>
     <p class="small muted">Answer in your head or out loud, in Japanese. Two or three sentences.</p>
     <button class="reveal" aria-expanded="false">English / a start</button>
@@ -1738,7 +1759,10 @@ const VAULT_TIERS = [
   { key: "guru", label: "Guru", ja: "師", test: (s) => s === 5 || s === 6 },
 ];
 const tierOf = (s) => VAULT_TIERS.find((t) => t.test(s))?.key || null;
-const tierLabel = (k) => VAULT_TIERS.find((t) => t.key === k)?.label || k;
+const tierLabel = (k) => {
+  const t = VAULT_TIERS.find((x) => x.key === k);
+  return t ? (globalDepth() >= 2 ? t.ja : t.label) : k;
+};
 
 function vaultTiers() {
   const t = store.get("jh.vault.tiers", null);
@@ -1749,15 +1773,16 @@ const vaultWords = (tiers = vaultTiers()) => allWords().filter((x) => tiers.has(
 const burnedWords = () => vaultWords(new Set(["burned"]));
 
 async function loadVault() {
-  const out = { weeks: [], sentences: {} };
+  const out = { weeks: [], sentences: {}, defs: {} };
   for (const [path, key] of [
     ["data/vault/readings.json", "weeks"],
     ["data/vault/sentences.json", "sentences"],
+    ["data/vault/defs.json", "defs"],
   ]) {
     for (const url of [rawUrl(path) + "?t=" + Date.now(), path]) {
       try {
         const d = await getJSON(url);
-        out[key] = key === "weeks" ? d.weeks || [] : d.words || {};
+        out[key] = key === "weeks" ? d.weeks || [] : key === "defs" ? d.defs || {} : d.words || {};
         break;
       } catch {}
     }
@@ -1813,28 +1838,28 @@ function viewVault(arg, arg2) {
   const counts = Object.fromEntries(VAULT_TIERS.map((t) => [t.key, allWords().filter((x) => tierOf(x.s) === t.key).length]));
   const chips = `<div class="vtiers" role="group" aria-label="Tiers">${VAULT_TIERS.map(
     (t) => `<button class="vtier ${tiers.has(t.key) ? "on" : ""}" data-vtier="${t.key}" aria-pressed="${tiers.has(t.key)}">
-      <span>${esc(t.label)}</span><small>${fmt(counts[t.key])}</small></button>`
+      <span ${globalDepth() >= 2 ? 'lang="ja"' : ""}>${esc(tierLabel(t.key))}</span><small>${fmt(counts[t.key])}</small></button>`
   ).join("")}</div>`;
 
   const burned = burnedWords();
   const st = srs.warmStats(burned, todayKey());
   const q = warmQueue();
   const warm = burned.length
-    ? `<section class="card"><div class="split"><h2>Keep burns warm</h2><span class="big-num">${q.length}</span></div>
+    ? `<section class="card"><div class="split"><h2>${L("Keep burns warm", "焼いた言葉をあたためる")}</h2><span class="big-num">${q.length}</span></div>
         ${meter(st.warm, Math.max(1, st.total))}
         <p class="small muted">${fmt(st.warm)} of ${fmt(st.total)} burned words seen in the last 90 days. Each one comes back about every 75 days, in a sentence when there is one. Up to ${srs.WARM_PER_DAY} a day.</p>
-        ${q.length ? `<a class="btn" href="#vault/warm">Warm up ${q.length}</a>` : `<p class="small"><b>Done for today.</b></p>`}
+        ${q.length ? `<a class="btn" href="#vault/warm">${L(`Warm up ${q.length}`, "始める")}</a>` : `<p class="small"><b>${L("Done for today.", "今日はおわり！")}</b></p>`}
       </section>`
     : "";
 
-  const quiz = `<section class="card"><h2>Quick quiz</h2>
+  const quiz = `<section class="card"><h2>${L("Quick quiz", "クイズ")}</h2>
       <p class="small muted">Ten questions from your ${[...tiers].map(tierLabel).join(" + ")} words: meanings, readings, and look-alikes that share a kanji. Built fresh every time.</p>
-      ${words.length >= 4 ? `<a class="btn" href="#vault/quiz" data-action="vault-quiz">Start a quiz</a>` : `<p class="small">Pick a tier with at least 4 words.</p>`}
+      ${words.length >= 4 ? `<a class="btn" href="#vault/quiz" data-action="vault-quiz">${L("Start a quiz", "始める")}</a>` : `<p class="small">Pick a tier with at least 4 words.</p>`}
     </section>`;
 
   const rs = allReadings().filter((r) => (r.tiers || []).some((t) => tiers.has(t)));
   const other = allReadings().length - rs.length;
-  const readings = `<section class="card"><h2>Readings</h2>
+  const readings = `<section class="card"><h2>${L("Readings", "読みもの")}</h2>
       ${
         rs.length
           ? `<ul class="vreadings">${rs
@@ -1860,8 +1885,9 @@ function viewVault(arg, arg2) {
         })
         .join("")}</ul></details>`;
 
-  return `<section class="card intro"><h1>Vault</h1>
-      <p>Words you already know from WaniKani, kept alive. Pick the tiers to work with.</p>${chips}</section>
+  return `<section class="card intro"><div class="split"><h1>${L("Vault", "蔵")}</h1>${depthToggle("all")}</div>
+      <p>${L("Words you already know from WaniKani, kept alive. Pick the tiers to work with.", "WaniKaniでおぼえた言葉を、わすれないように。")}</p>
+      <p class="small muted">${DEPTHS[globalDepth()].ja} ${DEPTHS[globalDepth()].en}: ${DEPTHS[globalDepth()].sub}.${globalDepth() >= 2 ? ` ${Object.keys(S.vault?.defs || {}).length} words have Japanese definitions so far.` : ""}</p>${chips}</section>
     ${warm}${quiz}${readings}${list}`;
 }
 
@@ -1884,10 +1910,12 @@ function viewWarm() {
   const today = todayKey();
   if (!S.warmSession || S.warmSession.date !== today || S.warmSession.done) {
     const items = warmQueue();
-    if (!items.length) return `<a class="back" href="#vault">← Vault</a><section class="card"><h1>Keep burns warm</h1><p>Nothing more today. Back tomorrow.</p></section>`;
+    if (!items.length)
+      return `<a class="back" href="#vault">← ${L("Vault", "蔵")}</a><section class="card"><h1>${L("Keep burns warm", "焼いた言葉をあたためる")}</h1><p>${L("Nothing more today. Back tomorrow.", "今日はもうありません。また明日。")}</p></section>`;
     S.warmSession = { date: today, items, i: 0, right: 0, missed: [], done: false };
   }
-  return `<a class="back" href="#vault">← Vault</a><section class="card review"><p class="eyebrow">Keep burns warm</p><div id="warm-host"></div></section>`;
+  return `<a class="back" href="#vault">← ${L("Vault", "蔵")}</a><section class="card review">
+    <div class="split"><p class="eyebrow">${L("Keep burns warm", "焼いた言葉をあたためる")}</p>${depthToggle("warm")}</div><div id="warm-host"></div></section>`;
 }
 
 function mountWarm() {
@@ -1895,28 +1923,43 @@ function mountWarm() {
   const s = S.warmSession;
   if (!host || !s) return;
   const draw = () => {
+    const d = depthFor("warm");
     if (s.i >= s.items.length) {
       s.done = true;
-      host.innerHTML = `<h2>Done.</h2><p><b>${s.right} / ${s.items.length}</b> still solid.</p>
+      host.innerHTML = `<h2>${d >= 2 ? "おわり！" : "Done."}</h2><p><b>${s.right} / ${s.items.length}</b> ${d >= 2 ? "" : "still solid."}</p>
         ${
           s.missed.length
-            ? `<p class="small">Coming back in a week: ${s.missed.map((x) => `<span lang="ja" class="chip">${esc(x.w)}</span>`).join(" ")}</p>
+            ? `<p class="small">${d >= 2 ? "一週間後にもう一度：" : "Coming back in a week:"} ${s.missed.map((x) => `<span lang="ja" class="chip">${esc(x.w)}</span>`).join(" ")}</p>
                <p class="small muted">If one keeps slipping, you can resurrect it on WaniKani to put it back in rotation there.</p>`
             : ""
         }
-        <a class="btn" href="#vault">Back to the Vault</a>`;
+        <a class="btn" href="#vault">${L("Back to the Vault", "蔵にもどる")}</a>`;
       return;
     }
     const x = s.items[s.i];
     const sent = warmSentence(x.w);
     const r = srs.warmRow(x.w);
+    const def = defOf(x.w);
+    const deep = d >= 2 && def;
     const answer = `<div class="warm-answer"><p><span lang="ja" class="ja big">${esc(x.w)}</span> <span lang="ja">${esc(x.r || "")}</span> ${sayBtn(x.w)}</p>
-        <p class="en"><b>${esc(x.m)}</b></p>${sent ? `<p class="small">${esc(sent.en)}</p>` : ""}
+        ${
+          deep
+            ? `<p class="jdef" lang="ja">${ja(def)}</p><button class="reveal" aria-expanded="false">English</button><div class="hidden-en"><p class="en"><b>${esc(x.m)}</b></p>${sent ? `<p class="small">${esc(sent.en)}</p>` : ""}</div>`
+            : `<p class="en"><b>${esc(x.m)}</b></p>${def && d >= 1 ? `<p class="jdef small" lang="ja">${ja(def)}</p>` : ""}${sent ? `<p class="small">${esc(sent.en)}</p>` : ""}`
+        }
         ${r?.wrong >= 2 ? `<p class="small"><a href="https://www.wanikani.com/vocabulary/${encodeURIComponent(x.w)}" target="_blank" rel="noopener">This one keeps slipping. Resurrect on WaniKani ↗</a></p>` : ""}</div>`;
-    host.innerHTML = `<p class="ex-count">${s.i + 1} of ${s.items.length}</p>
-      ${sent ? `<div class="jline">${jaMarked(sent.ja)} ${sayBtn(sent.ja.replace(/[«»]/g, ""))}</div><p class="small muted">What does the highlighted word mean? How is it read?</p>` : `<div class="jline"><span lang="ja" class="ja big">${esc(x.w)}</span></div><p class="small muted">Meaning and reading?</p>`}
-      <button class="reveal" aria-expanded="false">Check</button><div class="hidden-en">${answer}</div>
-      <div class="row grade"><button class="btn ghost" data-g="1">Got it</button><button class="btn ghost" data-g="0">Missed</button></div>`;
+    const ask = sent
+      ? d >= 1
+        ? `<p class="scene" lang="ja">この言葉の意味と読み方は？</p>`
+        : `<p class="small muted">What does the highlighted word mean? How is it read?</p>`
+      : d >= 1
+      ? `<p class="scene" lang="ja">意味と読み方は？</p>`
+      : `<p class="small muted">Meaning and reading?</p>`;
+    host.innerHTML = `<p class="ex-count">${s.i + 1} / ${s.items.length}</p>
+      ${sent ? `<div class="jline">${jaMarked(sent.ja)} ${sayBtn(sent.ja.replace(/[«»]/g, ""))}</div>` : `<div class="jline"><span lang="ja" class="ja big">${esc(x.w)}</span></div>`}
+      ${ask}
+      <button class="reveal" aria-expanded="false">${d >= 2 ? "答え" : "Check"}</button><div class="hidden-en">${answer}</div>
+      <div class="row grade"><button class="btn ghost" data-g="1">${d >= 2 ? "分かった" : "Got it"}</button><button class="btn ghost" data-g="0">${d >= 2 ? "分からなかった" : "Missed"}</button></div>`;
     host.querySelectorAll("[data-g]").forEach((b) =>
       b.addEventListener("click", async () => {
         const ok = b.dataset.g === "1";
@@ -1941,8 +1984,13 @@ const shuffle = (arr) =>
     .map((x) => x.v);
 const sharedKanji = (a, b) => [...a.w].filter((ch) => /[一-龯々]/.test(ch) && b.w.includes(ch));
 const hasKanji = (x) => /[一-龯]/.test(x.w);
+const defOf = (w) => S.vault?.defs?.[w] || null;
 
-function pickDistractors(t, pool, key, k = 3) {
+// noContain: skip words that contain the answer or sit inside it (用 / 用事, 上 / 上手). With
+// Japanese definitions those are exactly the ones whose meanings overlap.
+function pickDistractors(t, pool, key, k = 3, noContain = false) {
+  const bareW = (x) => x.w.replace(/〜/g, "");
+  if (noContain) pool = pool.filter((x) => !bareW(x).includes(bareW(t)) && !bareW(t).includes(bareW(x)));
   const norm = (v) => String(v || "").toLowerCase().trim();
   const seen = new Set([norm(t[key])]);
   const out = [];
@@ -1962,16 +2010,83 @@ function lookalikeNote(t, x) {
   const sh = sharedKanji(t, x);
   return sh.length ? ` It shares ${sh.join("")} with ${t.w}, which is what makes it a trap.` : "";
 }
+function lookalikeNoteJa(t, x) {
+  const sh = sharedKanji(t, x);
+  return sh.length ? `「${sh.join("")}」が同じなので、まちがえやすいです。` : "";
+}
 
-function makeQuestion(t, pool, i) {
+// d: 0 = English questions, 1 = Japanese questions with English answers, 2 = all Japanese
+// (easy-Japanese definitions, Japanese explanations, English only behind a tap).
+function makeQuestion(t, pool, i, d = 0) {
+  const def = defOf(t.w);
+  const enList = (opts) => opts.map((x) => `${x.w}${x.r && x.r !== x.w ? ` (${x.r})` : ""} — ${x.m}`);
+  if (d >= 2 && def) {
+    const types = hasKanji(t) && t.r ? ["def2word", "word2def", "reading"] : ["def2word", "word2def"];
+    const type = types[i % types.length];
+    if (type === "def2word") {
+      const ds = pickDistractors(t, pool, "w", 3, true);
+      const all = [t, ...ds];
+      return {
+        t,
+        deep: true,
+        ask: "この説明に合う言葉は？",
+        promptDef: def,
+        en: enList(all),
+        options: shuffle(all).map((x) => ({
+          text: x.w,
+          ja: true,
+          verdict: x === t ? "right" : "wrong",
+          why: x === t ? `「${t.w}」（${t.r}）は、${def}` : `「${x.w}」は${defOf(x.w) ? `、${defOf(x.w)}` : `「${x.r}」と読む、べつの言葉です。`}${lookalikeNoteJa(t, x)}`,
+        })),
+      };
+    }
+    if (type === "word2def") {
+      const ds = pickDistractors(t, pool.filter((x) => defOf(x.w)), "w", 3, true);
+      if (ds.length >= 2) {
+        const all = [t, ...ds];
+        return {
+          t,
+          deep: true,
+          ask: `「${t.w}」の意味は？`,
+          promptJa: t.w,
+          long: true,
+          en: enList(all),
+          options: shuffle(all).map((x) => ({
+            text: defOf(x.w),
+            ja: true,
+            verdict: x === t ? "right" : "wrong",
+            why: x === t ? `「${t.w}」は「${t.r}」と読みます。これが正しい意味です。` : `それは「${x.w}」の意味です。${lookalikeNoteJa(t, x)}`,
+          })),
+        };
+      }
+    }
+    if (hasKanji(t) && t.r) {
+      const ds = pickDistractors(t, pool.filter(hasKanji), "r");
+      const all = [t, ...ds];
+      return {
+        t,
+        deep: true,
+        ask: "読み方は？",
+        promptJa: t.w,
+        en: enList(all),
+        options: shuffle(all).map((x) => ({
+          text: x.r,
+          ja: true,
+          verdict: x === t ? "right" : "wrong",
+          why: x === t ? `「${t.w}」は「${t.r}」と読みます。${def}` : `「${x.r}」は「${x.w}」の読み方です。${lookalikeNoteJa(t, x)}`,
+        })),
+      };
+    }
+  }
   const types = hasKanji(t) && t.r ? ["meaning", "reading", "word"] : ["meaning", "word"];
   const type = types[i % types.length];
+  const jaQ = d >= 1;
   if (type === "reading") {
     const ds = pickDistractors(t, pool.filter(hasKanji), "r");
     return {
       t,
-      type,
-      ask: "How is this read?",
+      ask: jaQ ? "読み方は？" : "How is this read?",
+      askJa: jaQ,
       promptJa: t.w,
       options: shuffle([t, ...ds]).map((x) => ({
         text: x.r,
@@ -1985,8 +2100,8 @@ function makeQuestion(t, pool, i) {
     const ds = pickDistractors(t, pool, "w");
     return {
       t,
-      type,
-      ask: "Which word means this?",
+      ask: jaQ ? "日本語で何と言う？" : "Which word means this?",
+      askJa: jaQ,
       promptEn: t.m,
       options: shuffle([t, ...ds]).map((x) => ({
         text: x.w,
@@ -1999,8 +2114,8 @@ function makeQuestion(t, pool, i) {
   const ds = pickDistractors(t, pool, "m");
   return {
     t,
-    type: "meaning",
-    ask: "What does this mean?",
+    ask: jaQ ? "意味は？" : "What does this mean?",
+    askJa: jaQ,
     promptJa: t.w,
     options: shuffle([t, ...ds]).map((x) => ({
       text: x.m,
@@ -2015,13 +2130,23 @@ function buildVaultQuiz() {
   const words = vaultWords(tiers);
   const pool = allWords().filter((x) => x.s >= 1);
   const picks = shuffle(words).slice(0, 10);
-  return { tiers: [...tiers], qs: picks.map((t, i) => makeQuestion(t, pool, i)), i: 0, right: 0, missed: [], done: false };
+  const d = depthFor("quiz");
+  return { tiers: [...tiers], picks, pool, depth: d, qs: picks.map((t, i) => makeQuestion(t, pool, i, d)), i: 0, right: 0, missed: [], done: false };
+}
+
+// Switching depth mid-quiz rewrites the questions you haven't answered yet; answered ones stay.
+function rebuildQuiz(d) {
+  const s = S.vaultQuiz;
+  if (!s || s.done) return;
+  s.depth = d;
+  s.qs = s.qs.slice(0, s.i).concat(s.picks.slice(s.i).map((t, k) => makeQuestion(t, s.pool, s.i + k, d)));
 }
 
 function viewVaultQuiz() {
   if (!S.words.size) return `<section class="card"><p class="muted">Loading your WaniKani words…</p></section>`;
   if (!S.vaultQuiz || S.vaultQuiz.done) S.vaultQuiz = buildVaultQuiz();
-  return `<a class="back" href="#vault">← Vault</a><section class="card review"><p class="eyebrow">Quick quiz · ${esc(S.vaultQuiz.tiers.map(tierLabel).join(" + "))}</p><div id="vq-host"></div></section>`;
+  return `<a class="back" href="#vault">← ${L("Vault", "蔵")}</a><section class="card review">
+    <div class="split"><p class="eyebrow">${L("Quick quiz", "クイズ")} · ${esc(S.vaultQuiz.tiers.map(tierLabel).join(" + "))}</p>${depthToggle("quiz")}</div><div id="vq-host"></div></section>`;
 }
 
 function mountVaultQuiz() {
@@ -2029,20 +2154,23 @@ function mountVaultQuiz() {
   const s = S.vaultQuiz;
   if (!host || !s) return;
   const draw = () => {
+    const deepUI = s.depth >= 2;
     if (s.i >= s.qs.length) {
       s.done = true;
       host.innerHTML = `<h2>${s.right} / ${s.qs.length}</h2>
-        ${s.missed.length ? `<p class="small">Worth another look: ${s.missed.map((x) => `<span lang="ja" class="chip">${esc(x.w)}</span>`).join(" ")}</p>` : `<p>Clean run.</p>`}
-        <div class="row"><a class="btn" href="#vault/quiz" data-action="vault-quiz">Another round</a><a class="btn ghost" href="#vault">Back to the Vault</a></div>`;
+        ${s.missed.length ? `<p class="small">${deepUI ? "もう一度見ておきたい言葉：" : "Worth another look:"} ${s.missed.map((x) => `<span lang="ja" class="chip">${esc(x.w)}</span>`).join(" ")}</p>` : `<p>${deepUI ? "全問正解！" : "Clean run."}</p>`}
+        <div class="row"><a class="btn" href="#vault/quiz" data-action="vault-quiz">${deepUI ? "もう一回" : "Another round"}</a><a class="btn ghost" href="#vault">${L("Back to the Vault", "蔵にもどる")}</a></div>`;
       return;
     }
     const q = s.qs[s.i];
-    const prompt = q.promptJa
+    const prompt = q.promptDef
+      ? `<div class="ex-prompt"><p class="jdef big-def" lang="ja">${ja(q.promptDef)}</p></div>`
+      : q.promptJa
       ? `<div class="ex-prompt"><span class="ja big" lang="ja">${esc(q.promptJa)}</span> ${sayBtn(q.promptJa)}</div>`
       : `<div class="ex-prompt"><span class="big vq-en">${esc(q.promptEn)}</span></div>`;
-    host.innerHTML = `<p class="ex-count">${s.i + 1} of ${s.qs.length} · ${esc(tierLabel(tierOf(q.t.s)))}</p>
-      <p class="scene">${esc(q.ask)}</p>${prompt}
-      <div class="opts">${q.options.map((o, k) => `<button class="opt" data-k="${k}" ${o.ja ? 'lang="ja"' : ""}>${esc(o.text)}</button>`).join("")}</div>
+    host.innerHTML = `<p class="ex-count">${s.i + 1} / ${s.qs.length} · ${esc(tierLabel(tierOf(q.t.s)))}</p>
+      <p class="scene" ${q.deep || q.askJa ? 'lang="ja"' : ""}>${esc(q.ask)}</p>${prompt}
+      <div class="opts ${q.long ? "opts-stack" : ""}">${q.options.map((o, k) => `<button class="opt" data-k="${k}" ${o.ja ? 'lang="ja"' : ""}>${o.ja ? renderJa(o.text, S.known, S.words) : esc(o.text)}</button>`).join("")}</div>
       <div class="ex-feedback"></div>`;
     host.querySelectorAll(".opt").forEach((b) =>
       b.addEventListener("click", () => {
@@ -2060,10 +2188,17 @@ function mountVaultQuiz() {
           x.disabled = true;
         });
         const order = [pick, ...q.options.filter((o) => o !== pick)];
+        const yes = q.deep ? "正解！" : "Right";
+        const no = q.deep ? "ちがいます" : "Not this one";
         host.querySelector(".ex-feedback").innerHTML = `
-          <p class="verdict v-${pick.verdict}">${ok ? "Right" : "Not this one"}</p>
-          <ul class="whys">${order.map((o) => `<li class="v-${o.verdict}"><span class="why-opt" ${o.ja ? 'lang="ja"' : ""}>${esc(o.text)}</span><span class="why-tag">${o.verdict === "right" ? "Right" : "Not this one"}</span><p>${esc(o.why)}</p></li>`).join("")}</ul>
-          <div class="row"><button class="btn" data-action="vq-next">Next</button></div>`;
+          <p class="verdict v-${pick.verdict}" ${q.deep ? 'lang="ja"' : ""}>${ok ? yes : no}</p>
+          <ul class="whys">${order
+            .map(
+              (o) => `<li class="v-${o.verdict}"><span class="why-opt" ${o.ja ? 'lang="ja"' : ""}>${o.ja ? renderJa(o.text, S.known, S.words) : esc(o.text)}</span><span class="why-tag">${o.verdict === "right" ? yes : no}</span><p ${q.deep ? 'lang="ja"' : ""}>${q.deep ? renderJa(o.why, S.known, S.words) : esc(o.why)}</p></li>`
+            )
+            .join("")}</ul>
+          ${q.en ? `<button class="reveal" aria-expanded="false">English</button><div class="hidden-en"><ul class="small en-list">${q.en.map((l) => `<li>${esc(l)}</li>`).join("")}</ul></div>` : ""}
+          <div class="row"><button class="btn" data-action="vq-next">${q.deep ? "次へ" : "Next"}</button></div>`;
         host.querySelector("[data-action=vq-next]").onclick = () => {
           delete host.dataset.answered;
           s.i++;
@@ -2278,11 +2413,11 @@ function dailyItems(onlyGlue) {
 function practiceCard() {
   if (!S.glue.glue) return "";
   const n = dailyItems(false).length;
-  if (!n) return `<section class="card practice-card"><p class="eyebrow" lang="ja">今日の練習 · Daily practice</p><p><b>All done today.</b> お疲れさま！</p></section>`;
-  return `<section class="card practice-card"><p class="eyebrow" lang="ja">今日の練習 · Daily practice</p>
-    <div class="split"><p class="big-num">${n}</p><p class="muted small">items · about ${Math.max(3, Math.round(n * 0.6))} min</p></div>
-    <p class="small">Glue words, scene words, burned words and a line to answer, mixed together. It ends with you saying something of your own.</p>
-    <a class="btn" href="#practice" data-action="practice-start">始める · Start</a></section>`;
+  if (!n) return `<section class="card practice-card"><p class="eyebrow" lang="ja">今日の練習${L(" · Daily practice", "")}</p><p><b>${L("All done today.", "今日はおわり！")}</b> お疲れさま！</p></section>`;
+  return `<section class="card practice-card"><p class="eyebrow" lang="ja">今日の練習${L(" · Daily practice", "")}</p>
+    <div class="split"><p class="big-num">${n}</p><p class="muted small">${L(`items · about ${Math.max(3, Math.round(n * 0.6))} min`, `こ · 約${Math.max(3, Math.round(n * 0.6))}分`)}</p></div>
+    <p class="small">${L("Glue words, scene words, burned words and a line to answer, mixed together. It ends with you saying something of your own.", "つなぎ言葉、場面の言葉、焼いた言葉、聞いて答える練習。さいごに、自分の言葉で話してみよう。")}</p>
+    <a class="btn" href="#practice" data-action="practice-start">${L("始める · Start", "始める")}</a></section>`;
 }
 
 function viewPractice(mode) {
@@ -2292,8 +2427,8 @@ function viewPractice(mode) {
     if (!items.length) return `<a class="back" href="#today">← Today</a><section class="card"><h1 lang="ja">今日の練習</h1><p>Nothing due. お疲れさま！</p></section>`;
     S.practiceRun = { date: todayKey(), onlyGlue, items, i: 0, right: 0, graded: 0, used: [], done: false };
   }
-  return `<a class="back" href="${onlyGlue ? "#scenes/glue" : "#today"}">← ${onlyGlue ? "Glue" : "Today"}</a>
-    <section class="card review"><p class="eyebrow" lang="ja">${onlyGlue ? "つなぎ言葉" : "今日の練習"}</p><div id="pr-host"></div></section>`;
+  return `<a class="back" href="${onlyGlue ? "#scenes/glue" : "#today"}">← ${onlyGlue ? L("Glue", "つなぎ言葉") : L("Today", "今日")}</a>
+    <section class="card review"><div class="split"><p class="eyebrow" lang="ja">${onlyGlue ? "つなぎ言葉" : "今日の練習"}</p>${depthToggle("practice")}</div><div id="pr-host"></div></section>`;
 }
 
 // Jobs of three words from other families, so each choice is clearly a different job.
@@ -2324,6 +2459,7 @@ function mountPractice() {
     draw();
     host.scrollIntoView({ block: "start", behavior: "smooth" });
   };
+  const J = (en, j) => (depthFor("practice") >= 2 ? j : en);
   const count = () => `<p class="ex-count">${s.i + 1} / ${s.items.length}</p>`;
   const twoButtons = (yes, no) => `<div class="row grade"><button class="btn ghost" data-g="1">${yes}</button><button class="btn ghost" data-g="0">${no}</button></div>`;
   const onGrade = (fn) =>
@@ -2350,8 +2486,8 @@ function mountPractice() {
       host.innerHTML = `${count()}<p class="pill-inline">New · <span lang="ja">新しいつなぎ言葉</span></p>
         <h2 lang="ja" class="glue-big">${ja(e.ja)}</h2><p><b>${esc(e.does)}</b></p>${e.note ? `<p class="small">${rich(e.note)}</p>` : ""}
         ${e.examples.map(glueExampleCard).join("")}
-        <p class="small muted">Say each line out loud once.</p>
-        <div class="row"><button class="btn" data-next>次へ · Next</button></div>`;
+        ${J(`<p class="small muted">Say each line out loud once.</p>`, `<p class="small muted">声に出して、一回ずつ言ってみよう。</p>`)}
+        <div class="row"><button class="btn" data-next>${J("次へ · Next", "次へ")}</button></div>`;
       host.querySelector("[data-next]").onclick = next;
       return;
     }
@@ -2364,7 +2500,7 @@ function mountPractice() {
       const opts = glueRoleOptions(e);
       const plain = ex.ja.replace(/[«»]/g, "");
       host.innerHTML = `${count()}<p class="scene" lang="ja">この言葉は、ここで何をしている？</p>
-        <p class="small muted">What is the highlighted word doing here?</p>
+        ${J(`<p class="small muted">What is the highlighted word doing here?</p>`, "")}
         <div class="ex-prompt">${jaMarked(ex.ja)} ${sayBtn(plain)}</div>
         <div class="opts opts-stack">${opts.map((o, k) => `<button class="opt" data-k="${k}">${esc(o.e.does)}</button>`).join("")}</div>
         <div class="ex-feedback"></div>`;
@@ -2384,12 +2520,12 @@ function mountPractice() {
             x.disabled = true;
           });
           host.querySelector(".ex-feedback").innerHTML = `
-            <p class="verdict ${ok ? "v-right" : "v-wrong"}">${ok ? "Right" : "Not this one"}</p>
+            <p class="verdict ${ok ? "v-right" : "v-wrong"}">${ok ? J("Right", "正解！") : J("Not this one", "ちがいます")}</p>
             <p class="en">${esc(ex.en)}</p>
             <ul class="whys">${[opts.find((o) => o.right), ...opts.filter((o) => !o.right)]
               .map((o) => `<li class="${o.right ? "v-right" : "v-wrong"}"><span class="why-opt" lang="ja">${esc(glueBare(o.e))}</span><p>${o.right ? `That's this word's job here. ${e.note ? rich(e.note) : ""}` : `That's the job of ${esc(glueBare(o.e))}, a different word.`}</p></li>`)
               .join("")}</ul>
-            <div class="row"><button class="btn" data-next>次へ · Next</button></div>`;
+            <div class="row"><button class="btn" data-next>${J("次へ · Next", "次へ")}</button></div>`;
           host.querySelector("[data-next]").onclick = () => {
             delete host.dataset.answered;
             next();
@@ -2402,7 +2538,7 @@ function mountPractice() {
     if (it.kind === "glue-say") {
       const e = it.e;
       host.innerHTML = `${count()}<p class="scene" lang="ja">「${esc(glueBare(e))}」を使って、何か言ってみて。</p>
-        <p class="small muted">Say something of your own with it, out loud. Anything true about your day.</p>
+        ${J(`<p class="small muted">Say something of your own with it, out loud. Anything true about your day.</p>`, "")}
         <button class="reveal" aria-expanded="false">Show examples</button>
         <div class="hidden-en"><p class="small"><b>${esc(e.does)}</b></p>${e.examples.map(glueExampleCard).join("")}</div>
         ${twoButtons("言えた · Said it", "まだ · Not yet")}`;
@@ -2419,11 +2555,11 @@ function mountPractice() {
         ${
           produce
             ? `<p class="scene" lang="ja">日本語で何と言う？</p><p class="recall-en">${esc(v.word.en)}</p>
-               <button class="reveal" aria-expanded="false">Show</button><div class="hidden-en"><div class="jline">${ja(v.word.ja, "big")} ${sayBtn(v.word.ja)}</div></div>`
+               <button class="reveal" aria-expanded="false">${J("Show", "答え")}</button><div class="hidden-en"><div class="jline">${ja(v.word.ja, "big")} ${sayBtn(v.word.ja)}</div></div>`
             : `<div class="jline">${ja(v.word.ja, "big")} ${sayBtn(v.word.ja)}</div><p class="scene" lang="ja">意味は？</p>
-               <button class="reveal" aria-expanded="false">Show</button><div class="hidden-en"><p class="en">${esc(v.word.en)}</p></div>`
+               <button class="reveal" aria-expanded="false">${J("Show", "答え")}</button><div class="hidden-en"><p class="en">${esc(v.word.en)}</p></div>`
         }
-        ${twoButtons("Got it", "Missed")}`;
+        ${twoButtons(J("Got it", "分かった"), J("Missed", "分からなかった"))}`;
       onGrade((ok) => {
         s.graded++;
         if (ok) s.right++;
@@ -2438,8 +2574,8 @@ function mountPractice() {
       host.innerHTML = `${count()}<p class="small muted">Burned word</p>
         ${sent ? `<div class="jline">${jaMarked(sent.ja)} ${sayBtn(sent.ja.replace(/[«»]/g, ""))}</div>` : `<div class="jline"><span lang="ja" class="ja big">${esc(x.w)}</span></div>`}
         <p class="scene" lang="ja">意味と読み方は？</p>
-        <button class="reveal" aria-expanded="false">Show</button><div class="hidden-en"><p><span lang="ja" class="ja big">${esc(x.w)}</span> <span lang="ja">${esc(x.r || "")}</span></p><p class="en"><b>${esc(x.m)}</b></p>${sent ? `<p class="small">${esc(sent.en)}</p>` : ""}</div>
-        ${twoButtons("Got it", "Missed")}`;
+        <button class="reveal" aria-expanded="false">${J("Show", "答え")}</button><div class="hidden-en"><p><span lang="ja" class="ja big">${esc(x.w)}</span> <span lang="ja">${esc(x.r || "")}</span></p>${depthFor("practice") >= 1 && defOf(x.w) ? `<p class="jdef" lang="ja">${ja(defOf(x.w))}</p>` : ""}<p class="en"><b>${esc(x.m)}</b></p>${sent ? `<p class="small">${esc(sent.en)}</p>` : ""}</div>
+        ${twoButtons(J("Got it", "分かった"), J("Missed", "分からなかった"))}`;
       onGrade((ok) => {
         s.graded++;
         if (ok) s.right++;
@@ -2452,11 +2588,11 @@ function mountPractice() {
     if (it.kind === "listen") {
       const { sc, it: li } = it;
       host.innerHTML = `${count()}<p class="small muted">${esc(sc.titleEn)}</p><p class="scene" lang="ja">聞いて、答えてみて。</p>
-        <p class="small muted">Listen, then answer out loud before you look.</p>
+        ${J(`<p class="small muted">Listen, then answer out loud before you look.</p>`, "")}
         <div class="row"><button class="btn ghost" data-say="${esc(stripMarkup(li.line.ja))}">${ICON.sound} もう一度</button></div>
         <button class="reveal" aria-expanded="false">What they said</button><div class="hidden-en"><div class="jline">${ja(li.line.ja, "big")}</div><p class="en">${esc(li.line.en)}</p></div>
         <button class="reveal" aria-expanded="false">A reply</button><div class="hidden-en"><div class="jline">${ja(li.reply.ja, "big")} ${sayBtn(li.reply.ja)}</div><p class="en">${esc(li.reply.en)}</p></div>
-        <div class="row"><button class="btn" data-next>次へ · Next</button></div>`;
+        <div class="row"><button class="btn" data-next>${J("次へ · Next", "次へ")}</button></div>`;
       speak(li.line.ja);
       host.querySelector("[data-next]").onclick = next;
       return;
@@ -2468,7 +2604,7 @@ function mountPractice() {
       host.innerHTML = `${count()}<p class="eyebrow" lang="ja">ひとりごと · Your turn</p>
         <p class="talk-q" lang="ja">${ja(p.q || p.ja)}</p>
         ${g ? `<p class="scene" lang="ja">「${esc(glueBare(g))}」も使ってみて。</p>` : ""}
-        <p class="small muted">Answer out loud in two or three sentences. Don't translate; say what you can, the way you can.</p>
+        ${J(`<p class="small muted">Answer out loud in two or three sentences. Don't translate; say what you can, the way you can.</p>`, `<p class="small muted">二つか三つの文で、声に出して答えてみよう。</p>`)}
         <button class="reveal" aria-expanded="false">English / a start</button><div class="hidden-en"><p class="en">${esc(p.en)}</p>${p.ja ? `<p>${ja(p.ja)}</p>` : ""}</div>
         <div class="row"><button class="btn" data-next>言えた · Done</button></div>`;
       host.querySelector("[data-next]").onclick = next;
@@ -2536,6 +2672,10 @@ function viewSettings() {
       <button class="btn" type="submit">Save</button>
     </form>
     ${has ? `<button class="btn ghost" data-action="forget-token">Remove token from this device</button>` : ""}
+    <h2>How much Japanese</h2>
+    <p class="small">Sets the default everywhere. Quizzes, warm-ups and Daily practice also have their own 浅 中 深 switch for just that session.</p>
+    ${depthToggle("all")}
+    <ul class="small depth-help">${DEPTHS.map((d) => `<li><b lang="ja">${d.ja}</b> ${esc(d.en)}: ${esc(d.sub)}</li>`).join("")}</ul>
     <h2>Grammar review sync</h2>
     <p class="small">Saves your grammar review progress to your Google Sheet, so every device shares one queue. Paste the web app URL and key from the Apps Script setup.</p>
     <form id="sync-form" class="stack">
@@ -2576,6 +2716,7 @@ function render() {
   const [name, arg, arg2] = (location.hash.replace(/^#/, "") || "today").split("/");
   const fn = ROUTES[name] || viewToday;
   setChartWidth(Math.min(760, window.innerWidth) - 32 - 42);
+  document.body.dataset.depth = String(globalDepth());
   $app().innerHTML = fn(arg, arg2);
   const navName = name === "review" || name === "practice" ? "today" : name === "phrases" ? "scenes" : ROUTES[name] ? name : "today";
   document.querySelectorAll("nav a[data-nav]").forEach((a) => a.classList.toggle("active", a.dataset.nav === navName));
@@ -2688,6 +2829,22 @@ function wireGlobal() {
     if (t.matches("[data-tag]")) {
       S.noteTag = t.dataset.tag;
       return render();
+    }
+    if (t.matches("[data-depth]")) {
+      const n = Number(t.dataset.depth);
+      const screen = t.dataset.dscreen;
+      if (screen === "all") {
+        store.set("jh.depth", n);
+        S.sessionDepth = {};
+        if (S.vaultQuiz && !S.vaultQuiz.done) rebuildQuiz(n);
+      } else {
+        S.sessionDepth[screen] = n;
+        if (screen === "quiz") rebuildQuiz(n);
+      }
+      const y = window.scrollY;
+      render();
+      window.scrollTo(0, y);
+      return;
     }
     if (t.matches("[data-vtier]")) {
       const set = vaultTiers();

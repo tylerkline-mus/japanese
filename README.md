@@ -7,6 +7,7 @@ A personal Japanese study hub. Static site on GitHub Pages — no server, nothin
 - **Course** — Tae Kim's order, with lessons written here: plain explanations, contrast pairs, and practice where every answer explains itself.
 - **Scenes** — **Glue** (つなぎ言葉: えっと, だけど, そうなんだ… with a Heard-it box for things you catch in shows), and real trip situations that open up as your grammar grows, with practice out loud, a small scene-word review, and a searchable phrasebook.
 - **Vault** — words you already know from WaniKani (Guru → Burned), kept alive: pick tiers, take quick quizzes built on the spot, read weekly passages written from those words, and keep burned words warm (each one comes back about every 75 days).
+- **How much Japanese (浅 中 深)** — Shallow: English questions. Middle: Japanese questions, English answers. Deep: all Japanese, with easy-Japanese definitions (data/vault/defs.json) instead of English, and Japanese labels on Today, the Vault and Daily practice. Set it in Settings or the Vault; quizzes, warm-ups and practice each have a switch for one session.
 - **Notes** — everything from the published Google Sheet, searchable.
 
 ## How the pieces connect

@@ -122,6 +122,19 @@ WaniKani never shows them again.
    wrapped once in «…» inside the `ja` (e.g. `{少|すこ}し«{休|やす}み»ましょう。`). Other words: ones he knows.
    A word can have more than one sentence; the hub rotates through them.
 
+3. **Japanese definitions (Deep mode).** `data/vault/defs.json` maps each word to a short
+   easy-Japanese definition, like a learner's 国語辞典. Deep mode asks questions with these instead of
+   English. Burned words are done; add **about 75 a week**: enlightened words first, then master,
+   then guru (check which words in `wk-vocab.json` have no entry). Also add any burned word that's
+   new since last week. Rules:
+   - Use **only kanji in `knownKanji`** (`data/wk-state.json`); write everything else in kana.
+     No `{漢字|かな}` markup in definitions.
+   - Never include the word itself (it would give the answer away).
+   - One short line, dictionary style: what it is, what it's for, or its opposite
+     (「多いの反対。」, 「学校に入って、一年目の学生。」). Make near-neighbours distinguishable
+     (森 vs 林, 上る vs 上げる).
+   - Numbers, days and counters are fine as 「六の次の数。」, 「月の七番目の日。」, 「ものを数えるときの、三。」.
+
 ## 6. Glue (every run)
 
 `data/glue.json` holds the small spoken words: fillers, listening sounds (あいづち), linkers,

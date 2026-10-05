@@ -523,3 +523,15 @@ mark { background: var(--warn-soft); color: inherit; border-radius: 4px; padding
 .stack input#heard-what { font-size: 1.1rem; }
 .opts.opts-stack { display: grid; grid-template-columns: 1fr; }
 .opts.opts-stack .opt { text-align: left; font-size: 0.98rem; line-height: 1.4; }
+
+/* ---------- depth ---------- */
+.depth { display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--surface-2); flex: none; }
+.depth-btn { min-width: 34px; min-height: 30px; border: 0; border-radius: 999px; background: none; color: var(--ink-3); font-family: var(--display); font-weight: 700; font-size: 0.95rem; cursor: pointer; }
+.depth-btn.on { background: var(--accent); color: var(--accent-ink); }
+.jdef { font-size: 1.05rem; line-height: 1.7; }
+.big-def { font-size: 1.3rem; font-weight: 700; margin: 4px 0; }
+.en-list { padding-left: 18px; margin: 6px 0; }
+.depth-help { padding-left: 18px; }
+body[data-depth="2"] .nav a small { display: none; }
+body[data-depth="2"] .nav a { justify-content: center; padding: 14px 0; }
+body[data-depth="2"] .nav a span { font-size: 1.1rem; }
