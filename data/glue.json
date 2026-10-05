@@ -1,0 +1,761 @@
+{
+ "glue": [
+  {
+   "id": "etto",
+   "ja": "えっと",
+   "family": "filler",
+   "does": "Buys you a second while you think: \"um, let me see.\"",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«えっと»…{二|ふた}つお{願|ねが}いします。",
+     "en": "Um… two, please."
+    },
+    {
+     "ja": "«えっと»、{駅|えき}はどこですか。",
+     "en": "Let me see, where's the station?"
+    }
+   ],
+   "listen": "Everywhere: people answering questions, ordering, giving directions.",
+   "note": "Your best friend as a learner. It holds your turn so the other person waits."
+  },
+  {
+   "id": "ano",
+   "ja": "あの",
+   "family": "filler",
+   "does": "Gets someone's attention politely, or hesitates before asking: \"um, excuse me…\"",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«あの»、すみません。",
+     "en": "Um, excuse me."
+    },
+    {
+     "ja": "«あの»…ちょっと{聞|き}いてもいいですか。",
+     "en": "Um… can I ask you something?"
+    }
+   ],
+   "listen": "Before almost every question to a stranger.",
+   "note": "Softer than すみません alone. Drawn out (あのー) it sounds hesitant."
+  },
+  {
+   "id": "maa",
+   "ja": "まあ",
+   "family": "filler",
+   "does": "\"Well…\": softens an answer, makes it less absolute.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«まあ»、{大丈夫|だいじょうぶ}です。",
+     "en": "Well, it's fine."
+    },
+    {
+     "ja": "«まあ»、{少|すこ}しだけ{分|わ}かります。",
+     "en": "Well, I understand a little."
+    }
+   ],
+   "listen": "When someone doesn't want to sound too strong or is shrugging something off."
+  },
+  {
+   "id": "nanka",
+   "ja": "なんか",
+   "family": "filler",
+   "does": "\"Like…\" / \"kind of\": a casual filler, or \"something\".",
+   "register": "casual",
+   "examples": [
+    {
+     "ja": "«なんか»{寒|さむ}くない？",
+     "en": "Isn't it kind of cold?"
+    },
+    {
+     "ja": "«なんか»{食|た}べたいな。",
+     "en": "I kind of want to eat something."
+    }
+   ],
+   "listen": "Constantly in casual talk, anime and dramas. Friends, not strangers."
+  },
+  {
+   "id": "uun",
+   "ja": "うーん",
+   "family": "filler",
+   "does": "Thinking sound: \"hmm.\" Also a gentle way to start a no.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«うーん»、どうしよう。",
+     "en": "Hmm, what should I do?"
+    },
+    {
+     "ja": "«うーん»、ちょっと{難|むずか}しいですね。",
+     "en": "Hmm, that's a bit difficult."
+    }
+   ],
+   "listen": "When people are deciding, or about to politely say no.",
+   "note": "「うーん、ちょっと…」 is very often a no."
+  },
+  {
+   "id": "chotto",
+   "ja": "ちょっと",
+   "family": "filler",
+   "does": "\"A bit\", and the softest way to say no: trail off with ちょっと….",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«ちょっと»{待|ま}ってください。",
+     "en": "Wait a moment, please."
+    },
+    {
+     "ja": "{明日|あした}は«ちょっと»…",
+     "en": "Tomorrow is a bit… (= I can't.)"
+    }
+   ],
+   "listen": "Constantly. Listen for it trailing off: that's a polite refusal."
+  },
+  {
+   "id": "sou-nan-desu-ka",
+   "ja": "そうなんですか",
+   "family": "listen",
+   "does": "\"Oh, really? / Is that so?\" Shows you're following and interested.",
+   "register": "polite",
+   "examples": [
+    {
+     "ja": "A：{去年|きょねん}、{九州|きゅうしゅう}に{住|す}んでいました。 B：«そうなんですか»。",
+     "en": "A: I lived in Kyushu last year. B: Oh, really?"
+    }
+   ],
+   "listen": "Every conversation with someone you've just met.",
+   "note": "Casual: そうなんだ."
+  },
+  {
+   "id": "sou-nanda",
+   "ja": "そうなんだ",
+   "family": "listen",
+   "does": "Casual \"oh, I see / huh, really.\"",
+   "register": "casual",
+   "examples": [
+    {
+     "ja": "A：{明日|あした}、{休|やす}みなんだ。 B：«そうなんだ»！",
+     "en": "A: I'm off tomorrow. B: Oh, nice!"
+    }
+   ],
+   "listen": "Friends talking. Dramas and Midnight Diner regulars."
+  },
+  {
+   "id": "hee",
+   "ja": "へえ",
+   "family": "listen",
+   "does": "\"Huh! / Wow\": mild surprise or interest.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«へえ»、すごいですね。",
+     "en": "Wow, that's amazing."
+    },
+    {
+     "ja": "«へえ»、{知|し}らなかった。",
+     "en": "Huh, I didn't know that."
+    }
+   ],
+   "listen": "Any time someone hears something new. Rising tone = interested."
+  },
+  {
+   "id": "naruhodo",
+   "ja": "なるほど",
+   "family": "listen",
+   "does": "\"I see / that makes sense\": you understood the explanation.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«なるほど»、{分|わ}かりました。",
+     "en": "I see, got it."
+    },
+    {
+     "ja": "«なるほど»ね。",
+     "en": "Ah, that makes sense."
+    }
+   ],
+   "listen": "When someone explains something. Avoid it with your boss or elders; use そうなんですね there."
+  },
+  {
+   "id": "tashikani",
+   "ja": "たしかに",
+   "family": "listen",
+   "does": "\"True / good point\": agreeing with what was said.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«たしかに»{高|たか}いですね。",
+     "en": "True, it is expensive."
+    },
+    {
+     "ja": "A：{電車|でんしゃ}のほうが{早|はや}いよ。 B：«たしかに»。",
+     "en": "A: The train's faster. B: Good point."
+    }
+   ],
+   "listen": "Conversations where someone makes a point. Very common among friends."
+  },
+  {
+   "id": "sou-desu-ne",
+   "ja": "そうですね",
+   "family": "listen",
+   "does": "\"That's right\" or, said slowly, \"let me think…\".",
+   "register": "polite",
+   "examples": [
+    {
+     "ja": "A：{寒|さむ}いですね。 B：«そうですね»。",
+     "en": "A: Cold, isn't it? B: It is."
+    },
+    {
+     "ja": "«そうですね»…{日曜日|にちようび}はどうですか。",
+     "en": "Let me see… how about Sunday?"
+    }
+   ],
+   "listen": "Small talk with strangers, interviews, shopkeepers. Two jobs: agreeing, and stalling."
+  },
+  {
+   "id": "hontou",
+   "ja": "{本当|ほんとう}？",
+   "family": "listen",
+   "does": "\"Really?\" Surprise or checking.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«{本当|ほんとう}»？よかった！",
+     "en": "Really? That's great!"
+    },
+    {
+     "ja": "«{本当|ほんとう}»ですか。",
+     "en": "Is that true?"
+    }
+   ],
+   "listen": "Any surprise. ほんと？ is the quicker casual form."
+  },
+  {
+   "id": "dakedo",
+   "ja": "だけど",
+   "family": "link",
+   "does": "\"But / though\": casual. Starts a sentence or joins two.",
+   "register": "casual",
+   "examples": [
+    {
+     "ja": "{行|い}きたいんだ«けど»、{時間|じかん}がない。",
+     "en": "I want to go, but I don't have time."
+    },
+    {
+     "ja": "«だけど»、{雨|あめ}だよ。",
+     "en": "But it's raining."
+    }
+   ],
+   "listen": "Casual talk everywhere. Polite version: ですが or でも.",
+   "note": "At the end of a sentence it trails off to soften: 「ちょっと{聞|き}きたいんだけど…」"
+  },
+  {
+   "id": "demo",
+   "ja": "でも",
+   "family": "link",
+   "does": "\"But\": starts a sentence that pushes back on the last one.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "おいしいです。«でも»、ちょっと{高|たか}いです。",
+     "en": "It's delicious. But a bit expensive."
+    },
+    {
+     "ja": "«でも»、{大丈夫|だいじょうぶ}です。",
+     "en": "But it's fine."
+    }
+   ],
+   "listen": "The most common \"but\" at the start of a sentence, polite or casual."
+  },
+  {
+   "id": "dakara",
+   "ja": "だから",
+   "family": "link",
+   "does": "\"So / that's why\": what follows comes from what came before.",
+   "register": "casual",
+   "examples": [
+    {
+     "ja": "{雨|あめ}だった。«だから»、{家|いえ}にいた。",
+     "en": "It was raining. So I stayed home."
+    },
+    {
+     "ja": "«だから»、{言|い}ったでしょう。",
+     "en": "See, that's what I told you."
+    }
+   ],
+   "listen": "Explanations, and mild told-you-so. Polite: ですから."
+  },
+  {
+   "id": "sorede",
+   "ja": "それで",
+   "family": "link",
+   "does": "\"And then / so\": moves a story forward, or asks \"and?\"",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«それで»、どうしましたか。",
+     "en": "And then what did you do?"
+    },
+    {
+     "ja": "{電車|でんしゃ}が{止|と}まって、«それで»{遅|おく}れました。",
+     "en": "The train stopped, and so I was late."
+    }
+   ],
+   "listen": "Storytelling, and listeners prompting the next part."
+  },
+  {
+   "id": "jaa",
+   "ja": "じゃあ",
+   "family": "link",
+   "does": "\"Well then / in that case\": moves to a decision or the next step.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«じゃあ»、これをください。",
+     "en": "Then I'll take this one."
+    },
+    {
+     "ja": "«じゃあ»、また{明日|あした}。",
+     "en": "Well then, see you tomorrow."
+    }
+   ],
+   "listen": "Ordering, ending conversations, making plans. Polite: では."
+  },
+  {
+   "id": "soreni",
+   "ja": "それに",
+   "family": "link",
+   "does": "\"Besides / on top of that\": adds another reason.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "{安|やす}いし、«それに»おいしい。",
+     "en": "It's cheap, and on top of that, it's good."
+    }
+   ],
+   "listen": "When someone is listing reasons or selling something."
+  },
+  {
+   "id": "tokorode",
+   "ja": "ところで",
+   "family": "link",
+   "does": "\"By the way\": changes the subject.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«ところで»、{明日|あした}は{何|なに}をしますか。",
+     "en": "By the way, what are you doing tomorrow?"
+    }
+   ],
+   "listen": "Small talk turning a corner."
+  },
+  {
+   "id": "toriaezu",
+   "ja": "とりあえず",
+   "family": "link",
+   "does": "\"For now / to start with.\" Also the famous first-order phrase.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«とりあえず»{生|なま}ビール！",
+     "en": "A draft beer to start!"
+    },
+    {
+     "ja": "«とりあえず»、{駅|えき}に{行|い}きましょう。",
+     "en": "For now, let's head to the station."
+    }
+   ],
+   "listen": "Izakaya, every single night. And planning."
+  },
+  {
+   "id": "jitsuwa",
+   "ja": "{実|じつ}は",
+   "family": "link",
+   "does": "\"Actually… / to tell the truth\": introduces news or a confession.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«{実|じつ}は»、{作曲家|さっきょくか}なんです。",
+     "en": "Actually, I'm a composer."
+    },
+    {
+     "ja": "«{実|じつ}は»、ちょっとお{願|ねが}いがあるんですが…",
+     "en": "Actually, I have a small favor to ask…"
+    }
+   ],
+   "listen": "Before anything surprising or personal."
+  },
+  {
+   "id": "yappari",
+   "ja": "やっぱり",
+   "family": "link",
+   "does": "\"Just as I thought / after all\": something confirmed, or a change of mind.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«やっぱり»{日本|にほん}のコーヒーはおいしい。",
+     "en": "Japanese coffee really is good, just as I thought."
+    },
+    {
+     "ja": "«やっぱり»、{行|い}きます。",
+     "en": "Actually, I'll go after all."
+    }
+   ],
+   "listen": "Constantly. Casual: やっぱ."
+  },
+  {
+   "id": "kedo-trail",
+   "ja": "〜けど…",
+   "family": "soft",
+   "does": "Trailing \"…but\": leaves a request or fact hanging so it sounds soft.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "すみません、{予約|よやく}したクラインです«けど»…",
+     "en": "Excuse me, I'm Kline, I have a reservation…"
+    },
+    {
+     "ja": "ちょっと{聞|き}きたいんです«けど»…",
+     "en": "I'd like to ask something…"
+    }
+   ],
+   "listen": "Requests at counters and on the phone. The listener finishes the thought for you."
+  },
+  {
+   "id": "kana",
+   "ja": "〜かな",
+   "family": "soft",
+   "does": "\"I wonder…\": thinking aloud, softer than a question.",
+   "register": "casual",
+   "examples": [
+    {
+     "ja": "{明日|あした}は{雨|あめ}«かな»。",
+     "en": "I wonder if it'll rain tomorrow."
+    },
+    {
+     "ja": "これでいい«かな»？",
+     "en": "Is this OK, I wonder?"
+    }
+   ],
+   "listen": "Self-talk and gentle questions. Polite: 〜でしょうか."
+  },
+  {
+   "id": "yone",
+   "ja": "〜よね",
+   "family": "soft",
+   "does": "\"…right?\": checks the other person agrees with something you both know.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "これ、おいしい«よね»。",
+     "en": "This is good, right?"
+    },
+    {
+     "ja": "{明日|あした}は{休|やす}みです«よね»？",
+     "en": "Tomorrow's a day off, right?"
+    }
+   ],
+   "listen": "Building agreement in conversation."
+  },
+  {
+   "id": "kke",
+   "ja": "〜っけ",
+   "family": "soft",
+   "does": "\"…was it?\": you're trying to remember something.",
+   "register": "casual",
+   "examples": [
+    {
+     "ja": "{名前|なまえ}、{何|なん}だった«っけ»？",
+     "en": "What was your name again?"
+    },
+    {
+     "ja": "{何時|なんじ}だった«っけ»。",
+     "en": "What time was it again?"
+    }
+   ],
+   "listen": "Whenever someone has forgotten something. Useful for you!",
+   "note": "Polite-ish: 〜でしたっけ."
+  },
+  {
+   "id": "desho",
+   "ja": "〜でしょう / 〜でしょ",
+   "family": "soft",
+   "does": "\"…right? / probably\": assumes, or invites agreement.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "{寒|さむ}い«でしょう»。",
+     "en": "It's cold, isn't it? (I bet.)"
+    },
+    {
+     "ja": "{明日|あした}は{晴|は}れる«でしょう»。",
+     "en": "It'll probably be sunny tomorrow."
+    }
+   ],
+   "listen": "Weather forecasts (でしょう), and friends (でしょ↑)."
+  },
+  {
+   "id": "mitai",
+   "ja": "〜みたい",
+   "family": "soft",
+   "does": "\"Seems like / looks like\".",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "{雨|あめ}«みたい»です。",
+     "en": "Looks like rain."
+    },
+    {
+     "ja": "{閉|し}まっている«みたい»。",
+     "en": "Seems like it's closed."
+    }
+   ],
+   "listen": "Describing what you observe. Very natural."
+  },
+  {
+   "id": "tte",
+   "ja": "〜って",
+   "family": "soft",
+   "does": "Casual quote: \"they say / you mean…?\" Also a casual topic marker.",
+   "register": "casual",
+   "examples": [
+    {
+     "ja": "{明日|あした}、{雨|あめ}だ«って»。",
+     "en": "They say it'll rain tomorrow."
+    },
+    {
+     "ja": "「おまかせ」«って»{何|なん}ですか。",
+     "en": "What does \"omakase\" mean?"
+    }
+   ],
+   "listen": "Relaying what someone said, and asking what words mean."
+  },
+  {
+   "id": "ne",
+   "ja": "〜ね",
+   "family": "soft",
+   "does": "\"…isn't it / huh\": shares a feeling, invites agreement.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "いい{天気|てんき}です«ね»。",
+     "en": "Nice weather, isn't it."
+    },
+    {
+     "ja": "おいしい«ね»！",
+     "en": "This is good, huh!"
+    }
+   ],
+   "listen": "Every small-talk sentence. Missing ね can sound cold."
+  },
+  {
+   "id": "yo",
+   "ja": "〜よ",
+   "family": "soft",
+   "does": "\"…you know / I'm telling you\": gives new information.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "この{店|みせ}、おいしいです«よ»。",
+     "en": "This place is good, you know."
+    },
+    {
+     "ja": "{電車|でんしゃ}、{来|き}ました«よ»。",
+     "en": "The train's here!"
+    }
+   ],
+   "listen": "Recommendations and alerts. Overused, it can sound pushy."
+  },
+  {
+   "id": "shi",
+   "ja": "〜し",
+   "family": "soft",
+   "does": "\"…and (also)\": lists reasons, often with the main point left unsaid.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "{安|やす}い«し»、{近|ちか}いし、ここにしよう。",
+     "en": "It's cheap, it's close… let's go here."
+    }
+   ],
+   "listen": "Giving reasons, often trailing off."
+  },
+  {
+   "id": "sugoi",
+   "ja": "すごい",
+   "family": "react",
+   "does": "\"Amazing / wow\": all-purpose praise or surprise.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«すごい»ですね！",
+     "en": "That's amazing!"
+    },
+    {
+     "ja": "«すごい»{人|ひと}！",
+     "en": "So many people!"
+    }
+   ],
+   "listen": "Everywhere. Also means \"really, very\": すごくおいしい."
+  },
+  {
+   "id": "sasuga",
+   "ja": "さすが",
+   "family": "react",
+   "does": "\"Just what I'd expect from you\": praise that someone lived up to their reputation.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«さすが»ですね！",
+     "en": "Impressive, as expected!"
+    },
+    {
+     "ja": "«さすが»{日本|にほん}！",
+     "en": "That's Japan for you!"
+    }
+   ],
+   "listen": "When someone skilled does something well."
+  },
+  {
+   "id": "yokatta",
+   "ja": "よかった",
+   "family": "react",
+   "does": "\"Oh good / I'm glad\": relief.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«よかった»！{間|ま}に{合|あ}った。",
+     "en": "Phew! Made it in time."
+    },
+    {
+     "ja": "{元気|げんき}そうで«よかった»です。",
+     "en": "I'm glad you look well."
+    }
+   ],
+   "listen": "Any good news or relief."
+  },
+  {
+   "id": "daijoubu",
+   "ja": "{大丈夫|だいじょうぶ}",
+   "family": "react",
+   "does": "\"OK / fine / no thanks\": also a polite \"I'm good.\"",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«{大丈夫|だいじょうぶ}»ですか。",
+     "en": "Are you OK?"
+    },
+    {
+     "ja": "{袋|ふくろ}は«{大丈夫|だいじょうぶ}»です。",
+     "en": "I don't need a bag, thanks."
+    }
+   ],
+   "listen": "Shops (\"bag?\" → 大丈夫です = no thanks), and checking on someone.",
+   "note": "Careful: as an answer to an offer it usually means no."
+  },
+  {
+   "id": "shouganai",
+   "ja": "しょうがない",
+   "family": "react",
+   "does": "\"Can't be helped / oh well.\"",
+   "register": "casual",
+   "examples": [
+    {
+     "ja": "{雨|あめ}だから、«しょうがない»。",
+     "en": "It's raining, so oh well."
+    },
+    {
+     "ja": "まあ、«しょうがない»ね。",
+     "en": "Well, it can't be helped."
+    }
+   ],
+   "listen": "Shrugging off bad luck. Same as 仕方がない, which you know from WaniKani."
+  },
+  {
+   "id": "otsukaresama",
+   "ja": "お{疲|つか}れさま",
+   "family": "react",
+   "does": "\"Thanks for your work / good job\": after effort, at the end of a day or a rehearsal.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«お{疲|つか}れさま»でした！",
+     "en": "Great work today!"
+    }
+   ],
+   "listen": "End of every rehearsal, recording session and work day. You'll say it a lot."
+  },
+  {
+   "id": "yabai",
+   "ja": "やばい",
+   "family": "react",
+   "does": "\"Oh no!\" or \"insane (good)\": slangy, depends on tone.",
+   "register": "casual",
+   "examples": [
+    {
+     "ja": "«やばい»、{遅|おく}れる！",
+     "en": "Oh no, I'm going to be late!"
+    },
+    {
+     "ja": "このラーメン、«やばい»！",
+     "en": "This ramen is insane!"
+    }
+   ],
+   "listen": "Young people, anime, TV. Recognize it; use it with friends only."
+  },
+  {
+   "id": "ichiou",
+   "ja": "{一応|いちおう}",
+   "family": "react",
+   "does": "\"Just in case / sort of / for the record\": hedges.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«{一応|いちおう}»、{予約|よやく}しました。",
+     "en": "I made a reservation, just in case."
+    },
+    {
+     "ja": "«{一応|いちおう}»、{作曲家|さっきょくか}です。",
+     "en": "I'm a composer, sort of."
+    }
+   ],
+   "listen": "Very common hedge. Modest people use it about themselves."
+  },
+  {
+   "id": "sekkaku",
+   "ja": "せっかく",
+   "family": "react",
+   "does": "\"Since you went to the trouble / since we're here\": don't waste the chance.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«せっかく»{九州|きゅうしゅう}に{来|き}たから、ラーメンを{食|た}べたい。",
+     "en": "Since I came all the way to Kyushu, I want ramen."
+    },
+    {
+     "ja": "«せっかく»だから、{写真|しゃしん}を{撮|と}りましょう。",
+     "en": "Since we're here, let's take a photo."
+    }
+   ],
+   "listen": "Travel talk, constantly. Very you."
+  },
+  {
+   "id": "nande",
+   "ja": "なんで",
+   "family": "react",
+   "does": "Casual \"why?\"",
+   "register": "casual",
+   "examples": [
+    {
+     "ja": "«なんで»？",
+     "en": "Why?"
+    },
+    {
+     "ja": "«なんで»{日本|にほん}に{来|き}たの？",
+     "en": "Why did you come to Japan?"
+    }
+   ],
+   "listen": "Friends asking you questions. Polite: どうして."
+  }
+ ]
+}

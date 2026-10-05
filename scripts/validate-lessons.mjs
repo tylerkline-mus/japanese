@@ -208,8 +208,38 @@ try {
   if (e.code !== "ENOENT") problems.push(`vault/sentences.json: can't read or parse (${e.message})`);
 }
 
+// Glue (data/glue.json)
+let glueCount = 0;
+try {
+  const g = JSON.parse(await readFile(new URL("../data/glue.json", import.meta.url), "utf8"));
+  const FAM = ["filler", "listen", "link", "soft", "react"];
+  const gids = new Set();
+  for (const e of g.glue || []) {
+    glueCount++;
+    const at = `glue.json: ${e.id || "entry with no id"}`;
+    if (!e.id || !/^[a-z0-9-]+$/.test(e.id)) problems.push(`${at}: id must be lowercase romaji with dashes`);
+    if (gids.has(e.id)) problems.push(`${at}: duplicate id`);
+    gids.add(e.id);
+    for (const k of ["ja", "does", "listen"]) if (!e[k]) problems.push(`${at}: missing ${k}`);
+    if (!FAM.includes(e.family)) problems.push(`${at}: family must be one of ${FAM.join(", ")}`);
+    if (!["casual", "polite", "both"].includes(e.register)) problems.push(`${at}: register must be casual, polite or both`);
+    if (!(e.examples || []).length) problems.push(`${at}: needs at least one example`);
+    (e.examples || []).forEach((x, i) => {
+      if (!x.ja || !x.en) problems.push(`${at}: example ${i + 1} needs ja and en`);
+      else if (!/^[^«»]*«[^«»]+»[^«»]*$/.test(x.ja)) problems.push(`${at}: example ${i + 1} must mark the word once with «…»`);
+    });
+  }
+  for (const [hid, a] of Object.entries(g.answered || {})) {
+    if (!hid.startsWith("hrd:")) problems.push(`glue.json answered: key ${hid} should be a hrd: id`);
+    if (!a.answer) problems.push(`glue.json answered ${hid}: needs an answer`);
+    if (a.glue && !gids.has(a.glue)) problems.push(`glue.json answered ${hid}: glue "${a.glue}" isn't an entry`);
+  }
+} catch (e) {
+  if (e.code !== "ENOENT") problems.push(`glue.json: can't read or parse (${e.message})`);
+}
+
 if (problems.length) {
   console.error(problems.map((p) => "✕ " + p).join("\n"));
   process.exit(1);
 }
-console.log(`✓ ${index.lessons.length} lessons and ${bankCount} review banks, every answer explained.${sceneCount ? ` Scenes: ${sceneCount}.` : ""}${vaultReadings ? ` Vault: ${vaultReadings} readings, ${vaultSentences} sentences.` : ""}${pickWeeks ? ` Picks: ${pickWeeks} week(s), newest OK.` : ""}`);
+console.log(`✓ ${index.lessons.length} lessons and ${bankCount} review banks, every answer explained.${sceneCount ? ` Scenes: ${sceneCount}.` : ""}${glueCount ? ` Glue: ${glueCount}.` : ""}${vaultReadings ? ` Vault: ${vaultReadings} readings, ${vaultSentences} sentences.` : ""}${pickWeeks ? ` Picks: ${pickWeeks} week(s), newest OK.` : ""}`);

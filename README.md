@@ -2,10 +2,10 @@
 
 A personal Japanese study hub. Static site on GitHub Pages — no server, nothing to maintain.
 
-- **Today** — today's review number (a gentle dig-out plan), lesson of the week, a self-talk prompt, tricky items.
+- **Today** — **Daily practice** (one Japanese-first session mixing glue words, scene words, burned words and a line to answer, ending with you saying something of your own), today's review number, lesson of the week, a self-talk prompt, tricky items.
 - **Stats** — queue burn-down, SRS breakdown, days you showed up, forecast, accuracy, level pace, kanji coverage, trip readiness, leeches.
 - **Course** — Tae Kim's order, with lessons written here: plain explanations, contrast pairs, and practice where every answer explains itself.
-- **Scenes** — real trip situations that open up as your grammar grows, with practice out loud, a small scene-word review, and a searchable phrasebook.
+- **Scenes** — **Glue** (つなぎ言葉: えっと, だけど, そうなんだ… with a Heard-it box for things you catch in shows), and real trip situations that open up as your grammar grows, with practice out loud, a small scene-word review, and a searchable phrasebook.
 - **Vault** — words you already know from WaniKani (Guru → Burned), kept alive: pick tiers, take quick quizzes built on the spot, read weekly passages written from those words, and keep burned words warm (each one comes back about every 75 days).
 - **Notes** — everything from the published Google Sheet, searchable.
 

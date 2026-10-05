@@ -86,6 +86,7 @@ if (config.syncUrl && syncKey) {
       due: r.due,
       right: Number(r.right) || 0,
       wrong: Number(r.wrong) || 0,
+      seen: r.seen || "",
     }));
     await writeFile(new URL("../data/grammar-progress.json", import.meta.url), JSON.stringify({ updated: new Date().toISOString(), items }, null, 1) + "\n");
     console.log(`Grammar progress: ${items.length} points`);

@@ -122,7 +122,26 @@ WaniKani never shows them again.
    wrapped once in «…» inside the `ja` (e.g. `{少|すこ}し«{休|やす}み»ましょう。`). Other words: ones he knows.
    A word can have more than one sentence; the hub rotates through them.
 
-## 6. Check and publish
+## 6. Glue (every run)
+
+`data/glue.json` holds the small spoken words: fillers, listening sounds (あいづち), linkers,
+softeners and sentence endings, reactions. Copy an existing entry's shape: `id` (romaji),
+`ja`, `family` (`filler` | `listen` | `link` | `soft` | `react`), `does` (its job in one line,
+in plain English: what it does, not a dictionary gloss), `register`, `examples` (2, each with the
+word marked once with «…» in `ja`), `listen` (where he'll hear it), optional `note`.
+
+1. **Heard it.** `data/grammar-progress.json` has rows with ids `hrd:<…>`; `seen` is what he heard
+   (often romaji or a guess), sometimes followed by ` ␟ ` and where he heard it. For each one not
+   already a key in `answered`, work out what it most likely was. Add
+   `answered["hrd:…"] = {answer, glue}`: `answer` is 1–3 plain sentences (what it is, what it does,
+   the likely spelling); `glue` is the id of the entry you added or matched, or null if it isn't a
+   glue word (then say what it is: vocabulary, a name, a song lyric, and so on).
+2. **Grow the list.** Add 2–3 new entries a week until the common core is covered (けっこう, ほら,
+   あれ？, ねえ, さあ, もう, まだ, ちゃんと, ぜひ, どうも, なんだか, っていうか, わけ, のに, もの…).
+   Each new `does` must be clearly different from existing ones.
+3. Example lines: short, natural, his level, polite or casual matching `register`.
+
+## 7. Check and publish
 
 1. `node scripts/validate-lessons.mjs` must pass. Fix anything it reports.
 2. Re-read every Japanese sentence once more for naturalness and correctness. If unsure about one,
@@ -135,5 +154,15 @@ WaniKani never shows them again.
 
 (Edit this section to steer the course.)
 
+- **Everything reinforces, and everything pushes him to think in Japanese.** A guide he has to
+  remember to open doesn't count. Whatever you write should reuse what he already has:
+  - Lesson and review sentences use his scene lines, glue words and recently burned words where they
+    fit naturally, not just new material.
+  - Vault readings work in 2–3 glue words each (dialogue is a good place), and scenes' natural and
+    conversation tiers should use glue (えっと, そうなんですね, じゃあ, やっぱり) the way real speech does.
+  - Prompts and question stems in Japanese wherever his level allows; English is the fallback
+    behind a tap, not the default.
+  - Prefer exercises where he produces or reacts (say it, answer the line, what is this word doing)
+    over recognize-and-tick.
 - Keep the pace gentle while he digs out of the WaniKani backlog (Oct–early Nov 2026).
 - Prioritize grammar he'll use in real conversations on the trip over literary forms.

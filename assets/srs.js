@@ -347,3 +347,43 @@ export function flag(id) {
 export async function setFlag(id, on, defaultUrl) {
   await save([normalize({ id, stage: 0, due: "", right: 0, wrong: 0, seen: on ? "done" : "", updated: nowIso() })], defaultUrl);
 }
+
+// ---------- generic small-item SRS (glue words, and anything else with a prefix) ----------
+// Same ladder as scene words: right → step up, wrong → step back; first answer starts at step 1.
+
+export function dueWith(prefix, todayKey) {
+  return [...state.rows.values()]
+    .filter((r) => r.id.startsWith(prefix) && r.stage >= 1 && r.stage <= 6 && r.due && r.due <= todayKey)
+    .sort((a, b) => a.due.localeCompare(b.due) || a.stage - b.stage);
+}
+export function rowsWith(prefix) {
+  return [...state.rows.values()].filter((r) => r.id.startsWith(prefix) && r.stage >= 1);
+}
+export function newTodayWith(prefix, todayKey) {
+  return rowsWith(prefix).filter((r) => (r.seen || "").startsWith("new:" + todayKey)).length;
+}
+export const gradeItem = (id, ok, todayKey, defaultUrl) => gradeVoc(id, ok, todayKey, defaultUrl);
+
+// ---------- "heard it" captures ----------
+// Rows {id: "hrd:<time>", stage 0, seen: <what you heard> ␟ <where>}. The Sunday task reads them
+// (via grammar-progress.json) and answers in data/glue.json → answered.
+const SEP = " \u241f ";
+export function heardList() {
+  return [...state.rows.values()]
+    .filter((r) => r.id.startsWith("hrd:") && r.seen)
+    .map((r) => {
+      const [what, where] = r.seen.split(SEP);
+      return { id: r.id, what, where: where || "", at: r.updated };
+    })
+    .sort((a, b) => b.at.localeCompare(a.at));
+}
+export async function addHeard(what, where, defaultUrl) {
+  const id = "hrd:" + Date.now().toString(36);
+  const seen = where ? what + SEP + where : what;
+  await save([normalize({ id, stage: 0, due: "", right: 0, wrong: 0, seen, updated: nowIso() })], defaultUrl);
+  return id;
+}
+export async function removeHeard(id, defaultUrl) {
+  const prev = state.rows.get(id);
+  if (prev) await save([{ ...prev, seen: "", updated: nowIso() }], defaultUrl);
+}

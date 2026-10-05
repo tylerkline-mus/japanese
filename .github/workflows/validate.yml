@@ -8,6 +8,7 @@ on:
       - "data/immersion/picks.json"
       - "data/scenes/**"
       - "data/vault/**"
+      - "data/glue.json"
       - "scripts/validate-lessons.mjs"
   pull_request:
   workflow_dispatch:

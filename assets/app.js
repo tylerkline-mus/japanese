@@ -35,6 +35,8 @@ const S = {
   vault: { weeks: [], sentences: {} },
   warmSession: null,
   vaultQuiz: null,
+  glue: { glue: [], answered: {} },
+  practiceRun: null,
   selftalk: [],
   error: null,
   loading: false,
@@ -89,7 +91,7 @@ async function boot() {
     buildModel();
   }
   render();
-  await Promise.all([loadHistory(), loadNotes(), loadReviews(), loadImmersion(), loadVocab(), loadVault()]);
+  await Promise.all([loadHistory(), loadNotes(), loadReviews(), loadImmersion(), loadVocab(), loadVault(), loadGlue()]);
   if (S.raw) buildModel();
   render();
   await refreshWK(false);
@@ -479,7 +481,7 @@ function viewToday() {
     <p class="countdown"><span lang="ja">${esc(S.config.tripLabel === "Japan" ? "日本" : S.config.tripLabel)}まで</span> <b>${fmt(days)}</b> <span lang="ja">日</span></p>
   </header>`;
 
-  if (!token()) return top + needToken() + grammarCard() + sceneTodayCard() + vaultTodayCard() + lessonCard() + selftalkCard();
+  if (!token()) return top + practiceCard() + needToken() + grammarCard() + sceneTodayCard() + vaultTodayCard() + lessonCard() + selftalkCard();
   if (!S.model) return top + errorBanner() + `<section class="card"><p class="muted">Loading your WaniKani…</p></section>`;
   const m = S.model;
   const t = m.target;
@@ -538,7 +540,7 @@ function viewToday() {
       <div class="leech-row">${m.leeches.slice(0, 4).map(leechChip).join("")}</div></section>`
     : "";
 
-  return top + errorBanner() + target + grammarCard() + sceneTodayCard() + vaultTodayCard() + lessonCard() + selftalkCard() + queueCard + leech;
+  return top + errorBanner() + practiceCard() + target + grammarCard() + sceneTodayCard() + vaultTodayCard() + lessonCard() + selftalkCard() + queueCard + leech;
 }
 
 function ring(p) {
@@ -630,10 +632,10 @@ function selftalkCard() {
   const p = S.selftalk[dayOfYear() % S.selftalk.length];
   return `<section class="card talk">
     <p class="eyebrow" lang="ja">ひとりごと · Self-talk</p>
-    <p class="talk-q">${esc(p.en)}</p>
+    <p class="talk-q" lang="ja">${p.q ? ja(p.q) : esc(p.en)}</p>
     <p class="small muted">Answer in your head or out loud, in Japanese. Two or three sentences.</p>
-    <button class="reveal" aria-expanded="false">Need a start?</button>
-    <div class="hidden-en"><p>${ja(p.ja, "big")} ${sayBtn(p.ja)}</p></div>
+    <button class="reveal" aria-expanded="false">English / a start</button>
+    <div class="hidden-en">${p.q ? `<p class="en">${esc(p.en)}</p>` : ""}<p>${ja(p.ja, "big")} ${sayBtn(p.ja)}</p></div>
   </section>`;
 }
 
@@ -1424,7 +1426,8 @@ function sceneTodayCard() {
 
 // ----- list + phrasebook search -----
 
-function viewScenes(arg) {
+function viewScenes(arg, arg2) {
+  if (arg === "glue") return viewGlue(arg2);
   if (arg === "words") return viewSceneWords();
   if (arg) return viewScene(arg);
   const q = S.sceneQuery.trim().toLowerCase();
@@ -1476,7 +1479,9 @@ function viewScenes(arg) {
       </a>`;
     })
     .join("");
-  return head + words + cards + `<p class="muted small center">Want a new scene? Add a row to the "Scene requests" tab in your Sheet. The Sunday task writes it.</p>`;
+  const glueCard = `<a class="card scene-card glue-card" href="#scenes/glue"><div class="split"><h2 lang="ja">つなぎ言葉</h2><span class="small muted">${(S.glue.glue || []).length} words</span></div>
+      <p class="scene-en">Glue</p><p class="small muted">えっと, だけど, そうなんだ, やっぱり… the small words that make it sound like talking.</p></a>`;
+  return head + words + glueCard + cards + `<p class="muted small center">Want a new scene? Add a row to the "Scene requests" tab in your Sheet. The Sunday task writes it.</p>`;
 }
 
 // ----- one scene -----
@@ -1557,7 +1562,11 @@ function claudePrompt(sc) {
     `You play the other person. I'm an elementary learner${S.model ? ` (WaniKani level ${S.model.level})` : ""}: good vocabulary, weak grammar, slow listening.`,
     done.length ? `Grammar I've studied: ${done.join("; ")}.` : "",
     `Speak simple, natural polite Japanese (です/ます), in short sentences, a little slower than normal. Stay in Japanese. If I get stuck, give me a hint in simple Japanese before switching to English.`,
-    `After about 8 exchanges, stop and give me gentle corrections: up to 3 things I said that could be more natural, and why.`,
+    (() => {
+      const g = (S.glue.glue || []).filter((e) => srs.state.rows.get("glu:" + e.id)?.stage).map((e) => e.ja.replace(/\{([^|{}]+)\|[^{}]+\}/g, "$1"));
+      return `Talk the way people really talk, with natural fillers and reactions (えっと, そうなんですね, じゃあ, やっぱり…).${g.length ? ` Glue words I'm practicing: ${g.join("、")}. Use them, and nudge me to use them too.` : ""}`;
+    })(),
+    `After about 8 exchanges, stop and give me gentle corrections: up to 3 things I said that could be more natural, and why. If I sounded stiff or textbook-like, show how a native speaker would say it.`,
     mine.length ? `Lines I've been practicing for this scene: ${mine.join(" / ")}` : "",
     `Start the conversation.`,
   ]
@@ -1579,6 +1588,18 @@ function mountScenes(arg) {
     return;
   }
   if (arg === "words") return mountSceneWords();
+  if (arg === "glue") {
+    document.getElementById("heard-form")?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const what = document.getElementById("heard-what").value.trim();
+      const where = document.getElementById("heard-where").value.trim();
+      if (!what) return;
+      await srs.addHeard(what, where, S.config.syncUrl);
+      toast("Saved. The Sunday task will explain it.");
+      render();
+    });
+    return;
+  }
   const host = document.getElementById("sp-host");
   const sc = sceneById(arg);
   if (!host || !sc) return;
@@ -2108,6 +2129,358 @@ async function markReadingDone(id) {
   toast(n ? `Read. ${n} burned word${n > 1 ? "s" : ""} kept warm.` : "Read.");
 }
 
+// ---------- glue ----------
+// The small spoken words that hold conversation together: fillers, listening sounds, linkers,
+// softeners, reactions. Each one is practiced, not just listed: fill-the-gap in real lines,
+// then say one of your own.
+
+const GLUE_FAMILIES = [
+  { key: "filler", ja: "つなぎ", label: "Buying time" },
+  { key: "listen", ja: "あいづち", label: "Listening sounds" },
+  { key: "link", ja: "つなぐ", label: "Linkers" },
+  { key: "soft", ja: "やわらげる", label: "Softeners & endings" },
+  { key: "react", ja: "リアクション", label: "Reactions" },
+];
+const REGISTER = { casual: "Casual", polite: "Polite", both: "Polite or casual" };
+const GLUE_NEW_PER_DAY = 3;
+const GLUE_PER_DAY = 8;
+const glueId = (e) => "glu:" + e.id;
+const glueById = (id) => (S.glue.glue || []).find((g) => g.id === id);
+const glueBare = (e) => e.ja.split(" / ")[0].replace(/[〜…？]/g, "").replace(/\{([^|{}]+)\|[^{}]+\}/g, "$1");
+
+async function loadGlue() {
+  for (const url of [rawUrl("data/glue.json") + "?t=" + Date.now(), "data/glue.json"]) {
+    try {
+      S.glue = await getJSON(url);
+      return;
+    } catch {}
+  }
+}
+
+function glueQueue(onlyGlue = false) {
+  const today = todayKey();
+  const cap = onlyGlue ? 10 : GLUE_PER_DAY;
+  const due = srs.dueWith("glu:", today).map((r) => glueById(r.id.slice(4))).filter(Boolean).slice(0, cap);
+  const room = Math.min(GLUE_NEW_PER_DAY - srs.newTodayWith("glu:", today), cap - due.length);
+  const fresh = room > 0 ? (S.glue.glue || []).filter((e) => !srs.state.rows.get(glueId(e))?.stage).slice(0, room) : [];
+  return { due, fresh };
+}
+
+function glueStatus(e) {
+  const r = srs.state.rows.get(glueId(e));
+  if (!r?.stage) return `<span class="chip new">New</span>`;
+  return `<span class="chip ${r.stage >= 5 ? "wk" : ""}">${esc(srs.stageLabel(r.stage).replace(" of 6", ""))}</span>`;
+}
+
+function viewGlue(id) {
+  if (id) return viewGlueEntry(id);
+  const all = S.glue.glue || [];
+  const learned = all.filter((e) => srs.state.rows.get(glueId(e))?.stage).length;
+  const answered = S.glue.answered || {};
+  const heard = srs.heardList();
+  const q = glueQueue(true);
+  return `<a class="back" href="#scenes">← Scenes</a>
+    <section class="card intro"><h1 lang="ja">つなぎ言葉</h1>
+      <p><b>Glue.</b> The small words that make Japanese sound like talking: えっと, だけど, そうなんだ, やっぱり. You practice them in real lines and then use them yourself, a few new ones a day.</p></section>
+    <section class="card"><div class="split"><h2>Practice</h2><span class="big-num">${q.due.length + q.fresh.length}</span></div>
+      <p class="small muted">${learned} of ${all.length} in rotation · ${q.fresh.length} new today. They're also part of Daily practice on Today.</p>
+      ${q.due.length + q.fresh.length ? `<a class="btn" href="#practice/glue" data-action="practice-start">Practice glue</a>` : `<p class="small"><b>Done for today.</b></p>`}
+    </section>
+    <section class="card"><h2>Heard something?</h2>
+      <p class="small muted">A word or phrase you keep hearing and can't place. Write it however you can: kana, romaji, half a guess. The Sunday task explains it and adds it here.</p>
+      <form id="heard-form" class="stack">
+        <input id="heard-what" lang="ja" autocomplete="off" placeholder="e.g. なんか / \"yappa\" / sounded like 'souka'" aria-label="What you heard">
+        <input id="heard-where" autocomplete="off" placeholder="Where (optional): Midnight Diner ep 3, a song, the train…" aria-label="Where you heard it">
+        <div class="row"><button class="btn" type="submit">Save it</button></div>
+      </form>
+      ${
+        heard.length
+          ? `<ul class="heard-list">${heard
+              .map((h) => {
+                const a = answered[h.id];
+                return `<li><p><b lang="ja">${esc(h.what)}</b>${h.where ? ` <span class="small muted">· ${esc(h.where)}</span>` : ""}</p>
+                  ${
+                    a
+                      ? `<p class="small">${rich(a.answer || "")}${a.glue ? ` <a href="#scenes/glue/${esc(a.glue)}">Open →</a>` : ""}</p>`
+                      : `<p class="small muted">Waiting for Sunday. <button class="linkish" data-action="heard-remove" data-id="${esc(h.id)}">Remove</button></p>`
+                  }</li>`;
+              })
+              .join("")}</ul>`
+          : ""
+      }
+    </section>
+    ${GLUE_FAMILIES.map(
+      (f) => `<section class="card"><h2><span lang="ja">${esc(f.ja)}</span> · ${esc(f.label)}</h2>
+        <ul class="glue-list">${all
+          .filter((e) => e.family === f.key)
+          .map((e) => `<li><a href="#scenes/glue/${esc(e.id)}"><span lang="ja" class="glue-ja">${renderJa(e.ja, S.known, S.words)}</span><span class="small">${esc(e.does)}</span></a>${glueStatus(e)}</li>`)
+          .join("")}</ul></section>`
+    ).join("")}`;
+}
+
+function glueExampleCard(x) {
+  return `<div class="jcard"><div class="jline">${jaMarked(x.ja)} ${sayBtn(x.ja.replace(/[«»]/g, ""))}</div>
+    <button class="reveal" aria-expanded="false">Show English</button><div class="hidden-en"><p class="en">${esc(x.en)}</p></div></div>`;
+}
+
+function viewGlueEntry(id) {
+  const e = glueById(id);
+  if (!e) return `<a class="back" href="#scenes/glue">← Glue</a><div class="banner">No entry called ${esc(id)}.</div>`;
+  const fam = GLUE_FAMILIES.find((f) => f.key === e.family);
+  return `<a class="back" href="#scenes/glue">← Glue</a>
+    <header class="card"><p class="eyebrow">${esc(fam?.label || "")} · ${esc(REGISTER[e.register] || "")}</p>
+      <h1 lang="ja" class="lesson-title">${ja(e.ja)}</h1>
+      <p class="summary">${esc(e.does)}</p>
+      ${e.note ? `<p>${rich(e.note)}</p>` : ""}
+      <p class="small muted">Where you'll hear it: ${esc(e.listen)}</p>${glueStatus(e)}</header>
+    <section class="card"><h2>In real lines</h2>${e.examples.map(glueExampleCard).join("")}</section>`;
+}
+
+// ---------- daily practice ----------
+// One session that pulls together everything due, Japanese-first, ending with something you say
+// yourself. Each item grades into its own review track.
+
+function dailyItems(onlyGlue) {
+  const today = todayKey();
+  const items = [];
+  const g = glueQueue(onlyGlue);
+  for (const e of g.fresh) items.push({ kind: "glue-new", e });
+  const glueLater = [...g.fresh.map((e) => ({ e, fresh: true })), ...g.due.map((e) => ({ e }))];
+  for (const x of glueLater) {
+    const st = srs.state.rows.get(glueId(x.e))?.stage || 0;
+    items.push({ kind: !x.fresh && st >= 3 && st % 2 === 1 ? "glue-say" : "glue-gap", e: x.e, fresh: x.fresh });
+  }
+  if (!onlyGlue) {
+    for (const v of vocQueue().filter((v) => !v.isNew).slice(0, 5)) items.push({ kind: "scene-word", v });
+    for (const x of warmQueue().slice(0, 4)) items.push({ kind: "warm", x });
+    const listen = S.scenes.filter(sceneActive).flatMap((sc) => practiceItems(sc).listen.map((it) => ({ sc, it })));
+    if (listen.length) items.push({ kind: "listen", ...listen[dayOfYear() % listen.length] });
+  }
+  // Interleave: new glue intros stay early; everything else shuffled, keeping a glue word's gap
+  // after its own intro.
+  const intros = items.filter((i) => i.kind === "glue-new");
+  const rest = shuffle(items.filter((i) => i.kind !== "glue-new"));
+  const ordered = [...intros.slice(0, 1), ...rest];
+  intros.slice(1).forEach((it, k) => ordered.splice(Math.min(ordered.length, 2 + k * 3), 0, it));
+  // Make sure each fresh gap comes after its intro.
+  for (const it of ordered.filter((i) => i.kind === "glue-gap" && i.fresh)) {
+    const gi = ordered.indexOf(it);
+    const ii = ordered.findIndex((x) => x.kind === "glue-new" && x.e === it.e);
+    if (ii > gi) {
+      ordered.splice(gi, 1);
+      ordered.splice(ii, 0, it);
+    }
+  }
+  if (ordered.length) ordered.push({ kind: "talk" });
+  return ordered;
+}
+
+function practiceCard() {
+  if (!S.glue.glue) return "";
+  const n = dailyItems(false).length;
+  if (!n) return `<section class="card practice-card"><p class="eyebrow" lang="ja">今日の練習 · Daily practice</p><p><b>All done today.</b> お疲れさま！</p></section>`;
+  return `<section class="card practice-card"><p class="eyebrow" lang="ja">今日の練習 · Daily practice</p>
+    <div class="split"><p class="big-num">${n}</p><p class="muted small">items · about ${Math.max(3, Math.round(n * 0.6))} min</p></div>
+    <p class="small">Glue words, scene words, burned words and a line to answer, mixed together. It ends with you saying something of your own.</p>
+    <a class="btn" href="#practice" data-action="practice-start">始める · Start</a></section>`;
+}
+
+function viewPractice(mode) {
+  const onlyGlue = mode === "glue";
+  if (!S.practiceRun || S.practiceRun.done || S.practiceRun.date !== todayKey() || S.practiceRun.onlyGlue !== onlyGlue) {
+    const items = dailyItems(onlyGlue);
+    if (!items.length) return `<a class="back" href="#today">← Today</a><section class="card"><h1 lang="ja">今日の練習</h1><p>Nothing due. お疲れさま！</p></section>`;
+    S.practiceRun = { date: todayKey(), onlyGlue, items, i: 0, right: 0, graded: 0, used: [], done: false };
+  }
+  return `<a class="back" href="${onlyGlue ? "#scenes/glue" : "#today"}">← ${onlyGlue ? "Glue" : "Today"}</a>
+    <section class="card review"><p class="eyebrow" lang="ja">${onlyGlue ? "つなぎ言葉" : "今日の練習"}</p><div id="pr-host"></div></section>`;
+}
+
+// Jobs of three words from other families, so each choice is clearly a different job.
+function glueRoleOptions(e) {
+  const others = shuffle((S.glue.glue || []).filter((x) => x.family !== e.family));
+  const picked = [];
+  const fams = new Set();
+  for (const x of others) {
+    if (picked.length >= 3) break;
+    if (fams.has(x.family) && others.length > 6) continue;
+    fams.add(x.family);
+    picked.push({ e: x });
+  }
+  return shuffle([{ e, right: true }, ...picked]);
+}
+
+function mountPractice() {
+  const host = document.getElementById("pr-host");
+  const s = S.practiceRun;
+  if (!host || !s) return;
+  const grade = (id, ok) => {
+    s.graded++;
+    if (ok) s.right++;
+    return srs.gradeItem(id, ok, s.date, S.config.syncUrl);
+  };
+  const next = () => {
+    s.i++;
+    draw();
+    host.scrollIntoView({ block: "start", behavior: "smooth" });
+  };
+  const count = () => `<p class="ex-count">${s.i + 1} / ${s.items.length}</p>`;
+  const twoButtons = (yes, no) => `<div class="row grade"><button class="btn ghost" data-g="1">${yes}</button><button class="btn ghost" data-g="0">${no}</button></div>`;
+  const onGrade = (fn) =>
+    host.querySelectorAll("[data-g]").forEach((b) =>
+      b.addEventListener("click", () => {
+        fn(b.dataset.g === "1");
+        next();
+      })
+    );
+
+  const draw = () => {
+    if (s.i >= s.items.length) {
+      s.done = true;
+      host.innerHTML = `<h2 lang="ja">お疲れさまでした！</h2>
+        ${s.graded ? `<p><b>${s.right} / ${s.graded}</b> right.</p>` : ""}
+        <p class="small muted">Everything you answered went into its own review track, so tomorrow brings the right things back.</p>
+        <div class="row"><a class="btn" href="#today">Back to Today</a>${grammarDueCount() ? `<a class="btn ghost" href="#review">Grammar review (${grammarDueCount()})</a>` : ""}</div>`;
+      return;
+    }
+    const it = s.items[s.i];
+
+    if (it.kind === "glue-new") {
+      const e = it.e;
+      host.innerHTML = `${count()}<p class="pill-inline">New · <span lang="ja">新しいつなぎ言葉</span></p>
+        <h2 lang="ja" class="glue-big">${ja(e.ja)}</h2><p><b>${esc(e.does)}</b></p>${e.note ? `<p class="small">${rich(e.note)}</p>` : ""}
+        ${e.examples.map(glueExampleCard).join("")}
+        <p class="small muted">Say each line out loud once.</p>
+        <div class="row"><button class="btn" data-next>次へ · Next</button></div>`;
+      host.querySelector("[data-next]").onclick = next;
+      return;
+    }
+
+    if (it.kind === "glue-gap") {
+      // "What is this word doing here?" One right answer even when several words could fill the
+      // slot, and it trains exactly what you need when you hear it: its job.
+      const e = it.e;
+      const ex = e.examples[(srs.state.rows.get(glueId(e))?.right || 0) % e.examples.length];
+      const opts = glueRoleOptions(e);
+      const plain = ex.ja.replace(/[«»]/g, "");
+      host.innerHTML = `${count()}<p class="scene" lang="ja">この言葉は、ここで何をしている？</p>
+        <p class="small muted">What is the highlighted word doing here?</p>
+        <div class="ex-prompt">${jaMarked(ex.ja)} ${sayBtn(plain)}</div>
+        <div class="opts opts-stack">${opts.map((o, k) => `<button class="opt" data-k="${k}">${esc(o.e.does)}</button>`).join("")}</div>
+        <div class="ex-feedback"></div>`;
+      speak(plain);
+      host.querySelectorAll(".opt").forEach((b) =>
+        b.addEventListener("click", () => {
+          if (host.dataset.answered) return;
+          host.dataset.answered = "1";
+          const pick = opts[+b.dataset.k];
+          const ok = !!pick.right;
+          grade(glueId(e), ok);
+          s.used.push(e);
+          host.querySelectorAll(".opt").forEach((x) => {
+            const o = opts[+x.dataset.k];
+            x.classList.add(o.right ? "v-right" : "v-wrong");
+            if (x === b) x.classList.add("picked");
+            x.disabled = true;
+          });
+          host.querySelector(".ex-feedback").innerHTML = `
+            <p class="verdict ${ok ? "v-right" : "v-wrong"}">${ok ? "Right" : "Not this one"}</p>
+            <p class="en">${esc(ex.en)}</p>
+            <ul class="whys">${[opts.find((o) => o.right), ...opts.filter((o) => !o.right)]
+              .map((o) => `<li class="${o.right ? "v-right" : "v-wrong"}"><span class="why-opt" lang="ja">${esc(glueBare(o.e))}</span><p>${o.right ? `That's this word's job here. ${e.note ? rich(e.note) : ""}` : `That's the job of ${esc(glueBare(o.e))}, a different word.`}</p></li>`)
+              .join("")}</ul>
+            <div class="row"><button class="btn" data-next>次へ · Next</button></div>`;
+          host.querySelector("[data-next]").onclick = () => {
+            delete host.dataset.answered;
+            next();
+          };
+        })
+      );
+      return;
+    }
+
+    if (it.kind === "glue-say") {
+      const e = it.e;
+      host.innerHTML = `${count()}<p class="scene" lang="ja">「${esc(glueBare(e))}」を使って、何か言ってみて。</p>
+        <p class="small muted">Say something of your own with it, out loud. Anything true about your day.</p>
+        <button class="reveal" aria-expanded="false">Show examples</button>
+        <div class="hidden-en"><p class="small"><b>${esc(e.does)}</b></p>${e.examples.map(glueExampleCard).join("")}</div>
+        ${twoButtons("言えた · Said it", "まだ · Not yet")}`;
+      s.used.push(e);
+      onGrade((ok) => grade(glueId(e), ok));
+      return;
+    }
+
+    if (it.kind === "scene-word") {
+      const v = it.v;
+      const row = srs.state.rows.get(v.id);
+      const produce = row && row.stage >= 3;
+      host.innerHTML = `${count()}<p class="small muted">${esc(v.sc.titleEn)}</p>
+        ${
+          produce
+            ? `<p class="scene" lang="ja">日本語で何と言う？</p><p class="recall-en">${esc(v.word.en)}</p>
+               <button class="reveal" aria-expanded="false">Show</button><div class="hidden-en"><div class="jline">${ja(v.word.ja, "big")} ${sayBtn(v.word.ja)}</div></div>`
+            : `<div class="jline">${ja(v.word.ja, "big")} ${sayBtn(v.word.ja)}</div><p class="scene" lang="ja">意味は？</p>
+               <button class="reveal" aria-expanded="false">Show</button><div class="hidden-en"><p class="en">${esc(v.word.en)}</p></div>`
+        }
+        ${twoButtons("Got it", "Missed")}`;
+      onGrade((ok) => {
+        s.graded++;
+        if (ok) s.right++;
+        srs.gradeVoc(v.id, ok, s.date, S.config.syncUrl);
+      });
+      return;
+    }
+
+    if (it.kind === "warm") {
+      const x = it.x;
+      const sent = warmSentence(x.w);
+      host.innerHTML = `${count()}<p class="small muted">Burned word</p>
+        ${sent ? `<div class="jline">${jaMarked(sent.ja)} ${sayBtn(sent.ja.replace(/[«»]/g, ""))}</div>` : `<div class="jline"><span lang="ja" class="ja big">${esc(x.w)}</span></div>`}
+        <p class="scene" lang="ja">意味と読み方は？</p>
+        <button class="reveal" aria-expanded="false">Show</button><div class="hidden-en"><p><span lang="ja" class="ja big">${esc(x.w)}</span> <span lang="ja">${esc(x.r || "")}</span></p><p class="en"><b>${esc(x.m)}</b></p>${sent ? `<p class="small">${esc(sent.en)}</p>` : ""}</div>
+        ${twoButtons("Got it", "Missed")}`;
+      onGrade((ok) => {
+        s.graded++;
+        if (ok) s.right++;
+        bumpWarmCount();
+        srs.gradeWarm(x.w, ok, s.date, S.config.syncUrl);
+      });
+      return;
+    }
+
+    if (it.kind === "listen") {
+      const { sc, it: li } = it;
+      host.innerHTML = `${count()}<p class="small muted">${esc(sc.titleEn)}</p><p class="scene" lang="ja">聞いて、答えてみて。</p>
+        <p class="small muted">Listen, then answer out loud before you look.</p>
+        <div class="row"><button class="btn ghost" data-say="${esc(stripMarkup(li.line.ja))}">${ICON.sound} もう一度</button></div>
+        <button class="reveal" aria-expanded="false">What they said</button><div class="hidden-en"><div class="jline">${ja(li.line.ja, "big")}</div><p class="en">${esc(li.line.en)}</p></div>
+        <button class="reveal" aria-expanded="false">A reply</button><div class="hidden-en"><div class="jline">${ja(li.reply.ja, "big")} ${sayBtn(li.reply.ja)}</div><p class="en">${esc(li.reply.en)}</p></div>
+        <div class="row"><button class="btn" data-next>次へ · Next</button></div>`;
+      speak(li.line.ja);
+      host.querySelector("[data-next]").onclick = next;
+      return;
+    }
+
+    if (it.kind === "talk") {
+      const p = S.selftalk[dayOfYear() % Math.max(1, S.selftalk.length)] || { q: "今日はどうでしたか。", ja: "", en: "How was today?" };
+      const g = s.used.length ? s.used[s.used.length - 1] : null;
+      host.innerHTML = `${count()}<p class="eyebrow" lang="ja">ひとりごと · Your turn</p>
+        <p class="talk-q" lang="ja">${ja(p.q || p.ja)}</p>
+        ${g ? `<p class="scene" lang="ja">「${esc(glueBare(g))}」も使ってみて。</p>` : ""}
+        <p class="small muted">Answer out loud in two or three sentences. Don't translate; say what you can, the way you can.</p>
+        <button class="reveal" aria-expanded="false">English / a start</button><div class="hidden-en"><p class="en">${esc(p.en)}</p>${p.ja ? `<p>${ja(p.ja)}</p>` : ""}</div>
+        <div class="row"><button class="btn" data-next>言えた · Done</button></div>`;
+      host.querySelector("[data-next]").onclick = next;
+    }
+  };
+  draw();
+}
+
+function grammarDueCount() {
+  return srs.dueToday(todayKey()).length;
+}
+
 // ---------- notes ----------
 
 function viewNotes() {
@@ -2197,19 +2570,20 @@ function audioSection() {
 
 // ---------------- router ----------------
 
-const ROUTES = { today: viewToday, stats: viewStats, course: viewCourse, scenes: viewScenes, phrases: viewScenes, vault: viewVault, notes: viewNotes, settings: viewSettings, review: viewReview, immerse: viewImmerse };
+const ROUTES = { today: viewToday, stats: viewStats, course: viewCourse, scenes: viewScenes, phrases: viewScenes, vault: viewVault, practice: viewPractice, notes: viewNotes, settings: viewSettings, review: viewReview, immerse: viewImmerse };
 
 function render() {
   const [name, arg, arg2] = (location.hash.replace(/^#/, "") || "today").split("/");
   const fn = ROUTES[name] || viewToday;
   setChartWidth(Math.min(760, window.innerWidth) - 32 - 42);
   $app().innerHTML = fn(arg, arg2);
-  const navName = name === "review" ? "today" : name === "phrases" ? "scenes" : ROUTES[name] ? name : "today";
+  const navName = name === "review" || name === "practice" ? "today" : name === "phrases" ? "scenes" : ROUTES[name] ? name : "today";
   document.querySelectorAll("nav a[data-nav]").forEach((a) => a.classList.toggle("active", a.dataset.nav === navName));
   setStatus();
   if (name === "course" && arg && S.lessonCache.has(arg)) mountExercises(S.lessonCache.get(arg));
   if (name === "review") mountReview();
   if (name === "scenes" || name === "phrases") mountScenes(arg);
+  if (name === "practice") mountPractice();
   if (name === "vault") {
     if (arg === "warm") mountWarm();
     else if (arg === "quiz") mountVaultQuiz();
@@ -2325,6 +2699,18 @@ function wireGlobal() {
       return render();
     }
     const act = t.dataset.action;
+    if (act === "practice-start") {
+      S.practiceRun = null;
+      if (location.hash === t.getAttribute("href")) {
+        e.preventDefault();
+        render();
+      }
+      return;
+    }
+    if (act === "heard-remove") {
+      await srs.removeHeard(t.dataset.id, S.config.syncUrl);
+      return render();
+    }
     if (act === "vault-quiz") {
       S.vaultQuiz = null;
       if (location.hash === "#vault/quiz") {
