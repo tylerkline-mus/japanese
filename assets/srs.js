@@ -269,3 +269,81 @@ export async function gradeVoc(id, ok, todayKey, defaultUrl) {
   await save([normalize(row)], defaultUrl);
   return row;
 }
+
+// ---------- keeping burned words warm ----------
+// Rows look like {id: "brn:<word>", stage, due, right, wrong, seen: <date last refreshed>}.
+// Every burned word comes back about every 75 days (spread ±10 so they don't arrive in clumps).
+// A miss brings it back in a week.
+
+export const WARM_DAYS = 75;
+export const WARM_PER_DAY = 10;
+export const warmId = (w) => "brn:" + w;
+export const warmRow = (w) => state.rows.get(warmId(w));
+
+function spread(w) {
+  let h = 0;
+  for (const c of w) h = (h * 31 + c.codePointAt(0)) % 997;
+  return (h % 21) - 10;
+}
+
+// words: [{w, l}]. Overdue refreshes first (oldest first), then words never refreshed: ones with a
+// written sentence first (prio), then a stable shuffle so the trivial early words don't all come first.
+export function warmDue(words, todayKey, cap = WARM_PER_DAY, prio = () => 0) {
+  if (cap <= 0) return [];
+  const due = [];
+  const fresh = [];
+  for (const x of words) {
+    const r = warmRow(x.w);
+    if (!r || !r.due) fresh.push(x);
+    else if (r.due <= todayKey) due.push({ x, due: r.due });
+  }
+  due.sort((a, b) => a.due.localeCompare(b.due));
+  fresh.sort((a, b) => prio(b) - prio(a) || spread(a.w + "#") - spread(b.w + "#") || a.w.localeCompare(b.w));
+  return [...due.map((d) => d.x), ...fresh].slice(0, cap);
+}
+
+function warmRowFor(w, ok, todayKey) {
+  const prev = warmRow(w);
+  return normalize({
+    id: warmId(w),
+    stage: ok ? Math.min(6, (prev?.stage || 0) + 1) : 1,
+    due: ok ? addDays(todayKey, WARM_DAYS + spread(w)) : addDays(todayKey, 7),
+    right: (prev?.right || 0) + (ok ? 1 : 0),
+    wrong: (prev?.wrong || 0) + (ok ? 0 : 1),
+    seen: todayKey,
+    updated: nowIso(),
+  });
+}
+
+export async function gradeWarm(w, ok, todayKey, defaultUrl) {
+  const row = warmRowFor(w, ok, todayKey);
+  await save([row], defaultUrl);
+  return row;
+}
+
+// Reading a passage counts as seeing its burned words (unless one is already due later than that).
+export async function markWarm(words, todayKey, defaultUrl) {
+  const target = addDays(todayKey, WARM_DAYS - 10);
+  const rows = words.filter((w) => !(warmRow(w)?.due > target)).map((w) => warmRowFor(w, true, todayKey));
+  if (rows.length) await save(rows, defaultUrl);
+  return rows.length;
+}
+
+export function warmStats(words, todayKey) {
+  const since = addDays(todayKey, -90);
+  let warm = 0;
+  for (const x of words) {
+    const r = warmRow(x.w);
+    if (r && r.seen && r.seen >= since) warm++;
+  }
+  return { warm, total: words.length };
+}
+
+// Simple done/not-done flags (e.g. "vr:<reading id>"), riding along in the same Sheet tab.
+export function flag(id) {
+  const r = state.rows.get(id);
+  return !!(r && r.seen === "done");
+}
+export async function setFlag(id, on, defaultUrl) {
+  await save([normalize({ id, stage: 0, due: "", right: 0, wrong: 0, seen: on ? "done" : "", updated: nowIso() })], defaultUrl);
+}

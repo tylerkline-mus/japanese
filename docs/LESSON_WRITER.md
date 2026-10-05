@@ -98,13 +98,37 @@ Scene rules:
   instructions, but **no names of people** in scene files; the repo is public.
 - Never rewrite a scene's lines just for style. He's memorizing them.
 
-## 5. Check and publish
+## 5. Vault (every run)
+
+The Vault keeps words he already knows from WaniKani alive. Tiers come from `data/wk-vocab.json`
+stages: `burned` (s = 9), `enlightened` (8), `master` (7), `guru` (5–6). Burned words matter most:
+WaniKani never shows them again.
+
+1. **Readings.** Add a new week to the **front** of `data/vault/readings.json` with **3 readings**.
+   Copy the shape of the existing ones: `id` (`rNNN-slug`, numbered after the highest), `title`,
+   `titleEn`, `kind` (diary, travel story, menu, note from a friend, sign, short dialogue…),
+   `tiers`, `paragraphs` ({ja, en}, 4–7 short ones), `questions` (3–4 `choice` questions; every option
+   has `verdict` and `why`, same rule as lessons). Rotate tiers across the week: at least one reading
+   built mainly from **burned** words, one from **enlightened**, one mixing master/guru.
+   - Content words come from his WaniKani words in the reading's tiers (or lower-stage words he
+     knows, `s >= 5`). At most one new word per paragraph, and give it furigana.
+   - Grammar: only lessons he has done plus polite です/ます basics. Short sentences.
+   - Prefer burned words he hasn't seen lately: `data/grammar-progress.json` includes rows with ids
+     `brn:<word>`; `seen` is the date he last refreshed it. Never-seen and oldest-seen first.
+     Words with `wrong > 0` deserve a reappearance.
+   - Use his world where it fits (trains, inns, food, music, Kentucky, a cat), no private names.
+2. **Sentences.** Add 20–30 entries to `data/vault/sentences.json` for burned words that don't have
+   one yet (same priority as above). One natural sentence each, `{ja, en}`, with the burned word
+   wrapped once in «…» inside the `ja` (e.g. `{少|すこ}し«{休|やす}み»ましょう。`). Other words: ones he knows.
+   A word can have more than one sentence; the hub rotates through them.
+
+## 6. Check and publish
 
 1. `node scripts/validate-lessons.mjs` must pass. Fix anything it reports.
 2. Re-read every Japanese sentence once more for naturalness and correctness. If unsure about one,
    replace it with a simpler sentence you're sure of.
-3. Commit with a message like `Lesson 4: 〜たい (wanting)`, `Review sentences: +4 は/が` or `Scenes: natural tier for Ordering food` and push to `main`.
-4. End with a 2–3 line summary: what you added (lesson, reviews, scenes), why (caught up or not, what
+3. Commit with a message like `Lesson 4: 〜たい (wanting)`, `Review sentences: +4 は/が` or `Scenes: natural tier for Ordering food`, or one commit for everything, e.g. `Week 2: lesson, 3 vault readings, 24 sentences` and push to `main`.
+4. End with a 2–3 line summary: what you added (lesson, reviews, scenes, vault readings and sentences), why (caught up or not, what
    was shaky, which requests), and anything you couldn't read.
 
 ## Direction notes from Tyler

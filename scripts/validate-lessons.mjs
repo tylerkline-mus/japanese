@@ -160,8 +160,56 @@ try {
   if (e.code !== "ENOENT") problems.push(`scenes: can't read (${e.message})`);
 }
 
+// Vault readings (data/vault/readings.json) and burned-word sentences (data/vault/sentences.json).
+let vaultReadings = 0;
+try {
+  const v = JSON.parse(await readFile(new URL("../data/vault/readings.json", import.meta.url), "utf8"));
+  const TIERS = ["burned", "enlightened", "master", "guru"];
+  const rids = new Set();
+  for (const w of v.weeks || []) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(w.week || "")) problems.push(`vault/readings.json: week "${w.week}" must be YYYY-MM-DD`);
+    for (const r of w.readings || []) {
+      vaultReadings++;
+      const at = `vault/readings.json: ${r.id || "reading with no id"}`;
+      if (!r.id) problems.push(`${at}: needs an id`);
+      if (rids.has(r.id)) problems.push(`${at}: duplicate id`);
+      rids.add(r.id);
+      for (const k of ["title", "titleEn"]) if (!r[k]) problems.push(`${at}: missing ${k}`);
+      if (!(r.tiers || []).length || (r.tiers || []).some((t) => !TIERS.includes(t))) problems.push(`${at}: tiers must be some of ${TIERS.join(", ")}`);
+      if (!(r.paragraphs || []).length) problems.push(`${at}: needs paragraphs`);
+      (r.paragraphs || []).forEach((p, i) => { if (!p.ja || !p.en) problems.push(`${at}: paragraph ${i + 1} needs ja and en`); });
+      if ((r.questions || []).length < 3) problems.push(`${at}: needs at least 3 questions`);
+      (r.questions || []).forEach((q, i) => {
+        const qa = `${at}: question ${i + 1}`;
+        if (q.type !== "choice" || !q.prompt || !q.en) problems.push(`${qa}: needs type "choice", prompt and en`);
+        if (!(q.options || []).some((o) => o.verdict === "right")) problems.push(`${qa}: no option marked right`);
+        (q.options || []).forEach((o, j) => {
+          if (!o.why || !o.why.trim()) problems.push(`${qa}: option ${j + 1} has no explanation`);
+          if (!["right", "wrong", "different"].includes(o.verdict)) problems.push(`${qa}: option ${j + 1} has an unknown verdict`);
+        });
+      });
+    }
+  }
+} catch (e) {
+  if (e.code !== "ENOENT") problems.push(`vault/readings.json: can't read or parse (${e.message})`);
+}
+let vaultSentences = 0;
+try {
+  const v = JSON.parse(await readFile(new URL("../data/vault/sentences.json", import.meta.url), "utf8"));
+  for (const [w, list] of Object.entries(v.words || {})) {
+    for (const [i, x] of (list || []).entries()) {
+      vaultSentences++;
+      const at = `vault/sentences.json: ${w} #${i + 1}`;
+      if (!x.ja || !x.en) problems.push(`${at}: needs ja and en`);
+      else if (!/^[^«»]*«[^«»]+»[^«»]*$/.test(x.ja)) problems.push(`${at}: mark the word once with «…»`);
+    }
+  }
+} catch (e) {
+  if (e.code !== "ENOENT") problems.push(`vault/sentences.json: can't read or parse (${e.message})`);
+}
+
 if (problems.length) {
   console.error(problems.map((p) => "✕ " + p).join("\n"));
   process.exit(1);
 }
-console.log(`✓ ${index.lessons.length} lessons and ${bankCount} review banks, every answer explained.${sceneCount ? ` Scenes: ${sceneCount}.` : ""}${pickWeeks ? ` Picks: ${pickWeeks} week(s), newest OK.` : ""}`);
+console.log(`✓ ${index.lessons.length} lessons and ${bankCount} review banks, every answer explained.${sceneCount ? ` Scenes: ${sceneCount}.` : ""}${vaultReadings ? ` Vault: ${vaultReadings} readings, ${vaultSentences} sentences.` : ""}${pickWeeks ? ` Picks: ${pickWeeks} week(s), newest OK.` : ""}`);

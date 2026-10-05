@@ -1,0 +1,401 @@
+{
+ "weeks": [
+  {
+   "week": "2026-10-05",
+   "note": "First batch: a rainy day off, a station in Kyushu, and a menu full of burned numbers.",
+   "readings": [
+    {
+     "id": "r001-rainy-day-off",
+     "title": "{雨|あめ}の{休日|きゅうじつ}",
+     "titleEn": "A rainy day off",
+     "kind": "Diary",
+     "tiers": [
+      "burned",
+      "enlightened"
+     ],
+     "paragraphs": [
+      {
+       "ja": "{今日|きょう}は{休日|きゅうじつ}です。でも、{朝|あさ}から{雨|あめ}です。{空|そら}は{白|しろ}いです。",
+       "en": "Today is my day off. But it's been raining since morning. The sky is white."
+      },
+      {
+       "ja": "{朝|あさ}ごはんの{後|あと}で、コーヒーを{作|つく}りました。{犬|いぬ}はベッドの{下|した}で{休|やす}んでいます。",
+       "en": "After breakfast I made coffee. The dog is resting under the bed."
+      },
+      {
+       "ja": "{午後|ごご}、{雨|あめ}が{少|すく}なくなりました。{犬|いぬ}と{町|まち}の{店|みせ}に{行|い}きました。",
+       "en": "In the afternoon the rain let up. I went to a shop in town with the dog."
+      },
+      {
+       "ja": "{店|みせ}の{人|ひと}は「{今日|きょう}は{人|ひと}が{少|すく}ないですね」と{言|い}いました。",
+       "en": "The shopkeeper said, \"Not many people today, huh.\""
+      },
+      {
+       "ja": "{夜|よる}は{家|いえ}で{映画|えいが}を{見|み}ました。{長|なが}い{映画|えいが}でしたが、いい{映画|えいが}でした。",
+       "en": "At night I watched a movie at home. It was a long movie, but a good one."
+      },
+      {
+       "ja": "{来週|らいしゅう}は{友人|ゆうじん}と{山|やま}に{行|い}きます。",
+       "en": "Next week I'm going to the mountains with a friend."
+      }
+     ],
+     "questions": [
+      {
+       "id": "q1",
+       "type": "choice",
+       "prompt": "{朝|あさ}の{天気|てんき}はどうでしたか。",
+       "en": "What was the weather like in the morning?",
+       "options": [
+        {
+         "text": "{雨|あめ}でした",
+         "verdict": "right",
+         "why": "「{朝|あさ}から{雨|あめ}です」: it's been raining since the morning."
+        },
+        {
+         "text": "いい{天気|てんき}でした",
+         "verdict": "wrong",
+         "why": "The first paragraph says {朝|あさ}から{雨|あめ}です, so it wasn't nice out."
+        },
+        {
+         "text": "{空|そら}が{青|あお}かったです",
+         "verdict": "wrong",
+         "why": "「{空|そら}は{白|しろ}いです」: the sky was white (overcast), not blue."
+        }
+       ]
+      },
+      {
+       "id": "q2",
+       "type": "choice",
+       "prompt": "{犬|いぬ}はどこで{休|やす}んでいましたか。",
+       "en": "Where was the dog resting?",
+       "options": [
+        {
+         "text": "ベッドの{下|した}",
+         "verdict": "right",
+         "why": "「ベッドの{下|した}で{休|やす}んでいます」: under the bed."
+        },
+        {
+         "text": "テーブルの{上|うえ}",
+         "verdict": "wrong",
+         "why": "テーブルの{上|うえ} is \"on the table.\" The passage says ベッドの{下|した}, under the bed."
+        },
+        {
+         "text": "{店|みせ}の{中|なか}",
+         "verdict": "wrong",
+         "why": "The dog goes to the shop later, in the afternoon. In the morning it was at home under the bed."
+        }
+       ]
+      },
+      {
+       "id": "q3",
+       "type": "choice",
+       "prompt": "{店|みせ}の{人|ひと}は{何|なん}と{言|い}いましたか。",
+       "en": "What did the shopkeeper say?",
+       "options": [
+        {
+         "text": "{人|ひと}が{少|すく}ない",
+         "verdict": "right",
+         "why": "「{今日|きょう}は{人|ひと}が{少|すく}ないですね」: not many people today."
+        },
+        {
+         "text": "{人|ひと}が{多|おお}い",
+         "verdict": "wrong",
+         "why": "{多|おお}い is the opposite of {少|すく}ない. The rain kept people home."
+        },
+        {
+         "text": "{雨|あめ}が{少|すく}ない",
+         "verdict": "wrong",
+         "why": "{雨|あめ}が{少|すく}なくなりました is the narrator's line about the weather. The shopkeeper talks about people."
+        }
+       ]
+      },
+      {
+       "id": "q4",
+       "type": "choice",
+       "prompt": "{来週|らいしゅう}、{何|なに}をしますか。",
+       "en": "What's happening next week?",
+       "options": [
+        {
+         "text": "{友人|ゆうじん}と{山|やま}に{行|い}きます",
+         "verdict": "right",
+         "why": "「{来週|らいしゅう}は{友人|ゆうじん}と{山|やま}に{行|い}きます」"
+        },
+        {
+         "text": "{家|いえ}で{映画|えいが}を{見|み}ます",
+         "verdict": "wrong",
+         "why": "That was tonight ({夜|よる}), not next week."
+        },
+        {
+         "text": "{犬|いぬ}と{町|まち}に{行|い}きます",
+         "verdict": "wrong",
+         "why": "That was this afternoon ({午後|ごご})."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "r002-kyushu-station",
+     "title": "{九州|きゅうしゅう}の{駅|えき}で",
+     "titleEn": "At a station in Kyushu",
+     "kind": "Travel story",
+     "tiers": [
+      "enlightened",
+      "master",
+      "guru"
+     ],
+     "paragraphs": [
+      {
+       "ja": "{九州|きゅうしゅう}の{小|ちい}さい{駅|えき}で{電車|でんしゃ}を{下|お}りました。{西口|にしぐち}を{出|で}ると、{前|まえ}に{道|みち}が{一|ひと}つだけありました。",
+       "en": "I got off the train at a small station in Kyushu. When I went out the west exit, there was just one road in front of me."
+      },
+      {
+       "ja": "{地図|ちず}を{見|み}ましたが、{店|みせ}の{場所|ばしょ}が{分|わ}かりません。タクシーもいません。",
+       "en": "I looked at the map, but I couldn't work out where the restaurant was. There were no taxis, either."
+      },
+      {
+       "ja": "{駅|えき}の{近|ちか}くにいた{女|おんな}の{人|ひと}に、{住所|じゅうしょ}を{見|み}せました。",
+       "en": "I showed the address to a woman who was near the station."
+      },
+      {
+       "ja": "「ああ、この{店|みせ}は{有名|ゆうめい}ですよ。{和食|わしょく}の{店|みせ}です。{歩|ある}いて{十分|じゅっぷん}ぐらいです。」",
+       "en": "\"Oh, that place is famous. It's a Japanese restaurant. About ten minutes on foot.\""
+      },
+      {
+       "ja": "{私|わたし}は{東|ひがし}に{歩|ある}きました。{道|みち}は{長|なが}かったですが、{空気|くうき}がよかったです。",
+       "en": "I walked east. The road was long, but the air was lovely."
+      },
+      {
+       "ja": "{店|みせ}の{人|ひと}はとても{元気|げんき}で、{和食|わしょく}は{本当|ほんとう}においしかったです。",
+       "en": "The staff were really cheerful, and the food was truly delicious."
+      }
+     ],
+     "questions": [
+      {
+       "id": "q1",
+       "type": "choice",
+       "prompt": "どの{出口|でぐち}から{出|で}ましたか。",
+       "en": "Which exit did you leave by?",
+       "options": [
+        {
+         "text": "{西口|にしぐち}",
+         "verdict": "right",
+         "why": "「{西口|にしぐち}を{出|で}ると」: the west exit."
+        },
+        {
+         "text": "{東口|ひがしぐち}",
+         "verdict": "wrong",
+         "why": "{東|ひがし} comes later: you walked east ({東|ひがし}に{歩|ある}きました) after leaving by the west exit."
+        },
+        {
+         "text": "{北口|きたぐち}",
+         "verdict": "wrong",
+         "why": "{北口|きたぐち} is the north exit. The passage says {西口|にしぐち}."
+        }
+       ]
+      },
+      {
+       "id": "q2",
+       "type": "choice",
+       "prompt": "{店|みせ}まで{歩|ある}いてどのぐらいですか。",
+       "en": "How long a walk is it to the restaurant?",
+       "options": [
+        {
+         "text": "{十分|じゅっぷん}ぐらい",
+         "verdict": "right",
+         "why": "Here {十分|じゅっぷん} means \"ten minutes.\" You know the same kanji from WaniKani as {十分|じゅうぶん}, \"enough\"; context decides which one it is."
+        },
+        {
+         "text": "{一時間|いちじかん}ぐらい",
+         "verdict": "wrong",
+         "why": "She says about ten minutes. The road only felt long ({道|みち}は{長|なが}かった)."
+        },
+        {
+         "text": "{十日|とおか}ぐらい",
+         "verdict": "wrong",
+         "why": "{十日|とおか} is ten days (or the 10th of the month), not ten minutes."
+        }
+       ]
+      },
+      {
+       "id": "q3",
+       "type": "choice",
+       "prompt": "どんな{店|みせ}ですか。",
+       "en": "What kind of place is it?",
+       "options": [
+        {
+         "text": "{有名|ゆうめい}な{和食|わしょく}の{店|みせ}",
+         "verdict": "right",
+         "why": "「{有名|ゆうめい}ですよ。{和食|わしょく}の{店|みせ}です」: a famous Japanese restaurant."
+        },
+        {
+         "text": "{小|ちい}さいコンビニ",
+         "verdict": "wrong",
+         "why": "A コンビニ never comes up. She calls it {和食|わしょく}の{店|みせ}."
+        },
+        {
+         "text": "{駅|えき}の{中|なか}の{店|みせ}",
+         "verdict": "wrong",
+         "why": "It's about ten minutes' walk from the station, so it isn't inside it."
+        }
+       ]
+      },
+      {
+       "id": "q4",
+       "type": "choice",
+       "prompt": "{女|おんな}の{人|ひと}に{何|なに}を{見|み}せましたか。",
+       "en": "What did you show the woman?",
+       "options": [
+        {
+         "text": "{住所|じゅうしょ}",
+         "verdict": "right",
+         "why": "「{住所|じゅうしょ}を{見|み}せました」: the address."
+        },
+        {
+         "text": "{地図|ちず}",
+         "verdict": "wrong",
+         "why": "You looked at the map yourself ({地図|ちず}を{見|み}ました), but you showed her the address."
+        },
+        {
+         "text": "{名前|なまえ}",
+         "verdict": "wrong",
+         "why": "Your name never comes up here."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "r003-menu",
+     "title": "{今日|きょう}のメニュー",
+     "titleEn": "Today's menu",
+     "kind": "Menu + ordering",
+     "tiers": [
+      "burned",
+      "enlightened"
+     ],
+     "paragraphs": [
+      {
+       "ja": "{生|なま}ビール……{五百円|ごひゃくえん}　／　お{茶|ちゃ}……{二百円|にひゃくえん}",
+       "en": "Draft beer: 500 yen / Tea: 200 yen"
+      },
+      {
+       "ja": "{牛肉|ぎゅうにく}と{玉|たま}ねぎ……{千円|せんえん}　／　{豚肉|ぶたにく}……{八百円|はっぴゃくえん}　／　{竹|たけ}の{子|こ}（{小皿|こざら}）……{三百円|さんびゃくえん}",
+       "en": "Beef and onions: 1,000 yen / Pork: 800 yen / Bamboo shoots (small plate): 300 yen"
+      },
+      {
+       "ja": "{店|みせ}の{人|ひと}：「{今日|きょう}は{牛肉|ぎゅうにく}が{人気|にんき}ですよ。」",
+       "en": "Staff: \"The beef is popular today.\""
+      },
+      {
+       "ja": "{私|わたし}：「じゃあ、{牛肉|ぎゅうにく}と{玉|たま}ねぎを{一|ひと}つと、{生|なま}ビールを{二|ふた}つ{下|くだ}さい。」",
+       "en": "Me: \"Then one beef and onions, and two draft beers, please.\""
+      },
+      {
+       "ja": "{店|みせ}の{人|ひと}：「はい。{竹|たけ}の{子|こ}もどうですか。{今|いま}が{一番|いちばん}おいしいですよ。」",
+       "en": "Staff: \"Sure. How about the bamboo shoots too? They're at their best right now.\""
+      },
+      {
+       "ja": "{私|わたし}：「じゃあ、それも{一|ひと}つお{願|ねが}いします。」",
+       "en": "Me: \"Then one of those too, please.\""
+      }
+     ],
+     "questions": [
+      {
+       "id": "q1",
+       "type": "choice",
+       "prompt": "{牛肉|ぎゅうにく}と{玉|たま}ねぎはいくらですか。",
+       "en": "How much is the beef and onions?",
+       "options": [
+        {
+         "text": "{千円|せんえん}",
+         "verdict": "right",
+         "why": "{千|せん} is a thousand: 1,000 yen."
+        },
+        {
+         "text": "{百円|ひゃくえん}",
+         "verdict": "wrong",
+         "why": "{百|ひゃく} is a hundred. The menu says {千円|せんえん}."
+        },
+        {
+         "text": "{一万円|いちまんえん}",
+         "verdict": "wrong",
+         "why": "{一万|いちまん} is ten thousand. That would be some beef."
+        }
+       ]
+      },
+      {
+       "id": "q2",
+       "type": "choice",
+       "prompt": "{生|なま}ビールをいくつ{注文|ちゅうもん}しましたか。",
+       "en": "How many draft beers did you order?",
+       "options": [
+        {
+         "text": "{二|ふた}つ",
+         "verdict": "right",
+         "why": "「{生|なま}ビールを{二|ふた}つ{下|くだ}さい」: two."
+        },
+        {
+         "text": "{一|ひと}つ",
+         "verdict": "wrong",
+         "why": "{一|ひと}つ goes with the beef and onions. The beer is {二|ふた}つ."
+        },
+        {
+         "text": "{三|みっ}つ",
+         "verdict": "wrong",
+         "why": "Nobody says {三|みっ}つ. The order is {二|ふた}つ."
+        }
+       ]
+      },
+      {
+       "id": "q3",
+       "type": "choice",
+       "prompt": "{店|みせ}の{人|ひと}は、{何|なに}が{人気|にんき}だと{言|い}いましたか。",
+       "en": "What did the staff say was popular?",
+       "options": [
+        {
+         "text": "{牛肉|ぎゅうにく}",
+         "verdict": "right",
+         "why": "「{今日|きょう}は{牛肉|ぎゅうにく}が{人気|にんき}ですよ」"
+        },
+        {
+         "text": "{豚肉|ぶたにく}",
+         "verdict": "wrong",
+         "why": "{豚|ぶた} is pig, so {豚肉|ぶたにく} is pork. The popular dish is {牛肉|ぎゅうにく}, beef."
+        },
+        {
+         "text": "{竹|たけ}の{子|こ}",
+         "verdict": "wrong",
+         "why": "The staff recommends {竹|たけ}の{子|こ} next because it's in season ({今|いま}が{一番|いちばん}おいしい), but the popular dish is {牛肉|ぎゅうにく}."
+        }
+       ]
+      },
+      {
+       "id": "q4",
+       "type": "choice",
+       "prompt": "{全部|ぜんぶ}でいくらですか。",
+       "en": "What's the total?",
+       "options": [
+        {
+         "text": "{二千三百円|にせんさんびゃくえん}",
+         "verdict": "right",
+         "why": "Beef and onions 1,000 + two beers 500 × 2 + bamboo shoots 300 = 2,300 yen."
+        },
+        {
+         "text": "{千八百円|せんはっぴゃくえん}",
+         "verdict": "wrong",
+         "why": "That counts only one beer: 1,000 + 500 + 300. You ordered {二|ふた}つ."
+        },
+        {
+         "text": "{二千円|にせんえん}",
+         "verdict": "wrong",
+         "why": "That leaves out the {竹|たけ}の{子|こ} (300 yen) you added at the end."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

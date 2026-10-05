@@ -32,6 +32,9 @@ const S = {
   sceneQuery: "",
   practice: null, // {sceneId, mode, i}
   vocSession: null,
+  vault: { weeks: [], sentences: {} },
+  warmSession: null,
+  vaultQuiz: null,
   selftalk: [],
   error: null,
   loading: false,
@@ -86,7 +89,7 @@ async function boot() {
     buildModel();
   }
   render();
-  await Promise.all([loadHistory(), loadNotes(), loadReviews(), loadImmersion(), loadVocab()]);
+  await Promise.all([loadHistory(), loadNotes(), loadReviews(), loadImmersion(), loadVocab(), loadVault()]);
   if (S.raw) buildModel();
   render();
   await refreshWK(false);
@@ -476,7 +479,7 @@ function viewToday() {
     <p class="countdown"><span lang="ja">${esc(S.config.tripLabel === "Japan" ? "日本" : S.config.tripLabel)}まで</span> <b>${fmt(days)}</b> <span lang="ja">日</span></p>
   </header>`;
 
-  if (!token()) return top + needToken() + grammarCard() + sceneTodayCard() + lessonCard() + selftalkCard();
+  if (!token()) return top + needToken() + grammarCard() + sceneTodayCard() + vaultTodayCard() + lessonCard() + selftalkCard();
   if (!S.model) return top + errorBanner() + `<section class="card"><p class="muted">Loading your WaniKani…</p></section>`;
   const m = S.model;
   const t = m.target;
@@ -535,7 +538,7 @@ function viewToday() {
       <div class="leech-row">${m.leeches.slice(0, 4).map(leechChip).join("")}</div></section>`
     : "";
 
-  return top + errorBanner() + target + grammarCard() + sceneTodayCard() + lessonCard() + selftalkCard() + queueCard + leech;
+  return top + errorBanner() + target + grammarCard() + sceneTodayCard() + vaultTodayCard() + lessonCard() + selftalkCard() + queueCard + leech;
 }
 
 function ring(p) {
@@ -647,6 +650,7 @@ function viewStats() {
     ${tile("Immersion", `${fmt(immMinutes(weekStartKey()))} min`, "this week · see Immerse")}
     ${S.vocabMeta ? tile("Words", fmt(S.vocabMeta.guru), `at Guru or higher · ${fmt(S.vocabMeta.count)} started`) : ""}
     ${sceneWordsTile()}
+    ${warmTile()}
   </section>`;
 
   const groups = core.SRS_GROUPS.map((g) => ({ key: g.key, label: g.label, value: m.srs[g.key] }));
@@ -1702,6 +1706,408 @@ function mountSceneWords() {
   draw();
 }
 
+// ---------- vault ----------
+// Words you've already learned on WaniKani (Guru and up), kept alive: weekly readings written
+// from them, quick quizzes built on the spot, and a slow refresh cycle for burned words.
+
+const VAULT_TIERS = [
+  { key: "burned", label: "Burned", ja: "焼", test: (s) => s === 9 },
+  { key: "enlightened", label: "Enlightened", ja: "悟", test: (s) => s === 8 },
+  { key: "master", label: "Master", ja: "達", test: (s) => s === 7 },
+  { key: "guru", label: "Guru", ja: "師", test: (s) => s === 5 || s === 6 },
+];
+const tierOf = (s) => VAULT_TIERS.find((t) => t.test(s))?.key || null;
+const tierLabel = (k) => VAULT_TIERS.find((t) => t.key === k)?.label || k;
+
+function vaultTiers() {
+  const t = store.get("jh.vault.tiers", null);
+  return new Set(Array.isArray(t) && t.length ? t : ["burned"]);
+}
+const allWords = () => [...S.words.entries()].map(([w, v]) => ({ ...v, w }));
+const vaultWords = (tiers = vaultTiers()) => allWords().filter((x) => tiers.has(tierOf(x.s)));
+const burnedWords = () => vaultWords(new Set(["burned"]));
+
+async function loadVault() {
+  const out = { weeks: [], sentences: {} };
+  for (const [path, key] of [
+    ["data/vault/readings.json", "weeks"],
+    ["data/vault/sentences.json", "sentences"],
+  ]) {
+    for (const url of [rawUrl(path) + "?t=" + Date.now(), path]) {
+      try {
+        const d = await getJSON(url);
+        out[key] = key === "weeks" ? d.weeks || [] : d.words || {};
+        break;
+      } catch {}
+    }
+  }
+  S.vault = out;
+}
+
+const allReadings = () => (S.vault?.weeks || []).flatMap((w) => (w.readings || []).map((r) => ({ ...r, week: w.week })));
+
+// Daily limit counts warm-up cards only (quizzes and readings keep words warm without using it up).
+function warmCountToday() {
+  const c = store.get("jh.warm.count", null);
+  return c && c.date === todayKey() ? c.n : 0;
+}
+function bumpWarmCount() {
+  store.set("jh.warm.count", { date: todayKey(), n: warmCountToday() + 1 });
+}
+function warmQueue() {
+  return srs.warmDue(burnedWords(), todayKey(), srs.WARM_PER_DAY - warmCountToday(), (x) => (S.vault?.sentences?.[x.w]?.length ? 1 : 0));
+}
+
+function vaultTodayCard() {
+  const burned = burnedWords();
+  if (!burned.length) return "";
+  const q = warmQueue();
+  const st = srs.warmStats(burned, todayKey());
+  if (!q.length && st.warm === st.total) return "";
+  return `<section class="card vault-today"><p class="eyebrow" lang="ja">蔵 · Vault</p>
+    ${
+      q.length
+        ? `<div class="split"><p class="big-num">${q.length}</p><p class="muted small">burned word${q.length > 1 ? "s" : ""} to keep warm</p></div>
+           <a class="btn" href="#vault/warm">Warm them up</a>`
+        : `<p><b>Done for today.</b></p>`
+    }
+    <p class="small muted">${fmt(st.warm)} of ${fmt(st.total)} burned words seen in the last 90 days.</p>
+  </section>`;
+}
+
+function warmTile() {
+  const burned = burnedWords();
+  if (!burned.length) return "";
+  const st = srs.warmStats(burned, todayKey());
+  return tile("Burns kept warm", `${fmt(st.warm)} / ${fmt(st.total)}`, "burned words seen in 90 days");
+}
+
+function viewVault(arg, arg2) {
+  if (arg === "warm") return viewWarm();
+  if (arg === "quiz") return viewVaultQuiz();
+  if (arg === "r" && arg2) return viewReading(arg2);
+  if (!S.words.size) return `<section class="card"><p class="muted">Loading your WaniKani words…</p></section>`;
+  const tiers = vaultTiers();
+  const words = vaultWords(tiers);
+  const counts = Object.fromEntries(VAULT_TIERS.map((t) => [t.key, allWords().filter((x) => tierOf(x.s) === t.key).length]));
+  const chips = `<div class="vtiers" role="group" aria-label="Tiers">${VAULT_TIERS.map(
+    (t) => `<button class="vtier ${tiers.has(t.key) ? "on" : ""}" data-vtier="${t.key}" aria-pressed="${tiers.has(t.key)}">
+      <span>${esc(t.label)}</span><small>${fmt(counts[t.key])}</small></button>`
+  ).join("")}</div>`;
+
+  const burned = burnedWords();
+  const st = srs.warmStats(burned, todayKey());
+  const q = warmQueue();
+  const warm = burned.length
+    ? `<section class="card"><div class="split"><h2>Keep burns warm</h2><span class="big-num">${q.length}</span></div>
+        ${meter(st.warm, Math.max(1, st.total))}
+        <p class="small muted">${fmt(st.warm)} of ${fmt(st.total)} burned words seen in the last 90 days. Each one comes back about every 75 days, in a sentence when there is one. Up to ${srs.WARM_PER_DAY} a day.</p>
+        ${q.length ? `<a class="btn" href="#vault/warm">Warm up ${q.length}</a>` : `<p class="small"><b>Done for today.</b></p>`}
+      </section>`
+    : "";
+
+  const quiz = `<section class="card"><h2>Quick quiz</h2>
+      <p class="small muted">Ten questions from your ${[...tiers].map(tierLabel).join(" + ")} words: meanings, readings, and look-alikes that share a kanji. Built fresh every time.</p>
+      ${words.length >= 4 ? `<a class="btn" href="#vault/quiz" data-action="vault-quiz">Start a quiz</a>` : `<p class="small">Pick a tier with at least 4 words.</p>`}
+    </section>`;
+
+  const rs = allReadings().filter((r) => (r.tiers || []).some((t) => tiers.has(t)));
+  const other = allReadings().length - rs.length;
+  const readings = `<section class="card"><h2>Readings</h2>
+      ${
+        rs.length
+          ? `<ul class="vreadings">${rs
+              .map(
+                (r) => `<li><a href="#vault/r/${esc(r.id)}"><span lang="ja" class="vr-title">${esc(stripMarkup(r.title))}</span>
+                  <span class="small">${esc(r.titleEn)} · ${esc(r.kind || "")}</span>
+                  <span class="small muted">${(r.tiers || []).map(tierLabel).join(", ")}${srs.flag("vr:" + r.id) ? " · ✓ read" : ""}</span></a></li>`
+              )
+              .join("")}</ul>`
+          : `<p class="small muted">No readings for these tiers yet.</p>`
+      }
+      ${other ? `<p class="small muted">${other} more for other tiers.</p>` : ""}
+      <p class="small muted">New readings arrive with the Sunday lesson.</p>
+    </section>`;
+
+  const list = `<details class="card vwords"><summary>All ${fmt(words.length)} words in these tiers</summary>
+      <ul class="voc-list">${words
+        .sort((a, b) => a.l - b.l || a.w.localeCompare(b.w))
+        .map((x) => {
+          const r = x.s === 9 ? srs.warmRow(x.w) : null;
+          const tag = x.s === 9 ? (r?.seen ? `<span class="chip ${r.wrong ? "new" : "wk"}">seen ${esc(shortDate(r.seen))}</span>` : `<span class="chip">not yet</span>`) : `<span class="chip">${esc(tierLabel(tierOf(x.s)))}</span>`;
+          return `<li><span lang="ja" class="ja">${esc(x.w)}</span> <span class="small" lang="ja">${esc(x.r || "")}</span> <span class="small">${esc(x.m)}</span> ${tag}</li>`;
+        })
+        .join("")}</ul></details>`;
+
+  return `<section class="card intro"><h1>Vault</h1>
+      <p>Words you already know from WaniKani, kept alive. Pick the tiers to work with.</p>${chips}</section>
+    ${warm}${quiz}${readings}${list}`;
+}
+
+// ----- keep burns warm -----
+
+function warmSentence(w) {
+  const list = S.vault?.sentences?.[w] || [];
+  if (!list.length) return null;
+  const r = srs.warmRow(w);
+  return list[((r?.right || 0) + (r?.wrong || 0)) % list.length];
+}
+
+function jaMarked(text) {
+  const m = String(text).match(/^(.*)«(.+)»(.*)$/);
+  if (!m) return ja(text, "big");
+  return `<span class="ja big" lang="ja">${renderJa(m[1], S.known, S.words)}<mark>${renderJa(m[2], S.known, S.words)}</mark>${renderJa(m[3], S.known, S.words)}</span>`;
+}
+
+function viewWarm() {
+  const today = todayKey();
+  if (!S.warmSession || S.warmSession.date !== today || S.warmSession.done) {
+    const items = warmQueue();
+    if (!items.length) return `<a class="back" href="#vault">← Vault</a><section class="card"><h1>Keep burns warm</h1><p>Nothing more today. Back tomorrow.</p></section>`;
+    S.warmSession = { date: today, items, i: 0, right: 0, missed: [], done: false };
+  }
+  return `<a class="back" href="#vault">← Vault</a><section class="card review"><p class="eyebrow">Keep burns warm</p><div id="warm-host"></div></section>`;
+}
+
+function mountWarm() {
+  const host = document.getElementById("warm-host");
+  const s = S.warmSession;
+  if (!host || !s) return;
+  const draw = () => {
+    if (s.i >= s.items.length) {
+      s.done = true;
+      host.innerHTML = `<h2>Done.</h2><p><b>${s.right} / ${s.items.length}</b> still solid.</p>
+        ${
+          s.missed.length
+            ? `<p class="small">Coming back in a week: ${s.missed.map((x) => `<span lang="ja" class="chip">${esc(x.w)}</span>`).join(" ")}</p>
+               <p class="small muted">If one keeps slipping, you can resurrect it on WaniKani to put it back in rotation there.</p>`
+            : ""
+        }
+        <a class="btn" href="#vault">Back to the Vault</a>`;
+      return;
+    }
+    const x = s.items[s.i];
+    const sent = warmSentence(x.w);
+    const r = srs.warmRow(x.w);
+    const answer = `<div class="warm-answer"><p><span lang="ja" class="ja big">${esc(x.w)}</span> <span lang="ja">${esc(x.r || "")}</span> ${sayBtn(x.w)}</p>
+        <p class="en"><b>${esc(x.m)}</b></p>${sent ? `<p class="small">${esc(sent.en)}</p>` : ""}
+        ${r?.wrong >= 2 ? `<p class="small"><a href="https://www.wanikani.com/vocabulary/${encodeURIComponent(x.w)}" target="_blank" rel="noopener">This one keeps slipping. Resurrect on WaniKani ↗</a></p>` : ""}</div>`;
+    host.innerHTML = `<p class="ex-count">${s.i + 1} of ${s.items.length}</p>
+      ${sent ? `<div class="jline">${jaMarked(sent.ja)} ${sayBtn(sent.ja.replace(/[«»]/g, ""))}</div><p class="small muted">What does the highlighted word mean? How is it read?</p>` : `<div class="jline"><span lang="ja" class="ja big">${esc(x.w)}</span></div><p class="small muted">Meaning and reading?</p>`}
+      <button class="reveal" aria-expanded="false">Check</button><div class="hidden-en">${answer}</div>
+      <div class="row grade"><button class="btn ghost" data-g="1">Got it</button><button class="btn ghost" data-g="0">Missed</button></div>`;
+    host.querySelectorAll("[data-g]").forEach((b) =>
+      b.addEventListener("click", async () => {
+        const ok = b.dataset.g === "1";
+        if (ok) s.right++;
+        else s.missed.push(x);
+        s.i++;
+        bumpWarmCount();
+        draw();
+        await srs.gradeWarm(x.w, ok, s.date, S.config.syncUrl);
+      })
+    );
+  };
+  draw();
+}
+
+// ----- quick quiz -----
+
+const shuffle = (arr) =>
+  arr
+    .map((v) => ({ v, k: Math.random() }))
+    .sort((a, b) => a.k - b.k)
+    .map((x) => x.v);
+const sharedKanji = (a, b) => [...a.w].filter((ch) => /[一-龯々]/.test(ch) && b.w.includes(ch));
+const hasKanji = (x) => /[一-龯]/.test(x.w);
+
+function pickDistractors(t, pool, key, k = 3) {
+  const norm = (v) => String(v || "").toLowerCase().trim();
+  const seen = new Set([norm(t[key])]);
+  const out = [];
+  const near = shuffle(pool.filter((x) => x.w !== t.w && sharedKanji(t, x).length));
+  const close = shuffle(pool.filter((x) => x.w !== t.w && Math.abs((x.l || 0) - (t.l || 0)) <= 2));
+  for (const x of [...near, ...close, ...shuffle(pool)]) {
+    if (out.length >= k) break;
+    const v = norm(x[key]);
+    if (!v || seen.has(v) || x.w === t.w) continue;
+    seen.add(v);
+    out.push(x);
+  }
+  return out;
+}
+
+function lookalikeNote(t, x) {
+  const sh = sharedKanji(t, x);
+  return sh.length ? ` It shares ${sh.join("")} with ${t.w}, which is what makes it a trap.` : "";
+}
+
+function makeQuestion(t, pool, i) {
+  const types = hasKanji(t) && t.r ? ["meaning", "reading", "word"] : ["meaning", "word"];
+  const type = types[i % types.length];
+  if (type === "reading") {
+    const ds = pickDistractors(t, pool.filter(hasKanji), "r");
+    return {
+      t,
+      type,
+      ask: "How is this read?",
+      promptJa: t.w,
+      options: shuffle([t, ...ds]).map((x) => ({
+        text: x.r,
+        ja: true,
+        verdict: x === t ? "right" : "wrong",
+        why: x === t ? `${t.w} is read ${t.r}: ${t.m}.` : `${x.r} is how you read ${x.w} (${x.m}).${lookalikeNote(t, x)}`,
+      })),
+    };
+  }
+  if (type === "word") {
+    const ds = pickDistractors(t, pool, "w");
+    return {
+      t,
+      type,
+      ask: "Which word means this?",
+      promptEn: t.m,
+      options: shuffle([t, ...ds]).map((x) => ({
+        text: x.w,
+        ja: true,
+        verdict: x === t ? "right" : "wrong",
+        why: x === t ? `${t.w} (${t.r}) means ${t.m}.` : `${x.w} (${x.r}) means ${x.m}.${lookalikeNote(t, x)}`,
+      })),
+    };
+  }
+  const ds = pickDistractors(t, pool, "m");
+  return {
+    t,
+    type: "meaning",
+    ask: "What does this mean?",
+    promptJa: t.w,
+    options: shuffle([t, ...ds]).map((x) => ({
+      text: x.m,
+      verdict: x === t ? "right" : "wrong",
+      why: x === t ? `${t.w} (${t.r}) means ${t.m}.` : `That's ${x.w} (${x.r}).${lookalikeNote(t, x)}`,
+    })),
+  };
+}
+
+function buildVaultQuiz() {
+  const tiers = vaultTiers();
+  const words = vaultWords(tiers);
+  const pool = allWords().filter((x) => x.s >= 1);
+  const picks = shuffle(words).slice(0, 10);
+  return { tiers: [...tiers], qs: picks.map((t, i) => makeQuestion(t, pool, i)), i: 0, right: 0, missed: [], done: false };
+}
+
+function viewVaultQuiz() {
+  if (!S.words.size) return `<section class="card"><p class="muted">Loading your WaniKani words…</p></section>`;
+  if (!S.vaultQuiz || S.vaultQuiz.done) S.vaultQuiz = buildVaultQuiz();
+  return `<a class="back" href="#vault">← Vault</a><section class="card review"><p class="eyebrow">Quick quiz · ${esc(S.vaultQuiz.tiers.map(tierLabel).join(" + "))}</p><div id="vq-host"></div></section>`;
+}
+
+function mountVaultQuiz() {
+  const host = document.getElementById("vq-host");
+  const s = S.vaultQuiz;
+  if (!host || !s) return;
+  const draw = () => {
+    if (s.i >= s.qs.length) {
+      s.done = true;
+      host.innerHTML = `<h2>${s.right} / ${s.qs.length}</h2>
+        ${s.missed.length ? `<p class="small">Worth another look: ${s.missed.map((x) => `<span lang="ja" class="chip">${esc(x.w)}</span>`).join(" ")}</p>` : `<p>Clean run.</p>`}
+        <div class="row"><a class="btn" href="#vault/quiz" data-action="vault-quiz">Another round</a><a class="btn ghost" href="#vault">Back to the Vault</a></div>`;
+      return;
+    }
+    const q = s.qs[s.i];
+    const prompt = q.promptJa
+      ? `<div class="ex-prompt"><span class="ja big" lang="ja">${esc(q.promptJa)}</span> ${sayBtn(q.promptJa)}</div>`
+      : `<div class="ex-prompt"><span class="big vq-en">${esc(q.promptEn)}</span></div>`;
+    host.innerHTML = `<p class="ex-count">${s.i + 1} of ${s.qs.length} · ${esc(tierLabel(tierOf(q.t.s)))}</p>
+      <p class="scene">${esc(q.ask)}</p>${prompt}
+      <div class="opts">${q.options.map((o, k) => `<button class="opt" data-k="${k}" ${o.ja ? 'lang="ja"' : ""}>${esc(o.text)}</button>`).join("")}</div>
+      <div class="ex-feedback"></div>`;
+    host.querySelectorAll(".opt").forEach((b) =>
+      b.addEventListener("click", () => {
+        if (host.dataset.answered) return;
+        host.dataset.answered = "1";
+        const pick = q.options[+b.dataset.k];
+        const ok = pick.verdict === "right";
+        if (ok) s.right++;
+        else s.missed.push(q.t);
+        if (q.t.s === 9) srs.gradeWarm(q.t.w, ok, todayKey(), S.config.syncUrl);
+        host.querySelectorAll(".opt").forEach((x) => {
+          const o = q.options[+x.dataset.k];
+          x.classList.add(`v-${o.verdict}`);
+          if (x === b) x.classList.add("picked");
+          x.disabled = true;
+        });
+        const order = [pick, ...q.options.filter((o) => o !== pick)];
+        host.querySelector(".ex-feedback").innerHTML = `
+          <p class="verdict v-${pick.verdict}">${ok ? "Right" : "Not this one"}</p>
+          <ul class="whys">${order.map((o) => `<li class="v-${o.verdict}"><span class="why-opt" ${o.ja ? 'lang="ja"' : ""}>${esc(o.text)}</span><span class="why-tag">${o.verdict === "right" ? "Right" : "Not this one"}</span><p>${esc(o.why)}</p></li>`).join("")}</ul>
+          <div class="row"><button class="btn" data-action="vq-next">Next</button></div>`;
+        host.querySelector("[data-action=vq-next]").onclick = () => {
+          delete host.dataset.answered;
+          s.i++;
+          draw();
+        };
+      })
+    );
+  };
+  draw();
+}
+
+// ----- readings -----
+
+function viewReading(id) {
+  const r = allReadings().find((x) => x.id === id);
+  if (!r) return `<a class="back" href="#vault">← Vault</a><div class="banner">No reading called ${esc(id)}.</div>`;
+  const plain = r.paragraphs.map((p) => stripMarkup(p.ja)).join("");
+  const found = new Map();
+  for (const h of findWords(plain, S.words)) if (h.info.s >= 5) found.set(h.word, h.info);
+  const done = srs.flag("vr:" + r.id);
+  return `<a class="back" href="#vault">← Vault</a>
+    <article class="lesson">
+      <header class="card"><p class="eyebrow">${esc(r.kind || "Reading")} · ${(r.tiers || []).map(tierLabel).join(", ")}</p>
+        <h1 lang="ja" class="lesson-title">${ja(r.title)}</h1><p class="muted">${esc(r.titleEn)}</p>
+        <p class="small muted">Read it through once for the gist, then again slowly. Tap a paragraph's English only when you're stuck.</p></header>
+      <section class="card reading">${r.paragraphs
+        .map((p) => `<div class="rpara"><div class="jline">${ja(p.ja, "big")} ${sayBtn(p.ja)}</div><button class="reveal" aria-expanded="false">English</button><div class="hidden-en"><p class="en">${esc(p.en)}</p></div></div>`)
+        .join("")}</section>
+      <section class="card"><h2>Questions</h2><div id="ex-host" data-reading="${esc(r.id)}"></div></section>
+      ${
+        found.size
+          ? `<section class="card"><h2>Your words in this reading</h2><ul class="voc-list">${[...found.entries()]
+              .map(([w, v]) => `<li><span lang="ja" class="ja">${esc(w)}</span> <span class="small" lang="ja">${esc(v.r || "")}</span> <span class="small">${esc(v.m)}</span> <span class="chip">${esc(tierLabel(tierOf(v.s)) || "")}</span></li>`)
+              .join("")}</ul></section>`
+          : ""
+      }
+      <section class="card done-card">
+        <p>${done ? "<b>Read.</b> Its burned words count as kept warm." : "Finished? Marking it read counts its burned words as kept warm."}</p>
+        <button class="btn ${done ? "ghost" : ""}" data-action="reading-done" data-id="${esc(r.id)}">${done ? "✓ Read" : "Mark as read"}</button>
+      </section>
+    </article>`;
+}
+
+function mountReading(id) {
+  const r = allReadings().find((x) => x.id === id);
+  if (!r) return;
+  mountExercises({ id: "vr:" + r.id, title: stripMarkup(r.title), titleEn: r.titleEn, exercises: r.questions || [] });
+}
+
+async function markReadingDone(id) {
+  const r = allReadings().find((x) => x.id === id);
+  if (!r) return;
+  const today = todayKey();
+  if (srs.flag("vr:" + id)) {
+    await srs.setFlag("vr:" + id, false, S.config.syncUrl);
+    toast("Marked unread.");
+    return;
+  }
+  await srs.setFlag("vr:" + id, true, S.config.syncUrl);
+  const plain = r.paragraphs.map((p) => stripMarkup(p.ja)).join("");
+  const burned = [...new Set(findWords(plain, S.words).filter((h) => h.info.s === 9).map((h) => h.word))];
+  const n = await srs.markWarm(burned, today, S.config.syncUrl);
+  toast(n ? `Read. ${n} burned word${n > 1 ? "s" : ""} kept warm.` : "Read.");
+}
+
 // ---------- notes ----------
 
 function viewNotes() {
@@ -1791,19 +2197,24 @@ function audioSection() {
 
 // ---------------- router ----------------
 
-const ROUTES = { today: viewToday, stats: viewStats, course: viewCourse, scenes: viewScenes, phrases: viewScenes, notes: viewNotes, settings: viewSettings, review: viewReview, immerse: viewImmerse };
+const ROUTES = { today: viewToday, stats: viewStats, course: viewCourse, scenes: viewScenes, phrases: viewScenes, vault: viewVault, notes: viewNotes, settings: viewSettings, review: viewReview, immerse: viewImmerse };
 
 function render() {
-  const [name, arg] = (location.hash.replace(/^#/, "") || "today").split("/");
+  const [name, arg, arg2] = (location.hash.replace(/^#/, "") || "today").split("/");
   const fn = ROUTES[name] || viewToday;
   setChartWidth(Math.min(760, window.innerWidth) - 32 - 42);
-  $app().innerHTML = fn(arg);
+  $app().innerHTML = fn(arg, arg2);
   const navName = name === "review" ? "today" : name === "phrases" ? "scenes" : ROUTES[name] ? name : "today";
   document.querySelectorAll("nav a[data-nav]").forEach((a) => a.classList.toggle("active", a.dataset.nav === navName));
   setStatus();
   if (name === "course" && arg && S.lessonCache.has(arg)) mountExercises(S.lessonCache.get(arg));
   if (name === "review") mountReview();
   if (name === "scenes" || name === "phrases") mountScenes(arg);
+  if (name === "vault") {
+    if (arg === "warm") mountWarm();
+    else if (arg === "quiz") mountVaultQuiz();
+    else if (arg === "r" && arg2) mountReading(arg2);
+  }
   if (name === "immerse") {
     const input = document.getElementById("imm-search");
     input?.addEventListener("input", (e) => {
@@ -1904,7 +2315,31 @@ function wireGlobal() {
       S.noteTag = t.dataset.tag;
       return render();
     }
+    if (t.matches("[data-vtier]")) {
+      const set = vaultTiers();
+      if (set.has(t.dataset.vtier)) set.delete(t.dataset.vtier);
+      else set.add(t.dataset.vtier);
+      if (!set.size) set.add(t.dataset.vtier);
+      store.set("jh.vault.tiers", [...set]);
+      S.vaultQuiz = null;
+      return render();
+    }
     const act = t.dataset.action;
+    if (act === "vault-quiz") {
+      S.vaultQuiz = null;
+      if (location.hash === "#vault/quiz") {
+        e.preventDefault();
+        render();
+      }
+      return;
+    }
+    if (act === "reading-done") {
+      await markReadingDone(t.dataset.id);
+      const y = window.scrollY;
+      render();
+      window.scrollTo(0, y);
+      return;
+    }
     if (act === "imm-toggle") {
       const done = srs.immDone(t.dataset.id);
       await srs.setImm(t.dataset.id, Number(t.dataset.min) || 0, !done, S.config.syncUrl);

@@ -6,6 +6,7 @@ A personal Japanese study hub. Static site on GitHub Pages — no server, nothin
 - **Stats** — queue burn-down, SRS breakdown, days you showed up, forecast, accuracy, level pace, kanji coverage, trip readiness, leeches.
 - **Course** — Tae Kim's order, with lessons written here: plain explanations, contrast pairs, and practice where every answer explains itself.
 - **Scenes** — real trip situations that open up as your grammar grows, with practice out loud, a small scene-word review, and a searchable phrasebook.
+- **Vault** — words you already know from WaniKani (Guru → Burned), kept alive: pick tiers, take quick quizzes built on the spot, read weekly passages written from those words, and keep burned words warm (each one comes back about every 75 days).
 - **Notes** — everything from the published Google Sheet, searchable.
 
 ## How the pieces connect
@@ -15,6 +16,7 @@ A personal Japanese study hub. Static site on GitHub Pages — no server, nothin
 | WaniKani API | what you know | read live in your browser with your token (stored on your device only) |
 | Google Sheet (published CSV) | your notes | read live; columns `Japanese, Reading, English, Notes, Tags` |
 | `data/lessons/*.json` | the course | one file per lesson, listed in `data/lessons/index.json` |
+| `data/vault/*.json` | Vault readings and burned-word sentences | written weekly by the Sunday task |
 | `data/scenes/*.json` | scenes | one file per scene, listed in `data/scenes/index.json` |
 | `data/history.json` | stats over time | written nightly (10pm–3am) by the **Daily snapshot** Action; your study day starts at 4am, so late-night reviews count toward the day you were living |
 

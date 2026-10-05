@@ -1,0 +1,214 @@
+{
+ "words": {
+  "入り口": [
+   {
+    "ja": "この{店|みせ}の«{入|い}り{口|ぐち}»は{小|ちい}さいです。",
+    "en": "The entrance to this shop is small."
+   }
+  ],
+  "出口": [
+   {
+    "ja": "«{出口|でぐち}»は{右|みぎ}です。",
+    "en": "The exit is on the right."
+   }
+  ],
+  "人口": [
+   {
+    "ja": "この{町|まち}の«{人口|じんこう}»は{少|すく}ないです。",
+    "en": "This town has a small population."
+   }
+  ],
+  "大きさ": [
+   {
+    "ja": "{二|ふた}つのカバンは«{大|おお}きさ»が{同|おな}じです。",
+    "en": "The two bags are the same size."
+   }
+  ],
+  "大人": [
+   {
+    "ja": "«{大人|おとな}»は{千円|せんえん}、{子|こ}どもは{五百円|ごひゃくえん}です。",
+    "en": "Adults are 1,000 yen, children 500."
+   }
+  ],
+  "上手": [
+   {
+    "ja": "{兄|あに}は{絵|え}が«{上手|じょうず}»です。",
+    "en": "My older brother is good at drawing."
+   }
+  ],
+  "下手": [
+   {
+    "ja": "{私|わたし}は{歌|うた}が«{下手|へた}»です。",
+    "en": "I'm bad at singing."
+   }
+  ],
+  "半分": [
+   {
+    "ja": "リンゴを«{半分|はんぶん}»に{切|き}りました。",
+    "en": "I cut the apple in half."
+   }
+  ],
+  "古い": [
+   {
+    "ja": "この{家|いえ}はとても«{古|ふる}い»です。",
+    "en": "This house is very old."
+   }
+  ],
+  "外": [
+   {
+    "ja": "«{外|そと}»は{寒|さむ}いですよ。",
+    "en": "It's cold outside."
+   }
+  ],
+  "大切": [
+   {
+    "ja": "{時間|じかん}は«{大切|たいせつ}»です。",
+    "en": "Time is precious."
+   }
+  ],
+  "広い": [
+   {
+    "ja": "この{店|みせ}は{中|なか}が«{広|ひろ}い»です。",
+    "en": "This shop is spacious inside."
+   }
+  ],
+  "引く": [
+   {
+    "ja": "ドアを«{引|ひ}い»てください。",
+    "en": "Please pull the door."
+   }
+  ],
+  "止める": [
+   {
+    "ja": "ここで{車|くるま}を«{止|と}め»てください。",
+    "en": "Please stop the car here."
+   }
+  ],
+  "生まれる": [
+   {
+    "ja": "{私|わたし}はケンタッキーで«{生|う}まれ»ました。",
+    "en": "I was born in Kentucky."
+   }
+  ],
+  "休む": [
+   {
+    "ja": "{少|すこ}し«{休|やす}み»ましょう。",
+    "en": "Let's rest a little."
+   }
+  ],
+  "早い": [
+   {
+    "ja": "{明日|あした}は{朝|あさ}が«{早|はや}い»です。",
+    "en": "I have an early morning tomorrow."
+   }
+  ],
+  "気に入る": [
+   {
+    "ja": "この{町|まち}がとても«{気|き}に{入|い}り»ました。",
+    "en": "I've really taken to this town."
+   }
+  ],
+  "赤ちゃん": [
+   {
+    "ja": "«{赤|あか}ちゃん»が{寝|ね}ています。",
+    "en": "The baby is sleeping."
+   }
+  ],
+  "走る": [
+   {
+    "ja": "{犬|いぬ}が{川|かわ}の{近|ちか}くを«{走|はし}っ»ています。",
+    "en": "A dog is running near the river."
+   }
+  ],
+  "安い": [
+   {
+    "ja": "この{店|みせ}のコーヒーは«{安|やす}く»ておいしいです。",
+    "en": "The coffee here is cheap and good."
+   }
+  ],
+  "海外": [
+   {
+    "ja": "{毎年|まいとし}«{海外|かいがい}»に{行|い}きます。",
+    "en": "I go abroad every year."
+   }
+  ],
+  "長い": [
+   {
+    "ja": "この{川|かわ}はとても«{長|なが}い»です。",
+    "en": "This river is very long."
+   }
+  ],
+  "理由": [
+   {
+    "ja": "{日本|にほん}に{来|き}た«{理由|りゆう}»は{音楽|おんがく}です。",
+    "en": "The reason I came to Japan is music."
+   }
+  ],
+  "自由": [
+   {
+    "ja": "{明日|あした}は{一日|いちにち}«{自由|じゆう}»です。",
+    "en": "Tomorrow I'm free all day."
+   }
+  ],
+  "週末": [
+   {
+    "ja": "«{週末|しゅうまつ}»は{何|なに}をしますか。",
+    "en": "What are you doing this weekend?"
+   }
+  ],
+  "向こう": [
+   {
+    "ja": "{川|かわ}の«{向|む}こう»に{小|ちい}さい{村|むら}があります。",
+    "en": "There's a small village across the river."
+   }
+  ],
+  "代わり": [
+   {
+    "ja": "コーヒーの«{代|か}わり»にお{茶|ちゃ}を{下|くだ}さい。",
+    "en": "Tea instead of coffee, please."
+   }
+  ],
+  "見分ける": [
+   {
+    "ja": "この{二|ふた}つの{字|じ}は«{見分|みわ}ける»のが{難|むずか}しいです。",
+    "en": "These two characters are hard to tell apart."
+   }
+  ],
+  "両方": [
+   {
+    "ja": "«{両方|りょうほう}»{下|くだ}さい。",
+    "en": "I'll take both, please."
+   }
+  ],
+  "地下": [
+   {
+    "ja": "«{地下|ちか}»に{店|みせ}がたくさんあります。",
+    "en": "There are lots of shops underground."
+   }
+  ],
+  "全て": [
+   {
+    "ja": "«{全|すべ}て»{分|わ}かりました。",
+    "en": "I understood everything."
+   }
+  ],
+  "心": [
+   {
+    "ja": "«{心|こころ}»からありがとうございます。",
+    "en": "Thank you from the bottom of my heart."
+   }
+  ],
+  "少ない": [
+   {
+    "ja": "{今日|きょう}は{人|ひと}が«{少|すく}ない»です。",
+    "en": "There aren't many people today."
+   }
+  ],
+  "間": [
+   {
+    "ja": "{駅|えき}と{店|みせ}の«{間|あいだ}»に{川|かわ}があります。",
+    "en": "There's a river between the station and the shop."
+   }
+  ]
+ }
+}
