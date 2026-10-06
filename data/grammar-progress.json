@@ -1,54 +1,141 @@
 {
- "updated": "2026-10-05T07:43:27.869Z",
+ "updated": "2026-10-06T03:21:35.951Z",
  "items": [
   {
    "id": "01-wa-ga",
-   "stage": 1,
-   "due": "2026-10-05",
-   "right": 2,
-   "wrong": 1
+   "stage": 2,
+   "due": "2026-10-08",
+   "right": 5,
+   "wrong": 1,
+   "seen": "wg17,wg15,wg12,wg10,wg03,wg07"
   },
   {
    "id": "imm:f24563e8368a",
    "stage": 0,
    "due": "",
    "right": 4,
-   "wrong": 0
+   "wrong": 0,
+   "seen": "done"
   },
   {
    "id": "voc:about-me:jikoshoukai",
    "stage": 1,
    "due": "2026-10-05",
    "right": 1,
-   "wrong": 0
+   "wrong": 0,
+   "seen": "new:2026-10-04"
   },
   {
    "id": "voc:about-me:sakkyokuka",
    "stage": 1,
    "due": "2026-10-05",
    "right": 1,
-   "wrong": 0
+   "wrong": 0,
+   "seen": "new:2026-10-04"
   },
   {
    "id": "voc:about-me:gendaiongaku",
    "stage": 1,
    "due": "2026-10-05",
    "right": 1,
-   "wrong": 0
+   "wrong": 0,
+   "seen": "new:2026-10-04"
   },
   {
    "id": "voc:about-me:shusshin",
    "stage": 1,
    "due": "2026-10-05",
    "right": 1,
-   "wrong": 0
+   "wrong": 0,
+   "seen": "new:2026-10-04"
   },
   {
    "id": "voc:about-me:tenji",
    "stage": 1,
    "due": "2026-10-05",
    "right": 1,
-   "wrong": 0
+   "wrong": 0,
+   "seen": "new:2026-10-04"
+  },
+  {
+   "id": "brn:一年生",
+   "stage": 1,
+   "due": "2026-12-22",
+   "right": 1,
+   "wrong": 0,
+   "seen": "2026-10-05"
+  },
+  {
+   "id": "brn:この前",
+   "stage": 1,
+   "due": "2026-12-13",
+   "right": 1,
+   "wrong": 0,
+   "seen": "2026-10-05"
+  },
+  {
+   "id": "brn:さようなら",
+   "stage": 1,
+   "due": "2026-12-11",
+   "right": 1,
+   "wrong": 0,
+   "seen": "2026-10-05"
+  },
+  {
+   "id": "brn:コーヒー",
+   "stage": 1,
+   "due": "2026-12-18",
+   "right": 1,
+   "wrong": 0,
+   "seen": "2026-10-05"
+  },
+  {
+   "id": "brn:多い",
+   "stage": 1,
+   "due": "2026-12-29",
+   "right": 1,
+   "wrong": 0,
+   "seen": "2026-10-05"
+  },
+  {
+   "id": "brn:丸ごと",
+   "stage": 1,
+   "due": "2026-12-28",
+   "right": 1,
+   "wrong": 0,
+   "seen": "2026-10-05"
+  },
+  {
+   "id": "brn:皮肉",
+   "stage": 1,
+   "due": "2026-12-15",
+   "right": 1,
+   "wrong": 0,
+   "seen": "2026-10-05"
+  },
+  {
+   "id": "brn:上る",
+   "stage": 1,
+   "due": "2026-10-12",
+   "right": 0,
+   "wrong": 1,
+   "seen": "2026-10-05"
+  },
+  {
+   "id": "brn:休み",
+   "stage": 1,
+   "due": "2026-12-20",
+   "right": 1,
+   "wrong": 0,
+   "seen": "2026-10-05"
+  },
+  {
+   "id": "brn:五月",
+   "stage": 1,
+   "due": "2026-12-10",
+   "right": 1,
+   "wrong": 0,
+   "seen": "2026-10-05"
   }
  ]
 }

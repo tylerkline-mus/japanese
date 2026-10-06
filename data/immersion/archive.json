@@ -1,5 +1,80 @@
 [
  {
+  "id": "ac2d430a9bc2",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 正午のNHKニュース 2026年10月6日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/1e7530ccb79b20757b40624ea2875c6e_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/1e7530ccb79b20757b40624ea2875c6e_64k.mp3",
+  "date": "2026-10-06T03:15:00.000Z",
+  "minutes": 15,
+  "summary": "▽最新のニュースは「らじる★らじる」やポッドキャスト「ＮＨＫラジオニュース」からもお聴きいただけます",
+  "added": "2026-10-06T03:21:39.683Z"
+ },
+ {
+  "id": "e90bfdb44e50",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20261006 「アメリカ『監視社会』加速へ懸念」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/5c29495456e7848a74cc4b7e2be63eba_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/5c29495456e7848a74cc4b7e2be63eba_64k.mp3",
+  "date": "2026-10-06T03:00:00.000Z",
+  "minutes": 4,
+  "summary": "リポート：森 健一（アメリカ総局） キャスター：上野 速人",
+  "added": "2026-10-06T03:21:39.500Z"
+ },
+ {
+  "id": "8d4c1377a4cf",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月06日午前11時00分 2026年10月6日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/d33c335202e77cf2b5de8ca040f70988_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/d33c335202e77cf2b5de8ca040f70988_64k.mp3",
+  "date": "2026-10-06T02:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-06T03:21:39.683Z"
+ },
+ {
+  "id": "0ba6c2368843",
+  "source": "yuyu",
+  "sourceName": "YUYUの日本語Podcast",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "culture"
+  ],
+  "title": "Vol.495 YUYUが欲しいもの (Japanese Radio for Listening practice)",
+  "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-495-YUYU-Japanese-Radio-for-Listening-practice-e3nf5oj",
+  "audio": "https://anchor.fm/s/cda85d4/podcast/play/124277971/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-9-5%2Fabda7748-a624-be3c-0986-014ebcfd23b3.mp3",
+  "date": "2026-10-05T23:45:25.000Z",
+  "minutes": 56,
+  "summary": "💰Patreonのサポート(人´∀`)ｱﾘｶﾞﾄｰ♪ ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠…",
+  "added": "2026-10-06T03:21:37.795Z"
+ },
+ {
   "id": "ce951a173ba2",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
