@@ -1,5 +1,98 @@
 [
  {
+  "id": "f656d1520380",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月08日午前09時00分 2026年10月8日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/5589460989d5cc78e3346b7c218ce7bc_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/5589460989d5cc78e3346b7c218ce7bc_64k.mp3",
+  "date": "2026-10-08T00:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-08T02:18:09.799Z"
+ },
+ {
+  "id": "22dcad154add",
+  "source": "teppei-beginner",
+  "sourceName": "Nihongo con Teppei (beginner)",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "monologue"
+  ],
+  "title": "#1596「文法について！」",
+  "url": "http://nihongoconteppei.com/2026/10/08/1596%e3%80%8c%e6%96%87%e6%b3%95%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%81%e3%80%8d/",
+  "audio": "http://media.blubrry.com/nihongo_con_teppei/nihongoconteppei.com/wp-content/uploads/2026/10/Beginners-con-Teppei1596mp3.mp3",
+  "date": "2026-10-07T23:31:20.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-08T02:18:07.237Z"
+ },
+ {
+  "id": "ecd21c8e19b5",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "マイあさ! 午前8時のNHKニュース 2026年10月8日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/216e4cc7a5ee776837ce37d94641fc94_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/216e4cc7a5ee776837ce37d94641fc94_64k.mp3",
+  "date": "2026-10-07T23:03:00.000Z",
+  "minutes": 3,
+  "summary": "",
+  "added": "2026-10-08T02:18:09.799Z"
+ },
+ {
+  "id": "e151cff8f5ab",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20261007 「変わりゆくベトナムの伝統的食文化 その背景は」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/09490bb3bae8865ca61067145bada58a_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/09490bb3bae8865ca61067145bada58a_64k.mp3",
+  "date": "2026-10-07T03:00:00.000Z",
+  "minutes": 4,
+  "summary": "リポート：紙野 武広（ハノイ支局） キャスター：上野 速人",
+  "added": "2026-10-08T02:18:09.459Z"
+ },
+ {
+  "id": "69c92eb0d4bf",
+  "source": "teppei-beginner",
+  "sourceName": "Nihongo con Teppei (beginner)",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "monologue"
+  ],
+  "title": "#1595「皆さん、本当にありがとうございました！」",
+  "url": "http://nihongoconteppei.com/2026/10/06/1595%e3%80%8c%e7%9a%86%e3%81%95%e3%82%93%e3%80%81%e6%9c%ac%e5%bd%93%e3%81%ab%e3%81%82%e3%82%8a%e3%81%8c%e3%81%a8%e3%81%86%e3%81%94%e3%81%96%e3%81%84%e3%81%be%e3%81%97%e3%81%9f%ef%bc%81%e3%80%8d/",
+  "audio": "http://media.blubrry.com/nihongo_con_teppei/nihongoconteppei.com/wp-content/uploads/2026/10/Beginners-con-Teppei1595.mp3",
+  "date": "2026-10-06T10:03:11.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-08T02:18:07.237Z"
+ },
+ {
   "id": "ac2d430a9bc2",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",

@@ -1,28 +1,14 @@
 {
- "updated": "2026-10-06T03:21:32.957Z",
+ "updated": "2026-10-08T02:18:02.178Z",
  "level": 10,
- "knownKanji": "女口十入八川大工一上下九山二三人七力々了丸六日木出才五天右左立正田手四小中火犬丁千王玉白本文夕月土刀目円水子万内分切友太少引牛止台外母市用午半方今冬広元古北生心父戸矢毛去申早石号打氷先名年百男町央竹休皿虫他糸代字宝世気村不足赤見平花車写礼主仕貝耳体米空林兄皮交光回多声弟来社角谷麦草音西色作考肉毎形当同図何行金会雨近斤走言青自里羽学後安星化地両全向州曲有京国夜明東歩知南室思海前画店点亡茶姉羊活妹食死長科私血次首欠由札辺付以必末校夏弱通高強理雪時組失記鳥船黄氏民紙黒魚風教家週者研電森間池支住助君対朝絵道楽話所反数身雲役投馬買究医場番決答局和予物新試売保事具服苦表乗客屋持相県美送談界重験要返泳受発部度実勝定像映穴豚床象比辛",
- "knownKanjiCount": 312,
+ "knownKanji": "女口十入八川大工一上下九山二三人七力々了丸六日木出才五天右左立正田手四小中火犬丁千王玉白本文夕月土刀目円水子万内分切友太少引牛止台外母市用午半方今冬広元古北生心父戸矢毛去申早石号打氷先名年百男町央竹休皿虫他糸代字宝世気村不足赤見平花車写礼主仕貝耳体米空林兄皮交光回多声弟来社角谷麦草音色作考肉毎形当同図何行金会雨近斤走言青自里羽学後安星化地両全向州曲有京国夜明東歩知南室思海前画店点亡茶姉羊活妹食死長科私血次首欠由札辺付以必末校夏弱通高強理雪時組失記鳥船黄氏民紙黒魚風教家週者研電森間池支住助君対朝絵道楽話所反数身雲役投馬買究医場番決答局和予物新試売保事具服苦表乗客屋持相県美送談界重験要返泳受発部度実勝定像映穴豚床象比辛",
+ "knownKanjiCount": 311,
  "leeches": [
   {
    "characters": "出かける",
    "type": "vocabulary",
    "meaning": "To Go Out",
    "reading": "でかける",
-   "weak": "meaning"
-  },
-  {
-   "characters": "出す",
-   "type": "vocabulary",
-   "meaning": "To Take Out",
-   "reading": "だす",
-   "weak": "meaning"
-  },
-  {
-   "characters": "考",
-   "type": "kanji",
-   "meaning": "Think",
-   "reading": "こう",
    "weak": "meaning"
   },
   {
@@ -54,6 +40,13 @@
    "weak": "reading"
   },
   {
+   "characters": "出社",
+   "type": "vocabulary",
+   "meaning": "Going To The Office",
+   "reading": "しゅっしゃ",
+   "weak": "meaning"
+  },
+  {
    "characters": "一気に",
    "type": "vocabulary",
    "meaning": "In One Go",
@@ -73,6 +66,20 @@
    "meaning": "Youth",
    "reading": "せいねん",
    "weak": "reading"
+  },
+  {
+   "characters": "〜年来",
+   "type": "vocabulary",
+   "meaning": "For Some Years",
+   "reading": "ねんらい",
+   "weak": "meaning"
+  },
+  {
+   "characters": "支店",
+   "type": "vocabulary",
+   "meaning": "Branch Office",
+   "reading": "してん",
+   "weak": "meaning"
   },
   {
    "characters": "当たり前",
@@ -96,17 +103,10 @@
    "weak": "meaning"
   },
   {
-   "characters": "交じる",
+   "characters": "三日月",
    "type": "vocabulary",
-   "meaning": "To Be Mixed",
-   "reading": "まじる",
-   "weak": "meaning"
-  },
-  {
-   "characters": "今月",
-   "type": "vocabulary",
-   "meaning": "This Month",
-   "reading": "こんげつ",
+   "meaning": "Crescent Moon",
+   "reading": "みかづき",
    "weak": "reading"
   }
  ]
