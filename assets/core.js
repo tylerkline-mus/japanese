@@ -331,6 +331,7 @@ export function vocabList(assignments, vocabSubjects) {
     if (st == null || st < 1) continue;
     const d = v.data;
     out.push({
+      i: v.id,
       w: d.characters,
       r: (d.readings || []).find((x) => x.primary)?.reading || (v.object === "kana_vocabulary" ? d.characters : ""),
       m: (d.meanings || []).find((x) => x.primary)?.meaning || "",

@@ -170,8 +170,20 @@ async function loadVocab() {
     }
   }
   if (!data) return;
-  S.vocabMeta = { updated: data.updated, count: data.words.length, guru: data.words.filter((v) => v.s >= 5).length };
-  S.words = new Map(data.words.map((v) => [v.w, v]));
+  S.words = new Map(data.words.map((v) => [v.w, { ...v }]));
+  syncWordStages();
+}
+
+// The word list comes from last night's snapshot; once WaniKani is loaded, use each word's live
+// stage instead, so something you burned an hour ago is already in the Vault.
+function syncWordStages() {
+  if (S.stageBySubject?.size) {
+    for (const v of S.words.values()) {
+      if (v.i && S.stageBySubject.has(v.i)) v.s = S.stageBySubject.get(v.i);
+    }
+  }
+  const all = [...S.words.values()];
+  S.vocabMeta = { ...(S.vocabMeta || {}), count: all.length, guru: all.filter((v) => v.s >= 5).length };
 }
 
 // "From WaniKani" status for a word (markup allowed).
@@ -381,6 +393,14 @@ function buildModel() {
 
   S.known = core.knownKanji(raw.assignments, raw.kanjiSubjects);
   S.stageBySubject = new Map(raw.assignments.map((a) => [a.data.subject_id, a.data.srs_stage]));
+  syncWordStages();
+  // Burned on WaniKani, by type, so the Vault can show how its word count fits the total.
+  const burnedByType = { radical: 0, kanji: 0, vocabulary: 0 };
+  for (const a of raw.assignments) {
+    if (a.data.srs_stage !== 9) continue;
+    const t = a.data.subject_type === "kana_vocabulary" ? "vocabulary" : a.data.subject_type;
+    if (t in burnedByType) burnedByType[t]++;
+  }
   S.kanjiInfo = new Map(raw.kanjiSubjects.map((k) => [k.data.characters, { ...k.data, id: k.id }]));
 
   const subj = new Map([...raw.kanjiSubjects, ...raw.leechSubjects].map((s) => [s.id, s]));
@@ -419,6 +439,7 @@ function buildModel() {
     hist,
     live,
     days,
+    burnedByType,
   };
 }
 
@@ -1853,9 +1874,14 @@ function viewVault(arg, arg2) {
   const burned = burnedWords();
   const st = srs.warmStats(burned, todayKey());
   const q = warmQueue();
+  const bt = S.model?.burnedByType;
+  const burnNote = bt
+    ? `<p class="small muted">${L("WaniKani's burned total", "WaniKaniの焼いた数")}: <b>${fmt(bt.vocabulary + bt.kanji + bt.radical)}</b> = ${fmt(bt.vocabulary)} ${L("words", "言葉")} + ${fmt(bt.kanji)} ${L("kanji", "漢字")} + ${fmt(bt.radical)} ${L("radicals", "部首")}. ${L("The Vault works with the words.", "蔵で使うのは言葉です。")}</p>`
+    : "";
   const warm = burned.length
     ? `<section class="card"><div class="split"><h2>${L("Keep burns warm", "焼いた言葉をあたためる")}</h2><span class="big-num">${q.length}</span></div>
         ${meter(st.warm, Math.max(1, st.total))}
+        ${burnNote}
         <p class="small muted">${fmt(st.warm)} of ${fmt(st.total)} burned words seen in the last 90 days. Each one comes back about every 75 days, in a sentence when there is one. Up to ${srs.WARM_PER_DAY} a day.</p>
         ${q.length ? `<a class="btn" href="#vault/warm">${L(`Warm up ${q.length}`, "始める")}</a>` : `<p class="small"><b>${L("Done for today.", "今日はおわり！")}</b></p>`}
       </section>`
