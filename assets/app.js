@@ -387,6 +387,13 @@ function buildModel() {
   const leeches = core.findLeeches(raw.stats, raw.assignments, 12).map((l) => ({ ...l, subject: subj.get(l.subject_id) || null }))
     .filter((l) => l.subject);
 
+  // Days you showed up: the larger of the snapshot count and what WaniKani's own timestamps show.
+  const activity = core.activityDays(raw.stats, tz);
+  const days = new Map();
+  for (const h of S.history) if (h.reviewedToday) days.set(h.date, h.reviewedToday);
+  for (const [k, n] of activity) days.set(k, Math.max(days.get(k) || 0, n));
+  days.set(live.date, Math.max(days.get(live.date) || 0, done));
+
   // History merged with today's live numbers.
   const hist = S.history.filter((h) => h.date !== live.date).concat([live]).sort((a, b) => a.date.localeCompare(b.date));
   const weekAgoKey = core.studyDayKey(new Date(now.getTime() - 7 * 86400000), tz);
@@ -411,6 +418,7 @@ function buildModel() {
     forecast: core.forecast(raw.assignments, tz, 7, now),
     hist,
     live,
+    days,
   };
 }
 
@@ -686,10 +694,11 @@ function viewStats() {
     ${burnPts.length > 1 ? lineChart(burnPts, { unit: " reviews" }) : `<p class="muted">Starts tonight. A snapshot runs every evening, so this fills in day by day.</p>`}
   </section>`;
 
-  const counts = new Map(m.hist.map((h) => [h.date, h.reviewedToday || 0]));
+  const counts = m.days;
   const heat = `<section class="card"><h2>Days you showed up</h2>
     ${heatmap(counts, m.live.date, 12)}
-    <p class="muted small">${streakText(m.hist)}</p>
+    <p class="muted small">${streakText(m.days, m.live.date)}</p>
+    <p class="muted small">Counted from WaniKani's own timestamps, so a missed snapshot doesn't hide a day. Darker = more reviews.</p>
   </section>`;
 
   const fc = m.forecast.days.map((d, i) => ({
@@ -805,15 +814,15 @@ function weekVerdict(w) {
   return `This week: <b>${w.pct}%</b>. That's low enough that a reset to level 7 or 8 would probably save you time. Your call.`;
 }
 
-function streakText(hist) {
-  const days = [...hist].reverse();
+function streakText(days, todayKey) {
   let streak = 0;
-  for (const h of days) {
-    if ((h.reviewedToday || 0) > 0) streak++;
-    else if (h === days[0]) continue; // today isn't over yet
-    else break;
+  let k = todayKey;
+  if (!(days.get(k) > 0)) k = srs.addDays(k, -1); // today isn't over yet
+  while (days.get(k) > 0) {
+    streak++;
+    k = srs.addDays(k, -1);
   }
-  const active = hist.filter((h) => (h.reviewedToday || 0) > 0).length;
+  const active = [...days.values()].filter((v) => v > 0).length;
   return `${streak ? `${streak}-day run going. ` : ""}${active} active day${active === 1 ? "" : "s"} recorded.`;
 }
 

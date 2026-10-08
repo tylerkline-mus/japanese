@@ -220,6 +220,20 @@ export function isLate(iso, timeZone) {
   return hour >= EVENING_HOUR || hour < DAY_START_HOUR;
 }
 
+// Days you reviewed, read straight from WaniKani: each item's review statistics are stamped with
+// the time you last answered it. Counts per study day are a floor (an item answered on Monday and
+// again on Wednesday only counts on Wednesday), but every recent day you showed up appears.
+export function activityDays(stats, timeZone) {
+  const out = new Map();
+  for (const s of stats || []) {
+    const t = s.data_updated_at;
+    if (!t) continue;
+    const k = studyDayKey(new Date(t), timeZone);
+    out.set(k, (out.get(k) || 0) + 1);
+  }
+  return out;
+}
+
 // Leech score: wrong answers weighed against how shaky the item currently is.
 export function findLeeches(stats, assignments, limit = 12) {
   const stage = new Map(assignments.map((a) => [a.data.subject_id, a.data.srs_stage]));
