@@ -1,5 +1,80 @@
 [
  {
+  "id": "ebedd619c30c",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月09日午前01時00分 2026年10月9日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/815f3ce81e613e7205967a56a13bbba0_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/815f3ce81e613e7205967a56a13bbba0_64k.mp3",
+  "date": "2026-10-08T16:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-08T16:59:13.937Z"
+ },
+ {
+  "id": "f3a4466d458d",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月09日午前00時00分 2026年10月9日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/c4834afcbac3bcef419d779d2f57e432_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/c4834afcbac3bcef419d779d2f57e432_64k.mp3",
+  "date": "2026-10-08T15:10:00.000Z",
+  "minutes": 10,
+  "summary": "",
+  "added": "2026-10-08T16:59:13.937Z"
+ },
+ {
+  "id": "35361cd705b9",
+  "source": "teppei-noriko",
+  "sourceName": "Japanese with Teppei and Noriko",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "conversation"
+  ],
+  "title": "#645「元カノとかTeppayとか」",
+  "url": "https://teppeinorikojapanese.com/2026/10/08/645%e3%80%8c%e5%85%83%e3%82%ab%e3%83%8e%e3%81%a8%e3%81%8bteppay%e3%81%a8%e3%81%8b%e3%80%8d/",
+  "audio": "https://teppeinorikojapanese.com/wp-content/uploads/2026/10/Teppeinoriko645.mp3",
+  "date": "2026-10-08T10:08:52.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-08T16:59:13.409Z"
+ },
+ {
+  "id": "9b59dca1833a",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20261008 「就職難で日本で職を求める中国の若者たち」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/8d9028bb634b91b700e4e77128d7917e_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/8d9028bb634b91b700e4e77128d7917e_64k.mp3",
+  "date": "2026-10-08T03:00:00.000Z",
+  "minutes": 5,
+  "summary": "リポート：横山 祐（国際部） キャスター：上野 速人",
+  "added": "2026-10-08T16:59:13.866Z"
+ },
+ {
   "id": "f656d1520380",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
