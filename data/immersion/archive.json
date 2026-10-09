@@ -1,5 +1,62 @@
 [
  {
+  "id": "611852d8d218",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月09日午後06時00分 2026年10月9日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/da9e4653e52e00c301a0e886651e0e71_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/da9e4653e52e00c301a0e886651e0e71_64k.mp3",
+  "date": "2026-10-09T09:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-09T09:40:25.851Z"
+ },
+ {
+  "id": "bb59763668d6",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月09日午後05時00分 2026年10月9日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/9e9db7e368d313c99cb606c195ab1a22_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/9e9db7e368d313c99cb606c195ab1a22_64k.mp3",
+  "date": "2026-10-09T08:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-09T09:40:25.851Z"
+ },
+ {
+  "id": "583c44600867",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20261009 「接近するロシアと北朝鮮 車両用の橋が初開通」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/eb5420687dd6fdcaaae002a8a37d1e4d_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/eb5420687dd6fdcaaae002a8a37d1e4d_64k.mp3",
+  "date": "2026-10-09T03:00:00.000Z",
+  "minutes": 4,
+  "summary": "リポート：渡辺 公介（モスクワ支局） キャスター：眞下 貴／上野 速人",
+  "added": "2026-10-09T09:40:25.663Z"
+ },
+ {
   "id": "71346c16319f",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
