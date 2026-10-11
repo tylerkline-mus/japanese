@@ -756,6 +756,63 @@
     }
    ],
    "listen": "Friends asking you questions. Polite: どうして."
+  },
+  {
+   "id": "zehi",
+   "ja": "ぜひ",
+   "family": "react",
+   "does": "Turns a yes into an eager one: \"I'd love to,\" \"by all means.\" Also makes your own invitation warm.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«ぜひ»、{行|い}きたいです！",
+     "en": "I'd love to go!"
+    },
+    {
+     "ja": "{今度|こんど}、«ぜひ»{家|いえ}に{来|き}てください。",
+     "en": "Please do come over sometime."
+    }
+   ],
+   "listen": "Invitations from friends and hosts. 「ぜひ！」 on its own is a complete, polite yes.",
+   "note": "Only for things you want. Don't use it with a no."
+  },
+  {
+   "id": "doumo",
+   "ja": "どうも",
+   "family": "react",
+   "does": "A light, all-purpose thanks or hello: half a sentence that does the job of a whole one.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«どうも»ありがとうございます。",
+     "en": "Thank you very much."
+    },
+    {
+     "ja": "あ、«どうも»。",
+     "en": "Oh, thanks. / Oh, hi."
+    }
+   ],
+   "listen": "Shop counters, someone holding a door, a nod to a person you've met before.",
+   "note": "On its own it's casual-polite; to a host or someone senior, finish the sentence: どうもありがとうございます."
+  },
+  {
+   "id": "are-huh",
+   "ja": "あれ？",
+   "family": "react",
+   "does": "The \"huh, that's not right\" sound when something doesn't match what you expected.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«あれ»？{切符|きっぷ}がない。",
+     "en": "Huh? My ticket's gone."
+    },
+    {
+     "ja": "«あれ»、この{電車|でんしゃ}は{熊本|くまもと}に{行|い}きませんか。",
+     "en": "Wait, doesn't this train go to Kumamoto?"
+    }
+   ],
+   "listen": "Anyone noticing something's off: a missing key, a wrong platform, a familiar face in an unexpected place.",
+   "note": "Rising tone, said to yourself. Different from the word あれ (\"that over there\")."
   }
  ]
 }

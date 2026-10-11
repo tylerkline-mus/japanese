@@ -209,6 +209,66 @@
         ]
       ],
       "why": "Right now → ている. しますか would ask about plans."
+    },
+    {
+      "id": "ti12",
+      "type": "choice",
+      "scene": "On the phone, the driver asks how to spot you at the station.",
+      "prompt": "えっと、{黒|くろ}いコートを＿＿。",
+      "en": "Um, I'm wearing a black coat.",
+      "options": [
+        {
+          "text": "{着|き}ています",
+          "verdict": "right",
+          "why": "着る is the moment of **putting it on**. Once it's on, it stays on → 〜ている describes what you're wearing now."
+        },
+        {
+          "text": "{着|き}ます",
+          "verdict": "different",
+          "why": "\"I'll put on a black coat\" — a plan, not what the driver should look for right now."
+        }
+      ]
+    },
+    {
+      "id": "ti13",
+      "type": "choice",
+      "prompt": "{大|おお}きいカバンを＿＿。{白|しろ}いカバンです。",
+      "en": "I have a big bag with me. It's a white one.",
+      "options": [
+        {
+          "text": "{持|も}っています",
+          "verdict": "right",
+          "why": "持つ is **picking up / taking hold**. 持っています is the state after: it's in your hands, or you've got it with you."
+        },
+        {
+          "text": "{持|も}ちます",
+          "verdict": "different",
+          "why": "\"I'll carry it\" — what you'd say when offering to take someone's bag (カバン、持ちます！), not describing yourself."
+        }
+      ]
+    },
+    {
+      "id": "ti14",
+      "type": "choice",
+      "prompt": "「{今|いま}、{何|なに}をしていますか。」「えっと、{日本語|にほんご}で{日記|にっき}を＿＿。」",
+      "en": "\"What are you doing right now?\" \"Um, I'm writing my diary in Japanese.\"",
+      "options": [
+        {
+          "text": "{書|か}いています",
+          "verdict": "right",
+          "why": "The question uses していますか (in progress right now), so the answer matches: 書いています, **mid-action**."
+        },
+        {
+          "text": "{書|か}きました",
+          "verdict": "different",
+          "why": "\"I wrote my diary\" — finished. A fine sentence, but it doesn't answer \"what are you doing now.\""
+        },
+        {
+          "text": "{書|か}きます",
+          "verdict": "different",
+          "why": "\"I'll write / I write (as a habit)\" — not what's happening at this moment."
+        }
+      ]
     }
   ]
 }

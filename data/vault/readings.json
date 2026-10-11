@@ -1,6 +1,400 @@
 {
  "weeks": [
   {
+   "week": "2026-10-12",
+   "note": "Week 2: a snowy morning built from newly burned words, a valley town from enlightened ones, and a note from a friend for master and guru.",
+   "readings": [
+    {
+     "id": "r004-snow-morning",
+     "title": "{雪|ゆき}の{朝|あさ}",
+     "titleEn": "A snowy morning",
+     "kind": "Diary",
+     "tiers": [
+      "burned"
+     ],
+     "paragraphs": [
+      {
+       "ja": "{朝|あさ}、{外|そと}は{白|しろ}かったです。{雪|ゆき}です！{今年|ことし}はじめての{雪|ゆき}です。",
+       "en": "In the morning it was white outside. Snow! The first snow of the year."
+      },
+      {
+       "ja": "{毎朝|まいあさ}、{近|ちか}くの{店|みせ}でコーヒーを{買|か}います。でも、{今日|きょう}は{雪|ゆき}が{多|おお}いです。{家|いえ}でお{茶|ちゃ}を{入|い}れました。",
+       "en": "Every morning I buy coffee at a shop nearby. But today there's a lot of snow. I made tea at home."
+      },
+      {
+       "ja": "{朝|あさ}ごはんの{後|あと}、{弟|おとうと}に{手紙|てがみ}を{書|か}きました。{弟|おとうと}は{雪|ゆき}が{大好|だいす}きです。",
+       "en": "After breakfast I wrote a letter to my younger brother. He loves snow."
+      },
+      {
+       "ja": "{午後|ごご}、{雪|ゆき}が{止|や}みました。{外|そと}に{出|で}て、{写真|しゃしん}を{撮|と}りました。{空|そら}が{本当|ほんとう}に{青|あお}かったです。",
+       "en": "In the afternoon the snow stopped. I went out and took photos. The sky was really blue."
+      },
+      {
+       "ja": "{夜|よる}、{友人|ゆうじん}から{電話|でんわ}がありました。「{雪|ゆき}、すごいね！」「うん、やっぱり{冬|ふゆ}はいいね。」",
+       "en": "At night a friend called. \"The snow — amazing, right?\" \"Yeah, winter really is the best.\""
+      },
+      {
+       "ja": "{明日|あした}も{雪|ゆき}かな。じゃあ、{明日|あした}の{朝|あさ}も{家|いえ}でお{茶|ちゃ}です。",
+       "en": "Snow tomorrow too, I wonder. Then tomorrow morning it's tea at home again."
+      }
+     ],
+     "questions": [
+      {
+       "id": "q1",
+       "type": "choice",
+       "prompt": "{毎朝|まいあさ}、どこでコーヒーを{買|か}いますか。",
+       "en": "Where does the writer buy coffee every morning?",
+       "options": [
+        {
+         "text": "{近|ちか}くの{店|みせ}",
+         "verdict": "right",
+         "why": "「{毎朝|まいあさ}、{近|ちか}くの{店|みせ}でコーヒーを{買|か}います」"
+        },
+        {
+         "text": "{家|いえ}",
+         "verdict": "wrong",
+         "why": "Home is where the tea got made today, because of the snow. Coffee usually comes from the shop."
+        },
+        {
+         "text": "{駅|えき}",
+         "verdict": "wrong",
+         "why": "No station in this one. It's a shop nearby."
+        }
+       ]
+      },
+      {
+       "id": "q2",
+       "type": "choice",
+       "prompt": "{弟|おとうと}は{何|なに}が{大好|だいす}きですか。",
+       "en": "What does the younger brother love?",
+       "options": [
+        {
+         "text": "{雪|ゆき}",
+         "verdict": "right",
+         "why": "「{弟|おとうと}は{雪|ゆき}が{大好|だいす}きです」: は is the brother (topic), が picks out what he loves."
+        },
+        {
+         "text": "お{茶|ちゃ}",
+         "verdict": "wrong",
+         "why": "The tea is the writer's, not the brother's."
+        },
+        {
+         "text": "{手紙|てがみ}",
+         "verdict": "wrong",
+         "why": "The letter is what the writer sent him. Nothing says he loves letters."
+        }
+       ]
+      },
+      {
+       "id": "q3",
+       "type": "choice",
+       "prompt": "{午後|ごご}、{空|そら}はどうでしたか。",
+       "en": "How was the sky in the afternoon?",
+       "options": [
+        {
+         "text": "{青|あお}かったです",
+         "verdict": "right",
+         "why": "「{空|そら}が{本当|ほんとう}に{青|あお}かったです」: once the snow stopped, the sky cleared."
+        },
+        {
+         "text": "{白|しろ}かったです",
+         "verdict": "wrong",
+         "why": "White was the morning: 「{外|そと}は{白|しろ}かった」, the snow on the ground."
+        },
+        {
+         "text": "{雪|ゆき}でした",
+         "verdict": "wrong",
+         "why": "The snow stopped (止みました) in the afternoon."
+        }
+       ]
+      },
+      {
+       "id": "q4",
+       "type": "choice",
+       "prompt": "「やっぱり{冬|ふゆ}はいいね」の「やっぱり」は、{何|なに}をしていますか。",
+       "en": "What is やっぱり doing in 「やっぱり冬はいいね」?",
+       "options": [
+        {
+         "text": "Confirming a feeling the friend already had",
+         "verdict": "right",
+         "why": "やっぱり = \"just as I thought, after all.\" The snow confirms what they already believed about winter."
+        },
+        {
+         "text": "Adding a contrast, like \"but\"",
+         "verdict": "wrong",
+         "why": "That's でも or だけど. やっぱり agrees with something, it doesn't turn against it."
+        },
+        {
+         "text": "Saying \"a little\"",
+         "verdict": "wrong",
+         "why": "That's ちょっと or 少し."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "r005-valley-town",
+     "title": "{谷|たに}の{町|まち}で",
+     "titleEn": "In a valley town",
+     "kind": "Travel story",
+     "tiers": [
+      "enlightened"
+     ],
+     "paragraphs": [
+      {
+       "ja": "{今日|きょう}は{谷|たに}の{小|ちい}さい{町|まち}に{来|き}ました。{天気|てんき}はいいです。{空|そら}が{明|あか}るいです。",
+       "en": "Today I came to a small town in a valley. The weather's good. The sky is bright."
+      },
+      {
+       "ja": "{地図|ちず}を{見|み}ましたが、{道|みち}が{分|わ}かりません。{角|かど}に{交番|こうばん}がありました。",
+       "en": "I looked at the map, but I couldn't work out the way. There was a police box on the corner."
+      },
+      {
+       "ja": "「すみません、この{辺|へん}に{古|ふる}い{石|いし}の{橋|はし}がありますか。」「ありますよ。{池|いけ}の{近|ちか}くです。{歩|ある}いて{五分|ごふん}ぐらいです。」",
+       "en": "\"Excuse me, is there an old stone bridge around here?\" \"There is. It's near the pond. About five minutes on foot.\""
+      },
+      {
+       "ja": "「{名所|めいしょ}ですか。」「はい、この{町|まち}で{一番|いちばん}の{名所|めいしょ}です。でも、{今|いま}の{時間|じかん}は{人|ひと}が{多|おお}いですよ。」",
+       "en": "\"Is it a famous spot?\" \"Yes, the most famous one in town. But at this time of day there are a lot of people.\""
+      },
+      {
+       "ja": "{橋|はし}の{下|した}に{川|かわ}がありました。{川|かわ}の{音|おと}は{音楽|おんがく}みたいでした。",
+       "en": "There was a river under the bridge. The sound of the river was like music."
+      },
+      {
+       "ja": "{明日|あした}は{朝|あさ}{早|はや}く、{森|もり}の{道|みち}を{歩|ある}きます。{天気|てんき}は{大丈夫|だいじょうぶ}かな。",
+       "en": "Tomorrow, early in the morning, I'll walk the forest path. I hope the weather holds."
+      }
+     ],
+     "questions": [
+      {
+       "id": "q1",
+       "type": "choice",
+       "prompt": "{交番|こうばん}はどこにありましたか。",
+       "en": "Where was the police box?",
+       "options": [
+        {
+         "text": "{角|かど}",
+         "verdict": "right",
+         "why": "「{角|かど}に{交番|こうばん}がありました」: に because it just exists there."
+        },
+        {
+         "text": "{池|いけ}の{近|ちか}く",
+         "verdict": "wrong",
+         "why": "Near the pond is where the bridge is."
+        },
+        {
+         "text": "{橋|はし}の{下|した}",
+         "verdict": "wrong",
+         "why": "Under the bridge is the river."
+        }
+       ]
+      },
+      {
+       "id": "q2",
+       "type": "choice",
+       "prompt": "{橋|はし}まで、{歩|ある}いて{何分|なんぷん}ぐらいですか。",
+       "en": "About how many minutes to the bridge on foot?",
+       "options": [
+        {
+         "text": "{五分|ごふん}ぐらい",
+         "verdict": "right",
+         "why": "「{歩|ある}いて{五分|ごふん}ぐらいです」"
+        },
+        {
+         "text": "{一時間|いちじかん}ぐらい",
+         "verdict": "wrong",
+         "why": "Much less: it's close, near the pond."
+        },
+        {
+         "text": "{分|わ}かりません",
+         "verdict": "wrong",
+         "why": "The writer didn't know the way at first, but the officer gives the time: five minutes."
+        }
+       ]
+      },
+      {
+       "id": "q3",
+       "type": "choice",
+       "prompt": "{今|いま}の{時間|じかん}、{橋|はし}はどうですか。",
+       "en": "What's the bridge like at this time of day?",
+       "options": [
+        {
+         "text": "{人|ひと}が{多|おお}いです",
+         "verdict": "right",
+         "why": "「{今|いま}の{時間|じかん}は{人|ひと}が{多|おお}いですよ」: でも flags it as the catch."
+        },
+        {
+         "text": "{人|ひと}が{少|すく}ないです",
+         "verdict": "wrong",
+         "why": "少ない is the opposite of what the officer says."
+        },
+        {
+         "text": "{雨|あめ}です",
+         "verdict": "wrong",
+         "why": "The weather is good; the sky is bright."
+        }
+       ]
+      },
+      {
+       "id": "q4",
+       "type": "choice",
+       "prompt": "「{音楽|おんがく}みたいでした」の「みたい」は、{何|なに}をしていますか。",
+       "en": "What is みたい doing in 「音楽みたいでした」?",
+       "options": [
+        {
+         "text": "\"Like\": the river sounded like music",
+         "verdict": "right",
+         "why": "Noun + みたい = \"like ~, resembling ~.\" The river isn't music; it reminds the writer of it."
+        },
+        {
+         "text": "\"Want to\": wanted to hear music",
+         "verdict": "wrong",
+         "why": "That's 〜たい (聞きたい). みたい after a noun compares."
+        },
+        {
+         "text": "\"Try\": tried listening to music",
+         "verdict": "wrong",
+         "why": "That's 〜てみる. Similar sound, different job."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "r006-note-from-a-friend",
+     "title": "{友|とも}だちからのメモ",
+     "titleEn": "A note from a friend",
+     "kind": "Note from a friend",
+     "tiers": [
+      "master",
+      "guru"
+     ],
+     "paragraphs": [
+      {
+       "ja": "{先日|せんじつ}はありがとう！{和食|わしょく}の{食事|しょくじ}、{楽|たの}しかったですね。",
+       "en": "Thanks for the other day! That Japanese dinner was fun, wasn't it."
+      },
+      {
+       "ja": "{私|わたし}は{夕方|ゆうがた}まで{出|で}かけます。{部屋|へや}の{鍵|かぎ}はテーブルの{上|うえ}です。",
+       "en": "I'm out until evening. The room key is on the table."
+      },
+      {
+       "ja": "{近|ちか}くに{魚屋|さかなや}と{茶屋|ちゃや}があります。{茶屋|ちゃや}のお{茶|ちゃ}は{本当|ほんとう}においしいですよ。",
+       "en": "There's a fish shop and a tea house nearby. The tea at the tea house is really good."
+      },
+      {
+       "ja": "{夜|よる}は{星|ほし}がよく{見|み}えます。{和室|わしつ}の{後|うし}ろの{窓|まど}から、{海|うみ}も{見|み}えますよ。",
+       "en": "At night you can see the stars well. From the window at the back of the tatami room, you can see the sea, too."
+      },
+      {
+       "ja": "{明日|あした}の{夜明|よあ}けに、{鳥|とり}の{声|こえ}を{録音|ろくおん}しませんか。いい{場所|ばしょ}があります。",
+       "en": "Want to record the birds at dawn tomorrow? There's a good spot."
+      },
+      {
+       "ja": "{後|あと}で{私|わたし}の{絵|え}を{見|み}せますね。じゃあ、また{夕方|ゆうがた}に！",
+       "en": "I'll show you my paintings later. OK, see you this evening!"
+      }
+     ],
+     "questions": [
+      {
+       "id": "q1",
+       "type": "choice",
+       "prompt": "{友|とも}だちは{夕方|ゆうがた}まで{何|なに}をしますか。",
+       "en": "What is the friend doing until evening?",
+       "options": [
+        {
+         "text": "{出|で}かけます",
+         "verdict": "right",
+         "why": "「{夕方|ゆうがた}まで{出|で}かけます」: out of the house until evening."
+        },
+        {
+         "text": "{部屋|へや}にいます",
+         "verdict": "wrong",
+         "why": "The friend is out; only the key is in the room."
+        },
+        {
+         "text": "{鳥|とり}の{声|こえ}を{録音|ろくおん}します",
+         "verdict": "wrong",
+         "why": "That's the plan for tomorrow at dawn, not today."
+        }
+       ]
+      },
+      {
+       "id": "q2",
+       "type": "choice",
+       "prompt": "{和室|わしつ}の{後|うし}ろの{窓|まど}から、{何|なに}が{見|み}えますか。",
+       "en": "What can you see from the window at the back of the tatami room?",
+       "options": [
+        {
+         "text": "{海|うみ}",
+         "verdict": "right",
+         "why": "「{後|うし}ろの{窓|まど}から、{海|うみ}も{見|み}えますよ」"
+        },
+        {
+         "text": "{魚屋|さかなや}",
+         "verdict": "wrong",
+         "why": "The fish shop is nearby, but the note doesn't say you can see it."
+        },
+        {
+         "text": "{茶屋|ちゃや}",
+         "verdict": "wrong",
+         "why": "The tea house is nearby too; the window shows the sea."
+        }
+       ]
+      },
+      {
+       "id": "q3",
+       "type": "choice",
+       "prompt": "「{夜明|よあ}け」はいつですか。",
+       "en": "When is 夜明け?",
+       "options": [
+        {
+         "text": "{朝|あさ}、とても{早|はや}い{時間|じかん}",
+         "verdict": "right",
+         "why": "夜明け is when the night (夜) opens up (明ける): dawn, the very start of the morning."
+        },
+        {
+         "text": "{夕方|ゆうがた}",
+         "verdict": "wrong",
+         "why": "夕方 is evening, when the friend comes back."
+        },
+        {
+         "text": "{夜|よる}",
+         "verdict": "different",
+         "why": "夜 is part of the word, but 夜明け is the moment the night ends, not the night itself."
+        }
+       ]
+      },
+      {
+       "id": "q4",
+       "type": "choice",
+       "prompt": "{後|あと}で、{友|とも}だちは{何|なに}を{見|み}せますか。",
+       "en": "What will the friend show later?",
+       "options": [
+        {
+         "text": "{絵|え}",
+         "verdict": "right",
+         "why": "「{後|あと}で{私|わたし}の{絵|え}を{見|み}せますね」: 見せる = to show."
+        },
+        {
+         "text": "{星|ほし}",
+         "verdict": "wrong",
+         "why": "You can see the stars yourself at night (見えます); the friend isn't showing them."
+        },
+        {
+         "text": "{鍵|かぎ}",
+         "verdict": "wrong",
+         "why": "The key is already on the table."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
    "week": "2026-10-05",
    "note": "First batch: a rainy day off, a station in Kyushu, and a menu full of burned numbers.",
    "readings": [

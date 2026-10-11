@@ -56,6 +56,70 @@
           "en": "About how many minutes?"
         }
       ]
+    },
+    "natural": {
+      "requires": [
+        "01-wa-ga",
+        "02-ni-de",
+        "03-te-iru"
+      ],
+      "dialogue": [
+        {
+          "who": "them",
+          "ja": "もしもし、タイラーさん？{今|いま}、どこにいますか。",
+          "en": "Hello, Tyler? Where are you right now?"
+        },
+        {
+          "who": "me",
+          "ja": "えっと、{駅|えき}の{改札|かいさつ}の{外|そと}にいます。",
+          "en": "Um, I'm just outside the ticket gate.",
+          "note": "います is just being somewhere → に (Lesson 2). えっと buys you a second to find the words."
+        },
+        {
+          "who": "them",
+          "ja": "わかりました。{何色|なにいろ}の{服|ふく}を{着|き}ていますか。",
+          "en": "Got it. What color are you wearing?"
+        },
+        {
+          "who": "me",
+          "ja": "{黒|くろ}いコートを{着|き}ています。{大|おお}きいカバンも{持|も}っています。",
+          "en": "I'm wearing a black coat. I've got a big bag, too.",
+          "note": "着る and 持つ are the moment of putting on and picking up; 〜ている is the state after (Lesson 3)."
+        },
+        {
+          "who": "them",
+          "ja": "{今|いま}、{車|くるま}でそちらに{向|む}かっています。{白|しろ}い{車|くるま}です。",
+          "en": "I'm on my way to you by car now. It's a white car."
+        },
+        {
+          "who": "me",
+          "ja": "じゃあ、{駅|えき}の{前|まえ}で{待|ま}っています。",
+          "en": "OK then, I'll wait in front of the station.",
+          "note": "じゃあ wraps up the plan. Waiting is something you do there → で (Lesson 2)."
+        },
+        {
+          "who": "them",
+          "ja": "あ、{見|み}えました！",
+          "en": "Oh, I can see you!"
+        },
+        {
+          "who": "me",
+          "ja": "よかった！ありがとうございます。",
+          "en": "Great! Thank you so much."
+        }
+      ],
+      "phrases": [
+        {
+          "ja": "{電車|でんしゃ}が{少|すこ}し{遅|おく}れています。",
+          "en": "My train's running a little late.",
+          "note": "遅れる is falling behind; 遅れています = it's late and still is (Lesson 3)."
+        },
+        {
+          "ja": "{雨|あめ}が{降|ふ}っていますね。{駅|えき}の{中|なか}にいます。",
+          "en": "It's raining, isn't it. I'll be inside the station.",
+          "note": "ね shares the rain with them; に because you're just there (Lesson 2)."
+        }
+      ]
     }
   },
   "vocab": [
@@ -78,6 +142,35 @@
       "id": "gurai",
       "ja": "〜ぐらい",
       "en": "about, around"
+    },
+    {
+      "id": "kaisatsu",
+      "ja": "{改札|かいさつ}",
+      "en": "ticket gate",
+      "note": "The usual meeting point at a station."
+    },
+    {
+      "id": "kiru",
+      "ja": "{着|き}る",
+      "en": "to put on (clothes)",
+      "note": "着ています = wearing."
+    },
+    {
+      "id": "motsu",
+      "ja": "{持|も}つ",
+      "en": "to hold, to carry",
+      "note": "持っています = have it with me."
+    },
+    {
+      "id": "mukau",
+      "ja": "{向|む}かう",
+      "en": "to head toward",
+      "note": "向かっています = on the way."
+    },
+    {
+      "id": "okureru",
+      "ja": "{遅|おく}れる",
+      "en": "to be late, to fall behind"
     }
   ]
 }

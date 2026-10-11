@@ -318,6 +318,73 @@
           "why": "日本の一番高い山 also works, but as a noun phrase (\"Japan's tallest mountain\"). With です after it, で is the everyday way to say it."
         }
       ]
+    },
+    {
+      "id": "nd17",
+      "type": "choice",
+      "prompt": "{大学|だいがく}の{前|まえ}に{本屋|ほんや}があります。その{本屋|ほんや}＿{日記|にっき}を{買|か}いました。",
+      "en": "There's a bookstore in front of the university. I bought a diary at that bookstore.",
+      "options": [
+        {
+          "text": "で",
+          "verdict": "right",
+          "why": "Same bookstore, different job. In the first sentence it just **exists** (あります → に). In the second, buying **happens** there → で."
+        },
+        {
+          "text": "に",
+          "verdict": "wrong",
+          "why": "The first sentence's に is pulling you. に works with あります because the shop simply exists there; 買う is an action, so the place it happens takes で."
+        }
+      ]
+    },
+    {
+      "id": "nd18",
+      "type": "choice",
+      "prompt": "{来月|らいげつ}、{東京|とうきょう}＿コンサートがあります。",
+      "en": "There's a concert in Tokyo next month.",
+      "options": [
+        {
+          "text": "で",
+          "verdict": "right",
+          "why": "The twist: ある takes に for **things** (本がある), but an **event** — a concert, a party, a meeting — is something that takes place, so its location takes で."
+        },
+        {
+          "text": "に",
+          "verdict": "wrong",
+          "why": "Logical if you think \"ある → に,\" but that rule is for objects and buildings that sit somewhere. A concert happens, so Japanese treats the place as a stage → で."
+        }
+      ]
+    },
+    {
+      "id": "nd19",
+      "type": "build",
+      "scene": "The station is too far to walk with your bags. Say how you'll get there.",
+      "en": "I'll go to the station by taxi.",
+      "tiles": [
+        "タクシー",
+        "で",
+        "に",
+        "{駅|えき}",
+        "{行|い}きます",
+        "を"
+      ],
+      "answers": [
+        [
+          "タクシー",
+          "で",
+          "{駅|えき}",
+          "に",
+          "{行|い}きます"
+        ],
+        [
+          "{駅|えき}",
+          "に",
+          "タクシー",
+          "で",
+          "{行|い}きます"
+        ]
+      ],
+      "why": "Two places, two jobs: で marks **how** you go (by taxi), に marks **where you end up** (the station). The two blocks can swap; 行きます stays last."
     }
   ]
 }

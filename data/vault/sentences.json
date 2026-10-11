@@ -209,6 +209,174 @@
     "ja": "{駅|えき}と{店|みせ}の«{間|あいだ}»に{川|かわ}があります。",
     "en": "There's a river between the station and the shop."
    }
+  ],
+  "上る": [
+   {
+    "ja": "{友人|ゆうじん}と{二人|ふたり}で{山|やま}に«{上|のぼ}»りました。",
+    "en": "My friend and I climbed the mountain, just the two of us."
+   }
+  ],
+  "会う": [
+   {
+    "ja": "{明日|あした}、{駅|えき}で{友人|ゆうじん}に«{会|あ}»います。",
+    "en": "Tomorrow I'm meeting a friend at the station."
+   }
+  ],
+  "分かる": [
+   {
+    "ja": "すみません、ちょっと«{分|わ}かり»ません。",
+    "en": "Sorry, I don't quite understand."
+   }
+  ],
+  "同じ": [
+   {
+    "ja": "{私|わたし}も«{同|おな}じ»ものをお{願|ねが}いします。",
+    "en": "I'll have the same, please."
+   }
+  ],
+  "多分": [
+   {
+    "ja": "«{多分|たぶん}»、{明日|あした}は{雨|あめ}です。",
+    "en": "It'll probably rain tomorrow."
+   }
+  ],
+  "夜": [
+   {
+    "ja": "この{町|まち}は«{夜|よる}»、{星|ほし}がきれいです。",
+    "en": "The stars are beautiful here at night."
+   }
+  ],
+  "本当に": [
+   {
+    "ja": "このラーメンは«{本当|ほんとう}に»おいしいです。",
+    "en": "This ramen is really good."
+   }
+  ],
+  "毎日": [
+   {
+    "ja": "«{毎日|まいにち}»、{日本語|にほんご}を{少|すこ}し{話|はな}します。",
+    "en": "I speak a little Japanese every day."
+   }
+  ],
+  "近い": [
+   {
+    "ja": "{駅|えき}はここから«{近|ちか}い»ですか。",
+    "en": "Is the station close to here?"
+   }
+  ],
+  "色々": [
+   {
+    "ja": "{日本|にほん}で«{色々|いろいろ}»な{音|おと}を{録音|ろくおん}したいです。",
+    "en": "I want to record all kinds of sounds in Japan."
+   }
+  ],
+  "有名": [
+   {
+    "ja": "ケンタッキーはバーボンが«{有名|ゆうめい}»です。",
+    "en": "Kentucky is famous for bourbon."
+   }
+  ],
+  "店": [
+   {
+    "ja": "この«{店|みせ}»は{何時|なんじ}までですか。",
+    "en": "How late is this shop open?"
+   }
+  ],
+  "食べる": [
+   {
+    "ja": "{朝|あさ}ごはんは{何|なに}を«{食|た}べ»ましたか。",
+    "en": "What did you have for breakfast?"
+   }
+  ],
+  "教える": [
+   {
+    "ja": "{駅|えき}までの{道|みち}を«{教|おし}え»てください。",
+    "en": "Please tell me the way to the station."
+   }
+  ],
+  "日記": [
+   {
+    "ja": "{夜|よる}、{日本語|にほんご}で«{日記|にっき}»を{書|か}きます。",
+    "en": "At night I write my diary in Japanese."
+   }
+  ],
+  "未来": [
+   {
+    "ja": "«{未来|みらい}»の{音楽|おんがく}は、どんな{音|おと}でしょう。",
+    "en": "I wonder what the music of the future will sound like."
+   }
+  ],
+  "思い出": [
+   {
+    "ja": "{前|まえ}の{日本|にほん}の{旅行|りょこう}は、いい«{思|おも}い{出|で}»です。",
+    "en": "My last trip to Japan is a good memory."
+   }
+  ],
+  "朝ごはん": [
+   {
+    "ja": "«{朝|あさ}ごはん»は{何時|なんじ}からですか。",
+    "en": "From what time is breakfast?"
+   }
+  ],
+  "毎朝": [
+   {
+    "ja": "«{毎朝|まいあさ}»、{猫|ねこ}にごはんをあげます。",
+    "en": "I feed the cat every morning."
+   }
+  ],
+  "雪": [
+   {
+    "ja": "{北|きた}の{国|くに}は、もう«{雪|ゆき}»ですか。",
+    "en": "Is it already snowing up north?"
+   }
+  ],
+  "紙": [
+   {
+    "ja": "この«{紙|かみ}»にお{名前|なまえ}を{書|か}いてください。",
+    "en": "Please write your name on this paper."
+   }
+  ],
+  "首": [
+   {
+    "ja": "キリンは«{首|くび}»が{長|なが}いです。",
+    "en": "Giraffes have long necks."
+   }
+  ],
+  "安全": [
+   {
+    "ja": "この{道|みち}は{夜|よる}も«{安全|あんぜん}»ですか。",
+    "en": "Is this street safe at night too?"
+   }
+  ],
+  "今年": [
+   {
+    "ja": "«{今年|ことし}»の{冬|ふゆ}は{日本|にほん}にいます。",
+    "en": "This winter I'll be in Japan."
+   }
+  ],
+  "先週": [
+   {
+    "ja": "«{先週|せんしゅう}»、{新|あたら}しい{曲|きょく}を{作|つく}りました。",
+    "en": "Last week I wrote a new piece."
+   }
+  ],
+  "台風": [
+   {
+    "ja": "«{台風|たいふう}»で{電車|でんしゃ}が{止|と}まりました。",
+    "en": "The trains stopped because of the typhoon."
+   }
+  ],
+  "夏休み": [
+   {
+    "ja": "«{夏休|なつやす}み»はどこに{行|い}きましたか。",
+    "en": "Where did you go for summer vacation?"
+   }
+  ],
+  "取り出す": [
+   {
+    "ja": "カバンから{切符|きっぷ}を«{取|と}り{出|だ}し»ました。",
+    "en": "I took my ticket out of my bag."
+   }
   ]
  }
 }

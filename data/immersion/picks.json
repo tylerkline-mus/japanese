@@ -1,6 +1,240 @@
 {
   "weeks": [
     {
+      "week": "2026-10-12",
+      "note": "Week 2: に vs で. Short and slow first (a ticket window, a first trip, a hotel), then a longer travel episode and one NHK show for the composer in you.",
+      "picks": [
+        {
+          "id": "w2026-10-12-1",
+          "title": "S1E6 - 駅で: 切符を買います",
+          "url": "https://small-talk-cafe-learn-japanese-in-minutes.castos.com/episodes/s1e6",
+          "type": "listen",
+          "source": "Small Talk Café - Learn Japanese in Minutes",
+          "minutes": 5,
+          "level": 1,
+          "why": "Five minutes at a ticket window, the same exchange as your Trains scene. Short enough to play twice in a row: once cold, once after the prep words.",
+          "connection": "This week's に vs で at the station: 駅で for what you do there, 熊本に / まで for where the train goes.",
+          "listenFor": "Every time you hear a place, catch the particle after it. で → something happens there (buying, waiting). に or まで → that's where someone is going. Say place + particle out loud.",
+          "prep": [
+            {
+              "ja": "{切符|きっぷ}",
+              "en": "ticket"
+            },
+            {
+              "ja": "{改札|かいさつ}",
+              "en": "ticket gate"
+            },
+            {
+              "ja": "{乗|の}り{場|ば}",
+              "en": "boarding area, platform"
+            },
+            {
+              "ja": "{番線|ばんせん}",
+              "en": "track number"
+            },
+            {
+              "ja": "{電車|でんしゃ}",
+              "en": "train"
+            },
+            {
+              "ja": "{何時|なんじ}",
+              "en": "what time"
+            }
+          ],
+          "tags": [
+            "trains",
+            "travel"
+          ]
+        },
+        {
+          "id": "w2026-10-12-2",
+          "title": "マルクスがはじめて日本に行きました 1 /4(Markus's First Trip to Japan 1/4)",
+          "url": "https://podcasters.spotify.com/pod/show/nihongo-shortstory/episodes/1-4Markuss-First-Trip-to-Japan-14-e2tjbou",
+          "type": "listen",
+          "source": "Nihongo Short Story by Noriko",
+          "minutes": 4,
+          "level": 1,
+          "why": "You finished one of Noriko's stories last week. This is a four-part first trip to Japan, so you can do a part a day and finish the set.",
+          "connection": "A first trip is all に and で: flying to a city, arriving at a hotel, eating somewhere — this week's pair in story form.",
+          "listenFor": "Follow the story by its に's: each one is a place Markus goes to or ends up at. Then catch one で and say what he did there.",
+          "prep": [
+            {
+              "ja": "{空港|くうこう}",
+              "en": "airport"
+            },
+            {
+              "ja": "{飛行機|ひこうき}",
+              "en": "airplane"
+            },
+            {
+              "ja": "{着|つ}く",
+              "en": "to arrive"
+            },
+            {
+              "ja": "はじめて",
+              "en": "for the first time"
+            },
+            {
+              "ja": "{旅行|りょこう}",
+              "en": "trip"
+            },
+            {
+              "ja": "{友人|ゆうじん}",
+              "en": "friend"
+            },
+            {
+              "ja": "{楽|たの}しい",
+              "en": "fun"
+            }
+          ],
+          "tags": [
+            "travel",
+            "story"
+          ],
+          "fromArchive": "16b4504d297d"
+        },
+        {
+          "id": "w2026-10-12-3",
+          "title": "#1588「ホテルで使う日本語について！」",
+          "url": "http://nihongoconteppei.com/2026/09/25/1588%e3%80%8c%e3%83%9b%e3%83%86%e3%83%ab%e3%81%a7%e4%bd%bf%e3%81%86%e6%97%a5%e6%9c%ac%e8%aa%9e%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%81%e3%80%8d/",
+          "type": "listen",
+          "source": "Nihongo con Teppei (beginner)",
+          "level": 1,
+          "why": "Front-desk Japanese, told slowly by a host you already know. A preview of the inn check-ins on your rail loop.",
+          "connection": "Hotels are where に vs で lives: going into your room, eating breakfast on a floor, waiting in the lobby. Same pairs as this week's review.",
+          "listenFor": "When you hear 部屋, フロント or a floor number, catch the particle after it: に (going or being there) or で (doing something there)? Then say one sentence of your own about an inn.",
+          "prep": [
+            {
+              "ja": "{予約|よやく}",
+              "en": "reservation"
+            },
+            {
+              "ja": "{部屋|へや}",
+              "en": "room"
+            },
+            {
+              "ja": "{和室|わしつ}",
+              "en": "Japanese-style room"
+            },
+            {
+              "ja": "{鍵|かぎ}",
+              "en": "key"
+            },
+            {
+              "ja": "{一泊|いっぱく}",
+              "en": "one night's stay"
+            },
+            {
+              "ja": "{食事|しょくじ}",
+              "en": "meal"
+            },
+            {
+              "ja": "{場所|ばしょ}",
+              "en": "place"
+            }
+          ],
+          "tags": [
+            "inns",
+            "travel"
+          ],
+          "fromArchive": "32dcde781fbf"
+        },
+        {
+          "id": "w2026-10-12-4",
+          "title": "Vol.483 【陸・海・空】東京から5,000円($30USD)でどこまで行ける？ (Japanese Radio for Listening practice)",
+          "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-483-5-00030USD-Japanese-Radio-for-Listening-practice-e3nur2g",
+          "type": "listen",
+          "source": "YUYUの日本語Podcast",
+          "minutes": 39,
+          "level": 2,
+          "why": "How far 5,000 yen gets you from Tokyo by rail, bus, sea and air. Trip planning in natural speed, right before your own rail loop. Long, so take it in 10-minute pieces.",
+          "connection": "で as \"by means of\": by train, by bus, by boat. How you travel takes で; where you end up takes に or まで.",
+          "listenFor": "Each time a new way of travelling comes up, listen for the で right after it. Then catch the place it reaches and its に or まで, and say your own: 〇〇で〇〇に行きます.",
+          "prep": [
+            {
+              "ja": "{電車|でんしゃ}",
+              "en": "train"
+            },
+            {
+              "ja": "{船|ふね}",
+              "en": "boat, ship"
+            },
+            {
+              "ja": "{飛行機|ひこうき}",
+              "en": "airplane"
+            },
+            {
+              "ja": "{料金|りょうきん}",
+              "en": "fare"
+            },
+            {
+              "ja": "{片道|かたみち}",
+              "en": "one way"
+            },
+            {
+              "ja": "{約|やく}",
+              "en": "about, approximately"
+            },
+            {
+              "ja": "{時間|じかん}",
+              "en": "time, hours"
+            }
+          ],
+          "tags": [
+            "travel",
+            "trains"
+          ],
+          "fromArchive": "91dc87dce27d"
+        },
+        {
+          "id": "w2026-10-12-5",
+          "title": "現代の音楽「現代音楽 100年のレガシー71 武満徹 2」",
+          "url": "https://ebravo.jp/archives/215434",
+          "type": "listen",
+          "source": "NHK-FM 現代の音楽",
+          "minutes": 50,
+          "level": 4,
+          "why": "Part two of two on Takemitsu: a composer you know well, discussed in Japanese on the contemporary-music show. Aired Sunday Oct 11, repeated Saturday morning. NHK's catch-up stream may be region-locked; the link is the October listing.",
+          "listenFor": "Don't try to follow it all. Every time you hear 曲 or 作曲家, catch the particle right after it (は, が, を, に, で) and guess what's being said about the piece.",
+          "prep": [
+            {
+              "ja": "{作曲家|さっきょくか}",
+              "en": "composer"
+            },
+            {
+              "ja": "{曲|きょく}",
+              "en": "piece (of music)"
+            },
+            {
+              "ja": "{作品|さくひん}",
+              "en": "work, piece"
+            },
+            {
+              "ja": "{現代|げんだい}",
+              "en": "contemporary, modern"
+            },
+            {
+              "ja": "{演奏|えんそう}",
+              "en": "performance"
+            },
+            {
+              "ja": "{番組|ばんぐみ}",
+              "en": "program, show"
+            },
+            {
+              "ja": "{名曲|めいきょく}",
+              "en": "masterpiece"
+            }
+          ],
+          "tags": [
+            "music",
+            "NHK",
+            "composers"
+          ]
+        }
+      ]
+    },
+    {
       "week": "2026-10-05",
       "note": "Week 1: は vs が. Start with the Teppei episodes. Try each one once with no transcript before you look anything up.",
       "picks": [
