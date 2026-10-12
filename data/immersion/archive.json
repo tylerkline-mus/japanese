@@ -1,5 +1,62 @@
 [
  {
+  "id": "f8ec7a464092",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月12日午後03時00分 2026年10月12日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/526db48057013a68ba85a76f5c70f355_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/526db48057013a68ba85a76f5c70f355_64k.mp3",
+  "date": "2026-10-12T06:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-12T06:37:27.237Z"
+ },
+ {
+  "id": "95b7ea96d12d",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月12日午後02時00分 2026年10月12日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/3babe7eccd3e82ee647037ea6e13e39e_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/3babe7eccd3e82ee647037ea6e13e39e_64k.mp3",
+  "date": "2026-10-12T05:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-12T06:37:27.237Z"
+ },
+ {
+  "id": "af8a9b47bc86",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20261012 「香港で初の５か年計画 中国経済と一体化進む」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/b825df63c1cb76eb126eae1ea7ecf05d_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/b825df63c1cb76eb126eae1ea7ecf05d_64k.mp3",
+  "date": "2026-10-12T03:00:00.000Z",
+  "minutes": 4,
+  "summary": "リポート：長野 祥光（香港支局） キャスター：上野 速人",
+  "added": "2026-10-12T06:37:27.048Z"
+ },
+ {
   "id": "1dfab194918b",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
