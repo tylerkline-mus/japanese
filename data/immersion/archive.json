@@ -1,5 +1,61 @@
 [
  {
+  "id": "1bc5cdfde2e0",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月13日午前01時00分 2026年10月13日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/66c3aff554714fdfda485f09a2d36bd0_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/66c3aff554714fdfda485f09a2d36bd0_64k.mp3",
+  "date": "2026-10-12T16:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-12T16:11:05.031Z"
+ },
+ {
+  "id": "ade4825d6df3",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月13日午前00時00分 2026年10月13日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/ad09f428305354c6b16fe713dd2b2eb5_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/ad09f428305354c6b16fe713dd2b2eb5_64k.mp3",
+  "date": "2026-10-12T15:10:00.000Z",
+  "minutes": 10,
+  "summary": "",
+  "added": "2026-10-12T16:11:05.031Z"
+ },
+ {
+  "id": "508cc216e790",
+  "source": "teppei-beginner",
+  "sourceName": "Nihongo con Teppei (beginner)",
+  "type": "listen",
+  "level": 1,
+  "tags": [
+   "learner",
+   "monologue"
+  ],
+  "title": "#1598「リソース（教材など）について！」",
+  "url": "http://nihongoconteppei.com/2026/10/12/1598%e3%80%8c%e3%83%aa%e3%82%bd%e3%83%bc%e3%82%b9%ef%bc%88%e6%95%99%e6%9d%90%e3%81%aa%e3%81%a9%ef%bc%89%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%81%e3%80%8d/",
+  "audio": "http://media.blubrry.com/nihongo_con_teppei/nihongoconteppei.com/wp-content/uploads/2026/10/Beginners-con-Teppei1598.mp3",
+  "date": "2026-10-12T08:17:43.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-12T16:11:03.002Z"
+ },
+ {
   "id": "f8ec7a464092",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
