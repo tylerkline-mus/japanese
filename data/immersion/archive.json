@@ -1,5 +1,43 @@
 [
  {
+  "id": "3e8820cbcc97",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "NHKジャーナル 2026年10月14日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/c7b76582366d34c457726499fd048514_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/c7b76582366d34c457726499fd048514_64k.mp3",
+  "date": "2026-10-14T13:55:00.000Z",
+  "minutes": 55,
+  "summary": "◇簗農相 辞表提出 道路予算発言など問題指摘の中 高市政権への影響は ◇ロシアが北海道新聞記者をスパイ容疑で拘束 長期化の懸念も ◇ジャーナル医療健康 “ひざ”の教科書 ◇止まらない個人情報漏えい 警察でも漏えいの可能性明らかに ◇投稿動画で会社元代表の名誉を毀損か ユーチューバー逮捕 特集は「医療健康」。膝の軟…",
+  "added": "2026-10-14T14:05:08.545Z"
+ },
+ {
+  "id": "44dc73911c8a",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月14日午後09時00分 2026年10月14日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/320d7458d78d62b94f60d1a93d612e31_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/320d7458d78d62b94f60d1a93d612e31_64k.mp3",
+  "date": "2026-10-14T12:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-14T14:05:08.545Z"
+ },
+ {
   "id": "fba4e3f47153",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
