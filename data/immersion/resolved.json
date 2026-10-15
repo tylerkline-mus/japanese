@@ -2,36 +2,36 @@
  "teppei-beginner": {
   "feedUrl": "http://nihongoconteppei.com/feed/podcast",
   "name": "Nihongo con Teppei (beginner)",
-  "checked": "2026-10-15T12:10:27.764Z"
+  "checked": "2026-10-15T17:24:05.059Z"
  },
  "yuyu": {
   "feedUrl": "https://anchor.fm/s/cda85d4/podcast/rss",
   "name": "YUYUの日本語Podcast",
-  "checked": "2026-10-15T12:10:29.158Z"
+  "checked": "2026-10-15T17:24:06.678Z"
  },
  "noriko-stories": {
   "feedUrl": "https://anchor.fm/s/81109d44/podcast/rss",
   "name": "Nihongo Short Story by Noriko",
-  "checked": "2026-10-15T12:10:29.598Z"
+  "checked": "2026-10-15T17:24:06.942Z"
  },
  "teppei-noriko": {
   "feedUrl": "https://teppeinorikojapanese.com/feed/podcast/",
   "name": "Japanese with Teppei and Noriko",
-  "checked": "2026-10-15T12:10:29.634Z"
+  "checked": "2026-10-15T17:24:06.964Z"
  },
  "imari": {
   "feedUrl": "https://anchor.fm/s/9c6a1d40/podcast/rss",
   "name": "Japanese Real Conversation (Imari Radio)",
-  "checked": "2026-10-15T12:10:30.778Z"
+  "checked": "2026-10-15T17:24:08.367Z"
  },
  "nhk-world-report": {
   "feedUrl": "https://www.nhk.or.jp/s-media/F519/podcast/list/v1/all.xml",
   "name": "ワールドリポート（NHKラジオ マイあさ！）",
-  "checked": "2026-10-15T12:10:30.811Z"
+  "checked": "2026-10-15T17:24:08.385Z"
  },
  "nhk-radio-news": {
   "feedUrl": "https://www.nhk.or.jp/s-media/news/podcast/list/v1/all.xml",
   "name": "NHKラジオニュース",
-  "checked": "2026-10-15T12:10:31.223Z"
+  "checked": "2026-10-15T17:24:08.984Z"
  }
 }
