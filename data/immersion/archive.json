@@ -1,5 +1,61 @@
 [
  {
+  "id": "3e9920cd74ea",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月15日午後08時00分 2026年10月15日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/cefe0af8ab6a8e07313bbfcfe73c11a1_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/cefe0af8ab6a8e07313bbfcfe73c11a1_64k.mp3",
+  "date": "2026-10-15T11:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-15T12:10:31.410Z"
+ },
+ {
+  "id": "9424b545a9d0",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "NHKやさしいことばニュース 2026年10月15日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/5c108823a29d074c7fc82d7790930721_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/5c108823a29d074c7fc82d7790930721_64k.mp3",
+  "date": "2026-10-15T10:35:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-15T12:10:31.410Z"
+ },
+ {
+  "id": "7bb41be2aecc",
+  "source": "teppei-noriko",
+  "sourceName": "Japanese with Teppei and Noriko",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "conversation"
+  ],
+  "title": "#646「美容室とか暗闇とか」",
+  "url": "https://teppeinorikojapanese.com/2026/10/15/646%e3%80%8c%e7%be%8e%e5%ae%b9%e5%ae%a4%e3%81%a8%e3%81%8b%e6%9a%97%e9%97%87%e3%81%a8%e3%81%8b%e3%80%8d/",
+  "audio": "https://teppeinorikojapanese.com/wp-content/uploads/2026/10/Teppeinoriko646.mp3",
+  "date": "2026-10-15T09:40:15.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-15T12:10:30.778Z"
+ },
+ {
   "id": "4ae07ba54ebd",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
