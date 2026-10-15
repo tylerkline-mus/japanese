@@ -1,5 +1,62 @@
 [
  {
+  "id": "4ae07ba54ebd",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月15日午後03時00分 2026年10月15日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/9617d7f29b58d38fc9d2748498485a39_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/9617d7f29b58d38fc9d2748498485a39_64k.mp3",
+  "date": "2026-10-15T06:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-15T06:31:42.183Z"
+ },
+ {
+  "id": "acc7cc69fb83",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月15日午後02時00分 2026年10月15日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/b92c085e793df2dd82bfe25abf7e1a04_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/b92c085e793df2dd82bfe25abf7e1a04_64k.mp3",
+  "date": "2026-10-15T05:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-15T06:31:42.183Z"
+ },
+ {
+  "id": "3c6f9a77f8f3",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20261015 「ロシア下院選挙の結果から見えてくること」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/8e8e3a3f99c06d534491abe3a39d3fb4_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/8e8e3a3f99c06d534491abe3a39d3fb4_64k.mp3",
+  "date": "2026-10-15T03:00:00.000Z",
+  "minutes": 4,
+  "summary": "リポート：牧 直利（国際部） キャスター：上野 速人",
+  "added": "2026-10-15T06:31:41.999Z"
+ },
+ {
   "id": "d17488212316",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
