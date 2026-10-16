@@ -1,5 +1,43 @@
 [
  {
+  "id": "987ef0445e76",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "NHKやさしいことばニュース 2026年10月16日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/8168f26a2a008c1fe2973e915f5ba2dc_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/8168f26a2a008c1fe2973e915f5ba2dc_64k.mp3",
+  "date": "2026-10-16T10:35:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-16T11:56:55.209Z"
+ },
+ {
+  "id": "aa6347052a46",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース NHKきょうのニュース 2026年10月16日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/7d7f28fb4929082c1cebef4ecd3900f0_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/7d7f28fb4929082c1cebef4ecd3900f0_64k.mp3",
+  "date": "2026-10-16T10:30:00.000Z",
+  "minutes": 30,
+  "summary": "【主なニュース】 ▽気象庁 緊急地震速報取り消し “M9.9と過大に推定” ▽個人情報漏えい のべ1億6500万人分余に 利用者の対策は ▽“餃子の王将”社長殺害事件 暴力団幹部に無罪判決 など",
+  "added": "2026-10-16T11:56:55.209Z"
+ },
+ {
   "id": "eb53913517a4",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
