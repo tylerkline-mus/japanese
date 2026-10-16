@@ -1,5 +1,43 @@
 [
  {
+  "id": "eb53913517a4",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 正午のNHKニュース 2026年10月16日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/887990609c789dd1e126d7e04f88fea3_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/887990609c789dd1e126d7e04f88fea3_64k.mp3",
+  "date": "2026-10-16T03:15:00.000Z",
+  "minutes": 15,
+  "summary": "【主なニュース】 ▽高市首相 簗前農相辞任を陳謝“内閣一丸で重要課題に対応” ▽アメリカ オレゴン州の小学校で銃撃 子ども3人と教師死亡 ▽ドジャース 大谷ホームランも敗退 3連覇逃す ▽最新のニュースは「らじる★らじる」やポッドキャスト「ＮＨＫラジオニュース」からもお聴きいただけます",
+  "added": "2026-10-16T06:27:20.746Z"
+ },
+ {
+  "id": "3be51eee5465",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20261016 「中国・競争社会で失われた心身の健康を取り戻す」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/e6fcae3006ddf11accccc590dfd5b5b3_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/e6fcae3006ddf11accccc590dfd5b5b3_64k.mp3",
+  "date": "2026-10-16T03:00:00.000Z",
+  "minutes": 4,
+  "summary": "リポート：平井 克昌（上海支局） キャスター：眞下 貴／上野 速人",
+  "added": "2026-10-16T06:27:20.528Z"
+ },
+ {
   "id": "bc717e4f4906",
   "source": "teppei-beginner",
   "sourceName": "Nihongo con Teppei (beginner)",
