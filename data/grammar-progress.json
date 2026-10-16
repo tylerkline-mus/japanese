@@ -1,13 +1,13 @@
 {
- "updated": "2026-10-16T11:56:51.951Z",
+ "updated": "2026-10-16T17:00:20.804Z",
  "items": [
   {
    "id": "01-wa-ga",
-   "stage": 2,
-   "due": "2026-10-11",
-   "right": 7,
+   "stage": 3,
+   "due": "2026-10-23",
+   "right": 10,
    "wrong": 2,
-   "seen": "wg09,wg11,wg13,wg17,wg15,wg12,wg10,wg03"
+   "seen": "wg04,wg02,wg05,wg09,wg11,wg13,wg17,wg15"
   },
   {
    "id": "imm:f24563e8368a",
