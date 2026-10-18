@@ -39,7 +39,8 @@ export function demoRaw(now = new Date()) {
     stage = Math.min(9, stage);
     const overdue = stage < 9 && r() < 0.88;
     const available_at = stage === 9 ? null : iso(overdue ? now.getTime() - r() * 30 * day : now.getTime() + r() * 7 * day);
-    assignments.push({ id: id++, data: { subject_id, subject_type, srs_stage: stage, available_at, unlocked_at: iso(now - 200 * day) } });
+    const started_at = iso(r() < 0.12 ? now.getTime() - r() * 21 * day : now.getTime() - (30 + r() * 400) * day);
+    assignments.push({ id: id++, data: { subject_id, subject_type, srs_stage: stage, available_at, unlocked_at: iso(now - 200 * day), started_at } });
     const mi = Math.floor(r() * r() * 9);
     const ri = subject_type === "radical" ? 0 : Math.floor(r() * r() * 11);
     stats.push({
@@ -60,6 +61,35 @@ export function demoRaw(now = new Date()) {
   for (let i = 0; i < 150; i++) push(5000 + i, "radical", 1 + Math.floor(i / 15));
   kanjiSubjects.forEach((k) => push(k.id, "kanji", k.data.level));
   for (let i = 0; i < 820; i++) push(9000 + i, "vocabulary", 1 + Math.floor(i / 82));
+
+  // Lessons waiting, a few of them trip-relevant.
+  const LESSONS = [
+    ["radical", "⺍", "Triceratops", ""],
+    ["kanji", "駅", "Station", "えき"],
+    ["kanji", "旅", "Trip", "りょ"],
+    ["kanji", "館", "Building", "かん"],
+    ["vocabulary", "駅員", "Station Staff", "えきいん"],
+    ["vocabulary", "旅館", "Japanese Inn", "りょかん"],
+    ["vocabulary", "旅行", "Travel", "りょこう"],
+    ["kanji", "歌", "Song", "か"],
+    ["vocabulary", "歌う", "To Sing", "うたう"],
+    ["vocabulary", "電池", "Battery", "でんち"],
+    ["kanji", "険", "Steep", "けん"],
+    ["vocabulary", "名所", "Famous Place", "めいしょ"],
+  ];
+  const lessonSubjects = LESSONS.map(([type, ch, m, rd], i) => {
+    assignments.push({ id: id++, data: { subject_id: 20000 + i, subject_type: type, srs_stage: 0, available_at: null, unlocked_at: iso(now - (12 - i) * 3600000), started_at: null } });
+    return { id: 20000 + i, object: type, data: { characters: ch, level: 11, meanings: [{ meaning: m, primary: true }], readings: rd ? [{ reading: rd, primary: true }] : [], document_url: "https://www.wanikani.com/" } };
+  });
+
+  // ?demo&q=80 previews a small queue (lessons open).
+  const want = typeof location !== "undefined" ? Number(new URLSearchParams(location.search).get("q")) : 0;
+  if (want) {
+    let n = 0;
+    for (const a of assignments) {
+      if (a.data.available_at && Date.parse(a.data.available_at) <= now.getTime() && ++n > want) a.data.available_at = iso(now.getTime() + (1 + r() * 6) * day);
+    }
+  }
 
   // Force the queue to the real-world number from the conversation.
   const availNow = assignments.filter((a) => a.data.available_at && Date.parse(a.data.available_at) <= now.getTime());
@@ -86,7 +116,7 @@ export function demoRaw(now = new Date()) {
 
   const user = { data: { username: "demo", level } };
   const leechSubjects = [];
-  return { user, summary, assignments, stats, levels, kanjiSubjects, leechSubjects, demo: true };
+  return { user, summary, assignments, stats, levels, kanjiSubjects, leechSubjects, lessonSubjects, demo: true };
 }
 
 export function demoHistory(now = new Date()) {

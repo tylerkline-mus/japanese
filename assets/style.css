@@ -535,3 +535,21 @@ mark { background: var(--warn-soft); color: inherit; border-radius: 4px; padding
 body[data-depth="2"] .nav a small { display: none; }
 body[data-depth="2"] .nav a { justify-content: center; padding: 14px 0; }
 body[data-depth="2"] .nav a span { font-size: 1.1rem; }
+
+/* ---------- lessons ---------- */
+.lessons-card { border-top: 4px solid var(--srs-guru); }
+.lrows { list-style: none; padding: 0; margin: 8px 0 12px; display: grid; gap: 6px; }
+.lrow { display: flex; align-items: flex-start; gap: 12px; padding: 8px 10px; border-radius: 12px; background: var(--surface-2); }
+.lchars { min-width: 44px; text-align: center; font-size: 1.5rem; font-weight: 700; text-decoration: none; color: var(--ink); padding: 2px 6px; border-radius: 8px; }
+.t-radical .lchars { background: #d6ebff; color: #0b4f8a; }
+.t-kanji .lchars { background: #ffd9ec; color: #8a0b4f; }
+.t-vocabulary .lchars { background: #ecdcff; color: #5a1b9a; }
+:root[data-theme="dark"] .t-radical .lchars, :root[data-theme="dark"] .t-kanji .lchars, :root[data-theme="dark"] .t-vocabulary .lchars { filter: brightness(0.85); }
+.lmeta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; font-size: 0.92rem; }
+.lflag { display: inline-block; font-size: 0.74rem; font-weight: 700; padding: 1px 8px; border-radius: 999px; }
+.lflag.trip { background: var(--good-soft); color: var(--good); }
+.lflag.scene { background: var(--accent-soft); color: var(--accent); }
+.band { position: relative; height: 10px; border-radius: 999px; background: var(--surface-2); overflow: hidden; margin: 6px 0; }
+.band-fill { position: absolute; inset: 0 auto 0 0; background: var(--srs-guru); border-radius: 999px; }
+.band-ok { position: absolute; top: 0; bottom: 0; border-left: 2px dashed var(--good); border-right: 2px dashed var(--good); }
+.lchars { white-space: nowrap; }

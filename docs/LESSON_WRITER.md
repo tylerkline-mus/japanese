@@ -25,14 +25,22 @@ The run instructions may add more personal context — use it, but never write i
 
 ## 2. Decide what to write
 
-- **New lesson only if he's caught up**: every existing lesson has `stage >= 1`.
-  Fallback when progress can't be read: write a new lesson only if the newest lesson's `week`
-  is at or before the current course week (weeks count from `courseStart` in `data/config.json`).
-- **Otherwise, no new lesson.** A missed week never creates a backlog.
-- **Every run**: add 3–5 fresh drills to the review bank of any point that is shaky
+The course keeps building whether or not he's caught up. Unread lessons cost him nothing: a
+grammar point only enters his reviews when he marks it done.
+
+- **Ahead count** = lessons after the last one he has marked done (`stage >= 1`). If he hasn't
+  marked any done, count from the first lesson.
+- **Ahead count under 4 → write one new lesson** (the next Tae Kim chapter, per section 3).
+- **Ahead count 4 or more → don't add a chapter; deepen instead.** Pick the not-yet-done lessons
+  and make them richer: 3–4 more drills each (contrast pairs and `build` drills especially), a
+  clearer explanation or a new contrast pair where a point is subtle, and work their grammar into
+  a scene's `natural` tier or a vault reading so he meets it in context before he studies it.
+- **Every run, either way:** add 3–5 fresh drills to the review bank of any point that is shaky
   (`wrong / (right + wrong) > 0.25` with at least 6 answers, or stage stuck at 1–2), aimed at
   the specific confusion. If nothing is shaky, add 2–3 drills to the two lowest-stage points
   so reviews keep varying. Never duplicate an existing sentence.
+- Fallback when progress can't be read: treat the ahead count as the number of lessons written
+  in the last 4 weeks.
 
 ## 3. Write it
 
@@ -155,7 +163,15 @@ word marked once with «…» in `ja`), `listen` (where he'll hear it), optional
    Each new `does` must be clearly different from existing ones.
 3. Example lines: short, natural, his level, polite or casual matching `register`.
 
-## 7. Check and publish
+## 7. Trip words (every run, small)
+
+`data/trip.json` flags upcoming WaniKani lessons on Today as good for the trip: by English
+keyword per theme, or by exact Japanese word in `words`. When you notice a word in his upcoming
+lessons (`wk-vocab.json` stage 0–1 words, or kanji/vocab one level above `level`) that would
+matter on this trip but isn't caught by a keyword, add it to `words`. Keep keywords specific:
+a flag on everything is a flag on nothing.
+
+## 8. Check and publish
 
 1. `node scripts/validate-lessons.mjs` must pass. Fix anything it reports.
 2. Re-read every Japanese sentence once more for naturalness and correctness. If unsure about one,
@@ -178,5 +194,6 @@ word marked once with «…» in `ja`), `listen` (where he'll hear it), optional
     behind a tap, not the default.
   - Prefer exercises where he produces or reacts (say it, answer the line, what is this word doing)
     over recognize-and-tick.
-- Keep the pace gentle while he digs out of the WaniKani backlog (Oct–early Nov 2026).
+- The WaniKani backlog is cleared (mid-October 2026). Grammar is no longer on hold: keep one lesson a
+  week coming, deepen when he's four ahead.
 - Prioritize grammar he'll use in real conversations on the trip over literary forms.

@@ -94,7 +94,7 @@ async function boot() {
     buildModel();
   }
   render();
-  await Promise.all([loadHistory(), loadNotes(), loadReviews(), loadImmersion(), loadVocab(), loadVault(), loadGlue()]);
+  await Promise.all([loadHistory(), loadNotes(), loadReviews(), loadImmersion(), loadVocab(), loadVault(), loadGlue(), loadTrip()]);
   if (S.raw) buildModel();
   render();
   await refreshWK(false);
@@ -310,6 +310,9 @@ function slimRaw(raw) {
         subject_type: a.data.subject_type,
         srs_stage: a.data.srs_stage,
         available_at: a.data.available_at,
+        started_at: a.data.started_at,
+        unlocked_at: a.data.unlocked_at,
+        passed_at: a.data.passed_at,
       },
     })),
     stats: raw.stats.map((s) => ({ data_updated_at: s.data_updated_at, data: s.data })),
@@ -323,6 +326,11 @@ function slimRaw(raw) {
         readings: k.data.readings,
         document_url: k.data.document_url,
       },
+    })),
+    lessonSubjects: (raw.lessonSubjects || []).map((k) => ({
+      id: k.id,
+      object: k.object,
+      data: { characters: k.data.characters, slug: k.data.slug, level: k.data.level, meanings: k.data.meanings, readings: k.data.readings, document_url: k.data.document_url },
     })),
     leechSubjects: raw.leechSubjects.map((k) => ({
       id: k.id,
@@ -440,6 +448,7 @@ function buildModel() {
     live,
     days,
     burnedByType,
+    lessonsInfo: lessonModel(raw, tz, core.srsBreakdown(raw.assignments), q.reviews),
   };
 }
 
@@ -572,8 +581,8 @@ function viewToday() {
       <a class="btn" href="https://www.wanikani.com/subjects/review" target="_blank" rel="noopener">${L("Open reviews", "ふくしゅうへ")}</a>
       ${
         t.lessonsOk
-          ? `<a class="btn ghost" href="https://www.wanikani.com/subjects/lesson" target="_blank" rel="noopener">Lessons (${fmt(m.lessons)})</a>`
-          : `<span class="lock">Lessons locked until the queue is under 100</span>`
+          ? ""
+          : `<span class="lock">${L(`Lessons unlock in about ${fmt(Math.max(0, m.queue - 100))} reviews`, `レッスンまで、あと${fmt(Math.max(0, m.queue - 100))}こ`)}</span>`
       }
     </div>
   </section>`;
@@ -590,7 +599,7 @@ function viewToday() {
       <div class="leech-row">${m.leeches.slice(0, 4).map(leechChip).join("")}</div></section>`
     : "";
 
-  return top + errorBanner() + practiceCard() + target + grammarCard() + sceneTodayCard() + vaultTodayCard() + lessonCard() + selftalkCard() + queueCard + leech;
+  return top + errorBanner() + practiceCard() + target + lessonsCard() + grammarCard() + sceneTodayCard() + vaultTodayCard() + lessonCard() + selftalkCard() + queueCard + leech;
 }
 
 function ring(p) {
@@ -785,7 +794,7 @@ function viewStats() {
     ${[...m.hist].reverse().map((h) => `<tr><td>${h.date}</td><td>${h.level}</td><td>${fmt(h.queue)}</td><td>${fmt(h.reviewedToday)}</td></tr>`).join("")}
     </tbody></table></div></details>`;
 
-  return errorBanner() + tiles + srsCard + burnsCard + burn + heat + forecastCard + accCard + grammarStats() + paceCard + coverage + leeches + table;
+  return errorBanner() + tiles + srsCard + burnsCard + burn + heat + forecastCard + accCard + grammarStats() + lessonsStats() + paceCard + coverage + leeches + table;
 }
 
 // Items burned per day: from each row's burnedToday, or the change from the previous day's row.
@@ -2650,6 +2659,164 @@ function mountPractice() {
 
 function grammarDueCount() {
   return srs.dueToday(todayKey()).length;
+}
+
+// ---------- lessons ----------
+// Today: a daily budget that follows your Apprentice load, how many you've done, and the next batch
+// with flags for anything that ties into the trip. Stats: lessons per day, Apprentice load, level-up
+// progress, and how many of your scene words you already know.
+
+let TRIP = { themes: [], words: [] };
+async function loadTrip() {
+  try {
+    TRIP = await getJSON("data/trip.json");
+  } catch {}
+}
+
+// Text of every scene line and glue example, for "this shows up in your scenes" flags.
+let sceneIndexCache = null;
+function sceneIndex() {
+  if (sceneIndexCache) return sceneIndexCache;
+  const byScene = S.scenes.map((sc) => ({ sc, text: sceneTexts(sc).map(stripMarkup).join("\n") }));
+  const glueText = (S.glue.glue || []).flatMap((e) => e.examples.map((x) => stripMarkup(x.ja.replace(/[«»]/g, "")))).join("\n");
+  sceneIndexCache = { byScene, glueText };
+  return sceneIndexCache;
+}
+
+function lessonItem(subj) {
+  const d = subj.data;
+  const type = subj.object === "kana_vocabulary" ? "vocabulary" : subj.object;
+  const chars = d.characters || d.slug || "";
+  const meanings = (d.meanings || []).map((m) => m.meaning);
+  const reading = (d.readings || []).find((r) => r.primary)?.reading || "";
+  return { id: subj.id, type, chars, meaning: meanings[0] || "", meanings, reading, level: d.level, url: d.document_url, flags: tripFlags(type, chars, meanings) };
+}
+
+function tripFlags(type, chars, meanings) {
+  const flags = [];
+  if (type !== "radical" && chars) {
+    const idx = sceneIndex();
+    const scenes = idx.byScene.filter((x) => x.text.includes(chars)).map((x) => x.sc);
+    if (scenes.length) flags.push({ kind: "scene", label: scenes.length === 1 ? `In "${scenes[0].titleEn}"` : `In ${scenes.length} of your scenes`, scenes });
+    else if (idx.glueText.includes(chars) && chars.length > 1) flags.push({ kind: "scene", label: "In your glue lines" });
+    if ((TRIP.words || []).includes(chars)) flags.push({ kind: "trip", label: "Trip word" });
+  }
+  if (type !== "radical") {
+    const text = meanings.join(" | ").toLowerCase();
+    for (const t of TRIP.themes || []) {
+      if (t.keywords.some((k) => new RegExp(`(^|[^a-z])${k.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}([^a-z]|$)`).test(text))) {
+        flags.push({ kind: "trip", label: t.name });
+        break;
+      }
+    }
+  }
+  return flags;
+}
+
+function lessonModel(raw, tz, srsCounts, queue) {
+  sceneIndexCache = null;
+  const byDay = core.lessonsByDay(raw.assignments, tz);
+  const today = core.studyDayKey(new Date(), tz);
+  const budget = core.lessonBudget(srsCounts.apprentice, queue);
+  const waitingIds = core.lessonQueue(raw.assignments).map((a) => a.data.subject_id);
+  const subj = new Map((raw.lessonSubjects || []).map((s) => [s.id, s]));
+  const next = waitingIds.filter((id) => subj.has(id)).map((id) => lessonItem(subj.get(id)));
+  return {
+    byDay,
+    doneToday: byDay.get(today) || 0,
+    budget,
+    waiting: waitingIds.length,
+    next,
+    level: raw.kanjiSubjects?.length ? core.levelProgress(raw.assignments, raw.kanjiSubjects, raw.user.data.level) : null,
+  };
+}
+
+const TYPE_LABEL = { radical: "Radical", kanji: "Kanji", vocabulary: "Word" };
+
+function lessonRow(it) {
+  return `<li class="lrow t-${it.type}">
+    <a href="${esc(it.url || "#")}" target="_blank" rel="noopener" class="lchars" lang="ja">${esc(it.chars)}</a>
+    <span class="lmeta"><b>${esc(it.meaning)}</b>${it.reading ? ` <span lang="ja">${esc(it.reading)}</span>` : ""} <span class="muted">· ${TYPE_LABEL[it.type] || it.type}</span>
+      ${it.flags.map((f) => `<span class="lflag ${f.kind}">${f.kind === "trip" ? "✈ " : "◆ "}${esc(f.label)}</span>`).join("")}</span>
+  </li>`;
+}
+
+function lessonsCard() {
+  const m = S.model;
+  if (!m?.lessonsInfo) return "";
+  const L2 = m.lessonsInfo;
+  const ap = m.srs.apprentice;
+  if (!L2.waiting) return "";
+  const flagged = L2.next.filter((x) => x.flags.length);
+  if (L2.budget.locked) {
+    return `<section class="card lessons-card locked"><p class="eyebrow">${L("Lessons", "レッスン")}</p>
+      <div class="split"><p class="big-num">${fmt(L2.waiting)}</p><p class="muted small">${L("waiting", "まっている")}</p></div>
+      <p>${L(`Unlock when your queue is under 100: <b>about ${fmt(L2.budget.toUnlock)} more reviews</b>.`, `ふくしゅうが100より少なくなったら始められます。あと<b>${fmt(L2.budget.toUnlock)}</b>こ。`)}</p>
+      ${flagged.length ? `<p class="small muted">${L("Coming up, good for the trip:", "旅にいい言葉：")}</p><ul class="lrows">${flagged.slice(0, 4).map(lessonRow).join("")}</ul>` : ""}
+    </section>`;
+  }
+  const b = L2.budget.budget;
+  const left = Math.max(0, b - L2.doneToday);
+  const batch = L2.next.slice(0, Math.max(5, left || 5));
+  const msg =
+    b === 0
+      ? L(`Hold off today: ${fmt(ap)} Apprentice items is plenty. Clear reviews and come back tomorrow.`, `今日はレッスンなし。見習いが${fmt(ap)}こあります。`)
+      : left === 0
+      ? L(`<b>Done for today.</b> More would push next week's reviews up. Tomorrow's budget will be ready.`, `<b>今日はおわり！</b>`)
+      : L(`${left} to go today.`, `今日はあと${left}こ。`);
+  return `<section class="card lessons-card"><p class="eyebrow">${L("Today's lessons", "今日のレッスン")}</p>
+    <div class="hero-row">
+      <div><p class="hero-num">${fmt(b)}</p><p class="hero-label">${L("lessons today", "こ")}</p></div>
+      <div class="ring-wrap">${ring(b ? Math.min(100, Math.round((L2.doneToday / b) * 100)) : 100)}<span class="ring-label"><b>${fmt(L2.doneToday)}</b><br><small>${L("done", "おわり")}</small></span></div>
+    </div>
+    <p>${msg}</p>
+    <p class="small muted">${L(
+      `The budget follows your Apprentice items (${fmt(ap)} now), aiming to keep them under ${core.APPRENTICE_CAP} so reviews stay steady. ${fmt(L2.waiting)} lessons waiting.`,
+      `見習い ${fmt(ap)}こ · まっているレッスン ${fmt(L2.waiting)}こ`
+    )}</p>
+    ${left ? `<p class="small muted">${L("Next up", "次のレッスン")} · <span class="lflag trip">✈</span> ${L("good for the trip", "旅にいい")} · <span class="lflag scene">◆</span> ${L("in your scenes", "場面にある")}</p><ul class="lrows">${batch.map(lessonRow).join("")}</ul>` : ""}
+    <div class="row"><a class="btn ${left ? "" : "ghost"}" href="https://www.wanikani.com/subjects/lesson" target="_blank" rel="noopener">${L("Open lessons", "レッスンへ")}</a></div>
+  </section>`;
+}
+
+function lessonsStats() {
+  const m = S.model;
+  if (!m?.lessonsInfo) return "";
+  const L2 = m.lessonsInfo;
+  const today = m.live.date;
+  const pts = [];
+  for (let i = 20; i >= 0; i--) {
+    const k = srs.addDays(today, -i);
+    pts.push({ label: i % 7 === 0 ? shortDate(k) : "", value: L2.byDay.get(k) || 0, tip: `${k}: ${fmt(L2.byDay.get(k) || 0)} lessons`, emphasis: k === today });
+  }
+  const total21 = pts.reduce((n, p) => n + p.value, 0);
+  const ap = m.srs.apprentice;
+  const apPct = Math.min(100, Math.round((ap / 150) * 100));
+  const lv = L2.level;
+  const sceneWords = S.scenes.flatMap((sc) => (sc.vocab || []).map((v) => v.ja));
+  const knownScene = sceneWords.filter((w) => wordStatus(w).known).length;
+  return `<section class="card"><h2>Lessons</h2>
+      <div class="split"><span class="small muted">${fmt(total21)} in the last 3 weeks · ${fmt(L2.waiting)} waiting</span><span class="small muted">${L2.budget.locked ? "locked" : `${fmt(L2.budget.budget)} today`}</span></div>
+      ${barChart(pts, { height: 150, refLine: L2.budget.locked ? null : L2.budget.budget || null })}
+      <p class="muted small">Lessons started each day, straight from WaniKani. Dashed line: today's budget.</p>
+    </section>
+    <section class="card two">
+      <div><h2>Apprentice load</h2><p class="big-num">${fmt(ap)}</p>
+        <div class="band"><div class="band-fill" style="width:${apPct}%"></div><div class="band-ok" style="left:${Math.round((60 / 150) * 100)}%;width:${Math.round((40 / 150) * 100)}%"></div></div>
+        <p class="muted small">Items in their first few days, the ones that drive next week's reviews. 60–100 is a steady pace; above that, ease off lessons.</p></div>
+      ${
+        lv && lv.total
+          ? `<div><h2>Level ${m.level} → ${m.level + 1}</h2><p class="big-num">${fmt(lv.passed)} <small class="muted">/ ${fmt(lv.need)}</small></p>${meter(lv.passed, Math.max(1, lv.need))}
+              <p class="muted small">${lv.passed >= lv.need ? "Enough kanji passed: the level-up comes with your next review." : `${fmt(lv.need - lv.passed)} more of this level's ${fmt(lv.total)} kanji to reach Guru (90% needed).`}</p></div>`
+          : ""
+      }
+    </section>
+    ${
+      sceneWords.length
+        ? `<section class="card"><h2>Trip words learned</h2><p class="big-num">${fmt(knownScene)} <small class="muted">/ ${fmt(sceneWords.length)}</small></p>${meter(knownScene, sceneWords.length)}
+            <p class="muted small">Words from your scenes you already know from WaniKani (Guru or higher). Lessons flagged ◆ on Today move this up.</p></section>`
+        : ""
+    }`;
 }
 
 // ---------- notes ----------

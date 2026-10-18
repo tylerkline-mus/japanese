@@ -54,6 +54,10 @@ export async function fetchRaw(token, fetchImpl = fetch) {
   const levelList = Array.from({ length: lvl }, (_, i) => i + 1).join(",");
   const kanjiSubjects = await wkGetAll(`/subjects?types=kanji&levels=${levelList}`, token, fetchImpl);
 
+  // The next lessons in line (WaniKani's own order: lowest level first, radicals → kanji → vocab).
+  const lessonIds = lessonQueue(assignments).slice(0, 40).map((a) => a.data.subject_id);
+  const lessonSubjects = lessonIds.length ? await wkGetAll(`/subjects?ids=${lessonIds.join(",")}`, token, fetchImpl) : [];
+
   // Look up the subjects behind the worst leeches (any type).
   const prelim = findLeeches(stats, assignments, 15);
   const ids = prelim.map((l) => l.subject_id);
@@ -61,7 +65,51 @@ export async function fetchRaw(token, fetchImpl = fetch) {
     ? await wkGetAll(`/subjects?ids=${ids.join(",")}`, token, fetchImpl)
     : [];
 
-  return { user, summary, assignments, stats, levels, kanjiSubjects, leechSubjects };
+  return { user, summary, assignments, stats, levels, kanjiSubjects, leechSubjects, lessonSubjects };
+}
+
+const TYPE_ORDER = { radical: 0, kanji: 1, vocabulary: 2, kana_vocabulary: 2 };
+// Assignments waiting as lessons, in the order WaniKani usually serves them.
+export function lessonQueue(assignments) {
+  return (assignments || [])
+    .filter((a) => a.data.srs_stage === 0 && !a.data.started_at)
+    .sort(
+      (a, b) =>
+        String(a.data.unlocked_at || "").localeCompare(String(b.data.unlocked_at || "")) ||
+        (TYPE_ORDER[a.data.subject_type] ?? 3) - (TYPE_ORDER[b.data.subject_type] ?? 3) ||
+        a.data.subject_id - b.data.subject_id
+    );
+}
+
+// How many lessons today. Apprentice items (stages 1–4) are what next week's reviews are made of,
+// so the budget aims to keep them under APPRENTICE_CAP, and shrinks if reviews are piling up.
+export const APPRENTICE_CAP = 100;
+export function lessonBudget(apprentice, queue) {
+  if (queue > 100) return { budget: 0, locked: true, toUnlock: queue - 100 };
+  let b = Math.round((APPRENTICE_CAP - apprentice) / 4);
+  if (queue > 50) b -= Math.round((queue - 50) / 10);
+  return { budget: Math.max(0, Math.min(15, b)), locked: false };
+}
+
+// Lessons started per study day, from WaniKani's started_at stamps (exact).
+export function lessonsByDay(assignments, timeZone) {
+  const out = new Map();
+  for (const a of assignments || []) {
+    const t = a.data.started_at;
+    if (!t) continue;
+    const k = studyDayKey(new Date(t), timeZone);
+    out.set(k, (out.get(k) || 0) + 1);
+  }
+  return out;
+}
+
+// Level-up progress: WaniKani levels you up when 90% of the current level's kanji reach Guru.
+export function levelProgress(assignments, kanjiSubjects, level) {
+  const ids = new Set(kanjiSubjects.filter((k) => k.data.level === level).map((k) => k.id));
+  const total = ids.size;
+  let passed = 0;
+  for (const a of assignments || []) if (ids.has(a.data.subject_id) && (a.data.srs_stage >= 5 || a.data.passed_at)) passed++;
+  return { total, passed, need: Math.ceil(total * 0.9) };
 }
 
 // ---------- calculations ----------
