@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-18T14:54:09.032Z",
+ "updated": "2026-10-18T17:27:59.031Z",
  "items": [
   {
    "id": "01-wa-ga",
@@ -19,42 +19,42 @@
   },
   {
    "id": "voc:about-me:jikoshoukai",
-   "stage": 1,
-   "due": "2026-10-05",
-   "right": 1,
+   "stage": 2,
+   "due": "2026-10-21",
+   "right": 2,
    "wrong": 0,
    "seen": "new:2026-10-04"
   },
   {
    "id": "voc:about-me:sakkyokuka",
-   "stage": 1,
-   "due": "2026-10-05",
-   "right": 1,
+   "stage": 2,
+   "due": "2026-10-21",
+   "right": 2,
    "wrong": 0,
    "seen": "new:2026-10-04"
   },
   {
    "id": "voc:about-me:gendaiongaku",
-   "stage": 1,
-   "due": "2026-10-05",
-   "right": 1,
+   "stage": 2,
+   "due": "2026-10-21",
+   "right": 2,
    "wrong": 0,
    "seen": "new:2026-10-04"
   },
   {
    "id": "voc:about-me:shusshin",
-   "stage": 1,
-   "due": "2026-10-05",
-   "right": 1,
+   "stage": 2,
+   "due": "2026-10-21",
+   "right": 2,
    "wrong": 0,
    "seen": "new:2026-10-04"
   },
   {
    "id": "voc:about-me:tenji",
    "stage": 1,
-   "due": "2026-10-05",
+   "due": "2026-10-19",
    "right": 1,
-   "wrong": 0,
+   "wrong": 1,
    "seen": "new:2026-10-04"
   },
   {
@@ -136,6 +136,46 @@
    "right": 1,
    "wrong": 0,
    "seen": "2026-10-05"
+  },
+  {
+   "id": "voc:about-me:gakufu",
+   "stage": 1,
+   "due": "2026-10-19",
+   "right": 1,
+   "wrong": 0,
+   "seen": "new:2026-10-18"
+  },
+  {
+   "id": "voc:about-me:rokuon",
+   "stage": 1,
+   "due": "2026-10-19",
+   "right": 1,
+   "wrong": 0,
+   "seen": "new:2026-10-18"
+  },
+  {
+   "id": "voc:about-me:tsuma",
+   "stage": 1,
+   "due": "2026-10-19",
+   "right": 1,
+   "wrong": 0,
+   "seen": "new:2026-10-18"
+  },
+  {
+   "id": "voc:about-me:okusan",
+   "stage": 1,
+   "due": "2026-10-19",
+   "right": 1,
+   "wrong": 0,
+   "seen": "new:2026-10-18"
+  },
+  {
+   "id": "voc:about-me:neko",
+   "stage": 1,
+   "due": "2026-10-19",
+   "right": 1,
+   "wrong": 0,
+   "seen": "new:2026-10-18"
   }
  ]
 }
