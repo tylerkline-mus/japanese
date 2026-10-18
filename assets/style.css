@@ -553,3 +553,19 @@ body[data-depth="2"] .nav a span { font-size: 1.1rem; }
 .band-fill { position: absolute; inset: 0 auto 0 0; background: var(--srs-guru); border-radius: 999px; }
 .band-ok { position: absolute; top: 0; bottom: 0; border-left: 2px dashed var(--good); border-right: 2px dashed var(--good); }
 .lchars { white-space: nowrap; }
+
+/* ---------- 先生のノート ---------- */
+.tnote { border-left: 4px solid var(--accent); }
+.tnote h2 { margin: 2px 0 8px; }
+.tnote h3 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-3); margin: 18px 0 4px; }
+.tnote p { line-height: 1.6; }
+.tnote-ja { background: var(--surface-2); border-radius: 12px; padding: 10px 14px; margin: 6px 0 4px; }
+.tnote-ja .ja.big { font-size: 1.15rem; margin: 0; }
+.tfocus { padding-left: 20px; margin: 6px 0; }
+.tfocus li { margin: 6px 0; line-height: 1.55; }
+.treply { border-left: 3px solid var(--line); padding-left: 12px; margin: 8px 0; }
+a.tnote-line { display: block; color: var(--ink); text-decoration: none; font-size: 0.95rem; padding: 12px 16px; }
+a.tnote-line .more { color: var(--accent); white-space: nowrap; }
+details.tpast { border-top: 1px solid var(--line); padding: 8px 0; }
+details.tpast summary { cursor: pointer; font-weight: 700; min-height: 32px; }
+#msg-text { width: 100%; font: inherit; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface-2); color: var(--ink); }

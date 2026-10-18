@@ -364,26 +364,29 @@ export function newTodayWith(prefix, todayKey) {
 }
 export const gradeItem = (id, ok, todayKey, defaultUrl) => gradeVoc(id, ok, todayKey, defaultUrl);
 
-// ---------- "heard it" captures ----------
-// Rows {id: "hrd:<time>", stage 0, seen: <what you heard> ␟ <where>}. The Sunday task reads them
-// (via grammar-progress.json) and answers in data/glue.json → answered.
+// ---------- free-text rows: "heard it" captures and notes to 先生 ----------
+// Rows {id: "<prefix><time>", stage 0, seen: <text> ␟ <extra>}. The Sunday task reads them via
+// grammar-progress.json: hrd: rows are answered in data/glue.json, msg: rows in the next 先生のノート.
 const SEP = " \u241f ";
-export function heardList() {
+export function textRows(prefix) {
   return [...state.rows.values()]
-    .filter((r) => r.id.startsWith("hrd:") && r.seen)
+    .filter((r) => r.id.startsWith(prefix) && r.seen)
     .map((r) => {
       const [what, where] = r.seen.split(SEP);
       return { id: r.id, what, where: where || "", at: r.updated };
     })
     .sort((a, b) => b.at.localeCompare(a.at));
 }
-export async function addHeard(what, where, defaultUrl) {
-  const id = "hrd:" + Date.now().toString(36);
+export async function addText(prefix, what, where, defaultUrl) {
+  const id = prefix + Date.now().toString(36);
   const seen = where ? what + SEP + where : what;
   await save([normalize({ id, stage: 0, due: "", right: 0, wrong: 0, seen, updated: nowIso() })], defaultUrl);
   return id;
 }
-export async function removeHeard(id, defaultUrl) {
+export async function removeText(id, defaultUrl) {
   const prev = state.rows.get(id);
   if (prev) await save([{ ...prev, seen: "", updated: nowIso() }], defaultUrl);
 }
+export const heardList = () => textRows("hrd:");
+export const addHeard = (what, where, url) => addText("hrd:", what, where, url);
+export const removeHeard = (id, url) => removeText(id, url);

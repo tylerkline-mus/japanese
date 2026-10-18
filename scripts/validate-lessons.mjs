@@ -265,8 +265,30 @@ try {
   if (e.code !== "ENOENT") problems.push(`vault/defs.json: can't read or parse (${e.message})`);
 }
 
+// 先生のノート (data/teacher/notes.json)
+let noteCount = 0;
+try {
+  const t = JSON.parse(await readFile(new URL("../data/teacher/notes.json", import.meta.url), "utf8"));
+  const dates = new Set();
+  for (const n of t.notes || []) {
+    noteCount++;
+    const at = `teacher/notes.json: ${n.date || "note with no date"}`;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(n.date || "")) problems.push(`${at}: date must be YYYY-MM-DD`);
+    if (dates.has(n.date)) problems.push(`${at}: two notes with the same date`);
+    dates.add(n.date);
+    if (!n.title) problems.push(`${at}: needs a title`);
+    if (!(n.lookBack || []).length) problems.push(`${at}: needs lookBack`);
+    if (!(n.focus || []).length) problems.push(`${at}: needs focus`);
+    (n.replies || []).forEach((r, i) => { if (!r.id || !r.answer) problems.push(`${at}: reply ${i + 1} needs id and answer`); });
+  }
+  const sorted = [...(t.notes || [])].map((n) => n.date).join() === [...(t.notes || [])].map((n) => n.date).sort().reverse().join();
+  if (!sorted) problems.push("teacher/notes.json: newest note goes first");
+} catch (e) {
+  if (e.code !== "ENOENT") problems.push(`teacher/notes.json: can't read or parse (${e.message})`);
+}
+
 if (problems.length) {
   console.error(problems.map((p) => "✕ " + p).join("\n"));
   process.exit(1);
 }
-console.log(`✓ ${index.lessons.length} lessons and ${bankCount} review banks, every answer explained.${sceneCount ? ` Scenes: ${sceneCount}.` : ""}${glueCount ? ` Glue: ${glueCount}.` : ""}${vaultReadings ? ` Vault: ${vaultReadings} readings, ${vaultSentences} sentences, ${defCount} definitions.` : ""}${pickWeeks ? ` Picks: ${pickWeeks} week(s), newest OK.` : ""}`);
+console.log(`✓ ${index.lessons.length} lessons and ${bankCount} review banks, every answer explained.${sceneCount ? ` Scenes: ${sceneCount}.` : ""}${glueCount ? ` Glue: ${glueCount}.` : ""}${noteCount ? ` Notes: ${noteCount}.` : ""}${vaultReadings ? ` Vault: ${vaultReadings} readings, ${vaultSentences} sentences, ${defCount} definitions.` : ""}${pickWeeks ? ` Picks: ${pickWeeks} week(s), newest OK.` : ""}`);

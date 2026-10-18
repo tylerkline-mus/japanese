@@ -1,7 +1,7 @@
 // Daily snapshot: records today's WaniKani numbers into data/history.json.
 // Runs in GitHub Actions with the WANIKANI_TOKEN repository secret.
 import { readFile, writeFile } from "node:fs/promises";
-import { timeZoneFor, wkGet, wkGetAll, snapshotRow, previousDayRow, findLeeches, knownKanji, vocabList } from "../assets/core.js";
+import { timeZoneFor, wkGet, wkGetAll, snapshotRow, previousDayRow, findLeeches, knownKanji, vocabList, lessonsByDay } from "../assets/core.js";
 
 const token = process.env.WANIKANI_TOKEN;
 if (!token) {
@@ -29,6 +29,7 @@ try {
 const prev = previousDayRow(history, row.date, config.timeZone);
 row.reviewedToday = prev ? Math.max(0, row.meaning[0] - prev.meaning[0]) : null;
 row.burnedToday = prev && prev.srs ? Math.max(0, row.srs.burned - prev.srs.burned) : null;
+row.lessonsToday = lessonsByDay(assignments, config.timeZone).get(row.date) || 0;
 history = history.filter((h) => h.date !== row.date).concat([row]).sort((a, b) => a.date.localeCompare(b.date));
 await writeFile(historyPath, JSON.stringify(history, null, 1) + "\n");
 // What you know right now — read by the weekly lesson writer, which can't reach WaniKani itself.

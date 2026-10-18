@@ -94,7 +94,7 @@ async function boot() {
     buildModel();
   }
   render();
-  await Promise.all([loadHistory(), loadNotes(), loadReviews(), loadImmersion(), loadVocab(), loadVault(), loadGlue(), loadTrip()]);
+  await Promise.all([loadHistory(), loadNotes(), loadReviews(), loadImmersion(), loadVocab(), loadVault(), loadGlue(), loadTrip(), loadTeacher()]);
   if (S.raw) buildModel();
   render();
   await refreshWK(false);
@@ -540,7 +540,7 @@ function viewToday() {
     <p class="countdown"><span lang="ja">${esc(S.config.tripLabel === "Japan" ? "日本" : S.config.tripLabel)}まで</span> <b>${fmt(days)}</b> <span lang="ja">日</span></p>
   </header>`;
 
-  if (!token()) return top + practiceCard() + needToken() + grammarCard() + sceneTodayCard() + vaultTodayCard() + lessonCard() + selftalkCard();
+  if (!token()) return top + teacherCard() + practiceCard() + needToken() + grammarCard() + sceneTodayCard() + vaultTodayCard() + lessonCard() + selftalkCard();
   if (!S.model) return top + errorBanner() + `<section class="card"><p class="muted">Loading your WaniKani…</p></section>`;
   const m = S.model;
   const t = m.target;
@@ -599,7 +599,7 @@ function viewToday() {
       <div class="leech-row">${m.leeches.slice(0, 4).map(leechChip).join("")}</div></section>`
     : "";
 
-  return top + errorBanner() + practiceCard() + target + lessonsCard() + grammarCard() + sceneTodayCard() + vaultTodayCard() + lessonCard() + selftalkCard() + queueCard + leech;
+  return top + errorBanner() + teacherCard() + practiceCard() + target + lessonsCard() + grammarCard() + sceneTodayCard() + vaultTodayCard() + lessonCard() + selftalkCard() + queueCard + leech;
 }
 
 function ring(p) {
@@ -2819,6 +2819,100 @@ function lessonsStats() {
     }`;
 }
 
+// ---------- 先生のノート ----------
+// A weekly note from the Sunday task: what moved, what it noticed, what to do this week, and a line
+// in Japanese. Fresh notes open on Today on Sunday and Monday; after that they fold to one line.
+// Notes to 先生 (msg: rows through the Sheet) get answered in the next note.
+
+let TEACHER = { notes: [] };
+async function loadTeacher() {
+  for (const url of [rawUrl("data/teacher/notes.json") + "?t=" + Date.now(), "data/teacher/notes.json"]) {
+    try {
+      TEACHER = await getJSON(url);
+      return;
+    } catch {}
+  }
+}
+
+function noteBody(n, { compact = false } = {}) {
+  const md = (t) => rich(t);
+  const replies = (n.replies || []).filter((r) => r.answer);
+  return `
+    ${n.ja ? `<div class="tnote-ja"><p class="ja big" lang="ja">${ja(n.ja)} ${sayBtn(n.ja)}</p>${n.jaEn ? `<button class="reveal" aria-expanded="false">English</button><div class="hidden-en"><p class="en">${esc(n.jaEn)}</p></div>` : ""}</div>` : ""}
+    <h3>${L("Looking back", "ふりかえり")}</h3>${(n.lookBack || []).map((p) => `<p>${md(p)}</p>`).join("")}
+    ${(n.noticed || []).length ? `<h3>${L("What I noticed", "気づいたこと")}</h3>${n.noticed.map((p) => `<p>${md(p)}</p>`).join("")}` : ""}
+    ${(n.focus || []).length ? `<h3>${L("This week", "今週")}</h3><ol class="tfocus">${n.focus.map((p) => `<li>${md(p)}</li>`).join("")}</ol>` : ""}
+    ${
+      replies.length && !compact
+        ? `<h3>${L("You asked", "メッセージへの返事")}</h3>${replies.map((r) => `<div class="treply"><p class="small muted">“${esc(r.to || "")}”</p><p>${md(r.answer)}</p></div>`).join("")}`
+        : ""
+    }`;
+}
+
+function noteDate(d) {
+  return new Date(d + "T12:00:00").toLocaleString("en-US", { month: "short", day: "numeric" });
+}
+
+function teacherCard() {
+  const n = (TEACHER.notes || [])[0];
+  if (!n) return "";
+  const fresh = n.date >= srs.addDays(todayKey(), -1);
+  if (!fresh)
+    return `<a class="card tnote-line" href="#teacher"><span lang="ja">先生のノート</span> · ${esc(noteDate(n.date))} · <b>${esc(n.title || "")}</b> <span class="more">${L("Read →", "読む →")}</span></a>`;
+  return `<section class="card tnote"><p class="eyebrow" lang="ja">先生のノート · ${esc(noteDate(n.date))}</p>
+    <h2>${esc(n.title || "")}</h2>
+    ${noteBody(n, { compact: true })}
+    <div class="row"><a class="btn ghost" href="#teacher">${L("Reply to 先生 · past notes", "返事を書く · 前のノート")}</a></div>
+  </section>`;
+}
+
+function viewTeacher() {
+  const notes = TEACHER.notes || [];
+  const answered = new Set(notes.flatMap((n) => (n.replies || []).map((r) => r.id)));
+  const msgs = srs.textRows("msg:");
+  const [latest, ...older] = notes;
+  return `<a class="back" href="#today">← ${L("Today", "今日")}</a>
+    <section class="card intro"><h1 lang="ja">先生のノート</h1>
+      <p>${L("A note every Sunday: what moved, what I noticed, and what to do this week. Write back below and I'll answer in the next one.", "毎週日曜日のノート。下に返事を書いてください。")}</p></section>
+    ${latest ? `<section class="card tnote"><p class="eyebrow">${esc(noteDate(latest.date))}</p><h2>${esc(latest.title || "")}</h2>${noteBody(latest)}</section>` : `<section class="card"><p class="muted">The first note arrives on Sunday.</p></section>`}
+    <section class="card"><h2>${L("Note to 先生", "先生へ")}</h2>
+      <p class="small muted">${L("Anything: what feels shaky, what you want more of, a busy week ahead, a question. In English or Japanese. It's read on Sunday and answered in the next note, and it can change what gets written that week.", "何でもどうぞ。英語でも日本語でも。")}</p>
+      <form id="msg-form" class="stack">
+        <textarea id="msg-text" rows="3" placeholder="${L("e.g. Rehearsal vocabulary feels shaky. / I'll be traveling Thursday to Sunday.", "例：リハーサルの言葉がむずかしいです。")}" aria-label="Your note"></textarea>
+        <div class="row"><button class="btn" type="submit">${L("Send", "送る")}</button></div>
+      </form>
+      ${
+        msgs.length
+          ? `<ul class="heard-list">${msgs
+              .map(
+                (m) => `<li><p>${esc(m.what)}</p><p class="small muted">${esc(noteDate(m.at.slice(0, 10)))} · ${
+                  answered.has(m.id) ? L("answered in a note", "返事あり") : `${L("waiting for Sunday", "日曜日に返事")} · <button class="linkish" data-action="msg-remove" data-id="${esc(m.id)}">${L("Remove", "けす")}</button>`
+                }</p></li>`
+              )
+              .join("")}</ul>`
+          : ""
+      }
+    </section>
+    ${
+      older.length
+        ? `<section class="card"><h2>${L("Earlier notes", "前のノート")}</h2>${older
+            .map((n) => `<details class="tpast"><summary>${esc(noteDate(n.date))} · ${esc(n.title || "")}</summary>${noteBody(n)}</details>`)
+            .join("")}</section>`
+        : ""
+    }`;
+}
+
+function mountTeacher() {
+  document.getElementById("msg-form")?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const v = document.getElementById("msg-text").value.trim();
+    if (!v) return;
+    await srs.addText("msg:", v, "", S.config.syncUrl);
+    toast(L("Sent. 先生 will answer on Sunday.", "送りました。"));
+    render();
+  });
+}
+
 // ---------- notes ----------
 
 function viewNotes() {
@@ -2912,7 +3006,7 @@ function audioSection() {
 
 // ---------------- router ----------------
 
-const ROUTES = { today: viewToday, stats: viewStats, course: viewCourse, scenes: viewScenes, phrases: viewScenes, vault: viewVault, practice: viewPractice, notes: viewNotes, settings: viewSettings, review: viewReview, immerse: viewImmerse };
+const ROUTES = { today: viewToday, stats: viewStats, course: viewCourse, scenes: viewScenes, phrases: viewScenes, vault: viewVault, practice: viewPractice, teacher: viewTeacher, notes: viewNotes, settings: viewSettings, review: viewReview, immerse: viewImmerse };
 
 function render() {
   const [name, arg, arg2] = (location.hash.replace(/^#/, "") || "today").split("/");
@@ -2920,13 +3014,14 @@ function render() {
   setChartWidth(Math.min(760, window.innerWidth) - 32 - 42);
   document.body.dataset.depth = String(globalDepth());
   $app().innerHTML = fn(arg, arg2);
-  const navName = name === "review" || name === "practice" ? "today" : name === "phrases" ? "scenes" : ROUTES[name] ? name : "today";
+  const navName = name === "review" || name === "practice" || name === "teacher" ? "today" : name === "phrases" ? "scenes" : ROUTES[name] ? name : "today";
   document.querySelectorAll("nav a[data-nav]").forEach((a) => a.classList.toggle("active", a.dataset.nav === navName));
   setStatus();
   if (name === "course" && arg && S.lessonCache.has(arg)) mountExercises(S.lessonCache.get(arg));
   if (name === "review") mountReview();
   if (name === "scenes" || name === "phrases") mountScenes(arg);
   if (name === "practice") mountPractice();
+  if (name === "teacher") mountTeacher();
   if (name === "vault") {
     if (arg === "warm") mountWarm();
     else if (arg === "quiz") mountVaultQuiz();
@@ -3065,6 +3160,10 @@ function wireGlobal() {
         render();
       }
       return;
+    }
+    if (act === "msg-remove") {
+      await srs.removeText(t.dataset.id, S.config.syncUrl);
+      return render();
     }
     if (act === "heard-remove") {
       await srs.removeHeard(t.dataset.id, S.config.syncUrl);

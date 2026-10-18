@@ -171,7 +171,40 @@ lessons (`wk-vocab.json` stage 0–1 words, or kanji/vocab one level above `leve
 matter on this trip but isn't caught by a keyword, add it to `words`. Keep keywords specific:
 a flag on everything is a flag on nothing.
 
-## 8. Check and publish
+## 8. 先生のノート (every run, last)
+
+Write this after everything else, so you know what you added. You are his teacher looking at his
+week. Add a note to the **front** of `data/teacher/notes.json`; copy the shape of the existing one.
+
+**Read first:**
+- `data/history.json`: daily queue, `reviewedToday`, `burnedToday`, `lessonsToday`, SRS breakdown,
+  and meaning/reading totals (accuracy for the week = change in correct / change in correct+incorrect).
+- `data/grammar-progress.json`: grammar points (plain ids), scene words (`voc:`), glue words (`glu:`),
+  burned-word refreshes (`brn:`), readings marked read (`vr:`), immersion minutes (`imm:`, `right` =
+  minutes), heard-it captures (`hrd:`), and **notes to you (`msg:`, text in `seen`)**. `updated` tells
+  you when each was last touched, so you can see what he actually used this week.
+- `data/wk-state.json` leeches (what they have in common matters more than the list).
+- The private context in the run instructions (where he is, what's coming up).
+
+**Write:**
+- `date` (today), `title` (a few words, specific to the week; not "Weekly update").
+- `lookBack`: 1–2 short paragraphs on what actually moved, with real numbers. Plain and warm.
+- `noticed`: 1–3 observations he couldn't get from the charts: patterns in leeches, reading vs
+  meaning gaps, what he's avoiding, what's quietly working, how vocabulary and grammar are balanced.
+  Tie each to something concrete you can do or already did (e.g. "so this week's lesson is …").
+- `focus`: 2–4 specific, doable things for the coming week, aware of his schedule (residencies,
+  travel, concerts). Name the hub feature to use.
+- `ja` + `jaEn`: one or two sentences in Japanese at his level ({漢字|かな} markup), growing a little
+  each week. Encouraging but true.
+- `replies`: for each `msg:` row not already answered in an earlier note, `{id, to, answer}`:
+  `to` = a short quote of what he wrote, `answer` = 1–3 sentences. If a message asks for a change
+  (more listening, a new scene, slower lessons), act on it in this run and say what you did.
+
+**Tone:** honest and brief (about 200 words before replies). A thin week gets said plainly, with no
+guilt and no empty praise. Never invent numbers; if something couldn't be read, say so.
+`**bold**` works.
+
+## 9. Check and publish
 
 1. `node scripts/validate-lessons.mjs` must pass. Fix anything it reports.
 2. Re-read every Japanese sentence once more for naturalness and correctness. If unsure about one,
@@ -197,3 +230,8 @@ a flag on everything is a flag on nothing.
 - The WaniKani backlog is cleared (mid-October 2026). Grammar is no longer on hold: keep one lesson a
   week coming, deepen when he's four ahead.
 - Prioritize grammar he'll use in real conversations on the trip over literary forms.
+- **Next lesson: "Transitive and intransitive verbs" (Tae Kim `in-transitive`)**, even though it sits
+  before 〜ている in Tae Kim's order. His leeches (Oct 2026) are verb pairs he confuses by meaning:
+  見せる/見る, 出かける/出る, 回す/回る. Build the lesson around pairs he knows from WaniKani, with
+  contrast pairs and review drills aimed at exactly those. Then continue from the chapter after
+  `teform`. (The 2026-10-18 note told him this lesson is coming.)
