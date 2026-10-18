@@ -287,8 +287,41 @@ try {
   if (e.code !== "ENOENT") problems.push(`teacher/notes.json: can't read or parse (${e.message})`);
 }
 
+// 処方: targeted drills from the weekly note (data/teacher/drills.json)
+let fixCount = 0;
+try {
+  const t = JSON.parse(await readFile(new URL("../data/teacher/drills.json", import.meta.url), "utf8"));
+  const sids = new Set();
+  for (const set of t.sets || []) {
+    const at = `teacher/drills.json: ${set.id || "set with no id"}`;
+    if (!set.id || sids.has(set.id)) problems.push(`${at}: needs a unique id`);
+    sids.add(set.id);
+    for (const k of ["title", "why"]) if (!set[k]) problems.push(`${at}: missing ${k}`);
+    const ids = new Set();
+    (set.drills || []).forEach((ex, i) => {
+      fixCount++;
+      const da = `${at}: drill ${i + 1} (${ex.id || "no id"})`;
+      if (!ex.id || ids.has(ex.id)) problems.push(`${da}: needs a unique id`);
+      ids.add(ex.id);
+      if (ex.type === "choice") {
+        if (!ex.prompt || !ex.en) problems.push(`${da}: needs prompt and en`);
+        if (!(ex.options || []).some((o) => o.verdict === "right")) problems.push(`${da}: no option marked right`);
+        (ex.options || []).forEach((o, j) => {
+          if (!o.why || !o.why.trim()) problems.push(`${da}: option ${j + 1} has no explanation`);
+          if (!["right", "wrong", "different"].includes(o.verdict)) problems.push(`${da}: option ${j + 1} has an unknown verdict`);
+        });
+      } else if (ex.type === "build") {
+        if (!ex.tiles?.length || !ex.answers?.length || !ex.why) problems.push(`${da}: needs tiles, answers and why`);
+        for (const a of ex.answers || []) for (const tl of a) if (!ex.tiles.includes(tl)) problems.push(`${da}: answer uses a tile not in tiles: ${tl}`);
+      } else problems.push(`${da}: drills support choice and build`);
+    });
+  }
+} catch (e) {
+  if (e.code !== "ENOENT") problems.push(`teacher/drills.json: can't read or parse (${e.message})`);
+}
+
 if (problems.length) {
   console.error(problems.map((p) => "✕ " + p).join("\n"));
   process.exit(1);
 }
-console.log(`✓ ${index.lessons.length} lessons and ${bankCount} review banks, every answer explained.${sceneCount ? ` Scenes: ${sceneCount}.` : ""}${glueCount ? ` Glue: ${glueCount}.` : ""}${noteCount ? ` Notes: ${noteCount}.` : ""}${vaultReadings ? ` Vault: ${vaultReadings} readings, ${vaultSentences} sentences, ${defCount} definitions.` : ""}${pickWeeks ? ` Picks: ${pickWeeks} week(s), newest OK.` : ""}`);
+console.log(`✓ ${index.lessons.length} lessons and ${bankCount} review banks, every answer explained.${sceneCount ? ` Scenes: ${sceneCount}.` : ""}${glueCount ? ` Glue: ${glueCount}.` : ""}${noteCount ? ` Notes: ${noteCount}, drills: ${fixCount}.` : ""}${vaultReadings ? ` Vault: ${vaultReadings} readings, ${vaultSentences} sentences, ${defCount} definitions.` : ""}${pickWeeks ? ` Picks: ${pickWeeks} week(s), newest OK.` : ""}`);

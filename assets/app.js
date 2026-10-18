@@ -94,7 +94,7 @@ async function boot() {
     buildModel();
   }
   render();
-  await Promise.all([loadHistory(), loadNotes(), loadReviews(), loadImmersion(), loadVocab(), loadVault(), loadGlue(), loadTrip(), loadTeacher()]);
+  await Promise.all([loadHistory(), loadNotes(), loadReviews(), loadImmersion(), loadVocab(), loadVault(), loadGlue(), loadTrip(), loadTeacher(), loadDrills()]);
   if (S.raw) buildModel();
   render();
   await refreshWK(false);
@@ -2434,6 +2434,7 @@ function dailyItems(onlyGlue) {
     for (const x of warmQueue().slice(0, 4)) items.push({ kind: "warm", x });
     const listen = S.scenes.filter(sceneActive).flatMap((sc) => practiceItems(sc).listen.map((it) => ({ sc, it })));
     if (listen.length) items.push({ kind: "listen", ...listen[dayOfYear() % listen.length] });
+    for (const f of fixQueue(3)) items.push({ kind: "fix", ...f });
   }
   // Interleave: new glue intros stay early; everything else shuffled, keeping a glue word's gap
   // after its own intro.
@@ -2626,6 +2627,20 @@ function mountPractice() {
         bumpWarmCount();
         srs.gradeWarm(x.w, ok, s.date, S.config.syncUrl);
       });
+      return;
+    }
+
+    if (it.kind === "fix") {
+      const head = `${count()}<p class="pill-inline" lang="ja">処方 · ${esc(it.set.title)}</p>${it.d.scene ? `<p class="scene">${esc(it.d.scene)}</p>` : ""}`;
+      const record = (v) => {
+        const ok = v === "right";
+        s.graded++;
+        if (ok) s.right++;
+        srs.gradeItem(fixId(it.set, it.d), ok, s.date, S.config.syncUrl);
+      };
+      const lesson = { id: "fix", title: it.set.title, titleEn: it.set.target || "" };
+      if (it.d.type === "build") drawBuild(host, it.d, head, lesson, record, next);
+      else drawChoice(host, it.d, head, lesson, record, next);
       return;
     }
 
@@ -2862,11 +2877,13 @@ function teacherCard() {
   return `<section class="card tnote"><p class="eyebrow" lang="ja">先生のノート · ${esc(noteDate(n.date))}</p>
     <h2>${esc(n.title || "")}</h2>
     ${noteBody(n, { compact: true })}
+    ${currentFixSet() ? `<p class="small"><span lang="ja">処方</span> · <b>${esc(currentFixSet().title)}</b>: ${L("three a day in Daily practice, or", "毎日三つ、または")} <a href="#teacher/drills" data-action="fix-start">${L("run them all", "全部やる")}</a>.</p>` : ""}
     <div class="row"><a class="btn ghost" href="#teacher">${L("Reply to 先生 · past notes", "返事を書く · 前のノート")}</a></div>
   </section>`;
 }
 
-function viewTeacher() {
+function viewTeacher(arg) {
+  if (arg === "drills") return viewFixDrills();
   const notes = TEACHER.notes || [];
   const answered = new Set(notes.flatMap((n) => (n.replies || []).map((r) => r.id)));
   const msgs = srs.textRows("msg:");
@@ -2875,6 +2892,7 @@ function viewTeacher() {
     <section class="card intro"><h1 lang="ja">先生のノート</h1>
       <p>${L("A note every Sunday: what moved, what I noticed, and what to do this week. Write back below and I'll answer in the next one.", "毎週日曜日のノート。下に返事を書いてください。")}</p></section>
     ${latest ? `<section class="card tnote"><p class="eyebrow">${esc(noteDate(latest.date))}</p><h2>${esc(latest.title || "")}</h2>${noteBody(latest)}</section>` : `<section class="card"><p class="muted">The first note arrives on Sunday.</p></section>`}
+    ${fixCard()}
     <section class="card"><h2>${L("Note to 先生", "先生へ")}</h2>
       <p class="small muted">${L("Anything: what feels shaky, what you want more of, a busy week ahead, a question. In English or Japanese. It's read on Sunday and answered in the next note, and it can change what gets written that week.", "何でもどうぞ。英語でも日本語でも。")}</p>
       <form id="msg-form" class="stack">
@@ -2902,7 +2920,8 @@ function viewTeacher() {
     }`;
 }
 
-function mountTeacher() {
+function mountTeacher(arg) {
+  if (arg === "drills") return mountFixDrills();
   document.getElementById("msg-form")?.addEventListener("submit", async (e) => {
     e.preventDefault();
     const v = document.getElementById("msg-text").value.trim();
@@ -2911,6 +2930,111 @@ function mountTeacher() {
     toast(L("Sent. 先生 will answer on Sunday.", "送りました。"));
     render();
   });
+}
+
+// ---------- 処方: targeted drills from the weekly note ----------
+// Each Sunday the note can prescribe a set aimed at what it noticed (data/teacher/drills.json).
+// Three a day ride along in Daily practice (least-practiced and missed first); the whole set can be
+// run from the 先生 page. Results go to fix:<set>:<drill> rows so next week's note can see if it helped.
+
+let DRILLS = { sets: [] };
+async function loadDrills() {
+  for (const url of [rawUrl("data/teacher/drills.json") + "?t=" + Date.now(), "data/teacher/drills.json"]) {
+    try {
+      DRILLS = await getJSON(url);
+      return;
+    } catch {}
+  }
+}
+const currentFixSet = () => (DRILLS.sets || [])[0] || null;
+const fixId = (set, d) => `fix:${set.id}:${d.id}`;
+
+function fixStats(set) {
+  const ds = (set.drills || []).filter(exerciseOk);
+  let tried = 0, solid = 0;
+  for (const d of ds) {
+    const r = srs.state.rows.get(fixId(set, d));
+    if (r?.stage) {
+      tried++;
+      if (r.right > r.wrong && r.stage >= 2) solid++;
+    }
+  }
+  return { total: ds.length, tried, solid };
+}
+
+// Least-practiced first, then the ones missed most; due ones come back.
+function fixQueue(n) {
+  const set = currentFixSet();
+  if (!set) return [];
+  const today = todayKey();
+  const ds = (set.drills || []).filter(exerciseOk);
+  const score = (d) => {
+    const r = srs.state.rows.get(fixId(set, d));
+    if (!r?.stage) return -1000;
+    if (r.due && r.due <= today) return -500 + r.right - r.wrong * 2;
+    return 1000 + r.stage;
+  };
+  return ds
+    .map((d) => ({ d, k: score(d) }))
+    .filter((x) => x.k < 1000)
+    .sort((a, b) => a.k - b.k)
+    .slice(0, n)
+    .map((x) => ({ set, d: x.d }));
+}
+
+function fixCard() {
+  const set = currentFixSet();
+  if (!set) return "";
+  const st = fixStats(set);
+  return `<section class="card fix-card"><p class="eyebrow" lang="ja">処方 · ${L("This week's drills", "今週の練習")}</p>
+    <h2>${esc(set.title)}</h2>
+    <p>${rich(set.why || "")}</p>
+    <p class="small muted">${fmt(st.tried)} of ${fmt(st.total)} tried · ${fmt(st.solid)} solid. ${L("Three a day come up in Daily practice.", "毎日三つ、今日の練習に出ます。")}</p>
+    <div class="row"><a class="btn" href="#teacher/drills" data-action="fix-start">${L("Run all", "全部やる")} ${fmt(st.total)}</a></div>
+  </section>`;
+}
+
+function viewFixDrills() {
+  const set = currentFixSet();
+  if (!set) return `<a class="back" href="#teacher">← 先生</a><section class="card"><p class="muted">No drills this week.</p></section>`;
+  return `<a class="back" href="#teacher">← 先生</a>
+    <section class="card"><p class="eyebrow" lang="ja">処方</p><h1>${esc(set.title)}</h1><p>${rich(set.why || "")}</p></section>
+    <section class="card"><div id="fix-host"></div></section>`;
+}
+
+function runFixDrills(host, items, onDone) {
+  let i = 0, right = 0;
+  const draw = () => {
+    if (i >= items.length) {
+      host.innerHTML = `<div class="ex-end"><p class="big-num">${right} / ${items.length}</p>
+        <p>${right === items.length ? L("Clean run.", "全問正解！") : L("The explanations on the misses are the lesson. Those come back sooner.", "まちがえたものは、また出ます。")}</p>
+        <div class="row"><a class="btn ghost" href="#teacher">${L("Back to 先生", "先生にもどる")}</a></div></div>`;
+      onDone && onDone();
+      return;
+    }
+    const { set, d } = items[i];
+    const head = `<p class="ex-count">${i + 1} / ${items.length}</p>${d.scene ? `<p class="scene">${esc(d.scene)}</p>` : ""}`;
+    const record = (v) => {
+      const ok = v === "right";
+      if (ok) right++;
+      srs.gradeItem(fixId(set, d), ok, todayKey(), S.config.syncUrl);
+    };
+    const next = () => {
+      i++;
+      draw();
+    };
+    const lesson = { id: "fix", title: set.title, titleEn: set.target || "" };
+    if (d.type === "build") drawBuild(host, d, head, lesson, record, next);
+    else drawChoice(host, d, head, lesson, record, next);
+  };
+  draw();
+}
+
+function mountFixDrills() {
+  const host = document.getElementById("fix-host");
+  const set = currentFixSet();
+  if (!host || !set) return;
+  runFixDrills(host, (set.drills || []).filter(exerciseOk).map((d) => ({ set, d })));
 }
 
 // ---------- notes ----------
@@ -3021,7 +3145,7 @@ function render() {
   if (name === "review") mountReview();
   if (name === "scenes" || name === "phrases") mountScenes(arg);
   if (name === "practice") mountPractice();
-  if (name === "teacher") mountTeacher();
+  if (name === "teacher") mountTeacher(arg);
   if (name === "vault") {
     if (arg === "warm") mountWarm();
     else if (arg === "quiz") mountVaultQuiz();

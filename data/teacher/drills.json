@@ -1,0 +1,341 @@
+{
+ "sets": [
+  {
+   "id": "2026-10-18-verb-pairs",
+   "date": "2026-10-18",
+   "title": "Verb pairs: do it vs. it happens",
+   "target": "見せる/見る, 出かける/出る/出す, 回す/回る, and the pairs around them",
+   "why": "Your leeches are pairs where one verb is **\"do it to something\"** (takes を) and the other is **\"it happens by itself\"** (takes が). The trick isn't memorizing two meanings: look at the particle. を → 上げる, 止める, 入れる, 見せる, 回す, 出す. が → 上がる, 止まる, 入る, 見える, 回る, 出る. Two rough clues: verbs ending in **〜す** (回す, 出す) are almost always \"do it\"; verbs ending in **〜aru** (上がる, 止まる, 広がる) are almost always \"it happens.\"",
+   "drills": [
+    {
+     "id": "vp01",
+     "type": "choice",
+     "prompt": "ここで{車|くるま}を＿＿ください。",
+     "en": "Please stop the car here.",
+     "options": [
+      {
+       "text": "{止|と}めて",
+       "verdict": "right",
+       "why": "を marks the thing you act on (the car), so you need the \"do it\" verb: **止める**. This is your taxi sentence."
+      },
+      {
+       "text": "{止|と}まって",
+       "verdict": "wrong",
+       "why": "**止まる** means it stops by itself and can't take を. 「車を止まって」 is like saying \"please self-stop the car.\""
+      },
+      {
+       "text": "{止|と}まる",
+       "verdict": "wrong",
+       "why": "Wrong verb (止まる = stops by itself), and the dictionary form can't go before ください anyway."
+      }
+     ],
+     "scene": "In a taxi"
+    },
+    {
+     "id": "vp02",
+     "type": "choice",
+     "prompt": "{電車|でんしゃ}が＿＿。",
+     "en": "The train stopped.",
+     "options": [
+      {
+       "text": "{止|と}まりました",
+       "verdict": "right",
+       "why": "が marks what's doing the happening: the train stopped by itself. That's **止まる**."
+      },
+      {
+       "text": "{止|と}めました",
+       "verdict": "different",
+       "why": "Grammatical, but it means the train stopped *something* (電車が車を止めました). For the train itself stopping, use 止まる."
+      }
+     ]
+    },
+    {
+     "id": "vp03",
+     "type": "choice",
+     "prompt": "{質問|しつもん}がある{人|ひと}は、{手|て}を＿＿ください。",
+     "en": "If you have a question, please raise your hand.",
+     "options": [
+      {
+       "text": "{上|あ}げて",
+       "verdict": "right",
+       "why": "You lift your hand: you're acting on it (手を) → **上げる**."
+      },
+      {
+       "text": "{上|あ}がって",
+       "verdict": "wrong",
+       "why": "**上がる** = to go up by itself (prices, temperature, you going upstairs). It can't take 手を."
+      }
+     ]
+    },
+    {
+     "id": "vp04",
+     "type": "choice",
+     "prompt": "ちょっと{音|おと}を＿＿ください。",
+     "en": "Could you turn the sound down a little?",
+     "options": [
+      {
+       "text": "{下|さ}げて",
+       "verdict": "right",
+       "why": "You lower the volume: 音を + **下げる**. Handy in rehearsal."
+      },
+      {
+       "text": "{下|さ}がって",
+       "verdict": "wrong",
+       "why": "**下がる** = goes down by itself. 「音が下がった」 (the sound dropped) works; 「音を下がって」 doesn't."
+      },
+      {
+       "text": "{上|あ}げて",
+       "verdict": "different",
+       "why": "Grammatical and the right verb type, but it means turn it *up*."
+      }
+     ],
+     "scene": "Rehearsal"
+    },
+    {
+     "id": "vp05",
+     "type": "choice",
+     "prompt": "かばんに{本|ほん}を＿＿。",
+     "en": "I put the book in my bag.",
+     "options": [
+      {
+       "text": "{入|い}れました",
+       "verdict": "right",
+       "why": "You put something in: 本を + **入れる** (the \"do it\" verb)."
+      },
+      {
+       "text": "{入|はい}りました",
+       "verdict": "wrong",
+       "why": "**入る** = to enter yourself. 「本を入りました」 doesn't work: 入る can't take the thing being moved."
+      }
+     ]
+    },
+    {
+     "id": "vp06",
+     "type": "choice",
+     "prompt": "すみません、ここに＿＿もいいですか。",
+     "en": "Excuse me, may I come in here?",
+     "options": [
+      {
+       "text": "{入|はい}って",
+       "verdict": "right",
+       "why": "You're the one going in, and nothing is being moved: **入る**."
+      },
+      {
+       "text": "{入|い}れて",
+       "verdict": "different",
+       "why": "Grammatical, but 入れてもいいですか means \"may I put (something) in here?\" It needs an object, like 荷物を入れても…"
+      }
+     ]
+    },
+    {
+     "id": "vp07",
+     "type": "choice",
+     "prompt": "ここから{山|やま}が＿＿。",
+     "en": "You can see the mountains from here.",
+     "options": [
+      {
+       "text": "{見|み}えます",
+       "verdict": "right",
+       "why": "**見える** = to be visible. The mountains are what's visible, so they take が."
+      },
+      {
+       "text": "{見|み}ます",
+       "verdict": "wrong",
+       "why": "**見る** = to look at. It takes を for what you look at: 「山を見ます」. With が on 山, it reads as if the mountains are doing the looking."
+      },
+      {
+       "text": "{見|み}せます",
+       "verdict": "wrong",
+       "why": "**見せる** = to show. The mountains aren't showing anything."
+      }
+     ]
+    },
+    {
+     "id": "vp08",
+     "type": "choice",
+     "prompt": "その{写真|しゃしん}を＿＿ください。",
+     "en": "Please show me that photo.",
+     "options": [
+      {
+       "text": "{見|み}せて",
+       "verdict": "right",
+       "why": "Showing = making someone see: **見せる**. One of your leeches. Think 見 + せる (\"make see\")."
+      },
+      {
+       "text": "{見|み}て",
+       "verdict": "different",
+       "why": "Grammatical, but 「写真を見てください」 means \"please look at the photo.\" You'd be asking them to look, not to show you."
+      },
+      {
+       "text": "{見|み}えて",
+       "verdict": "wrong",
+       "why": "**見える** = to be visible, so it can't take を."
+      }
+     ]
+    },
+    {
+     "id": "vp09",
+     "type": "choice",
+     "prompt": "ギターの{糸|いと}が＿＿。",
+     "en": "The guitar string snapped.",
+     "options": [
+      {
+       "text": "{切|き}れました",
+       "verdict": "right",
+       "why": "Nobody did it; it just broke: **切れる** (to be cut, to snap)."
+      },
+      {
+       "text": "{切|き}りました",
+       "verdict": "different",
+       "why": "Grammatical, but with が on the string it means the string cut *something*. If you cut it: 「糸を切りました」."
+      }
+     ]
+    },
+    {
+     "id": "vp10",
+     "type": "choice",
+     "prompt": "{地図|ちず}をテーブルに＿＿。",
+     "en": "I spread the map out on the table.",
+     "options": [
+      {
+       "text": "{広|ひろ}げました",
+       "verdict": "right",
+       "why": "You spread it: 地図を + **広げる**."
+      },
+      {
+       "text": "{広|ひろ}がりました",
+       "verdict": "wrong",
+       "why": "**広がる** = to spread out by itself (a town, a rumor, the sky). It can't take を."
+      }
+     ]
+    },
+    {
+     "id": "vp11",
+     "type": "choice",
+     "prompt": "{山|やま}の{下|した}に{町|まち}が＿＿います。",
+     "en": "A town spreads out below the mountain.",
+     "options": [
+      {
+       "text": "{広|ひろ}がって",
+       "verdict": "right",
+       "why": "The town spreads out by itself (町が): **広がる**."
+      },
+      {
+       "text": "{広|ひろ}げて",
+       "verdict": "wrong",
+       "why": "**広げる** needs someone spreading something: 「地図を広げて」."
+      }
+     ]
+    },
+    {
+     "id": "vp12",
+     "type": "choice",
+     "prompt": "ゴミを＿＿。",
+     "en": "I took out the trash.",
+     "options": [
+      {
+       "text": "{出|だ}しました",
+       "verdict": "right",
+       "why": "You took something out: ゴミを + **出す**."
+      },
+      {
+       "text": "{出|で}ました",
+       "verdict": "wrong",
+       "why": "**出る** = to go out yourself. With を it marks the place you leave (家を出る), so 「ゴミを出ました」 means \"I left the trash,\" as in exited it!"
+      },
+      {
+       "text": "{出|で}かけました",
+       "verdict": "wrong",
+       "why": "**出かける** = to head out somewhere (on an outing). No object."
+      }
+     ]
+    },
+    {
+     "id": "vp13",
+     "type": "choice",
+     "prompt": "{今日|きょう}は{雨|あめ}だから、＿＿たくないです。",
+     "en": "It's raining, so I don't feel like going out today.",
+     "options": [
+      {
+       "text": "{出|で}かけ",
+       "verdict": "right",
+       "why": "**出かける** = to go out (somewhere, for a while). Another of your leeches."
+      },
+      {
+       "text": "{出|だ}し",
+       "verdict": "wrong",
+       "why": "**出す** = to take something out. 「出したくない」 needs an object: \"I don't want to take *it* out.\""
+      },
+      {
+       "text": "{回|まわ}し",
+       "verdict": "wrong",
+       "why": "**回す** = to turn something. Not related."
+      }
+     ]
+    },
+    {
+     "id": "vp14",
+     "type": "choice",
+     "prompt": "ドアノブを{右|みぎ}に＿＿ください。",
+     "en": "Turn the doorknob to the right.",
+     "options": [
+      {
+       "text": "{回|まわ}して",
+       "verdict": "right",
+       "why": "You turn it: ドアノブを + **回す** (another leech). Pattern: 〜す verbs are usually \"do it.\""
+      },
+      {
+       "text": "{回|まわ}って",
+       "verdict": "wrong",
+       "why": "**回る** = to go round by itself (a wheel, the earth). It can't take ドアノブを."
+      }
+     ]
+    },
+    {
+     "id": "vp15",
+     "type": "build",
+     "tiles": [
+      "ここで",
+      "車",
+      "を",
+      "が",
+      "止めて",
+      "止まって",
+      "ください"
+     ],
+     "answers": [
+      [
+       "ここで",
+       "車",
+       "を",
+       "止めて",
+       "ください"
+      ]
+     ],
+     "en": "Please stop the car here.",
+     "why": "を + 止める: you make the car stop. が and 止まって are the \"it happens by itself\" set and don't fit with ください here."
+    },
+    {
+     "id": "vp16",
+     "type": "build",
+     "tiles": [
+      "{雨|あめ}",
+      "が",
+      "を",
+      "{止|や}みました",
+      "{止|と}めました"
+     ],
+     "answers": [
+      [
+       "{雨|あめ}",
+       "が",
+       "{止|や}みました"
+      ]
+     ],
+     "en": "The rain stopped.",
+     "why": "Rain stops by itself, so it's が + an \"it happens\" verb. For rain that's **止む** (やむ), a new word with the same kanji. Nobody 止める the rain."
+    }
+   ]
+  }
+ ]
+}

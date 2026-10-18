@@ -200,6 +200,19 @@ week. Add a note to the **front** of `data/teacher/notes.json`; copy the shape o
   `to` = a short quote of what he wrote, `answer` = 1–3 sentences. If a message asks for a change
   (more listening, a new scene, slower lessons), act on it in this run and say what you did.
 
+**処方 (prescription drills).** If `noticed` names a weakness you can drill (confused word pairs,
+a particle, readings of a kanji family, a grammar point that keeps slipping), add a set to the
+**front** of `data/teacher/drills.json`; copy the shape of the existing set: `id` (date + slug), `date`,
+`title`, `target` (what exactly), `why` (the mechanism in 2–4 sentences: the rule that makes the
+confusion go away, not a definition list), and 12–16 `drills` (`choice` with verdict + why on every
+option, plus 2–3 `build`). Use his words (`wk-vocab.json`, s ≥ 5), with at most one new word per
+sentence. Aim the wrong options at the exact confusion. Three a day appear in Daily practice.
+- **Check last week's set first.** Rows `fix:<set id>:<drill id>` in grammar-progress.json show
+  right/wrong per drill. Say in `lookBack` or `noticed` whether it helped. If it's still shaky, write
+  a fresh set on the same target from a different angle (new sentences, more `build`) rather than
+  moving on.
+- If nothing is worth drilling this week, don't add a set; last week's stays up.
+
 **Tone:** honest and brief (about 200 words before replies). A thin week gets said plainly, with no
 guilt and no empty praise. Never invent numbers; if something couldn't be read, say so.
 `**bold**` works.
