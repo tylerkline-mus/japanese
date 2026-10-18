@@ -127,7 +127,8 @@ WaniKani never shows them again.
    English. Burned words are done; add **about 75 a week**: enlightened words first, then master,
    then guru (check which words in `wk-vocab.json` have no entry). Also add any burned word that's
    new since last week. Rules:
-   - Use **only kanji in `knownKanji`** (`data/wk-state.json`); write everything else in kana.
+   - Prefer kanji in `knownKanji`; kanji in `startedKanji` (`data/wk-state.json`) are allowed,
+     since he can tap them. Write anything he hasn't started in kana.
      No `{漢字|かな}` markup in definitions.
    - Never include the word itself (it would give the answer away).
    - One short line, dictionary style: what it is, what it's for, or its opposite

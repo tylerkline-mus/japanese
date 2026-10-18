@@ -35,6 +35,9 @@ await writeFile(historyPath, JSON.stringify(history, null, 1) + "\n");
 const lvl = user.data.level;
 const kanjiSubjects = await wkGetAll(`/subjects?types=kanji&levels=${Array.from({ length: lvl }, (_, i) => i + 1).join(",")}`, token);
 const known = [...knownKanji(assignments, kanjiSubjects)];
+// Every kanji he has started (any stage). Definitions may use these; they can dip below Guru and
+// come back, which shouldn't force rewrites.
+const started = [...knownKanji(assignments, kanjiSubjects, 1)];
 const leech = findLeeches(stats, assignments, 15);
 const leechSubjects = leech.length ? await wkGetAll(`/subjects?ids=${leech.map((l) => l.subject_id).join(",")}`, token) : [];
 const byId = new Map(leechSubjects.map((x) => [x.id, x]));
@@ -43,6 +46,7 @@ const state = {
   level: lvl,
   knownKanji: known.join(""),
   knownKanjiCount: known.length,
+  startedKanji: started.join(""),
   leeches: leech
     .map((l) => {
       const x = byId.get(l.subject_id);

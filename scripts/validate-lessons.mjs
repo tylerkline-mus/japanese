@@ -242,9 +242,12 @@ try {
 let defCount = 0;
 try {
   const defs = JSON.parse(await readFile(new URL("../data/vault/defs.json", import.meta.url), "utf8")).defs || {};
+  // Kanji he has started on WaniKani (any stage). Falls back to skipping the check until the
+  // snapshot has recorded them.
   let known = null;
   try {
-    known = new Set([...(JSON.parse(await readFile(new URL("../data/wk-state.json", import.meta.url), "utf8")).knownKanji || "")]);
+    const st = JSON.parse(await readFile(new URL("../data/wk-state.json", import.meta.url), "utf8"));
+    if (st.startedKanji) known = new Set([...st.startedKanji]);
   } catch {}
   for (const [w, d] of Object.entries(defs)) {
     defCount++;
@@ -255,7 +258,7 @@ try {
     if (/[{}|]/.test(d)) problems.push(`${at}: no furigana markup; write unknown kanji in kana`);
     if (known && known.size) {
       const odd = [...String(d)].filter((c) => /[一-龯]/.test(c) && !known.has(c));
-      if (odd.length) problems.push(`${at}: kanji he doesn't know yet (${[...new Set(odd)].join("")}); write them in kana`);
+      if (odd.length) problems.push(`${at}: kanji he hasn't started on WaniKani (${[...new Set(odd)].join("")}); write them in kana`);
     }
   }
 } catch (e) {
