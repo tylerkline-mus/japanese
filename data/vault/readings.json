@@ -1,6 +1,400 @@
 {
  "weeks": [
   {
+   "week": "2026-10-19",
+   "note": "Verb pairs in the wild: 見える, 出る and 見せる turn up in all three.",
+   "readings": [
+    {
+     "id": "r007-small-mountain",
+     "title": "{小|ちい}さい{山|やま}",
+     "titleEn": "A small mountain",
+     "kind": "Diary",
+     "tiers": [
+      "burned"
+     ],
+     "paragraphs": [
+      {
+       "ja": "{休|やす}みの{日|ひ}に、{友人|ゆうじん}と{山|やま}に{上|のぼ}りました。{大|おお}きい{山|やま}ではありません。{小|ちい}さい{山|やま}です。",
+       "en": "On my day off I climbed a mountain with a friend. Not a big mountain. A small one."
+      },
+      {
+       "ja": "{朝|あさ}、{村|むら}を{出|で}ました。{川|かわ}の{右|みぎ}の{道|みち}を{歩|ある}きました。{空|そら}は{青|あお}かったです。",
+       "en": "In the morning we left the village. We walked the path on the right side of the river. The sky was blue."
+      },
+      {
+       "ja": "{上|うえ}まで{一時間|いちじかん}でした。{上|うえ}から、{下|した}の{村|むら}と{田|た}んぼが{見|み}えました。",
+       "en": "It was an hour to the top. From up there we could see the village and the rice fields below."
+      },
+      {
+       "ja": "{友人|ゆうじん}は「わあ、すごい！」と{言|い}いました。{私|わたし}は{写真|しゃしん}を{少|すこ}し{撮|と}りました。",
+       "en": "My friend said, \"Wow, amazing!\" I took a few photos."
+      },
+      {
+       "ja": "{二人|ふたり}で、{丸|まる}いおにぎりを{食|た}べました。{水|みず}も{少|すこ}しありました。",
+       "en": "The two of us ate round rice balls. We had a little water too."
+      },
+      {
+       "ja": "{下|した}までは{早|はや}かったです。でも、{今|いま}、{足|あし}が{少|すこ}し{痛|いた}いです。まあ、やっぱり{山|やま}はいいですね。",
+       "en": "The way down was fast. But now my legs hurt a little. Well, mountains really are the best."
+      }
+     ],
+     "questions": [
+      {
+       "id": "q1",
+       "type": "choice",
+       "prompt": "だれと{山|やま}に{上|のぼ}りましたか。",
+       "en": "Who did the writer climb the mountain with?",
+       "options": [
+        {
+         "text": "{友人|ゆうじん}",
+         "verdict": "right",
+         "why": "「{友人|ゆうじん}と{山|やま}に{上|のぼ}りました」: と marks who you do it with."
+        },
+        {
+         "text": "{一人|ひとり}で",
+         "verdict": "wrong",
+         "why": "「{二人|ふたり}で」 comes later: there were two of them."
+        },
+        {
+         "text": "{村|むら}の{人|ひと}",
+         "verdict": "wrong",
+         "why": "The village is where they started, not who came along."
+        }
+       ]
+      },
+      {
+       "id": "q2",
+       "type": "choice",
+       "prompt": "{上|うえ}から、{何|なに}が{見|み}えましたか。",
+       "en": "What could they see from the top?",
+       "options": [
+        {
+         "text": "{村|むら}と{田|た}んぼ",
+         "verdict": "right",
+         "why": "「{下|した}の{村|むら}と{田|た}んぼが{見|み}えました」: が + 見える, the view came into sight."
+        },
+        {
+         "text": "{海|うみ}",
+         "verdict": "wrong",
+         "why": "No sea in this one. It's a village and rice fields below."
+        },
+        {
+         "text": "{大|おお}きい{山|やま}",
+         "verdict": "wrong",
+         "why": "The writer says this one isn't a big mountain, and nothing says another one was visible."
+        }
+       ]
+      },
+      {
+       "id": "q3",
+       "type": "choice",
+       "prompt": "{今|いま}、どこが{痛|いた}いですか。",
+       "en": "What hurts now?",
+       "options": [
+        {
+         "text": "{足|あし}",
+         "verdict": "right",
+         "why": "「{足|あし}が{少|すこ}し{痛|いた}いです」"
+        },
+        {
+         "text": "{手|て}",
+         "verdict": "wrong",
+         "why": "Hands aren't mentioned. It's the legs, after the walk down."
+        },
+        {
+         "text": "{目|め}",
+         "verdict": "wrong",
+         "why": "Eyes aren't mentioned. It's the legs."
+        }
+       ]
+      },
+      {
+       "id": "q4",
+       "type": "choice",
+       "prompt": "「まあ、やっぱり{山|やま}はいいですね」の「まあ」は、{何|なに}をしていますか。",
+       "en": "What is まあ doing in 「まあ、やっぱり山はいいですね」?",
+       "options": [
+        {
+         "text": "Shrugging off the sore legs: \"well, anyway\"",
+         "verdict": "right",
+         "why": "まあ softens and moves on: the legs hurt, but never mind. Then やっぱり confirms what they already felt about mountains."
+        },
+        {
+         "text": "Showing surprise, like \"wow\"",
+         "verdict": "wrong",
+         "why": "Surprise is the friend's わあ at the top. まあ is calmer: \"well…\""
+        },
+        {
+         "text": "Asking a question",
+         "verdict": "wrong",
+         "why": "Nothing is being asked. ですね shares a feeling."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "r008-phone-directions",
+     "title": "もしもし、{道|みち}が…",
+     "titleEn": "Hello? About the way…",
+     "kind": "Short dialogue",
+     "tiers": [
+      "enlightened"
+     ],
+     "paragraphs": [
+      {
+       "ja": "「もしもし、ケンさん？{今|いま}、{駅|えき}を{出|で}ました。でも、{道|みち}が{分|わ}かりません。」",
+       "en": "\"Hello, Ken? I just left the station. But I don't know the way.\""
+      },
+      {
+       "ja": "「えっと、{近|ちか}くに{何|なに}がありますか。」「{大|おお}きい{通|とお}りと、{交番|こうばん}があります。」",
+       "en": "\"Um, what's near you?\" \"There's a big avenue and a police box.\""
+      },
+      {
+       "ja": "「ああ、{分|わ}かりました。{交番|こうばん}の{人|ひと}に、{住所|じゅうしょ}を{見|み}せてください。」",
+       "en": "\"Ah, got it. Show the address to the officer at the police box.\""
+      },
+      {
+       "ja": "{交番|こうばん}の{人|ひと}は{親切|しんせつ}でした。「{一番|いちばん}{近|ちか}い{道|みち}は、この{通|とお}りです。{海|うみ}の{方|ほう}に{行|い}ってください。」",
+       "en": "The officer was kind. \"The shortest way is this avenue. Go toward the sea.\""
+      },
+      {
+       "ja": "{会話|かいわ}は{全部|ぜんぶ}{日本語|にほんご}でした！{少|すこ}し{歩|ある}きました。ケンさんの{家|いえ}は、{海|うみ}の{近|ちか}くにありました。",
+       "en": "The whole conversation was in Japanese! I walked a little. Ken's house was near the sea."
+      },
+      {
+       "ja": "「よかった！{電話|でんわ}、ありがとう。」「いえいえ。じゃあ、おやつを{食|た}べましょう。」",
+       "en": "\"Phew! Thanks for the call.\" \"No problem. Right, let's have a snack.\""
+      }
+     ],
+     "questions": [
+      {
+       "id": "q1",
+       "type": "choice",
+       "prompt": "{駅|えき}の{近|ちか}くに{何|なに}がありましたか。",
+       "en": "What was near the station?",
+       "options": [
+        {
+         "text": "{大|おお}きい{通|とお}りと{交番|こうばん}",
+         "verdict": "right",
+         "why": "「{大|おお}きい{通|とお}りと、{交番|こうばん}があります」"
+        },
+        {
+         "text": "{海|うみ}",
+         "verdict": "wrong",
+         "why": "The sea is where the officer says to head, and where Ken's house is, not what was by the station."
+        },
+        {
+         "text": "ケンさんの{家|いえ}",
+         "verdict": "wrong",
+         "why": "If the house were by the station, there'd be no phone call."
+        }
+       ]
+      },
+      {
+       "id": "q2",
+       "type": "choice",
+       "prompt": "{交番|こうばん}の{人|ひと}に{何|なに}を{見|み}せましたか。",
+       "en": "What did the writer show the officer?",
+       "options": [
+        {
+         "text": "{住所|じゅうしょ}",
+         "verdict": "right",
+         "why": "「{住所|じゅうしょ}を{見|み}せてください」: 見せる = make someone see it, show."
+        },
+        {
+         "text": "{電話|でんわ}",
+         "verdict": "wrong",
+         "why": "The phone is how they talked to Ken. What Ken said to show was the address."
+        },
+        {
+         "text": "{名前|なまえ}",
+         "verdict": "wrong",
+         "why": "A name doesn't help you find a house. It was the address."
+        }
+       ]
+      },
+      {
+       "id": "q3",
+       "type": "choice",
+       "prompt": "{会話|かいわ}は{何語|なにご}でしたか。",
+       "en": "What language was the conversation in?",
+       "options": [
+        {
+         "text": "{全部|ぜんぶ}{日本語|にほんご}",
+         "verdict": "right",
+         "why": "「{会話|かいわ}は{全部|ぜんぶ}{日本語|にほんご}でした！」, and the ！ says the writer is proud of it."
+        },
+        {
+         "text": "{少|すこ}し{日本語|にほんご}",
+         "verdict": "wrong",
+         "why": "全部 = all of it."
+        },
+        {
+         "text": "{英語|えいご}",
+         "verdict": "wrong",
+         "why": "The point of the exclamation is that it was all Japanese."
+        }
+       ]
+      },
+      {
+       "id": "q4",
+       "type": "choice",
+       "prompt": "「じゃあ、おやつを{食|た}べましょう」の「じゃあ」は、{何|なに}をしていますか。",
+       "en": "What is じゃあ doing here?",
+       "options": [
+        {
+         "text": "Moving on now that the problem is solved: \"right, so…\"",
+         "verdict": "right",
+         "why": "じゃあ closes one topic and moves to the next. The guest has arrived, so: snack time."
+        },
+        {
+         "text": "Disagreeing, like \"but\"",
+         "verdict": "wrong",
+         "why": "There's nothing to disagree with. That would be でも."
+        },
+        {
+         "text": "Showing surprise",
+         "verdict": "wrong",
+         "why": "Surprise would be えっ or へえ. じゃあ is a hinge to the next thing."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "r009-inn-note",
+     "title": "お{部屋|へや}のご{案内|あんない}",
+     "titleEn": "About your room",
+     "kind": "Note from an inn",
+     "tiers": [
+      "master",
+      "guru"
+     ],
+     "paragraphs": [
+      {
+       "ja": "ようこそ。お{部屋|へや}は「{竹|たけ}」の{和室|わしつ}です。お{部屋|へや}から{西|にし}の{海|うみ}が{見|み}えます。",
+       "en": "Welcome. Your room is the Bamboo room, a Japanese-style room. You can see the sea to the west from it."
+      },
+      {
+       "ja": "お{食事|しょくじ}は{下|した}の{部屋|へや}です。{朝|あさ}ごはんは{七時|しちじ}から、{晩|ばん}ごはんは{六時|ろくじ}からです。{和食|わしょく}です。",
+       "en": "Meals are in the room downstairs. Breakfast is from seven, dinner from six. Japanese food."
+      },
+      {
+       "ja": "{近|ちか}くに{魚屋|さかなや}と{本屋|ほんや}があります。{魚屋|さかなや}の{魚|さかな}は、{本当|ほんとう}においしいですよ。",
+       "en": "There's a fish shop and a bookshop nearby. The fish at the fish shop is really good."
+      },
+      {
+       "ja": "{夜|よる}は、{後|うし}ろの{山|やま}の{辺|あた}りで、{星|ほし}がよく{見|み}えます。{光|ひか}る{星|ほし}がたくさんあります。",
+       "en": "At night, around the hill behind us, you can see the stars well. There are lots of shining stars."
+      },
+      {
+       "ja": "{床|ゆか}はちょっと{古|ふる}いです。{歩|ある}くと、{音|おと}がします。すみません！",
+       "en": "The floor is a bit old. It creaks when you walk. Sorry!"
+      },
+      {
+       "ja": "{何|なん}でも、{家|いえ}の{者|もの}に{言|い}ってください。どうぞ、ゆっくり{休|やす}んでくださいね。",
+       "en": "Tell any of us if you need anything. Please, rest and take your time."
+      }
+     ],
+     "questions": [
+      {
+       "id": "q1",
+       "type": "choice",
+       "prompt": "お{部屋|へや}から{何|なに}が{見|み}えますか。",
+       "en": "What can you see from the room?",
+       "options": [
+        {
+         "text": "{西|にし}の{海|うみ}",
+         "verdict": "right",
+         "why": "「お{部屋|へや}から{西|にし}の{海|うみ}が{見|み}えます」"
+        },
+        {
+         "text": "{東|ひがし}の{山|やま}",
+         "verdict": "wrong",
+         "why": "The hill is behind the inn, and it's where to see stars at night. The view from the room is the sea, to the west."
+        },
+        {
+         "text": "{魚屋|さかなや}",
+         "verdict": "wrong",
+         "why": "The fish shop is nearby, but the note doesn't say you can see it from the room."
+        }
+       ]
+      },
+      {
+       "id": "q2",
+       "type": "choice",
+       "prompt": "{晩|ばん}ごはんは{何時|なんじ}からですか。",
+       "en": "What time does dinner start?",
+       "options": [
+        {
+         "text": "{六時|ろくじ}",
+         "verdict": "right",
+         "why": "「{晩|ばん}ごはんは{六時|ろくじ}からです」"
+        },
+        {
+         "text": "{七時|しちじ}",
+         "verdict": "wrong",
+         "why": "Seven is breakfast."
+        },
+        {
+         "text": "{八時|はちじ}",
+         "verdict": "wrong",
+         "why": "Eight isn't in the note."
+        }
+       ]
+      },
+      {
+       "id": "q3",
+       "type": "choice",
+       "prompt": "{星|ほし}はどこでよく{見|み}えますか。",
+       "en": "Where can you see the stars well?",
+       "options": [
+        {
+         "text": "{後|うし}ろの{山|やま}の{辺|あた}り",
+         "verdict": "right",
+         "why": "「{後|うし}ろの{山|やま}の{辺|あた}りで、{星|ほし}がよく{見|み}えます」"
+        },
+        {
+         "text": "{下|した}の{部屋|へや}",
+         "verdict": "wrong",
+         "why": "The room downstairs is for meals."
+        },
+        {
+         "text": "{海|うみ}の{中|なか}",
+         "verdict": "wrong",
+         "why": "The sea is the view from the room. Stars are over the hill behind."
+        }
+       ]
+      },
+      {
+       "id": "q4",
+       "type": "choice",
+       "prompt": "{床|ゆか}を{歩|ある}くと、どうなりますか。",
+       "en": "What happens when you walk on the floor?",
+       "options": [
+        {
+         "text": "{音|おと}がします",
+         "verdict": "right",
+         "why": "「{歩|ある}くと、{音|おと}がします」: 音がする = a sound is heard. The old floor creaks; nobody is making the noise on purpose."
+        },
+        {
+         "text": "{音|おと}を{出|だ}します",
+         "verdict": "different",
+         "why": "音を出す = someone makes a sound deliberately, like playing a drum. The creaking floor isn't anyone's plan."
+        },
+        {
+         "text": "{床|ゆか}が{光|ひか}ります",
+         "verdict": "wrong",
+         "why": "光る is for the stars in the paragraph before. The floor just creaks."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
    "week": "2026-10-12",
    "note": "Week 2: a snowy morning built from newly burned words, a valley town from enlightened ones, and a note from a friend for master and guru.",
    "readings": [

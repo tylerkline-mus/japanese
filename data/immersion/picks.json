@@ -1,6 +1,234 @@
 {
   "weeks": [
     {
+      "week": "2026-10-19",
+      "note": "Week 3: 〜ている, plus the verb pairs from Lesson 4. Two short stories, a konbini video you can rewatch without subtitles, an old house, and the Akutagawa composition prize on NHK-FM.",
+      "picks": [
+        {
+          "id": "w2026-10-19-1",
+          "title": "マルクスがはじめて日本に行きました 2/4 (Markus's First Trip to Japan 2/4)",
+          "url": "https://podcasters.spotify.com/pod/show/nihongo-shortstory/episodes/24-Markuss-First-Trip-to-Japan-24-e302b7u",
+          "type": "listen",
+          "source": "Nihongo Short Story by Noriko",
+          "minutes": 5,
+          "level": 1,
+          "why": "Part 2 of the series you started last week. Five minutes, and Noriko is the source you actually finish, so keep the streak going.",
+          "connection": "A first trip is full of things happening on their own: doors opening, trains stopping, views coming into sight. That's the が side of this week's verb pairs.",
+          "listenFor": "Every time you hear 〜ています, ask: is it happening right now (食べています) or a state left behind by a change (来ています, 着いています)?",
+          "prep": [
+            {
+              "ja": "{着|つ}く",
+              "en": "to arrive"
+            },
+            {
+              "ja": "{電車|でんしゃ}",
+              "en": "train"
+            },
+            {
+              "ja": "{見|み}える",
+              "en": "to be visible"
+            },
+            {
+              "ja": "{出|で}かける",
+              "en": "to go out"
+            },
+            {
+              "ja": "ホテル",
+              "en": "hotel"
+            },
+            {
+              "ja": "{乗|の}る",
+              "en": "to ride, get on"
+            }
+          ],
+          "tags": [
+            "travel",
+            "story"
+          ],
+          "fromArchive": "a41aebf10738"
+        },
+        {
+          "id": "w2026-10-19-2",
+          "title": "#1590「日本旅行について！」",
+          "url": "http://nihongoconteppei.com/2026/09/28/1590%e3%80%8c%e6%97%a5%e6%9c%ac%e6%97%85%e8%a1%8c%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%81%e3%80%8d/",
+          "type": "listen",
+          "source": "Nihongo con Teppei (beginner)",
+          "level": 1,
+          "why": "Teppei talking slowly about traveling in Japan, which is the next three months of your life. Short enough for a walk to the shop.",
+          "connection": "Trip prep: trains, places to visit, what to eat, all in beginner-speed Japanese.",
+          "listenFor": "Catch the verbs that end a sentence. When you hear one, ask whether the thing before it had が (it happens: 出る, 見える, 止まる) or を (someone does it: 出す, 見る, 止める).",
+          "prep": [
+            {
+              "ja": "{旅行|りょこう}",
+              "en": "trip"
+            },
+            {
+              "ja": "{観光|かんこう}",
+              "en": "sightseeing"
+            },
+            {
+              "ja": "{名所|めいしょ}",
+              "en": "famous place"
+            },
+            {
+              "ja": "{電車|でんしゃ}",
+              "en": "train"
+            },
+            {
+              "ja": "おすすめ",
+              "en": "recommendation"
+            },
+            {
+              "ja": "{有名|ゆうめい}",
+              "en": "famous"
+            }
+          ],
+          "tags": [
+            "travel",
+            "learner"
+          ],
+          "fromArchive": "bee6fc81098a"
+        },
+        {
+          "id": "w2026-10-19-3",
+          "title": "#05 Real Japanese for Convenience Store🍙 | Shadowing & Role Play Practice",
+          "url": "https://www.youtube.com/watch?v=k6DUWCMq-2Y",
+          "type": "watch",
+          "source": "かなまとぺ Kanamatope (YouTube)",
+          "minutes": 18,
+          "level": 2,
+          "why": "A konbini exchange at real speed, then broken down and shadowed. It has a no-subtitles pass built in: a good first step off English subtitles, on a situation you'll meet on day one.",
+          "connection": "The till is where you'll hear 袋はご利用ですか and answer with this week's new glue word, けっこうです.",
+          "listenFor": "Watch the role-play once with subtitles and once without. The second time, say your line out loud before the speaker does, and listen for 温める (heat it up, を) vs 温まる (warm up on its own).",
+          "prep": [
+            {
+              "ja": "{袋|ふくろ}",
+              "en": "bag"
+            },
+            {
+              "ja": "{温|あたた}める",
+              "en": "to heat up (something)"
+            },
+            {
+              "ja": "お{箸|はし}",
+              "en": "chopsticks"
+            },
+            {
+              "ja": "レシート",
+              "en": "receipt"
+            },
+            {
+              "ja": "コンビニ",
+              "en": "convenience store"
+            },
+            {
+              "ja": "けっこうです",
+              "en": "no thanks, I'm fine"
+            }
+          ],
+          "tags": [
+            "food",
+            "shopping",
+            "shadowing"
+          ]
+        },
+        {
+          "id": "w2026-10-19-4",
+          "title": "#125 What Does a Traditional Japanese Home Look Like? | House Tour in Easy Japanese",
+          "url": "https://podcasters.spotify.com/pod/show/imari1/episodes/125-What-Does-a-Traditional-Japanese-Home-Look-Like---House-Tour-in-Easy-Japanese-e3fe4nf",
+          "type": "listen",
+          "source": "Japanese Real Conversation (Imari Radio)",
+          "minutes": 7,
+          "level": 3,
+          "why": "A tour of an old Japanese house: tatami rooms, sliding doors, the garden. It's what the minshuku in Nagahama will look like, and there's a free transcript if you want to check yourself.",
+          "connection": "Pairs with this week's Vault reading from an inn (和室, 床, 部屋), and sliding doors are where you'll meet 開ける/開く and 閉める/閉まる.",
+          "listenFor": "Each time she describes a part of the house, listen for 〜ています at the end and decide: is she describing how it is (a state left by a change) or something someone is doing right now?",
+          "prep": [
+            {
+              "ja": "{和室|わしつ}",
+              "en": "Japanese-style room"
+            },
+            {
+              "ja": "{畳|たたみ}",
+              "en": "tatami mat"
+            },
+            {
+              "ja": "{部屋|へや}",
+              "en": "room"
+            },
+            {
+              "ja": "{床|ゆか}",
+              "en": "floor"
+            },
+            {
+              "ja": "{庭|にわ}",
+              "en": "garden"
+            },
+            {
+              "ja": "{家具|かぐ}",
+              "en": "furniture"
+            },
+            {
+              "ja": "{古|ふる}い",
+              "en": "old"
+            }
+          ],
+          "tags": [
+            "inns",
+            "daily life",
+            "native"
+          ],
+          "fromArchive": "c02eed669d8b"
+        },
+        {
+          "id": "w2026-10-19-5",
+          "title": "現代の音楽「最近の公演から 第36回芥川也寸志サントリー作曲賞選考演奏会（1）」",
+          "url": "https://ebravo.jp/archives/215434",
+          "type": "listen",
+          "source": "NHK-FM 現代の音楽",
+          "minutes": 50,
+          "level": 4,
+          "why": "Part one of this year's Akutagawa composition prize concert: new orchestral pieces by young Japanese composers, introduced in Japanese. Aired Sunday Oct 18, repeated Saturday Oct 24 at 6:00 JST. NHK's stream may be region-locked; the link is the October listing.",
+          "listenFor": "Don't try to follow every word. Listen to the host between pieces and catch every verb ending in 〜ています: what is the piece or the composer doing, or what state are they in?",
+          "prep": [
+            {
+              "ja": "{作曲家|さっきょくか}",
+              "en": "composer"
+            },
+            {
+              "ja": "{作曲賞|さっきょくしょう}",
+              "en": "composition prize"
+            },
+            {
+              "ja": "{選考|せんこう}",
+              "en": "selection, judging"
+            },
+            {
+              "ja": "{演奏会|えんそうかい}",
+              "en": "concert"
+            },
+            {
+              "ja": "{曲|きょく}",
+              "en": "piece"
+            },
+            {
+              "ja": "{初演|しょえん}",
+              "en": "premiere"
+            },
+            {
+              "ja": "オーケストラ",
+              "en": "orchestra"
+            }
+          ],
+          "tags": [
+            "music",
+            "contemporary",
+            "native"
+          ]
+        }
+      ]
+    },
+    {
       "week": "2026-10-12",
       "note": "Week 2: に vs で. Short and slow first (a ticket window, a first trip, a hotel), then a longer travel episode and one NHK show for the composer in you.",
       "picks": [

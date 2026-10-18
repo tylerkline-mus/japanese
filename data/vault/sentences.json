@@ -377,6 +377,174 @@
     "ja": "カバンから{切符|きっぷ}を«{取|と}り{出|だ}し»ました。",
     "en": "I took my ticket out of my bag."
    }
+  ],
+  "上げる": [
+   {
+    "ja": "すみません、マイクの{音|おと}を«{上|あ}»げてください。",
+    "en": "Excuse me, please turn the mic up."
+   }
+  ],
+  "下げる": [
+   {
+    "ja": "{少|すこ}し{音|おと}を«{下|さ}»げましょうか。",
+    "en": "Shall I turn it down a little?"
+   }
+  ],
+  "入る": [
+   {
+    "ja": "どうぞ、{中|なか}に«{入|はい}»ってください。",
+    "en": "Please, come on in."
+   }
+  ],
+  "出る": [
+   {
+    "ja": "{明日|あした}は{七時|しちじ}に{家|いえ}を«{出|で}»ます。",
+    "en": "Tomorrow I leave the house at seven."
+   }
+  ],
+  "立つ": [
+   {
+    "ja": "{駅|えき}の{前|まえ}に{大|おお}きい{木|き}が«{立|た}»っています。",
+    "en": "A big tree stands in front of the station."
+   }
+  ],
+  "切る": [
+   {
+    "ja": "このケーキを{六|むっ}つに«{切|き}»ってください。",
+    "en": "Please cut this cake into six pieces."
+   }
+  ],
+  "広げる": [
+   {
+    "ja": "テーブルに{楽譜|がくふ}を«{広|ひろ}»げました。",
+    "en": "I spread the score out on the table."
+   }
+  ],
+  "写す": [
+   {
+    "ja": "{先生|せんせい}のノートを«{写|うつ}»しました。",
+    "en": "I copied the teacher's notes."
+   }
+  ],
+  "正す": [
+   {
+    "ja": "{私|わたし}の{日本語|にほんご}を«{正|ただ}»してください。",
+    "en": "Please correct my Japanese."
+   }
+  ],
+  "大きい": [
+   {
+    "ja": "この{町|まち}の{駅|えき}は«{大|おお}»きいですね。",
+    "en": "This town's station is big, isn't it."
+   }
+  ],
+  "小さい": [
+   {
+    "ja": "«{小|ちい}»さい{店|みせ}ですが、{魚|さかな}がおいしいです。",
+    "en": "It's a small shop, but the fish is delicious."
+   }
+  ],
+  "少し": [
+   {
+    "ja": "«{少|すこ}し»だけ{日本語|にほんご}が{話|はな}せます。",
+    "en": "I can speak just a little Japanese."
+   }
+  ],
+  "元気": [
+   {
+    "ja": "{田中|たなか}さん、お«{元気|げんき}»ですか。",
+    "en": "Mr. Tanaka, how are you?"
+   }
+  ],
+  "休日": [
+   {
+    "ja": "«{休日|きゅうじつ}»は{電車|でんしゃ}が{少|すく}ないです。",
+    "en": "There are fewer trains on holidays."
+   }
+  ],
+  "人気": [
+   {
+    "ja": "この{店|みせ}のラーメンは«{人気|にんき}»があります。",
+    "en": "This shop's ramen is popular."
+   }
+  ],
+  "先生": [
+   {
+    "ja": "ピアノの«{先生|せんせい}»は{東京|とうきょう}に{住|す}んでいます。",
+    "en": "My piano teacher lives in Tokyo."
+   }
+  ],
+  "去年": [
+   {
+    "ja": "«{去年|きょねん}»の{一月|いちがつ}に{日本|にほん}に{行|い}きました。",
+    "en": "I went to Japan last January."
+   }
+  ],
+  "先月": [
+   {
+    "ja": "«{先月|せんげつ}»は{雨|あめ}が{多|おお}かったです。",
+    "en": "It rained a lot last month."
+   }
+  ],
+  "右手": [
+   {
+    "ja": "«{右手|みぎて}»に{海|うみ}が{見|み}えます。",
+    "en": "You can see the sea on your right."
+   }
+  ],
+  "主人": [
+   {
+    "ja": "{宿|やど}のご«{主人|しゅじん}»は{魚|さかな}が{好|す}きです。",
+    "en": "The innkeeper loves fish."
+   }
+  ],
+  "丸い": [
+   {
+    "ja": "{窓|まど}から«{丸|まる}»い{月|つき}が{見|み}えました。",
+    "en": "I could see a round moon from the window."
+   }
+  ],
+  "正しい": [
+   {
+    "ja": "この{読|よ}み{方|かた}は«{正|ただ}»しいですか。",
+    "en": "Is this reading correct?"
+   }
+  ],
+  "天才": [
+   {
+    "ja": "{彼|かれ}は{料理|りょうり}の«{天才|てんさい}»です。",
+    "en": "He's a genius at cooking."
+   }
+  ],
+  "生ビール": [
+   {
+    "ja": "«{生|なま}ビール»を{二|ふた}つお{願|ねが}いします。",
+    "en": "Two draft beers, please."
+   }
+  ],
+  "かき氷": [
+   {
+    "ja": "{夏|なつ}は«かき{氷|ごおり}»が{一番|いちばん}です。",
+    "en": "In summer, shaved ice is the best."
+   }
+  ],
+  "子犬": [
+   {
+    "ja": "{公園|こうえん}で«{子犬|こいぬ}»が{走|はし}っています。",
+    "en": "A puppy is running in the park."
+   }
+  ],
+  "入力": [
+   {
+    "ja": "ここに{名前|なまえ}を«{入力|にゅうりょく}»してください。",
+    "en": "Please enter your name here."
+   }
+  ],
+  "中止": [
+   {
+    "ja": "{雨|あめ}で、コンサートは«{中止|ちゅうし}»です。",
+    "en": "The concert is canceled because of rain."
+   }
   ]
  }
 }

@@ -58,6 +58,88 @@
           "en": "That's just right."
         }
       ]
+    },
+    "natural": {
+      "requires": [
+        "02-ni-de",
+        "03-te-iru",
+        "04-in-transitive"
+      ],
+      "dialogue": [
+        {
+          "who": "me",
+          "ja": "えっと、{今日|きょう}は{三|みっ}つの{部分|ぶぶん}を{練習|れんしゅう}します。",
+          "en": "So, today we'll work on three sections."
+        },
+        {
+          "who": "them",
+          "ja": "マイク、{入|はい}っていますか。",
+          "en": "Is the mic on?",
+          "note": "入る also means a switch is on: マイクが入っている."
+        },
+        {
+          "who": "me",
+          "ja": "あれ？{音|おと}が{出|で}ていませんね。",
+          "en": "Huh? No sound is coming out.",
+          "note": "音が出る: the sound comes out on its own. No one to blame."
+        },
+        {
+          "who": "them",
+          "ja": "あ、すみません。{今|いま}、{入|い}れます。",
+          "en": "Oh, sorry. I'll switch it on now."
+        },
+        {
+          "who": "me",
+          "ja": "ここで、{石|いし}を{少|すこ}し{回|まわ}してください。",
+          "en": "Here, please turn the stone a little.",
+          "note": "回す: you turn it (を)."
+        },
+        {
+          "who": "them",
+          "ja": "こうですか。",
+          "en": "Like this?"
+        },
+        {
+          "who": "me",
+          "ja": "そうです！いい{音|おと}が{出|で}ていますね。",
+          "en": "Yes! That's a good sound.",
+          "note": "Literally \"a good sound is coming out.\""
+        },
+        {
+          "who": "them",
+          "ja": "{窓|まど}を{閉|し}めましょうか。{外|そと}の{音|おと}が{入|はい}りますね。",
+          "en": "Shall I close the window? The sound from outside gets in."
+        },
+        {
+          "who": "me",
+          "ja": "いえ、そのままでお{願|ねが}いします。{外|そと}の{音|おと}も、{曲|きょく}の{一部|いちぶ}です。",
+          "en": "No, leave it as it is, please. The sound outside is part of the piece too."
+        },
+        {
+          "who": "them",
+          "ja": "へえ、そうなんですね！",
+          "en": "Oh, I see!"
+        }
+      ],
+      "phrases": [
+        {
+          "ja": "マイクを{右|みぎ}に{向|む}けてください。",
+          "en": "Please point the mic to the right.",
+          "note": "向ける: you point it (を). The mic doesn't turn by itself."
+        },
+        {
+          "ja": "{楽譜|がくふ}を{見|み}せてください。",
+          "en": "Please show me the score."
+        },
+        {
+          "ja": "{音|おと}を{少|すこ}し{下|さ}げてください。",
+          "en": "Please turn it down a little."
+        },
+        {
+          "ja": "{今|いま}の{音|おと}、{録音|ろくおん}しましたか。",
+          "en": "Did you record that sound just now?"
+        }
+      ]
     }
   },
   "vocab": [
@@ -80,6 +162,42 @@
       "id": "ikkai",
       "ja": "もう{一回|いっかい}",
       "en": "one more time"
+    },
+    {
+      "id": "renshuu",
+      "ja": "{練習|れんしゅう}する",
+      "en": "to practice, rehearse"
+    },
+    {
+      "id": "mado",
+      "ja": "{窓|まど}",
+      "en": "window"
+    },
+    {
+      "id": "shimeru",
+      "ja": "{閉|し}める",
+      "en": "to close (something)",
+      "note": "Partner: 閉まる, it closes."
+    },
+    {
+      "id": "sonomama",
+      "ja": "そのまま",
+      "en": "as it is, leave it"
+    },
+    {
+      "id": "ichibu",
+      "ja": "{一部|いちぶ}",
+      "en": "a part of"
+    },
+    {
+      "id": "gakufu",
+      "ja": "{楽譜|がくふ}",
+      "en": "score, sheet music"
+    },
+    {
+      "id": "rokuon",
+      "ja": "{録音|ろくおん}する",
+      "en": "to record (sound)"
     }
   ]
 }

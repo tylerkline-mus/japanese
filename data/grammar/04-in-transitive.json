@@ -1,0 +1,135 @@
+{
+  "lesson": "04-in-transitive",
+  "drills": [
+    {
+      "id": "it01",
+      "type": "choice",
+      "prompt": "この{部屋|へや}から、{夜|よる}は{星|ほし}がたくさん＿＿。",
+      "en": "From this room you can see lots of stars at night.",
+      "options": [
+        { "text": "{見|み}えます", "verdict": "right", "why": "星 has が: the stars are what's visible. 見える = come into view, no one doing anything." },
+        { "text": "{見|み}ます", "verdict": "wrong", "why": "見る needs a person looking at something with を. 星が見ます makes the stars the ones looking." },
+        { "text": "{見|み}せます", "verdict": "wrong", "why": "見せる = show someone. The stars aren't showing anything to anyone." }
+      ]
+    },
+    {
+      "id": "it02",
+      "type": "choice",
+      "scene": "Hotel check-in. The clerk asks for your passport.",
+      "prompt": "パスポートを＿＿ください。",
+      "en": "Please show me your passport.",
+      "options": [
+        { "text": "{見|み}せて", "verdict": "right", "why": "The clerk wants to end up looking at it, so you have to make them see it: 見せる, show." },
+        { "text": "{見|み}て", "verdict": "different", "why": "パスポートを見てください = please look at the passport (yourself). Grammatical, but the clerk would be asking you to read your own passport." },
+        { "text": "{見|み}えて", "verdict": "wrong", "why": "見える takes が for the thing that's visible, and you can't ask something to be visible with ください." }
+      ]
+    },
+    {
+      "id": "it03",
+      "type": "choice",
+      "prompt": "{休|やす}みの{日|ひ}は、よく{一人|ひとり}で＿＿。",
+      "en": "On my days off I often go out by myself.",
+      "options": [
+        { "text": "{出|で}かけます", "verdict": "right", "why": "Going out on an outing, with no particular place → 出かける." },
+        { "text": "{出|だ}します", "verdict": "wrong", "why": "出す needs something with を that you take out or send. There's no thing here, just you going out." },
+        { "text": "{出|で}ます", "verdict": "wrong", "why": "出る needs a place you leave (家を出る) or something coming out. On its own, 一人で出ます sounds unfinished: leaving what?" }
+      ]
+    },
+    {
+      "id": "it04",
+      "type": "choice",
+      "prompt": "{明日|あした}は{六時|ろくじ}に{家|いえ}を＿＿。",
+      "en": "Tomorrow I leave the house at six.",
+      "options": [
+        { "text": "{出|で}ます", "verdict": "right", "why": "Leaving a place → 出る, and the place takes を as the path you leave from." },
+        { "text": "{出|で}かけます", "verdict": "wrong", "why": "出かける is going out on an outing; it doesn't take the place you leave with を. Say 六時に出かけます without 家を." },
+        { "text": "{出|だ}します", "verdict": "wrong", "why": "家を出します would mean you take the house out, or send it somewhere." }
+      ]
+    },
+    {
+      "id": "it05",
+      "type": "choice",
+      "scene": "Your first conveyor-belt sushi shop.",
+      "prompt": "この{店|みせ}は、お{寿司|すし}が＿＿います。",
+      "en": "At this shop, the sushi goes round (on a belt).",
+      "options": [
+        { "text": "{回|まわ}って", "verdict": "right", "why": "お寿司 has が: the sushi goes round by itself → 回る, the \"it happens\" side. (That's why it's called 回転寿司.)" },
+        { "text": "{回|まわ}して", "verdict": "wrong", "why": "-su = doing it. 回す needs someone turning something with を. With が on the sushi it doesn't fit." },
+        { "text": "{曲|ま}がって", "verdict": "wrong", "why": "曲がる is bending or turning a corner, not going round and round." }
+      ]
+    },
+    {
+      "id": "it06",
+      "type": "choice",
+      "prompt": "{毎朝|まいあさ}、{一人|ひとり}で{公園|こうえん}を{一回|いっかい}＿＿。",
+      "en": "Every morning I go once around the park by myself.",
+      "options": [
+        { "text": "{回|まわ}ります", "verdict": "right", "why": "You're the one going round, and 公園を is the path, not an object. Moving verbs take を for the route and stay on the \"it happens\" side." },
+        { "text": "{回|まわ}します", "verdict": "wrong", "why": "公園を回します would mean you spin the park. The を here isn't an object, it's a route." }
+      ]
+    },
+    {
+      "id": "it07",
+      "type": "choice",
+      "scene": "A bike is coming down the narrow lane. Warn your friend.",
+      "prompt": "あ、{後|うし}ろに＿＿ください！",
+      "en": "Oh, step back!",
+      "options": [
+        { "text": "{下|さ}がって", "verdict": "right", "why": "Your friend moves back: they are the thing moving, there's no を → 下がる (-aru, it happens)." },
+        { "text": "{下|さ}げて", "verdict": "wrong", "why": "下げる needs something you lower or move back with を (いすを下げて). Here nothing is being moved but the person." }
+      ]
+    },
+    {
+      "id": "it08",
+      "type": "choice",
+      "prompt": "{空|そら}に{黒|くろ}い{雲|くも}が＿＿います。",
+      "en": "Black clouds are spreading across the sky.",
+      "options": [
+        { "text": "{広|ひろ}がって", "verdict": "right", "why": "雲 has が: the clouds spread on their own → 広がる (-aru). With ている, it's happening now." },
+        { "text": "{広|ひろ}げて", "verdict": "wrong", "why": "広げる is spreading something out yourself (地図を広げる). No one is spreading the clouds." }
+      ]
+    },
+    {
+      "id": "it09",
+      "type": "choice",
+      "scene": "A friend hands you a print from your film camera.",
+      "prompt": "この{写真|しゃしん}、{私|わたし}も＿＿いますか。",
+      "en": "Am I in this photo too?",
+      "options": [
+        { "text": "{写|うつ}って", "verdict": "right", "why": "写る = to show up in a photo, the \"it happens\" side. 私も写っていますか = am I in it too." },
+        { "text": "{写|うつ}して", "verdict": "wrong", "why": "写す is copying or photographing something with を. 私も写していますか would ask whether you're also taking (copying) something." },
+        { "text": "{見|み}えて", "verdict": "different", "why": "私も見えていますか = can I be seen too? Close, but it's about being visible, not about being in the picture." }
+      ]
+    },
+    {
+      "id": "it10",
+      "type": "choice",
+      "scene": "Field recording by the harbor. The recorder goes dead.",
+      "prompt": "あ、レコーダーの{電池|でんち}が＿＿。",
+      "en": "Oh no, the recorder's battery ran out.",
+      "options": [
+        { "text": "{切|き}れました", "verdict": "right", "why": "電池 has が and it ran out on its own → 切れる (be cut, run out), the \"it happens\" partner of 切る." },
+        { "text": "{切|き}りました", "verdict": "wrong", "why": "切る is cutting something with を. The battery didn't cut anything." },
+        { "text": "{出|で}ました", "verdict": "wrong", "why": "電池が出ました = the battery came out (of its slot). A different problem." }
+      ]
+    },
+    {
+      "id": "it11",
+      "type": "build",
+      "scene": "A friend asks about your photos. Say you'll show them.",
+      "en": "I'll show you the photos.",
+      "tiles": ["{写真|しゃしん}", "を", "が", "{見|み}せます", "{見|み}えます"],
+      "answers": [["{写真|しゃしん}", "を", "{見|み}せます"]],
+      "why": "You make them see the photos → 見せる with を. が + 見えます would be \"the photos are visible.\""
+    },
+    {
+      "id": "it12",
+      "type": "build",
+      "scene": "Planning a day trip with a friend. Ask what time you're heading out.",
+      "en": "What time do you go out?",
+      "tiles": ["{何時|なんじ}", "に", "を", "{出|で}かけますか", "{出|だ}しますか"],
+      "answers": [["{何時|なんじ}", "に", "{出|で}かけますか"]],
+      "why": "A time takes に; going out on an outing is 出かける, no を needed. 出しますか would ask what time they send something."
+    }
+  ]
+}

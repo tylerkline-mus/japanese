@@ -1,0 +1,135 @@
+{
+  "id": "04-in-transitive",
+  "week": 4,
+  "title": "出す vs 出る",
+  "titleEn": "Doing it vs. it happening (transitive and intransitive pairs)",
+  "taeKim": {
+    "title": "Transitive and intransitive verbs",
+    "url": "https://guidetojapanese.org/learn/grammar/in-transitive"
+  },
+  "summary": "Many verbs come in pairs with the same kanji. One means someone does it to something (を). The other means it just happens (が). Look at the particle first, then pick the verb.",
+  "explanation": [
+    "Japanese has dozens of verb pairs that share a kanji and a meaning, and differ on one question: **is someone doing it to something, or is it just happening?** {音|おと}を{出|だ}す = I make a sound. {音|おと}が{出|で}る = a sound comes out.",
+    "**The particle tells you which one you need.** If there's a thing being acted on, it takes **を**, and the verb is the \"doing it\" one (transitive, {他動詞|たどうし}). If the thing changes on its own, it takes **が**, and the verb is the \"it happens\" one (intransitive, {自動詞|じどうし}). So when you're choosing between {上|あ}げる and {上|あ}がる, don't ask \"which one means up?\" Both do. Ask: **is there an を?**",
+    "**Two endings give it away.** A verb ending in **-aru** is almost always \"it happens\": {上|あ}がる, {下|さ}がる, {止|と}まる, {曲|ま}がる, {広|ひろ}がる. Its partner ends in -eru: {上|あ}げる, {下|さ}げる, {止|と}める, {曲|ま}げる, {広|ひろ}げる. A verb ending in **-su** is almost always \"doing it\": {出|だ}す, {回|まわ}す, {写|うつ}す, {通|とお}す. Its partner ends in -ru: {出|で}る, {回|まわ}る, {写|うつ}る, {通|とお}る.",
+    "-eru on its own doesn't tell you. Sometimes the -eru verb is the \"doing it\" one ({立|た}てる, {向|む}ける, {付|つ}ける, {入|い}れる, partners of {立|た}つ, {向|む}く, {付|つ}く, {入|はい}る), and sometimes it's the \"it happens\" one ({切|き}る = cut it, {切|き}れる = snap, run out). When you're unsure, go back to the particle.",
+    "**見る, 見える, 見せる.** {見|み}る = you look at it (を). {見|み}える = it's visible, it comes into view (が): nobody is doing anything, it just reaches your eyes. {見|み}せる = you make someone else see it, so **show** (を for the thing, に for the person). And **{出|で}かける** isn't a partner of {出|だ}す at all: it means heading out on an outing. {出|で}る is leaving a place or coming out; {出|で}かける is going out to do something.",
+    "One trap: verbs of moving, like {出|で}る, {通|とお}る, {曲|ま}がる, {回|まわ}る, take を for **the place you leave or move along** ({駅|えき}を{出|で}る, {角|かど}を{曲|ま}がる). That を is a path, not a thing being acted on. The verb is still the \"it happens\" one.",
+    "Why this matters when you talk: Japanese likes to say what **happened**, not who did it. {音|おと}が{出|で}ません (no sound is coming out) is how you report a problem without blaming anyone. With 〜ている from Lesson 3, the \"it happens\" verb gives you the state: {電気|でんき}が{点|つ}いています = the light is on."
+  ],
+  "examples": [
+    { "ja": "マイクから{音|おと}が{出|で}ません。", "en": "No sound is coming out of the mic.", "note": "The sound is the one doing the coming out → が + 出る. Nobody to blame." },
+    { "ja": "もう{少|すこ}し{大|おお}きい{音|おと}を{出|だ}してください。", "en": "Please play a little louder.", "note": "Now someone is making the sound → を + 出す." },
+    { "ja": "{部屋|へや}から{海|うみ}が{見|み}えます。", "en": "You can see the sea from the room.", "note": "The sea comes into view; nobody is doing the looking → 見える." },
+    { "ja": "{友達|ともだち}に{写真|しゃしん}を{見|み}せました。", "en": "I showed my friend the photos.", "note": "見せる = make someone see it. The person gets に, the photos get を." },
+    { "ja": "{次|つぎ}の{角|かど}を{右|みぎ}に{曲|ま}がってください。", "en": "Please turn right at the next corner.", "note": "曲がる is \"it happens\" (the car turns), and the を marks the corner you go around: a path, not an object." },
+    { "ja": "あ、{電気|でんき}が{点|つ}きました。", "en": "Oh, the light came on.", "note": "点く (come on) is the partner of 点ける (turn on). New word: the \"it happens\" side." }
+  ],
+  "contrasts": [
+    {
+      "a": { "ja": "{音|おと}を{出|だ}します。", "en": "I make a sound. (I play it.)" },
+      "b": { "ja": "{音|おと}が{出|で}ます。", "en": "A sound comes out." },
+      "why": "Same sound, same kanji. With を, a person is producing it: 出す. With が, the sound comes out on its own, from the drum, the speaker, the room: 出る."
+    },
+    {
+      "a": { "ja": "{電車|でんしゃ}から{富士山|ふじさん}を{見|み}ました。", "en": "I looked at Mt. Fuji from the train." },
+      "b": { "ja": "{電車|でんしゃ}から{富士山|ふじさん}が{見|み}えました。", "en": "Mt. Fuji came into view from the train." },
+      "why": "見る is something you choose to do (を). 見える is what reaches your eyes (が). If you're telling the story of a view that appeared out the window, 見えました is the natural one."
+    },
+    {
+      "a": { "ja": "{楽譜|がくふ}を{見|み}ます。", "en": "I look at the score." },
+      "b": { "ja": "{楽譜|がくふ}を{見|み}せます。", "en": "I show (someone) the score." },
+      "why": "Both take を for the score. The difference is who ends up looking. 見る: you do. 見せる: someone else does, because you made them. Add the person with に: 先生に楽譜を見せます."
+    },
+    {
+      "a": { "ja": "{七時|しちじ}に{家|いえ}を{出|で}ます。", "en": "I leave the house at seven." },
+      "b": { "ja": "{今日|きょう}は{出|で}かけません。", "en": "I'm not going out today." },
+      "why": "出る is leaving a place (and the place takes を, as a path). 出かける is going out on an outing, to town, for a walk, for dinner. It doesn't need a place at all."
+    },
+    {
+      "a": { "ja": "レコードを{回|まわ}します。", "en": "I spin the record." },
+      "b": { "ja": "レコードが{回|まわ}っています。", "en": "The record is spinning." },
+      "why": "-su = doing it, so 回す is you turning something. 回る is the thing going round by itself. With ている it's the ongoing state: the record is turning."
+    }
+  ],
+  "exercises": [
+    {
+      "type": "choice",
+      "scene": "Sound check at the studio. The speaker is silent.",
+      "prompt": "あれ？スピーカーから{音|おと}が＿＿。",
+      "en": "Huh? No sound is coming out of the speaker.",
+      "options": [
+        { "text": "{出|で}ません", "verdict": "right", "why": "音 has が, so the sound is the one coming out (or not). が + the \"it happens\" verb: 出る." },
+        { "text": "{出|だ}しません", "verdict": "wrong", "why": "出す needs someone producing a thing with を (音を出す). Here 音 has が and nobody is doing it." },
+        { "text": "{出|で}かけません", "verdict": "wrong", "why": "出かける is a person going out on an outing. The sound isn't going into town." }
+      ]
+    },
+    {
+      "type": "choice",
+      "scene": "Your mic is too quiet. Ask the engineer.",
+      "prompt": "すみません、マイクの{音|おと}を{少|すこ}し＿＿ください。",
+      "en": "Excuse me, could you turn the mic up a little?",
+      "options": [
+        { "text": "{上|あ}げて", "verdict": "right", "why": "There's an を (音を), so someone is acting on the volume: the -eru \"doing it\" verb, 上げる." },
+        { "text": "{上|あ}がって", "verdict": "wrong", "why": "-aru = it happens. 上がる would need 音が and means the volume goes up by itself. You can't ask a thing to rise on its own with ください." },
+        { "text": "{下|さ}げて", "verdict": "different", "why": "Grammatical, right particle and the right kind of verb, but 下げる means turn it down." }
+      ]
+    },
+    {
+      "type": "choice",
+      "scene": "On the train along the coast, you point out the window.",
+      "prompt": "ほら、{右|みぎ}に{海|うみ}が＿＿。",
+      "en": "Look, you can see the sea on the right.",
+      "options": [
+        { "text": "{見|み}えます", "verdict": "right", "why": "海 has が: the sea is coming into view. 見える = be visible." },
+        { "text": "{見|み}ます", "verdict": "wrong", "why": "見る is someone looking at something with を. 海が見ます would mean the sea is doing the looking." },
+        { "text": "{見|み}せます", "verdict": "wrong", "why": "見せる = show. The sea isn't showing anything to anyone." }
+      ]
+    },
+    {
+      "type": "choice",
+      "scene": "Telling a friend how you picked photos for the exhibition.",
+      "prompt": "{昨日|きのう}、{先生|せんせい}にこの{写真|しゃしん}を＿＿。",
+      "en": "Yesterday I showed this photo to my teacher.",
+      "options": [
+        { "text": "{見|み}せました", "verdict": "right", "why": "Someone (先生) ends up looking, because you made them: show. The person takes に, the photo takes を." },
+        { "text": "{見|み}ました", "verdict": "wrong", "why": "見る has no slot for another person with に. 先生に写真を見ました doesn't work; if you looked at it yourself, drop 先生に." },
+        { "text": "{見|み}えました", "verdict": "wrong", "why": "見える takes が for the thing that's visible. With を it's broken." }
+      ]
+    },
+    {
+      "type": "choice",
+      "scene": "The innkeeper at breakfast, making conversation.",
+      "prompt": "{今日|きょう}はどこに＿＿か。",
+      "en": "Where are you heading out to today?",
+      "options": [
+        { "text": "{出|で}かけます", "verdict": "right", "why": "出かける = go out on an outing, and どこに asks where to. Exactly what an innkeeper asks a guest in the morning." },
+        { "text": "{出|で}ます", "verdict": "different", "why": "どこに出ますか means \"where do you come out?\", like which exit a road or path leads to. Grammatical, but not \"where are you off to today.\"" },
+        { "text": "{出|だ}します", "verdict": "wrong", "why": "出す needs a thing with を that you take out or send. どこに出しますか sounds like \"where will you send it?\"" }
+      ]
+    },
+    {
+      "type": "build",
+      "scene": "The studio light flickers, then comes on. Say it.",
+      "en": "The light came on.",
+      "tiles": ["{電気|でんき}", "が", "を", "{点|つ}きました", "{点|つ}けました"],
+      "answers": [["{電気|でんき}", "が", "{点|つ}きました"]],
+      "why": "Nobody did it, it just happened → が + 点く. The を and 点けました tiles are the \"I turned it on\" version."
+    },
+    {
+      "type": "build",
+      "scene": "In a taxi from the station. Tell the driver to turn right at the next corner.",
+      "en": "Please turn right at the next corner.",
+      "tiles": ["{次|つぎ}の{角|かど}", "を", "{右|みぎ}", "に", "{曲|ま}がって", "{曲|ま}げて", "ください"],
+      "answers": [["{次|つぎ}の{角|かど}", "を", "{右|みぎ}", "に", "{曲|ま}がって", "ください"]],
+      "why": "The car turns: 曲がる (it happens). The を on 角 is the path you go around, not an object. 曲げて would mean bend something."
+    },
+    {
+      "type": "write",
+      "scene": "A percussionist is playing from your part. Ask to see the score.",
+      "model": "{楽譜|がくふ}を{見|み}せてください。",
+      "en": "Please show me the score.",
+      "why": "You want them to make you see it: 見せる, with を for the score. 見てください would ask them to look at it themselves."
+    }
+  ]
+}

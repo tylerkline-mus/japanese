@@ -813,6 +813,63 @@
    ],
    "listen": "Anyone noticing something's off: a missing key, a wrong platform, a familiar face in an unexpected place.",
    "note": "Rising tone, said to yourself. Different from the word あれ (\"that over there\")."
+  },
+  {
+   "id": "hora",
+   "ja": "ほら",
+   "family": "react",
+   "does": "Points someone's attention at something right now: \"look,\" \"see?\", \"there it is.\"",
+   "register": "casual",
+   "examples": [
+    {
+     "ja": "«ほら»、{右|みぎ}に{海|うみ}が{見|み}えますよ。",
+     "en": "Look, you can see the sea on the right."
+    },
+    {
+     "ja": "«ほら»、{言|い}ったでしょう？",
+     "en": "See? Didn't I tell you?"
+    }
+   ],
+   "listen": "Friends on a train or a walk pointing things out, parents with kids, anime characters proving a point.",
+   "note": "Fine with polite sentences among friends; you'd skip it with someone you've just met."
+  },
+  {
+   "id": "kekkou",
+   "ja": "けっこう",
+   "family": "soft",
+   "does": "Two jobs: \"pretty, quite\" (more than you'd expect), and a polite \"no thanks, I'm fine.\"",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "この{店|みせ}、«けっこう»{安|やす}いですね。",
+     "en": "This place is pretty cheap, isn't it."
+    },
+    {
+     "ja": "{袋|ふくろ}は«けっこう»です。",
+     "en": "I don't need a bag, thanks."
+    }
+   ],
+   "listen": "Convenience-store and shop counters (袋は大丈夫ですか → けっこうです), and in everyday chat as \"quite.\"",
+   "note": "At the register, いいです and 大丈夫です do the same \"no thanks\" job; けっこうです sounds a touch more formal."
+  },
+  {
+   "id": "saa",
+   "ja": "さあ",
+   "family": "filler",
+   "does": "Either starts things moving (\"right, here we go\") or shrugs when you don't know (\"hmm, no idea\").",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«さあ»、{始|はじ}めましょう。",
+     "en": "Right, let's begin."
+    },
+    {
+     "ja": "「{何時|なんじ}ですか。」「«さあ»…{分|わ}かりません。」",
+     "en": "\"What time is it?\" \"Hmm… no idea.\""
+    }
+   ],
+   "listen": "Someone kicking off a rehearsal or a meal, or answering a question they can't answer.",
+   "note": "The shrug version is drawn out and falling: さあ…. The \"let's go\" one is short and bright."
   }
  ]
 }

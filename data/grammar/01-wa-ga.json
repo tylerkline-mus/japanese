@@ -328,6 +328,73 @@
         ]
       ],
       "why": "The concert is the known topic. The question word 何時 sits in the comment, so コンサート takes は. The が tile is a decoy: question words take が, not the things you ask about."
+    },
+    {
+      "id": "wg18",
+      "type": "choice",
+      "scene": "At a pre-concert gathering, someone asks which one is the composer.",
+      "prompt": "「{作曲家|さっきょくか}はどの{方|かた}ですか。」「えっと、{私|わたし}＿{作曲家|さっきょくか}です。」",
+      "en": "\"Which one is the composer?\" \"Um, I'm the composer.\"",
+      "options": [
+        {
+          "text": "が",
+          "verdict": "right",
+          "why": "The question asked who. Your answer fills that gap, so the new information (私) takes が: \"I'm the one who's the composer.\""
+        },
+        {
+          "text": "は",
+          "verdict": "different",
+          "why": "私は作曲家です is a self-introduction: \"as for me, I'm a composer.\" Grammatical, but it doesn't answer which one; it sounds like you changed the subject to yourself."
+        }
+      ]
+    },
+    {
+      "id": "wg19",
+      "type": "choice",
+      "scene": "Looking for a convenience store near the inn.",
+      "prompt": "すみません、この{辺|へん}にコンビニ＿ありますか。",
+      "en": "Excuse me, is there a convenience store around here?",
+      "options": [
+        {
+          "text": "が",
+          "verdict": "right",
+          "why": "You're asking whether something exists. The thing that exists (or doesn't) is new information → が. The standard shape: 〜に〜がありますか."
+        },
+        {
+          "text": "は",
+          "verdict": "different",
+          "why": "コンビニはありますか sets the store up as a topic, often in contrast: \"a convenience store, at least, is there one?\" Fine if you already asked about a supermarket and got a no."
+        },
+        {
+          "text": "を",
+          "verdict": "wrong",
+          "why": "ある doesn't take an object. Nothing is being done to the convenience store."
+        }
+      ]
+    },
+    {
+      "id": "wg20",
+      "type": "build",
+      "scene": "The innkeeper asks what you do. Say what you make, starting with yourself as the topic.",
+      "en": "I make contemporary music.",
+      "tiles": [
+        "{私|わたし}",
+        "は",
+        "が",
+        "{現代音楽|げんだいおんがく}",
+        "を",
+        "{作|つく}っています"
+      ],
+      "answers": [
+        [
+          "{私|わたし}",
+          "は",
+          "{現代音楽|げんだいおんがく}",
+          "を",
+          "{作|つく}っています"
+        ]
+      ],
+      "why": "私は sets you up as the topic; the rest is the comment about you. The music is what you make → を. The が tile is a decoy: nobody asked who makes it."
     }
   ]
 }
