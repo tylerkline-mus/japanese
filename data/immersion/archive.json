@@ -1,5 +1,61 @@
 [
  {
+  "id": "e116ffe25abb",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "マイあさ! 午前5時のNHKニュース 2026年10月20日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/1065e31a6c33d1d6c253945037838565_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/1065e31a6c33d1d6c253945037838565_64k.mp3",
+  "date": "2026-10-19T20:17:00.000Z",
+  "minutes": 15,
+  "summary": "",
+  "added": "2026-10-19T21:16:20.780Z"
+ },
+ {
+  "id": "9ac65932e9ec",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月20日午前04時00分 2026年10月20日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/3b96b74c87237e0c2e080ccb1c63574f_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/3b96b74c87237e0c2e080ccb1c63574f_64k.mp3",
+  "date": "2026-10-19T19:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-19T21:16:20.780Z"
+ },
+ {
+  "id": "8bc9d4c5f142",
+  "source": "yuyu",
+  "sourceName": "YUYUの日本語Podcast",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "culture"
+  ],
+  "title": "Vol.498 どのスタイルで空を飛ぶのが一番カッコいいか本気で考える！ (Japanese Radio for Listening practice)",
+  "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-498--Japanese-Radio-for-Listening-practice-e3qoi7e",
+  "audio": "https://anchor.fm/s/cda85d4/podcast/play/127731374/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-9-19%2F24dd089a-f858-775f-b9ef-d09722164c8a.mp3",
+  "date": "2026-10-19T17:24:59.000Z",
+  "minutes": 45,
+  "summary": "💰Patreonのサポート(人´∀`)ｱﾘｶﾞﾄｰ♪ ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠…",
+  "added": "2026-10-19T21:16:18.787Z"
+ },
+ {
   "id": "57dd0e88c959",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
