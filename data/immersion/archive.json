@@ -1,5 +1,62 @@
 [
  {
+  "id": "fb2639b6f73e",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月19日午後5時00分 2026年10月19日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/42b70920a7ddadb056c17a85f87c9355_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/42b70920a7ddadb056c17a85f87c9355_64k.mp3",
+  "date": "2026-10-19T08:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-19T08:06:59.600Z"
+ },
+ {
+  "id": "75b35dc9db37",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月19日午後4時21分 2026年10月19日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/238f9906fcfb7c706fe3e5718e65bbe4_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/238f9906fcfb7c706fe3e5718e65bbe4_64k.mp3",
+  "date": "2026-10-19T07:26:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-19T08:06:59.600Z"
+ },
+ {
+  "id": "e53bf125ddb2",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20261019 「中国の国慶節連休 日本旅行に変化」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/8e7abd97f513e1068642c6aaa95a28b5_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/8e7abd97f513e1068642c6aaa95a28b5_64k.mp3",
+  "date": "2026-10-19T03:00:00.000Z",
+  "minutes": 4,
+  "summary": "リポート：建畠 一勇（広州支局） キャスター：上野 速人／眞下 貴",
+  "added": "2026-10-19T08:06:59.446Z"
+ },
+ {
   "id": "bb54dc86f59a",
   "source": "teppei-beginner",
   "sourceName": "Nihongo con Teppei (beginner)",
