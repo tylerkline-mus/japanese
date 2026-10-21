@@ -1,50 +1,43 @@
 {
- "updated": "2026-10-21T01:03:19.592Z",
+ "updated": "2026-10-21T06:37:34.583Z",
  "level": 10,
- "knownKanji": "女口十入八川大工一上下九山二三人七力々了丸六日木出才五天右左立正田手四小中火犬丁千王玉白本文夕月土刀目円水子万内分切友太少引牛止台外母市用午半方今冬広元古北生心父戸矢毛去申早石号打氷先名年百男町央竹休皿虫他糸代字宝世気村不足赤見平花車写礼主仕貝耳体米空林兄皮交光回多声弟来社角谷麦草音西色作考肉毎形当同図何行金会雨近斤走言青自里羽学後安星化地両全向州曲有京国夜明東歩知南室思海前画店点亡茶姉羊活妹食死長科私血首由札辺付以必末校夏弱通高強理雪時組失記鳥船黄民紙黒魚風教家週者研電森間池支住助君対朝絵道楽話所数身雲役馬買究医場番決答局和予物新試売保事具服苦表乗客屋県美送談界重験要返泳発部度実勝像映穴豚床象辛",
+ "knownKanji": "女口十入八川大工一上下九山二三人七力々了丸六日木出才五天右左立正田手四小中火犬丁千王玉白本文夕月土刀目円水子万内分切友太少引牛止台外母市用午半方今冬広元古北生心父戸矢毛去申早石号打氷先名年百男町央竹休皿虫他糸代字宝世気村不足赤見平花車写礼主仕貝耳体米空林兄皮交光回多声弟来社角谷麦草音西色作肉毎形当同図何行金会雨近斤走言青自里羽学後安星化地両全向州曲有京国夜明東歩知南室思海前画店点亡茶姉羊活妹食死長科私血首由札辺付以必末校夏弱通高強理雪時組失記鳥船黄民紙黒魚風教家週者研電森間池支住助君対朝絵道楽話所反数身雲役馬買究医場番決答局和予物新試売保事具服苦表乗客屋県美送談界重験要返泳発部度実勝像映穴豚床象辛",
  "knownKanjiCount": 302,
  "startedKanji": "女口十入八川大工一上下九山二三人七力々了丸六日木出才五天右左立正田手四小中火犬丁千王玉白本文夕月土刀目円水子万内分切友太少引牛止台外母市用午半方今冬広元古北生心父戸矢毛去申早石号打氷先名年百男町央竹休皿虫他糸代字宝世気村不足赤見平花車写礼主仕貝耳体米空林兄皮交光回多声弟来社角谷麦草音西色作考肉毎形当同図何行金会雨近斤走言青自里羽学後安星化地両全向州曲有京国夜明東歩知南室思海前画店点亡茶姉羊活妹食死長科私血次首欠由札辺付以必未末校夏弱通高強理雪時組失記鳥船黄氏民紙黒魚風教家週者研電森間池支住助君対朝絵道楽話所反数身雲役投馬買究医場番決答局和予物新試売保事具服苦表乗客屋持相県美負送談界重験要仮返泳受発部度実使勝定像映取穴豚床象比辛史",
  "leeches": [
   {
-   "characters": "出かける",
+   "characters": "交じる",
    "type": "vocabulary",
-   "meaning": "To Go Out",
-   "reading": "でかける",
+   "meaning": "To Be Mixed",
+   "reading": "まじる",
    "weak": "meaning"
   },
   {
-   "characters": "持",
+   "characters": "考",
    "type": "kanji",
-   "meaning": "Hold",
-   "reading": "じ",
-   "weak": "reading"
+   "meaning": "Think",
+   "reading": "こう",
+   "weak": "meaning"
+  },
+  {
+   "characters": "数年",
+   "type": "vocabulary",
+   "meaning": "Several Years",
+   "reading": "すうねん",
+   "weak": "meaning"
+  },
+  {
+   "characters": "回す",
+   "type": "vocabulary",
+   "meaning": "To Turn Something",
+   "reading": "まわす",
+   "weak": "meaning"
   },
   {
    "characters": "一気に",
    "type": "vocabulary",
    "meaning": "In One Go",
    "reading": "いっきに",
-   "weak": "meaning"
-  },
-  {
-   "characters": "〜年来",
-   "type": "vocabulary",
-   "meaning": "For Some Years",
-   "reading": "ねんらい",
-   "weak": "meaning"
-  },
-  {
-   "characters": "負",
-   "type": "kanji",
-   "meaning": "Lose",
-   "reading": "ふ",
-   "weak": "reading"
-  },
-  {
-   "characters": "仮",
-   "type": "kanji",
-   "meaning": "Temporary",
-   "reading": "か",
    "weak": "meaning"
   },
   {
@@ -76,18 +69,18 @@
    "weak": "reading"
   },
   {
-   "characters": "未",
-   "type": "kanji",
-   "meaning": "Not Yet",
-   "reading": "み",
-   "weak": "meaning"
-  },
-  {
    "characters": "受",
    "type": "kanji",
    "meaning": "Accept",
    "reading": "じゅ",
    "weak": "reading"
+  },
+  {
+   "characters": "明かり",
+   "type": "vocabulary",
+   "meaning": "Light",
+   "reading": "あかり",
+   "weak": "meaning"
   },
   {
    "characters": "人工",
@@ -108,6 +101,13 @@
    "type": "vocabulary",
    "meaning": "Whole Life",
    "reading": "いっしょう",
+   "weak": "meaning"
+  },
+  {
+   "characters": "卩",
+   "type": "radical",
+   "meaning": "Stamp",
+   "reading": "",
    "weak": "meaning"
   }
  ]
