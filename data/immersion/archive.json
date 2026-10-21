@@ -1,5 +1,43 @@
 [
  {
+  "id": "8f3bf4937c96",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月21日午前09時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/7bd44fed8f8016337459afa428e83703_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/7bd44fed8f8016337459afa428e83703_64k.mp3",
+  "date": "2026-10-21T00:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-21T01:03:26.313Z"
+ },
+ {
+  "id": "5ac4690a4399",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "マイあさ! 午前8時のNHKニュース 2026年10月21日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/b74b75e9e59588855cfce73037482ec1_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/b74b75e9e59588855cfce73037482ec1_64k.mp3",
+  "date": "2026-10-20T23:03:00.000Z",
+  "minutes": 3,
+  "summary": "",
+  "added": "2026-10-21T01:03:26.313Z"
+ },
+ {
   "id": "e7ec588c9c5a",
   "source": "teppei-beginner",
   "sourceName": "Nihongo con Teppei (beginner)",
