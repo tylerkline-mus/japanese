@@ -679,5 +679,46 @@
   "reviewedToday": 122,
   "burnedToday": 0,
   "lessonsToday": 0
+ },
+ {
+  "date": "2026-10-21",
+  "at": "2026-10-21T12:28:31.658Z",
+  "level": 10,
+  "queue": 6,
+  "lessons": 171,
+  "srs": {
+   "apprentice": 67,
+   "guru": 198,
+   "master": 88,
+   "enlightened": 125,
+   "burned": 968
+  },
+  "correct": 24041,
+  "incorrect": 1268,
+  "meaning": [
+   13216,
+   721
+  ],
+  "reading": [
+   10825,
+   547
+  ],
+  "byType": {
+   "radical": [
+    4190,
+    126
+   ],
+   "kanji": [
+    6044,
+    357
+   ],
+   "vocabulary": [
+    16198,
+    785
+   ]
+  },
+  "reviewedToday": 0,
+  "burnedToday": 0,
+  "lessonsToday": 0
  }
 ]
