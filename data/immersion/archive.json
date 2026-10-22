@@ -1,5 +1,61 @@
 [
  {
+  "id": "e1fdfe0f99e6",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月23日午前00時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/4c23214bcd94dc8800ab0a219ac707b2_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/4c23214bcd94dc8800ab0a219ac707b2_64k.mp3",
+  "date": "2026-10-22T15:10:00.000Z",
+  "minutes": 10,
+  "summary": "",
+  "added": "2026-10-22T15:41:47.890Z"
+ },
+ {
+  "id": "2ee79151a62c",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月22日午後11時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/9e968f43129ef99d3da2db629fd2197b_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/9e968f43129ef99d3da2db629fd2197b_64k.mp3",
+  "date": "2026-10-22T14:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-22T15:41:47.890Z"
+ },
+ {
+  "id": "3d6a49f99877",
+  "source": "teppei-noriko",
+  "sourceName": "Japanese with Teppei and Noriko",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "conversation"
+  ],
+  "title": "#647「ともやとかウェールズとか！」",
+  "url": "https://teppeinorikojapanese.com/2026/10/22/647%e3%80%8c%e3%81%a8%e3%82%82%e3%82%84%e3%81%a8%e3%81%8b%e3%82%a6%e3%82%a7%e3%83%bc%e3%83%ab%e3%82%ba%e3%81%a8%e3%81%8b%ef%bc%81%e3%80%8d/",
+  "audio": "https://teppeinorikojapanese.com/wp-content/uploads/2026/10/Teppeinoriko647.mp3",
+  "date": "2026-10-22T12:26:17.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-22T15:41:47.137Z"
+ },
+ {
   "id": "7e4383383315",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
