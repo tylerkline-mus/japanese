@@ -1,5 +1,61 @@
 [
  {
+  "id": "7e4383383315",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "NHKやさしいことばニュース 2026年10月22日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/23c17b5d797d91c4208d0b6b73578f5c_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/23c17b5d797d91c4208d0b6b73578f5c_64k.mp3",
+  "date": "2026-10-22T10:35:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-22T10:41:34.007Z"
+ },
+ {
+  "id": "de48e35183fe",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース NHKきょうのニュース 2026年10月22日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/27dc4acda477010463bb4b76c3a85f2d_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/27dc4acda477010463bb4b76c3a85f2d_64k.mp3",
+  "date": "2026-10-22T10:30:00.000Z",
+  "minutes": 30,
+  "summary": "【主なニュース】 ▽すき家 JR 証券会社も “PHP”対応でサービス一時停止相次ぐ ▽台風30号 先島諸島一部が暴風域 西～東日本 接近前から大雨も ▽神奈川県警 廃棄すべき運転免許証 警備部門の捜査などに流用か",
+  "added": "2026-10-22T10:41:34.007Z"
+ },
+ {
+  "id": "ecd88a13aaf6",
+  "source": "yuyu",
+  "sourceName": "YUYUの日本語Podcast",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "culture"
+  ],
+  "title": "Vol.498 最近の問題と、自由の意味について (Japanese Radio for Listening practice)",
+  "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-498--Japanese-Radio-for-Listening-practice-e3qt10i",
+  "audio": "https://anchor.fm/s/cda85d4/podcast/play/127877586/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-9-22%2F56cfa73a-6e76-393e-c8e1-1c2f76eda89d.mp3",
+  "date": "2026-10-22T07:09:37.000Z",
+  "minutes": 64,
+  "summary": "💰Patreonのサポート(人´∀`)ｱﾘｶﾞﾄｰ♪ ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠…",
+  "added": "2026-10-22T10:41:32.218Z"
+ },
+ {
   "id": "79d334e21a73",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
