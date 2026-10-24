@@ -1,5 +1,24 @@
 [
  {
+  "id": "a5eb49148f72",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース NHKきょうのニュース 2026年10月24日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/33ae3a587bfa5cb93957336a462543cc_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/33ae3a587bfa5cb93957336a462543cc_64k.mp3",
+  "date": "2026-10-24T10:20:00.000Z",
+  "minutes": 20,
+  "summary": "",
+  "added": "2026-10-24T14:08:08.680Z"
+ },
+ {
   "id": "175b433d450f",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
