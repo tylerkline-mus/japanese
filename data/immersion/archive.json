@@ -1,5 +1,43 @@
 [
  {
+  "id": "1dfc89ad04b2",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月24日午後01時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/3f7d98db1a357f82884d3cf08c1f31a2_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/3f7d98db1a357f82884d3cf08c1f31a2_64k.mp3",
+  "date": "2026-10-24T04:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-24T05:05:54.624Z"
+ },
+ {
+  "id": "176b66c48004",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 正午のNHKニュース 2026年10月24日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/c505a23db24c2940ae67974b1a313036_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/c505a23db24c2940ae67974b1a313036_64k.mp3",
+  "date": "2026-10-24T03:10:00.000Z",
+  "minutes": 10,
+  "summary": "▽最新のニュースは「らじる★らじる」やポッドキャスト「ＮＨＫラジオニュース」からもお聴きいただけます",
+  "added": "2026-10-24T05:05:54.624Z"
+ },
+ {
   "id": "a6117e6d2853",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
