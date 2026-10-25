@@ -1,10 +1,17 @@
 {
- "updated": "2026-10-25T00:35:41.007Z",
+ "updated": "2026-10-25T05:23:03.876Z",
  "level": 10,
- "knownKanji": "女口十入八川大工一上下九山二三人七力々了丸六日木出才五天右左立正田手四小中火犬丁千王玉白本文夕月土刀目円水子万内分切友太少引牛止台外母市用午半方今冬広元古北生心父戸矢毛去申早石号打氷先名年百男町央竹休皿虫他糸代字宝世気村不足赤見平花車写礼主仕貝耳体米空林兄皮交光回多声弟来社角谷麦草音西色作肉毎形当同図何行金会雨近斤走言青自里羽学後安星化地両全向州曲有京国夜明東歩知南室思海前画店点亡茶姉羊活妹食死長科私血首由札付以必末校夏弱通高強理雪時組失記鳥船黄民紙黒魚風教家週者研電森間池支住助君対朝絵道楽話所反数身雲役馬買究医場番決答局和予物新試売保事具服苦表乗客屋県美送談界重験要返泳発部度実勝像映穴豚床象辛",
+ "knownKanji": "女口十入八川大工一上下九山二三人七力々了丸六日木出才五天右左立正田手四小中火犬丁千王玉白本文夕月土刀目円水子万内分切友太少引牛止台外母市用午半方今冬広元古北生心父戸矢毛去申早石号打氷先名年百男町央竹休皿虫他糸代字宝世気村不足赤見平花車写礼主仕貝耳体米空林兄皮交光回多声弟来社角谷麦草音西色作肉毎形当同図何行金会雨近斤走言青自里羽学後安星化地両全向州曲有京国夜明東歩知南室思海前画店点亡茶姉羊妹食死長科私血次首由札付以必末校夏弱通高強理雪時組失記鳥船黄民紙黒魚風教家週者研電森間池支住助君対朝絵道楽話所反数身雲役馬買究医場番決答局和予物新試売保事具服苦表乗客屋県美送談界重験要返泳発部度実勝像映穴豚床象辛",
  "knownKanjiCount": 301,
  "startedKanji": "女口十入八川大工一上下九山二三人七力々了丸六日木出才五天右左立正田手四小中火犬丁千王玉白本文夕月土刀目円水子万内分切友太少引牛止台外母市用午半方今冬広元古北生心父戸矢毛去申早石号打氷先名年百男町央竹休皿虫他糸代字宝世気村不足赤見平花車写礼主仕貝耳体米空林兄皮交光回多声弟来社角谷麦草音西色作考肉毎形当同図何行金会雨近斤走言青自里羽学後安星化地両全向州曲有京国夜明東歩知南室思海前画店点亡茶姉羊活妹食死長科私血次首欠由札辺付以必未末校夏弱通高強理雪時組失記鳥船黄氏民紙黒魚風教家週者研電森間池支住助君対朝絵道楽話所反数身雲役投馬買究医場番決答局和予物新試売保事具服苦表乗客屋持相県美負送談界重験要仮返泳受発部度実使勝定像映取穴豚床象比辛史歴",
  "leeches": [
+  {
+   "characters": "見せる",
+   "type": "vocabulary",
+   "meaning": "To Show",
+   "reading": "みせる",
+   "weak": "meaning"
+  },
   {
    "characters": "交じる",
    "type": "vocabulary",
@@ -20,38 +27,17 @@
    "weak": "meaning"
   },
   {
-   "characters": "比",
-   "type": "kanji",
-   "meaning": "Compare",
-   "reading": "ひ",
-   "weak": "reading"
-  },
-  {
-   "characters": "一気に",
+   "characters": "失う",
    "type": "vocabulary",
-   "meaning": "In One Go",
-   "reading": "いっきに",
-   "weak": "meaning"
-  },
-  {
-   "characters": "使",
-   "type": "kanji",
-   "meaning": "Use",
-   "reading": "し",
-   "weak": "meaning"
+   "meaning": "To Lose",
+   "reading": "うしなう",
+   "weak": "reading"
   },
   {
    "characters": "明かり",
    "type": "vocabulary",
    "meaning": "Light",
    "reading": "あかり",
-   "weak": "meaning"
-  },
-  {
-   "characters": "見せる",
-   "type": "vocabulary",
-   "meaning": "To Show",
-   "reading": "みせる",
    "weak": "meaning"
   },
   {
@@ -73,13 +59,6 @@
    "type": "vocabulary",
    "meaning": "Artificial",
    "reading": "じんこう",
-   "weak": "meaning"
-  },
-  {
-   "characters": "元",
-   "type": "kanji",
-   "meaning": "Origin",
-   "reading": "げん",
    "weak": "meaning"
   },
   {
@@ -109,6 +88,27 @@
    "meaning": "Body",
    "reading": "み",
    "weak": "reading"
+  },
+  {
+   "characters": "投手",
+   "type": "vocabulary",
+   "meaning": "Pitcher",
+   "reading": "とうしゅ",
+   "weak": "reading"
+  },
+  {
+   "characters": "定",
+   "type": "kanji",
+   "meaning": "Determine",
+   "reading": "てい",
+   "weak": "meaning"
+  },
+  {
+   "characters": "出かける",
+   "type": "vocabulary",
+   "meaning": "To Go Out",
+   "reading": "でかける",
+   "weak": "meaning"
   }
  ]
 }
