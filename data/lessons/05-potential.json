@@ -1,0 +1,296 @@
+{
+  "id": "05-potential",
+  "week": 5,
+  "title": "話す → 話せる",
+  "titleEn": "Can do: the potential form (〜える, 〜られる, できる)",
+  "taeKim": {
+    "title": "Potential form",
+    "url": "https://guidetojapanese.org/learn/grammar/potential"
+  },
+  "summary": "To say you can do something, change the verb: 話す → 話せる, 食べる → 食べられる, する → できる. The result describes what's possible, not an action, so what you can do usually takes が.",
+  "explanation": [
+    "English adds a word (\"can\"). Japanese **changes the verb itself**. {話|はな}す (speak) becomes {話|はな}せる (be able to speak). The new verb is an ordinary る-verb, so it takes ます like any other: {話|はな}せます, {話|はな}せません.",
+    "**う-verbs: change the last -u to -e and add る.** {話|はな}す → {話|はな}せる, {行|い}く → {行|い}ける, {泳|およ}ぐ → {泳|およ}げる, {買|か}う → {買|か}える, {作|つく}る → {作|つく}れる, {歩|ある}く → {歩|ある}ける. **る-verbs: drop る, add られる.** {食|た}べる → {食|た}べられる, {見|み}る → {見|み}られる, {出|で}かける → {出|で}かけられる. **The two odd ones: する → できる, {来|く}る → {来|こ}られる.** Note the reading: こられる, not きられる.",
+    "**A potential verb describes a state, not an action.** {話|はな}せる doesn't say you're doing anything. It says what's possible for you. That's why it acts like the \"it happens\" verbs from Lesson 4: the thing you can do usually takes **が**. {日本語|にほんご}**を**{話|はな}します = I speak Japanese (an action). {日本語|にほんご}**が**{話|はな}せます = Japanese is something I can speak. You'll also hear を with potential verbs, especially in longer sentences. Both are fine, but が is the one to aim for.",
+    "**できる is the workhorse.** Any する-verb turns into \"can\" by swapping する for できる: {練習|れんしゅう}する → {練習|れんしゅう}できる, {録音|ろくおん}する → {録音|ろくおん}できる. On a trip, **〜できますか** (can I…?) opens more doors than any other question.",
+    "**Some verbs already mean \"can\".** {分|わ}かる (understand), {見|み}える (be visible) and {聞|き}こえる (be audible) are about something reaching you, so they have no potential form. Keep {見|み}える and {見|み}られる apart: {見|み}える = it's in view, on its own. {見|み}られる = you're able to see it, because it's on show or you get the chance. From your room the sea {見|み}えます. At a museum, old photos {見|み}られます.",
+    "**In casual speech the ら drops:** {見|み}れる, {食|た}べれる, {来|こ}れる. You'll hear these everywhere, from friends and on TV, so don't let them throw you. In your own polite sentences, use the full form.",
+    "Why it matters for you: \"Can I…?\" and \"I can… a little\" are how you start talking with someone. **{日本語|にほんご}が{少|すこ}し{話|はな}せます** tells a stranger at the bar that they can talk to you."
+  ],
+  "examples": [
+    {
+      "ja": "{日本語|にほんご}が{少|すこ}し{話|はな}せます。",
+      "en": "I can speak a little Japanese.",
+      "note": "話す → 話せる. が for what you can do."
+    },
+    {
+      "ja": "カードは{使|つか}えますか。",
+      "en": "Can I pay by card?",
+      "note": "使う → 使える. は because you're asking about cards as opposed to cash."
+    },
+    {
+      "ja": "{生|なま}の{魚|さかな}も{食|た}べられます。",
+      "en": "I can eat raw fish too.",
+      "note": "A る-verb: 食べる → 食べられる. Worth having ready at any dinner table."
+    },
+    {
+      "ja": "ここで{録音|ろくおん}できますか。",
+      "en": "Can I record here?",
+      "note": "録音する → 録音できる. で marks where the recording happens (Lesson 2)."
+    },
+    {
+      "ja": "{窓|まど}から{山|やま}が{見|み}えます。",
+      "en": "You can see the mountains from the window.",
+      "note": "見える is its own verb (be visible), not the potential of 見る."
+    },
+    {
+      "ja": "すみません、{明日|あした}は{出|で}かけられません。",
+      "en": "Sorry, I can't go out tomorrow.",
+      "note": "出かける is a る-verb, so 出かけられる. Negative: 出かけられません."
+    }
+  ],
+  "contrasts": [
+    {
+      "a": {
+        "ja": "{日本語|にほんご}を{話|はな}します。",
+        "en": "I speak Japanese."
+      },
+      "b": {
+        "ja": "{日本語|にほんご}が{話|はな}せます。",
+        "en": "I can speak Japanese."
+      },
+      "why": "話します is an action, so the thing you speak takes を. 話せます is a state (what's possible for you), so the default is が."
+    },
+    {
+      "a": {
+        "ja": "{窓|まど}から{山|やま}が{見|み}えます。",
+        "en": "The mountains are visible from the window."
+      },
+      "b": {
+        "ja": "ここで{古|ふる}い{写真|しゃしん}が{見|み}られます。",
+        "en": "You can see old photos here."
+      },
+      "why": "見える: the view reaches your eyes on its own. 見られる: you're able to look because the photos are on show here. One is about the view, the other about the chance to see it."
+    },
+    {
+      "a": {
+        "ja": "ここで{練習|れんしゅう}しますか。",
+        "en": "Are we practicing here?"
+      },
+      "b": {
+        "ja": "ここで{練習|れんしゅう}できますか。",
+        "en": "Can we practice here?"
+      },
+      "why": "します asks about the plan. できます asks whether it's possible or allowed. Use the second one when you need permission for the room."
+    }
+  ],
+  "exercises": [
+    {
+      "type": "choice",
+      "scene": "At a counter bar, the person next to you asks: 日本語、話せますか。",
+      "prompt": "はい、{少|すこ}し＿＿。",
+      "en": "Yes, I can speak a little.",
+      "options": [
+        {
+          "text": "{話|はな}せます",
+          "verdict": "right",
+          "why": "They asked 話せますか (can you?), so answer with the potential: 話す → 話せる → 話せます."
+        },
+        {
+          "text": "{話|はな}します",
+          "verdict": "different",
+          "why": "少し話します = I do speak a little, as an activity. People will understand you, but it answers \"do you?\" rather than \"can you?\"."
+        },
+        {
+          "text": "{話|はな}されます",
+          "verdict": "wrong",
+          "why": "話される is the passive (\"gets spoken\"). For a う-verb the potential is just -e + る: 話せる."
+        }
+      ]
+    },
+    {
+      "type": "choice",
+      "scene": "Your host is planning the menu.",
+      "prompt": "{生|なま}の{魚|さかな}は＿＿か。",
+      "en": "Can you eat raw fish?",
+      "options": [
+        {
+          "text": "{食|た}べられます",
+          "verdict": "right",
+          "why": "食べる is a る-verb: drop る, add られる → 食べられる."
+        },
+        {
+          "text": "{食|た}べます",
+          "verdict": "different",
+          "why": "生の魚は食べますか = do you eat raw fish? A question about habit, not ability. Close, but the host wants to know whether you can."
+        },
+        {
+          "text": "{食|た}べせます",
+          "verdict": "wrong",
+          "why": "Not a form. Only う-verbs change -u to -e. る-verbs add られる."
+        }
+      ]
+    },
+    {
+      "type": "choice",
+      "scene": "You'd like to record in the studio tonight.",
+      "prompt": "{今夜|こんや}、スタジオで{録音|ろくおん}＿＿か。",
+      "en": "Can I record in the studio tonight?",
+      "options": [
+        {
+          "text": "できます",
+          "verdict": "right",
+          "why": "する-verbs swap する for できる: 録音する → 録音できる."
+        },
+        {
+          "text": "します",
+          "verdict": "different",
+          "why": "録音しますか = are you recording? / will you record? It asks about a plan, not whether it's possible."
+        },
+        {
+          "text": "されます",
+          "verdict": "wrong",
+          "why": "される is the passive of する (\"gets recorded\"). The potential of する is できる."
+        }
+      ]
+    },
+    {
+      "type": "choice",
+      "scene": "Describing your room at the inn.",
+      "prompt": "{部屋|へや}の{窓|まど}から{海|うみ}が＿＿。",
+      "en": "You can see the sea from the room's window.",
+      "options": [
+        {
+          "text": "{見|み}えます",
+          "verdict": "right",
+          "why": "The sea just comes into view on its own: 見える, with が."
+        },
+        {
+          "text": "{見|み}られます",
+          "verdict": "different",
+          "why": "Not wrong, but it frames the view as an opportunity on offer, like a hotel brochure. To say the sea is simply in view, 見えます."
+        },
+        {
+          "text": "{見|み}せます",
+          "verdict": "wrong",
+          "why": "見せる = show someone. The sea isn't showing anything to anyone."
+        }
+      ]
+    },
+    {
+      "type": "choice",
+      "prompt": "{日本語|にほんご}＿{少|すこ}し{話|はな}せます。",
+      "en": "I can speak a little Japanese.",
+      "options": [
+        {
+          "text": "が",
+          "verdict": "right",
+          "why": "With a potential verb, what you can do is the subject of the state: 日本語が話せます."
+        },
+        {
+          "text": "で",
+          "verdict": "different",
+          "why": "日本語で話せます = I can talk in Japanese (Japanese as the means, Lesson 2). Grammatical, but it means \"we can have this conversation in Japanese\", not \"I have some Japanese\"."
+        },
+        {
+          "text": "に",
+          "verdict": "wrong",
+          "why": "に marks a point (where something is or where it arrives). Japanese isn't a destination here."
+        }
+      ]
+    },
+    {
+      "type": "choice",
+      "scene": "Arranging a rehearsal.",
+      "prompt": "{明日|あした}は{何時|なんじ}に＿＿か。",
+      "en": "What time can you come tomorrow?",
+      "options": [
+        {
+          "text": "{来|こ}られます",
+          "verdict": "right",
+          "why": "来る is irregular: its potential is 来られる, read こられる."
+        },
+        {
+          "text": "{来|き}られます",
+          "verdict": "wrong",
+          "why": "The kanji is right but the reading isn't. The potential of 来る is こられる."
+        },
+        {
+          "text": "くれます",
+          "verdict": "different",
+          "why": "くれる is a different verb: give (to me). 何時にくれますか = what time will you give it to me?"
+        }
+      ]
+    },
+    {
+      "type": "choice",
+      "scene": "Your pickup asks if you need a ride.",
+      "prompt": "{大丈夫|だいじょうぶ}です。{一人|ひとり}で{駅|えき}まで＿＿。",
+      "en": "It's fine. I can walk to the station on my own.",
+      "options": [
+        {
+          "text": "{歩|ある}けます",
+          "verdict": "right",
+          "why": "歩く is a う-verb: -ku → -ke + る → 歩ける → 歩けます."
+        },
+        {
+          "text": "{歩|ある}きます",
+          "verdict": "different",
+          "why": "一人で駅まで歩きます = I'll walk to the station myself. Fine as a plan, but it doesn't say you're able to."
+        },
+        {
+          "text": "{歩|ある}かれます",
+          "verdict": "wrong",
+          "why": "歩かれる is the passive or honorific form, not \"can walk\"."
+        }
+      ]
+    },
+    {
+      "type": "build",
+      "scene": "A friend invites you out. Say you can't go out tomorrow.",
+      "en": "I can't go out tomorrow.",
+      "tiles": [
+        "{明日|あした}",
+        "は",
+        "{出|で}かけられません",
+        "{出|で}かけません"
+      ],
+      "answers": [
+        [
+          "{明日|あした}",
+          "は",
+          "{出|で}かけられません"
+        ]
+      ],
+      "why": "出かける is a る-verb: 出かけられる, negative 出かけられません. 出かけません would mean you won't go out, which sounds like a choice."
+    },
+    {
+      "type": "build",
+      "scene": "At the register, ask if you can pay by card.",
+      "en": "Can I pay by card?",
+      "tiles": [
+        "カード",
+        "は",
+        "{使|つか}えます",
+        "{使|つか}います",
+        "か"
+      ],
+      "answers": [
+        [
+          "カード",
+          "は",
+          "{使|つか}えます",
+          "か"
+        ]
+      ],
+      "why": "使う → 使える (-u → -e + る). 使いますか would ask whether they use cards, not whether you can."
+    },
+    {
+      "type": "write",
+      "scene": "Your exhibition opening. Someone starts talking to you in fast Japanese. Say you can speak a little Japanese and ask them to speak slowly.",
+      "model": "{日本語|にほんご}が{少|すこ}し{話|はな}せます。ゆっくり{話|はな}してください。",
+      "en": "I can speak a little Japanese. Please speak slowly.",
+      "why": "話せます (potential, with が) tells them you have some Japanese; 話してください is the ordinary request form of 話す."
+    }
+  ]
+}

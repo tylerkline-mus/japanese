@@ -545,6 +545,186 @@
     "ja": "{雨|あめ}で、コンサートは«{中止|ちゅうし}»です。",
     "en": "The concert is canceled because of rain."
    }
+  ],
+  "一人": [
+   {
+    "ja": "«{一人|ひとり}»で{電車|でんしゃ}に{乗|の}ります。",
+    "en": "I'll take the train by myself."
+   }
+  ],
+  "天気": [
+   {
+    "ja": "{明日|あした}の«{天気|てんき}»はどうですか。",
+    "en": "What's the weather like tomorrow?"
+   }
+  ],
+  "明るい": [
+   {
+    "ja": "この{部屋|へや}は«{明|あか}るい»ですね。",
+    "en": "This room is nice and bright."
+   }
+  ],
+  "花火": [
+   {
+    "ja": "{夏|なつ}は{川|かわ}で«{花火|はなび}»を{見|み}ました。",
+    "en": "In the summer we watched fireworks by the river."
+   }
+  ],
+  "日の出": [
+   {
+    "ja": "{海|うみ}で«{日|ひ}の{出|で}»を{見|み}たいです。",
+    "en": "I want to see the sunrise at the sea."
+   }
+  ],
+  "田んぼ": [
+   {
+    "ja": "{駅|えき}の{前|まえ}は、{全部|ぜんぶ}«{田|た}んぼ»です。",
+    "en": "In front of the station it's all rice paddies."
+   }
+  ],
+  "地図": [
+   {
+    "ja": "すみません、«{地図|ちず}»はありますか。",
+    "en": "Excuse me, do you have a map?"
+   }
+  ],
+  "東口": [
+   {
+    "ja": "«{東口|ひがしぐち}»で{待|ま}っています。",
+    "en": "I'll be waiting at the east exit."
+   }
+  ],
+  "北口": [
+   {
+    "ja": "«{北口|きたぐち}»から{出|で}てください。",
+    "en": "Please come out through the north exit."
+   }
+  ],
+  "名曲": [
+   {
+    "ja": "これは{古|ふる}い«{名曲|めいきょく}»です。",
+    "en": "This is an old classic."
+   }
+  ],
+  "作り方": [
+   {
+    "ja": "この{料理|りょうり}の«{作|つく}り{方|かた}»を{教|おし}えてください。",
+    "en": "Please teach me how to make this dish."
+   }
+  ],
+  "手作り": [
+   {
+    "ja": "これは«{手作|てづく}り»のおにぎりです。",
+    "en": "These are homemade rice balls."
+   }
+  ],
+  "映画": [
+   {
+    "ja": "{休|やす}みの{日|ひ}は、よく«{映画|えいが}»を{見|み}ます。",
+    "en": "On my days off I often watch movies."
+   }
+  ],
+  "今回": [
+   {
+    "ja": "«{今回|こんかい}»は{一人|ひとり}で{来|き}ました。",
+    "en": "This time I came on my own."
+   }
+  ],
+  "次回": [
+   {
+    "ja": "«{次回|じかい}»は{妻|つま}と{来|き}ます。",
+    "en": "Next time I'll come with my wife."
+   }
+  ],
+  "風": [
+   {
+    "ja": "{今日|きょう}は«{風|かぜ}»が{強|つよ}いですね。",
+    "en": "The wind is strong today, isn't it."
+   }
+  ],
+  "船": [
+   {
+    "ja": "«{船|ふね}»で{島|しま}に{行|い}きます。",
+    "en": "I'll go to the island by boat."
+   }
+  ],
+  "青空": [
+   {
+    "ja": "{雪|ゆき}の{後|あと}の«{青空|あおぞら}»は、きれいですね。",
+    "en": "The blue sky after the snow is beautiful."
+   }
+  ],
+  "空気": [
+   {
+    "ja": "{山|やま}の«{空気|くうき}»はおいしいです。",
+    "en": "The mountain air is so fresh."
+   }
+  ],
+  "思い出す": [
+   {
+    "ja": "やっと{友達|ともだち}の{名前|なまえ}を«{思|おも}い{出|だ}»しました。",
+    "en": "I finally remembered my friend's name."
+   }
+  ],
+  "足りる": [
+   {
+    "ja": "お{金|かね}は«{足|た}り»ますか。",
+    "en": "Do you have enough money?"
+   }
+  ],
+  "牛肉": [
+   {
+    "ja": "«{牛肉|ぎゅうにく}»と{豚肉|ぶたにく}、どちらがいいですか。",
+    "en": "Beef or pork, which would you like?"
+   }
+  ],
+  "コーヒー": [
+   {
+    "ja": "{朝|あさ}は«コーヒー»を{一杯|いっぱい}{飲|の}みます。",
+    "en": "I have a cup of coffee in the morning."
+   }
+  ],
+  "多い": [
+   {
+    "ja": "{九州|きゅうしゅう}は{温泉|おんせん}が«{多|おお}い»です。",
+    "en": "Kyushu has lots of hot springs."
+   }
+  ],
+  "丸ごと": [
+   {
+    "ja": "{魚|さかな}を«{丸|まる}ごと»{焼|や}きました。",
+    "en": "I grilled the fish whole."
+   }
+  ],
+  "皮肉": [
+   {
+    "ja": "それは«{皮肉|ひにく}»ですか。",
+    "en": "Is that sarcasm?"
+   }
+  ],
+  "この前": [
+   {
+    "ja": "«この{前|まえ}»の{店|みせ}、おいしかったですね。",
+    "en": "That place the other day was delicious, wasn't it."
+   }
+  ],
+  "下町": [
+   {
+    "ja": "{東京|とうきょう}の«{下町|したまち}»を{歩|ある}きたいです。",
+    "en": "I want to walk around Tokyo's old downtown."
+   }
+  ],
+  "九州": [
+   {
+    "ja": "«{九州|きゅうしゅう}»の{冬|ふゆ}は{寒|さむ}いですか。",
+    "en": "Are winters cold in Kyushu?"
+   }
+  ],
+  "四国": [
+   {
+    "ja": "{電車|でんしゃ}で«{四国|しこく}»に{行|い}きます。",
+    "en": "I'm going to Shikoku by train."
+   }
   ]
  }
 }

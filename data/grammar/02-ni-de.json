@@ -385,6 +385,48 @@
         ]
       ],
       "why": "Two places, two jobs: で marks **how** you go (by taxi), に marks **where you end up** (the station). The two blocks can swap; 行きます stays last."
+    },
+    {
+      "id": "nd20",
+      "type": "choice",
+      "scene": "Planning the trip to Tokyo.",
+      "prompt": "{名古屋|なごや}＿{電車|でんしゃ}を{乗|の}り{換|か}えます。",
+      "en": "I change trains at Nagoya.",
+      "options": [
+        {
+          "text": "で",
+          "verdict": "right",
+          "why": "Changing trains is an action that happens at Nagoya: で."
+        },
+        {
+          "text": "に",
+          "verdict": "wrong",
+          "why": "With 乗り換える, に marks the train you switch onto (新幹線に乗り換える). 名古屋に would make Nagoya the train."
+        }
+      ]
+    },
+    {
+      "id": "nd21",
+      "type": "choice",
+      "prompt": "{夕方|ゆうがた}は{和食|わしょく}の{店|みせ}＿{食事|しょくじ}をします。",
+      "en": "In the evening I'll have dinner at a Japanese restaurant.",
+      "options": [
+        {
+          "text": "で",
+          "verdict": "right",
+          "why": "Having a meal is something you do there: で marks the stage."
+        },
+        {
+          "text": "に",
+          "verdict": "wrong",
+          "why": "に would treat the restaurant as a point you exist at or arrive at. 食事をする is an action, so で."
+        },
+        {
+          "text": "を",
+          "verdict": "wrong",
+          "why": "を already marks 食事. The restaurant isn't what you're doing."
+        }
+      ]
     }
   ]
 }

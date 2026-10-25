@@ -1,0 +1,287 @@
+{
+  "lesson": "05-potential",
+  "drills": [
+    {
+      "id": "pt01",
+      "type": "choice",
+      "scene": "At a beach town.",
+      "prompt": "ここの{海|うみ}で＿＿か。",
+      "en": "Can you swim in the sea here?",
+      "options": [
+        {
+          "text": "{泳|およ}げます",
+          "verdict": "right",
+          "why": "泳ぐ is a う-verb: -gu → -ge + る → 泳げる."
+        },
+        {
+          "text": "{泳|およ}ぎます",
+          "verdict": "different",
+          "why": "泳ぎますか = do you (or will you) swim here? It asks about you, not about whether swimming is possible."
+        },
+        {
+          "text": "{泳|およ}がれます",
+          "verdict": "wrong",
+          "why": "泳がれる is the passive. The potential of a う-verb is just -e + る."
+        }
+      ]
+    },
+    {
+      "id": "pt02",
+      "type": "choice",
+      "scene": "Pointing at the tap in a mountain hut.",
+      "prompt": "この{水|みず}は＿＿か。",
+      "en": "Is this water drinkable?",
+      "options": [
+        {
+          "text": "{飲|の}めます",
+          "verdict": "right",
+          "why": "飲む → 飲める (-mu → -me + る). Can it be drunk? = is it safe to drink?"
+        },
+        {
+          "text": "{飲|の}みます",
+          "verdict": "different",
+          "why": "この水は飲みますか = do you drink this water? It asks about a habit."
+        },
+        {
+          "text": "{飲|の}まれます",
+          "verdict": "wrong",
+          "why": "That's the passive (\"gets drunk\"), not \"can drink\"."
+        }
+      ]
+    },
+    {
+      "id": "pt03",
+      "type": "choice",
+      "prompt": "{一日|いちにち}で{短|みじか}い{曲|きょく}が{一|ひと}つ＿＿。",
+      "en": "I can write one short piece in a day.",
+      "options": [
+        {
+          "text": "{作|つく}れます",
+          "verdict": "right",
+          "why": "作る is a う-verb (it ends in -ru but isn't a る-verb): -ru → -re + る → 作れる."
+        },
+        {
+          "text": "{作|つく}ります",
+          "verdict": "wrong",
+          "why": "With が, the piece would be the one doing the making. Plain 作る takes を (曲を一つ作ります), and that's a habit, not what you're able to do."
+        },
+        {
+          "text": "{作|つく}られます",
+          "verdict": "different",
+          "why": "作られる is the passive: \"one piece gets made in a day.\" Grammatical, but it leaves you out of it."
+        }
+      ]
+    },
+    {
+      "id": "pt04",
+      "type": "choice",
+      "prompt": "{兄|あに}は{料理|りょうり}が＿＿。",
+      "en": "My older brother can cook.",
+      "options": [
+        {
+          "text": "できます",
+          "verdict": "right",
+          "why": "Noun + が + できる = can do it / is good at it. 料理ができます."
+        },
+        {
+          "text": "します",
+          "verdict": "wrong",
+          "why": "する takes を for what you do: 料理をします. With が, the cooking would be doing something."
+        },
+        {
+          "text": "{分|わ}かります",
+          "verdict": "wrong",
+          "why": "分かる = understand. 料理が分かります sounds like he understands cooking as a subject."
+        }
+      ]
+    },
+    {
+      "id": "pt05",
+      "type": "choice",
+      "prompt": "{日本語|にほんご}が＿＿か。",
+      "en": "Do you understand Japanese?",
+      "options": [
+        {
+          "text": "{分|わ}かります",
+          "verdict": "right",
+          "why": "分かる already means \"it's clear to me\", so it never takes a potential form."
+        },
+        {
+          "text": "{分|わ}かれます",
+          "verdict": "wrong",
+          "why": "分かれる is a different verb: to split up, to part. 日本語が分かれますか = does Japanese split up?"
+        },
+        {
+          "text": "{分|わ}かられます",
+          "verdict": "wrong",
+          "why": "Not a word. 分かる is already about what you're able to understand."
+        }
+      ]
+    },
+    {
+      "id": "pt06",
+      "type": "choice",
+      "scene": "On the phone from a windy platform.",
+      "prompt": "すみません、{声|こえ}がよく＿＿。",
+      "en": "Sorry, I can't hear you very well.",
+      "options": [
+        {
+          "text": "{聞|き}こえません",
+          "verdict": "right",
+          "why": "聞こえる = be audible, a sound reaching you. よく + negative = not very well."
+        },
+        {
+          "text": "{聞|き}けません",
+          "verdict": "different",
+          "why": "聞けない = unable to listen (no chance, not allowed, the file won't play). For a voice that isn't reaching you, 聞こえる."
+        },
+        {
+          "text": "{聞|き}きません",
+          "verdict": "wrong",
+          "why": "聞きません = I won't listen. On the phone, that's rude."
+        }
+      ]
+    },
+    {
+      "id": "pt07",
+      "type": "choice",
+      "prompt": "{明日|あした}の{夜|よる}、{川|かわ}で{花火|はなび}が＿＿よ。{一緒|いっしょ}に{行|い}きましょう。",
+      "en": "We can see fireworks by the river tomorrow night. Let's go together.",
+      "options": [
+        {
+          "text": "{見|み}られます",
+          "verdict": "right",
+          "why": "It's an event you get the chance to see if you go: 見る → 見られる."
+        },
+        {
+          "text": "{見|み}えます",
+          "verdict": "different",
+          "why": "見えます = they'll be visible, as if from where you're standing. With \"let's go\", the chance-to-see 見られます fits better."
+        },
+        {
+          "text": "{見|み}せます",
+          "verdict": "wrong",
+          "why": "見せる = show someone. Nobody is showing anyone the fireworks."
+        }
+      ]
+    },
+    {
+      "id": "pt08",
+      "type": "choice",
+      "scene": "At the ticket gate.",
+      "prompt": "この{切符|きっぷ}で、{次|つぎ}の{電車|でんしゃ}に＿＿か。",
+      "en": "Can I take the next train with this ticket?",
+      "options": [
+        {
+          "text": "{乗|の}れます",
+          "verdict": "right",
+          "why": "乗る is a う-verb: -ru → -re + る → 乗れる."
+        },
+        {
+          "text": "{乗|の}ります",
+          "verdict": "different",
+          "why": "乗りますか = are you taking the next train? A question about the person, not the ticket."
+        },
+        {
+          "text": "{乗|の}られます",
+          "verdict": "wrong",
+          "why": "乗られる is the passive or honorific. う-verbs take -e + る."
+        }
+      ]
+    },
+    {
+      "id": "pt09",
+      "type": "choice",
+      "scene": "Texting a friend who invited you.",
+      "prompt": "すみません、{今日|きょう}は＿＿。",
+      "en": "Sorry, I can't come today.",
+      "options": [
+        {
+          "text": "{来|こ}られません",
+          "verdict": "right",
+          "why": "来る → 来られる (こられる). The negative says something stops you, which is softer."
+        },
+        {
+          "text": "{来|き}ません",
+          "verdict": "different",
+          "why": "来ません = I'm not coming. It sounds like a decision, and a bit blunt."
+        },
+        {
+          "text": "{来|く}られません",
+          "verdict": "wrong",
+          "why": "Wrong reading. The potential of 来る is always こられる."
+        }
+      ]
+    },
+    {
+      "id": "pt10",
+      "type": "choice",
+      "scene": "Checking the hall before a rehearsal.",
+      "prompt": "この{部屋|へや}で{練習|れんしゅう}＿＿か。",
+      "en": "Can we rehearse in this room?",
+      "options": [
+        {
+          "text": "できます",
+          "verdict": "right",
+          "why": "練習する → 練習できる: swap する for できる."
+        },
+        {
+          "text": "します",
+          "verdict": "different",
+          "why": "練習しますか = are we rehearsing here? A question about the plan, not permission."
+        },
+        {
+          "text": "られます",
+          "verdict": "wrong",
+          "why": "できる replaces する entirely. 練習られる isn't a word."
+        }
+      ]
+    },
+    {
+      "id": "pt11",
+      "type": "build",
+      "scene": "Your host asks if there's anything you can't eat.",
+      "en": "I can't eat spicy food.",
+      "tiles": [
+        "{辛|から}いもの",
+        "が",
+        "を",
+        "{食|た}べられません",
+        "{食|た}べません"
+      ],
+      "answers": [
+        [
+          "{辛|から}いもの",
+          "が",
+          "{食|た}べられません"
+        ],
+        [
+          "{辛|から}いもの",
+          "を",
+          "{食|た}べられません"
+        ]
+      ],
+      "why": "食べる → 食べられる, negative 食べられません. が is the default with potential verbs, and を is also heard. 食べません would mean you don't eat it, as a choice."
+    },
+    {
+      "id": "pt12",
+      "type": "build",
+      "scene": "Telling a friend about your room.",
+      "en": "I can see the sea from my room.",
+      "tiles": [
+        "{部屋|へや}から",
+        "{海|うみ}が",
+        "{見|み}えます",
+        "{見|み}せます"
+      ],
+      "answers": [
+        [
+          "{部屋|へや}から",
+          "{海|うみ}が",
+          "{見|み}えます"
+        ]
+      ],
+      "why": "The view reaches you on its own: 見える with が. 見せます would mean the room is showing someone the sea."
+    }
+  ]
+}

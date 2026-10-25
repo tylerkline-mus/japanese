@@ -870,6 +870,63 @@
    ],
    "listen": "Someone kicking off a rehearsal or a meal, or answering a question they can't answer.",
    "note": "The shrug version is drawn out and falling: さあ…. The \"let's go\" one is short and bright."
+  },
+  {
+   "id": "nee",
+   "ja": "ねえ",
+   "family": "filler",
+   "does": "Calls someone's attention before you say something: \"hey\", \"say…\". Friendly, never urgent.",
+   "register": "casual",
+   "examples": [
+    {
+     "ja": "«ねえ»、これ{見|み}て。",
+     "en": "Hey, look at this."
+    },
+    {
+     "ja": "«ねえ»、{明日|あした}{何|なに}する？",
+     "en": "Say, what are you doing tomorrow?"
+    }
+   ],
+   "listen": "Friends and couples in dramas starting a line; kids tugging at a parent; anime, constantly.",
+   "note": "Different from the 〜ね at the end of a sentence, which checks for agreement. With people you don't know, use あの or すみません instead."
+  },
+  {
+   "id": "nandaka",
+   "ja": "なんだか",
+   "family": "soft",
+   "does": "Says a feeling is there but you can't say why: \"somehow\", \"kind of\".",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«なんだか»{寒|さむ}いですね。",
+     "en": "It's kind of cold, isn't it."
+    },
+    {
+     "ja": "この{曲|きょく}、«なんだか»{懐|なつ}かしいです。",
+     "en": "This piece feels nostalgic somehow."
+    }
+   ],
+   "listen": "People describing a mood: interviews, quiet late-night scenes, someone looking at an old photo.",
+   "note": "Not the same as なんか, the all-purpose filler (\"like…\"). なんだか always points at a vague feeling."
+  },
+  {
+   "id": "noni",
+   "ja": "〜のに",
+   "family": "link",
+   "does": "Joins two facts where the second goes against what the first should lead to, with a little frustration or regret: \"even though…\", \"and yet\".",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "{春|はる}な«のに»、{寒|さむ}いですね。",
+     "en": "It's spring, and yet it's so cold."
+    },
+    {
+     "ja": "{約束|やくそく}した«のに»、{来|こ}なかった。",
+     "en": "He promised, and he still didn't come."
+    }
+   ],
+   "listen": "Dramas, whenever someone is let down. On its own at the end of a line (…のに！) it's pure complaint.",
+   "note": "けど/でも just contrast two facts. のに adds a feeling about it, so it's not for neutral facts or requests."
   }
  ]
 }

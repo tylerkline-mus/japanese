@@ -395,6 +395,66 @@
         ]
       ],
       "why": "私は sets you up as the topic; the rest is the comment about you. The music is what you make → を. The が tile is a decoy: nobody asked who makes it."
+    },
+    {
+      "id": "wg21",
+      "type": "choice",
+      "prompt": "{肉|にく}は{食|た}べませんが、{魚|さかな}＿{食|た}べます。",
+      "en": "I don't eat meat, but fish I do eat.",
+      "options": [
+        {
+          "text": "は",
+          "verdict": "right",
+          "why": "Two things set side by side: meat (no), fish (yes). Contrast is は's job, so both get は."
+        },
+        {
+          "text": "が",
+          "verdict": "different",
+          "why": "魚が食べます makes the fish the one doing the eating. And が would pick fish out as new information, not contrast it with meat."
+        }
+      ]
+    },
+    {
+      "id": "wg22",
+      "type": "choice",
+      "prompt": "{糸島|いとしま}＿{海|うみ}がきれいです。",
+      "en": "Itoshima has a beautiful sea.",
+      "options": [
+        {
+          "text": "は",
+          "verdict": "right",
+          "why": "The pattern 〜は〜が: Itoshima is the topic, and が says what about it is beautiful (the sea)."
+        },
+        {
+          "text": "が",
+          "verdict": "different",
+          "why": "糸島が海がきれいです answers \"which place has the beautiful sea?\" It singles Itoshima out instead of talking about it."
+        },
+        {
+          "text": "を",
+          "verdict": "wrong",
+          "why": "Nothing is being acted on. きれい describes; it doesn't take an object."
+        }
+      ]
+    },
+    {
+      "id": "wg23",
+      "type": "choice",
+      "scene": "You open the door and spot something on the bed.",
+      "prompt": "あ、{猫|ねこ}＿います！",
+      "en": "Oh, there's a cat!",
+      "options": [
+        {
+          "text": "が",
+          "verdict": "right",
+          "why": "A discovery, new information just now: が."
+        },
+        {
+          "text": "は",
+          "verdict": "different",
+          "why": "猫はいます = as for the cat, it's here. That answers \"where's the cat?\" about a cat you were already talking about."
+        }
+      ]
     }
   ]
 }

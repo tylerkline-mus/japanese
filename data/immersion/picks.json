@@ -1,6 +1,224 @@
 {
   "weeks": [
     {
+      "week": "2026-10-26",
+      "note": "Week 5: can and can't (the potential form). Five short ones for the first week in Iceland.",
+      "picks": [
+        {
+          "id": "w2026-10-26-1",
+          "title": "マルクスがはじめて日本に行きました 3/4 (Markus's First Trip to Japan 3/4)",
+          "url": "https://podcasters.spotify.com/pod/show/nihongo-shortstory/episodes/34-Markuss-First-Trip-to-Japan-34-e30i41q",
+          "type": "listen",
+          "source": "Nihongo Short Story by Noriko",
+          "minutes": 3,
+          "level": 1,
+          "why": "Part 3 of the series, and Noriko is the show you finish. Three minutes, so try it once with the transcript and once without.",
+          "connection": "A first trip to Japan is full of what you can and can't do yet: read the signs, buy a ticket, order. That's this week's lesson.",
+          "listenFor": "Listen once with no text. Each time Markus manages something (or doesn't), guess the verb: できました? 分かりませんでした?",
+          "prep": [
+            {
+              "ja": "{初|はじ}めて",
+              "en": "for the first time"
+            },
+            {
+              "ja": "{電車|でんしゃ}",
+              "en": "train"
+            },
+            {
+              "ja": "{切符|きっぷ}",
+              "en": "ticket"
+            },
+            {
+              "ja": "{分|わ}かる",
+              "en": "to understand"
+            },
+            {
+              "ja": "{出来|でき}る",
+              "en": "to be able to do"
+            },
+            {
+              "ja": "{駅|えき}",
+              "en": "station"
+            }
+          ],
+          "tags": [
+            "travel",
+            "story"
+          ],
+          "fromArchive": "30f4d6402a73"
+        },
+        {
+          "id": "w2026-10-26-2",
+          "title": "#1605「上達を感じられない時について！」",
+          "url": "http://nihongoconteppei.com/2026/10/24/1605%e3%80%8c%e4%b8%8a%e9%81%94%e3%82%92%e6%84%9f%e3%81%98%e3%82%89%e3%82%8c%e3%81%aa%e3%81%84%e6%99%82%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%81%e3%80%8d/",
+          "type": "listen",
+          "source": "Nihongo con Teppei (beginner)",
+          "level": 1,
+          "why": "When you can't feel yourself improving: a good episode for a week when grammar is piling up faster than you mark it done.",
+          "connection": "The title itself is this week's grammar: 感じる → 感じられる (can feel) → 感じられない (can't feel).",
+          "listenFor": "Every time a verb ends in 〜える/〜られる/できる (話せる, 行ける, 食べられる), say \"can\" in your head. Is it can or can't (〜ない/〜ません)?",
+          "prep": [
+            {
+              "ja": "{上達|じょうたつ}",
+              "en": "improvement, getting better"
+            },
+            {
+              "ja": "{感|かん}じる",
+              "en": "to feel"
+            },
+            {
+              "ja": "{時|とき}",
+              "en": "time, when"
+            },
+            {
+              "ja": "{毎日|まいにち}",
+              "en": "every day"
+            },
+            {
+              "ja": "{少|すこ}しずつ",
+              "en": "little by little"
+            },
+            {
+              "ja": "{話|はな}す",
+              "en": "to speak"
+            }
+          ],
+          "tags": [
+            "learner",
+            "learning"
+          ],
+          "fromArchive": "be4f29721959"
+        },
+        {
+          "id": "w2026-10-26-3",
+          "title": "#1602「会話の自信がないと言うことについて！」",
+          "url": "http://nihongoconteppei.com/2026/10/19/1602%e3%80%8c%e4%bc%9a%e8%a9%b1%e3%81%ae%e8%87%aa%e4%bf%a1%e3%81%8c%e3%81%aa%e3%81%84%e3%81%a8%e8%a8%80%e3%81%86%e3%81%93%e3%81%a8%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%81%e3%80%8d/",
+          "type": "listen",
+          "source": "Nihongo con Teppei (beginner)",
+          "level": 1,
+          "why": "On not feeling confident in conversation. That's the gap between where you are and the bar-stool goal for March.",
+          "connection": "Talking to a stranger at a bar is the trip goal, and an episode about conversation confidence is a natural place for 話せる / 話せない.",
+          "listenFor": "Count the times you hear 話せ… (話せる, 話せない, 話せます). Then pause and say one true sentence: 日本語が少し話せます。",
+          "prep": [
+            {
+              "ja": "{会話|かいわ}",
+              "en": "conversation"
+            },
+            {
+              "ja": "{自信|じしん}",
+              "en": "confidence"
+            },
+            {
+              "ja": "{言|い}う",
+              "en": "to say"
+            },
+            {
+              "ja": "{話|はな}す",
+              "en": "to speak"
+            },
+            {
+              "ja": "{間違|まちが}い",
+              "en": "mistake"
+            },
+            {
+              "ja": "{大丈夫|だいじょうぶ}",
+              "en": "fine, OK"
+            }
+          ],
+          "tags": [
+            "learner",
+            "conversation"
+          ],
+          "fromArchive": "bb54dc86f59a"
+        },
+        {
+          "id": "w2026-10-26-4",
+          "title": "#647「ともやとかウェールズとか！」",
+          "url": "https://teppeinorikojapanese.com/2026/10/22/647%e3%80%8c%e3%81%a8%e3%82%82%e3%82%84%e3%81%a8%e3%81%8b%e3%82%a6%e3%82%a7%e3%83%bc%e3%83%ab%e3%82%ba%e3%81%a8%e3%81%8b%ef%bc%81%e3%80%8d/",
+          "type": "listen",
+          "source": "Japanese with Teppei and Noriko",
+          "level": 2,
+          "why": "Two people chatting at natural speed. Going by the title, part of it is about Wales, a small country far from Tokyo, which is roughly where you are this month.",
+          "connection": "Being somewhere new and small, far from home: the same position you're in this month in Iceland.",
+          "listenFor": "Don't try to follow everything. Catch the あいづち: every そうなんだ, へえ, なるほど. Then catch one 〜られる/〜える verb and what it's about.",
+          "prep": [
+            {
+              "ja": "{旅行|りょこう}",
+              "en": "trip, travel"
+            },
+            {
+              "ja": "{田舎|いなか}",
+              "en": "countryside"
+            },
+            {
+              "ja": "{国|くに}",
+              "en": "country"
+            },
+            {
+              "ja": "{友達|ともだち}",
+              "en": "friend"
+            },
+            {
+              "ja": "{天気|てんき}",
+              "en": "weather"
+            },
+            {
+              "ja": "{英語|えいご}",
+              "en": "English"
+            }
+          ],
+          "tags": [
+            "conversation",
+            "travel"
+          ],
+          "fromArchive": "3d6a49f99877"
+        },
+        {
+          "id": "w2026-10-26-5",
+          "title": "#115 How to Say \"I Don’t Mind\" in Japanese",
+          "url": "https://podcasters.spotify.com/pod/show/imari1/episodes/115-How-to-Say-I-Dont-Mind-in-Japanese-e3ebc7q",
+          "type": "listen",
+          "source": "Japanese Real Conversation (Imari Radio)",
+          "minutes": 8,
+          "level": 3,
+          "why": "Natural speed, eight minutes, on the phrases you'll want as a dinner guest when a host asks if something's OK. Free transcript.",
+          "connection": "The dinner-guest scene's new tier opens with this lesson: 何でも食べられます, 大丈夫です. This is the native version of those answers.",
+          "listenFor": "Listen for 大丈夫, 平気 and 気にしない. Which one sounds most relaxed? Also catch any 〜られる/〜える verb and say \"can\".",
+          "prep": [
+            {
+              "ja": "{大丈夫|だいじょうぶ}",
+              "en": "fine, OK"
+            },
+            {
+              "ja": "{平気|へいき}",
+              "en": "unbothered, fine"
+            },
+            {
+              "ja": "{気|き}にする",
+              "en": "to mind, to worry about"
+            },
+            {
+              "ja": "{言|い}い{方|かた}",
+              "en": "way of saying"
+            },
+            {
+              "ja": "{友達|ともだち}",
+              "en": "friend"
+            },
+            {
+              "ja": "{場合|ばあい}",
+              "en": "case, situation"
+            }
+          ],
+          "tags": [
+            "conversation",
+            "natural"
+          ],
+          "fromArchive": "9d168f3d472d"
+        }
+      ]
+    },
+    {
       "week": "2026-10-19",
       "note": "Week 3: 〜ている, plus the verb pairs from Lesson 4. Two short stories, a konbini video you can rewatch without subtitles, an old house, and the Akutagawa composition prize on NHK-FM.",
       "picks": [

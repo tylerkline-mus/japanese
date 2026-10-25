@@ -1,6 +1,400 @@
 {
  "weeks": [
   {
+   "week": "2026-10-26",
+   "note": "A northern town, a radio show and a tea house. Listen for でも, じゃあ and なるほど doing their jobs.",
+   "readings": [
+    {
+     "id": "r010-northern-town",
+     "title": "{北|きた}の{町|まち}",
+     "titleEn": "A town in the north",
+     "kind": "Diary",
+     "tiers": [
+      "burned"
+     ],
+     "paragraphs": [
+      {
+       "ja": "{今日|きょう}、{北|きた}の{小|ちい}さい{町|まち}に{来|き}ました。{海|うみ}の{近|ちか}くの{町|まち}です。",
+       "en": "Today I came to a small town in the north. It's a town near the sea."
+      },
+      {
+       "ja": "{空|そら}は{白|しろ}いです。{風|かぜ}が{強|つよ}いです。{冬|ふゆ}はもうすぐです。",
+       "en": "The sky is white. The wind is strong. Winter is almost here."
+      },
+      {
+       "ja": "{町|まち}の{人|ひと}は{少|すく}ないです。でも、{船|ふね}は{多|おお}いです。{朝|あさ}、{船|ふね}が{港|みなと}を{出|で}ます。",
+       "en": "There aren't many people in the town. But there are a lot of boats. In the morning, the boats leave the harbor."
+      },
+      {
+       "ja": "{夜|よる}、{外|そと}に{出|で}ました。{月|つき}がとても{明|あか}るかったです。{星|ほし}もたくさん{見|み}えました。",
+       "en": "At night I went outside. The moon was very bright. I could see lots of stars too."
+      },
+      {
+       "ja": "{家|いえ}で、{魚|さかな}とご{飯|はん}を{食|た}べました。お{茶|ちゃ}も{飲|の}みました。",
+       "en": "At home I ate fish and rice. I had some tea too."
+      },
+      {
+       "ja": "{明日|あした}は{一日|いちにち}、{町|まち}の{音|おと}を{聞|き}きます。{風|かぜ}の{音|おと}、{船|ふね}の{音|おと}、{鳥|とり}の{声|こえ}。やっぱり、{新|あたら}しい{場所|ばしょ}はいいですね。",
+       "en": "Tomorrow I'll spend the whole day listening to the town's sounds. The wind, the boats, the birds. A new place really is good."
+      }
+     ],
+     "questions": [
+      {
+       "id": "q1",
+       "type": "choice",
+       "prompt": "この{町|まち}はどこにありますか。",
+       "en": "Where is this town?",
+       "options": [
+        {
+         "text": "{海|うみ}の{近|ちか}く",
+         "verdict": "right",
+         "why": "「{海|うみ}の{近|ちか}くの{町|まち}です」: it's a town near the sea."
+        },
+        {
+         "text": "{山|やま}の{上|うえ}",
+         "verdict": "wrong",
+         "why": "No mountain in this one. The town is by the sea, with boats and a harbor."
+        },
+        {
+         "text": "{大|おお}きい{町|まち}の{中|なか}",
+         "verdict": "wrong",
+         "why": "It's a small town (「{小|ちい}さい{町|まち}」), and not inside a bigger one."
+        }
+       ]
+      },
+      {
+       "id": "q2",
+       "type": "choice",
+       "prompt": "この{町|まち}に{多|おお}いのは{何|なん}ですか。",
+       "en": "What is there a lot of in this town?",
+       "options": [
+        {
+         "text": "{船|ふね}",
+         "verdict": "right",
+         "why": "「でも、{船|ふね}は{多|おお}いです」"
+        },
+        {
+         "text": "{人|ひと}",
+         "verdict": "wrong",
+         "why": "The opposite: 「{町|まち}の{人|ひと}は{少|すく}ないです」."
+        },
+        {
+         "text": "{店|みせ}",
+         "verdict": "wrong",
+         "why": "Shops aren't mentioned."
+        }
+       ]
+      },
+      {
+       "id": "q3",
+       "type": "choice",
+       "prompt": "{夜|よる}、{何|なに}が{見|み}えましたか。",
+       "en": "What could the writer see at night?",
+       "options": [
+        {
+         "text": "{月|つき}と{星|ほし}",
+         "verdict": "right",
+         "why": "The moon was bright, and 「{星|ほし}もたくさん{見|み}えました」."
+        },
+        {
+         "text": "{雪|ゆき}",
+         "verdict": "wrong",
+         "why": "Winter is almost here, but no snow has fallen yet."
+        },
+        {
+         "text": "{朝|あさ}の{船|ふね}",
+         "verdict": "wrong",
+         "why": "The boats leave in the morning. At night it was the sky."
+        }
+       ]
+      },
+      {
+       "id": "q4",
+       "type": "choice",
+       "prompt": "「でも、{船|ふね}は{多|おお}いです」の「でも」は、{何|なに}をしていますか。",
+       "en": "What is でも doing in 「でも、船は多いです」?",
+       "options": [
+        {
+         "text": "Turning: few people, but lots of boats",
+         "verdict": "right",
+         "why": "でも sets the second fact against the first. Notice the は on both: 人は… 船は… is the contrast."
+        },
+        {
+         "text": "Adding another similar point (\"and also\")",
+         "verdict": "wrong",
+         "why": "That would be それに. Here the two facts pull in opposite directions."
+        },
+        {
+         "text": "Giving a reason (\"so\")",
+         "verdict": "wrong",
+         "why": "That would be だから. Few people isn't the reason there are many boats."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "r011-radio-show",
+     "title": "{夜|よる}の{音楽|おんがく}{番組|ばんぐみ}",
+     "titleEn": "The night music program",
+     "kind": "Radio script",
+     "tiers": [
+      "enlightened"
+     ],
+     "paragraphs": [
+      {
+       "ja": "こんばんは。{夜|よる}の{音楽|おんがく}{番組|ばんぐみ}です。{今日|きょう}も{新|あたら}しい{音楽|おんがく}を{聞|き}きましょう。",
+       "en": "Good evening. This is the night music program. Let's listen to some new music again today."
+      },
+      {
+       "ja": "{今日|きょう}のゲストは{作曲家|さっきょくか}です。{電話|でんわ}で{話|はな}します。もしもし？",
+       "en": "Today's guest is a composer. We're talking on the phone. Hello?"
+      },
+      {
+       "ja": "ゲスト：「もしもし、こんばんは。{今|いま}、{外|そと}は{北風|きたかぜ}が{強|つよ}いです。」",
+       "en": "Guest: \"Hello, good evening. The north wind is strong outside right now.\""
+      },
+      {
+       "ja": "「へえ、そうなんですか。じゃあ、{答|こた}えてください。{一番|いちばん}{楽|たの}しい{音|おと}は{何|なん}ですか。」",
+       "en": "\"Oh, really? Then tell me: what's the most fun sound?\""
+      },
+      {
+       "ja": "「えっと…{雲|くも}の{下|した}の{海|うみ}の{音|おと}です。それから、{電車|でんしゃ}の{音|おと}も{好|す}きです。」",
+       "en": "\"Um… the sound of the sea under the clouds. And I like the sound of trains too.\""
+      },
+      {
+       "ja": "「なるほど。{今日|きょう}の{会話|かいわ}、{楽|たの}しかったです。では、{音楽|おんがく}をどうぞ。」",
+       "en": "\"I see. I enjoyed our conversation today. And now, here's the music.\""
+      }
+     ],
+     "questions": [
+      {
+       "id": "q1",
+       "type": "choice",
+       "prompt": "これは{何|なん}の{番組|ばんぐみ}ですか。",
+       "en": "What kind of program is this?",
+       "options": [
+        {
+         "text": "{音楽|おんがく}の{番組|ばんぐみ}",
+         "verdict": "right",
+         "why": "「{夜|よる}の{音楽|おんがく}{番組|ばんぐみ}です」"
+        },
+        {
+         "text": "ニュースの{番組|ばんぐみ}",
+         "verdict": "wrong",
+         "why": "No news. It's music and a guest."
+        },
+        {
+         "text": "{料理|りょうり}の{番組|ばんぐみ}",
+         "verdict": "wrong",
+         "why": "Nobody cooks. The talk is about sounds."
+        }
+       ]
+      },
+      {
+       "id": "q2",
+       "type": "choice",
+       "prompt": "ゲストとは、{何|なに}で{話|はな}しますか。",
+       "en": "How does the host talk with the guest?",
+       "options": [
+        {
+         "text": "{電話|でんわ}で",
+         "verdict": "right",
+         "why": "「{電話|でんわ}で{話|はな}します」: で marks the means (Lesson 2). That's why the guest says もしもし."
+        },
+        {
+         "text": "スタジオで",
+         "verdict": "wrong",
+         "why": "The guest is outside, in the wind, not in the studio."
+        },
+        {
+         "text": "{手紙|てがみ}で",
+         "verdict": "wrong",
+         "why": "No letters. They're talking live."
+        }
+       ]
+      },
+      {
+       "id": "q3",
+       "type": "choice",
+       "prompt": "ゲストが{好|す}きな{音|おと}は？",
+       "en": "Which sounds does the guest like?",
+       "options": [
+        {
+         "text": "{海|うみ}と{電車|でんしゃ}の{音|おと}",
+         "verdict": "right",
+         "why": "The sea under the clouds, 「それから、{電車|でんしゃ}の{音|おと}も」."
+        },
+        {
+         "text": "{北風|きたかぜ}の{音|おと}",
+         "verdict": "wrong",
+         "why": "The guest only says the wind is strong. Not that they like it."
+        },
+        {
+         "text": "{鳥|とり}の{声|こえ}",
+         "verdict": "wrong",
+         "why": "Birds aren't mentioned."
+        }
+       ]
+      },
+      {
+       "id": "q4",
+       "type": "choice",
+       "prompt": "{最後|さいご}の「なるほど」は、{何|なに}をしていますか。",
+       "en": "What is the final なるほど doing?",
+       "options": [
+        {
+         "text": "Showing the answer made sense to the host",
+         "verdict": "right",
+         "why": "なるほど = \"I see, that makes sense.\" It closes the answer before moving on."
+        },
+        {
+         "text": "Disagreeing politely",
+         "verdict": "wrong",
+         "why": "なるほど accepts what was said. Disagreeing would sound more like うーん or でも…."
+        },
+        {
+         "text": "Asking for more",
+         "verdict": "wrong",
+         "why": "It wraps up. The very next thing is the music."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "r012-tea-house",
+     "title": "{古|ふる}い{茶屋|ちゃや}で",
+     "titleEn": "At an old tea house",
+     "kind": "Short dialogue",
+     "tiers": [
+      "master",
+      "guru"
+     ],
+     "paragraphs": [
+      {
+       "ja": "{平日|へいじつ}の{午後|ごご}、{古|ふる}い{茶屋|ちゃや}に{入|はい}りました。{中|なか}は{和室|わしつ}です。{客|きゃく}は{私|わたし}{一人|ひとり}でした。",
+       "en": "On a weekday afternoon I went into an old tea house. Inside it's a Japanese-style room. I was the only customer."
+      },
+      {
+       "ja": "{店|みせ}の{人|ひと}：「いらっしゃいませ。」{私|わたし}：「すみません、この{辺|へん}の{名物|めいぶつ}は{何|なん}ですか。」",
+       "en": "Shopkeeper: \"Welcome.\" Me: \"Excuse me, what's the local specialty around here?\""
+      },
+      {
+       "ja": "「うちは{魚|さかな}の{定食|ていしょく}が{名物|めいぶつ}です。{近|ちか}くの{魚屋|さかなや}の{魚|さかな}ですよ。」",
+       "en": "\"Our fish set meal is what we're known for. The fish comes from the fish shop nearby.\""
+      },
+      {
+       "ja": "「じゃあ、それをお{願|ねが}いします。」{間|ま}もなく、{食事|しょくじ}が{来|き}ました。",
+       "en": "\"Then I'll have that, please.\" Soon the meal arrived."
+      },
+      {
+       "ja": "{外|そと}に{小|ちい}さい{鳥|とり}がいました。{店|みせ}の{人|ひと}は「あの{鳥|とり}は{毎年|まいとし}{来|き}ますよ」と{言|い}いました。「へえ、そうなんですね。」",
+       "en": "There was a small bird outside. The shopkeeper said, \"That bird comes every year.\" \"Oh, really.\""
+      },
+      {
+       "ja": "{食事|しょくじ}の{後|あと}、{東|ひがし}の{歩道|ほどう}を{少|すこ}し{歩|ある}きました。{来年|らいねん}も{必|かなら}ずこの{場所|ばしょ}に{来|き}ます。",
+       "en": "After the meal I walked a little along the sidewalk to the east. I'll definitely come back to this place next year."
+      }
+     ],
+     "questions": [
+      {
+       "id": "q1",
+       "type": "choice",
+       "prompt": "{茶屋|ちゃや}の{中|なか}は、どんな{部屋|へや}でしたか。",
+       "en": "What kind of room was the inside of the tea house?",
+       "options": [
+        {
+         "text": "{和室|わしつ}",
+         "verdict": "right",
+         "why": "「{中|なか}は{和室|わしつ}です」: a Japanese-style room."
+        },
+        {
+         "text": "{客|きゃく}が{多|おお}い{部屋|へや}",
+         "verdict": "wrong",
+         "why": "The writer was the only customer (「{私|わたし}{一人|ひとり}」)."
+        },
+        {
+         "text": "{新|あたら}しい{部屋|へや}",
+         "verdict": "wrong",
+         "why": "It's an old tea house (「{古|ふる}い{茶屋|ちゃや}」)."
+        }
+       ]
+      },
+      {
+       "id": "q2",
+       "type": "choice",
+       "prompt": "この{店|みせ}の{名物|めいぶつ}は{何|なん}ですか。",
+       "en": "What is this shop known for?",
+       "options": [
+        {
+         "text": "{魚|さかな}の{定食|ていしょく}",
+         "verdict": "right",
+         "why": "「{魚|さかな}の{定食|ていしょく}が{名物|めいぶつ}です」: が picks out which dish (Lesson 1)."
+        },
+        {
+         "text": "お{茶|ちゃ}",
+         "verdict": "wrong",
+         "why": "It's a tea house, but the dish they name is the fish set meal."
+        },
+        {
+         "text": "{鳥|とり}",
+         "verdict": "wrong",
+         "why": "The bird is a visitor outside, not on the menu."
+        }
+       ]
+      },
+      {
+       "id": "q3",
+       "type": "choice",
+       "prompt": "「{間|ま}もなく、{食事|しょくじ}が{来|き}ました」。{食事|しょくじ}はいつ{来|き}ましたか。",
+       "en": "When did the meal arrive?",
+       "options": [
+        {
+         "text": "すぐに",
+         "verdict": "right",
+         "why": "間もなく = soon, shortly. The meal came quickly."
+        },
+        {
+         "text": "{一時間|いちじかん}{後|ご}",
+         "verdict": "wrong",
+         "why": "間もなく means it didn't take long."
+        },
+        {
+         "text": "{来年|らいねん}",
+         "verdict": "wrong",
+         "why": "Next year is when the writer will come back."
+        }
+       ]
+      },
+      {
+       "id": "q4",
+       "type": "choice",
+       "prompt": "あの{鳥|とり}は、いつ{来|き}ますか。",
+       "en": "When does that bird come?",
+       "options": [
+        {
+         "text": "{毎年|まいとし}",
+         "verdict": "right",
+         "why": "「あの{鳥|とり}は{毎年|まいとし}{来|き}ますよ」"
+        },
+        {
+         "text": "{毎日|まいにち}",
+         "verdict": "wrong",
+         "why": "Every year, not every day."
+        },
+        {
+         "text": "{平日|へいじつ}だけ",
+         "verdict": "wrong",
+         "why": "Weekday is when the writer visited. The bird comes every year."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
    "week": "2026-10-19",
    "note": "Verb pairs in the wild: 見える, 出る and 見せる turn up in all three.",
    "readings": [

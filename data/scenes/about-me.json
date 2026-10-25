@@ -75,7 +75,7 @@
     },
     "onstage": {
       "requires": ["01-wa-ga", "02-ni-de", "03-te-iru"],
-      "requiresChapters": ["compound", "teform"],
+      "requiresChapters": ["compound"],
       "note": "A short spoken intro for the exhibition or a concert. Memorize it as a whole; the grammar can come later.",
       "dialogue": [
         { "who": "me", "ja": "{皆|みな}さん、こんばんは。{作曲家|さっきょくか}のタイラー・クラインです。", "en": "Good evening, everyone. I'm the composer Tyler Kline." },

@@ -59,6 +59,100 @@
           "en": "Please teach me how to make it."
         }
       ]
+    },
+    "natural": {
+      "requires": [
+        "01-wa-ga",
+        "05-potential"
+      ],
+      "dialogue": [
+        {
+          "who": "them",
+          "ja": "{苦手|にがて}な{食|た}べ{物|もの}はありますか。",
+          "en": "Is there anything you don't eat?"
+        },
+        {
+          "who": "me",
+          "ja": "いいえ、{何|なん}でも{食|た}べられます。{生|なま}の{魚|さかな}も{大丈夫|だいじょうぶ}です。",
+          "en": "No, I can eat anything. Raw fish is fine too.",
+          "note": "食べる → 食べられる (Lesson 5)."
+        },
+        {
+          "who": "them",
+          "ja": "お{箸|はし}、{上手|じょうず}ですね。",
+          "en": "You're good with chopsticks."
+        },
+        {
+          "who": "me",
+          "ja": "いえいえ、まだまだです。",
+          "en": "Oh no, I've got a long way to go.",
+          "note": "The standard modest reply to any compliment."
+        },
+        {
+          "who": "them",
+          "ja": "{日本語|にほんご}も{上手|じょうず}ですね。",
+          "en": "Your Japanese is good too."
+        },
+        {
+          "who": "me",
+          "ja": "えっと、{少|すこ}し{話|はな}せます。でも、{早口|はやくち}は{分|わ}かりません。",
+          "en": "Well, I can speak a little. But I can't follow fast talk.",
+          "note": "話す → 話せる. 分かる already means \"can understand\", so it has no potential form (Lesson 5)."
+        },
+        {
+          "who": "them",
+          "ja": "じゃあ、ゆっくり{話|はな}しますね。",
+          "en": "Then I'll speak slowly."
+        },
+        {
+          "who": "me",
+          "ja": "{助|たす}かります。",
+          "en": "That really helps.",
+          "note": "Literally \"I'm saved.\" The everyday thank-you for a kindness."
+        },
+        {
+          "who": "them",
+          "ja": "お{料理|りょうり}はしますか。",
+          "en": "Do you cook?"
+        },
+        {
+          "who": "me",
+          "ja": "はい、{少|すこ}しできます。ケンタッキーの{料理|りょうり}が{作|つく}れます。",
+          "en": "Yes, a little. I can make Kentucky food.",
+          "note": "Noun + が + できる, and 作る → 作れる with が for what you can make (Lessons 1 and 5)."
+        },
+        {
+          "who": "them",
+          "ja": "へえ、{食|た}べてみたいです！",
+          "en": "Oh, I'd love to try it!"
+        },
+        {
+          "who": "me",
+          "ja": "じゃあ、{今度|こんど}{作|つく}りますね。",
+          "en": "Then I'll make it for you sometime."
+        }
+      ],
+      "phrases": [
+        {
+          "ja": "{辛|から}いものはあまり{食|た}べられません。",
+          "en": "I can't really eat spicy food.",
+          "note": "あまり + negative = not much. は sets spicy food apart from the rest (Lesson 1)."
+        },
+        {
+          "ja": "お{酒|さけ}は{少|すこ}し{飲|の}めます。",
+          "en": "I can drink a little.",
+          "note": "飲む → 飲める."
+        },
+        {
+          "ja": "この{料理|りょうり}の{名前|なまえ}は{何|なん}ですか。",
+          "en": "What's this dish called?"
+        },
+        {
+          "ja": "{一人|ひとり}で{帰|かえ}れます。{大丈夫|だいじょうぶ}です。",
+          "en": "I can get home on my own. I'll be fine.",
+          "note": "帰る looks like a る-verb but is a う-verb: 帰れる."
+        }
+      ]
     }
   },
   "vocab": [
@@ -81,6 +175,42 @@
       "id": "tsukurikata",
       "ja": "{作|つく}り{方|かた}",
       "en": "how to make it"
+    },
+    {
+      "id": "nigate",
+      "ja": "{苦手|にがて}",
+      "en": "not good with, don't care for",
+      "note": "The polite way to say you don't like a food."
+    },
+    {
+      "id": "ohashi",
+      "ja": "お{箸|はし}",
+      "en": "chopsticks"
+    },
+    {
+      "id": "madamada",
+      "ja": "まだまだ",
+      "en": "still a long way to go"
+    },
+    {
+      "id": "tasukaru",
+      "ja": "{助|たす}かる",
+      "en": "to be a help, to be saved"
+    },
+    {
+      "id": "ryouri",
+      "ja": "{料理|りょうり}",
+      "en": "cooking; a dish"
+    },
+    {
+      "id": "kondo",
+      "ja": "{今度|こんど}",
+      "en": "next time, sometime"
+    },
+    {
+      "id": "nomeru",
+      "ja": "{飲|の}める",
+      "en": "can drink (from 飲む)"
     }
   ]
 }
