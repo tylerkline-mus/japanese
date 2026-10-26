@@ -1,5 +1,62 @@
 [
  {
+  "id": "a156039c422c",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月26日午後05時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/d8298c23c8abe323aa06420b937f8c92_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/d8298c23c8abe323aa06420b937f8c92_64k.mp3",
+  "date": "2026-10-26T08:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-26T08:09:02.464Z"
+ },
+ {
+  "id": "a99a788f03a8",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月26日午後04時05分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/a4e4b4eb206c8176765301a13fe8ca56_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/a4e4b4eb206c8176765301a13fe8ca56_64k.mp3",
+  "date": "2026-10-26T07:10:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-26T08:09:02.464Z"
+ },
+ {
+  "id": "dca3556bfae3",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20261026 「ネパール土石流『四十九日』を迎えた被災者のいま」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/774e38dc4dddb9ff173a408ba4e2e59f_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/774e38dc4dddb9ff173a408ba4e2e59f_64k.mp3",
+  "date": "2026-10-26T03:00:00.000Z",
+  "minutes": 5,
+  "summary": "リポート：味田村 太郎（アジア総局） キャスター：上野 速人／眞下 貴",
+  "added": "2026-10-26T08:09:02.440Z"
+ },
+ {
   "id": "78dbcb43e465",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
