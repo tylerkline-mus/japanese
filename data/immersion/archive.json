@@ -1,5 +1,43 @@
 [
  {
+  "id": "0441ed0fd42e",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "マイあさ! 午前5時のNHKニュース 2026年10月27日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/2d56739139180da513ec1b726c4846c7_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/2d56739139180da513ec1b726c4846c7_64k.mp3",
+  "date": "2026-10-26T20:17:00.000Z",
+  "minutes": 15,
+  "summary": "",
+  "added": "2026-10-26T20:46:11.195Z"
+ },
+ {
+  "id": "93e279f1fd58",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月27日午前04時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/f4843b200541405122f878c9106a2d6f_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/f4843b200541405122f878c9106a2d6f_64k.mp3",
+  "date": "2026-10-26T19:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-26T20:46:11.195Z"
+ },
+ {
   "id": "d31b92e85217",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
@@ -1076,6 +1114,24 @@
   "minutes": 64,
   "summary": "💰Patreonのサポート(人´∀`)ｱﾘｶﾞﾄｰ♪ ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠…",
   "added": "2026-10-22T10:41:32.218Z"
+ },
+ {
+  "id": "54ce348e267b",
+  "source": "yuyu",
+  "sourceName": "YUYUの日本語Podcast",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "culture"
+  ],
+  "title": "Vol.499 最近の問題と、自由の意味について (Japanese Radio for Listening practice)",
+  "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-499--Japanese-Radio-for-Listening-practice-e3qt10i",
+  "audio": "https://anchor.fm/s/cda85d4/podcast/play/127877586/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-9-22%2F56cfa73a-6e76-393e-c8e1-1c2f76eda89d.mp3",
+  "date": "2026-10-22T07:09:37.000Z",
+  "minutes": 64,
+  "summary": "💰Patreonのサポート(人´∀`)ｱﾘｶﾞﾄｰ♪ ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠…",
+  "added": "2026-10-26T20:46:09.414Z"
  },
  {
   "id": "79d334e21a73",
