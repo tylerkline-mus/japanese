@@ -846,7 +846,7 @@
  },
  {
   "date": "2026-10-25",
-  "at": "2026-10-25T23:36:15.309Z",
+  "at": "2026-10-26T01:48:29.055Z",
   "level": 10,
   "queue": 93,
   "lessons": 169,
@@ -881,8 +881,8 @@
     807
    ]
   },
-  "reviewedToday": 0,
-  "burnedToday": 0,
+  "reviewedToday": null,
+  "burnedToday": null,
   "lessonsToday": 0
  }
 ]
