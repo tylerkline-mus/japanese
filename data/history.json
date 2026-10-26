@@ -887,42 +887,42 @@
  },
  {
   "date": "2026-10-26",
-  "at": "2026-10-26T08:08:54.781Z",
+  "at": "2026-10-26T15:30:26.722Z",
   "level": 10,
-  "queue": 102,
+  "queue": 64,
   "lessons": 169,
   "srs": {
-   "apprentice": 61,
-   "guru": 188,
-   "master": 109,
+   "apprentice": 56,
+   "guru": 185,
+   "master": 117,
    "enlightened": 125,
    "burned": 968
   },
-  "correct": 24229,
-  "incorrect": 1299,
+  "correct": 24332,
+  "incorrect": 1310,
   "meaning": [
-   13316,
-   739
+   13370,
+   746
   ],
   "reading": [
-   10913,
-   560
+   10962,
+   564
   ],
   "byType": {
    "radical": [
-    4214,
-    128
+    4222,
+    130
    ],
    "kanji": [
-    6094,
-    364
+    6116,
+    367
    ],
    "vocabulary": [
-    16324,
-    807
+    16402,
+    813
    ]
   },
-  "reviewedToday": 0,
+  "reviewedToday": 54,
   "burnedToday": 0,
   "lessonsToday": 0
  }
