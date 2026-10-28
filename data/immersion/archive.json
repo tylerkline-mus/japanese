@@ -1,5 +1,62 @@
 [
  {
+  "id": "4e309fbb3eda",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月28日午後03時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/b4c0f79bcc11e1c07d0dc8c67f8592be_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/b4c0f79bcc11e1c07d0dc8c67f8592be_64k.mp3",
+  "date": "2026-10-28T06:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-28T06:22:39.533Z"
+ },
+ {
+  "id": "24fea57d4343",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月28日午後02時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/16a9eb5daadb38e714008c1493a1d151_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/16a9eb5daadb38e714008c1493a1d151_64k.mp3",
+  "date": "2026-10-28T05:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-28T06:22:39.533Z"
+ },
+ {
+  "id": "363bb090c704",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20261028 「ＡＩ開発最前線 『知能爆発』とは」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/dad37c387d1e58a54edca592a1a9aabf_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/dad37c387d1e58a54edca592a1a9aabf_64k.mp3",
+  "date": "2026-10-28T03:00:00.000Z",
+  "minutes": 5,
+  "summary": "リポート：篠田 彩（ロサンゼルス支局） キャスター：上野 速人",
+  "added": "2026-10-28T06:22:39.371Z"
+ },
+ {
   "id": "d16ca16b992b",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
