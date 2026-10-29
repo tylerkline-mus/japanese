@@ -1,5 +1,62 @@
 [
  {
+  "id": "6e504bb03400",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月29日午後06時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/ed5a4b6d0d18de8ed752e6eb2efca7fe_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/ed5a4b6d0d18de8ed752e6eb2efca7fe_64k.mp3",
+  "date": "2026-10-29T09:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-29T10:27:07.296Z"
+ },
+ {
+  "id": "93234ca15266",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月29日午後05時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/3aca1b64f25a0470d21a6f7a45b035da_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/3aca1b64f25a0470d21a6f7a45b035da_64k.mp3",
+  "date": "2026-10-29T08:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-29T10:27:07.296Z"
+ },
+ {
+  "id": "7daf75999829",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20261029 「困窮するイラン経済 今後の情勢は」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/539219f4586be546c79ad06455396dcb_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/539219f4586be546c79ad06455396dcb_64k.mp3",
+  "date": "2026-10-29T03:00:00.000Z",
+  "minutes": 4,
+  "summary": "リポート：小野 明良（国際部） キャスター：上野 速人",
+  "added": "2026-10-29T10:27:07.169Z"
+ },
+ {
   "id": "1ccb7c0a9675",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
