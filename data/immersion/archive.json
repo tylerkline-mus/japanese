@@ -1,5 +1,61 @@
 [
  {
+  "id": "a6349437c6db",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月30日午前01時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/2b59260c288609e4a63619e262a1616d_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/2b59260c288609e4a63619e262a1616d_64k.mp3",
+  "date": "2026-10-29T16:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-29T17:06:19.648Z"
+ },
+ {
+  "id": "8ecc15d40504",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月30日午前00時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/e5a71bc911c528fe113053296654565e_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/e5a71bc911c528fe113053296654565e_64k.mp3",
+  "date": "2026-10-29T15:10:00.000Z",
+  "minutes": 10,
+  "summary": "",
+  "added": "2026-10-29T17:06:19.648Z"
+ },
+ {
+  "id": "ff210faa3d87",
+  "source": "teppei-noriko",
+  "sourceName": "Japanese with Teppei and Noriko",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "conversation"
+  ],
+  "title": "#648「記憶と虚構、ハロウィンとリアルホラー」",
+  "url": "https://teppeinorikojapanese.com/2026/10/29/648%e3%80%8c%e8%a8%98%e6%86%b6%e3%81%a8%e8%99%9a%e6%a7%8b%e3%80%81%e3%83%8f%e3%83%ad%e3%82%a6%e3%82%a3%e3%83%b3%e3%81%a8%e3%83%aa%e3%82%a2%e3%83%ab%e3%83%9b%e3%83%a9%e3%83%bc%e3%80%8d/",
+  "audio": "https://teppeinorikojapanese.com/wp-content/uploads/2026/10/Teppeinoriko648.mp3",
+  "date": "2026-10-29T11:47:17.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-10-29T17:06:18.769Z"
+ },
+ {
   "id": "6e504bb03400",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
