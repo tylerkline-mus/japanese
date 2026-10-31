@@ -1,5 +1,61 @@
 [
  {
+  "id": "d484a6e36b1e",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月31日午後04時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/b239ae442bcc21f0a71b48369023de27_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/b239ae442bcc21f0a71b48369023de27_64k.mp3",
+  "date": "2026-10-31T07:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-31T07:33:32.216Z"
+ },
+ {
+  "id": "3cd4e558489e",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年10月31日午後03時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/db70fbef79d8534b1c208846a708cea0_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/db70fbef79d8534b1c208846a708cea0_64k.mp3",
+  "date": "2026-10-31T06:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-10-31T07:33:32.216Z"
+ },
+ {
+  "id": "24c4cc695dd7",
+  "source": "yuyu",
+  "sourceName": "YUYUの日本語Podcast",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "culture"
+  ],
+  "title": "Vol.501 37才になって分かった「チャンスのつかみ方」 (Japanese Radio for Listening practice)",
+  "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-501-37-Japanese-Radio-for-Listening-practice-e3rfak4",
+  "audio": "https://anchor.fm/s/cda85d4/podcast/play/128477252/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-9-31%2F5ae8a7d9-f511-ff81-d362-282d78a9fdb7.mp3",
+  "date": "2026-10-31T05:47:19.000Z",
+  "minutes": 51,
+  "summary": "💰Patreonのサポート(人´∀`)ｱﾘｶﾞﾄｰ♪ ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠…",
+  "added": "2026-10-31T07:33:30.541Z"
+ },
+ {
   "id": "c30476a6ccf7",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
