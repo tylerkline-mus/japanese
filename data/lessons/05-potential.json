@@ -82,6 +82,17 @@
         "en": "Can we practice here?"
       },
       "why": "します asks about the plan. できます asks whether it's possible or allowed. Use the second one when you need permission for the room."
+    },
+    {
+      "a": {
+        "ja": "{部屋|へや}から{波|なみ}の{音|おと}が{聞|き}こえます。",
+        "en": "From the room you can hear the waves."
+      },
+      "b": {
+        "ja": "このアプリで{日本|にほん}のラジオが{聞|き}けます。",
+        "en": "You can listen to Japanese radio with this app."
+      },
+      "why": "聞こえる = sound reaches your ears whether you try or not. 聞ける = you're able to listen if you choose to: you have access, permission, a chance. Same split as 見える vs 見られる."
     }
   ],
   "exercises": [

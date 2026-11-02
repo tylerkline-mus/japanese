@@ -427,6 +427,95 @@
           "why": "を already marks 食事. The restaurant isn't what you're doing."
         }
       ]
+    },
+    {
+      "id": "nd22",
+      "type": "choice",
+      "prompt": "{夜|よる}は{部屋|へや}＿{曲|きょく}を{書|か}きます。",
+      "en": "At night I write music in my room.",
+      "options": [
+        {
+          "text": "で",
+          "verdict": "right",
+          "why": "Writing is something you **do**, and the room is the stage where it happens → で."
+        },
+        {
+          "text": "に",
+          "verdict": "wrong",
+          "why": "に is a point where something exists or arrives. 部屋に書きます sounds like you're writing onto the room itself, like on the walls."
+        },
+        {
+          "text": "を",
+          "verdict": "wrong",
+          "why": "曲 already has を. 部屋を would make the room the thing you write."
+        }
+      ]
+    },
+    {
+      "id": "nd23",
+      "type": "choice",
+      "prompt": "この{町|まち}＿{古|ふる}い{本屋|ほんや}があります。",
+      "en": "There's an old bookshop in this town.",
+      "options": [
+        {
+          "text": "に",
+          "verdict": "right",
+          "why": "ある = exists, so the place is a point: に. The bookshop just **is** there."
+        },
+        {
+          "text": "で",
+          "verdict": "wrong",
+          "why": "で + ある is for events: 東京でコンサートがあります (a concert takes place). A bookshop isn't an event, so it takes に."
+        },
+        {
+          "text": "は",
+          "verdict": "different",
+          "why": "この町は古い本屋があります is possible as \"as for this town, it has an old bookshop,\" but it drops the location meaning. この町には (に + は) is how you'd add that contrast."
+        }
+      ]
+    },
+    {
+      "id": "nd24",
+      "type": "build",
+      "scene": "On the train, the person next to you asks where you're getting off.",
+      "en": "I'm getting off at the next station.",
+      "tiles": [
+        "{次|つぎ}の{駅|えき}",
+        "で",
+        "に",
+        "{降|お}ります"
+      ],
+      "answers": [
+        [
+          "{次|つぎ}の{駅|えき}",
+          "で",
+          "{降|お}ります"
+        ]
+      ],
+      "why": "Getting off is something you do, and the station is where it happens → で. (に goes with where you land: ホームに降ります, onto the platform.) New word: 降りる, to get off."
+    },
+    {
+      "id": "nd25",
+      "type": "choice",
+      "prompt": "{妻|つま}は{今|いま}、{東京|とうきょう}＿{働|はたら}いています。",
+      "en": "My wife is working in Tokyo now.",
+      "options": [
+        {
+          "text": "で",
+          "verdict": "right",
+          "why": "働く is an action → で. Compare 東京に住んでいます: living is existing somewhere, so に."
+        },
+        {
+          "text": "に",
+          "verdict": "wrong",
+          "why": "に would fit 住んでいます (lives). 働く is something you do, so its place is a stage: で."
+        },
+        {
+          "text": "へ",
+          "verdict": "wrong",
+          "why": "へ is direction, toward a place, for verbs like 行く. You don't work toward Tokyo."
+        }
+      ]
     }
   ]
 }

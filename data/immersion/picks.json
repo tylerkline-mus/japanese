@@ -1,6 +1,227 @@
 {
   "weeks": [
     {
+      "week": "2026-11-02",
+      "note": "Deepen week: the potential form and the verb pairs, heard in the wild. A three-part music series from Teppei, the last Markus story, easy news, rural cash, and NHK-FM on a Japanese composer.",
+      "picks": [
+        {
+          "id": "w2026-11-02-1",
+          "title": "#1607「音楽シリーズ①」",
+          "url": "http://nihongoconteppei.com/2026/10/28/1607%e3%80%8c%e9%9f%b3%e6%a5%bd%e3%82%b7%e3%83%aa%e3%83%bc%e3%82%ba%e2%91%a0%e3%80%8d/",
+          "type": "listen",
+          "source": "Nihongo con Teppei (beginner)",
+          "minutes": 6,
+          "level": 1,
+          "why": "Teppei started a three-part series on music. It's slow, beginner-level Japanese about the subject you know best, so context will carry you further than usual. If it lands, ② and ③ are already out.",
+          "connection": "Music is your trip: rehearsals, concerts, recording. These are the words you'll hear in a studio, at a slow pace.",
+          "listenFor": "Every time you hear 聞く or 聞こえる, decide which it is: is someone choosing to listen (聞く, 聞ける), or is sound just reaching them (聞こえる)?",
+          "prep": [
+            {
+              "ja": "{音楽|おんがく}",
+              "en": "music"
+            },
+            {
+              "ja": "{曲|きょく}",
+              "en": "piece, tune"
+            },
+            {
+              "ja": "{歌|うた}",
+              "en": "song"
+            },
+            {
+              "ja": "{聞|き}こえる",
+              "en": "to be audible, can hear"
+            },
+            {
+              "ja": "{楽器|がっき}",
+              "en": "musical instrument"
+            },
+            {
+              "ja": "{好|す}き",
+              "en": "liked, favorite"
+            }
+          ],
+          "tags": [
+            "music",
+            "beginner"
+          ],
+          "fromArchive": "c079dcb20be8"
+        },
+        {
+          "id": "w2026-11-02-2",
+          "title": "マルクスがはじめて日本に行きました 4/4 (Markus's First Trip to Japan 4/4)",
+          "url": "https://podcasters.spotify.com/pod/show/nihongo-shortstory/episodes/44-Markuss-First-Trip-to-Japan-44-e318n7f",
+          "type": "listen",
+          "source": "Nihongo Short Story by Noriko",
+          "minutes": 3,
+          "level": 1,
+          "why": "The last part of the series you've been following. Noriko is the show you actually finish, and three minutes fits any Iceland morning.",
+          "connection": "The end of a first trip: what Markus could and couldn't do. That's the potential form from Lesson 5.",
+          "listenFor": "Listen once with no text. Catch every できました and every 〜られました / 〜えました: what did Markus manage by the end?",
+          "prep": [
+            {
+              "ja": "{旅行|りょこう}",
+              "en": "trip"
+            },
+            {
+              "ja": "{最後|さいご}",
+              "en": "last"
+            },
+            {
+              "ja": "{楽|たの}しい",
+              "en": "fun"
+            },
+            {
+              "ja": "{出来|でき}る",
+              "en": "to be able to"
+            },
+            {
+              "ja": "{帰|かえ}る",
+              "en": "to go home"
+            },
+            {
+              "ja": "{思|おも}い{出|で}",
+              "en": "memory"
+            }
+          ],
+          "tags": [
+            "travel",
+            "story"
+          ],
+          "fromArchive": "b19e945ebd23"
+        },
+        {
+          "id": "w2026-11-02-3",
+          "title": "NHKやさしいことばニュース 2026年10月28日",
+          "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/8b70eb34b41fe578e96e4434dfff997c_64k.mp3",
+          "type": "listen",
+          "source": "NHK Radio News",
+          "minutes": 5,
+          "level": 2,
+          "why": "Real NHK news, read in easy Japanese at a calm pace. It's a first step toward the news without subtitles: short sentences, clear voice, no transcript to lean on.",
+          "listenFor": "News is full of 〜が + intransitive verbs (〜が上がりました, 〜が止まりました, 〜が出ました). Each time you hear が, guess: is something just happening, with nobody named?",
+          "prep": [
+            {
+              "ja": "{上|あ}がる",
+              "en": "to go up"
+            },
+            {
+              "ja": "{止|と}まる",
+              "en": "to stop"
+            },
+            {
+              "ja": "{国|くに}",
+              "en": "country"
+            },
+            {
+              "ja": "{人々|ひとびと}",
+              "en": "people"
+            },
+            {
+              "ja": "{天気|てんき}",
+              "en": "weather"
+            },
+            {
+              "ja": "{発表|はっぴょう}",
+              "en": "announcement"
+            }
+          ],
+          "tags": [
+            "news",
+            "easy"
+          ],
+          "fromArchive": "4f7a309195ed"
+        },
+        {
+          "id": "w2026-11-02-4",
+          "title": "#123 Is Japan Still a Cash Country? Why Some Stores Are Going Back to Cash",
+          "url": "https://podcasters.spotify.com/pod/show/imari1/episodes/123-Is-Japan-Still-a-Cash-Country--Why-Some-Stores-Are-Going-Back-to-Cash-e3f87cb",
+          "type": "listen",
+          "source": "Japanese Real Conversation (Imari Radio)",
+          "minutes": 10,
+          "level": 3,
+          "why": "Your solo train leg runs through small towns and old inns, where cash still matters. Imari speaks naturally but clearly, and there's a free transcript for a second listen.",
+          "connection": "Paying at a small inn or a country station: カードで払えますか is a Lesson 5 sentence you'll actually say.",
+          "listenFor": "Listen for 使える / 使えない and 払える: every \"can / can't pay\". Then say the one line you'll need: カードで払えますか.",
+          "prep": [
+            {
+              "ja": "{現金|げんきん}",
+              "en": "cash"
+            },
+            {
+              "ja": "お{金|かね}",
+              "en": "money"
+            },
+            {
+              "ja": "{店|みせ}",
+              "en": "shop"
+            },
+            {
+              "ja": "{払|はら}う",
+              "en": "to pay"
+            },
+            {
+              "ja": "{使|つか}う",
+              "en": "to use"
+            },
+            {
+              "ja": "{便利|べんり}",
+              "en": "convenient"
+            }
+          ],
+          "tags": [
+            "money",
+            "travel",
+            "daily life"
+          ],
+          "fromArchive": "783edbfc9ad7"
+        },
+        {
+          "id": "w2026-11-02-5",
+          "title": "現代の音楽「現代音楽 100年のレガシー72 柴田南雄1」",
+          "url": "https://ebravo.jp/archives/216608",
+          "type": "listen",
+          "source": "NHK-FM 現代の音楽",
+          "minutes": 50,
+          "level": 4,
+          "why": "Aired Sunday Nov 1 (rebroadcast Saturday the 7th, 6:00 Japan time; part 2 is on the 8th). Shibata Minao is a key figure in postwar Japanese composition. Native and dense, so don't aim to follow it all; let the music and the names anchor you. NHK streams may be region-limited.",
+          "connection": "A composer program on Japan's own contemporary-music radio show, the kind you produce yourself.",
+          "listenFor": "Don't follow everything. Catch the host's verbs around each piece: 書きました, 作りました, 聞いてください, 聞こえます. Who is doing it, and what is just happening?",
+          "prep": [
+            {
+              "ja": "{作曲家|さっきょくか}",
+              "en": "composer"
+            },
+            {
+              "ja": "{作品|さくひん}",
+              "en": "work, piece"
+            },
+            {
+              "ja": "{現代|げんだい}",
+              "en": "contemporary, modern"
+            },
+            {
+              "ja": "{書|か}く",
+              "en": "to write"
+            },
+            {
+              "ja": "{戦後|せんご}",
+              "en": "postwar"
+            },
+            {
+              "ja": "{演奏|えんそう}",
+              "en": "performance"
+            }
+          ],
+          "tags": [
+            "contemporary music",
+            "NHK",
+            "native"
+          ]
+        }
+      ]
+    },
+    {
       "week": "2026-10-26",
       "note": "Week 5: can and can't (the potential form). Five short ones for the first week in Iceland.",
       "picks": [

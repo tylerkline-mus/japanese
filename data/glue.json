@@ -927,6 +927,63 @@
    ],
    "listen": "Dramas, whenever someone is let down. On its own at the end of a line (…のに！) it's pure complaint.",
    "note": "けど/でも just contrast two facts. のに adds a feeling about it, so it's not for neutral facts or requests."
+  },
+  {
+   "id": "mou",
+   "ja": "もう",
+   "family": "react",
+   "does": "Says a line has already been crossed: \"already\", \"(not) anymore\". Said on its own (もう！), it's a sigh of exasperation.",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "«もう»{食|た}べました。",
+     "en": "I've already eaten."
+    },
+    {
+     "ja": "«もう»！また{雨|あめ}ですか。",
+     "en": "Oh come on! Rain again?"
+    }
+   ],
+   "listen": "Everywhere. In dramas, a drawn-out もう〜！ is mock annoyance between friends or couples.",
+   "note": "Pairs with まだ: もう = the change has happened, まだ = it hasn't (yet)."
+  },
+  {
+   "id": "mada",
+   "ja": "まだ",
+   "family": "react",
+   "does": "Says a change hasn't happened yet, or something is still going on: \"not yet\", \"still\". まだです on its own is the polite \"not yet.\"",
+   "register": "both",
+   "examples": [
+    {
+     "ja": "「もう{食|た}べましたか。」「いいえ、«まだ»です。」",
+     "en": "\"Have you eaten?\" \"No, not yet.\""
+    },
+    {
+     "ja": "{日本語|にほんご}は«まだ»{下手|へた}です。",
+     "en": "My Japanese is still not good."
+    }
+   ],
+   "listen": "Shops and restaurants (まだですか? = is it ready?), and anyone asking if you've done something yet.",
+   "note": "With a negative it means \"not yet\": まだ食べていません. Note the ている: it's the state that hasn't changed."
+  },
+  {
+   "id": "tteiuka",
+   "ja": "っていうか",
+   "family": "link",
+   "does": "Corrects or reframes what was just said, often your own words: \"or rather\", \"I mean\", \"actually it's more like…\".",
+   "register": "casual",
+   "examples": [
+    {
+     "ja": "{寒|さむ}い«っていうか»、{痛|いた}い！",
+     "en": "It's not so much cold as painful!"
+    },
+    {
+     "ja": "{作曲家|さっきょくか}«っていうか»、{音|おと}を{集|あつ}める{人|ひと}かな。",
+     "en": "A composer, or rather, someone who collects sounds, I guess."
+    }
+   ],
+   "listen": "Young people, variety shows, anime. At the very start of a line (っていうか、…) it changes the subject or pushes back.",
+   "note": "Casual only. With strangers, というか is a little softer; in polite speech, use と言いますか or just rephrase."
   }
  ]
 }

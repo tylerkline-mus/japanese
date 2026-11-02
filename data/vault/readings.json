@@ -1,6 +1,407 @@
 {
  "weeks": [
   {
+   "week": "2026-11-02",
+   "readings": [
+    {
+     "id": "r013-stone-village",
+     "title": "{石|いし}の{村|むら}",
+     "titleEn": "The stone village",
+     "kind": "Travel story",
+     "tiers": [
+      "burned"
+     ],
+     "paragraphs": [
+      {
+       "ja": "{今日|きょう}は、{海|うみ}の{近|ちか}くの{小|ちい}さい{村|むら}に{行|い}きました。{村|むら}の{道|みち}は、{全部|ぜんぶ}{石|いし}です。",
+       "en": "Today I went to a small village near the sea. The village roads are all stone."
+      },
+      {
+       "ja": "{村|むら}の{入|い}り{口|ぐち}に、{大|おお}きい{木|き}がありました。{木|き}の{下|した}で、{白|しろ}い{犬|いぬ}が{寝|ね}ていました。",
+       "en": "At the entrance to the village there was a big tree. A white dog was sleeping under it."
+      },
+      {
+       "ja": "{右|みぎ}に{川|かわ}、{左|ひだり}に{山|やま}。{川|かわ}の{水|みず}はとてもきれいでした。{小|ちい}さい{魚|さかな}も{見|み}えました。",
+       "en": "A river on the right, a mountain on the left. The river water was very clear. I could even see small fish."
+      },
+      {
+       "ja": "{村|むら}の{店|みせ}で、お{茶|ちゃ}と{竹|たけ}の{子|こ}を{買|か}いました。{千円|せんえん}でした。",
+       "en": "At the village shop I bought tea and bamboo shoots. It was a thousand yen."
+      },
+      {
+       "ja": "{店|みせ}の{人|ひと}は「この{村|むら}は{人|ひと}が{少|すく}ないけど、{魚|さかな}は{美味|おい}しいよ」と{言|い}いました。へえ、いいですね。",
+       "en": "The shopkeeper said, \"There aren't many people in this village, but the fish is good.\" Oh, nice."
+      },
+      {
+       "ja": "{夕方|ゆうがた}、{海|うみ}も{空|そら}も{赤|あか}かったです。{一日|いちにち}、{村|むら}の{音|おと}を{録音|ろくおん}しました。{明日|あした}も{来|き}たいです。",
+       "en": "In the evening, the sea and the sky were both red. I spent the whole day recording the village's sounds. I want to come back tomorrow."
+      }
+     ],
+     "questions": [
+      {
+       "id": "q1",
+       "type": "choice",
+       "prompt": "{村|むら}の{道|みち}は{何|なん}の{道|みち}ですか。",
+       "en": "What are the village roads made of?",
+       "options": [
+        {
+         "text": "{石|いし}",
+         "verdict": "right",
+         "why": "「{村|むら}の{道|みち}は、{全部|ぜんぶ}{石|いし}です」"
+        },
+        {
+         "text": "{竹|たけ}",
+         "verdict": "wrong",
+         "why": "竹 shows up at the shop (竹の子), not on the roads."
+        },
+        {
+         "text": "{土|つち}",
+         "verdict": "wrong",
+         "why": "No dirt roads: they're all stone, which is where the title comes from."
+        }
+       ]
+      },
+      {
+       "id": "q2",
+       "type": "choice",
+       "prompt": "{木|き}の{下|した}に{何|なに}がいましたか。",
+       "en": "What was under the tree?",
+       "options": [
+        {
+         "text": "{白|しろ}い{犬|いぬ}",
+         "verdict": "right",
+         "why": "「{白|しろ}い{犬|いぬ}が{寝|ね}ていました」"
+        },
+        {
+         "text": "{店|みせ}の{人|ひと}",
+         "verdict": "wrong",
+         "why": "The shopkeeper was in the shop."
+        },
+        {
+         "text": "{小|ちい}さい{魚|さかな}",
+         "verdict": "wrong",
+         "why": "The fish were in the river."
+        }
+       ]
+      },
+      {
+       "id": "q3",
+       "type": "choice",
+       "prompt": "{店|みせ}で{何|なに}を{買|か}いましたか。",
+       "en": "What did the writer buy at the shop?",
+       "options": [
+        {
+         "text": "お{茶|ちゃ}と{竹|たけ}の{子|こ}",
+         "verdict": "right",
+         "why": "「お{茶|ちゃ}と{竹|たけ}の{子|こ}を{買|か}いました」, a thousand yen."
+        },
+        {
+         "text": "{魚|さかな}",
+         "verdict": "different",
+         "why": "The shopkeeper says the fish is good, but the writer didn't buy any."
+        },
+        {
+         "text": "{石|いし}",
+         "verdict": "wrong",
+         "why": "Stones are the roads, not shopping."
+        }
+       ]
+      },
+      {
+       "id": "q4",
+       "type": "choice",
+       "prompt": "「{人|ひと}が{少|すく}ないけど、{魚|さかな}は{美味|おい}しいよ」の「けど」は、{何|なに}をしていますか。",
+       "en": "What is けど doing here?",
+       "options": [
+        {
+         "text": "Setting two facts against each other: few people, but good fish",
+         "verdict": "right",
+         "why": "けど is the casual \"but.\" Notice the は on 魚: the contrast lands there."
+        },
+        {
+         "text": "Giving a reason",
+         "verdict": "wrong",
+         "why": "That would be から or だから."
+        },
+        {
+         "text": "Softening the end of a request",
+         "verdict": "wrong",
+         "why": "けど can trail off softly at the end of a line, but here it's in the middle, joining two facts."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "r014-record-shop",
+     "title": "レコード{屋|や}で",
+     "titleEn": "At the record shop",
+     "kind": "Short dialogue",
+     "tiers": [
+      "enlightened"
+     ],
+     "paragraphs": [
+      {
+       "ja": "{駅|えき}の{前|まえ}の{通|とお}りに、{古|ふる}いレコード{屋|や}があります。{今日|きょう}、{電車|でんしゃ}で{行|い}きました。",
+       "en": "There's an old record shop on the street in front of the station. Today I went there by train."
+      },
+      {
+       "ja": "{店|みせ}の{人|ひと}：「いらっしゃいませ。どんな{音楽|おんがく}が{好|す}きですか。」",
+       "en": "Shopkeeper: \"Welcome. What kind of music do you like?\""
+      },
+      {
+       "ja": "{私|わたし}：「えっと、{新|あたら}しい{音楽|おんがく}が{好|す}きです。{日本|にほん}の{作曲家|さっきょくか}のレコードはありますか。」",
+       "en": "Me: \"Um, I like new music. Do you have records by Japanese composers?\""
+      },
+      {
+       "ja": "{店|みせ}の{人|ひと}：「ありますよ。でも、{一番|いちばん}いいのは、もう{売|う}れました。」",
+       "en": "Shopkeeper: \"We do. But the best one has already sold.\""
+      },
+      {
+       "ja": "{私|わたし}：「そうなんですか。じゃあ、これを{買|か}います。」",
+       "en": "Me: \"Oh, really? Then I'll buy this one.\""
+      },
+      {
+       "ja": "{店|みせ}の{人|ひと}：「ありがとうございます。{毎月|まいつき}、ここで{小|ちい}さいコンサートもありますよ。{楽|たの}しいですよ。」",
+       "en": "Shopkeeper: \"Thank you. There's a small concert here every month, too. It's fun.\""
+      },
+      {
+       "ja": "{帰|かえ}りの{電車|でんしゃ}で{思|おも}いました。{今日|きょう}の{会話|かいわ}は、{全部|ぜんぶ}{日本語|にほんご}でした！",
+       "en": "On the train home I thought: today's whole conversation was in Japanese!"
+      }
+     ],
+     "questions": [
+      {
+       "id": "q1",
+       "type": "choice",
+       "prompt": "レコード{屋|や}はどこにありますか。",
+       "en": "Where is the record shop?",
+       "options": [
+        {
+         "text": "{駅|えき}の{前|まえ}の{通|とお}り",
+         "verdict": "right",
+         "why": "「{駅|えき}の{前|まえ}の{通|とお}りに…あります」"
+        },
+        {
+         "text": "{電車|でんしゃ}の{中|なか}",
+         "verdict": "wrong",
+         "why": "The train is how the writer got there."
+        },
+        {
+         "text": "{会社|かいしゃ}の{近|ちか}く",
+         "verdict": "wrong",
+         "why": "No company in this one."
+        }
+       ]
+      },
+      {
+       "id": "q2",
+       "type": "choice",
+       "prompt": "{一番|いちばん}いいレコードは、どうなりましたか。",
+       "en": "What happened to the best record?",
+       "options": [
+        {
+         "text": "もう{売|う}れました",
+         "verdict": "right",
+         "why": "「{一番|いちばん}いいのは、もう{売|う}れました」: someone already bought it."
+        },
+        {
+         "text": "{私|わたし}が{買|か}いました",
+         "verdict": "wrong",
+         "why": "The writer bought a different one: 「じゃあ、これを{買|か}います」."
+        },
+        {
+         "text": "まだ{店|みせ}にあります",
+         "verdict": "wrong",
+         "why": "The opposite: it's gone."
+        }
+       ]
+      },
+      {
+       "id": "q3",
+       "type": "choice",
+       "prompt": "「{売|う}れました」と「{売|う}りました」は、どう{違|ちが}いますか。",
+       "en": "How is 売れました different from 売りました?",
+       "options": [
+        {
+         "text": "売れる = it sold (the record is the subject); 売る = someone sold it",
+         "verdict": "right",
+         "why": "The same pair as 出る / 出す in Lesson 4. 売れました reports what happened to the record, without saying who did it."
+        },
+        {
+         "text": "They mean exactly the same thing",
+         "verdict": "wrong",
+         "why": "They share a kanji, but one is \"it happens\" and the other is \"someone does it.\""
+        },
+        {
+         "text": "売れました is the polite form of 売りました",
+         "verdict": "wrong",
+         "why": "Both are already polite (ました). The difference is who's doing it."
+        }
+       ]
+      },
+      {
+       "id": "q4",
+       "type": "choice",
+       "prompt": "{毎月|まいつき}、この{店|みせ}で{何|なに}がありますか。",
+       "en": "What happens at this shop every month?",
+       "options": [
+        {
+         "text": "{小|ちい}さいコンサート",
+         "verdict": "right",
+         "why": "「{毎月|まいつき}、ここで{小|ちい}さいコンサートもありますよ」. Event + ある takes で."
+        },
+        {
+         "text": "{大|おお}きいセール",
+         "verdict": "wrong",
+         "why": "No sale is mentioned."
+        },
+        {
+         "text": "ラジオの{番組|ばんぐみ}",
+         "verdict": "wrong",
+         "why": "No radio show in this one."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "r015-room-notice",
+     "title": "お{部屋|へや}のお{知|し}らせ",
+     "titleEn": "A notice in your room",
+     "kind": "Notice",
+     "tiers": [
+      "master",
+      "guru"
+     ],
+     "paragraphs": [
+      {
+       "ja": "ようこそ。このお{部屋|へや}は{和室|わしつ}です。{夜|よる}、{床|ゆか}に{布団|ふとん}を{出|だ}します。",
+       "en": "Welcome. This is a Japanese-style room. At night we'll lay out futons on the floor."
+      },
+      {
+       "ja": "お{食事|しょくじ}は{一階|いっかい}です。{夕方|ゆうがた}は{六時|ろくじ}から、{朝|あさ}は{七時|しちじ}からです。{和食|わしょく}です。",
+       "en": "Meals are on the first floor: from six in the evening and from seven in the morning. Japanese food."
+      },
+      {
+       "ja": "お{風呂|ふろ}は{夜|よる}{十一時|じゅういちじ}までです。{朝|あさ}も{六時|ろくじ}から{入|はい}れます。",
+       "en": "The bath is open until eleven at night. You can also use it from six in the morning."
+      },
+      {
+       "ja": "この{辺|へん}の{名物|めいぶつ}は、{魚|さかな}と{貝|かい}です。{近|ちか}くの{魚屋|さかなや}は、{朝|あさ}{早|はや}くから{開|あ}いています。",
+       "en": "The local specialties around here are fish and shellfish. The fish shop nearby is open from early in the morning."
+      },
+      {
+       "ja": "{駅|えき}までは{歩|ある}いて{二十分|にじゅっぷん}です。{夜|よる}は{道|みち}が{暗|くら}いです。{気|き}を{付|つ}けてください。",
+       "en": "It's a twenty-minute walk to the station. The road is dark at night, so please be careful."
+      },
+      {
+       "ja": "{用事|ようじ}がありますか。お{部屋|へや}の{電話|でんわ}で、{一番|いちばん}に{電話|でんわ}してください。",
+       "en": "Need anything? Please call number 1 from the phone in your room."
+      },
+      {
+       "ja": "{実|じつ}は、{朝|あさ}の{海|うみ}が{一番|いちばん}きれいですよ。ぜひ！　{宿|やど}の{人|ひと}より",
+       "en": "Actually, the sea is prettiest in the morning. Do go see it! From the inn staff"
+      }
+     ],
+     "questions": [
+      {
+       "id": "q1",
+       "type": "choice",
+       "prompt": "{朝|あさ}ごはんは{何時|なんじ}からですか。",
+       "en": "What time does breakfast start?",
+       "options": [
+        {
+         "text": "{七時|しちじ}から",
+         "verdict": "right",
+         "why": "「{朝|あさ}は{七時|しちじ}からです」"
+        },
+        {
+         "text": "{六時|ろくじ}から",
+         "verdict": "wrong",
+         "why": "Six is dinner (夕方) and the morning bath, not breakfast."
+        },
+        {
+         "text": "{十一時|じゅういちじ}から",
+         "verdict": "wrong",
+         "why": "Eleven is when the bath closes at night."
+        }
+       ]
+      },
+      {
+       "id": "q2",
+       "type": "choice",
+       "prompt": "{朝|あさ}{六時|ろくじ}に、お{風呂|ふろ}に{入|はい}れますか。",
+       "en": "Can you take a bath at 6 a.m.?",
+       "options": [
+        {
+         "text": "はい、{入|はい}れます",
+         "verdict": "right",
+         "why": "「{朝|あさ}も{六時|ろくじ}から{入|はい}れます」. 入れる here is the potential of 入る: can get in."
+        },
+        {
+         "text": "いいえ、{夜|よる}だけです",
+         "verdict": "wrong",
+         "why": "It's open at night until eleven, and again from six in the morning."
+        },
+        {
+         "text": "{十一時|じゅういちじ}からです",
+         "verdict": "wrong",
+         "why": "Eleven is closing time at night."
+        }
+       ]
+      },
+      {
+       "id": "q3",
+       "type": "choice",
+       "prompt": "{駅|えき}まで、どのぐらいですか。",
+       "en": "How far is the station?",
+       "options": [
+        {
+         "text": "{歩|ある}いて{二十分|にじゅっぷん}",
+         "verdict": "right",
+         "why": "「{駅|えき}までは{歩|ある}いて{二十分|にじゅっぷん}です」"
+        },
+        {
+         "text": "{車|くるま}で{二十分|にじゅっぷん}",
+         "verdict": "wrong",
+         "why": "It's twenty minutes on foot."
+        },
+        {
+         "text": "{歩|ある}いて{二分|にふん}",
+         "verdict": "wrong",
+         "why": "Twenty, not two."
+        }
+       ]
+      },
+      {
+       "id": "q4",
+       "type": "choice",
+       "prompt": "「{実|じつ}は」は、{何|なに}をしていますか。",
+       "en": "What is 実は doing in the last note?",
+       "options": [
+        {
+         "text": "Bringing up something you might not know, like a little inside tip",
+         "verdict": "right",
+         "why": "実は = \"actually, the thing is…\". It opens a fact the listener hasn't heard yet."
+        },
+        {
+         "text": "Disagreeing with what came before",
+         "verdict": "wrong",
+         "why": "Nothing earlier is being contradicted. It just adds a tip."
+        },
+        {
+         "text": "Asking a question",
+         "verdict": "wrong",
+         "why": "No question here. ぜひ after it pushes you to go: \"do go!\""
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
    "week": "2026-10-26",
    "note": "A northern town, a radio show and a tea house. Listen for でも, じゃあ and なるほど doing their jobs.",
    "readings": [

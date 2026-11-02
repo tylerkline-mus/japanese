@@ -282,6 +282,104 @@
         ]
       ],
       "why": "The view reaches you on its own: 見える with が. 見せます would mean the room is showing someone the sea."
+    },
+    {
+      "id": "pt13",
+      "type": "choice",
+      "prompt": "{明日|あした}の{朝|あさ}、{六時|ろくじ}に＿＿か。",
+      "en": "Can you get up at six tomorrow morning?",
+      "options": [
+        {
+          "text": "{起|お}きられます",
+          "verdict": "right",
+          "why": "起きる is a る-verb: drop る, add られる → 起きられる."
+        },
+        {
+          "text": "{起|お}きせます",
+          "verdict": "wrong",
+          "why": "That's the う-verb rule (-u → -e + る) applied to a る-verb. 起きる ends in -iru, and the る just drops: 起きられる."
+        },
+        {
+          "text": "{起|お}きます",
+          "verdict": "different",
+          "why": "起きますか = will you get up at six? It asks about the plan, not whether it's possible for them."
+        }
+      ]
+    },
+    {
+      "id": "pt14",
+      "type": "choice",
+      "prompt": "この{店|みせ}で、{切手|きって}が＿＿か。",
+      "en": "Can you buy stamps at this shop?",
+      "options": [
+        {
+          "text": "{買|か}えます",
+          "verdict": "right",
+          "why": "買う → 買え + る. Possible-to-buy is a state, so 切手 takes が."
+        },
+        {
+          "text": "{買|か}われます",
+          "verdict": "wrong",
+          "why": "買われる is the passive, \"be bought.\" The potential of 買う is just 買える."
+        },
+        {
+          "text": "{買|か}います",
+          "verdict": "wrong",
+          "why": "Plain 買う needs を: 切手を買いますか would ask whether they (habitually) buy stamps here. With が on 切手, only the potential fits."
+        }
+      ]
+    },
+    {
+      "id": "pt15",
+      "type": "choice",
+      "prompt": "{漢字|かんじ}は{読|よ}めますが、あまり＿＿。",
+      "en": "I can read kanji, but I can't really write them.",
+      "options": [
+        {
+          "text": "{書|か}けません",
+          "verdict": "right",
+          "why": "書く → 書ける → 書けません. It matches 読めます: both are about what you can do, which is the whole contrast."
+        },
+        {
+          "text": "{書|か}きません",
+          "verdict": "different",
+          "why": "\"I don't write them much\": a habit, not an ability. It breaks the pairing with 読めます."
+        },
+        {
+          "text": "{書|か}かれません",
+          "verdict": "wrong",
+          "why": "書かれる is the passive (\"be written\"). The potential of 書く is 書ける."
+        }
+      ]
+    },
+    {
+      "id": "pt16",
+      "type": "build",
+      "scene": "At a gallery, you want to take a photo of a piece.",
+      "en": "Can I take photos here?",
+      "tiles": [
+        "ここで",
+        "{写真|しゃしん}",
+        "が",
+        "を",
+        "{撮|と}れますか",
+        "{撮|と}りますか"
+      ],
+      "answers": [
+        [
+          "ここで",
+          "{写真|しゃしん}",
+          "が",
+          "{撮|と}れますか"
+        ],
+        [
+          "ここで",
+          "{写真|しゃしん}",
+          "を",
+          "{撮|と}れますか"
+        ]
+      ],
+      "why": "Asking what's possible → potential 撮れる. が is the classic particle with potential verbs; を is also common now. 撮りますか would ask \"Do you take photos here?\" New word: 撮る, take (a photo)."
     }
   ]
 }

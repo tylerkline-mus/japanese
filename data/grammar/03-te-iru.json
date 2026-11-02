@@ -269,6 +269,98 @@
           "why": "\"I'll write / I write (as a habit)\" — not what's happening at this moment."
         }
       ]
+    },
+    {
+      "id": "ti15",
+      "type": "choice",
+      "prompt": "{最近|さいきん}、{毎朝|まいあさ}{海|うみ}の{音|おと}を{録音|ろくおん}＿＿。",
+      "en": "These days I record the sound of the sea every morning.",
+      "options": [
+        {
+          "text": "しています",
+          "verdict": "right",
+          "why": "最近 + 毎朝 = a habit for this stretch of time. Habits \"these days\" are one of 〜ている's jobs."
+        },
+        {
+          "text": "します",
+          "verdict": "different",
+          "why": "Grammatical as a plan or a general fact, but 最近 (lately) points at a current stretch of time, and that's what 〜ている says."
+        },
+        {
+          "text": "しました",
+          "verdict": "wrong",
+          "why": "Past and done: \"I recorded.\" That clashes with 最近、毎朝, which describes something still going on."
+        }
+      ]
+    },
+    {
+      "id": "ti16",
+      "type": "choice",
+      "scene": "A friend asks if you brought a camera.",
+      "prompt": "はい、{今日|きょう}はカメラを{二台|にだい}＿＿。",
+      "en": "Yes, today I've got two cameras with me.",
+      "options": [
+        {
+          "text": "{持|も}っています",
+          "verdict": "right",
+          "why": "持つ is the moment of picking something up. 〜ている is the state after: you have it with you now."
+        },
+        {
+          "text": "{持|も}ちます",
+          "verdict": "different",
+          "why": "持ちます = I'll carry it, or \"I'll hold that for you.\" It's an offer or a plan, not what you have on you now."
+        },
+        {
+          "text": "{持|も}っていました",
+          "verdict": "wrong",
+          "why": "That's past: \"I had them (earlier).\" Your friend is asking about today, right now."
+        }
+      ]
+    },
+    {
+      "id": "ti17",
+      "type": "choice",
+      "scene": "Your friend calls: \"Where are you?\" You're already at the restaurant.",
+      "prompt": "もう{店|みせ}に＿＿よ。",
+      "en": "I'm already at the restaurant.",
+      "options": [
+        {
+          "text": "{来|き}ています",
+          "verdict": "right",
+          "why": "来る is a change that happens in an instant (arriving). 来ている = you came and you're still here: the state."
+        },
+        {
+          "text": "{来|き}ます",
+          "verdict": "wrong",
+          "why": "来ます = I will come. That clashes with もう (already)."
+        },
+        {
+          "text": "{来|き}ました",
+          "verdict": "different",
+          "why": "Also natural: it reports the arrival as an event, \"I've come.\" 来ています puts the weight on being here now, waiting."
+        }
+      ]
+    },
+    {
+      "id": "ti18",
+      "type": "build",
+      "scene": "Someone asks where you live.",
+      "en": "I live in Kentucky.",
+      "tiles": [
+        "ケンタッキー",
+        "に",
+        "で",
+        "{住|す}んでいます",
+        "{住|す}みます"
+      ],
+      "answers": [
+        [
+          "ケンタッキー",
+          "に",
+          "{住|す}んでいます"
+        ]
+      ],
+      "why": "住む is a change (you moved there); 住んでいる is the state that followed. Living is existing somewhere, so the place takes に. 住みます would mean \"I will live there.\""
     }
   ]
 }

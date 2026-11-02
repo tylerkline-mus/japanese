@@ -64,6 +64,81 @@
           "en": "What time is checkout?"
         }
       ]
+    },
+    "natural": {
+      "requires": [
+        "02-ni-de",
+        "04-in-transitive",
+        "05-potential"
+      ],
+      "dialogue": [
+        {
+          "who": "me",
+          "ja": "こんばんは。{予約|よやく}したクラインです。",
+          "en": "Good evening. I'm Kline; I have a reservation."
+        },
+        {
+          "who": "them",
+          "ja": "お{待|ま}ちしておりました。{寒|さむ}い{中|なか}、{大変|たいへん}でしたね。",
+          "en": "We've been expecting you. It must have been hard getting here in the cold."
+        },
+        {
+          "who": "me",
+          "ja": "いいえ、{大丈夫|だいじょうぶ}です。{電車|でんしゃ}から{海|うみ}が{見|み}えて、きれいでした。",
+          "en": "Not at all. I could see the sea from the train; it was beautiful.",
+          "note": "見える: the sea came into view (Lesson 4). Small talk like this is how a check-in turns into a conversation."
+        },
+        {
+          "who": "them",
+          "ja": "お{部屋|へや}は{二階|にかい}です。{窓|まど}から{港|みなと}が{見|み}えますよ。",
+          "en": "Your room is on the second floor. You can see the harbor from the window."
+        },
+        {
+          "who": "me",
+          "ja": "わあ、いいですね。{夕食|ゆうしょく}はどこで{食|た}べますか。",
+          "en": "Oh, nice. Where do I have dinner?",
+          "note": "Eating is an action, so the place takes で (Lesson 2)."
+        },
+        {
+          "who": "them",
+          "ja": "{一階|いっかい}の{食堂|しょくどう}です。{六時|ろくじ}からです。",
+          "en": "In the dining room on the first floor. From six."
+        },
+        {
+          "who": "me",
+          "ja": "{分|わ}かりました。あの、お{風呂|ふろ}は{今|いま}{入|はい}れますか。",
+          "en": "Got it. Um, can I use the bath now?",
+          "note": "入る → 入れる: \"can I get in?\" (Lesson 5). This one 入れる is the potential of 入る, not \"put in.\""
+        },
+        {
+          "who": "them",
+          "ja": "はい、もう{入|はい}れますよ。タオルはお{部屋|へや}にあります。",
+          "en": "Yes, it's ready. There are towels in your room."
+        },
+        {
+          "who": "me",
+          "ja": "じゃあ、{荷物|にもつ}を{部屋|へや}に{置|お}いて、お{風呂|ふろ}に{入|はい}ります。",
+          "en": "Then I'll put my bags in the room and take a bath.",
+          "note": "Bags go to a point (に). The て-form chains the two actions: put down, then bathe."
+        }
+      ],
+      "phrases": [
+        {
+          "ja": "すみません、{部屋|へや}の{電気|でんき}が{点|つ}きません。",
+          "en": "Excuse me, the light in my room won't come on.",
+          "note": "が + 点く (it comes on): report what happened, no blame (Lesson 4)."
+        },
+        {
+          "ja": "{窓|まど}が{開|あ}きません。",
+          "en": "The window won't open.",
+          "note": "開く = it opens. 開ける would be you opening it."
+        },
+        {
+          "ja": "{明日|あした}、{荷物|にもつ}をここに{置|お}けますか。",
+          "en": "Can I leave my bags here tomorrow?",
+          "note": "置く → 置ける (Lesson 5)."
+        }
+      ]
     }
   },
   "vocab": [
@@ -101,6 +176,38 @@
       "id": "haku",
       "ja": "〜{泊|はく}",
       "en": "counter for nights"
+    },
+    {
+      "id": "minato",
+      "ja": "{港|みなと}",
+      "en": "harbor, port"
+    },
+    {
+      "id": "shokudou",
+      "ja": "{食堂|しょくどう}",
+      "en": "dining room"
+    },
+    {
+      "id": "oku",
+      "ja": "{置|お}く",
+      "en": "to put, to leave (something somewhere)"
+    },
+    {
+      "id": "tsuku",
+      "ja": "{点|つ}く",
+      "en": "to come on (a light)",
+      "note": "Partner of 点ける (turn on)."
+    },
+    {
+      "id": "aku",
+      "ja": "{開|あ}く",
+      "en": "to open (by itself)",
+      "note": "Partner of 開ける (open it)."
+    },
+    {
+      "id": "nikai",
+      "ja": "{二階|にかい}",
+      "en": "second floor (first floor = 一階)"
     }
   ]
 }

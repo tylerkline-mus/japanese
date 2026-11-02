@@ -455,6 +455,74 @@
           "why": "猫はいます = as for the cat, it's here. That answers \"where's the cat?\" about a cat you were already talking about."
         }
       ]
+    },
+    {
+      "id": "wg24",
+      "type": "choice",
+      "scene": "At a friend's door, three coats on the hook. They ask which one is your wife's.",
+      "prompt": "「どれが{妻|つま}のコートですか。」「その{赤|あか}いの＿{妻|つま}のです。」",
+      "en": "\"Which one is your wife's coat?\" \"The red one is hers.\"",
+      "options": [
+        {
+          "text": "が",
+          "verdict": "right",
+          "why": "The question used どれが, so the answer fills that gap: the new information takes **が**. Question word + が → answer + が."
+        },
+        {
+          "text": "は",
+          "verdict": "wrong",
+          "why": "は would make the red one the topic, as if you were already talking about it. But it's the answer to どれ, the new information, so it takes が."
+        },
+        {
+          "text": "を",
+          "verdict": "wrong",
+          "why": "を marks something being acted on. There's no action here, just \"X is my wife's.\""
+        }
+      ]
+    },
+    {
+      "id": "wg25",
+      "type": "choice",
+      "scene": "Someone asks if Japanese winters are cold.",
+      "prompt": "{北|きた}＿{寒|さむ}いですが、{九州|きゅうしゅう}はあまり{寒|さむ}くないです。",
+      "en": "The north is cold, but Kyushu isn't very cold.",
+      "options": [
+        {
+          "text": "は",
+          "verdict": "right",
+          "why": "Two places set side by side: 北は… 九州は…. Putting one thing next to another is は's contrast job. The second は already tells you the first one should match."
+        },
+        {
+          "text": "が",
+          "verdict": "different",
+          "why": "北が寒いです = it's the north (and not elsewhere) that's cold, the answer to どこが寒いですか. Here you're comparing two places, so contrast は fits better."
+        },
+        {
+          "text": "で",
+          "verdict": "wrong",
+          "why": "で marks where an action happens. Being cold isn't an action, and 北で寒い doesn't work."
+        }
+      ]
+    },
+    {
+      "id": "wg26",
+      "type": "build",
+      "scene": "At the station. Ask where the south exit is.",
+      "en": "Where is the south exit?",
+      "tiles": [
+        "{南口|みなみぐち}",
+        "は",
+        "が",
+        "どこですか"
+      ],
+      "answers": [
+        [
+          "{南口|みなみぐち}",
+          "は",
+          "どこですか"
+        ]
+      ],
+      "why": "The south exit is what you're asking about (the topic), and どこ is the new information. Topic + は + question. 南口が would make the exit itself the unknown."
     }
   ]
 }

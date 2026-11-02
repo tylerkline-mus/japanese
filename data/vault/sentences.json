@@ -214,6 +214,10 @@
    {
     "ja": "{友人|ゆうじん}と{二人|ふたり}で{山|やま}に«{上|のぼ}»りました。",
     "en": "My friend and I climbed the mountain, just the two of us."
+   },
+   {
+    "ja": "{明日|あした}、{一緒|いっしょ}に{山|やま}に«{上|のぼ}る»？",
+    "en": "Want to climb the mountain together tomorrow?"
    }
   ],
   "会う": [
@@ -724,6 +728,180 @@
    {
     "ja": "{電車|でんしゃ}で«{四国|しこく}»に{行|い}きます。",
     "en": "I'm going to Shikoku by train."
+   }
+  ],
+  "石": [
+   {
+    "ja": "{川|かわ}の{中|なか}に、{大|おお}きい«{石|いし}»があります。",
+    "en": "There's a big stone in the river."
+   }
+  ],
+  "竹": [
+   {
+    "ja": "この{店|みせ}のお{箸|はし}は«{竹|たけ}»です。",
+    "en": "The chopsticks at this shop are bamboo."
+   }
+  ],
+  "糸": [
+   {
+    "ja": "{赤|あか}い«{糸|いと}»で、{古|ふる}い{本|ほん}を{直|なお}しました。",
+    "en": "I fixed an old book with red thread."
+   }
+  ],
+  "耳": [
+   {
+    "ja": "{大|おお}きい{音|おと}で、«{耳|みみ}»が{痛|いた}いです。",
+    "en": "My ears hurt from the loud sound."
+   }
+  ],
+  "花見": [
+   {
+    "ja": "{四月|しがつ}に、{友達|ともだち}と«{花見|はなみ}»をしたいです。",
+    "en": "I want to go cherry-blossom viewing with friends in April."
+   }
+  ],
+  "虫": [
+   {
+    "ja": "{夏|なつ}の{夜|よる}は、«{虫|むし}»の{声|こえ}がきれいです。",
+    "en": "On summer nights the insects' voices are beautiful."
+   }
+  ],
+  "車内": [
+   {
+    "ja": "«{車内|しゃない}»では、{電話|でんわ}で{話|はな}さないでください。",
+    "en": "Please don't talk on the phone inside the train."
+   }
+  ],
+  "金魚": [
+   {
+    "ja": "{子|こ}どもの{時|とき}、«{金魚|きんぎょ}»がいました。",
+    "en": "When I was a kid, I had a goldfish."
+   }
+  ],
+  "白鳥": [
+   {
+    "ja": "{冬|ふゆ}の{川|かわ}に、«{白鳥|はくちょう}»がたくさん{来|き}ています。",
+    "en": "Lots of swans have come to the winter river."
+   }
+  ],
+  "風船": [
+   {
+    "ja": "{子|こ}どもが{赤|あか}い«{風船|ふうせん}»を{持|も}っています。",
+    "en": "A child is holding a red balloon."
+   }
+  ],
+  "南口": [
+   {
+    "ja": "«{南口|みなみぐち}»で{待|ま}っています。",
+    "en": "I'm waiting at the south exit."
+   }
+  ],
+  "来週": [
+   {
+    "ja": "«{来週|らいしゅう}»、{東京|とうきょう}に{行|い}きます。",
+    "en": "I'm going to Tokyo next week."
+   }
+  ],
+  "今週": [
+   {
+    "ja": "«{今週|こんしゅう}»は{雨|あめ}が{多|おお}いですね。",
+    "en": "Lots of rain this week, huh."
+   }
+  ],
+  "夏": [
+   {
+    "ja": "«{夏|なつ}»の{海|うみ}は、{人|ひと}が{多|おお}いです。",
+    "en": "The beach is crowded in summer."
+   }
+  ],
+  "千円札": [
+   {
+    "ja": "«{千円札|せんえんさつ}»で{切符|きっぷ}を{買|か}いました。",
+    "en": "I bought a ticket with a thousand-yen bill."
+   }
+  ],
+  "時間": [
+   {
+    "ja": "すみません、{今|いま}«{時間|じかん}»がありません。",
+    "en": "Sorry, I don't have time right now."
+   }
+  ],
+  "森": [
+   {
+    "ja": "«{森|もり}»の{中|なか}は{静|しず}かでした。",
+    "en": "It was quiet in the woods."
+   }
+  ],
+  "池": [
+   {
+    "ja": "お{寺|てら}の«{池|いけ}»に、{大|おお}きい{魚|さかな}がいます。",
+    "en": "There are big fish in the temple pond."
+   }
+  ],
+  "魚": [
+   {
+    "ja": "この{町|まち}は«{魚|さかな}»が{美味|おい}しいです。",
+    "en": "The fish in this town is delicious."
+   }
+  ],
+  "黒い": [
+   {
+    "ja": "«{黒|くろ}い»{猫|ねこ}が{窓|まど}の{外|そと}にいます。",
+    "en": "There's a black cat outside the window."
+   }
+  ],
+  "高い": [
+   {
+    "ja": "{東京|とうきょう}のホテルは«{高|たか}い»ですね。",
+    "en": "Hotels in Tokyo are expensive, aren't they."
+   }
+  ],
+  "弱い": [
+   {
+    "ja": "{今日|きょう}は{風|かぜ}が«{弱|よわ}い»です。",
+    "en": "The wind is weak today."
+   }
+  ],
+  "手紙": [
+   {
+    "ja": "{妻|つま}に«{手紙|てがみ}»を{書|か}きました。",
+    "en": "I wrote a letter to my wife."
+   }
+  ],
+  "曲": [
+   {
+    "ja": "{今|いま}、{新|あたら}しい«{曲|きょく}»を{書|か}いています。",
+    "en": "I'm writing a new piece right now."
+   }
+  ],
+  "牛": [
+   {
+    "ja": "この{辺|へん}は«{牛|うし}»が{多|おお}いです。",
+    "en": "There are a lot of cows around here."
+   }
+  ],
+  "羊": [
+   {
+    "ja": "アイスランドには、«{羊|ひつじ}»がたくさんいます。",
+    "en": "There are lots of sheep in Iceland."
+   }
+  ],
+  "外国人": [
+   {
+    "ja": "この{店|みせ}は«{外国人|がいこくじん}»のお{客|きゃく}さんも{多|おお}いです。",
+    "en": "This shop has a lot of foreign customers too."
+   }
+  ],
+  "午後": [
+   {
+    "ja": "«{午後|ごご}»は{部屋|へや}で{練習|れんしゅう}します。",
+    "en": "In the afternoon I'll practice in my room."
+   }
+  ],
+  "一歩": [
+   {
+    "ja": "«{一歩|いっぽ}»ずつ、{前|まえ}に{進|すす}みましょう。",
+    "en": "Let's move forward one step at a time."
    }
   ]
  }
