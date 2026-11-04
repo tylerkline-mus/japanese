@@ -1,5 +1,62 @@
 [
  {
+  "id": "d747d374bc70",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20261104 「エチオピア情勢悪化で懸念強まる紅海の不安定化」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/9f89b1f911c32e05b61e33a00b4958c2_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/9f89b1f911c32e05b61e33a00b4958c2_64k.mp3",
+  "date": "2026-11-04T03:00:00.000Z",
+  "minutes": 4,
+  "summary": "リポート：宮内 篤志（ヨハネスブルグ支局） キャスター：上野 速人",
+  "added": "2026-11-04T03:22:08.736Z"
+ },
+ {
+  "id": "361c23635d62",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年11月04日午前11時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/67d1a9b81302c733c80ceb8f9920e9a2_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/67d1a9b81302c733c80ceb8f9920e9a2_64k.mp3",
+  "date": "2026-11-04T02:15:00.000Z",
+  "minutes": 15,
+  "summary": "",
+  "added": "2026-11-04T03:22:09.050Z"
+ },
+ {
+  "id": "b1a716eaee50",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年11月04日午前10時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/648d52638d2be363eb748978a4d90a89_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/648d52638d2be363eb748978a4d90a89_64k.mp3",
+  "date": "2026-11-04T01:15:00.000Z",
+  "minutes": 15,
+  "summary": "",
+  "added": "2026-11-04T03:22:09.050Z"
+ },
+ {
   "id": "407f0e4b4339",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
