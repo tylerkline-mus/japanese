@@ -1,5 +1,62 @@
 [
  {
+  "id": "47f85d491e72",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年11月05日午後04時05分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/3ac1803c8797771135cd2f39d7d5dc9d_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/3ac1803c8797771135cd2f39d7d5dc9d_64k.mp3",
+  "date": "2026-11-05T07:10:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-11-05T07:27:07.823Z"
+ },
+ {
+  "id": "30097541fb74",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年11月05日午後03時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/4945bbd6aba63c6209b5c1678e135d7f_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/4945bbd6aba63c6209b5c1678e135d7f_64k.mp3",
+  "date": "2026-11-05T06:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-11-05T07:27:07.823Z"
+ },
+ {
+  "id": "bb61a9ba4d0e",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20261105 「トランプ大統領が意欲示す どうなる米朝首脳会談」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/7eaca567557da7c06f4e7a323060cddd_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/7eaca567557da7c06f4e7a323060cddd_64k.mp3",
+  "date": "2026-11-05T03:00:00.000Z",
+  "minutes": 4,
+  "summary": "リポート：佐藤 裕太（国際部） キャスター：上野 速人",
+  "added": "2026-11-05T07:27:07.644Z"
+ },
+ {
   "id": "484f09407819",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
