@@ -1,5 +1,61 @@
 [
  {
+  "id": "027b13dba84c",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年11月06日午前00時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/467343d0b2bc6a08d62205e1c091fc02_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/467343d0b2bc6a08d62205e1c091fc02_64k.mp3",
+  "date": "2026-11-05T15:10:00.000Z",
+  "minutes": 10,
+  "summary": "",
+  "added": "2026-11-05T15:50:47.328Z"
+ },
+ {
+  "id": "71125aad202c",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年11月05日午後11時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/9e28abbe5592284354d508243372d763_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/9e28abbe5592284354d508243372d763_64k.mp3",
+  "date": "2026-11-05T14:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-11-05T15:50:47.328Z"
+ },
+ {
+  "id": "01da26352ec5",
+  "source": "teppei-noriko",
+  "sourceName": "Japanese with Teppei and Noriko",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "conversation"
+  ],
+  "title": "#649「のりこさんがものすごいトピックを持ってきた！！！！」",
+  "url": "https://teppeinorikojapanese.com/2026/11/05/649%e3%80%8c%e3%81%ae%e3%82%8a%e3%81%93%e3%81%95%e3%82%93%e3%81%8c%e3%81%99%e3%81%94%e3%81%84%e3%83%88%e3%83%94%e3%83%83%e3%82%af%e3%82%92%e6%8c%81%e3%81%a3%e3%81%a6%e3%81%8d%e3%81%9f%ef%bc%81/",
+  "audio": "https://teppeinorikojapanese.com/wp-content/uploads/2026/11/Teppeinoriko649.mp3",
+  "date": "2026-11-05T12:13:27.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-11-05T15:50:46.202Z"
+ },
+ {
   "id": "47f85d491e72",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
