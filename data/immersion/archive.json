@@ -1,5 +1,61 @@
 [
  {
+  "id": "484f09407819",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年11月05日午前09時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/0e39a578d2f4e05262db92b7ade344f7_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/0e39a578d2f4e05262db92b7ade344f7_64k.mp3",
+  "date": "2026-11-05T00:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-11-05T00:33:04.677Z"
+ },
+ {
+  "id": "cd01a9aa8a42",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "マイあさ! 午前8時のNHKニュース 2026年11月5日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/fc4aa086d0096109cc4798d05551499f_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/fc4aa086d0096109cc4798d05551499f_64k.mp3",
+  "date": "2026-11-04T23:03:00.000Z",
+  "minutes": 3,
+  "summary": "",
+  "added": "2026-11-05T00:33:04.677Z"
+ },
+ {
+  "id": "35913efb6d1c",
+  "source": "yuyu",
+  "sourceName": "YUYUの日本語Podcast",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "culture"
+  ],
+  "title": "Vol.502 日本で行きたい！🍂紅葉狩りスポット🍁 (Japanese Radio for Listening practice)",
+  "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-502--Japanese-Radio-for-Listening-practice-e3rp153",
+  "audio": "https://anchor.fm/s/cda85d4/podcast/play/128795235/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-10-4%2F1962411f-99cf-6a68-4fba-9c0e464ce3ea.mp3",
+  "date": "2026-11-04T20:45:42.000Z",
+  "minutes": 47,
+  "summary": "①青森県 奥入瀬渓流 ⇒(画像) ⇒(マップ) ②栃木県 日光、いろは坂 ⇒(⁠画像⁠) ⇒(⁠マップ⁠) ③京都府 嵐山 ⇒(⁠画像⁠) ⇒(⁠マップ⁠) ④愛知県 香嵐渓 ⇒(⁠⁠画像⁠⁠) ⇒(⁠⁠マップ⁠⁠) ⑤広島県 宮島、紅葉谷公園 ⇒(⁠⁠⁠画像⁠⁠⁠) ⇒(⁠⁠⁠マップ⁠⁠⁠) 💰Patreon…",
+  "added": "2026-11-05T00:33:03.235Z"
+ },
+ {
   "id": "7c35af0f759c",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
