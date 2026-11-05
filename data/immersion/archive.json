@@ -1,5 +1,43 @@
 [
  {
+  "id": "afed1905158d",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "マイあさ! 午前6時のNHKニュース 2026年11月6日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/eb3d3baacb04a41c462e72a2d2064297_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/eb3d3baacb04a41c462e72a2d2064297_64k.mp3",
+  "date": "2026-11-05T21:14:00.000Z",
+  "minutes": 13,
+  "summary": "",
+  "added": "2026-11-05T22:23:54.830Z"
+ },
+ {
+  "id": "2e0f46f0d83b",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "マイあさ! 午前5時のNHKニュース 2026年11月6日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/9b80f7ae9c56811af95428d83c2333b1_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/9b80f7ae9c56811af95428d83c2333b1_64k.mp3",
+  "date": "2026-11-05T20:17:00.000Z",
+  "minutes": 15,
+  "summary": "",
+  "added": "2026-11-05T22:23:54.830Z"
+ },
+ {
   "id": "027b13dba84c",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
