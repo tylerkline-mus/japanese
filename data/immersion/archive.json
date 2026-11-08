@@ -1,5 +1,61 @@
 [
  {
+  "id": "ee32195d22b8",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年11月08日午後03時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/531200a82631af2dea29735e07cb12ad_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/531200a82631af2dea29735e07cb12ad_64k.mp3",
+  "date": "2026-11-08T06:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-11-08T06:44:45.730Z"
+ },
+ {
+  "id": "869919538592",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年11月08日午後02時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/c8f8cbe79bd4208155ad7c07d9ca16f4_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/c8f8cbe79bd4208155ad7c07d9ca16f4_64k.mp3",
+  "date": "2026-11-08T05:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-11-08T06:44:45.730Z"
+ },
+ {
+  "id": "60abc6bec628",
+  "source": "yuyu",
+  "sourceName": "YUYUの日本語Podcast",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "culture"
+  ],
+  "title": "Vol.503 人生、悩んだ方がいい？😨悩まない方がいい？😎 (Japanese Radio for Listening practice)",
+  "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-503--Japanese-Radio-for-Listening-practice-e3s08hc",
+  "audio": "https://anchor.fm/s/cda85d4/podcast/play/129032172/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-10-8%2Fbddc4095-466c-ff5a-9b2a-a1953fa469ea.mp3",
+  "date": "2026-11-08T04:24:56.000Z",
+  "minutes": 38,
+  "summary": "💰Patreonのサポート(人´∀`)ｱﾘｶﾞﾄｰ♪ ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠…",
+  "added": "2026-11-08T06:44:44.332Z"
+ },
+ {
   "id": "b3a0da51abfb",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
