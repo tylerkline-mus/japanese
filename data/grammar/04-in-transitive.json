@@ -363,6 +363,101 @@
         ]
       ],
       "why": "You're putting something in → the \"doing it\" verb 入れる, with を on the score and に on where it ends up. 入る is going in yourself: 部屋に入ります."
+    },
+    {
+      "id": "it17",
+      "type": "choice",
+      "scene": "In the studio, the playback is too quiet.",
+      "prompt": "{音|おと}が{小|ちい}さいです。{少|すこ}し＿＿ください。",
+      "en": "It's quiet. Please turn it up a little.",
+      "options": [
+        {
+          "text": "{上|あ}げて",
+          "verdict": "right",
+          "why": "You want someone to do something to the sound, so you need the \"do it\" verb: **上げる**."
+        },
+        {
+          "text": "{上|あ}がって",
+          "verdict": "wrong",
+          "why": "上がる is \"it goes up by itself.\" You can't ask a person to do that to the sound."
+        },
+        {
+          "text": "{上|あ}げる",
+          "verdict": "wrong",
+          "why": "Right verb, wrong shape: ください needs the て form."
+        }
+      ]
+    },
+    {
+      "id": "it18",
+      "type": "choice",
+      "scene": "The tablet at reception asks for your name.",
+      "prompt": "ここにお{名前|なまえ}を＿＿ください。",
+      "en": "Please put your name here.",
+      "options": [
+        {
+          "text": "{入|い}れて",
+          "verdict": "right",
+          "why": "を marks what gets put in, so it's the \"do it\" verb, **入れる** (いれる). Same kanji as 入る, different reading."
+        },
+        {
+          "text": "{入|はい}って",
+          "verdict": "wrong",
+          "why": "入る (はいる) is \"go in\" yourself, and it can't take を like this. 「名前を入って」 doesn't work."
+        },
+        {
+          "text": "{入|はい}れて",
+          "verdict": "wrong",
+          "why": "That's a mix-up: 入れる is read いれる here. はいれる is the potential of 入る, \"can enter.\""
+        }
+      ]
+    },
+    {
+      "id": "it19",
+      "type": "choice",
+      "scene": "Telling someone about tonight.",
+      "prompt": "コンサートは{七時|しちじ}に＿＿。",
+      "en": "The concert starts at seven.",
+      "options": [
+        {
+          "text": "{始|はじ}まります",
+          "verdict": "right",
+          "why": "The concert is the thing that starts, and nobody in particular is being named as starting it. That's the \"it happens\" verb."
+        },
+        {
+          "text": "{始|はじ}めます",
+          "verdict": "different",
+          "why": "Grammatical, but this is \"we'll start it at seven,\" what an organizer says about their own schedule."
+        },
+        {
+          "text": "{始|はじ}まりました",
+          "verdict": "different",
+          "why": "\"It started at seven\": past, not tonight's plan."
+        }
+      ]
+    },
+    {
+      "id": "it20",
+      "type": "build",
+      "scene": "A friend has a photo you'd like to see.",
+      "en": "Please show me that photo.",
+      "tiles": [
+        "その{写真|しゃしん}",
+        "を",
+        "が",
+        "{見|み}せて",
+        "{見|み}えて",
+        "ください"
+      ],
+      "answers": [
+        [
+          "その{写真|しゃしん}",
+          "を",
+          "{見|み}せて",
+          "ください"
+        ]
+      ],
+      "why": "見せる is what you do so that someone else can see. It takes を. 見える is \"it's visible,\" so it's the が side of the pair and doesn't go before ください here."
     }
   ]
 }

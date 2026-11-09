@@ -516,6 +516,109 @@
           "why": "へ is direction, toward a place, for verbs like 行く. You don't work toward Tokyo."
         }
       ]
+    },
+    {
+      "id": "nd26",
+      "type": "choice",
+      "scene": "At the inn, the staff tell you where the bath is.",
+      "prompt": "お{風呂|ふろ}は{二階|にかい}＿あります。",
+      "en": "The bath is on the second floor.",
+      "options": [
+        {
+          "text": "に",
+          "verdict": "right",
+          "why": "あります just says something exists at a spot. Existing takes **に**."
+        },
+        {
+          "text": "で",
+          "verdict": "wrong",
+          "why": "で needs something happening at the place. The bath isn't doing anything there; it's just there."
+        },
+        {
+          "text": "を",
+          "verdict": "wrong",
+          "why": "を marks what an action is done to. あります has no such object."
+        }
+      ]
+    },
+    {
+      "id": "nd28",
+      "type": "choice",
+      "scene": "Your plan for the day.",
+      "prompt": "{海|うみ}に{行|い}って、{海|うみ}＿{音|おと}を{録音|ろくおん}します。",
+      "en": "I'll go to the sea and record sounds there.",
+      "options": [
+        {
+          "text": "で",
+          "verdict": "right",
+          "why": "Same place, two jobs. First it's the destination (に行って). Then it's where an action happens: recording, so **で**."
+        },
+        {
+          "text": "に",
+          "verdict": "wrong",
+          "why": "に would be right for going or being there, but 録音します is something you do at the place."
+        },
+        {
+          "text": "から",
+          "verdict": "different",
+          "why": "Grammatical: \"from the sea,\" as if the sound were coming from it or you were recording from there outward. It isn't the plain \"at the sea.\""
+        }
+      ]
+    },
+    {
+      "id": "nd29",
+      "type": "choice",
+      "scene": "Someone asks about your photos.",
+      "prompt": "フィルムカメラ＿{写真|しゃしん}を{撮|と}っています。",
+      "en": "I take photos with a film camera.",
+      "options": [
+        {
+          "text": "で",
+          "verdict": "right",
+          "why": "で also marks the **means**: what you do it with. The same で as お箸で and 日本語で."
+        },
+        {
+          "text": "に",
+          "verdict": "wrong",
+          "why": "に points at a destination or a spot. You aren't putting photos onto the camera here."
+        },
+        {
+          "text": "を",
+          "verdict": "wrong",
+          "why": "写真 already has を. The camera is the tool, not the thing being taken."
+        }
+      ]
+    },
+    {
+      "id": "nd30",
+      "type": "build",
+      "scene": "Telling someone your plan.",
+      "en": "I'm meeting a friend at the station.",
+      "tiles": [
+        "{駅|えき}",
+        "で",
+        "に",
+        "を",
+        "{友達|ともだち}",
+        "{会|あ}います"
+      ],
+      "answers": [
+        [
+          "{駅|えき}",
+          "で",
+          "{友達|ともだち}",
+          "に",
+          "{会|あ}います"
+        ],
+        [
+          "{友達|ともだち}",
+          "に",
+          "{駅|えき}",
+          "で",
+          "{会|あ}います"
+        ]
+      ],
+      "why": "Meeting happens at the station (で). The friend is who you meet, the person you arrive at, so に. Either chunk can go first, since the particles carry the meaning. を doesn't work: 会う doesn't take it."
     }
   ]
 }

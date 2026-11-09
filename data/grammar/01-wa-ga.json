@@ -523,6 +523,77 @@
         ]
       ],
       "why": "The south exit is what you're asking about (the topic), and どこ is the new information. Topic + は + question. 南口が would make the exit itself the unknown."
+    },
+    {
+      "id": "wg27",
+      "type": "choice",
+      "scene": "Asked about your home state.",
+      "prompt": "ケンタッキー＿お{酒|さけ}が{有名|ゆうめい}です。",
+      "en": "Kentucky is famous for its liquor.",
+      "options": [
+        {
+          "text": "は",
+          "verdict": "right",
+          "why": "は sets Kentucky as the topic (\"as for Kentucky\"), and が marks what is famous about it. Topic first, then the detail."
+        },
+        {
+          "text": "が",
+          "verdict": "different",
+          "why": "Grammatical, but it means \"It's **Kentucky** where liquor is famous,\" answering \"which place?\". Nobody asked."
+        },
+        {
+          "text": "で",
+          "verdict": "wrong",
+          "why": "で marks where an action happens. 有名です is a description, not an action."
+        }
+      ]
+    },
+    {
+      "id": "wg28",
+      "type": "choice",
+      "scene": "On the platform, two trains waiting.",
+      "prompt": "どの{電車|でんしゃ}＿{熊本|くまもと}に{行|い}きますか。",
+      "en": "Which train goes to Kumamoto?",
+      "options": [
+        {
+          "text": "が",
+          "verdict": "right",
+          "why": "A question word (どの, 誰, 何) is the unknown, and は can only mark what's already known. So the question word takes が, and the answer will too."
+        },
+        {
+          "text": "は",
+          "verdict": "wrong",
+          "why": "は means \"as for…\", which needs something both people already have in mind. どの電車 is exactly what you don't know yet."
+        },
+        {
+          "text": "を",
+          "verdict": "wrong",
+          "why": "を marks what an action is done to. The train is doing the going."
+        }
+      ]
+    },
+    {
+      "id": "wg29",
+      "type": "build",
+      "scene": "Someone asks what you like.",
+      "en": "I like music.",
+      "tiles": [
+        "{私|わたし}",
+        "は",
+        "が",
+        "{音楽|おんがく}",
+        "{好|す}きです"
+      ],
+      "answers": [
+        [
+          "{私|わたし}",
+          "は",
+          "{音楽|おんがく}",
+          "が",
+          "{好|す}きです"
+        ]
+      ],
+      "why": "私 is the topic (は). 好き is a description, more like \"music is pleasing to me,\" so the thing you like takes が. Two particles, two jobs."
     }
   ]
 }

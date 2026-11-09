@@ -380,6 +380,100 @@
         ]
       ],
       "why": "Asking what's possible → potential 撮れる. が is the classic particle with potential verbs; を is also common now. 撮りますか would ask \"Do you take photos here?\" New word: 撮る, take (a photo)."
+    },
+    {
+      "id": "pt17",
+      "type": "choice",
+      "scene": "Asking how to book at a small inn.",
+      "prompt": "{予約|よやく}は{電話|でんわ}で＿＿か。",
+      "en": "Can I make a reservation by phone?",
+      "options": [
+        {
+          "text": "できます",
+          "verdict": "right",
+          "why": "予約する → 予約できる. Swap する for できる. The phone is the means, so で."
+        },
+        {
+          "text": "します",
+          "verdict": "different",
+          "why": "Grammatical, but it's asking what normally happens or what you plan to do: \"Will (you) reserve by phone?\""
+        },
+        {
+          "text": "できるます",
+          "verdict": "wrong",
+          "why": "ます goes on the stem: できます, not できるます."
+        }
+      ]
+    },
+    {
+      "id": "pt18",
+      "type": "choice",
+      "scene": "At the bar, someone offers you a drink.",
+      "prompt": "お{酒|さけ}は＿＿か。",
+      "en": "Can you drink alcohol?",
+      "options": [
+        {
+          "text": "{飲|の}めます",
+          "verdict": "right",
+          "why": "飲む is a う-verb: change -mu to -me and add る. 飲める → 飲めます. This is the normal way people ask it."
+        },
+        {
+          "text": "{飲|の}みられます",
+          "verdict": "wrong",
+          "why": "られる goes on る-verbs only. 飲む is a う-verb, so it changes its last sound instead."
+        },
+        {
+          "text": "{飲|の}みます",
+          "verdict": "different",
+          "why": "Grammatical: \"Do you drink?\" That's about habit, not ability. In practice either one can start the conversation."
+        }
+      ]
+    },
+    {
+      "id": "pt19",
+      "type": "choice",
+      "scene": "The menu is handwritten.",
+      "prompt": "すみません、この{漢字|かんじ}が＿＿。",
+      "en": "Sorry, I can't read this kanji.",
+      "options": [
+        {
+          "text": "{読|よ}めません",
+          "verdict": "right",
+          "why": "読む → 読める → 読めません. The kanji takes が, because you're describing what is or isn't possible for you."
+        },
+        {
+          "text": "{読|よ}みません",
+          "verdict": "different",
+          "why": "\"I don't read (it),\" as in you choose not to. That makes it sound like a decision."
+        },
+        {
+          "text": "{読|よ}まれません",
+          "verdict": "wrong",
+          "why": "That's the wrong ending: 読まれる is a passive form, \"gets read.\""
+        }
+      ]
+    },
+    {
+      "id": "pt20",
+      "type": "build",
+      "scene": "Your host asks what you can eat.",
+      "en": "I can eat any kind of fish.",
+      "tiles": [
+        "{魚|さかな}",
+        "は",
+        "{何|なん}でも",
+        "{食|た}べられます",
+        "{食|た}べます"
+      ],
+      "answers": [
+        [
+          "{魚|さかな}",
+          "は",
+          "{何|なん}でも",
+          "{食|た}べられます"
+        ]
+      ],
+      "why": "食べる is a る-verb, so 食べられる. 魚は sets fish as the topic. 何でも is \"anything at all.\" 食べます would be \"I eat,\" which isn't saying you can."
     }
   ]
 }

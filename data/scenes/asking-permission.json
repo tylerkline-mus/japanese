@@ -54,6 +54,74 @@
           "en": "No people will be in it."
         }
       ]
+    },
+    "natural": {
+      "requires": [
+        "02-ni-de",
+        "05-potential"
+      ],
+      "dialogue": [
+        {
+          "who": "me",
+          "ja": "すみません、ここで{録音|ろくおん}できますか。",
+          "en": "Excuse me, can I record here?"
+        },
+        {
+          "who": "them",
+          "ja": "{録音|ろくおん}ですか。{何|なん}の{音|おと}ですか。",
+          "en": "Recording? What kind of sound?"
+        },
+        {
+          "who": "me",
+          "ja": "えっと、{川|かわ}の{音|おと}です。{五分|ごふん}ぐらいで{終|お}わります。",
+          "en": "Um, the sound of the river. It'll take about five minutes."
+        },
+        {
+          "who": "them",
+          "ja": "へえ、そうなんですね。どうぞ。",
+          "en": "Oh, I see. Go ahead."
+        },
+        {
+          "who": "me",
+          "ja": "ありがとうございます。{中|なか}で{写真|しゃしん}も{撮|と}れますか。",
+          "en": "Thank you. Can I take photos inside too?"
+        },
+        {
+          "who": "them",
+          "ja": "すみません、{中|なか}は{撮影|さつえい}できないんです。",
+          "en": "Sorry, you can't take pictures inside."
+        },
+        {
+          "who": "me",
+          "ja": "そうなんですね。じゃあ、{外|そと}からは{撮|と}れますか。",
+          "en": "I see. Then can I take them from outside?",
+          "note": "は sets up the contrast: not inside, but outside?"
+        },
+        {
+          "who": "them",
+          "ja": "{外|そと}なら{大丈夫|だいじょうぶ}ですよ。",
+          "en": "Outside is fine."
+        },
+        {
+          "who": "me",
+          "ja": "じゃあ、{外|そと}で{撮|と}ります。ありがとうございます。",
+          "en": "Then I'll take them outside. Thank you."
+        }
+      ],
+      "phrases": [
+        {
+          "ja": "どこで{録音|ろくおん}できますか。",
+          "en": "Where can I record?"
+        },
+        {
+          "ja": "{何時|なんじ}まで{録音|ろくおん}できますか。",
+          "en": "Until what time can I record?"
+        },
+        {
+          "ja": "スタンプはどこで{押|お}せますか。",
+          "en": "Where can I stamp this?"
+        }
+      ]
     }
   },
   "vocab": [
@@ -76,6 +144,17 @@
       "id": "daijoubu",
       "ja": "{大丈夫|だいじょうぶ}",
       "en": "fine, OK"
+    },
+    {
+      "id": "satsuei",
+      "ja": "{撮影|さつえい}",
+      "en": "filming, taking pictures",
+      "note": "The word on the signs: 撮影禁止 = no photos."
+    },
+    {
+      "id": "osu",
+      "ja": "{押|お}す",
+      "en": "to press, to stamp"
     }
   ]
 }

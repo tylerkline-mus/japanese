@@ -1,6 +1,226 @@
 {
   "weeks": [
     {
+      "week": "2026-11-09",
+      "note": "Getting off subtitles: a short talk about listening itself, a film series, autumn food, easy news, and a Tokyo concert on NHK-FM.",
+      "picks": [
+        {
+          "id": "w2026-11-09-1",
+          "title": "#1599「リスニングについて！」",
+          "url": "http://nihongoconteppei.com/2026/10/14/1599%e3%80%8c%e3%83%aa%e3%82%b9%e3%83%8b%e3%83%b3%e3%82%b0%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%81%e3%80%8d/",
+          "type": "listen",
+          "source": "Nihongo con Teppei (beginner)",
+          "minutes": 6,
+          "level": 1,
+          "why": "A native speaker talking slowly about the exact skill you're trying to build. Start here, no subtitles and no transcript.",
+          "connection": "Listening is your hardest skill, and this is the one topic where you'll already know what he's getting at.",
+          "listenFor": "Every 聞く and 聞ける. Is someone listening, or saying they can?",
+          "prep": [
+            {
+              "ja": "{聞|き}く",
+              "en": "to listen"
+            },
+            {
+              "ja": "{聞|き}こえる",
+              "en": "to be audible"
+            },
+            {
+              "ja": "{分|わ}かる",
+              "en": "to understand"
+            },
+            {
+              "ja": "{毎日|まいにち}",
+              "en": "every day"
+            },
+            {
+              "ja": "{言葉|ことば}",
+              "en": "word, language"
+            },
+            {
+              "ja": "{練習|れんしゅう}",
+              "en": "practice"
+            }
+          ],
+          "tags": [
+            "learner",
+            "listening"
+          ],
+          "fromArchive": "1c9e8ac77a6b"
+        },
+        {
+          "id": "w2026-11-09-2",
+          "title": "#1611「映画シリーズ①」",
+          "url": "http://nihongoconteppei.com/2026/11/04/1611%e3%80%8c%e6%98%a0%e7%94%bb%e3%82%b7%e3%83%aa%e3%83%bc%e3%82%ba%e2%91%a0%e3%80%8d/",
+          "type": "listen",
+          "source": "Nihongo con Teppei (beginner)",
+          "minutes": 6,
+          "level": 1,
+          "why": "A new short series on movies. If it holds you, ② and ③ are already out, so you have a week of five-minute sessions.",
+          "connection": "This week's grammar point, the potential form: films are where 見られる and 見える get used.",
+          "listenFor": "見る, 見られる, or 見える? Who is choosing to watch, and what's just in view?",
+          "prep": [
+            {
+              "ja": "{映画|えいが}",
+              "en": "movie"
+            },
+            {
+              "ja": "{見|み}る",
+              "en": "to watch"
+            },
+            {
+              "ja": "{見|み}える",
+              "en": "to be visible"
+            },
+            {
+              "ja": "{話|はなし}",
+              "en": "story, talk"
+            },
+            {
+              "ja": "{好|す}き",
+              "en": "liked"
+            },
+            {
+              "ja": "{最近|さいきん}",
+              "en": "recently"
+            }
+          ],
+          "tags": [
+            "learner",
+            "film"
+          ],
+          "fromArchive": "b6c9d280cb83"
+        },
+        {
+          "id": "w2026-11-09-3",
+          "title": "Vol.487 秋の味覚バージョン① 【北海道・東北・関東地方】 ((Japanese Radio for Listening practice)",
+          "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-487---Japanese-Radio-for-Listening-practice-e3oia6q",
+          "type": "listen",
+          "source": "YUYUの日本語Podcast",
+          "minutes": 43,
+          "level": 2,
+          "why": "Forty-three minutes on what's good to eat in autumn, region by region. You don't have to finish it; ten minutes on salmon and saury is plenty.",
+          "connection": "Food talk for the dinners and small inns ahead: the words you'll hear when someone explains what's in season.",
+          "listenFor": "Every に and で after a place name. Is the food found there, or is someone eating and catching it there?",
+          "prep": [
+            {
+              "ja": "{魚|さかな}",
+              "en": "fish"
+            },
+            {
+              "ja": "{秋|あき}",
+              "en": "autumn"
+            },
+            {
+              "ja": "{美味|おい}しい",
+              "en": "delicious"
+            },
+            {
+              "ja": "{味|あじ}",
+              "en": "flavor"
+            },
+            {
+              "ja": "{地方|ちほう}",
+              "en": "region"
+            },
+            {
+              "ja": "{旬|しゅん}",
+              "en": "in season"
+            }
+          ],
+          "tags": [
+            "food",
+            "travel"
+          ],
+          "fromArchive": "dffe72302a0c"
+        },
+        {
+          "id": "w2026-11-09-4",
+          "title": "NHKやさしいことばニュース 2026年11月6日",
+          "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/4e79e0b1224ea7abfc688716894be9ea_64k.mp3",
+          "type": "listen",
+          "source": "NHK Radio News",
+          "minutes": 5,
+          "level": 4,
+          "why": "Real news read in simplified Japanese, five minutes. Replay it once: the second pass is where words start to separate.",
+          "listenFor": "Listen for できます and 〜られます at the ends of sentences. What's now possible, and what isn't?",
+          "prep": [
+            {
+              "ja": "{今日|きょう}",
+              "en": "today"
+            },
+            {
+              "ja": "{人|ひと}",
+              "en": "person"
+            },
+            {
+              "ja": "{国|くに}",
+              "en": "country"
+            },
+            {
+              "ja": "{多|おお}い",
+              "en": "many"
+            },
+            {
+              "ja": "{会社|かいしゃ}",
+              "en": "company"
+            },
+            {
+              "ja": "{去年|きょねん}",
+              "en": "last year"
+            }
+          ],
+          "tags": [
+            "news",
+            "NHK"
+          ],
+          "fromArchive": "9c877646981f"
+        },
+        {
+          "id": "w2026-11-09-5",
+          "title": "現代の音楽「最近の公演から N響ミュージック・トゥモロー2026（1）」",
+          "url": "https://ebravo.jp/archives/216608",
+          "type": "listen",
+          "source": "NHK-FM 現代の音楽",
+          "minutes": 50,
+          "level": 4,
+          "why": "Airs Sunday Nov 15, 8:10 Japan time, with a rebroadcast Saturday the 21st at 6:00; part 2 is the 22nd. Orchestral new music from Tokyo, the world you'll be walking into in February. The link is a broadcast listing; NHK streams may be region-limited.",
+          "connection": "A contemporary-music concert program from Tokyo, the kind you produce yourself.",
+          "listenFor": "Skip the details and catch the host's verbs around each piece: 始まります, 聞こえます, 聞いてください. What's happening by itself, and what's being asked of you?",
+          "prep": [
+            {
+              "ja": "{作曲家|さっきょくか}",
+              "en": "composer"
+            },
+            {
+              "ja": "{作品|さくひん}",
+              "en": "work, piece"
+            },
+            {
+              "ja": "{初演|しょえん}",
+              "en": "premiere"
+            },
+            {
+              "ja": "{指揮|しき}",
+              "en": "conducting"
+            },
+            {
+              "ja": "{公演|こうえん}",
+              "en": "performance, concert"
+            },
+            {
+              "ja": "{音楽|おんがく}",
+              "en": "music"
+            }
+          ],
+          "tags": [
+            "contemporary music",
+            "NHK",
+            "native"
+          ]
+        }
+      ]
+    },
+    {
       "week": "2026-11-02",
       "note": "Deepen week: the potential form and the verb pairs, heard in the wild. A three-part music series from Teppei, the last Markus story, easy news, rural cash, and NHK-FM on a Japanese composer.",
       "picks": [

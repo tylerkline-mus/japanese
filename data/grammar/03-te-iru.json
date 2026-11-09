@@ -361,6 +361,103 @@
         ]
       ],
       "why": "住む is a change (you moved there); 住んでいる is the state that followed. Living is existing somewhere, so the place takes に. 住みます would mean \"I will live there.\""
+    },
+    {
+      "id": "ti19",
+      "type": "choice",
+      "scene": "The server comes back for your order.",
+      "prompt": "「ご{注文|ちゅうもん}は？」「すみません、まだ＿＿。」",
+      "en": "\"Your order?\" \"Sorry, I'm still thinking.\"",
+      "options": [
+        {
+          "text": "{考|かんが}えています",
+          "verdict": "right",
+          "why": "Thinking is an action that takes time, and まだ says it's still going. 〜ています is the \"in progress\" shape."
+        },
+        {
+          "text": "{考|かんが}えます",
+          "verdict": "different",
+          "why": "\"I will think about it.\" In a shop, that can sound like a polite way of saying no."
+        },
+        {
+          "text": "{考|かんが}えました",
+          "verdict": "wrong",
+          "why": "\"I thought (about it)\" is finished, which clashes with まだ."
+        }
+      ]
+    },
+    {
+      "id": "ti20",
+      "type": "choice",
+      "scene": "You get to the shop and find a sign on the door.",
+      "prompt": "あ、この{店|みせ}はもう＿＿。",
+      "en": "Oh, this shop is already closed.",
+      "options": [
+        {
+          "text": "{閉|し}まっています",
+          "verdict": "right",
+          "why": "閉まる is a change that happens in a moment. 〜ている is the state afterward: it closed, and it's still closed."
+        },
+        {
+          "text": "{閉|し}まります",
+          "verdict": "different",
+          "why": "\"It will close.\" It hasn't happened yet, which clashes with もう."
+        },
+        {
+          "text": "{閉|し}めています",
+          "verdict": "different",
+          "why": "閉める is the \"do it\" verb, so this is someone closing it, or keeping it shut on purpose. You want the shop's state."
+        }
+      ]
+    },
+    {
+      "id": "ti21",
+      "type": "choice",
+      "scene": "Someone mentions a station you've never heard of.",
+      "prompt": "すみません、その{駅|えき}の{名前|なまえ}は＿＿。",
+      "en": "Sorry, I don't know the name of that station.",
+      "options": [
+        {
+          "text": "{知|し}りません",
+          "verdict": "right",
+          "why": "A quirk to learn once: \"I know\" is 知っています, but \"I don't know\" is **知りません**, with no ている."
+        },
+        {
+          "text": "{知|し}っていません",
+          "verdict": "wrong",
+          "why": "It follows the pattern, but Japanese doesn't say it. The negative of 知っています is 知りません."
+        },
+        {
+          "text": "{知|し}っていました",
+          "verdict": "different",
+          "why": "\"I knew (it).\" The opposite of what you mean."
+        }
+      ]
+    },
+    {
+      "id": "ti22",
+      "type": "build",
+      "scene": "Looking out the window.",
+      "en": "It's snowing outside the window.",
+      "tiles": [
+        "{窓|まど}の{外|そと}",
+        "で",
+        "に",
+        "{雪|ゆき}",
+        "が",
+        "{降|ふ}っています",
+        "{降|ふ}ります"
+      ],
+      "answers": [
+        [
+          "{窓|まど}の{外|そと}",
+          "で",
+          "{雪|ゆき}",
+          "が",
+          "{降|ふ}っています"
+        ]
+      ],
+      "why": "Snow falling is an event in progress, so 降っています. Where it's happening takes で. 降ります would mean \"it will snow.\""
     }
   ]
 }
