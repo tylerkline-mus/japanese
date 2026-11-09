@@ -1,5 +1,62 @@
 [
  {
+  "id": "7b771d669b4d",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20261109 「３６年ぶりに就任した駐日ソマリア大使」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/ff3363f6f6a1b6d691ccdb5d56579c4f_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/ff3363f6f6a1b6d691ccdb5d56579c4f_64k.mp3",
+  "date": "2026-11-09T03:00:00.000Z",
+  "minutes": 4,
+  "summary": "リポート：吉田 真由（北京支局） キャスター：上野 速人／眞下 貴",
+  "added": "2026-11-09T03:01:58.237Z"
+ },
+ {
+  "id": "6c248e3fd74a",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年11月09日午前11時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/f8a5f3c0419268f2d61cc4ba0b4c74c1_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/f8a5f3c0419268f2d61cc4ba0b4c74c1_64k.mp3",
+  "date": "2026-11-09T02:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-11-09T03:01:58.496Z"
+ },
+ {
+  "id": "f69e707d178b",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年11月09日午前10時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/aa662e596062b1be0e6c7950c5faeb87_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/aa662e596062b1be0e6c7950c5faeb87_64k.mp3",
+  "date": "2026-11-09T01:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-11-09T03:01:58.496Z"
+ },
+ {
   "id": "0cae2daa1cfc",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
