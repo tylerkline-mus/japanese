@@ -1,5 +1,62 @@
 [
  {
+  "id": "3869a7c32c6f",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年11月10日午後01時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/71391f4fc61c15d5c7da96b00dad9c50_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/71391f4fc61c15d5c7da96b00dad9c50_64k.mp3",
+  "date": "2026-11-10T04:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-11-10T04:22:45.581Z"
+ },
+ {
+  "id": "67914a9ee724",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 正午のNHKニュース 2026年11月10日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/0bbf06167b34dab28b3932207347c6b6_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/0bbf06167b34dab28b3932207347c6b6_64k.mp3",
+  "date": "2026-11-10T03:15:00.000Z",
+  "minutes": 15,
+  "summary": "【主なニュース】 ▽安保3文書改定へ 政府側が防衛力強化の方向性を示す ▽9月家計調査 実質の消費支出6.8％減 10か月連続の減少 ▽北日本と東日本で冬の寒さ 体調管理に注意 ▽最新のニュースは「らじる★らじる」やポッドキャスト「ＮＨＫラジオニュース」からもお聴きいただけます",
+  "added": "2026-11-10T04:22:45.581Z"
+ },
+ {
+  "id": "0394f250a3e9",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20261110 「アメリカ中間選挙から１週間 選挙結果の受け止め・今後の注目点」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/daa1c43fa0e429178ca005b78ce6af3c_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/daa1c43fa0e429178ca005b78ce6af3c_64k.mp3",
+  "date": "2026-11-10T03:00:00.000Z",
+  "minutes": 5,
+  "summary": "リポート：佐藤 文隆（アメリカ総局 総局） キャスター：上野 速人",
+  "added": "2026-11-10T04:22:45.397Z"
+ },
+ {
   "id": "43a69f78b0ab",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
