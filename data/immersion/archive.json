@@ -1,5 +1,62 @@
 [
  {
+  "id": "06d79358e676",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年11月11日午後03時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/b03b4f6f34faeda4a9d4f6ed75c844c5_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/b03b4f6f34faeda4a9d4f6ed75c844c5_64k.mp3",
+  "date": "2026-11-11T06:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-11-11T08:26:54.798Z"
+ },
+ {
+  "id": "c8d576694007",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年11月11日午後02時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/b1875e34ecf207a361d7e650358ef096_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/b1875e34ecf207a361d7e650358ef096_64k.mp3",
+  "date": "2026-11-11T05:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-11-11T08:26:54.798Z"
+ },
+ {
+  "id": "98573c416cec",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20261111 「欧州の若者デモ ドイツにも波及」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/9821d99ac7e8a962c4a7aa0f154e056e_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/9821d99ac7e8a962c4a7aa0f154e056e_64k.mp3",
+  "date": "2026-11-11T03:00:00.000Z",
+  "minutes": 4,
+  "summary": "リポート：堀 征巳（ベルリン支局） キャスター：上野 速人",
+  "added": "2026-11-11T08:26:54.661Z"
+ },
+ {
   "id": "05780f0e3a1b",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
