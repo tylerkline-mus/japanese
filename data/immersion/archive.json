@@ -1,5 +1,61 @@
 [
  {
+  "id": "41cb19c5ac3e",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年11月12日午後09時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/b21cdea4c132321d704f735c35f3d541_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/b21cdea4c132321d704f735c35f3d541_64k.mp3",
+  "date": "2026-11-12T12:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-11-12T13:19:17.671Z"
+ },
+ {
+  "id": "fdbb0cee8208",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年11月12日午後08時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/bc05701fa95607827f6b003d7c57ddd4_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/bc05701fa95607827f6b003d7c57ddd4_64k.mp3",
+  "date": "2026-11-12T11:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-11-12T13:19:17.671Z"
+ },
+ {
+  "id": "41f3bc6b9ab2",
+  "source": "teppei-noriko",
+  "sourceName": "Japanese with Teppei and Noriko",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "conversation"
+  ],
+  "title": "#650「マシュー・マコノヒーとか、揺れの続きとか（そしてすみません、僕のマイクがちょっと悪いです」",
+  "url": "https://teppeinorikojapanese.com/2026/11/12/650%e3%80%8c%e3%83%9e%e3%82%b7%e3%83%a5%e3%83%bc%e3%83%bb%e3%83%9e%e3%82%b3%e3%83%8e%e3%83%92%e3%83%bc%e3%81%a8%e3%81%8b%e3%80%81%e6%8f%ba%e3%82%8c%e3%81%ae%e7%b6%9a%e3%81%8d%e3%81%a8%e3%81%8b/",
+  "audio": "https://teppeinorikojapanese.com/wp-content/uploads/2026/11/Teppeinoriko650.mp3",
+  "date": "2026-11-12T10:58:57.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-11-12T13:19:17.157Z"
+ },
+ {
   "id": "f4aafa409991",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
