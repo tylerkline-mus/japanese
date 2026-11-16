@@ -619,6 +619,86 @@
         ]
       ],
       "why": "Meeting happens at the station (で). The friend is who you meet, the person you arrive at, so に. Either chunk can go first, since the particles carry the meaning. を doesn't work: 会う doesn't take it."
+    },
+    {
+      "id": "nd31",
+      "type": "choice",
+      "prompt": "すみません、スタンプはどこ＿ありますか。",
+      "en": "Excuse me, where is the stamp?",
+      "options": [
+        {
+          "text": "に",
+          "verdict": "right",
+          "why": "ある is existence, and where something just sits → に. The stamp isn't doing anything."
+        },
+        {
+          "text": "で",
+          "verdict": "wrong",
+          "why": "で marks where an action happens. A stamp sitting on a shelf isn't an action. (どこでおしますか, \"where do I stamp it?\", would take で.)"
+        }
+      ],
+      "scene": "At the station office."
+    },
+    {
+      "id": "nd32",
+      "type": "choice",
+      "prompt": "{一月|いちがつ}は{一人|ひとり}＿{旅行|りょこう}します。",
+      "en": "In January I'm traveling on my own.",
+      "options": [
+        {
+          "text": "で",
+          "verdict": "right",
+          "why": "This で isn't a place: it's how you do it. 一人で = \"by myself, as one person,\" like バスで or 日本語で."
+        },
+        {
+          "text": "に",
+          "verdict": "wrong",
+          "why": "に would make 一人 a destination or a target: \"travel to one person.\" It has no \"by myself\" meaning."
+        },
+        {
+          "text": "と",
+          "verdict": "different",
+          "why": "一人と would mean \"with one person.\" Grammatical, but now you have a travel partner."
+        }
+      ],
+      "scene": "Telling someone your plans."
+    },
+    {
+      "id": "nd33",
+      "type": "build",
+      "scene": "Someone asks what you're doing up north.",
+      "en": "I'm writing music by myself in a town in the north.",
+      "tiles": [
+        "{北|きた}の{町|まち}",
+        "で",
+        "で",
+        "に",
+        "{一人|ひとり}",
+        "{曲|きょく}",
+        "を",
+        "{作|つく}っています"
+      ],
+      "answers": [
+        [
+          "{北|きた}の{町|まち}",
+          "で",
+          "{一人|ひとり}",
+          "で",
+          "{曲|きょく}",
+          "を",
+          "{作|つく}っています"
+        ],
+        [
+          "{一人|ひとり}",
+          "で",
+          "{北|きた}の{町|まち}",
+          "で",
+          "{曲|きょく}",
+          "を",
+          "{作|つく}っています"
+        ]
+      ],
+      "why": "Two で's doing two jobs: 北の町で is where the work happens, 一人で is how (on your own). The order of the two chunks can swap. に doesn't fit either: you're not just existing in the town, you're doing something there."
     }
   ]
 }

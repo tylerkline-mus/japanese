@@ -56,6 +56,93 @@
           "en": "Sorry, could you speak a little more slowly?"
         }
       ]
+    },
+    "natural": {
+      "requires": [
+        "02-ni-de",
+        "04-in-transitive",
+        "05-potential"
+      ],
+      "dialogue": [
+        {
+          "who": "them",
+          "ja": "どちらまでですか。",
+          "en": "Where to?"
+        },
+        {
+          "who": "me",
+          "ja": "えっと、{阿蘇|あそ}まで{行|い}きます。どこで{乗|の}り{換|か}えますか。",
+          "en": "Um, I'm going to Aso. Where do I change trains?",
+          "note": "Changing trains is something you do at a place → で (Lesson 2). えっと gives you a beat to find the place name."
+        },
+        {
+          "who": "them",
+          "ja": "{熊本|くまもと}で{乗|の}り{換|か}えてください。{三番線|さんばんせん}から{出|で}ますよ。",
+          "en": "Change at Kumamoto. It leaves from track 3."
+        },
+        {
+          "who": "me",
+          "ja": "{三番線|さんばんせん}ですね。ありがとうございます。",
+          "en": "Track 3. Thank you.",
+          "note": "Repeating the key detail with ですね checks you heard it right."
+        },
+        {
+          "who": "me",
+          "ja": "すみません、この{電車|でんしゃ}は{阿蘇|あそ}に{止|と}まりますか。",
+          "en": "Excuse me, does this train stop at Aso?",
+          "note": "止まる is the \"it happens\" verb: the train stops by itself (Lesson 4). The station is the point it arrives at → に."
+        },
+        {
+          "who": "them",
+          "ja": "{止|と}まりますよ。でも、{次|つぎ}の{特急|とっきゅう}のほうが{早|はや}く{着|つ}きます。",
+          "en": "It does. But the next limited express gets there sooner."
+        },
+        {
+          "who": "me",
+          "ja": "そうなんですね。じゃあ、{次|つぎ}の{特急|とっきゅう}に{乗|の}ります。",
+          "en": "I see. In that case, I'll take the next limited express.",
+          "note": "そうなんですね takes in new information; じゃあ turns it into a decision. 乗る takes に (Lesson 2)."
+        },
+        {
+          "who": "me",
+          "ja": "{駅|えき}のスタンプはどこにありますか。",
+          "en": "Where's the station stamp?",
+          "note": "Where something just sits → に (Lesson 2)."
+        },
+        {
+          "who": "them",
+          "ja": "{改札|かいさつ}の{横|よこ}にありますよ。",
+          "en": "It's next to the ticket gate."
+        },
+        {
+          "who": "me",
+          "ja": "このノートにおせますか。",
+          "en": "Can I stamp it in this notebook?",
+          "note": "おす (press) → おせる (Lesson 5)."
+        },
+        {
+          "who": "them",
+          "ja": "はい、どうぞ。",
+          "en": "Sure, go ahead."
+        }
+      ],
+      "phrases": [
+        {
+          "ja": "この{切符|きっぷ}で{特急|とっきゅう}に{乗|の}れますか。",
+          "en": "Can I take the limited express with this ticket?",
+          "note": "切符で = by means of this ticket (Lesson 2); 乗れる = can ride (Lesson 5)."
+        },
+        {
+          "ja": "{次|つぎ}の{電車|でんしゃ}は{何時|なんじ}に{出|で}ますか。",
+          "en": "What time does the next train leave?",
+          "note": "出る: the train leaves by itself (Lesson 4)."
+        },
+        {
+          "ja": "すみません、{電車|でんしゃ}の{中|なか}に{傘|かさ}を{忘|わす}れました。",
+          "en": "Excuse me, I left my umbrella on the train.",
+          "note": "Where the thing was left behind → に."
+        }
+      ]
     }
   },
   "vocab": [
@@ -83,6 +170,43 @@
       "id": "ichimai",
       "ja": "{一枚|いちまい}",
       "en": "one (flat thing, like a ticket)"
+    },
+    {
+      "id": "bansen",
+      "ja": "{番線|ばんせん}",
+      "en": "track, platform number",
+      "note": "三番線 = track 3."
+    },
+    {
+      "id": "tokkyuu",
+      "ja": "{特急|とっきゅう}",
+      "en": "limited express"
+    },
+    {
+      "id": "yoko",
+      "ja": "{横|よこ}",
+      "en": "beside, next to"
+    },
+    {
+      "id": "osu",
+      "ja": "おす（{押|お}す）",
+      "en": "to press, to stamp",
+      "note": "Stamping is スタンプをおす."
+    },
+    {
+      "id": "wasureru",
+      "ja": "{忘|わす}れる",
+      "en": "to forget, to leave behind"
+    },
+    {
+      "id": "kasa",
+      "ja": "{傘|かさ}",
+      "en": "umbrella"
+    },
+    {
+      "id": "kaisatsu",
+      "ja": "{改札|かいさつ}",
+      "en": "ticket gate"
     }
   ]
 }

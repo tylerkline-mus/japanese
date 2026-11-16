@@ -458,6 +458,106 @@
         ]
       ],
       "why": "見せる is what you do so that someone else can see. It takes を. 見える is \"it's visible,\" so it's the が side of the pair and doesn't go before ください here."
+    },
+    {
+      "id": "it21",
+      "type": "choice",
+      "prompt": "レコーダーのつまみを{少|すこ}し＿＿ください。",
+      "en": "Please turn the recorder's knob a little.",
+      "options": [
+        {
+          "text": "{回|まわ}して",
+          "verdict": "right",
+          "why": "You're making the knob turn → 回す, with を. The を before the gap is the clue."
+        },
+        {
+          "text": "{回|まわ}って",
+          "verdict": "wrong",
+          "why": "回る is the knob turning by itself. It can't take を つまみ as its object."
+        },
+        {
+          "text": "{見|み}せて",
+          "verdict": "different",
+          "why": "\"Please show me the knob.\" Grammatical, but you'd be asking to see it, not turn it."
+        }
+      ],
+      "scene": "Setting up a field recording."
+    },
+    {
+      "id": "it22",
+      "type": "choice",
+      "prompt": "{私|わたし}は{毎朝|まいあさ}、{海|うみ}を＿＿。",
+      "en": "Every morning I look at the sea.",
+      "options": [
+        {
+          "text": "{見|み}ます",
+          "verdict": "right",
+          "why": "You do the looking yourself → 見る."
+        },
+        {
+          "text": "{見|み}せます",
+          "verdict": "wrong",
+          "why": "見せる is making someone else see: \"I show the sea (to someone).\" There's no one to show it to here."
+        },
+        {
+          "text": "{見|み}えます",
+          "verdict": "wrong",
+          "why": "見える is \"is visible\" and takes が: 海が見えます. With を it doesn't work."
+        }
+      ]
+    },
+    {
+      "id": "it23",
+      "type": "choice",
+      "prompt": "{古|ふる}いレコードが＿＿います。いい{音|おと}ですね。",
+      "en": "An old record is spinning. Nice sound, isn't it.",
+      "options": [
+        {
+          "text": "{回|まわ}って",
+          "verdict": "right",
+          "why": "が + 回る: the record is turning, and 〜ている says it's going on now. No one is mentioned as doing it."
+        },
+        {
+          "text": "{回|まわ}して",
+          "verdict": "wrong",
+          "why": "回す needs someone turning something with を. レコードが回しています would mean the record is spinning something."
+        },
+        {
+          "text": "{出|で}て",
+          "verdict": "different",
+          "why": "出ている would mean the record is out (on sale, or out of its sleeve). Not spinning."
+        }
+      ],
+      "scene": "At a listening bar."
+    },
+    {
+      "id": "it24",
+      "type": "build",
+      "scene": "Telling the inn when you'll check out.",
+      "en": "Tomorrow I'll leave the hotel at nine.",
+      "tiles": [
+        "{明日|あした}",
+        "は",
+        "{九時|くじ}",
+        "に",
+        "ホテル",
+        "を",
+        "が",
+        "{出|で}ます",
+        "{出|だ}します"
+      ],
+      "answers": [
+        [
+          "{明日|あした}",
+          "は",
+          "{九時|くじ}",
+          "に",
+          "ホテル",
+          "を",
+          "{出|で}ます"
+        ]
+      ],
+      "why": "出る is the \"it happens\" verb, but it still takes を for the place you leave: 家を出る, ホテルを出る. That を marks the starting point, not an object. 出します would be taking something out, and ホテルが出ます would mean the hotel leaves."
     }
   ]
 }

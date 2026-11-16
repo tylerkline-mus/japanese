@@ -222,6 +222,10 @@
       {
         "ja": "{毎朝|まいあさ}、{坂|さか}を«{上|のぼ}る»のが{好|す}きです。",
         "en": "I like going up the hill every morning."
+      },
+      {
+        "ja": "{駅|えき}から{坂|さか}を«{上|のぼ}って»ください。",
+        "en": "From the station, go up the hill."
       }
     ],
     "会う": [
@@ -1062,6 +1066,180 @@
       {
         "ja": "{今日|きょう}は«{目|め}»が{痛|いた}いです。",
         "en": "My eyes hurt today."
+      }
+    ],
+    "冬休み": [
+      {
+        "ja": "{今年|ことし}の«{冬休|ふゆやす}み»は{長|なが}いです。",
+        "en": "This year's winter break is long."
+      }
+    ],
+    "氷": [
+      {
+        "ja": "{道|みち}に«{氷|こおり}»があります。{気|き}を{付|つ}けて！",
+        "en": "There's ice on the road. Be careful!"
+      }
+    ],
+    "気分": [
+      {
+        "ja": "{今日|きょう}は«{気分|きぶん}»がいいです。",
+        "en": "I'm in a good mood today."
+      }
+    ],
+    "小皿": [
+      {
+        "ja": "«{小皿|こざら}»を{二|ふた}つください。",
+        "en": "Two small plates, please."
+      }
+    ],
+    "皿": [
+      {
+        "ja": "この«{皿|さら}»はとてもきれいですね。",
+        "en": "This plate is really beautiful."
+      }
+    ],
+    "生": [
+      {
+        "ja": "«{生|なま}»ビールを{一|ひと}つお{願|ねが}いします。",
+        "en": "One draft beer, please."
+      }
+    ],
+    "空車": [
+      {
+        "ja": "あのタクシーは«{空車|くうしゃ}»です。",
+        "en": "That taxi is free."
+      }
+    ],
+    "西口": [
+      {
+        "ja": "«{西口|にしぐち}»で{待|ま}っています。",
+        "en": "I'm waiting at the west exit."
+      }
+    ],
+    "〜号室": [
+      {
+        "ja": "{私|わたし}の{部屋|へや}は３０５«{号室|ごうしつ}»です。",
+        "en": "My room is number 305."
+      }
+    ],
+    "何時": [
+      {
+        "ja": "{朝|あさ}ごはんは«{何時|なんじ}»からですか。",
+        "en": "What time does breakfast start?"
+      }
+    ],
+    "午前": [
+      {
+        "ja": "チェックアウトは«{午前|ごぜん}»{十時|じゅうじ}です。",
+        "en": "Checkout is at 10 a.m."
+      }
+    ],
+    "お知らせ": [
+      {
+        "ja": "{駅|えき}に{電車|でんしゃ}の«お{知|し}らせ»があります。",
+        "en": "There's a train notice at the station."
+      }
+    ],
+    "中古": [
+      {
+        "ja": "この{店|みせ}は«{中古|ちゅうこ}»のカメラを{売|う}っています。",
+        "en": "This shop sells used cameras."
+      }
+    ],
+    "不足": [
+      {
+        "ja": "{今|いま}、{電池|でんち}が«{不足|ふそく}»しています。",
+        "en": "I'm short on batteries right now."
+      }
+    ],
+    "休止": [
+      {
+        "ja": "この{曲|きょく}の«{休止|きゅうし}»が{好|す}きです。",
+        "en": "I love the pause in this piece."
+      }
+    ],
+    "村": [
+      {
+        "ja": "この«{村|むら}»は{小|ちい}さいですが、{海|うみ}がきれいです。",
+        "en": "This village is small, but the sea is beautiful."
+      }
+    ],
+    "声": [
+      {
+        "ja": "{朝|あさ}、{鳥|とり}の«{声|こえ}»を{録音|ろくおん}しました。",
+        "en": "In the morning I recorded birdsong."
+      }
+    ],
+    "大声": [
+      {
+        "ja": "{電車|でんしゃ}の{中|なか}で«{大声|おおごえ}»はだめですよ。",
+        "en": "No shouting on the train."
+      }
+    ],
+    "光": [
+      {
+        "ja": "{朝|あさ}の«{光|ひかり}»がきれいです。",
+        "en": "The morning light is beautiful."
+      }
+    ],
+    "日光": [
+      {
+        "ja": "{窓|まど}から«{日光|にっこう}»が{入|はい}ります。",
+        "en": "Sunlight comes in through the window."
+      }
+    ],
+    "止まる": [
+      {
+        "ja": "この{電車|でんしゃ}は{次|つぎ}の{駅|えき}に«{止|と}まり»ますか。",
+        "en": "Does this train stop at the next station?"
+      }
+    ],
+    "回る": [
+      {
+        "ja": "レコードが«{回|まわ}って»います。",
+        "en": "The record is spinning."
+      }
+    ],
+    "作る": [
+      {
+        "ja": "{毎日|まいにち}、{少|すこ}しずつ{曲|きょく}を«{作|つく}って»います。",
+        "en": "I'm writing music a little every day."
+      }
+    ],
+    "出来上がる": [
+      {
+        "ja": "{新|あたら}しい{曲|きょく}が«{出来上|できあ}がり»ました。",
+        "en": "The new piece is finished."
+      }
+    ],
+    "近づく": [
+      {
+        "ja": "{電車|でんしゃ}が{駅|えき}に«{近|ちか}づいて»います。",
+        "en": "The train is getting close to the station."
+      }
+    ],
+    "山びこ": [
+      {
+        "ja": "{山|やま}で{大|おお}きい{声|こえ}を{出|だ}すと、«{山|やま}びこ»が{聞|き}こえます。",
+        "en": "If you shout in the mountains, you hear an echo."
+      }
+    ],
+    "豚肉": [
+      {
+        "ja": "«{豚肉|ぶたにく}»のラーメンをください。",
+        "en": "The pork ramen, please."
+      }
+    ],
+    "一回": [
+      {
+        "ja": "すみません、もう«{一回|いっかい}»お{願|ねが}いします。",
+        "en": "Sorry, one more time, please."
+      }
+    ],
+    "考え方": [
+      {
+        "ja": "この{作曲家|さっきょくか}の«{考|かんが}え{方|かた}»はおもしろいです。",
+        "en": "This composer's way of thinking is interesting."
       }
     ]
   }

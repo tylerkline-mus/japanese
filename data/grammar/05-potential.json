@@ -474,6 +474,82 @@
         ]
       ],
       "why": "食べる is a る-verb, so 食べられる. 魚は sets fish as the topic. 何でも is \"anything at all.\" 食べます would be \"I eat,\" which isn't saying you can."
+    },
+    {
+      "id": "pt21",
+      "type": "choice",
+      "prompt": "すみません、このノートにスタンプが＿＿か。",
+      "en": "Excuse me, can I stamp it in this notebook?",
+      "options": [
+        {
+          "text": "おせます",
+          "verdict": "right",
+          "why": "おす (to press) → おせる: \"can press/stamp.\" Potential verbs usually mark the thing with が."
+        },
+        {
+          "text": "おします",
+          "verdict": "different",
+          "why": "\"Do I stamp it here?\" or \"Will you stamp it?\" It asks what happens, not whether it's allowed or possible."
+        },
+        {
+          "text": "おしています",
+          "verdict": "different",
+          "why": "\"Is it stamping?\" / \"Are you stamping it?\" Wrong moment entirely."
+        }
+      ],
+      "scene": "At a station office."
+    },
+    {
+      "id": "pt22",
+      "type": "choice",
+      "prompt": "すみません、この{道|みち}から{海|うみ}に＿＿か。",
+      "en": "Excuse me, can I get down to the sea from this road?",
+      "options": [
+        {
+          "text": "{出|で}られます",
+          "verdict": "right",
+          "why": "出る is a る-verb, so 出られる: \"can get out (to).\" You're asking whether it's possible for you."
+        },
+        {
+          "text": "{出|で}ます",
+          "verdict": "different",
+          "why": "\"Does this road come out at the sea?\" Natural too, but it asks about the road, not about you."
+        },
+        {
+          "text": "{出|だ}せます",
+          "verdict": "wrong",
+          "why": "出せる is from 出す, \"can take (something) out.\" There's no object."
+        }
+      ],
+      "scene": "Walking in a fishing village."
+    },
+    {
+      "id": "pt23",
+      "type": "build",
+      "scene": "Someone asks if you speak Japanese.",
+      "en": "I can speak a little Japanese.",
+      "tiles": [
+        "{日本語|にほんご}",
+        "は",
+        "が",
+        "{少|すこ}し",
+        "{話|はな}せます"
+      ],
+      "answers": [
+        [
+          "{日本語|にほんご}",
+          "は",
+          "{少|すこ}し",
+          "{話|はな}せます"
+        ],
+        [
+          "{日本語|にほんご}",
+          "が",
+          "{少|すこ}し",
+          "{話|はな}せます"
+        ]
+      ],
+      "why": "話す → 話せる (う-verb: change the last sound to the え-row, add る). With a potential verb the thing you can do is usually が. は works too and adds a little modesty: \"Japanese, I can manage a bit (of).\""
     }
   ]
 }

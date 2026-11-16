@@ -458,6 +458,84 @@
         ]
       ],
       "why": "Snow falling is an event in progress, so 降っています. Where it's happening takes で. 降ります would mean \"it will snow.\""
+    },
+    {
+      "id": "ti23",
+      "type": "choice",
+      "prompt": "「{今|いま}、どこに{住|す}んでいますか。」「アイスランドの{小|ちい}さい{町|まち}に＿＿。」",
+      "en": "Where are you living now? / In a small town in Iceland.",
+      "options": [
+        {
+          "text": "{住|す}んでいます",
+          "verdict": "right",
+          "why": "住む is the moment you settle somewhere; 〜ている is the state that follows. Where you live now is always 住んでいます."
+        },
+        {
+          "text": "{住|す}みます",
+          "verdict": "different",
+          "why": "住みます points to the future: \"I will live (there).\" Fine for plans, wrong for now."
+        },
+        {
+          "text": "{住|す}んでいました",
+          "verdict": "different",
+          "why": "Past: \"I was living there.\" True next month, not today."
+        }
+      ]
+    },
+    {
+      "id": "ti24",
+      "type": "choice",
+      "prompt": "「すみません、{父|ちち}は{今|いま}＿＿。」",
+      "en": "Sorry, my father is out right now.",
+      "options": [
+        {
+          "text": "{出|で}かけています",
+          "verdict": "right",
+          "why": "出かける is the moment of going out. 〜ている keeps the result: he went out and hasn't come back."
+        },
+        {
+          "text": "{出|で}かけます",
+          "verdict": "different",
+          "why": "\"He'll go out\" (later, or habitually). It doesn't say he's out now."
+        },
+        {
+          "text": "{出|で}かけていました",
+          "verdict": "different",
+          "why": "\"He was out.\" Past, so he's probably home again."
+        }
+      ],
+      "scene": "Answering the phone."
+    },
+    {
+      "id": "ti25",
+      "type": "build",
+      "scene": "Looking out of the window.",
+      "en": "A cat is sleeping in front of the house.",
+      "tiles": [
+        "{家|いえ}の{前|まえ}",
+        "で",
+        "に",
+        "{猫|ねこ}",
+        "が",
+        "ねています"
+      ],
+      "answers": [
+        [
+          "{家|いえ}の{前|まえ}",
+          "で",
+          "{猫|ねこ}",
+          "が",
+          "ねています"
+        ],
+        [
+          "{猫|ねこ}",
+          "が",
+          "{家|いえ}の{前|まえ}",
+          "で",
+          "ねています"
+        ]
+      ],
+      "why": "Sleeping is an action happening right now: ねる + 〜ている. Because it's an action, the place takes で. 家の前に猫がいます would be the other way to say it: just existing → に."
     }
   ]
 }

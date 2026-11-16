@@ -594,6 +594,78 @@
         ]
       ],
       "why": "私 is the topic (は). 好き is a description, more like \"music is pleasing to me,\" so the thing you like takes が. Two particles, two jobs."
+    },
+    {
+      "id": "wg30",
+      "type": "choice",
+      "prompt": "「すみません、{駅|えき}のスタンプ＿ありますか。」「はい、あそこにありますよ。」",
+      "en": "Excuse me, is there a station stamp? / Yes, it's over there.",
+      "options": [
+        {
+          "text": "は",
+          "verdict": "right",
+          "why": "Here スタンプ is the topic you're asking about: \"as for a stamp, is there one?\" That's the usual way to ask at a station, and it's how the Trains scene says it."
+        },
+        {
+          "text": "が",
+          "verdict": "right",
+          "why": "Also fine. が treats the stamp as new information: \"Is there a stamp (here)?\" は sounds a touch more like you came looking for one; が is a plain existence question. Both get you the stamp."
+        },
+        {
+          "text": "を",
+          "verdict": "wrong",
+          "why": "ある doesn't take an object. Things that exist are marked with は or が, never を."
+        }
+      ],
+      "scene": "Asking at a small station."
+    },
+    {
+      "id": "wg31",
+      "type": "choice",
+      "prompt": "「{何|なに}にしますか。」「えっと、{私|わたし}＿ビールにします。」",
+      "en": "What will you have? / Um, I'll have a beer.",
+      "options": [
+        {
+          "text": "は",
+          "verdict": "right",
+          "why": "Everyone at the table is choosing; は sets you up as the topic: \"as for me, beer.\" It quietly contrasts you with the others, which is exactly the situation."
+        },
+        {
+          "text": "が",
+          "verdict": "different",
+          "why": "私が would answer \"Who's having beer?\": \"I'm the one having beer.\" Grammatical, but it answers a different question."
+        },
+        {
+          "text": "を",
+          "verdict": "wrong",
+          "why": "私 isn't the thing being chosen. The choice is ビール, marked with に in 〜にします."
+        }
+      ],
+      "scene": "Ordering with friends."
+    },
+    {
+      "id": "wg32",
+      "type": "build",
+      "scene": "Telling a friend about a café near the studio.",
+      "en": "This café's coffee is cheap.",
+      "tiles": [
+        "この{店|みせ}",
+        "は",
+        "コーヒー",
+        "が",
+        "を",
+        "{安|やす}いです"
+      ],
+      "answers": [
+        [
+          "この{店|みせ}",
+          "は",
+          "コーヒー",
+          "が",
+          "{安|やす}いです"
+        ]
+      ],
+      "why": "The big frame is は (what you're talking about: this place), the detail inside it is が (what's cheap: the coffee). It's the same shape as ケンタッキーはお酒が有名です. を doesn't fit: 安い is an adjective and takes no object."
     }
   ]
 }

@@ -1041,6 +1041,63 @@
       ],
       "listen": "Kids, close friends, and anime. Often comes after だって.",
       "note": "Sounds a little childish or cute. Good to recognize, not one for your own polite sentences."
+    },
+    {
+      "id": "ee",
+      "ja": "ええ",
+      "family": "listen",
+      "does": "A polite \"yes\" / \"mm-hm\" that keeps the other person talking, softer and more grown-up than はい.",
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "«ええ»、{九州|きゅうしゅう}は{初|はじ}めてです。",
+          "en": "Yes, it's my first time in Kyushu."
+        },
+        {
+          "ja": "「{寒|さむ}いですね。」「«ええ»、{本当|ほんとう}に。」",
+          "en": "\"Cold, isn't it?\" \"Mm, really.\""
+        }
+      ],
+      "listen": "Interviews and radio talk, especially older speakers and hosts. Often doubled: ええ、ええ.",
+      "note": "In a falling tone it agrees; a rising ええ？ is surprise (\"What?!\")."
+    },
+    {
+      "id": "sousou",
+      "ja": "そうそう",
+      "family": "react",
+      "does": "\"Yes, exactly!\": shows you recognize what they just said because you were thinking it too.",
+      "register": "both",
+      "examples": [
+        {
+          "ja": "«そうそう»、その{店|みせ}です！",
+          "en": "Yes, that's the one, that shop!"
+        },
+        {
+          "ja": "«そうそう»、{思|おも}い{出|だ}しました。",
+          "en": "Right, right, now I remember."
+        }
+      ],
+      "listen": "Friends finishing each other's stories, podcast co-hosts agreeing.",
+      "note": "Warmer than そうですね. Also used to bring something up you'd just remembered: そうそう、明日は…"
+    },
+    {
+      "id": "janai-desu-ka",
+      "ja": "〜じゃないですか",
+      "family": "soft",
+      "does": "Presents something as shared knowledge (\"you know how…\") so the listener nods along before you continue.",
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{冬|ふゆ}の{海|うみ}って{静|しず}か«じゃないですか»。",
+          "en": "You know how the sea is quiet in winter?"
+        },
+        {
+          "ja": "ケンタッキーはお{酒|さけ}が{有名|ゆうめい}«じゃないですか»。",
+          "en": "Kentucky's famous for its whiskey, right?"
+        }
+      ],
+      "listen": "Talk shows and interviews, right before the speaker's real point.",
+      "note": "Not a real question and not \"isn't\". The tone falls at the end. Casual form: じゃん."
     }
   ]
 }

@@ -1,6 +1,240 @@
 {
   "weeks": [
     {
+      "week": "2026-11-16",
+      "note": "Short and finishable: a four-minute travel story, the next film episode, a podcaster planning a trip home, life in Kyushu, and part two of last week's concert broadcast.",
+      "picks": [
+        {
+          "id": "w2026-11-16-1",
+          "title": "イタリアに行きました（I went to Italy）",
+          "url": "https://podcasters.spotify.com/pod/show/nihongo-shortstory/episodes/I-went-to-Italy-e20av62",
+          "type": "listen",
+          "source": "Nihongo Short Story by Noriko",
+          "minutes": 4,
+          "level": 1,
+          "why": "Noriko's stories are the one source you've finished (the Belgium one). Same voice, same length, now a trip told in the past tense. Listen once without the transcript, then once with it.",
+          "connection": "A trip story is a run of に and で: where she went (に) and what she did there (で). That's Lesson 2, the next one to mark done.",
+          "listenFor": "Every time you hear に or で after a place, pause and say which: a place she went to, or a place where something happened?",
+          "prep": [
+            {
+              "ja": "{行|い}く",
+              "en": "to go"
+            },
+            {
+              "ja": "{町|まち}",
+              "en": "town"
+            },
+            {
+              "ja": "{店|みせ}",
+              "en": "shop, restaurant"
+            },
+            {
+              "ja": "{食|た}べる",
+              "en": "to eat"
+            },
+            {
+              "ja": "{旅行|りょこう}",
+              "en": "trip, travel"
+            },
+            {
+              "ja": "{美味|おい}しい",
+              "en": "delicious"
+            }
+          ],
+          "tags": [
+            "learner",
+            "stories",
+            "travel",
+            "food"
+          ],
+          "fromArchive": "8f30d4dc3cfe"
+        },
+        {
+          "id": "w2026-11-16-2",
+          "title": "#1612「映画シリーズ②」",
+          "url": "http://nihongoconteppei.com/2026/11/06/1612%e3%80%8c%e6%98%a0%e7%94%bb%e3%82%b7%e3%83%aa%e3%83%bc%e3%82%ba%e2%91%a1%e3%80%8d/",
+          "type": "listen",
+          "source": "Nihongo con Teppei (beginner)",
+          "minutes": 6,
+          "level": 1,
+          "why": "Part two of the film series from last week. If you skipped part one, start here anyway: each episode stands on its own, and six minutes fits before the studio.",
+          "connection": "Films are where 見る and 見せる sit side by side, and 見せる is one of your leeches.",
+          "listenFor": "Each time you hear 見, decide: is someone watching (見る), or showing something to someone (見せる)? Listen for the に that marks who gets shown.",
+          "prep": [
+            {
+              "ja": "{映画|えいが}",
+              "en": "movie"
+            },
+            {
+              "ja": "{見|み}る",
+              "en": "to watch"
+            },
+            {
+              "ja": "{見|み}せる",
+              "en": "to show"
+            },
+            {
+              "ja": "{好|す}き",
+              "en": "liked, favourite"
+            },
+            {
+              "ja": "{有名|ゆうめい}",
+              "en": "famous"
+            },
+            {
+              "ja": "{一番|いちばん}",
+              "en": "the most, number one"
+            }
+          ],
+          "tags": [
+            "learner",
+            "monologue",
+            "film"
+          ],
+          "fromArchive": "b111a42cbece"
+        },
+        {
+          "id": "w2026-11-16-3",
+          "title": "Vol.504 来週、日本帰ります！日本での予定はこんな感じ！ (Japanese Radio for Listening practice)",
+          "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-504--Japanese-Radio-for-Listening-practice-e3s9or2",
+          "type": "listen",
+          "source": "YUYUの日本語Podcast",
+          "minutes": 34,
+          "level": 2,
+          "why": "YUYU walks through her plans for a trip back to Japan, which is exactly the talk you'll be having in six weeks. It's long: take the first ten minutes and stop.",
+          "connection": "Trip planning: where she'll go (に), what she'll do there (で), and when she'll leave (出る / 出かける).",
+          "listenFor": "Catch every 帰ります, 行きます and 出ます, and the place word right before it. Say the trip back to yourself in one sentence.",
+          "prep": [
+            {
+              "ja": "{来週|らいしゅう}",
+              "en": "next week"
+            },
+            {
+              "ja": "{予定|よてい}",
+              "en": "plan, schedule"
+            },
+            {
+              "ja": "{帰|かえ}る",
+              "en": "to go home"
+            },
+            {
+              "ja": "{会|あ}う",
+              "en": "to meet"
+            },
+            {
+              "ja": "{東京|とうきょう}",
+              "en": "Tokyo"
+            },
+            {
+              "ja": "{実家|じっか}",
+              "en": "family home"
+            },
+            {
+              "ja": "{時間|じかん}",
+              "en": "time"
+            }
+          ],
+          "tags": [
+            "learner",
+            "travel",
+            "plans"
+          ],
+          "fromArchive": "0600c0b5c429"
+        },
+        {
+          "id": "w2026-11-16-4",
+          "title": "#636「のんびり大分の生活について！」",
+          "url": "https://teppeinorikojapanese.com/2026/07/30/636%e3%80%8c%e3%81%ae%e3%82%93%e3%81%b3%e3%82%8a%e5%a4%a7%e5%88%86%e3%81%ae%e7%94%9f%e6%b4%bb%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%ef%bc%81%e3%80%8d/",
+          "type": "listen",
+          "source": "Japanese with Teppei and Noriko",
+          "minutes": 25,
+          "level": 3,
+          "why": "Two people talking at real speed about slow life in Oita, the Kyushu prefecture you'll pass through on the way to Usuki. Don't aim to follow it all; aim for the gist of what life there is like.",
+          "connection": "Kyushu, where your residency is, and the train trip after it.",
+          "listenFor": "Count the 住んでいます and で〜しています: where do they live, and what do they do there? Each one is に vs で plus 〜ている.",
+          "prep": [
+            {
+              "ja": "{生活|せいかつ}",
+              "en": "daily life"
+            },
+            {
+              "ja": "{住|す}む",
+              "en": "to live (somewhere)"
+            },
+            {
+              "ja": "{海|うみ}",
+              "en": "sea"
+            },
+            {
+              "ja": "{魚|さかな}",
+              "en": "fish"
+            },
+            {
+              "ja": "{温泉|おんせん}",
+              "en": "hot spring"
+            },
+            {
+              "ja": "{田舎|いなか}",
+              "en": "the countryside"
+            },
+            {
+              "ja": "のんびり",
+              "en": "relaxed, unhurried"
+            }
+          ],
+          "tags": [
+            "conversation",
+            "Kyushu",
+            "daily life"
+          ],
+          "fromArchive": "0a8963ea7c20"
+        },
+        {
+          "id": "w2026-11-16-5",
+          "title": "現代の音楽「最近の公演から N響ミュージック・トゥモロー2026（2）」",
+          "url": "https://ebravo.jp/archives/216608",
+          "type": "listen",
+          "source": "NHK-FM 現代の音楽",
+          "minutes": 50,
+          "level": 4,
+          "why": "Part two of last week's broadcast: new orchestral works from Tokyo. Airs Sunday Nov 22 at 8:10 Japan time (Saturday evening in Iceland), rebroadcast Saturday the 28th at 6:00. The link is a broadcast listing; NHK streams may be region-limited.",
+          "connection": "A contemporary-music program built like your own radio show, about the scene you'll join in February.",
+          "listenFor": "Only the host's links between pieces. Each time she names a hall or city, listen for the particle after it: で means the concert happened there; に means something is there or going there.",
+          "prep": [
+            {
+              "ja": "{作曲家|さっきょくか}",
+              "en": "composer"
+            },
+            {
+              "ja": "{作品|さくひん}",
+              "en": "work, piece"
+            },
+            {
+              "ja": "{初演|しょえん}",
+              "en": "premiere"
+            },
+            {
+              "ja": "{演奏|えんそう}",
+              "en": "performance (playing)"
+            },
+            {
+              "ja": "{音楽|おんがく}",
+              "en": "music"
+            },
+            {
+              "ja": "{委嘱|いしょく}",
+              "en": "commission"
+            }
+          ],
+          "tags": [
+            "contemporary music",
+            "NHK",
+            "native"
+          ]
+        }
+      ]
+    },
+    {
       "week": "2026-11-09",
       "note": "Getting off subtitles: a short talk about listening itself, a film series, autumn food, easy news, and a Tokyo concert on NHK-FM.",
       "picks": [
