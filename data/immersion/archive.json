@@ -1,5 +1,43 @@
 [
  {
+  "id": "a95ed1707937",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "マイあさ! 午前8時のNHKニュース 2026年11月18日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/0fd0923d552a56d7db65a8c0b671629b_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/0fd0923d552a56d7db65a8c0b671629b_64k.mp3",
+  "date": "2026-11-17T23:03:00.000Z",
+  "minutes": 3,
+  "summary": "",
+  "added": "2026-11-17T23:11:41.297Z"
+ },
+ {
+  "id": "4bc57a7fad30",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "マイあさ! 午前7時のNHKニュース 2026年11月18日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/965df72aeafd5fb78804a1bacbef5ab9_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/965df72aeafd5fb78804a1bacbef5ab9_64k.mp3",
+  "date": "2026-11-17T22:20:00.000Z",
+  "minutes": 20,
+  "summary": "",
+  "added": "2026-11-17T23:11:41.297Z"
+ },
+ {
   "id": "9addb1c24fde",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
@@ -36,6 +74,24 @@
   "minutes": 55,
   "summary": "◇ASEAN・クアッド会合 ◇原子力潜水艦は？ ◇ストーカー デジタル悪用 ◇山形発 未利用魚ラーメン ラーメンの年間消費額が４年連続日本一の山形市。低・未利用魚をだしに活用しようと試作、開発に取り組んできました。山形放送局の伊藤亮太アナウンサーが報告します。",
   "added": "2026-11-17T14:55:54.625Z"
+ },
+ {
+  "id": "08fd8c866da0",
+  "source": "yuyu",
+  "sourceName": "YUYUの日本語Podcast",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "culture"
+  ],
+  "title": "Vol.506 【深トーク】誰がために鐘は鳴るって話 (Japanese Radio for Listening practice)",
+  "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-506--Japanese-Radio-for-Listening-practice-e3shhir",
+  "audio": "https://anchor.fm/s/cda85d4/podcast/play/129598491/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-10-17%2Fd63c5b07-ef91-3651-ccac-36d10060412e.mp3",
+  "date": "2026-11-17T05:36:40.000Z",
+  "minutes": 36,
+  "summary": "💰Patreonのサポート(人´∀`)ｱﾘｶﾞﾄｰ♪ ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠…",
+  "added": "2026-11-17T23:11:39.788Z"
  },
  {
   "id": "8144b2a3e969",
