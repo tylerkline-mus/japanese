@@ -1,5 +1,62 @@
 [
  {
+  "id": "8144b2a3e969",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年11月17日午後01時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/6ccde63bd47012f8ec0e8c13dec615fc_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/6ccde63bd47012f8ec0e8c13dec615fc_64k.mp3",
+  "date": "2026-11-17T04:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-11-17T04:49:10.042Z"
+ },
+ {
+  "id": "8f74908a2229",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 正午のNHKニュース 2026年11月17日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/29f6f06b142ada30bd2c84fe90c891c4_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/29f6f06b142ada30bd2c84fe90c891c4_64k.mp3",
+  "date": "2026-11-17T03:15:00.000Z",
+  "minutes": 15,
+  "summary": "【主なニュース】▽トランプ大統領 アジア訪問出発 キム総書記と会談実現も焦点 ▽高市首相 今夜クアッド首脳会合 中国念頭に\"深刻懸念”表明へ ▽ロシア機と推定の航空機が領空侵犯 福岡 沖ノ島周辺 など ▽最新のニュースは「らじる★らじる」やポッドキャスト「ＮＨＫラジオニュース」からもお聴きいただけます",
+  "added": "2026-11-17T04:49:10.042Z"
+ },
+ {
+  "id": "29423313948d",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20261117 「海を越えるうなぎ文化」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/075d1d44434e3a47401a941274eb91a2_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/075d1d44434e3a47401a941274eb91a2_64k.mp3",
+  "date": "2026-11-17T03:00:00.000Z",
+  "minutes": 4,
+  "summary": "リポート：竹岡 直幸（ヨーロッパ総局） キャスター：上野 速人",
+  "added": "2026-11-17T04:49:09.855Z"
+ },
+ {
   "id": "20c8dc9add1c",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
