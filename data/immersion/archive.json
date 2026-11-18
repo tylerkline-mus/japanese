@@ -1,5 +1,62 @@
 [
  {
+  "id": "e03264486e31",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年11月18日午後01時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/b758a91da92b5a9d3464dba9c7991a8d_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/b758a91da92b5a9d3464dba9c7991a8d_64k.mp3",
+  "date": "2026-11-18T04:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-11-18T04:44:21.180Z"
+ },
+ {
+  "id": "479b77eb0ff8",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 正午のNHKニュース 2026年11月18日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/24a02aee0939d59291f72f10941fed3f_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/24a02aee0939d59291f72f10941fed3f_64k.mp3",
+  "date": "2026-11-18T03:15:00.000Z",
+  "minutes": 15,
+  "summary": "【主なニュース】▽日本の自動車業界 主要素材・部品の共通化で国際競争力強化へ ▽高市首相APECで訪中へ 習主席の対応は プーチン氏と接触を調整 ▽今夜APEC首脳会議始まる あすには米中ロの首脳会談も など ▽最新のニュースは「らじる★らじる」やポッドキャスト「ＮＨＫラジオニュース」からもお聴きいただけます",
+  "added": "2026-11-18T04:44:21.180Z"
+ },
+ {
+  "id": "be369ad1c014",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20261118「Ｆ１業界で活躍する日本人のチーム代表」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/86081fb550e853e4932aaa18401f1368_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/86081fb550e853e4932aaa18401f1368_64k.mp3",
+  "date": "2026-11-18T03:00:00.000Z",
+  "minutes": 4,
+  "summary": "リポート：甲木 智和（アジア総局） キャスター：上野 速人",
+  "added": "2026-11-18T04:44:20.927Z"
+ },
+ {
   "id": "a95ed1707937",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
