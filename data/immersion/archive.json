@@ -1,5 +1,62 @@
 [
  {
+  "id": "d4b11998b0ce",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年11月19日午後09時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/d9d987667c76dd40109f51a862397f6d_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/d9d987667c76dd40109f51a862397f6d_64k.mp3",
+  "date": "2026-11-19T12:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-11-19T12:13:50.609Z"
+ },
+ {
+  "id": "826ccfeed20c",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年11月19日午後08時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/5daf3ea0f904231e72552e8d0a3d9e4d_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/5daf3ea0f904231e72552e8d0a3d9e4d_64k.mp3",
+  "date": "2026-11-19T11:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-11-19T12:13:50.609Z"
+ },
+ {
+  "id": "2e53247e1474",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20261119 「トランプ政権が圧力 博物館はどうなる？」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/ad7504fb2da433e0a95422137a06a65b_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/ad7504fb2da433e0a95422137a06a65b_64k.mp3",
+  "date": "2026-11-19T03:00:00.000Z",
+  "minutes": 4,
+  "summary": "リポート：池田 麻由美（国際部） キャスター：上野 速人",
+  "added": "2026-11-19T12:13:50.228Z"
+ },
+ {
   "id": "7d75bdb400e9",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
