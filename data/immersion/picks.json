@@ -1,6 +1,231 @@
 {
   "weeks": [
     {
+      "week": "2026-11-23",
+      "note": "Short and finishable again: two Noriko stories (moving, and sushi), Teppei on the cold, one natural-speed chat, and NHK-FM for your own field.",
+      "picks": [
+        {
+          "id": "w2026-11-23-1",
+          "title": "ブリュッセルに引っ越しました（I moved to Brussels）",
+          "url": "https://podcasters.spotify.com/pod/show/nihongo-shortstory/episodes/I-moved-to-Brussels-e2scvqu",
+          "type": "listen",
+          "source": "Nihongo Short Story by Noriko",
+          "minutes": 2,
+          "level": 1,
+          "why": "Two minutes, from the one source you've already finished. A story about arriving somewhere new, in the week you leave one residency and head for the next.",
+          "connection": "Moving house means places, and places mean に vs で: where she lives (に) and what she does around town (で). That's Lesson 2, your next one to mark done.",
+          "listenFor": "Pause after every に or で that follows a place. Say which: a place she is or goes to (に), or a place where something happens (で)?",
+          "prep": [
+            {
+              "ja": "{引|ひ}っ{越|こ}す",
+              "en": "to move (house)"
+            },
+            {
+              "ja": "{住|す}む",
+              "en": "to live (somewhere)"
+            },
+            {
+              "ja": "{町|まち}",
+              "en": "town"
+            },
+            {
+              "ja": "{部屋|へや}",
+              "en": "room"
+            },
+            {
+              "ja": "{生活|せいかつ}",
+              "en": "daily life"
+            },
+            {
+              "ja": "{新|あたら}しい",
+              "en": "new"
+            }
+          ],
+          "tags": [
+            "learner",
+            "stories",
+            "travel"
+          ],
+          "fromArchive": "7db7a6238cbc"
+        },
+        {
+          "id": "w2026-11-23-2",
+          "title": "近所のスーパーに寿司コーナーができました ( A Sushi section come up at supermarket near my house )",
+          "url": "https://podcasters.spotify.com/pod/show/nihongo-shortstory/episodes/A-Sushi-section-come-up-at-supermarket-near-my-house-e28k5di",
+          "type": "listen",
+          "source": "Nihongo Short Story by Noriko",
+          "minutes": 3,
+          "level": 1,
+          "why": "Same voice, three minutes, and it's about food. Easy to finish twice: once cold, once with the transcript.",
+          "connection": "The title uses できる, the verb from Lesson 5, but in its other meaning: \"came into being, opened.\" Hearing both meanings in real speech is how できる stops being confusing.",
+          "listenFor": "Each time you hear できる (できます, できました), decide: is it \"can do\" or \"came into existence\"? Then count every に after a place.",
+          "prep": [
+            {
+              "ja": "{近所|きんじょ}",
+              "en": "neighbourhood"
+            },
+            {
+              "ja": "{出来|でき}る",
+              "en": "to be able to; to come into being"
+            },
+            {
+              "ja": "{寿司|すし}",
+              "en": "sushi"
+            },
+            {
+              "ja": "{魚|さかな}",
+              "en": "fish"
+            },
+            {
+              "ja": "{買|か}う",
+              "en": "to buy"
+            },
+            {
+              "ja": "{店|みせ}",
+              "en": "shop"
+            }
+          ],
+          "tags": [
+            "learner",
+            "stories",
+            "food"
+          ],
+          "fromArchive": "c8f5955e95c5"
+        },
+        {
+          "id": "w2026-11-23-3",
+          "title": "#1617「ちょっと寒い…」",
+          "url": "http://nihongoconteppei.com/2026/11/16/1617%e3%80%8c%e3%81%a1%e3%82%87%e3%81%a3%e3%81%a8%e5%af%92%e3%81%84-%e3%80%8d/",
+          "type": "listen",
+          "source": "Nihongo con Teppei (beginner)",
+          "minutes": 6,
+          "level": 1,
+          "why": "A short, slow monologue about the cold, for your last week of a northern winter. Teppei repeats himself on purpose, which is what lets you drop the subtitles.",
+          "connection": "Weather talk is the easiest small talk you'll have in January, at the inn, at the bar, with the driver from the station.",
+          "listenFor": "Listen for 〜ています. For each one, ask: is it happening right now (雪が降っています), or a state that's lasting (寒くなっています)?",
+          "prep": [
+            {
+              "ja": "{寒|さむ}い",
+              "en": "cold"
+            },
+            {
+              "ja": "{冬|ふゆ}",
+              "en": "winter"
+            },
+            {
+              "ja": "{雪|ゆき}",
+              "en": "snow"
+            },
+            {
+              "ja": "{北風|きたかぜ}",
+              "en": "north wind"
+            },
+            {
+              "ja": "{服|ふく}",
+              "en": "clothes"
+            },
+            {
+              "ja": "{天気|てんき}",
+              "en": "weather"
+            }
+          ],
+          "tags": [
+            "learner",
+            "monologue",
+            "daily life"
+          ],
+          "fromArchive": "5b5821030baf"
+        },
+        {
+          "id": "w2026-11-23-4",
+          "title": "#119 Small Happy Moments in Daily Life",
+          "url": "https://podcasters.spotify.com/pod/show/imari1/episodes/119-Small-Happy-Moments-in-Daily-Life-e3ejv96",
+          "type": "listen",
+          "source": "Japanese Real Conversation (Imari Radio)",
+          "minutes": 9,
+          "level": 3,
+          "why": "Natural speed, but a gentle everyday topic and under ten minutes. The free transcript makes a second listen easy. This is the stretch pick.",
+          "connection": "Small everyday moments are exactly what strangers talk about at a bar: the March goal.",
+          "listenFor": "Don't follow everything. Catch the moments she likes: listen for 〜が好き and 〜がうれしい, and note which thing sits before the が.",
+          "prep": [
+            {
+              "ja": "{毎日|まいにち}",
+              "en": "every day"
+            },
+            {
+              "ja": "{楽|たの}しい",
+              "en": "fun"
+            },
+            {
+              "ja": "うれしい",
+              "en": "happy, glad"
+            },
+            {
+              "ja": "{小|ちい}さい",
+              "en": "small"
+            },
+            {
+              "ja": "{朝|あさ}",
+              "en": "morning"
+            },
+            {
+              "ja": "{生活|せいかつ}",
+              "en": "daily life"
+            }
+          ],
+          "tags": [
+            "native",
+            "conversation",
+            "daily life"
+          ],
+          "fromArchive": "64acf52b3d4a"
+        },
+        {
+          "id": "w2026-11-23-5",
+          "title": "11月のTV&FMクラシック音楽番組情報一覧",
+          "url": "https://ebravo.jp/archives/216608",
+          "type": "listen",
+          "source": "NHK-FM 現代の音楽",
+          "minutes": 50,
+          "level": 4,
+          "why": "Your own field in Japanese. Find this Sunday's 現代の音楽 in the November listings; even ten minutes of a host talking about new music trains your ear for the words you'll use in your exhibition talk. NHK streams may be region-limited.",
+          "connection": "The vocabulary of your January exhibition talk and February concerts: 作曲家, 作品, 初演, 演奏.",
+          "listenFor": "Just the opening few minutes: the host introduces each piece as composer + の + title. Catch each composer's name and the です or でした that closes the introduction.",
+          "prep": [
+            {
+              "ja": "{作曲家|さっきょくか}",
+              "en": "composer"
+            },
+            {
+              "ja": "{作品|さくひん}",
+              "en": "work, piece"
+            },
+            {
+              "ja": "{初演|しょえん}",
+              "en": "premiere"
+            },
+            {
+              "ja": "{演奏|えんそう}",
+              "en": "performance"
+            },
+            {
+              "ja": "{曲|きょく}",
+              "en": "piece of music"
+            },
+            {
+              "ja": "{現代音楽|げんだいおんがく}",
+              "en": "contemporary classical music"
+            }
+          ],
+          "tags": [
+            "native",
+            "music",
+            "radio"
+          ]
+        }
+      ]
+    },
+    {
       "week": "2026-11-16",
       "note": "Short and finishable: a four-minute travel story, the next film episode, a podcaster planning a trip home, life in Kyushu, and part two of last week's concert broadcast.",
       "picks": [

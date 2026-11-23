@@ -536,6 +536,89 @@
         ]
       ],
       "why": "Sleeping is an action happening right now: ねる + 〜ている. Because it's an action, the place takes で. 家の前に猫がいます would be the other way to say it: just existing → に."
+    },
+    {
+      "id": "ti26",
+      "type": "choice",
+      "prompt": "すみません、この{席|せき}、＿＿か。",
+      "en": "Excuse me, is this seat free?",
+      "options": [
+        {
+          "text": "{空|あ}いています",
+          "verdict": "right",
+          "why": "空く is the change: a seat becomes free. 〜ている is the state it leaves behind: it's free right now. That's your question."
+        },
+        {
+          "text": "{空|あ}きます",
+          "verdict": "different",
+          "why": "\"Will it become free?\" You'd be asking whether someone is about to leave."
+        },
+        {
+          "text": "{空|あ}けます",
+          "verdict": "wrong",
+          "why": "空ける is the transitive partner: to clear something out. It's about someone doing the clearing, not the seat's state."
+        }
+      ],
+      "scene": "A crowded bar, one empty stool."
+    },
+    {
+      "id": "ti27",
+      "type": "choice",
+      "prompt": "{今|いま}、{仕事|しごと}で{日本|にほん}に＿＿。",
+      "en": "I'm in Japan for work right now.",
+      "options": [
+        {
+          "text": "{来|き}ています",
+          "verdict": "right",
+          "why": "来る is the arrival. 〜ている keeps the result: I came, and I'm still here. This is how people say \"I'm here (visiting).\""
+        },
+        {
+          "text": "{来|き}ます",
+          "verdict": "different",
+          "why": "\"I will come to Japan for work.\" A plan, not where you are now."
+        },
+        {
+          "text": "{来|き}ました",
+          "verdict": "different",
+          "why": "\"I came to Japan for work.\" True, but it reports the trip without saying you're still here. Natural as an answer to どうして日本に？"
+        }
+      ],
+      "scene": "Someone at the bar asks what brings you here."
+    },
+    {
+      "id": "ti28",
+      "type": "build",
+      "scene": "Your exhibition intro.",
+      "en": "Right now I'm writing a new piece in Itoshima.",
+      "tiles": [
+        "{今|いま}",
+        "{糸島|いとしま}",
+        "で",
+        "に",
+        "{新|あたら}しい{曲|きょく}",
+        "を",
+        "{書|か}いています",
+        "{書|か}きます"
+      ],
+      "answers": [
+        [
+          "{今|いま}",
+          "{糸島|いとしま}",
+          "で",
+          "{新|あたら}しい{曲|きょく}",
+          "を",
+          "{書|か}いています"
+        ],
+        [
+          "{糸島|いとしま}",
+          "で",
+          "{今|いま}",
+          "{新|あたら}しい{曲|きょく}",
+          "を",
+          "{書|か}いています"
+        ]
+      ],
+      "why": "The piece takes weeks and you're in the middle of it → 書いています. 書きます would be a plan or a habit. The town is where the work happens → で."
     }
   ]
 }

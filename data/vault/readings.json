@@ -1,6 +1,380 @@
 {
   "weeks": [
     {
+      "week": "2026-11-23",
+      "readings": [
+        {
+          "id": "r022-goodbye-village",
+          "title": "さようなら、{北|きた}の{村|むら}",
+          "titleEn": "Goodbye, northern village",
+          "kind": "Diary",
+          "tiers": [
+            "burned"
+          ],
+          "paragraphs": [
+            {
+              "ja": "{朝|あさ}、{外|そと}は{雨|あめ}でした。{空|そら}は{白|しろ}くて、{海|うみ}の{音|おと}が{大|おお}きかったです。",
+              "en": "In the morning it was raining. The sky was white, and the sea was loud."
+            },
+            {
+              "ja": "{雨|あめ}の{後|あと}、{村|むら}の{後|うし}ろの{山|やま}に{上|のぼ}りました。{上|うえ}から{村|むら}と{海|うみ}が{全部|ぜんぶ}{見|み}えました。",
+              "en": "After the rain, I climbed the hill behind the village. From the top I could see the whole village and the sea."
+            },
+            {
+              "ja": "{村|むら}の{店|みせ}で、{店|みせ}の{人|ひと}に「さようなら」と{言|い}いました。「また{来|き}てくださいね。」「はい、{必|かなら}ず！」",
+              "en": "At the village shop, I said goodbye to the shopkeeper. \"Come back again, okay?\" \"Yes, definitely!\""
+            },
+            {
+              "ja": "{家|いえ}に{帰|かえ}って、カバンに{服|ふく}と{本|ほん}とノートを{入|い}れました。",
+              "en": "I went home and put my clothes, books and notebooks in my bag."
+            },
+            {
+              "ja": "{明日|あした}の{朝|あさ}、{九時|くじ}のバスで{空港|くうこう}に{行|い}きます。{少|すこ}し{不安|ふあん}ですが、まあ、{大丈夫|だいじょうぶ}です。",
+              "en": "Tomorrow morning I'll take the nine o'clock bus to the airport. I'm a little nervous, but, well, it'll be fine."
+            },
+            {
+              "ja": "さようなら、{北|きた}の{村|むら}。{本当|ほんとう}にありがとう。",
+              "en": "Goodbye, northern village. Thank you, truly."
+            }
+          ],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "choice",
+              "prompt": "{雨|あめ}の{後|あと}、{何|なに}をしましたか。",
+              "en": "What did the writer do after the rain?",
+              "options": [
+                {
+                  "text": "{山|やま}に{上|のぼ}りました",
+                  "verdict": "right",
+                  "why": "「{村|むら}の{後|うし}ろの{山|やま}に{上|のぼ}りました」. 上る is climbing up something."
+                },
+                {
+                  "text": "{海|うみ}で{泳|およ}ぎました",
+                  "verdict": "wrong",
+                  "why": "Swimming isn't mentioned (and it's winter). They heard the sea and saw it from the top."
+                },
+                {
+                  "text": "{店|みせ}に{行|い}きました",
+                  "verdict": "different",
+                  "why": "They did go to the shop, but later, in paragraph 3. Right after the rain came the climb."
+                }
+              ]
+            },
+            {
+              "id": "q2",
+              "type": "choice",
+              "prompt": "{上|うえ}から{何|なに}が{見|み}えましたか。",
+              "en": "What could the writer see from the top?",
+              "options": [
+                {
+                  "text": "{村|むら}と{海|うみ}",
+                  "verdict": "right",
+                  "why": "「{村|むら}と{海|うみ}が{全部|ぜんぶ}{見|み}えました」. 見える: it came into view."
+                },
+                {
+                  "text": "{空港|くうこう}",
+                  "verdict": "wrong",
+                  "why": "The airport is tomorrow's bus trip, not the view."
+                },
+                {
+                  "text": "{白|しろ}い{空|そら}だけ",
+                  "verdict": "wrong",
+                  "why": "The sky was white in the morning, but from the top they saw the whole village and the sea."
+                }
+              ]
+            },
+            {
+              "id": "q3",
+              "type": "choice",
+              "prompt": "{店|みせ}の{人|ひと}は{何|なん}と{言|い}いましたか。",
+              "en": "What did the shopkeeper say?",
+              "options": [
+                {
+                  "text": "「また{来|き}てくださいね。」",
+                  "verdict": "right",
+                  "why": "That's the shopkeeper's line. ね makes it warm: \"okay?\""
+                },
+                {
+                  "text": "「さようなら。」",
+                  "verdict": "different",
+                  "why": "That's what the writer said to the shopkeeper."
+                },
+                {
+                  "text": "「{大丈夫|だいじょうぶ}です。」",
+                  "verdict": "wrong",
+                  "why": "The writer says that to themself at the end of paragraph 5."
+                }
+              ]
+            },
+            {
+              "id": "q4",
+              "type": "choice",
+              "prompt": "{明日|あした}、{何|なに}で{空港|くうこう}に{行|い}きますか。",
+              "en": "How is the writer getting to the airport tomorrow?",
+              "options": [
+                {
+                  "text": "バス",
+                  "verdict": "right",
+                  "why": "「{九時|くじ}のバスで」. で marks the means."
+                },
+                {
+                  "text": "タクシー",
+                  "verdict": "wrong",
+                  "why": "No taxi: it's the nine o'clock bus."
+                },
+                {
+                  "text": "{車|くるま}",
+                  "verdict": "wrong",
+                  "why": "Nobody's driving them; it's the bus."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "r023-music-program",
+          "title": "{音楽|おんがく}の{番組|ばんぐみ}",
+          "titleEn": "The music program",
+          "kind": "Short dialogue",
+          "tiers": [
+            "enlightened"
+          ],
+          "paragraphs": [
+            {
+              "ja": "「お{仕事|しごと}は{何|なん}ですか。」「{作曲家|さっきょくか}です。それと、ラジオで{音楽|おんがく}の{番組|ばんぐみ}をしています。」",
+              "en": "\"What do you do?\" \"I'm a composer. And I do a music program on the radio.\""
+            },
+            {
+              "ja": "「へえ、{楽|たの}しいですね！どんな{音楽|おんがく}ですか。」「{新|あたら}しいクラシックです。{作曲家|さっきょくか}と{話|はな}す{時間|じかん}もあります。」",
+              "en": "\"Oh, that sounds fun! What kind of music?\" \"New classical music. There's also time where I talk with composers.\""
+            },
+            {
+              "ja": "「{番組|ばんぐみ}は{毎日|まいにち}ですか。」「いいえ。でも、{毎月|まいつき}{新|あたら}しい{作曲家|さっきょくか}と{話|はな}します。その{会話|かいわ}が{一番|いちばん}{楽|たの}しいです。」",
+              "en": "\"Is the program every day?\" \"No. But every month I talk with a new composer. Those conversations are the most fun part.\""
+            },
+            {
+              "ja": "「{日本|にほん}の{音楽|おんがく}もかけますか。」「はい、かけます。{日本|にほん}の{作曲家|さっきょくか}の{曲|きょく}が{大好|だいす}きです。」",
+              "en": "\"Do you play Japanese music too?\" \"Yes, I do. I love pieces by Japanese composers.\""
+            },
+            {
+              "ja": "「じゃあ、{番組|ばんぐみ}の{名前|なまえ}を{教|おし}えてください。」「はい。えっと、ここに{書|か}きますね。」",
+              "en": "\"Then tell me the program's name.\" \"Sure. Um, I'll write it here.\""
+            },
+            {
+              "ja": "{帰|かえ}りの{電車|でんしゃ}で、{窓|まど}の{外|そと}の{雲|くも}を{見|み}ました。{日本語|にほんご}の{会話|かいわ}、{本当|ほんとう}に{楽|たの}しかったです。",
+              "en": "On the train home, I watched the clouds outside the window. That conversation in Japanese was really fun."
+            }
+          ],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "choice",
+              "prompt": "この{人|ひと}の{仕事|しごと}は{何|なん}ですか。",
+              "en": "What does this person do?",
+              "options": [
+                {
+                  "text": "{作曲家|さっきょくか}と、ラジオの{番組|ばんぐみ}",
+                  "verdict": "right",
+                  "why": "「{作曲家|さっきょくか}です。それと、ラジオで…{番組|ばんぐみ}をしています」. それと adds a second thing."
+                },
+                {
+                  "text": "{医者|いしゃ}",
+                  "verdict": "wrong",
+                  "why": "医者 is a doctor. Not mentioned."
+                },
+                {
+                  "text": "ラジオだけ",
+                  "verdict": "different",
+                  "why": "Half of it. The first answer was 作曲家です; the radio comes after それと."
+                }
+              ]
+            },
+            {
+              "id": "q2",
+              "type": "choice",
+              "prompt": "{番組|ばんぐみ}で、{何|なに}が{一番|いちばん}{楽|たの}しいですか。",
+              "en": "What's the most fun part of the program?",
+              "options": [
+                {
+                  "text": "{作曲家|さっきょくか}との{会話|かいわ}",
+                  "verdict": "right",
+                  "why": "「その{会話|かいわ}が{一番|いちばん}{楽|たの}しいです」: the monthly talk with a new composer."
+                },
+                {
+                  "text": "{日本|にほん}の{音楽|おんがく}",
+                  "verdict": "different",
+                  "why": "They love Japanese composers' pieces (paragraph 4), but the most fun part is the conversation."
+                },
+                {
+                  "text": "{電話|でんわ}",
+                  "verdict": "wrong",
+                  "why": "No phone calls in this story."
+                }
+              ]
+            },
+            {
+              "id": "q3",
+              "type": "choice",
+              "prompt": "{帰|かえ}りの{電車|でんしゃ}で、{何|なに}を{見|み}ましたか。",
+              "en": "What did they look at on the train home?",
+              "options": [
+                {
+                  "text": "{雲|くも}",
+                  "verdict": "right",
+                  "why": "「{窓|まど}の{外|そと}の{雲|くも}を{見|み}ました」."
+                },
+                {
+                  "text": "{番組|ばんぐみ}の{名前|なまえ}",
+                  "verdict": "different",
+                  "why": "That got written down during the conversation, not on the train."
+                },
+                {
+                  "text": "{海|うみ}",
+                  "verdict": "wrong",
+                  "why": "Not this time: clouds outside the window."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "r024-harbor-diner",
+          "title": "{港|みなと}の{食堂|しょくどう}",
+          "titleEn": "The harbor diner",
+          "kind": "Menu",
+          "tiers": [
+            "master",
+            "guru"
+          ],
+          "paragraphs": [
+            {
+              "ja": "{港|みなと}の{食堂|しょくどう}　{平日|へいじつ}：{十一時|じゅういちじ}〜{二時|にじ}、{夕方|ゆうがた}{五時|ごじ}〜{八時|はちじ}",
+              "en": "Harbor diner. Weekdays: 11 to 2, and evenings 5 to 8."
+            },
+            {
+              "ja": "この{辺|へん}の{名物|めいぶつ}：{貝|かい}のみそしる　{三百円|さんびゃくえん}",
+              "en": "Local specialty: shellfish miso soup, ¥300."
+            },
+            {
+              "ja": "{今日|きょう}の{定食|ていしょく}　{九百円|きゅうひゃくえん}。{魚|さかな}は{毎朝|まいあさ}、{近|ちか}くの{魚屋|さかなや}から{来|き}ます。",
+              "en": "Today's set meal: ¥900. The fish comes every morning from the fish shop nearby."
+            },
+            {
+              "ja": "{和室|わしつ}もあります。{六人|ろくにん}{以上|いじょう}は、{必|かなら}ず{電話|でんわ}をしてください。",
+              "en": "We also have a tatami room. Groups of six or more, please be sure to call ahead."
+            },
+            {
+              "ja": "{代金|だいきん}は{食事|しょくじ}の{後|あと}です。{現金|げんきん}だけです。",
+              "en": "You pay after your meal. Cash only."
+            },
+            {
+              "ja": "{駅|えき}から{歩|ある}いて{大体|だいたい}{十分|じゅっぷん}。{東口|ひがしぐち}を{出|で}て、{茶屋|ちゃや}の{角|かど}を{右|みぎ}です。",
+              "en": "About ten minutes' walk from the station. Leave by the east exit and turn right at the corner by the tea shop."
+            },
+            {
+              "ja": "{店|みせ}の{人|ひと}より：{寒|さむ}い{日|ひ}は、やっぱり{貝|かい}のみそしるですよ。ぜひどうぞ！",
+              "en": "From the staff: on a cold day, it really has to be the shellfish miso soup. Do try it!"
+            }
+          ],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "choice",
+              "prompt": "{夕方|ゆうがた}は{何時|なんじ}からですか。",
+              "en": "What time does it open in the evening?",
+              "options": [
+                {
+                  "text": "{五時|ごじ}",
+                  "verdict": "right",
+                  "why": "「{夕方|ゆうがた}{五時|ごじ}〜{八時|はちじ}」: from five."
+                },
+                {
+                  "text": "{十一時|じゅういちじ}",
+                  "verdict": "different",
+                  "why": "That's when lunch opens."
+                },
+                {
+                  "text": "{八時|はちじ}",
+                  "verdict": "wrong",
+                  "why": "That's when it closes."
+                }
+              ]
+            },
+            {
+              "id": "q2",
+              "type": "choice",
+              "prompt": "{六人|ろくにん}で{行|い}きます。{先|さき}に{何|なに}をしますか。",
+              "en": "You're going as a group of six. What do you do first?",
+              "options": [
+                {
+                  "text": "{電話|でんわ}をします",
+                  "verdict": "right",
+                  "why": "「{六人|ろくにん}{以上|いじょう}は、{必|かなら}ず{電話|でんわ}をしてください」. 以上 includes six."
+                },
+                {
+                  "text": "{何|なに}もしません",
+                  "verdict": "wrong",
+                  "why": "以上 means six or more, so six counts. 必ず: be sure to call."
+                },
+                {
+                  "text": "{魚屋|さかなや}に{行|い}きます",
+                  "verdict": "wrong",
+                  "why": "The fish shop is where the diner's fish comes from, not where you book."
+                }
+              ]
+            },
+            {
+              "id": "q3",
+              "type": "choice",
+              "prompt": "{代金|だいきん}は{何|なに}で{払|はら}いますか。",
+              "en": "How do you pay?",
+              "options": [
+                {
+                  "text": "{現金|げんきん}",
+                  "verdict": "right",
+                  "why": "「{現金|げんきん}だけです」: cash only."
+                },
+                {
+                  "text": "カード",
+                  "verdict": "wrong",
+                  "why": "だけ means \"only\": cash and nothing else."
+                },
+                {
+                  "text": "{食事|しょくじ}の{前|まえ}に",
+                  "verdict": "wrong",
+                  "why": "That's when, not how, and it's after the meal anyway: 「{食事|しょくじ}の{後|あと}です」."
+                }
+              ]
+            },
+            {
+              "id": "q4",
+              "type": "choice",
+              "prompt": "{店|みせ}の{人|ひと}のおすすめは{何|なん}ですか。",
+              "en": "What does the staff recommend?",
+              "options": [
+                {
+                  "text": "{貝|かい}のみそしる",
+                  "verdict": "right",
+                  "why": "やっぱり + ですよ + ぜひ: they really want you to try the shellfish soup on a cold day."
+                },
+                {
+                  "text": "{今日|きょう}の{定食|ていしょく}",
+                  "verdict": "different",
+                  "why": "It's on the menu, but the staff note at the bottom pushes the soup."
+                },
+                {
+                  "text": "お{茶|ちゃ}",
+                  "verdict": "wrong",
+                  "why": "The 茶屋 (tea shop) on the corner is a landmark for the directions, not a recommendation."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "week": "2026-11-16",
       "readings": [
         {

@@ -1241,6 +1241,186 @@
         "ja": "この{作曲家|さっきょくか}の«{考|かんが}え{方|かた}»はおもしろいです。",
         "en": "This composer's way of thinking is interesting."
       }
+    ],
+    "下さい": [
+      {
+        "ja": "お{水|みず}を«{下|くだ}さい»。",
+        "en": "Water, please."
+      }
+    ],
+    "二人": [
+      {
+        "ja": "«{二人|ふたり}»です。カウンターでもいいですか。",
+        "en": "Two of us. Is the counter okay?"
+      }
+    ],
+    "一月": [
+      {
+        "ja": "«{一月|いちがつ}»は{九州|きゅうしゅう}で{曲|きょく}を{書|か}きます。",
+        "en": "In January I'll be writing music in Kyushu."
+      }
+    ],
+    "二月": [
+      {
+        "ja": "«{二月|にがつ}»に{東京|とうきょう}でコンサートがあります。",
+        "en": "There's a concert in Tokyo in February."
+      }
+    ],
+    "冬": [
+      {
+        "ja": "{北|きた}の«{冬|ふゆ}»は{朝|あさ}も{暗|くら}いです。",
+        "en": "In the northern winter, even the mornings are dark."
+      }
+    ],
+    "今日": [
+      {
+        "ja": "«{今日|きょう}»はいい{天気|てんき}ですね。",
+        "en": "Nice weather today, isn't it?"
+      }
+    ],
+    "音": [
+      {
+        "ja": "この{駅|えき}の«{音|おと}»が{好|す}きです。",
+        "en": "I like the sound of this station."
+      }
+    ],
+    "青い": [
+      {
+        "ja": "{糸島|いとしま}の{海|うみ}は«{青|あお}い»です。",
+        "en": "The sea at Itoshima is blue."
+      }
+    ],
+    "白い": [
+      {
+        "ja": "«{白|しろ}い»{紙|かみ}に{曲|きょく}を{書|か}きます。",
+        "en": "I write music on white paper."
+      }
+    ],
+    "赤い": [
+      {
+        "ja": "あの«{赤|あか}い»{電車|でんしゃ}に{乗|の}りましょう。",
+        "en": "Let's take that red train."
+      }
+    ],
+    "車": [
+      {
+        "ja": "{駅|えき}から«{車|くるま}»で{十分|じゅっぷん}です。",
+        "en": "It's ten minutes by car from the station."
+      }
+    ],
+    "タクシー": [
+      {
+        "ja": "{雨|あめ}ですね。«タクシー»で{行|い}きましょう。",
+        "en": "It's raining. Let's take a taxi."
+      }
+    ],
+    "お茶": [
+      {
+        "ja": "«お{茶|ちゃ}»をもう{一杯|いっぱい}ください。",
+        "en": "Another cup of tea, please."
+      }
+    ],
+    "コンビニ": [
+      {
+        "ja": "{駅|えき}の{近|ちか}くに«コンビニ»はありますか。",
+        "en": "Is there a convenience store near the station?"
+      }
+    ],
+    "米": [
+      {
+        "ja": "この{辺|へん}の«{米|こめ}»はおいしいです。",
+        "en": "The rice around here is delicious."
+      }
+    ],
+    "家": [
+      {
+        "ja": "{今夜|こんや}は{友達|ともだち}の«{家|いえ}»で{晩|ばん}ごはんを{食|た}べます。",
+        "en": "Tonight I'm having dinner at a friend's house."
+      }
+    ],
+    "本当": [
+      {
+        "ja": "«{本当|ほんとう}»ですか？すごいですね！",
+        "en": "Really? That's amazing!"
+      }
+    ],
+    "自分": [
+      {
+        "ja": "これは«{自分|じぶん}»で{撮|と}った{写真|しゃしん}です。",
+        "en": "This is a photo I took myself."
+      }
+    ],
+    "知る": [
+      {
+        "ja": "その{店|みせ}を«{知|し}って»いますか。",
+        "en": "Do you know that restaurant?"
+      }
+    ],
+    "見る": [
+      {
+        "ja": "{毎朝|まいあさ}、{窓|まど}から{海|うみ}を«{見|み}»ます。",
+        "en": "Every morning I look at the sea from the window."
+      }
+    ],
+    "取る": [
+      {
+        "ja": "すみません、{塩|しお}を«{取|と}って»ください。",
+        "en": "Excuse me, could you pass the salt?"
+      }
+    ],
+    "入れる": [
+      {
+        "ja": "カバンに{楽譜|がくふ}を«{入|い}れ»ました。",
+        "en": "I put the score in my bag."
+      }
+    ],
+    "早く": [
+      {
+        "ja": "«{早|はや}く»{駅|えき}に{行|い}きましょう。",
+        "en": "Let's get to the station early."
+      }
+    ],
+    "朝": [
+      {
+        "ja": "«{朝|あさ}»の{海|うみ}はとても{静|しず}かです。",
+        "en": "The sea is very quiet in the morning."
+      }
+    ],
+    "不安": [
+      {
+        "ja": "{一人|ひとり}の{旅|たび}は{少|すこ}し«{不安|ふあん}»です。",
+        "en": "Traveling alone makes me a little nervous."
+      }
+    ],
+    "文化": [
+      {
+        "ja": "{日本|にほん}の«{文化|ぶんか}»をもっと{知|し}りたいです。",
+        "en": "I want to know more about Japanese culture."
+      }
+    ],
+    "色": [
+      {
+        "ja": "この{写真|しゃしん}の«{色|いろ}»がきれいですね。",
+        "en": "The colors in this photo are lovely."
+      }
+    ],
+    "すみません": [
+      {
+        "ja": "«すみません»、{南口|みなみぐち}はどこですか。",
+        "en": "Excuse me, where's the south exit?"
+      }
+    ],
+    "何回": [
+      {
+        "ja": "この{曲|きょく}は«{何回|なんかい}»も{聞|き}きました。",
+        "en": "I've listened to this piece many times."
+      }
+    ],
+    "一時": [
+      {
+        "ja": "«{一時|いちじ}»に{駅|えき}の{前|まえ}で{会|あ}いましょう。",
+        "en": "Let's meet in front of the station at one."
+      }
     ]
   }
 }

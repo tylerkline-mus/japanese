@@ -699,6 +699,78 @@
         ]
       ],
       "why": "Two で's doing two jobs: 北の町で is where the work happens, 一人で is how (on your own). The order of the two chunks can swap. に doesn't fit either: you're not just existing in the town, you're doing something there."
+    },
+    {
+      "id": "nd34",
+      "type": "choice",
+      "prompt": "カウンター＿すわってもいいですか。",
+      "en": "May I sit at the counter?",
+      "options": [
+        {
+          "text": "に",
+          "verdict": "right",
+          "why": "すわる is landing on a spot: you end up at the counter. The place you arrive at or settle onto takes に, like 部屋に入ります."
+        },
+        {
+          "text": "で",
+          "verdict": "wrong",
+          "why": "で would make the counter the stage for some other action. カウンターで飲みます works (drinking happens there), but sitting down is arriving at a spot → に."
+        }
+      ],
+      "scene": "Walking into a small bar."
+    },
+    {
+      "id": "nd35",
+      "type": "choice",
+      "prompt": "{明日|あした}＿{熊本|くまもと}に{行|い}きます。",
+      "en": "I'm going to Kumamoto tomorrow.",
+      "options": [
+        {
+          "text": "（なし）",
+          "verdict": "right",
+          "why": "明日, 今日, 来週 are relative times: they move with today, so they take no particle. Just 明日熊本に行きます."
+        },
+        {
+          "text": "に",
+          "verdict": "wrong",
+          "why": "に marks fixed points on the clock or calendar: 七時に, 一月に. 明日に sounds off to a native ear."
+        },
+        {
+          "text": "で",
+          "verdict": "wrong",
+          "why": "で marks where something happens or how. Tomorrow isn't a place or a means."
+        },
+        {
+          "text": "は",
+          "verdict": "different",
+          "why": "明日は熊本に行きます is fine too: it makes tomorrow the topic (\"as for tomorrow\"), often in contrast with today."
+        }
+      ],
+      "scene": "Telling the studio your travel plan."
+    },
+    {
+      "id": "nd36",
+      "type": "build",
+      "scene": "Telling someone about your January show.",
+      "en": "The exhibition is at the studio in Itoshima.",
+      "tiles": [
+        "{展示|てんじ}",
+        "は",
+        "{糸島|いとしま}のスタジオ",
+        "で",
+        "に",
+        "あります"
+      ],
+      "answers": [
+        [
+          "{展示|てんじ}",
+          "は",
+          "{糸島|いとしま}のスタジオ",
+          "で",
+          "あります"
+        ]
+      ],
+      "why": "The trap: あります usually takes に (スタンプはあそこにあります). But an exhibition isn't an object sitting somewhere; it's an event that takes place. Events take で even with あります, like コンサートは東京であります."
     }
   ]
 }

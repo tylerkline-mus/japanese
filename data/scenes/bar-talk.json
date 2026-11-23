@@ -1,0 +1,234 @@
+{
+  "id": "bar-talk",
+  "title": "バーで",
+  "titleEn": "At the bar",
+  "situation": "Sitting at a small bar on your own: ordering a drink, then talking with the person on the next stool.",
+  "when": "2027-01-05",
+  "register": [
+    "Bartenders and neighbours often switch to casual Japanese with you (どこから来たの？). Stay polite: from a visitor it sounds friendly, not stiff.",
+    "The conversation usually starts with them, and nearly always with どちらから? Your About me lines are your opening move.",
+    "Asking one question back (お仕事は？, よく来ますか？) is what turns an exchange into a conversation."
+  ],
+  "vocab": [
+    {
+      "id": "kanpai",
+      "ja": "{乾杯|かんぱい}",
+      "en": "cheers!",
+      "note": "Wait for it before your first sip when you're with others."
+    },
+    {
+      "id": "ippai",
+      "ja": "{一杯|いっぱい}",
+      "en": "one glass, one drink",
+      "note": "もう一杯 = one more. Also means \"full\" (いっぱい) in other contexts."
+    },
+    {
+      "id": "seki",
+      "ja": "{席|せき}",
+      "en": "seat"
+    },
+    {
+      "id": "nihonshu",
+      "ja": "{日本酒|にほんしゅ}",
+      "en": "sake",
+      "note": "お酒 can mean any alcohol; 日本酒 is specifically rice sake."
+    },
+    {
+      "id": "tsukau",
+      "ja": "{使|つか}う",
+      "en": "to use",
+      "note": "Potential: 使える, \"can use\" (カードが使えますか)."
+    },
+    {
+      "id": "hayai",
+      "ja": "{速|はや}い",
+      "en": "fast (speed)",
+      "note": "早い (which you know) is early; 速い is fast. Same sound."
+    },
+    {
+      "id": "yoku",
+      "ja": "よく",
+      "en": "often; well",
+      "note": "よく来ますか = Do you come here often?"
+    }
+  ],
+  "tiers": {
+    "survival": {
+      "requires": [],
+      "dialogue": [
+        {
+          "who": "them",
+          "ja": "いらっしゃいませ。お{一人|ひとり}ですか。",
+          "en": "Welcome. Just one?"
+        },
+        {
+          "who": "me",
+          "ja": "はい、{一人|ひとり}です。",
+          "en": "Yes, just me."
+        },
+        {
+          "who": "them",
+          "ja": "{何|なに}にしますか。",
+          "en": "What'll you have?"
+        },
+        {
+          "who": "me",
+          "ja": "えっと、おすすめは{何|なん}ですか。",
+          "en": "Um, what do you recommend?"
+        },
+        {
+          "who": "them",
+          "ja": "このお{酒|さけ}がおすすめですよ。{九州|きゅうしゅう}のお{酒|さけ}です。",
+          "en": "I'd recommend this one. It's from Kyushu."
+        },
+        {
+          "who": "me",
+          "ja": "じゃあ、それをお{願|ねが}いします。",
+          "en": "Then I'll have that, please."
+        },
+        {
+          "who": "them",
+          "ja": "どちらからですか。",
+          "en": "Where are you from?",
+          "note": "Often from the person next to you, not the bartender."
+        },
+        {
+          "who": "me",
+          "ja": "アメリカのケンタッキーからです。ケンタッキーはバーボンが{有名|ゆうめい}です。",
+          "en": "Kentucky, in the US. Kentucky's famous for bourbon."
+        },
+        {
+          "who": "them",
+          "ja": "へえ、いいですね！{乾杯|かんぱい}しましょう。",
+          "en": "Oh, nice! Let's have a toast."
+        },
+        {
+          "who": "me",
+          "ja": "{乾杯|かんぱい}！",
+          "en": "Cheers!"
+        }
+      ],
+      "phrases": [
+        {
+          "ja": "これ、おいしいですね。",
+          "en": "This is good, isn't it?",
+          "note": "The easiest way to start talking to the person next to you."
+        },
+        {
+          "ja": "もう{一杯|いっぱい}お{願|ねが}いします。",
+          "en": "One more, please."
+        },
+        {
+          "ja": "お{会計|かいけい}お{願|ねが}いします。",
+          "en": "The check, please."
+        },
+        {
+          "ja": "これは{日本語|にほんご}で{何|なん}ですか。",
+          "en": "What's this called in Japanese?",
+          "note": "Pointing at a bottle works. People like teaching you the name."
+        }
+      ]
+    },
+    "natural": {
+      "requires": [
+        "01-wa-ga",
+        "03-te-iru",
+        "05-potential"
+      ],
+      "dialogue": [
+        {
+          "who": "me",
+          "ja": "すみません、この{席|せき}、{空|あ}いていますか。",
+          "en": "Excuse me, is this seat free?",
+          "note": "空く + ている: it became free and is free now (Lesson 3)."
+        },
+        {
+          "who": "them",
+          "ja": "ええ、どうぞ。",
+          "en": "Sure, go ahead."
+        },
+        {
+          "who": "them",
+          "ja": "{日本語|にほんご}、{話|はな}せるんですか。",
+          "en": "You speak Japanese?"
+        },
+        {
+          "who": "me",
+          "ja": "{少|すこ}しだけ{話|はな}せます。でも、{速|はや}い{日本語|にほんご}はまだよく{分|わ}かりません。",
+          "en": "Just a little. But I still can't really follow fast Japanese.",
+          "note": "分かる has no potential form: it already means \"can understand\" (Lesson 5)."
+        },
+        {
+          "who": "them",
+          "ja": "いえいえ、{上手|じょうず}ですよ。{旅行|りょこう}ですか。",
+          "en": "Oh no, you're good. Are you here on holiday?"
+        },
+        {
+          "who": "me",
+          "ja": "いいえ、{今|いま}、{仕事|しごと}で{日本|にほん}に{来|き}ています。{作曲家|さっきょくか}です。",
+          "en": "No, I'm here for work. I'm a composer.",
+          "note": "来ています: I came and I'm still here (Lesson 3)."
+        },
+        {
+          "who": "them",
+          "ja": "へえ、すごい！どんな{音楽|おんがく}ですか。",
+          "en": "Wow! What kind of music?"
+        },
+        {
+          "who": "me",
+          "ja": "{現代音楽|げんだいおんがく}です。{今|いま}は{糸島|いとしま}で{新|あたら}しい{曲|きょく}を{書|か}いています。",
+          "en": "Contemporary classical. Right now I'm writing a new piece in Itoshima."
+        },
+        {
+          "who": "them",
+          "ja": "{糸島|いとしま}！{魚|さかな}がおいしいでしょう。",
+          "en": "Itoshima! The fish must be great."
+        },
+        {
+          "who": "me",
+          "ja": "そうなんですよ。やっぱり{魚|さかな}が{一番|いちばん}です。",
+          "en": "It really is. The fish is the best, no question.",
+          "note": "そうなんですよ agrees and invites more; やっぱり = \"just as you'd expect.\""
+        },
+        {
+          "who": "them",
+          "ja": "お{酒|さけ}は{何|なに}が{好|す}きですか。",
+          "en": "What do you like to drink?"
+        },
+        {
+          "who": "me",
+          "ja": "{私|わたし}はバーボンが{好|す}きです。ケンタッキー{出身|しゅっしん}ですから。",
+          "en": "I'm a bourbon person. I'm from Kentucky, after all.",
+          "note": "は for you (the topic), が for what you like (Lesson 1)."
+        },
+        {
+          "who": "me",
+          "ja": "よくここに{来|き}ますか。",
+          "en": "Do you come here often?",
+          "note": "One question back keeps it going."
+        }
+      ],
+      "phrases": [
+        {
+          "ja": "{日本酒|にほんしゅ}は{少|すこ}し{飲|の}めます。",
+          "en": "I can drink a little sake.",
+          "note": "飲む → 飲める (Lesson 5). The answer to 飲めますか?"
+        },
+        {
+          "ja": "ここでカードが{使|つか}えますか。",
+          "en": "Can I pay by card here?"
+        },
+        {
+          "ja": "すみません、もう{少|すこ}しゆっくり{話|はな}してもらえますか。",
+          "en": "Sorry, could you speak a bit more slowly?",
+          "note": "〜てもらえますか: \"could I have you…\", the softest everyday request. Learn it as a set phrase for now."
+        },
+        {
+          "ja": "{今日|きょう}はいい{夜|よる}ですね。",
+          "en": "It's been a good night, hasn't it?",
+          "note": "A warm way to wrap up before you leave."
+        }
+      ]
+    }
+  }
+}

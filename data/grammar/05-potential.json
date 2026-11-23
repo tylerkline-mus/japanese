@@ -550,6 +550,77 @@
         ]
       ],
       "why": "話す → 話せる (う-verb: change the last sound to the え-row, add る). With a potential verb the thing you can do is usually が. は works too and adds a little modesty: \"Japanese, I can manage a bit (of).\""
+    },
+    {
+      "id": "pt24",
+      "type": "choice",
+      "prompt": "すみません、ここでカードが＿＿か。",
+      "en": "Excuse me, can I pay by card here?",
+      "options": [
+        {
+          "text": "{使|つか}えます",
+          "verdict": "right",
+          "why": "使う → 使える. With the potential, the thing becomes が: カードが使えます."
+        },
+        {
+          "text": "{使|つか}います",
+          "verdict": "different",
+          "why": "\"Do you use cards here?\" Asking about the shop's habits, not whether you can pay with one."
+        },
+        {
+          "text": "{使|つか}われます",
+          "verdict": "different",
+          "why": "The passive: \"Are cards used here?\" Grammatical, but it sounds like a survey question, not someone about to pay."
+        }
+      ],
+      "scene": "Paying at a small bar."
+    },
+    {
+      "id": "pt25",
+      "type": "choice",
+      "prompt": "{速|はや}い{日本語|にほんご}は、まだよく＿＿。",
+      "en": "I still can't really follow fast Japanese.",
+      "options": [
+        {
+          "text": "{分|わ}かりません",
+          "verdict": "right",
+          "why": "分かる already contains \"can\": it means \"be clear to me.\" So it has no potential form. The negative is just 分かりません."
+        },
+        {
+          "text": "{分|わ}かれません",
+          "verdict": "different",
+          "why": "分かれる is a different verb: to split up. \"Fast Japanese doesn't split.\""
+        },
+        {
+          "text": "{分|わ}かられません",
+          "verdict": "wrong",
+          "why": "There's no such form. 分かる never takes 〜られる."
+        }
+      ],
+      "scene": "Someone talks to you a bit too quickly."
+    },
+    {
+      "id": "pt26",
+      "type": "build",
+      "scene": "Someone offers to pour you sake.",
+      "en": "I can drink a little sake.",
+      "tiles": [
+        "{日本酒|にほんしゅ}",
+        "は",
+        "を",
+        "{少|すこ}し",
+        "{飲|の}めます",
+        "{飲|の}みます"
+      ],
+      "answers": [
+        [
+          "{日本酒|にほんしゅ}",
+          "は",
+          "{少|すこ}し",
+          "{飲|の}めます"
+        ]
+      ],
+      "why": "The question you'll get is 飲めますか? (can you drink?), so answer in the same form: 飲む → 飲めます. 飲みます would just say you drink some. は makes sake the topic; を usually drops away with the potential."
     }
   ]
 }

@@ -93,6 +93,17 @@
         "en": "You can listen to Japanese radio with this app."
       },
       "why": "聞こえる = sound reaches your ears whether you try or not. 聞ける = you're able to listen if you choose to: you have access, permission, a chance. Same split as 見える vs 見られる."
+    },
+    {
+      "a": {
+        "ja": "この{漢字|かんじ}が{読|よ}めます。",
+        "en": "I can read this kanji."
+      },
+      "b": {
+        "ja": "この{漢字|かんじ}が{分|わ}かります。",
+        "en": "I know (understand) this kanji."
+      },
+      "why": "**分かる has no potential form, because it already means \"can.\"** It describes something being clear to you, so it already takes が, like a potential. 読む is an action you do, so it needs 読める to become \"can read.\" When you can't follow, say 分かりません, never 分かれません (that's 分かれる, \"to split\")."
     }
   ],
   "exercises": [

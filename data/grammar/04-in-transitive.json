@@ -558,6 +558,115 @@
         ]
       ],
       "why": "出る is the \"it happens\" verb, but it still takes を for the place you leave: 家を出る, ホテルを出る. That を marks the starting point, not an object. 出します would be taking something out, and ホテルが出ます would mean the hotel leaves."
+    },
+    {
+      "id": "it25",
+      "type": "choice",
+      "prompt": "すみません、メニューを＿＿ください。",
+      "en": "Excuse me, could you show me the menu?",
+      "options": [
+        {
+          "text": "{見|み}せて",
+          "verdict": "right",
+          "why": "You want the other person to make you see it → 見せる, \"show.\" 見せる = make someone see."
+        },
+        {
+          "text": "{見|み}て",
+          "verdict": "different",
+          "why": "\"Please look at the menu.\" You'd be telling the staff to read it themselves."
+        },
+        {
+          "text": "{見|み}えて",
+          "verdict": "wrong",
+          "why": "見える is \"be visible\": it happens on its own and takes が. You can't ask for it with を…ください."
+        }
+      ],
+      "scene": "At a small restaurant."
+    },
+    {
+      "id": "it26",
+      "type": "choice",
+      "prompt": "{次|つぎ}の{電車|でんしゃ}は{何時|なんじ}に＿＿か。",
+      "en": "What time does the next train leave?",
+      "options": [
+        {
+          "text": "{出|で}ます",
+          "verdict": "right",
+          "why": "The train leaves → 出る, the intransitive: it goes out, nobody puts it out."
+        },
+        {
+          "text": "{出|で}かけます",
+          "verdict": "wrong",
+          "why": "出かける is a person heading out (on an outing, an errand). Trains don't go out for the day."
+        },
+        {
+          "text": "{出|だ}します",
+          "verdict": "wrong",
+          "why": "出す is transitive: to put something out or send it. \"What time does the train put out (something)?\""
+        }
+      ],
+      "scene": "At the ticket window."
+    },
+    {
+      "id": "it27",
+      "type": "choice",
+      "prompt": "{明日|あした}は{自転車|じてんしゃ}で{町|まち}を＿＿。",
+      "en": "Tomorrow I'll ride around town on a bike.",
+      "options": [
+        {
+          "text": "{回|まわ}ります",
+          "verdict": "right",
+          "why": "回る is going around something yourself: you circle the town. The route takes を, like 公園を回ります."
+        },
+        {
+          "text": "{回|まわ}します",
+          "verdict": "wrong",
+          "why": "回す is turning something with your hand: a knob, a dial. You'd be spinning the town."
+        },
+        {
+          "text": "{回|まわ}せます",
+          "verdict": "wrong",
+          "why": "\"I can turn (it)\": the potential of 回す. Still about turning an object, and there's none here."
+        }
+      ],
+      "scene": "A free day near the studio."
+    },
+    {
+      "id": "it28",
+      "type": "build",
+      "scene": "Planning a field-recording day.",
+      "en": "Tomorrow I'm heading out to the sea by myself.",
+      "tiles": [
+        "{明日|あした}",
+        "は",
+        "{一人|ひとり}",
+        "で",
+        "{海|うみ}",
+        "に",
+        "{出|で}かけます",
+        "{出|だ}します"
+      ],
+      "answers": [
+        [
+          "{明日|あした}",
+          "は",
+          "{一人|ひとり}",
+          "で",
+          "{海|うみ}",
+          "に",
+          "{出|で}かけます"
+        ],
+        [
+          "{明日|あした}",
+          "は",
+          "{海|うみ}",
+          "に",
+          "{一人|ひとり}",
+          "で",
+          "{出|で}かけます"
+        ]
+      ],
+      "why": "出かける is you heading out for the day. 出す would need something you're putting out (を). 海に is the destination; 一人で is how: on your own."
     }
   ]
 }

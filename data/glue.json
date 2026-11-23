@@ -1098,6 +1098,63 @@
       ],
       "listen": "Talk shows and interviews, right before the speaker's real point.",
       "note": "Not a real question and not \"isn't\". The tone falls at the end. Casual form: じゃん."
+    },
+    {
+      "id": "chinamini",
+      "ja": "ちなみに",
+      "family": "link",
+      "does": "Adds a side fact the listener didn't ask for but might like: \"by the way, while we're on it.\"",
+      "register": "both",
+      "examples": [
+        {
+          "ja": "ケンタッキーから{来|き}ました。«ちなみに»、バーボンの{町|まち}です。",
+          "en": "I'm from Kentucky. Which, by the way, is bourbon country."
+        },
+        {
+          "ja": "«ちなみに»、この{曲|きょく}は{海|うみ}の{音|おと}から{作|つく}りました。",
+          "en": "Incidentally, I made this piece from the sound of the sea."
+        }
+      ],
+      "listen": "Podcasts and talk radio, when the host adds a bit of trivia or a detail mid-story.",
+      "note": "Unlike ところで (which changes the subject), ちなみに stays on the same subject and adds to it."
+    },
+    {
+      "id": "kamo",
+      "ja": "〜かも",
+      "family": "soft",
+      "does": "Turns a statement into a maybe, so you can say something without committing to it.",
+      "register": "both",
+      "examples": [
+        {
+          "ja": "{明日|あした}は{雪|ゆき}«かも»しれませんね。",
+          "en": "It might snow tomorrow."
+        },
+        {
+          "ja": "あ、その{店|みせ}、{知|し}ってる«かも»。",
+          "en": "Oh, I think I might know that place."
+        }
+      ],
+      "listen": "Everywhere in casual talk, often trailing off at the end of a sentence with no しれない after it.",
+      "note": "Full polite form: かもしれません. In speech the short かも is very common, and also handy when you aren't sure your Japanese is right."
+    },
+    {
+      "id": "toka",
+      "ja": "〜とか",
+      "family": "soft",
+      "does": "Gives an example instead of the whole list, keeping things loose: \"things like…, or something.\"",
+      "register": "casual",
+      "examples": [
+        {
+          "ja": "{休|やす}みの{日|ひ}は、{写真|しゃしん}«とか»{撮|と}ります。",
+          "en": "On days off I take photos and such."
+        },
+        {
+          "ja": "{今度|こんど}、{一緒|いっしょ}にごはん«とか»どうですか。",
+          "en": "How about getting dinner or something sometime?"
+        }
+      ],
+      "listen": "Episode titles of Japanese with Teppei and Noriko are full of it (〜とか〜とか), and it's in nearly every casual conversation.",
+      "note": "Softening an invitation with とか makes it easier for the other person to say no, which is why it sounds friendly."
     }
   ]
 }

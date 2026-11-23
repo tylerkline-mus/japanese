@@ -1,6 +1,28 @@
 {
   "notes": [
     {
+      "date": "2026-11-22",
+      "title": "Four quiet weeks, and a bar to walk into",
+      "lookBack": [
+        "**Still no WaniKani reviews since October 26**, so that's four weeks. Totals are unchanged at 24,332 correct and nothing has burned. The queue grew again this week, **296 → 373**, as older items came due, so it hasn't stopped after all. It will keep climbing slowly while it sits.",
+        "The hub log looks like last week's: は vs が is still the only lesson marked done, the verb-pair drills are still at 2 of 16 (one right first time, one missed then right), and no listening or messages were logged. Two answers is too few to tell whether that set helps, so it stays up as it is."
+      ],
+      "noticed": [
+        "**You're still four lessons ahead, so again no new chapter.** Lessons 2–5 got 3 new drills each and は/が got 3, aimed at bar and travel talk: is this seat free (空いていますか), I'm here for work (来ています), can I pay by card (使えますか), and why it's 分かりません, never 分かれません. Lesson 5 also has a new contrast pair on that last one.",
+        "**New scene: At the bar.** It's your March goal turned into lines. The survival tier works today. The natural tier opens when Lessons 3 and 5 are done: someone asks if you speak Japanese, you say you're a composer working in Itoshima, and it ends with bourbon and a question back. It's dated for early January.",
+        "**The leeches haven't moved because nothing has.** 見せる and 出かける are still on the list. Lesson 4's new drills go straight at them: show me the menu is 見せて, trains 出ます, people 出かけます."
+      ],
+      "focus": [
+        "**Restart WaniKani small:** 20–30 reviews a day, and no new lessons until the queue is under 100.",
+        "**Read the At the bar survival tier out loud once.** If you want, try it as a role-play with the Practice with Claude button.",
+        "**Mark Lesson 2 (に vs で) done** when you have twenty minutes at home. Most scenes need it for their next tier.",
+        "**One listen on travel day:** Noriko's two-minute ブリュッセルに引っ越しました, no subtitles."
+      ],
+      "ja": "もうすぐ{家|いえ}に{帰|かえ}りますね。{一月|いちがつ}には、バーで{隣|となり}の{人|ひと}と{日本語|にほんご}で{話|はな}せますよ。{毎日|まいにち}{少|すこ}しずつ、がんばりましょう。",
+      "jaEn": "You're heading home soon. By January, you'll be able to talk in Japanese with the person next to you at a bar. A little each day — let's keep at it.",
+      "replies": []
+    },
+    {
       "date": "2026-11-15",
       "title": "Three quiet weeks, and the smallest possible start",
       "lookBack": [

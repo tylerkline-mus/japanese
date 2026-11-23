@@ -666,6 +666,78 @@
         ]
       ],
       "why": "The big frame is は (what you're talking about: this place), the detail inside it is が (what's cheap: the coffee). It's the same shape as ケンタッキーはお酒が有名です. を doesn't fit: 安い is an adjective and takes no object."
+    },
+    {
+      "id": "wg33",
+      "type": "choice",
+      "prompt": "{私|わたし}はバーボン＿{好|す}きです。",
+      "en": "I love bourbon.",
+      "options": [
+        {
+          "text": "が",
+          "verdict": "right",
+          "why": "好き is an adjective (\"likable\"), so the thing you like is its subject: が. 私は sets the topic, バーボンが says what's liked. That's the は…が… frame."
+        },
+        {
+          "text": "を",
+          "verdict": "wrong",
+          "why": "好き isn't a verb, so there's no object for を to mark. Swap in a verb and を works: バーボンを飲みます."
+        },
+        {
+          "text": "は",
+          "verdict": "different",
+          "why": "バーボンは好きです = \"Bourbon, I do like\": contrast, hinting there's something you don't. Natural if they just offered you wine."
+        }
+      ],
+      "scene": "The bartender asks what you drink."
+    },
+    {
+      "id": "wg34",
+      "type": "choice",
+      "prompt": "あ、{窓|まど}から{山|やま}＿{見|み}えます！",
+      "en": "Oh, you can see mountains from the window!",
+      "options": [
+        {
+          "text": "が",
+          "verdict": "right",
+          "why": "Something you've just noticed is new information → が. And 見える always marks the thing that's visible with が."
+        },
+        {
+          "text": "は",
+          "verdict": "different",
+          "why": "山は見えます = \"The mountains, at least, are visible\" (maybe not the sea). That's contrast, not discovery."
+        },
+        {
+          "text": "を",
+          "verdict": "wrong",
+          "why": "見える isn't something you do; the mountains simply are visible. を needs a doer, as in 山を見ます (I look at the mountains)."
+        }
+      ],
+      "scene": "Looking out of the train."
+    },
+    {
+      "id": "wg35",
+      "type": "build",
+      "scene": "Dinner with friends; the bill arrives.",
+      "en": "Today, I'm paying.",
+      "tiles": [
+        "{今日|きょう}",
+        "は",
+        "{私|わたし}",
+        "が",
+        "は",
+        "はらいます"
+      ],
+      "answers": [
+        [
+          "{今日|きょう}",
+          "は",
+          "{私|わたし}",
+          "が",
+          "はらいます"
+        ]
+      ],
+      "why": "今日は sets the frame: as for today. 私が picks you out of everyone at the table: I'm the one paying. 私は would only say \"as for me, I'll pay\", which misses the point of claiming the bill."
     }
   ]
 }
