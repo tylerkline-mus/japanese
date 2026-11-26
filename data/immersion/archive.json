@@ -1,5 +1,79 @@
 [
  {
+  "id": "2825c3dacceb",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "マイあさ! 午前7時のNHKニュース 2026年11月27日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/0eb575081132739e91811cd94b5e105c_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/0eb575081132739e91811cd94b5e105c_64k.mp3",
+  "date": "2026-11-26T22:20:00.000Z",
+  "minutes": 19,
+  "summary": "",
+  "added": "2026-11-26T22:38:09.696Z"
+ },
+ {
+  "id": "6deac9947ade",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "マイあさ! 午前6時のNHKニュース 2026年11月27日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/819aecea3c87a3a7af855cfe882599f1_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/819aecea3c87a3a7af855cfe882599f1_64k.mp3",
+  "date": "2026-11-26T21:14:00.000Z",
+  "minutes": 13,
+  "summary": "",
+  "added": "2026-11-26T22:38:09.696Z"
+ },
+ {
+  "id": "a8cbbcea29cc",
+  "source": "yuyu",
+  "sourceName": "YUYUの日本語Podcast",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "culture"
+  ],
+  "title": "Vol.508 余白の文化と余白のコミュニケーション (Japanese Radio for Listening practice)",
+  "url": "https://podcasters.spotify.com/pod/show/yuyunihongo/episodes/Vol-508--Japanese-Radio-for-Listening-practice-e3t38kk",
+  "audio": "https://anchor.fm/s/cda85d4/podcast/play/130179156/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-10-26%2F18828b6f-cf79-c033-4c23-1a1f13bf06e3.mp3",
+  "date": "2026-11-26T21:06:06.000Z",
+  "minutes": 44,
+  "summary": "💰Patreonのサポート(人´∀`)ｱﾘｶﾞﾄｰ♪ ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠…",
+  "added": "2026-11-26T22:38:07.927Z"
+ },
+ {
+  "id": "0f08850bbeb2",
+  "source": "teppei-noriko",
+  "sourceName": "Japanese with Teppei and Noriko",
+  "type": "listen",
+  "level": 2,
+  "tags": [
+   "learner",
+   "conversation"
+  ],
+  "title": "#651「寒さ対策とか、JLPTの話とか！」",
+  "url": "https://teppeinorikojapanese.com/2026/11/26/651%e3%80%8c%e5%af%92%e3%81%95%e5%af%be%e7%ad%96%e3%81%a8%e3%81%8b%e3%80%81jlpt%e3%81%ae%e8%a9%b1%e3%81%a8%e3%81%8b%ef%bc%81%e3%80%8d/",
+  "audio": "https://teppeinorikojapanese.com/wp-content/uploads/2026/11/Teppeinoriko651.mp3",
+  "date": "2026-11-26T13:44:15.000Z",
+  "minutes": null,
+  "summary": "",
+  "added": "2026-11-26T22:38:08.916Z"
+ },
+ {
   "id": "40da19915f7c",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
