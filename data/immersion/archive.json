@@ -1,5 +1,62 @@
 [
  {
+  "id": "1e8c6108b08f",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年11月27日午後01時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/113723c0be3383be154178f04c8bea17_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/113723c0be3383be154178f04c8bea17_64k.mp3",
+  "date": "2026-11-27T04:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-11-27T04:35:41.495Z"
+ },
+ {
+  "id": "a876fcefcc96",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 正午のNHKニュース 2026年11月27日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/09dea22c6206783171377041211ddd8b_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/09dea22c6206783171377041211ddd8b_64k.mp3",
+  "date": "2026-11-27T03:15:00.000Z",
+  "minutes": 15,
+  "summary": "【主なニュース】▽関文科相への問責決議案 反対多数で否決 参院本会議 ▽福岡 男性刺殺事件 駐輪場の事務所に立ち寄った後襲ったか ▽宇宙飛行士を2027年4月ごろ募集へ “学歴や専門分野は不問” など ▽最新のニュースは「らじる★らじる」やポッドキャスト「ＮＨＫラジオニュース」からもお聴きいただけます",
+  "added": "2026-11-27T04:35:41.495Z"
+ },
+ {
+  "id": "0f2d864d8d34",
+  "source": "nhk-world-report",
+  "sourceName": "ワールドリポート（NHKラジオ マイあさ！）",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "20261127 「パキスタンで広がる電動バイク」",
+  "url": "https://www.nhk.or.jp/s-media/F519/podcast/audio/fcd733bbe30b700c0dfea0e954d58734_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/F519/podcast/audio/fcd733bbe30b700c0dfea0e954d58734_64k.mp3",
+  "date": "2026-11-27T03:00:00.000Z",
+  "minutes": 4,
+  "summary": "リポート：柳原 章人（イスラマバード支局） キャスター：眞下 貴",
+  "added": "2026-11-27T04:35:41.125Z"
+ },
+ {
   "id": "2825c3dacceb",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
