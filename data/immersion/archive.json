@@ -1,5 +1,43 @@
 [
  {
+  "id": "68e28afca604",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "ニュース 2026年11月27日午後11時00分",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/1a50ae106f36ce78ec7eae6f815c8f3f_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/1a50ae106f36ce78ec7eae6f815c8f3f_64k.mp3",
+  "date": "2026-11-27T14:05:00.000Z",
+  "minutes": 5,
+  "summary": "",
+  "added": "2026-11-27T14:26:15.165Z"
+ },
+ {
+  "id": "fa739157db61",
+  "source": "nhk-radio-news",
+  "sourceName": "NHKラジオニュース",
+  "type": "listen",
+  "level": 4,
+  "tags": [
+   "native",
+   "news",
+   "NHK"
+  ],
+  "title": "NHKジャーナル 2026年11月27日",
+  "url": "https://www.nhk.or.jp/s-media/news/podcast/audio/28f39ce74f380b4f0f606aedd54e024c_64k.mp3",
+  "audio": "https://www.nhk.or.jp/s-media/news/podcast/audio/28f39ce74f380b4f0f606aedd54e024c_64k.mp3",
+  "date": "2026-11-27T13:55:00.000Z",
+  "minutes": 55,
+  "summary": "▽関文科相への問責決議案否決 参院本会議 ▽伊豆大島噴火から４０年・課題は ▽NHK杯フィギュア 高橋成美さんの注目は ▽物価高の年末 ▽さとかなのコレ知っとかな！「太平洋記念日」にちなんだクイズ 特集はスポーツ。この日から始まる「ＮＨＫ杯フィギュア」の注目点について、元フィギュアスケート選手で解説者の高橋成美さ…",
+  "added": "2026-11-27T14:26:15.165Z"
+ },
+ {
   "id": "1e8c6108b08f",
   "source": "nhk-radio-news",
   "sourceName": "NHKラジオニュース",
